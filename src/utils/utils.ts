@@ -17,8 +17,4 @@ export class Utils {
         const parentHashes = sharkTreeStack.map(item => item.getParentHash());
         return Array.from(new Set(parentHashes)).length === 1;
     }
-
-    static addArcsToSvg(svg: SVGElement, arcs: SVGPathElement[]): void {
-        arcs.forEach((arc) => svg.appendChild(arc));
-    }
 }

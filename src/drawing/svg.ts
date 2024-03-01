@@ -1,3 +1,4 @@
+import { BLACK } from "../constants/colors";
 import { SVG_NAMESPACE } from "../constants/strings";
 import { Utils } from "../utils/utils";
 
@@ -21,7 +22,7 @@ export class Svg {
         lineSvg.setAttribute("y1", y1.toString());
         lineSvg.setAttribute("x2", x2.toString());
         lineSvg.setAttribute("y2", y2.toString());
-        lineSvg.setAttribute("stroke", "black");
+        lineSvg.setAttribute("stroke", BLACK);
 
         return lineSvg;
     }
@@ -32,7 +33,7 @@ export class Svg {
         circleSvg.setAttribute("cy", `${y}`);
         circleSvg.setAttribute("r", `${radius}`);
         circleSvg.setAttribute("fill", fill);
-        if (fill == "none") circleSvg.setAttribute("stroke", "black");
+        if (fill == "none") circleSvg.setAttribute("stroke", BLACK);
 
         return circleSvg;
     }
@@ -55,7 +56,7 @@ export class Svg {
         const arcSvg = document.createElementNS(SVG_NAMESPACE, "path");
         arcSvg.setAttribute("d", `M ${x2} ${y2} A ${radius} ${radius} 0 0 0 ${x1} ${y1}`);
         arcSvg.setAttribute("fill", "none");
-        arcSvg.setAttribute("stroke", "black");
+        arcSvg.setAttribute("stroke", BLACK);
 
         // Store the original points in the SVG element's dataset
         arcSvg.dataset.x1 = x1.toString();

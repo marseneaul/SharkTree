@@ -20,6 +20,7 @@ import { squalomorphiiConfig } from "./data/configs/squalomorphii.config.js";
 import { selachiiConfig } from "./data/configs/selachii.config.js";
 
 import { SharkTree } from "./models/shark-tree.ts";
+import { BLACK, BLOOD_RED } from "./constants/colors.js";
 
 export class SharkTreeComponent extends HTMLElement {
 
@@ -28,6 +29,8 @@ export class SharkTreeComponent extends HTMLElement {
 
         this.template = document.createElement("template");
         this.shadow = this.attachShadow({mode: "open"});
+
+        this.sharkScreen = null;
     }
 
     /*----------------------------------------|
@@ -69,22 +72,13 @@ export class SharkTreeComponent extends HTMLElement {
         console.log(sharkTree)
         const sharkTreeSvg = sharkTree.draw();
         const sharkScreen = this.shadow.querySelector("#shark-screen");
-        sharkTree.sharkScreen = sharkScreen;
+        this.sharkScreen = sharkScreen;
+        window.addEventListener("next-shark", this.nextSharkHandler.bind(this));
+
 
         const maxDepth = sharkTree.getMaxDepth();
         const taxaSlider = this.shadow.querySelector("#taxa-slider");
         taxaSlider.setAttribute("max", `${maxDepth}`);
-
-
-        const jsonConfig = {
-            color: "gray",
-            fins: true,
-            finColor: "black"
-        };
-
-        const svgElement = this.generateSharkSVG(jsonConfig);
-        document.body.appendChild(svgElement);
-
 
         const container = this.shadow.querySelector("#phylo-container");
         container.appendChild(sharkTreeSvg);
@@ -158,6 +152,10 @@ export class SharkTreeComponent extends HTMLElement {
         `;
     }
 
+    /*----------------------------------------|
+    |                HELPERS                  |
+    |----------------------------------------*/
+
     generateSharkSVG(config) {
         const svgNS = "http://www.w3.org/2000/svg";
         const svg = document.createElementNS(svgNS, "svg");
@@ -182,16 +180,33 @@ export class SharkTreeComponent extends HTMLElement {
             const fin1 = document.createElementNS(svgNS, "polygon");
             const finWidth = 10;
             fin1.setAttribute("points", `${x+width/4},${y-topHeight/4} ${x+finWidth/2},${y-topHeight/4-finWidth} ${x+finWidth},${y-topHeight/4}`);
-            fin1.setAttribute("fill", config.finColor || "black");
+            fin1.setAttribute("fill", config.finColor || BLACK);
             svg.appendChild(fin1);
         
             // const fin2 = document.createElementNS(svgNS, "polygon");
             // fin2.setAttribute("points", "120,50 110,40 100,50");
-            // fin2.setAttribute("fill", config.finColor || "black");
+            // fin2.setAttribute("fill", config.finColor || BLACK);
             // svg.appendChild(fin2);
         }
 
         return svg;
+    }
+
+    /*----------------------------------------|
+    |                HANDLERS                 |
+    |----------------------------------------*/
+
+    nextSharkHandler(event) {
+        const currentShark = event.detail.sharkSpecies;
+        if (this.sharkScreen) {
+            this.sharkScreen.innerHTML = currentShark.getFormattedString();
+            if (currentShark.imageUrl) {
+                const sharkImg = document.createElement("img");
+                sharkImg.src = currentShark.imageUrl;
+                this.sharkScreen.appendChild(sharkImg);
+            }
+        }
+        currentShark?.getNode()?.setAttribute("fill", BLOOD_RED);
     }
 }
 

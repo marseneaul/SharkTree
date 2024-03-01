@@ -5,7 +5,8 @@ import { SVG_SIZE } from "../constants/constants";
 import { SharkTreeNode } from "./shark-tree-node";
 import { Svg } from "../drawing/svg";
 import { Utils } from "../utils/utils";
-import { BLACK } from "../drawing/colors";
+import { BLACK } from "../constants/colors";
+import { NextSharkEvent } from "../events/next-shark.event";
 
 export class SharkTree {
     config: SharkTreeNodeConfig
@@ -19,8 +20,6 @@ export class SharkTree {
     currentNode: SharkSpecies|SharkTreeNode|null
     cursorIndex: number
     currentSharkIndex: number
-
-    sharkScreen: HTMLParagraphElement|null // remove later and replace with events
 
     constructor(sharkTreeConfig: SharkTreeNodeConfig) {
         this.config = sharkTreeConfig;
@@ -36,7 +35,6 @@ export class SharkTree {
         this.cursorIndex = 0;
         this.currentSharkIndex = 0;
 
-        this.sharkScreen = null;
     }
 
     /*----------------------------------------|
@@ -74,6 +72,35 @@ export class SharkTree {
         const bitArray = hashChains.map((hashChain) => hashChain.includes(parentHash) ? 1 : 0);
         return bitArray.reduce( (accumulator, currentValue) => accumulator + currentValue, 0 );
     }
+
+    getItemSetsToMerge(sharkTreeStack: (SharkSpecies|SharkTreeNode)[]): [(SharkSpecies|SharkTreeNode)[][], number[]] {
+        let index = 0;
+        const indicesRemoved: number[] = [];
+        let itemsInSet: (SharkSpecies|SharkTreeNode)[] = [];
+        const itemSetsToMerge: (SharkSpecies|SharkTreeNode)[][] = [];
+        const hashChains = sharkTreeStack.map((item) => item.getHashChain());
+        while (index < sharkTreeStack.length) {
+            const item: SharkSpecies|SharkTreeNode = sharkTreeStack[index];
+            if (this.readyToMerge(index, sharkTreeStack, hashChains)) {
+                const numMergeParters = this.getNumMergeParters(index, sharkTreeStack, hashChains)
+                if (numMergeParters > 1) {
+                    itemsInSet.push(item);
+                    indicesRemoved.push(index);
+                    
+                    if (itemsInSet.length == numMergeParters) {
+                        itemSetsToMerge.push(itemsInSet);
+                        itemsInSet = [];
+                    }
+                }
+            }
+            else {
+                itemsInSet = [];
+            }
+            index++;
+
+        }
+        return [itemSetsToMerge, indicesRemoved];
+    }
     
     /*----------------------------------------|
     |                DRAWING                  |
@@ -103,7 +130,7 @@ export class SharkTree {
 
         
         // Create a dot for the center
-        const dot = Svg.drawCircle(centerX, centerY, 5, "black");
+        const dot = Svg.drawCircle(centerX, centerY, 5, BLACK);
         svg.appendChild(dot);
 
         sharkSpecies.forEach((shark, index) => {
@@ -116,7 +143,7 @@ export class SharkTree {
             shark.setIndex(index);
     
             // Create a circle for the current point
-            const circle = Svg.drawCircle(x, y, 5, "black");
+            const circle = Svg.drawCircle(x, y, 5, BLACK);
             circle.style.zIndex = "10";
             shark.setNode(circle);
             circle.dataset.shark = JSON.stringify(shark.config);
@@ -173,25 +200,6 @@ export class SharkTree {
         return newSharkTreeStack;
     }
 
-    getNextStackLayer(sharkTreeStack: (SharkSpecies|SharkTreeNode)[], indicesRemoved: number[]): (SharkSpecies|SharkTreeNode)[] {
-        const newSharkTreeStack: (SharkSpecies|SharkTreeNode)[] = [];
-        const parentHashes = new Set();
-        sharkTreeStack.forEach((item, index) => {
-            if (!indicesRemoved.includes(index)) {
-                newSharkTreeStack.push(item);
-            }
-            else {
-                const parent = item.getParent();
-                const parentHash = parent?.getHash();
-                if (parent && !parentHashes.has(parentHash)) {
-                    parentHashes.add(parentHash);
-                    newSharkTreeStack.push(parent);
-                }
-            }
-        });
-        return newSharkTreeStack;
-    }
-
     extend(svg: SVGElement, sharkTreeStack: (SharkSpecies|SharkTreeNode)[]): void {
         sharkTreeStack.forEach((item) => {
             const line = item instanceof SharkSpecies ?
@@ -231,35 +239,24 @@ export class SharkTree {
         return indicesRemoved;
     }
 
-    getItemSetsToMerge(sharkTreeStack: (SharkSpecies|SharkTreeNode)[]): [(SharkSpecies|SharkTreeNode)[][], number[]] {
-        let index = 0;
-        const indicesRemoved: number[] = [];
-        let itemsInSet: (SharkSpecies|SharkTreeNode)[] = [];
-        const itemSetsToMerge: (SharkSpecies|SharkTreeNode)[][] = [];
-        const hashChains = sharkTreeStack.map((item) => item.getHashChain());
-        while (index < sharkTreeStack.length) {
-            const item: SharkSpecies|SharkTreeNode = sharkTreeStack[index];
-            if (this.readyToMerge(index, sharkTreeStack, hashChains)) {
-                const numMergeParters = this.getNumMergeParters(index, sharkTreeStack, hashChains)
-                if (numMergeParters > 1) {
-                    itemsInSet.push(item);
-                    indicesRemoved.push(index);
-                    
-                    if (itemsInSet.length == numMergeParters) {
-                        itemSetsToMerge.push(itemsInSet);
-                        itemsInSet = [];
-                    }
-                }
+    getNextStackLayer(sharkTreeStack: (SharkSpecies|SharkTreeNode)[], indicesRemoved: number[]): (SharkSpecies|SharkTreeNode)[] {
+        const newSharkTreeStack: (SharkSpecies|SharkTreeNode)[] = [];
+        const parentHashes = new Set();
+        sharkTreeStack.forEach((item, index) => {
+            if (!indicesRemoved.includes(index)) {
+                newSharkTreeStack.push(item);
             }
             else {
-                itemsInSet = [];
+                const parent = item.getParent();
+                const parentHash = parent?.getHash();
+                if (parent && !parentHashes.has(parentHash)) {
+                    parentHashes.add(parentHash);
+                    newSharkTreeStack.push(parent);
+                }
             }
-            index++;
-
-        }
-        return [itemSetsToMerge, indicesRemoved];
+        });
+        return newSharkTreeStack;
     }
-
 
     /*----------------------------------------|
     |                HELPERS                  |
@@ -296,15 +293,9 @@ export class SharkTree {
                 previousShark?.getNode()?.setAttribute("fill", "black");
                 this.currentSharkIndex = sharkIndex;
                 const currentShark = sharkSpecies[sharkIndex];
-                if (this.sharkScreen) {
-                    this.sharkScreen.innerHTML = currentShark.getFormattedString();
-                    if (currentShark.imageUrl) {
-                        const sharkImg = document.createElement("img");
-                        sharkImg.src = currentShark.imageUrl;
-                        this.sharkScreen.appendChild(sharkImg);
-                    }
-                }
-                currentShark?.getNode()?.setAttribute("fill", "red");
+                const nextSharkEvent = new NextSharkEvent(currentShark);
+                const event = new CustomEvent(nextSharkEvent.type, { detail: nextSharkEvent });
+                window.dispatchEvent(event);
             }
         });
         
