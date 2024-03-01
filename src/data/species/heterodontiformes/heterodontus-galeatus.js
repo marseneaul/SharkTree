@@ -1,0 +1,17 @@
+export const heterodontusGaleatus = {
+    commonName: "Crested Bullhead Shark",
+    alternativeNames: ["Crested Shark", "Crested Bull Shark", "Crested Horn Shark", "Crested Port Jackson Shark"],
+    binomialName: "Heterodontus galeatus",
+
+    domain:	"Eukaryota",
+    kingdom: "Animalia",
+    phylum:	"Chordata",
+    class: "Chondrichthyes",
+    subclass: "Elasmobranchii",
+    subdivision: "Selachimorpha",
+    superorder: "Galeomorphii",
+    order: "Heterodontiformes",
+    family: "Heterodontidae",
+    genus: "Heterodontus",
+    species: "galeatus"
+};

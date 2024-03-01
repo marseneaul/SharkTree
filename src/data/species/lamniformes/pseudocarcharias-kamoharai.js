@@ -1,0 +1,16 @@
+export const psuedocarchariasKamoharai = {
+    commonName: "Crocodile Shark",
+    binomialName: "Psuedocarcharias kamoharai",
+
+    domain:	"Eukaryota",
+    kingdom: "Animalia",
+    phylum:	"Chordata",
+    class: "Chondrichthyes",
+    subclass: "Elasmobranchii",
+    subdivision: "Selachimorpha",
+    superorder: "Galeomorphii",
+    order: "Lamniformes",
+    family: "Pseudocarchariidae",
+    genus: "Psuedocarcharias",
+    species: "kamoharai"
+};
