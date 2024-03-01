@@ -1,4 +1,5 @@
 import { SVG_NAMESPACE } from "../constants/strings";
+import { Utils } from "../utils/utils";
 
 export class Svg {
 
@@ -63,5 +64,25 @@ export class Svg {
         arcSvg.dataset.y2 = y2.toString();
 
         return arcSvg;
+    }
+
+    static getArcs(centerX: number, centerY: number, radius: number, levelHeight: number, line: SVGPathElement, nextLine: SVGPathElement, iteration: number): [SVGPathElement, SVGPathElement] {
+        const x1 = parseFloat(Utils.getAttributeFromLineOrPath(line, "x2") ?? "0");
+        const y1 = parseFloat(Utils.getAttributeFromLineOrPath(line, "y2") ?? "0");
+        const x2 = parseFloat(Utils.getAttributeFromLineOrPath(nextLine, "x2") ?? "0");
+        const y2 = parseFloat(Utils.getAttributeFromLineOrPath(nextLine, "y2") ?? "0");
+        const r = radius - iteration * levelHeight;
+        let theta1 = Math.atan2(centerY - y1, x1 - centerX);
+        let theta2 = Math.atan2(centerY - y2, x2 - centerX);
+        if (theta1 > 0) theta1 -= 2 * Math.PI;
+        if (theta2 > 0) theta2 -= 2 * Math.PI;
+        const thetaMid = (theta1 + theta2) / 2;
+        const xMidArc = centerX + r * Math.cos(thetaMid);
+        const yMidArc = centerY - r * Math.sin(thetaMid);
+
+        const firstArc = Svg.drawCircleArc(x1, y1, centerX, centerY, xMidArc, yMidArc, r);
+        const secondArc = Svg.drawCircleArc(xMidArc, yMidArc, centerX, centerY, x2, y2, r);
+        return [firstArc, secondArc];
+
     }
 }

@@ -1,0 +1,1 @@
+export const BLACK = "rgba(0, 0, 0, 1)";
