@@ -2,6 +2,7 @@ import { sha256 } from "js-sha256";
 import { SharkConfig } from "../interfaces/shark-config";
 import { SharkTreeNode } from "./shark-tree-node";
 
+// SharkTreeLeafNode
 export class SharkSpecies {
     config: SharkConfig
     parent: SharkTreeNode|null

@@ -16,9 +16,11 @@ export class SharkTree {
     centerY: number
     radius: number
     levelHeight: number
+    maxDepth: number
+    zoomLevel: number
+
 
     currentNode: SharkSpecies|SharkTreeNode|null
-    cursorIndex: number
     currentSharkIndex: number
 
     constructor(sharkTreeConfig: SharkTreeNodeConfig) {
@@ -28,11 +30,11 @@ export class SharkTree {
         this.centerX = SVG_SIZE / 2;
         this.centerY = SVG_SIZE / 2;
         this.radius = SVG_SIZE / 3;
-        const maxDepth = this.getMaxDepth();
-        this.levelHeight = this.radius / maxDepth;
+        this.maxDepth = this.getMaxDepth();
+        this.levelHeight = this.radius / this.maxDepth;
+        this.zoomLevel = 0;
 
         this.currentNode = this.root;
-        this.cursorIndex = 0;
         this.currentSharkIndex = 0;
 
     }
@@ -133,7 +135,10 @@ export class SharkTree {
         const dot = Svg.drawCircle(centerX, centerY, 5, BLACK);
         svg.appendChild(dot);
 
-        sharkSpecies.forEach((shark, index) => {
+        sharkSpecies.forEach((shark, index) => { this.drawSharkOnRim(svg, shark, index, spacing) });
+    }
+
+    drawSharkOnRim(svg: SVGElement, shark, index, spacing: number): void {
             // Calculate the coordinates for the current point
             const angle = index * spacing;
             const x = this.centerX + this.radius * Math.cos(angle);
@@ -156,11 +161,10 @@ export class SharkTree {
             svg.appendChild(circle);
     
             // Add text for the species name
-            const text = Svg.drawText(x, y, `${sharkSpecies[index].binomialName}`);
+            const text = Svg.drawText(x, y, `${shark.binomialName}`);
             text.style.pointerEvents = "none";
             // svg.appendChild(text);
 
-        });
     }
 
     draw(): SVGElement {
@@ -170,20 +174,21 @@ export class SharkTree {
         svg.setAttribute("height", SVG_SIZE.toString());
 
         const sharkSpecies = this.getSharkSpeciesList();
-        const svgLayers = [svg];
-        console.log(sharkSpecies)
-        this.drawRim(svg, sharkSpecies, this.centerX, this.centerY);
 
+        this.drawRim(svg, sharkSpecies, this.centerX, this.centerY);
+        
         let sharkTreeStack:(SharkSpecies|SharkTreeNode)[] = [...sharkSpecies];
+        
         for (let depth = 0; depth < this.getMaxDepth() - 1; depth++) {
             sharkTreeStack = this.runPipeline(svg, sharkTreeStack, depth + 1);
-            console.log(sharkTreeStack)
         }
-
+        
         this.extend(svg, sharkTreeStack);
 
         this.addWheelEventListener(svg, sharkSpecies);
+        this.addTaxaSliderListener(svg);
 
+        svg.setAttribute("id", "shark-tree");
         return svg;
     }
 
@@ -277,6 +282,67 @@ export class SharkTree {
     |                HANDLERS                 |
     |----------------------------------------*/
 
+    addTaxaSliderListener(svg: SVGElement): void {
+        window.addEventListener("slideChange", (event: CustomEvent) => {
+            this.zoomLevel = parseInt(event.detail.value);
+            console.log(parseInt(event.detail.value))
+            const sharkSpecies = this.getSharkSpeciesList();
+            
+            const currentShark = sharkSpecies[this.currentSharkIndex];
+            const depth = this.getNodeDepth(currentShark);
+            const newRoot = this.getKthGrandparent(currentShark, depth - this.zoomLevel);
+            if (!newRoot) return;
+            this.wipePaths();
+            this.root = newRoot;
+            
+            const maxDepth = this.getMaxDepth();
+            this.levelHeight = this.radius / maxDepth;
+            this.triggerRedraw();
+        });
+    }
+
+    getKthGrandparent(sharkTreeNode: SharkSpecies|SharkTreeNode, k: number): SharkTreeNode {
+        let i = 0;
+        let parentNode = sharkTreeNode?.parent;
+        while (parentNode && i < k) {
+            parentNode = parentNode?.parent;
+            i++;
+        }
+        return parentNode;
+    }
+
+    getNodeDepth(sharkTreeNode: SharkSpecies|SharkTreeNode): number {
+        let depth = 0;
+        let parentNode = sharkTreeNode?.parent;
+        while (parentNode?.parent) {
+            depth++;
+            parentNode = parentNode?.parent;
+        }
+        return depth;
+    }
+
+    triggerRedraw(): void {
+        const event = new CustomEvent("redraw", {
+          bubbles: true,
+          composed: true,
+        //   detail: { message: "" } 
+        });
+        window.dispatchEvent(event);
+    }
+
+    wipePaths(): void {
+        const sharkSpecies = this.getSharkSpeciesList();
+        for (const shark of sharkSpecies) {
+            shark.parentPath = [];
+            let parentNode = shark?.parent;
+            while (parentNode) {
+                if (parentNode.parentPath) parentNode.parentPath = [];
+                if (parentNode.childPaths) parentNode.childPaths = [];
+                parentNode = parentNode.parent;
+            }
+        }
+    }
+
     addWheelEventListener(svg: SVGElement, sharkSpecies: SharkSpecies[]): void {
         let rotation = 0;
         svg.addEventListener("wheel", (event: WheelEvent) => {
@@ -298,53 +364,6 @@ export class SharkTree {
                 window.dispatchEvent(event);
             }
         });
-        
+    
     }
 }
-
-
-        // dot.addEventListener("click", (_event: WheelEvent) => {
-        //     let isHighlighted = false;
-        //     setInterval(() => {
-        //         const parentPath = this.currentNode.parentPath;
-        //         const parentPathSegmentsToBlink = [parentPath[0]];
-        //         const firstChildPath = this.currentNode instanceof SharkTreeNode ? this.currentNode.childPaths[this.cursorIndex] : null;
-        //         if (this.currentNode.getParent() === null) dot.setAttribute("stroke-width", isHighlighted ? "2" : "1");
-        //         else dot.setAttribute("stroke-width", "1");
-        //         // parentPathSegmentsToBlink.forEach(segment => segment.setAttribute("stroke", isBlack ? blinkColor : "black"));
-        //         firstChildPath.forEach(segment => segment.setAttribute("stroke-width", isHighlighted ? "2" : "1"));
-        //         isHighlighted = !isHighlighted;
-        //     }, 500);
-        // });
-        // window.addEventListener("keydown", function(event) {
-        //     event.preventDefault();
-        //     const numChildPaths = this.currentNode.childPaths.length;
-
-        //     const parentPath = this.currentNode.parentPath;
-        //     const parentPathSegmentsToBlink = [parentPath[parentPath.length - 1]];
-        //     const firstChildPath = this.currentNode instanceof SharkTreeNode ? this.currentNode.childPaths[this.cursorIndex] : null;
-
-
-        //     if (event.key === "ArrowRight") {
-        //         this.cursorIndex = (this.cursorIndex + 1) % numChildPaths;
-        //         firstChildPath.forEach(segment => segment.setAttribute("stroke", "black"));
-        //     } else if (event.key === "ArrowLeft") {
-        //         this.cursorIndex = (this.cursorIndex + (numChildPaths - 1)) % numChildPaths;
-        //         firstChildPath.forEach(segment => segment.setAttribute("stroke", "black"));
-        //     } else if (event.key === "ArrowDown") {
-        //         if (this.currentNode.getParent() !== null) {
-        //             this.currentNode = this.currentNode.getParent();
-        //             this.cursorIndex = 0;
-        //         }
-        //     } else if (event.key === "ArrowUp") {
-        //         if (this.currentNode.children) {
-        //             this.currentNode = this.currentNode.children[this.cursorIndex];
-        //             this.cursorIndex = 0;
-        //         }
-        //     }
-        //     if (this.currentNode instanceof SharkSpecies) {
-        //         const sharkIndex = this.currentNode.index;
-        //         console.log(sharkIndex, sharkSpecies[sharkIndex])
-        //         this.sharkScreen.innerHTML = sharkSpecies[sharkIndex].getFormattedString();
-        //     }
-        // }.bind(this));

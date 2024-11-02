@@ -1,26 +1,13 @@
-import { lamniformesConfig } from "./data/configs/lamniformes.config.js";
-import { heterodontiformesConfig } from "./data/configs/heterodontiformes.config.js";
-import { lamnidaeConfig } from "./data/configs/lamnidae.config.js";
-import { carcharhinidaeConfig } from "./data/configs/carcharhinidae.config.js";
-import { squatiniformesConfig } from "./data/configs/squatiniformes.config.js";
-import { hexanchiformesConfig } from "./data/configs/hexanchiformes.config.js";
-import { pristiophoriformesConfig } from "./data/configs/pristiophoriformes.config.js";
-import { orectolobiformesConfig } from "./data/configs/orectolobiformes.config.js";
-import { scyliorhinidaeIConfig } from "./data/configs/scyliorhinidae.i.config.js";
-import { scyliorhinidaeIIConfig } from "./data/configs/scyliorhinidae.ii.config.js";
-import { scyliorhinidaeIIIConfig } from "./data/configs/scyliorhinidae.iii.config.js";
-import { triakidaeConfig } from "./data/configs/triakidae.config.js";
-import { squalidaeConfig } from "./data/configs/squalidae.config.js";
-import { squaliformesConfig } from "./data/configs/squaliformes.config.js";
-import { dalatiidaeConfig } from "./data/configs/dalatiidae.config.js";
-import { etmopteridaeConfig } from "./data/configs/etmopteridae.config.js";
-import { carcharhiniformesConfig } from "./data/configs/carcharhiniformes.config.js";
-import { galeomorphiiConfig } from "./data/configs/galeomorphii.config.js";
-import { squalomorphiiConfig } from "./data/configs/squalomorphii.config.js";
-import { selachiiConfig } from "./data/configs/selachii.config.js";
+import {
+    lamniformesConfig, heterodontiformesConfig, lamnidaeConfig, carcharhinidaeConfig,
+    squatiniformesConfig, hexanchiformesConfig, pristiophoriformesConfig, orectolobiformesConfig,
+    scyliorhinidaeIConfig, scyliorhinidaeIIConfig, scyliorhinidaeIIIConfig, triakidaeConfig,
+    squalidaeConfig, squaliformesConfig, dalatiidaeConfig, etmopteridaeConfig, carcharhiniformesConfig,
+    galeomorphiiConfig, squalomorphiiConfig, selachiiConfig
+} from "./data/configs";
 
-import { SharkTree } from "./models/shark-tree.ts";
-import { BLACK, BLOOD_RED } from "./constants/colors.js";
+import { SharkTree } from "./models/shark-tree";
+import { BLACK, BLOOD_RED } from "./constants/colors";
 
 export class SharkTreeComponent extends HTMLElement {
 
@@ -29,6 +16,7 @@ export class SharkTreeComponent extends HTMLElement {
 
         this.template = document.createElement("template");
         this.shadow = this.attachShadow({mode: "open"});
+        this.sharkTree = null;
 
         this.sharkScreen = null;
     }
@@ -68,28 +56,41 @@ export class SharkTreeComponent extends HTMLElement {
         const squaliformes = squaliformesConfig;
         const squalomorphii = squalomorphiiConfig;
         const selachii = selachiiConfig;
-        const sharkTree = new SharkTree(lamniformes);
-        console.log(sharkTree)
-        const sharkTreeSvg = sharkTree.draw();
+        
+        this.sharkTree = new SharkTree(selachii);
+        console.log(this.sharkTree)
+        const sharkTreeSvg = this.sharkTree.draw();
         const sharkScreen = this.shadow.querySelector("#shark-screen");
         this.sharkScreen = sharkScreen;
         window.addEventListener("next-shark", this.nextSharkHandler.bind(this));
+        window.addEventListener("redraw", this.redraw.bind(this));
 
 
-        const maxDepth = sharkTree.getMaxDepth();
+        const maxDepth = this.sharkTree.getMaxDepth();
         const taxaSlider = this.shadow.querySelector("#taxa-slider");
-        taxaSlider.setAttribute("max", `${maxDepth}`);
+        // taxaSlider.setAttribute("max", `${maxDepth}`);
+        taxaSlider.addEventListener("input", this.handleTaxaSliderChange);
 
         const container = this.shadow.querySelector("#phylo-container");
         container.appendChild(sharkTreeSvg);
 
+    }
+
+    handleTaxaSliderChange(event) {
+        const sliderValue = event.target.value;
+
+        const slideEvent = new CustomEvent("slideChange", {
+            detail: { value: sliderValue }
+        }); 
+
+        window.dispatchEvent(slideEvent);
     }
     
     html() {
         return `
             <style> ${this.css()} </style>
             <div id="slide-container">
-                <input type="range" min="1" max="10" value="5" class="slider" id="taxa-slider">
+                <input type="number" min="0" max="10" value="1" class="slider" id="taxa-slider">
             </div>
             <div id="app-container">
                 <div id="phylo-container">
@@ -153,46 +154,6 @@ export class SharkTreeComponent extends HTMLElement {
     }
 
     /*----------------------------------------|
-    |                HELPERS                  |
-    |----------------------------------------*/
-
-    generateSharkSVG(config) {
-        const svgNS = "http://www.w3.org/2000/svg";
-        const svg = document.createElementNS(svgNS, "svg");
-        svg.setAttribute("width", "200");
-        svg.setAttribute("height", "200");
-        
-        // Shark torpedo shape (body)
-        const body = document.createElementNS(svgNS, "path");
-        const x = 50;
-        const y = 80;
-        const topHeight = 70;
-        const bottomHeight = 50;
-        const width = 150;
-
-        body.setAttribute("d", `M${x},${y} Q${x + width / 2},${y+topHeight} ${x+width},${y} Q${x + width / 2},${y-bottomHeight} ${x},${y} Z`);
-        body.setAttribute("fill", config.color || "gray");
-        svg.appendChild(body);
-
-
-        // Fins
-        if (config.fins) {
-            const fin1 = document.createElementNS(svgNS, "polygon");
-            const finWidth = 10;
-            fin1.setAttribute("points", `${x+width/4},${y-topHeight/4} ${x+finWidth/2},${y-topHeight/4-finWidth} ${x+finWidth},${y-topHeight/4}`);
-            fin1.setAttribute("fill", config.finColor || BLACK);
-            svg.appendChild(fin1);
-        
-            // const fin2 = document.createElementNS(svgNS, "polygon");
-            // fin2.setAttribute("points", "120,50 110,40 100,50");
-            // fin2.setAttribute("fill", config.finColor || BLACK);
-            // svg.appendChild(fin2);
-        }
-
-        return svg;
-    }
-
-    /*----------------------------------------|
     |                HANDLERS                 |
     |----------------------------------------*/
 
@@ -207,6 +168,16 @@ export class SharkTreeComponent extends HTMLElement {
             }
         }
         currentShark?.getNode()?.setAttribute("fill", BLOOD_RED);
+    }
+
+    redraw(_event) {
+        let sharkTreeSvg = this.shadow.querySelector("#shark-tree");
+        sharkTreeSvg?.remove();
+
+        sharkTreeSvg = this.sharkTree.draw();
+        const container = this.shadow.querySelector("#phylo-container");
+        container.appendChild(sharkTreeSvg);
+
     }
 }
 
