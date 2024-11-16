@@ -11,6 +11,7 @@ import { NextSharkEvent } from "../events/next-shark.event";
 export class SharkTree {
     config: SharkTreeNodeConfig
     root: SharkTreeNode
+    focusNode: SharkTreeNode
 
     centerX: number
     centerY: number
@@ -26,6 +27,7 @@ export class SharkTree {
     constructor(sharkTreeConfig: SharkTreeNodeConfig) {
         this.config = sharkTreeConfig;
         this.root = new SharkTreeNode(this.config, null);
+        this.focusNode = this.root;
 
         this.centerX = SVG_SIZE / 2;
         this.centerY = SVG_SIZE / 2;
@@ -37,6 +39,7 @@ export class SharkTree {
         this.currentNode = this.root;
         this.currentSharkIndex = 0;
 
+        this.addTaxaSliderListener();
     }
 
     /*----------------------------------------|
@@ -130,7 +133,6 @@ export class SharkTree {
         const numSpecies = sharkSpecies.length;
         const spacing = (2 * Math.PI) / numSpecies;
 
-        
         // Create a dot for the center
         const dot = Svg.drawCircle(centerX, centerY, 5, BLACK);
         svg.appendChild(dot);
@@ -186,11 +188,15 @@ export class SharkTree {
         this.extend(svg, sharkTreeStack);
 
         this.addWheelEventListener(svg, sharkSpecies);
-        this.addTaxaSliderListener(svg);
+        this.addTaxaSliderListener();
 
         svg.setAttribute("id", "shark-tree");
         return svg;
     }
+
+    /*----------------------------------------|
+    |                PIPELINE                 |
+    |----------------------------------------*/
 
     runPipeline(svg: SVGElement, sharkTreeStack: (SharkSpecies|SharkTreeNode)[], iteration: number): (SharkSpecies|SharkTreeNode)[] {
         // Extend
@@ -244,6 +250,7 @@ export class SharkTree {
         return indicesRemoved;
     }
 
+
     getNextStackLayer(sharkTreeStack: (SharkSpecies|SharkTreeNode)[], indicesRemoved: number[]): (SharkSpecies|SharkTreeNode)[] {
         const newSharkTreeStack: (SharkSpecies|SharkTreeNode)[] = [];
         const parentHashes = new Set();
@@ -282,21 +289,26 @@ export class SharkTree {
     |                HANDLERS                 |
     |----------------------------------------*/
 
-    addTaxaSliderListener(svg: SVGElement): void {
-        window.addEventListener("slideChange", (event: CustomEvent) => {
-            this.zoomLevel = parseInt(event.detail.value);
-            console.log(parseInt(event.detail.value))
+    addTaxaSliderListener(): void {
+        window.addEventListener("zoomChange", (event: CustomEvent) => {
+            this.zoomLevel = Math.min(Math.max(event.detail.value, 0), this.getMaxDepth());
+    
             const sharkSpecies = this.getSharkSpeciesList();
-            
             const currentShark = sharkSpecies[this.currentSharkIndex];
+            
+            // Calculate new root based on the zoom level
             const depth = this.getNodeDepth(currentShark);
             const newRoot = this.getKthGrandparent(currentShark, depth - this.zoomLevel);
             if (!newRoot) return;
+    
             this.wipePaths();
             this.root = newRoot;
-            
-            const maxDepth = this.getMaxDepth();
-            this.levelHeight = this.radius / maxDepth;
+    
+            // Update max depth and level height
+            this.maxDepth = this.getMaxDepth();
+            this.levelHeight = this.radius / this.maxDepth;
+    
+            // Trigger a redraw to update the tree
             this.triggerRedraw();
         });
     }

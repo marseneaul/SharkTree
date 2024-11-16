@@ -6,6 +6,31 @@ import {
     galeomorphiiConfig, squalomorphiiConfig, selachiiConfig
 } from "./data/configs";
 
+const sharkConfigs = {
+    lamniformes: lamniformesConfig,
+    heterodontiformes: heterodontiformesConfig,
+    lamnidae: lamnidaeConfig,
+    carcharhinidae: carcharhinidaeConfig,
+    squatiniformes: squatiniformesConfig,
+    hexanchiformes: hexanchiformesConfig,
+    pristiophoriformes: pristiophoriformesConfig,
+    orectolobiformes: orectolobiformesConfig,
+    scyliorhinidaeI: scyliorhinidaeIConfig,
+    scyliorhinidaeII: scyliorhinidaeIIConfig,
+    scyliorhinidaeIII: scyliorhinidaeIIIConfig,
+    carcharhiniformes: carcharhiniformesConfig,
+    dalatiidae: dalatiidaeConfig,
+    etmopteridae: etmopteridaeConfig,
+    squalidae: squalidaeConfig,
+    triakidae: triakidaeConfig,
+    galeomorphii: galeomorphiiConfig,
+    squaliformes: squaliformesConfig,
+    squalomorphii: squalomorphiiConfig,
+    selachii: selachiiConfig
+};
+
+
+
 import { SharkTree } from "./models/shark-tree";
 import { BLACK, BLOOD_RED } from "./constants/colors";
 
@@ -27,7 +52,7 @@ export class SharkTreeComponent extends HTMLElement {
 
     connectedCallback() {
         this.render();
-        this.renderPhylogeneticTree()
+        this.initializeSharkTree();
     }
 
     render() {
@@ -35,56 +60,20 @@ export class SharkTreeComponent extends HTMLElement {
         this.shadow.appendChild(this.template.content.cloneNode(true));
     }
 
-    renderPhylogeneticTree() {
-        const lamniformes = lamniformesConfig;
-        const lamnidae = lamnidaeConfig;
-        const heterodontiformes = heterodontiformesConfig;
-        const carcharhinidae = carcharhinidaeConfig;
-        const squatiniformes = squatiniformesConfig;
-        const hexanchiformes = hexanchiformesConfig;
-        const pristiophoriformes = pristiophoriformesConfig;
-        const orectolobiformes = orectolobiformesConfig;
-        const scyliorhinidaeI = scyliorhinidaeIConfig;
-        const scyliorhinidaeII = scyliorhinidaeIIConfig;
-        const scyliorhinidaeIII = scyliorhinidaeIIIConfig; 
-        const carcharhiniformes = carcharhiniformesConfig;
-        const dalatiidae = dalatiidaeConfig;
-        const etmopteridae = etmopteridaeConfig;
-        const squalidae = squalidaeConfig;
-        const triakidae = triakidaeConfig;
-        const galeomorphii = galeomorphiiConfig;
-        const squaliformes = squaliformesConfig;
-        const squalomorphii = squalomorphiiConfig;
-        const selachii = selachiiConfig;
-        
-        this.sharkTree = new SharkTree(selachii);
+    initializeSharkTree() {
+        this.sharkTree = new SharkTree(sharkConfigs.selachii);
         console.log(this.sharkTree)
         const sharkTreeSvg = this.sharkTree.draw();
-        const sharkScreen = this.shadow.querySelector("#shark-screen");
-        this.sharkScreen = sharkScreen;
-        window.addEventListener("next-shark", this.nextSharkHandler.bind(this));
-        window.addEventListener("redraw", this.redraw.bind(this));
-
-
-        const maxDepth = this.sharkTree.getMaxDepth();
-        const taxaSlider = this.shadow.querySelector("#taxa-slider");
-        // taxaSlider.setAttribute("max", `${maxDepth}`);
-        taxaSlider.addEventListener("input", this.handleTaxaSliderChange);
+        this.sharkScreen = this.shadow.querySelector("#shark-screen");
+        this.setupEventListeners();
 
         const container = this.shadow.querySelector("#phylo-container");
         container.appendChild(sharkTreeSvg);
-
     }
 
-    handleTaxaSliderChange(event) {
-        const sliderValue = event.target.value;
-
-        const slideEvent = new CustomEvent("slideChange", {
-            detail: { value: sliderValue }
-        }); 
-
-        window.dispatchEvent(slideEvent);
-    }
+    /*----------------------------------------|
+    |               HTML & CSS                |
+    |----------------------------------------*/
     
     html() {
         return `
@@ -156,6 +145,25 @@ export class SharkTreeComponent extends HTMLElement {
     /*----------------------------------------|
     |                HANDLERS                 |
     |----------------------------------------*/
+
+    setupEventListeners() {
+        window.addEventListener("next-shark", this.nextSharkHandler.bind(this));
+        window.addEventListener("redraw", this.redraw.bind(this));
+        // const maxDepth = this.sharkTree.getMaxDepth();
+        // taxaSlider.setAttribute("max", `${maxDepth}`);
+        const taxaSlider = this.shadow.querySelector("#taxa-slider");
+        taxaSlider.addEventListener("input", this.handleTaxaSliderChange);
+    }
+
+    handleTaxaSliderChange(event) {
+        const sliderValue = event.target.value;
+
+        const slideEvent = new CustomEvent("zoomChange", {
+            detail: { value: sliderValue }
+        }); 
+
+        window.dispatchEvent(slideEvent);
+    }
 
     nextSharkHandler(event) {
         const currentShark = event.detail.sharkSpecies;
