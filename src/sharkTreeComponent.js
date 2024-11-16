@@ -32,7 +32,7 @@ const sharkConfigs = {
 
 
 import { SharkTree } from "./models/shark-tree";
-import { BLACK, BLOOD_RED } from "./constants/colors";
+import { BLACK } from "./constants/colors";
 
 export class SharkTreeComponent extends HTMLElement {
 
@@ -57,6 +57,8 @@ export class SharkTreeComponent extends HTMLElement {
     connectedCallback() {
         this.render();
         this.initializeSharkTree();
+        this.setupDropdown();
+        this.setupEventListeners();
     }
 
     render() {
@@ -64,14 +66,14 @@ export class SharkTreeComponent extends HTMLElement {
         this.shadow.appendChild(this.template.content.cloneNode(true));
     }
 
-    initializeSharkTree() {
-        this.sharkTree = new SharkTree(sharkConfigs.selachii);
+    initializeSharkTree(configKey = "selachii") {
+        this.sharkTree = new SharkTree(sharkConfigs[configKey]);
         console.log(this.sharkTree)
         const sharkTreeSvg = this.sharkTree.draw();
         this.sharkScreen = this.shadow.querySelector("#shark-screen");
-        this.setupEventListeners();
 
         const container = this.shadow.querySelector("#phylo-container");
+        container.innerHTML = "";
         container.appendChild(sharkTreeSvg);
     }
 
@@ -83,6 +85,17 @@ export class SharkTreeComponent extends HTMLElement {
         return `
             <style> ${this.css()} </style>
             <div id="app-container">
+                <div id="dropdown-container">
+                    <label for="shark-config-dropdown">Select Shark Configuration:</label>
+                    <select id="shark-config-dropdown">
+                        ${Object.keys(sharkConfigs)
+                            .map(
+                                (configKey) =>
+                                    `<option value="${configKey}">${configKey}</option>`
+                            )
+                            .join("")}
+                    </select>
+                </div>
                 <div id="phylo-container">
                 </div>
                 <div id="shark-screen-container">
@@ -143,6 +156,14 @@ export class SharkTreeComponent extends HTMLElement {
     |                HANDLERS                 |
     |----------------------------------------*/
 
+    setupDropdown() {
+        const dropdown = this.shadow.querySelector("#shark-config-dropdown");
+        dropdown.addEventListener("change", (event) => {
+            const selectedConfig = event.target.value;
+            this.initializeSharkTree(selectedConfig);
+        });
+    }
+
     setupEventListeners() {
         window.addEventListener("next-shark", this.nextSharkHandler.bind(this));
         window.addEventListener("redraw", this.redraw.bind(this));
@@ -165,7 +186,7 @@ export class SharkTreeComponent extends HTMLElement {
                 this.sharkScreen.appendChild(sharkImg);
             }
         }
-        currentShark?.getNode()?.setAttribute("fill", BLOOD_RED);
+        currentShark?.getNode()?.setAttribute("fill", "red");
     }
 
     redraw(_event) {
