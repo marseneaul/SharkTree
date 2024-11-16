@@ -38,8 +38,6 @@ export class SharkTree {
 
         this.currentNode = this.root;
         this.currentSharkIndex = 0;
-
-        this.addTaxaSliderListener();
     }
 
     /*----------------------------------------|
@@ -188,7 +186,6 @@ export class SharkTree {
         this.extend(svg, sharkTreeStack);
 
         this.addWheelEventListener(svg, sharkSpecies);
-        this.addTaxaSliderListener();
 
         svg.setAttribute("id", "shark-tree");
         return svg;
@@ -289,72 +286,6 @@ export class SharkTree {
     |                HANDLERS                 |
     |----------------------------------------*/
 
-    addTaxaSliderListener(): void {
-        window.addEventListener("zoomChange", (event: CustomEvent) => {
-            this.zoomLevel = Math.min(Math.max(event.detail.value, 0), this.getMaxDepth());
-    
-            const sharkSpecies = this.getSharkSpeciesList();
-            const currentShark = sharkSpecies[this.currentSharkIndex];
-            
-            // Calculate new root based on the zoom level
-            const depth = this.getNodeDepth(currentShark);
-            const newRoot = this.getKthGrandparent(currentShark, depth - this.zoomLevel);
-            if (!newRoot) return;
-    
-            this.wipePaths();
-            this.root = newRoot;
-    
-            // Update max depth and level height
-            this.maxDepth = this.getMaxDepth();
-            this.levelHeight = this.radius / this.maxDepth;
-    
-            // Trigger a redraw to update the tree
-            this.triggerRedraw();
-        });
-    }
-
-    getKthGrandparent(sharkTreeNode: SharkSpecies|SharkTreeNode, k: number): SharkTreeNode {
-        let i = 0;
-        let parentNode = sharkTreeNode?.parent;
-        while (parentNode && i < k) {
-            parentNode = parentNode?.parent;
-            i++;
-        }
-        return parentNode;
-    }
-
-    getNodeDepth(sharkTreeNode: SharkSpecies|SharkTreeNode): number {
-        let depth = 0;
-        let parentNode = sharkTreeNode?.parent;
-        while (parentNode?.parent) {
-            depth++;
-            parentNode = parentNode?.parent;
-        }
-        return depth;
-    }
-
-    triggerRedraw(): void {
-        const event = new CustomEvent("redraw", {
-          bubbles: true,
-          composed: true,
-        //   detail: { message: "" } 
-        });
-        window.dispatchEvent(event);
-    }
-
-    wipePaths(): void {
-        const sharkSpecies = this.getSharkSpeciesList();
-        for (const shark of sharkSpecies) {
-            shark.parentPath = [];
-            let parentNode = shark?.parent;
-            while (parentNode) {
-                if (parentNode.parentPath) parentNode.parentPath = [];
-                if (parentNode.childPaths) parentNode.childPaths = [];
-                parentNode = parentNode.parent;
-            }
-        }
-    }
-
     addWheelEventListener(svg: SVGElement, sharkSpecies: SharkSpecies[]): void {
         let rotation = 0;
         svg.addEventListener("wheel", (event: WheelEvent) => {
@@ -367,7 +298,7 @@ export class SharkTree {
             let sharkIndex = Math.floor(-rotation / spacing + 1) % numSpecies;
             if (sharkIndex < 0) sharkIndex = numSpecies + sharkIndex;
             if (sharkIndex !== this.currentSharkIndex) {
-                const previousShark = sharkSpecies[this.currentSharkIndex]; 
+                const previousShark = sharkSpecies[this.currentSharkIndex];
                 previousShark?.getNode()?.setAttribute("fill", "black");
                 this.currentSharkIndex = sharkIndex;
                 const currentShark = sharkSpecies[sharkIndex];

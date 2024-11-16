@@ -50,6 +50,10 @@ export class SharkTreeComponent extends HTMLElement {
     |                LIFECYCLE                |
     |----------------------------------------*/
 
+    disconnectedCallback() {
+        this.removeEventListeners();
+    }
+
     connectedCallback() {
         this.render();
         this.initializeSharkTree();
@@ -78,9 +82,6 @@ export class SharkTreeComponent extends HTMLElement {
     html() {
         return `
             <style> ${this.css()} </style>
-            <div id="slide-container">
-                <input type="number" min="0" max="10" value="1" class="slider" id="taxa-slider">
-            </div>
             <div id="app-container">
                 <div id="phylo-container">
                 </div>
@@ -96,10 +97,6 @@ export class SharkTreeComponent extends HTMLElement {
 
         return `
 
-            #slide-container {
-                width: 100%;
-                height: 50px;
-            }
 
             #app-container {
                 position: relative;
@@ -149,25 +146,18 @@ export class SharkTreeComponent extends HTMLElement {
     setupEventListeners() {
         window.addEventListener("next-shark", this.nextSharkHandler.bind(this));
         window.addEventListener("redraw", this.redraw.bind(this));
-        // const maxDepth = this.sharkTree.getMaxDepth();
-        // taxaSlider.setAttribute("max", `${maxDepth}`);
-        const taxaSlider = this.shadow.querySelector("#taxa-slider");
-        taxaSlider.addEventListener("input", this.handleTaxaSliderChange);
     }
 
-    handleTaxaSliderChange(event) {
-        const sliderValue = event.target.value;
-
-        const slideEvent = new CustomEvent("zoomChange", {
-            detail: { value: sliderValue }
-        }); 
-
-        window.dispatchEvent(slideEvent);
+    removeEventListeners() {
+        window.removeEventListener("next-shark", this.nextSharkHandler.bind(this));
+        window.removeEventListener("redraw", this.redraw.bind(this));
     }
 
     nextSharkHandler(event) {
         const currentShark = event.detail.sharkSpecies;
+
         if (this.sharkScreen) {
+            this.sharkScreen.innerHTML = '';
             this.sharkScreen.innerHTML = currentShark.getFormattedString();
             if (currentShark.imageUrl) {
                 const sharkImg = document.createElement("img");
