@@ -6,7 +6,6 @@ import { SharkTreeNode } from "./shark-tree-node";
 import { Svg } from "../drawing/svg";
 import { Utils } from "../utils/utils";
 import { BLACK } from "../constants/colors";
-import { NextSharkEvent } from "../events/next-shark.event";
 
 export class SharkTree {
     config: SharkTreeNodeConfig
@@ -156,6 +155,7 @@ export class SharkTree {
     
         this.addInteractionListeners(svg, g, sharkSpecies);
         svg.setAttribute("id", "shark-tree");
+        this.updateSelection(sharkSpecies[0]);
         return svg;
     }
 
@@ -190,25 +190,8 @@ export class SharkTree {
         const circle = Svg.drawCircle(x, y, 5, "#000000"); // Black dots
         shark.setNode(circle);
         circle.dataset.shark = JSON.stringify(shark.config);
-        circle.addEventListener("click", (_event: MouseEvent) => {
-            this.highlightPathToShark(shark.binomialName, 3);
-            this.zoomToNode(svg, x, y);
-        });
     
         g.appendChild(circle);
-    }
-
-    highlightPathToShark(binomialName: string, strokeWidth = 3, color = BLACK): void {
-        const sharkSpecies = this.getSharkSpeciesList();
-        const shark = sharkSpecies.find((s) => s.binomialName === binomialName);
-        if (!shark) return;
-        shark.highlightNode(color); // Use custom color for node
-        shark.highlightParentPath(strokeWidth, color);
-        let sharkParent = shark.getParent();
-        while (sharkParent) {
-            sharkParent.highlightParentPath(strokeWidth, color);
-            sharkParent = sharkParent.getParent();
-        }
     }
 
     zoomToNode(svg: SVGElement, x: number, y: number): void {
@@ -238,6 +221,29 @@ export class SharkTree {
             }
         `;
         svg.appendChild(style);
+
+
+        sharkSpecies.forEach(shark => {
+            const node = shark.getNode();
+            node.addEventListener("click", () => {
+                this.updateSelection(shark);
+                window.dispatchEvent(new CustomEvent("select-shark", { 
+                    detail: { sharkSpecies: shark } 
+                }));
+            });
+            node.addEventListener("mouseover", (e) => {
+                const tooltip = document.createElement("div");
+                tooltip.innerHTML = `${shark.commonName || shark.binomialName}`;
+                tooltip.style.position = "absolute";
+                tooltip.style.background = "#FFF";
+                tooltip.style.border = "1px solid #000";
+                tooltip.style.padding = "5px";
+                tooltip.style.left = `${e.pageX + 10}px`;
+                tooltip.style.top = `${e.pageY + 10}px`;
+                document.body.appendChild(tooltip);
+                node.addEventListener("mouseout", () => tooltip.remove(), { once: true });
+            });
+        });
     
         svg.addEventListener("wheel", (event: WheelEvent) => {
             event.preventDefault();
@@ -269,7 +275,7 @@ export class SharkTree {
                     this.currentSharkIndex = sharkIndex;
                     const currentShark = sharkSpecies[sharkIndex];
                     const node = currentShark.getNode();
-                    node.setAttribute("fill", "#1E90FF"); // Deep teal
+                    node.setAttribute("fill", "red");
                     node.classList.add("pulse");
                     this.highlightPathToShark(currentShark.binomialName, 2, "rgba(184, 134, 11, 0.5)"); // Muted gold
     
@@ -277,8 +283,10 @@ export class SharkTree {
                     g.removeChild(node);
                     g.appendChild(node);
     
-                    const nextSharkEvent = new NextSharkEvent(currentShark);
-                    window.dispatchEvent(new CustomEvent(nextSharkEvent.type, { detail: nextSharkEvent }));
+                    this.updateSelection(currentShark);
+                    window.dispatchEvent(new CustomEvent("select-shark", { 
+                        detail: { sharkSpecies: currentShark } 
+                    }));
                 }
             }
         });
@@ -338,41 +346,6 @@ export class SharkTree {
             initialDistance = null;
             initialCenter = null;
         });
-    }
-
-    clearHighlightPath(shark: SharkSpecies): void {
-        const node = shark.getNode();
-        if (node) node.setAttribute("fill", "#000000"); // Reset to black
-        shark.getParentPath().forEach(segment => {
-            segment.setAttribute("stroke", "#2F4F4F");
-            segment.setAttribute("stroke-width", "1");
-        });
-        let sharkParent = shark.getParent();
-        while (sharkParent) {
-            sharkParent.getParentPath().forEach(segment => {
-                segment.setAttribute("stroke", "#2F4F4F");
-                segment.setAttribute("stroke-width", "1");
-            });
-            sharkParent = sharkParent.getParent();
-        }
-    }
-
-    getTouchCenter(touches: TouchList, svg: SVGElement): { x: number, y: number } {
-        const rect = svg.getBoundingClientRect();
-        return {
-            x: (touches[0].clientX + touches[1].clientX) / 2 - rect.left,
-            y: (touches[0].clientY + touches[1].clientY) / 2 - rect.top
-        };
-    }
-    
-    getTouchDistance(touches: TouchList): number {
-        const dx = touches[0].clientX - touches[1].clientX;
-        const dy = touches[0].clientY - touches[1].clientY;
-        return Math.sqrt(dx * dx + dy * dy);
-    }
-    
-    updateViewBox(svg: SVGElement, viewBox: { x: number, y: number, width: number, height: number }): void {
-        svg.setAttribute("viewBox", `${viewBox.x} ${viewBox.y} ${viewBox.width} ${viewBox.height}`);
     }
 
     /*----------------------------------------|
@@ -472,31 +445,69 @@ export class SharkTree {
         arcs.forEach((arc) => svg.appendChild(arc));
     }
 
-    /*----------------------------------------|
-    |                HANDLERS                 |
-    |----------------------------------------*/
-
-    addWheelEventListener(svg: SVGElement, sharkSpecies: SharkSpecies[]): void {
-        let rotation = 0;
-        svg.addEventListener("wheel", (event: WheelEvent) => {
-            event.preventDefault();
-            const delta = -event.deltaY;
-            rotation += (delta / 10) % 360;
-            svg.setAttribute("transform", `rotate(${rotation})`);
-            const numSpecies = sharkSpecies.length;
-            const spacing = 360 / numSpecies;
-            let sharkIndex = Math.floor(-rotation / spacing + 1) % numSpecies;
-            if (sharkIndex < 0) sharkIndex = numSpecies + sharkIndex;
-            if (sharkIndex !== this.currentSharkIndex) {
-                const previousShark = sharkSpecies[this.currentSharkIndex];
-                previousShark?.getNode()?.setAttribute("fill", "black");
-                this.currentSharkIndex = sharkIndex;
-                const currentShark = sharkSpecies[sharkIndex];
-                const nextSharkEvent = new NextSharkEvent(currentShark);
-                const event = new CustomEvent(nextSharkEvent.type, { detail: nextSharkEvent });
-                window.dispatchEvent(event);
+    updateSelection(selectedShark) {
+        const sharkSpecies = this.getSharkSpeciesList();
+        sharkSpecies.forEach(shark => {
+            const node = shark.getNode();
+            if (shark === selectedShark) {
+                node.setAttribute("fill", "red");
+                node.classList.add("pulse");
+            } else {
+                node.setAttribute("fill", "#000000"); // Black
+                node.classList.remove("pulse");
             }
         });
+    }
+
+    getTouchCenter(touches: TouchList, svg: SVGElement): { x: number, y: number } {
+        const rect = svg.getBoundingClientRect();
+        return {
+            x: (touches[0].clientX + touches[1].clientX) / 2 - rect.left,
+            y: (touches[0].clientY + touches[1].clientY) / 2 - rect.top
+        };
+    }
     
+    getTouchDistance(touches: TouchList): number {
+        const dx = touches[0].clientX - touches[1].clientX;
+        const dy = touches[0].clientY - touches[1].clientY;
+        return Math.sqrt(dx * dx + dy * dy);
+    }
+    
+    updateViewBox(svg: SVGElement, viewBox: { x: number, y: number, width: number, height: number }): void {
+        svg.setAttribute("viewBox", `${viewBox.x} ${viewBox.y} ${viewBox.width} ${viewBox.height}`);
+    }
+
+    /*----------------------------------------|
+    |           PATH HIGHLIGHTING             |
+    |----------------------------------------*/
+
+    highlightPathToShark(binomialName: string, strokeWidth = 3, color = BLACK): void {
+        const sharkSpecies = this.getSharkSpeciesList();
+        const shark = sharkSpecies.find((s) => s.binomialName === binomialName);
+        if (!shark) return;
+        shark.highlightNode(color); // Use custom color for node
+        shark.highlightParentPath(strokeWidth, color);
+        let sharkParent = shark.getParent();
+        while (sharkParent) {
+            sharkParent.highlightParentPath(strokeWidth, color);
+            sharkParent = sharkParent.getParent();
+        }
+    }
+
+    clearHighlightPath(shark: SharkSpecies): void {
+        const node = shark.getNode();
+        if (node) node.setAttribute("fill", "#000000"); // Reset to black
+        shark.getParentPath().forEach(segment => {
+            segment.setAttribute("stroke", "#2F4F4F");
+            segment.setAttribute("stroke-width", "1");
+        });
+        let sharkParent = shark.getParent();
+        while (sharkParent) {
+            sharkParent.getParentPath().forEach(segment => {
+                segment.setAttribute("stroke", "#2F4F4F");
+                segment.setAttribute("stroke-width", "1");
+            });
+            sharkParent = sharkParent.getParent();
+        }
     }
 }

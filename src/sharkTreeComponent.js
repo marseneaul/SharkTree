@@ -199,28 +199,25 @@ export class SharkTreeComponent extends HTMLElement {
     }
 
     setupEventListeners() {
-        window.addEventListener("next-shark", this.nextSharkHandler.bind(this));
-        window.addEventListener("redraw", this.redraw.bind(this));
+        window.addEventListener("select-shark", this.selectSharkHandler.bind(this));
     }
 
     removeEventListeners() {
-        window.removeEventListener("next-shark", this.nextSharkHandler.bind(this));
-        window.removeEventListener("redraw", this.redraw.bind(this));
+        window.removeEventListener("select-shark", this.selectSharkHandler.bind(this));
     }
 
-    nextSharkHandler(event) {
-        const currentShark = event.detail.sharkSpecies;
-
+    selectSharkHandler(event) {
+        const selectedShark = event.detail.sharkSpecies;
         if (this.sharkScreen) {
-            this.sharkScreen.innerHTML = '';
-            this.sharkScreen.innerHTML = currentShark.getFormattedString();
-            if (currentShark.imageUrl) {
+            this.sharkScreen.innerHTML = selectedShark.getFormattedString();
+            if (selectedShark.imageUrl) {
                 const sharkImg = document.createElement("img");
-                sharkImg.src = currentShark.imageUrl;
+                sharkImg.src = selectedShark.imageUrl;
                 this.sharkScreen.appendChild(sharkImg);
             }
         }
-        currentShark?.getNode()?.setAttribute("fill", "red");
+        // Trigger visual update in SharkTree
+        this.sharkTree.updateSelection(selectedShark);
     }
 
     redraw(_event) {
