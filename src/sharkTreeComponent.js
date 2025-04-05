@@ -165,7 +165,6 @@ export class SharkTreeComponent extends HTMLElement {
                 z-index: 100;
             }
             #dropdown-container label {
-                font-size: 14px;
                 color: #2F4F4F;
                 margin-right: 10px;
             }
