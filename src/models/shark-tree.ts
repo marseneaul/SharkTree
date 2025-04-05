@@ -113,10 +113,9 @@ export class SharkTree {
         const sharkSpecies = this.getSharkSpeciesList();
         const shark = sharkSpecies.find((s) => s.binomialName === binomialName);
         if (!shark) return;
-        shark.highlightNode();
+        shark.highlightNode(color); // Use custom color for node
         shark.highlightParentPath(strokeWidth, color);
         let sharkParent = shark.getParent();
-        
         while (sharkParent) {
             sharkParent.highlightParentPath(strokeWidth, color);
             sharkParent = sharkParent.getParent();
@@ -191,12 +190,26 @@ export class SharkTree {
         svg.setAttribute("id", "shark-tree");
         return svg;
     }
-    
+
     addInteractionListeners(svg: SVGElement, g: SVGGElement, sharkSpecies: SharkSpecies[]): void {
         let viewBox = { x: 0, y: 0, width: SVG_SIZE, height: SVG_SIZE };
         let isDragging = false;
         let startX: number, startY: number;
         let rotation = 0;
+    
+        // Add pulse animation CSS to the SVG
+        const style = document.createElementNS(SVG_NAMESPACE, "style");
+        style.textContent = `
+            .pulse {
+                animation: pulse 1s infinite ease-in-out;
+            }
+            @keyframes pulse {
+                0% { r: 5; opacity: 1; }
+                50% { r: 10; opacity: 0.7; }
+                100% { r: 5; opacity: 1; }
+            }
+        `;
+        svg.appendChild(style);
     
         // Wheel: Spin or Zoom
         svg.addEventListener("wheel", (event: WheelEvent) => {
@@ -205,7 +218,6 @@ export class SharkTree {
             const mouseY = event.clientY - svg.getBoundingClientRect().top;
     
             if (event.ctrlKey) {
-                // Zoom with Ctrl + Wheel
                 const scale = event.deltaY > 0 ? 1.1 : 0.9;
                 viewBox.width *= scale;
                 viewBox.height *= scale;
@@ -213,10 +225,9 @@ export class SharkTree {
                 viewBox.y += (mouseY * (1 - scale)) / (SVG_SIZE / viewBox.height);
                 this.updateViewBox(svg, viewBox);
             } else {
-                // Spin without modifier
                 const delta = -event.deltaY;
                 rotation = (rotation + delta / 10) % 360;
-                g.setAttribute("transform", `rotate(${rotation}, ${this.centerX}, ${this.centerY})`); // Rotate group
+                g.setAttribute("transform", `rotate(${rotation}, ${this.centerX}, ${this.centerY})`);
     
                 const numSpecies = sharkSpecies.length;
                 const spacing = 360 / numSpecies;
@@ -225,14 +236,22 @@ export class SharkTree {
                 if (sharkIndex !== this.currentSharkIndex) {
                     const previousShark = sharkSpecies[this.currentSharkIndex];
                     previousShark?.getNode()?.setAttribute("fill", "black");
+                    previousShark?.getNode()?.classList.remove("pulse");
+                    this.clearHighlightPath(previousShark); // Clear previous path
+    
                     this.currentSharkIndex = sharkIndex;
                     const currentShark = sharkSpecies[sharkIndex];
+                    const node = currentShark.getNode();
+                    node.setAttribute("fill", "red");
+                    node.classList.add("pulse"); // Add pulse effect
+                    this.highlightPathToShark(currentShark.binomialName, 2, "rgba(255, 0, 0, 0.5)"); // Subtle red path
+    
                     const nextSharkEvent = new NextSharkEvent(currentShark);
                     window.dispatchEvent(new CustomEvent(nextSharkEvent.type, { detail: nextSharkEvent }));
                 }
             }
         });
-    
+
         // Pan with drag
         svg.addEventListener("mousedown", (event: MouseEvent) => {
             if (!event.ctrlKey) {
@@ -288,6 +307,23 @@ export class SharkTree {
             initialDistance = null;
             initialCenter = null;
         });
+    }
+
+    clearHighlightPath(shark: SharkSpecies): void {
+        const node = shark.getNode();
+        if (node) node.setAttribute("fill", "black"); // Reset node color
+        shark.getParentPath().forEach(segment => {
+            segment.setAttribute("stroke", "black");
+            segment.setAttribute("stroke-width", "1");
+        });
+        let sharkParent = shark.getParent();
+        while (sharkParent) {
+            sharkParent.getParentPath().forEach(segment => {
+                segment.setAttribute("stroke", "black");
+                segment.setAttribute("stroke-width", "1");
+            });
+            sharkParent = sharkParent.getParent();
+        }
     }
 
     getTouchCenter(touches: TouchList, svg: SVGElement): { x: number, y: number } {
