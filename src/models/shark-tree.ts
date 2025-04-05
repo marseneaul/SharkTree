@@ -277,7 +277,7 @@ export class SharkTree {
                     const node = currentShark.getNode();
                     node.setAttribute("fill", "red");
                     node.classList.add("pulse");
-                    this.highlightPathToShark(currentShark.binomialName, 2, "rgba(184, 134, 11, 0.5)"); // Muted gold
+                    this.highlightPathToShark(currentShark.binomialName, 2, BLACK);
     
                     // Ensure layering
                     g.removeChild(node);
