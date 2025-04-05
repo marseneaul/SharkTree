@@ -1,4 +1,5 @@
 import lamnaDitropisImg from "./../../../../images/lamna-ditropis.jpeg";
+import { BEHAVIOR, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION, UNIQUE_FEATURE } from "../../../../constants/enums";
 
 export const lamnaDitropis = {
     commonName: "Salmon Shark",
@@ -16,5 +17,11 @@ export const lamnaDitropis = {
     order: "Lamniformes",
     family: "Lamnidae",
     genus: "Lamna",
-    species: "ditropis"
+    species: "ditropis",
+
+    tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+        TEMPERATURE_REGULATION.ENDOTHERMIC,
+    ]
 };
