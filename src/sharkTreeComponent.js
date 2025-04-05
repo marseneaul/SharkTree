@@ -32,7 +32,7 @@ const sharkConfigs = {
 
 
 import { SharkTree } from "./models/shark-tree";
-import { BLACK } from "./constants/colors";
+import { StringUtils } from "./utils/string-utils";
 
 export class SharkTreeComponent extends HTMLElement {
 
@@ -80,7 +80,6 @@ export class SharkTreeComponent extends HTMLElement {
     /*----------------------------------------|
     |               HTML & CSS                |
     |----------------------------------------*/
-    
     html() {
         return `
             <style> ${this.css()} </style>
@@ -91,7 +90,7 @@ export class SharkTreeComponent extends HTMLElement {
                         ${Object.keys(sharkConfigs)
                             .map(
                                 (configKey) =>
-                                    `<option value="${configKey}">${configKey}</option>`
+                                    `<option value="${configKey}">${StringUtils.capitalizeFirstLetter(configKey)}</option>`
                             )
                             .join("")}
                     </select>
@@ -107,47 +106,82 @@ export class SharkTreeComponent extends HTMLElement {
     }
 
     css() {
-
         return `
-
-
             #app-container {
                 position: relative;
                 width: 100%;
                 height: 100%;
                 display: flex;
                 flex-direction: row;
-
+                background: #FFFFFF;
+                font-family: 'Roboto', sans-serif; /* Clean, modern font */
             }
             #phylo-container {
                 position: relative;
                 width: 60%;
                 height: 100%;
-                overflow: clip;
                 display: flex;
                 justify-content: center;
+                align-items: center;
+                background: #FFFFFF;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                margin: 10px;
             }
-
             #shark-screen-container {
                 position: relative;
                 width: 40%;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
+                padding: 20px;
             }
-
             #shark-screen {
                 position: relative;
-                width: 70%;
-                height: 70%;
+                width: 100%;
+                max-height: 70%;
                 padding: 20px;
-                border: 2px black solid;
-
-                overflow-y: scroll;
+                background: #FFFFFF;
+                border: 1px solid #E0E0E0;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+                overflow-y: auto;
+                font-size: 14px;
+                line-height: 1.6;
+                color: #2F4F4F; /* Dark slate gray */
             }
-
+            #shark-screen h3 {
+                margin: 0 0 10px 0;
+                font-size: 18px;
+                color: #00688B; /* Darker teal */
+            }
+            #shark-screen p {
+                margin: 5px 0;
+            }
+            #dropdown-container {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                z-index: 100;
+            }
+            #dropdown-container label {
+                font-size: 14px;
+                color: #2F4F4F;
+                margin-right: 10px;
+            }
+            #shark-config-dropdown {
+                padding: 5px;
+                border: 1px solid #E0E0E0;
+                border-radius: 5px;
+                background: #FFFFFF;
+                font-size: 14px;
+                color: #2F4F4F;
+                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+            }
             img {
                 width: 80%;
+                border-radius: 5px;
+                margin-top: 10px;
             }
         `;
     }
