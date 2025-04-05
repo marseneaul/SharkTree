@@ -139,56 +139,173 @@ export class SharkTree {
     }
 
     drawSharkOnRim(svg: SVGElement, shark, index, spacing: number): void {
-            // Calculate the coordinates for the current point
-            const angle = index * spacing;
-            const x = this.centerX + this.radius * Math.cos(angle);
-            const y = this.centerY + this.radius * Math.sin(angle);
-            shark.setX(x);
-            shark.setY(y);
-            shark.setIndex(index);
+        const angle = index * spacing;
+        const x = this.centerX + this.radius * Math.cos(angle);
+        const y = this.centerY + this.radius * Math.sin(angle);
+        shark.setX(x);
+        shark.setY(y);
+        shark.setIndex(index);
     
-            // Create a circle for the current point
-            const circle = Svg.drawCircle(x, y, 5, BLACK);
-            circle.style.zIndex = "10";
-            shark.setNode(circle);
-            circle.dataset.shark = JSON.stringify(shark.config);
-            circle.addEventListener("click", (event: WheelEvent) => {
-                const sharkJson = JSON.parse(circle.dataset.shark);
-                const binomialName = sharkJson.binomialName;
-                this.highlightPathToShark(binomialName, 3);
-            });
+        const circle = Svg.drawCircle(x, y, 5, BLACK);
+        circle.style.zIndex = "10";
+        shark.setNode(circle);
+        circle.dataset.shark = JSON.stringify(shark.config);
+        circle.addEventListener("click", (_event: MouseEvent) => {
+            this.highlightPathToShark(shark.binomialName, 3);
+            this.zoomToNode(svg, x, y); // Zoom to this shark
+        });
     
-            svg.appendChild(circle);
+        svg.appendChild(circle);
+    }
     
-            // Add text for the species name
-            const text = Svg.drawText(x, y, `${shark.binomialName}`);
-            text.style.pointerEvents = "none";
-            // svg.appendChild(text);
-
+    zoomToNode(svg: SVGElement, x: number, y: number): void {
+        const zoomFactor = 0.5; // Zoom to 50% of original size
+        const newWidth = SVG_SIZE * zoomFactor;
+        const newHeight = SVG_SIZE * zoomFactor;
+        const newX = x - newWidth / 2;
+        const newY = y - newHeight / 2;
+        svg.setAttribute("viewBox", `${newX} ${newY} ${newWidth} ${newHeight}`);
     }
 
     draw(): SVGElement {
         const svg = document.createElementNS(SVG_NAMESPACE, "svg");
-
         svg.setAttribute("width", SVG_SIZE.toString());
         svg.setAttribute("height", SVG_SIZE.toString());
-
+        svg.setAttribute("viewBox", `0 0 ${SVG_SIZE} ${SVG_SIZE}`);
+    
+        // Create a group for the tree content
+        const g = document.createElementNS(SVG_NAMESPACE, "g");
+        g.setAttribute("id", "shark-tree-group");
+        svg.appendChild(g);
+    
         const sharkSpecies = this.getSharkSpeciesList();
-
-        this.drawRim(svg, sharkSpecies, this.centerX, this.centerY);
-        
-        let sharkTreeStack:(SharkSpecies|SharkTreeNode)[] = [...sharkSpecies];
-        
+        this.drawRim(g, sharkSpecies, this.centerX, this.centerY); // Draw into group
+    
+        let sharkTreeStack: (SharkSpecies | SharkTreeNode)[] = [...sharkSpecies];
         for (let depth = 0; depth < this.getMaxDepth() - 1; depth++) {
-            sharkTreeStack = this.runPipeline(svg, sharkTreeStack, depth + 1);
+            sharkTreeStack = this.runPipeline(g, sharkTreeStack, depth + 1); // Use group
         }
-        
-        this.extend(svg, sharkTreeStack);
-
-        this.addWheelEventListener(svg, sharkSpecies);
-
+        this.extend(g, sharkTreeStack); // Use group
+    
+        this.addInteractionListeners(svg, g, sharkSpecies); // Pass group to listeners
         svg.setAttribute("id", "shark-tree");
         return svg;
+    }
+    
+    addInteractionListeners(svg: SVGElement, g: SVGGElement, sharkSpecies: SharkSpecies[]): void {
+        let viewBox = { x: 0, y: 0, width: SVG_SIZE, height: SVG_SIZE };
+        let isDragging = false;
+        let startX: number, startY: number;
+        let rotation = 0;
+    
+        // Wheel: Spin or Zoom
+        svg.addEventListener("wheel", (event: WheelEvent) => {
+            event.preventDefault();
+            const mouseX = event.clientX - svg.getBoundingClientRect().left;
+            const mouseY = event.clientY - svg.getBoundingClientRect().top;
+    
+            if (event.ctrlKey) {
+                // Zoom with Ctrl + Wheel
+                const scale = event.deltaY > 0 ? 1.1 : 0.9;
+                viewBox.width *= scale;
+                viewBox.height *= scale;
+                viewBox.x += (mouseX * (1 - scale)) / (SVG_SIZE / viewBox.width);
+                viewBox.y += (mouseY * (1 - scale)) / (SVG_SIZE / viewBox.height);
+                this.updateViewBox(svg, viewBox);
+            } else {
+                // Spin without modifier
+                const delta = -event.deltaY;
+                rotation = (rotation + delta / 10) % 360;
+                g.setAttribute("transform", `rotate(${rotation}, ${this.centerX}, ${this.centerY})`); // Rotate group
+    
+                const numSpecies = sharkSpecies.length;
+                const spacing = 360 / numSpecies;
+                let sharkIndex = Math.floor((-rotation / spacing + 1) % numSpecies);
+                if (sharkIndex < 0) sharkIndex = numSpecies + sharkIndex;
+                if (sharkIndex !== this.currentSharkIndex) {
+                    const previousShark = sharkSpecies[this.currentSharkIndex];
+                    previousShark?.getNode()?.setAttribute("fill", "black");
+                    this.currentSharkIndex = sharkIndex;
+                    const currentShark = sharkSpecies[sharkIndex];
+                    const nextSharkEvent = new NextSharkEvent(currentShark);
+                    window.dispatchEvent(new CustomEvent(nextSharkEvent.type, { detail: nextSharkEvent }));
+                }
+            }
+        });
+    
+        // Pan with drag
+        svg.addEventListener("mousedown", (event: MouseEvent) => {
+            if (!event.ctrlKey) {
+                isDragging = true;
+                startX = event.clientX;
+                startY = event.clientY;
+            }
+        });
+        svg.addEventListener("mousemove", (event: MouseEvent) => {
+            if (!isDragging) return;
+            const dx = (event.clientX - startX) * (viewBox.width / SVG_SIZE);
+            const dy = (event.clientY - startY) * (viewBox.height / SVG_SIZE);
+            viewBox.x -= dx;
+            viewBox.y -= dy;
+            startX = event.clientX;
+            startY = event.clientY;
+            this.updateViewBox(svg, viewBox);
+        });
+        svg.addEventListener("mouseup", () => (isDragging = false));
+        svg.addEventListener("mouseleave", () => (isDragging = false));
+    
+        // Pinch-to-zoom and two-finger pan (touch devices)
+        let initialDistance: number | null = null;
+        let initialCenter: { x: number, y: number } | null = null;
+        svg.addEventListener("touchstart", (event: TouchEvent) => {
+            if (event.touches.length === 2) {
+                initialDistance = this.getTouchDistance(event.touches);
+                initialCenter = this.getTouchCenter(event.touches, svg);
+            }
+        });
+        svg.addEventListener("touchmove", (event: TouchEvent) => {
+            if (event.touches.length === 2 && initialDistance && initialCenter) {
+                const newDistance = this.getTouchDistance(event.touches);
+                const scale = initialDistance / newDistance;
+                const newCenter = this.getTouchCenter(event.touches, svg);
+    
+                viewBox.width *= scale;
+                viewBox.height *= scale;
+                viewBox.x += (initialCenter.x * (1 - scale)) / (SVG_SIZE / viewBox.width);
+                viewBox.y += (initialCenter.y * (1 - scale)) / (SVG_SIZE / viewBox.height);
+    
+                const dx = (newCenter.x - initialCenter.x) * (viewBox.width / SVG_SIZE);
+                const dy = (newCenter.y - initialCenter.y) * (viewBox.height / SVG_SIZE);
+                viewBox.x -= dx;
+                viewBox.y -= dy;
+    
+                this.updateViewBox(svg, viewBox);
+                initialDistance = newDistance;
+                initialCenter = newCenter;
+            }
+        });
+        svg.addEventListener("touchend", () => {
+            initialDistance = null;
+            initialCenter = null;
+        });
+    }
+
+    getTouchCenter(touches: TouchList, svg: SVGElement): { x: number, y: number } {
+        const rect = svg.getBoundingClientRect();
+        return {
+            x: (touches[0].clientX + touches[1].clientX) / 2 - rect.left,
+            y: (touches[0].clientY + touches[1].clientY) / 2 - rect.top
+        };
+    }
+    
+    getTouchDistance(touches: TouchList): number {
+        const dx = touches[0].clientX - touches[1].clientX;
+        const dy = touches[0].clientY - touches[1].clientY;
+        return Math.sqrt(dx * dx + dy * dy);
+    }
+    
+    updateViewBox(svg: SVGElement, viewBox: { x: number, y: number, width: number, height: number }): void {
+        svg.setAttribute("viewBox", `${viewBox.x} ${viewBox.y} ${viewBox.width} ${viewBox.height}`);
     }
 
     /*----------------------------------------|
