@@ -23,6 +23,8 @@ export class SharkTree {
     currentNode: SharkSpecies|SharkTreeNode|null
     currentSharkIndex: number
 
+    taxonomicLevels: Map<string, { species: SharkSpecies[], color: string }>;
+
     constructor(sharkTreeConfig: SharkTreeNodeConfig) {
         this.config = sharkTreeConfig;
         this.root = new SharkTreeNode(this.config, null);
@@ -37,6 +39,63 @@ export class SharkTree {
 
         this.currentNode = this.root;
         this.currentSharkIndex = 0;
+
+        this.taxonomicLevels = new Map();
+        this.initializeTaxonomicLevels();
+    }
+
+    initializeTaxonomicLevels(): void {
+        const colors = ["#FF6B6B", "#4ECDC4", "#45B7D1", "#96CEB4", "#FFEEAD"];
+        const levels = ["genus", "family", "order", "superorder", "subdivision"];
+        
+        levels.forEach((level, index) => {
+            this.taxonomicLevels.set(level, {
+                species: [],
+                color: colors[index % colors.length]
+            });
+        });
+        
+        // Collect taxonomic data only once from the root
+        const allSpecies = this.getSharkSpeciesList(this.root);
+        this.collectTaxonomicData(allSpecies);
+    }
+
+    collectTaxonomicData(species: SharkSpecies[]) {
+        species.forEach(shark => {
+            ["genus", "family", "order", "superorder", "subdivision"].forEach(level => {
+                const levelData = this.taxonomicLevels.get(level);
+                if (levelData && shark[level]) {
+                    // Only add species if it hasn't been added yet
+                    if (!levelData.species.some(s => s.binomialName === shark.binomialName)) {
+                        levelData.species.push(shark);
+                    }
+                }
+            });
+        });
+    }
+
+    highlightTaxonomicLevel(level: string, value?: string) {
+        this.clearAllHighlights();
+        const levelData = this.taxonomicLevels.get(level);
+        if (!levelData) return;
+
+        const speciesToHighlight = value 
+            ? levelData.species.filter(s => s[level] === value)
+            : levelData.species;
+
+        speciesToHighlight.forEach(shark => {
+            shark.highlightNode(levelData.color);
+            shark.highlightParentPath(3, levelData.color);
+            let parent = shark.getParent();
+            while (parent) {
+                parent.highlightParentPath(3, levelData.color);
+                parent = parent.getParent();
+            }
+        });
+    }
+
+    clearAllHighlights() {
+        this.getSharkSpeciesList().forEach(shark => this.clearHighlightPath(shark));
     }
 
     /*----------------------------------------|

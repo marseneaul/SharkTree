@@ -29,8 +29,6 @@ const sharkConfigs = {
     selachii: selachiiConfig
 };
 
-
-
 import { SharkTree } from "./models/shark-tree";
 import { StringUtils } from "./utils/string-utils";
 
@@ -80,26 +78,38 @@ export class SharkTreeComponent extends HTMLElement {
     /*----------------------------------------|
     |               HTML & CSS                |
     |----------------------------------------*/
+
     html() {
         return `
             <style> ${this.css()} </style>
             <div id="app-container">
-                <div id="dropdown-container">
-                    <label for="shark-config-dropdown">Select Shark Configuration:</label>
-                    <select id="shark-config-dropdown">
-                        ${Object.keys(sharkConfigs)
-                            .map(
-                                (configKey) =>
-                                    `<option value="${configKey}">${StringUtils.capitalizeFirstLetter(configKey)}</option>`
-                            )
-                            .join("")}
-                    </select>
-                </div>
-                <div id="phylo-container">
-                </div>
-                <div id="shark-screen-container">
-                    <div id="shark-screen">
+                <div id="controls-container">
+                    <div id="dropdown-container">
+                        <label for="shark-config-dropdown">Configuration:</label>
+                        <select id="shark-config-dropdown">
+                            ${Object.keys(sharkConfigs).map(configKey => 
+                                `<option value="${configKey}">${StringUtils.capitalizeFirstLetter(configKey)}</option>`
+                            ).join("")}
+                        </select>
                     </div>
+                    <div id="taxonomic-container">
+                        <label for="taxonomic-dropdown">Taxonomic Level:</label>
+                        <select id="taxonomic-dropdown">
+                            <option value="">None</option>
+                            <option value="genus">Genus</option>
+                            <option value="family">Family</option>
+                            <option value="order">Order</option>
+                            <option value="superorder">Superorder</option>
+                            <option value="subdivision">Subdivision</option>
+                        </select>
+                        <select id="taxonomic-value-dropdown">
+                            <option value="">All</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="phylo-container"></div>
+                <div id="shark-screen-container">
+                    <div id="shark-screen"></div>
                 </div>
             </div>
         `;
@@ -114,7 +124,7 @@ export class SharkTreeComponent extends HTMLElement {
                 display: flex;
                 flex-direction: row;
                 background: #FFFFFF;
-                font-family: 'Roboto', sans-serif; /* Clean, modern font */
+                font-family: 'Roboto', sans-serif;
             }
             #phylo-container {
                 position: relative;
@@ -148,34 +158,55 @@ export class SharkTreeComponent extends HTMLElement {
                 overflow-y: auto;
                 font-size: 14px;
                 line-height: 1.6;
-                color: #2F4F4F; /* Dark slate gray */
+                color: #2F4F4F;
             }
             #shark-screen h3 {
                 margin: 0 0 10px 0;
                 font-size: 18px;
-                color: #00688B; /* Darker teal */
+                color: #00688B;
             }
             #shark-screen p {
                 margin: 5px 0;
             }
-            #dropdown-container {
+            #controls-container {
                 position: absolute;
                 top: 10px;
                 left: 10px;
+                display: flex;
+                flex-direction: row; /* Ensure horizontal layout */
+                align-items: center;
+                gap: 20px; /* Increased gap between controls */
                 z-index: 100;
+                padding: 10px;
+                background: rgba(255, 255, 255, 0.9); /* Slight background to separate from tree */
+                border-radius: 5px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             }
-            #dropdown-container label {
+            #dropdown-container, #taxonomic-container {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 8px; /* Space between label and dropdown */
+            }
+            label {
                 color: #2F4F4F;
-                margin-right: 10px;
+                font-size: 14px;
+                white-space: nowrap; /* Prevent label text wrapping */
             }
-            #shark-config-dropdown {
-                padding: 5px;
+            select {
+                padding: 5px 8px;
                 border: 1px solid #E0E0E0;
                 border-radius: 5px;
                 background: #FFFFFF;
                 font-size: 14px;
                 color: #2F4F4F;
                 box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+                min-width: 120px; /* Ensure dropdowns have enough width */
+                max-width: 200px; /* Prevent overly wide dropdowns */
+            }
+            select:hover {
+                border-color: #00688B;
+                cursor: pointer;
             }
             img {
                 width: 80%;
@@ -199,6 +230,39 @@ export class SharkTreeComponent extends HTMLElement {
 
     setupEventListeners() {
         window.addEventListener("select-shark", this.selectSharkHandler.bind(this));
+
+        const configDropdown = this.shadow.querySelector("#shark-config-dropdown");
+        configDropdown.addEventListener("change", (event) => {
+            const selectedConfig = event.target.value;
+            this.initializeSharkTree(selectedConfig);
+        });
+
+        const taxonomicDropdown = this.shadow.querySelector("#taxonomic-dropdown");
+        const taxonomicValueDropdown = this.shadow.querySelector("#taxonomic-value-dropdown");
+        
+        taxonomicDropdown.addEventListener("change", (event) => {
+            const level = event.target.value;
+            if (level && this.sharkTree) {
+                const levelData = this.sharkTree.taxonomicLevels.get(level);
+                const values = new Set(levelData?.species.map(s => s[level]).filter(v => v));
+                taxonomicValueDropdown.innerHTML = `
+                    <option value="">All</option>
+                    ${Array.from(values).map(v => `<option value="${v}">${v}</option>`).join("")}
+                `;
+                this.sharkTree.highlightTaxonomicLevel(level);
+            } else {
+                taxonomicValueDropdown.innerHTML = '<option value="">All</option>';
+                this.sharkTree?.clearAllHighlights();
+            }
+        });
+
+        taxonomicValueDropdown.addEventListener("change", (event) => {
+            const level = taxonomicDropdown.value;
+            const value = event.target.value;
+            if (level && this.sharkTree) {
+                this.sharkTree.highlightTaxonomicLevel(level, value || undefined);
+            }
+        });
     }
 
     removeEventListeners() {
