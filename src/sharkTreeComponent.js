@@ -7,26 +7,26 @@ import {
 } from "./data/configs";
 
 const sharkConfigs = {
-    lamniformes: lamniformesConfig,
-    heterodontiformes: heterodontiformesConfig,
-    lamnidae: lamnidaeConfig,
-    carcharhinidae: carcharhinidaeConfig,
-    squatiniformes: squatiniformesConfig,
-    hexanchiformes: hexanchiformesConfig,
-    pristiophoriformes: pristiophoriformesConfig,
+    selachii: selachiiConfig,
+    galeomorphii: galeomorphiiConfig,
+    squalomorphii: squalomorphiiConfig,
+    squaliformes: squaliformesConfig,
+    carcharhiniformes: carcharhiniformesConfig,
     orectolobiformes: orectolobiformesConfig,
+    lamniformes: lamniformesConfig,
+    hexanchiformes: hexanchiformesConfig,
+    squatiniformes: squatiniformesConfig,
+    heterodontiformes: heterodontiformesConfig,
+    pristiophoriformes: pristiophoriformesConfig,
+    carcharhinidae: carcharhinidaeConfig,
+    lamnidae: lamnidaeConfig,
     scyliorhinidaeI: scyliorhinidaeIConfig,
     scyliorhinidaeII: scyliorhinidaeIIConfig,
     scyliorhinidaeIII: scyliorhinidaeIIIConfig,
-    carcharhiniformes: carcharhiniformesConfig,
     dalatiidae: dalatiidaeConfig,
     etmopteridae: etmopteridaeConfig,
     squalidae: squalidaeConfig,
-    triakidae: triakidaeConfig,
-    galeomorphii: galeomorphiiConfig,
-    squaliformes: squaliformesConfig,
-    squalomorphii: squalomorphiiConfig,
-    selachii: selachiiConfig
+    triakidae: triakidaeConfig
 };
 
 import { SharkTree } from "./models/shark-tree";
@@ -251,7 +251,7 @@ export class SharkTreeComponent extends HTMLElement {
                 `;
                 this.sharkTree.highlightTaxonomicLevel(level);
             } else {
-                taxonomicValueDropdown.innerHTML = '<option value="">All</option>';
+                taxonomicValueDropdown.innerHTML = "<option value=''>All</option>";
                 this.sharkTree?.clearAllHighlights();
             }
         });
