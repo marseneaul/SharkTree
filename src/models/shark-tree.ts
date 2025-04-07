@@ -297,6 +297,7 @@ export class SharkTree {
                 tooltip.style.background = "#FFF";
                 tooltip.style.border = "1px solid #000";
                 tooltip.style.padding = "5px";
+                tooltip.style.fontFamily = "'Roboto', sans-serif";
                 tooltip.style.left = `${e.pageX + 10}px`;
                 tooltip.style.top = `${e.pageY + 10}px`;
                 document.body.appendChild(tooltip);

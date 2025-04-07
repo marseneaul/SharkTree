@@ -124,7 +124,7 @@ export class SharkTreeComponent extends HTMLElement {
                 display: flex;
                 flex-direction: row;
                 background: #FFFFFF;
-                font-family: 'Roboto', sans-serif;
+                font-family: "Roboto", sans-serif;
             }
             #phylo-container {
                 position: relative;
