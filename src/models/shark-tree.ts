@@ -59,7 +59,6 @@ export class SharkTree {
             });
         });
         
-        // Collect taxonomic data only once from the root
         const allSpecies = this.getSharkSpeciesList(this.root);
         this.collectTaxonomicData(allSpecies);
     }
