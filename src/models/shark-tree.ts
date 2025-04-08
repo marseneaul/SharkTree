@@ -49,7 +49,7 @@ export class SharkTree {
     }
 
     initializeTaxonomicLevels(): void {
-        const colors = ["#FF6B6B", "#4ECDC4", "#45B7D1", "#96CEB4", "#FFEEAD"];
+        const colors = ["#F94144", "#F3722C", "#F9C74F", "#43AA8B", "#577590"];
         const levels = ["genus", "family", "order", "superorder", "subdivision"];
         
         levels.forEach((level, index) => {
