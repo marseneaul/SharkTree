@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const paragaleusPectoralis = {
     commonName: "Atlantic Weasel Shark",
     alternativeNames: ["Little Tiger Shark"],
@@ -13,5 +15,9 @@ export const paragaleusPectoralis = {
     order: "Carcharhiniformes",
     family: "Hemigaleidae",
     genus: "Paragaleus",
-    species: "pectoralis"
+    species: "pectoralis",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

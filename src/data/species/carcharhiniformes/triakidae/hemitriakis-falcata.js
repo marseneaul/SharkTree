@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const hemitriakisFalcata = {
     commonName: "Sicklefin Houndshark",
     binomialName: "Hemitriakis falcata",
@@ -12,5 +14,9 @@ export const hemitriakisFalcata = {
     order: "Carcharhiniformes",
     family: "Triakidae",
     genus: "Hemitriakis",
-    species: "falcata"
+    species: "falcata",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const mustelusStevensi = {
     commonName: "Western Spotted Gummy Shark",
     binomialName: "Mustelus stevensi",
@@ -12,5 +14,9 @@ export const mustelusStevensi = {
     order: "Carcharhiniformes",
     family: "Triakidae",
     genus: "Mustelus",
-    species: "stevensi"
+    species: "stevensi",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

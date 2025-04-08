@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const hemitriakisLeucoperiptera = {
     commonName: "Whitefin Topeshark",
     binomialName: "Hemitriakis leucoperiptera",
@@ -12,5 +14,9 @@ export const hemitriakisLeucoperiptera = {
     order: "Carcharhiniformes",
     family: "Triakidae",
     genus: "Hemitriakis",
-    species: "leucoperiptera"
+    species: "leucoperiptera",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

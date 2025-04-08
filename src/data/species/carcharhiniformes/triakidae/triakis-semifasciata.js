@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const triakisSemifasciata = {
     commonName: "Leopard Shark",
     alternativeNames: ["Tiger Shark", "Catshark"],
@@ -13,5 +15,9 @@ export const triakisSemifasciata = {
     order: "Carcharhiniformes",
     family: "Triakidae",
     genus: "Triakis",
-    species: "semifasciata"
+    species: "semifasciata",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

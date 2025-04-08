@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const mustelusAsterias = {
     commonName: "Starry Smooth-Hound",
     binomialName: "Mustelus asterias",
@@ -12,5 +14,9 @@ export const mustelusAsterias = {
     order: "Carcharhiniformes",
     family: "Triakidae",
     genus: "Mustelus",
-    species: "asterias"
+    species: "asterias",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const furgaleusMacki = {
     commonName: "Whiskery Shark",
     alternativeNames: ["Mack's Whiskery Shark", "Reef Shark", "Shakey Shark", "Sundowner"],
@@ -13,5 +15,9 @@ export const furgaleusMacki = {
     order: "Carcharhiniformes",
     family: "Triakidae",
     genus: "Furgaleus",
-    species: "macki"
+    species: "macki",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

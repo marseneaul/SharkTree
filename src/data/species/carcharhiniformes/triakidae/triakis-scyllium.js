@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const triakisScyllium = {
     commonName: "Banded Houndshark",
     binomialName: "Triakis scyllium",
@@ -12,5 +14,9 @@ export const triakisScyllium = {
     order: "Carcharhiniformes",
     family: "Triakidae",
     genus: "Triakis",
-    species: "scyllium"
+    species: "scyllium",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

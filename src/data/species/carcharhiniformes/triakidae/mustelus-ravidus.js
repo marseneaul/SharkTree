@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const mustelusRavidus = {
     commonName: "Australian Grey Smooth-Hound",
     alternativeNames: ["Grey Gummy Shark"],
@@ -13,5 +15,9 @@ export const mustelusRavidus = {
     order: "Carcharhiniformes",
     family: "Triakidae",
     genus: "Mustelus",
-    species: "ravidus"
+    species: "ravidus",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const sphyrnaCorona = {
     commonName: "Scalloped Bonnethead",
     binomialName: "Sphyrna corona",
@@ -12,5 +14,9 @@ export const sphyrnaCorona = {
     order: "Carcharhiniformes",
     family: "Sphyrnidae",
     genus: "Sphyrna",
-    species: "corona"
+    species: "corona",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

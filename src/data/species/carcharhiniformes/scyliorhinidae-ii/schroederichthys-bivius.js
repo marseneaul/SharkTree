@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const schroederichthysBivius = {
     commonName: "Narrowmouthed Catshark",
     binomialName: "Schroederichthys bivius",
@@ -12,5 +14,9 @@ export const schroederichthysBivius = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Schroederichthys",
-    species: "bivius"
+    species: "bivius",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

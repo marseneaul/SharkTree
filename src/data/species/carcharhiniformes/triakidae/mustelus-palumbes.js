@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const mustelusPalumbes = {
     commonName: "Whitespotted Smooth-Hound",
     binomialName: "Mustelus palumbes",
@@ -12,5 +14,9 @@ export const mustelusPalumbes = {
     order: "Carcharhiniformes",
     family: "Triakidae",
     genus: "Mustelus",
-    species: "palumbes"
+    species: "palumbes",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

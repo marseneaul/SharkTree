@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const mustelusCanis = {
     commonName: "Dusky Smooth-Hound",
     alternativeNames: ["Smooth Dogfish", "Dog Shark"],
@@ -13,5 +15,9 @@ export const mustelusCanis = {
     order: "Carcharhiniformes",
     family: "Triakidae",
     genus: "Mustelus",
-    species: "canis"
+    species: "canis",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const hypogaleusHyugaensis = {
     commonName: "Blacktip Tope",
     alternativeNames: ["Pencil Shark", "Blacktip Topeshark"],
@@ -13,5 +15,9 @@ export const hypogaleusHyugaensis = {
     order: "Carcharhiniformes",
     family: "Triakidae",
     genus: "Hypogaleus",
-    species: "hyugaensis"
+    species: "hyugaensis",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

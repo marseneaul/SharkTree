@@ -134,25 +134,31 @@ export enum BEHAVIOR {
 }
 
 export enum NUM_GILLS {
-    FIVE = "5",
-    SIX = "6",
-    SEVEN = "7",
+    FIVE = "5 Gills",
+    SIX = "6 Gills",
+    SEVEN = "7 Gills",
 }
 
 export enum NUM_DORSAL_FINS {
-    ONE = "1",
-    TWO = "2"
+    ONE = "1 Dorsal Fin",
+    TWO = "2 Dorsal Fins"
 }
 
 export enum ANAL_FIN {
-    YES = "Yes",
-    NO = "No"
+    YES = "Yes Anal Fin",
+    NO = "No Anal Fin"
+}
+
+export enum NICTITATING_MEMBRANE {
+    YES = "Yes Nictitating Membrane",
+    NO = "No Nictitating Membrane"
 }
 
 export function getEnumCategory(tag: any): string | undefined {
     if (Object.values(NUM_DORSAL_FINS).includes(tag)) return "NUM_DORSAL_FINS";
     if (Object.values(NUM_GILLS).includes(tag)) return "NUM_GILLS";
     if (Object.values(ANAL_FIN).includes(tag)) return "ANAL_FIN";
+    if (Object.values(NICTITATING_MEMBRANE).includes(tag)) return "NICTITATING_MEMBRANE";
     if (Object.values(TEMPERATURE_REGULATION).includes(tag)) return "TEMPERATURE_REGULATION";
     if (Object.values(FEEDING_BEHAVIOR).includes(tag)) return "FEEDING_BEHAVIOR";
     if (Object.values(CONSERVATION_STATUS).includes(tag)) return "CONSERVATION_STATUS";
@@ -170,5 +176,10 @@ export function getEnumCategory(tag: any): string | undefined {
 }
 
 export const DEFAULT_TAGS = [
-    NUM_DORSAL_FINS.TWO, NUM_GILLS.FIVE, TEMPERATURE_REGULATION.ECTOTHERMIC, FEEDING_BEHAVIOR.CARNIVOROUS, ANAL_FIN.YES
+    NUM_DORSAL_FINS.TWO, 
+    NUM_GILLS.FIVE, 
+    TEMPERATURE_REGULATION.ECTOTHERMIC, 
+    FEEDING_BEHAVIOR.CARNIVOROUS, 
+    ANAL_FIN.YES,
+    NICTITATING_MEMBRANE.NO
 ];

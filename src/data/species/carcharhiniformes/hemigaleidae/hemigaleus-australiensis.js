@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const hemigaleusAustraliensis = {
     commonName: "Australian Weasel Shark",
     binomialName: "Hemigaleus australiensis",
@@ -12,5 +14,9 @@ export const hemigaleusAustraliensis = {
     order: "Carcharhiniformes",
     family: "Hemigaleidae",
     genus: "Hemigaleus",
-    species: "australiensis"
+    species: "australiensis",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

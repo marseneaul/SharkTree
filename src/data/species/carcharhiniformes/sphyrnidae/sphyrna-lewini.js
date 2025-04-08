@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const sphyrnaLewini = {
     commonName: "Scalloped Hammerhead Shark",
     binomialName: "Sphyrna lewini",
@@ -12,5 +14,9 @@ export const sphyrnaLewini = {
     order: "Carcharhiniformes",
     family: "Sphyrnidae",
     genus: "Sphyrna",
-    species: "lewini"
+    species: "lewini",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

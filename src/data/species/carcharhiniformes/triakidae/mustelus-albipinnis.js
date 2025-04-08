@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const mustelusAlbipinnis = {
     commonName: "White-Margin Fin Smooth-Hound",
     binomialName: "Mustelus albipinnis",
@@ -12,5 +14,9 @@ export const mustelusAlbipinnis = {
     order: "Carcharhiniformes",
     family: "Triakidae",
     genus: "Mustelus",
-    species: "albipinnis"
+    species: "albipinnis",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const mustelusLenticulatus = {
     commonName: "Spotted Estuary Smooth-Hound",
     alternativeNames: ["Rig"],
@@ -13,5 +15,9 @@ export const mustelusLenticulatus = {
     order: "Carcharhiniformes",
     family: "Triakidae",
     genus: "Mustelus",
-    species: "lenticulatus"
+    species: "lenticulatus",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

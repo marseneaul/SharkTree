@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const hemitriakisJapanica = {
     commonName: "Japanese Topeshark",
     binomialName: "Hemitriakis japanica",
@@ -12,5 +14,9 @@ export const hemitriakisJapanica = {
     order: "Carcharhiniformes",
     family: "Triakidae",
     genus: "Hemitriakis",
-    species: "japanica"
+    species: "japanica",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

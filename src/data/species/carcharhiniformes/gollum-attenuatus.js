@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../constants/enums";
+
 export const gollumAttenuatus = {
     commonName: "Slender Smooth-Hound",
     alternativeNames: ["Gollumshark"],
@@ -13,5 +15,9 @@ export const gollumAttenuatus = {
     order: "Carcharhiniformes",
     family: "Pseudotriakidae",
     genus: "Gollum",
-    species: "attenuatus"
+    species: "attenuatus",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

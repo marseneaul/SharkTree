@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const atelomycterusMarnkalha = {
     commonName: "Eastern Banded Catshark",
     binomialName: "Atelomycterus marnkalha",
@@ -12,5 +14,9 @@ export const atelomycterusMarnkalha = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Atelomycterus",
-    species: "marnkalha"
+    species: "marnkalha",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

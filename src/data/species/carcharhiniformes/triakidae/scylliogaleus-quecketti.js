@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const scylliogaleusQuecketti = {
     commonName: "Flapnose Houndshark",
     binomialName: "Scylliogaleus quecketti",
@@ -12,5 +14,9 @@ export const scylliogaleusQuecketti = {
     order: "Carcharhiniformes",
     family: "Triakidae",
     genus: "Scylliogaleus",
-    species: "quecketti"
+    species: "quecketti",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

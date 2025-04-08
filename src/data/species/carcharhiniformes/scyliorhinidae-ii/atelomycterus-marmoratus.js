@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const atelomycterusMarmoratus = {
     commonName: "Coral Catshark",
     binomialName: "Atelomycterus marmoratus",
@@ -12,5 +14,9 @@ export const atelomycterusMarmoratus = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Atelomycterus",
-    species: "marmoratus"
+    species: "marmoratus",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

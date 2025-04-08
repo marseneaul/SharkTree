@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const triakisMegalopterus = {
     commonName: "Sharptooth Houndshark",
     binomialName: "Triakis megalopterus",
@@ -12,5 +14,9 @@ export const triakisMegalopterus = {
     order: "Carcharhiniformes",
     family: "Triakidae",
     genus: "Triakis",
-    species: "megalopterus"
+    species: "megalopterus",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

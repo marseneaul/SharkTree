@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const mustelusWidodoi = {
     commonName: "White-Fin Smooth-Hound",
     binomialName: "Mustelus widodoi",
@@ -12,5 +14,9 @@ export const mustelusWidodoi = {
     order: "Carcharhiniformes",
     family: "Triakidae",
     genus: "Mustelus",
-    species: "widodoi"
+    species: "widodoi",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

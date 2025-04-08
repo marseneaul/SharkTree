@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../constants/enums";
+
 export const iagoGarricki = {
     commonName: "Longnose Houndshark",
     binomialName: "Iago garricki",
@@ -12,5 +14,9 @@ export const iagoGarricki = {
     order: "Carcharhiniformes",
     family: "Triakidae",
     genus: "Iago",
-    species: "garricki"
+    species: "garricki",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

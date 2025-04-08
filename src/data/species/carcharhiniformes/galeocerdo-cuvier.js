@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../constants/enums";
+
 export const galeocerdoCuvier = {
     commonName: "Tiger Shark",
     binomialName: "Galeocerdo cuvier",
@@ -12,5 +14,9 @@ export const galeocerdoCuvier = {
     order: "Carcharhiniformes",
     family: "Galeocerdonidae",
     genus: "Galeocerdo",
-    species: "cuvier"
+    species: "cuvier",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

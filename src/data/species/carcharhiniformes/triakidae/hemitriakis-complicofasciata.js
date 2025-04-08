@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const hemitriakisComplicofasciata = {
     commonName: "Ocellate Topeshark",
     binomialName: "Hemitriakis complicofasciata",
@@ -12,5 +14,9 @@ export const hemitriakisComplicofasciata = {
     order: "Carcharhiniformes",
     family: "Triakidae",
     genus: "Hemitriakis",
-    species: "complicofasciata"
+    species: "complicofasciata",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

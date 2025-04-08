@@ -6,7 +6,7 @@ import { SharkTreeNode } from "./shark-tree-node";
 import { Svg } from "../drawing/svg";
 import { Utils } from "../utils/utils";
 import { BLACK } from "../constants/colors";
-import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION, FEEDING_BEHAVIOR, OCEAN_ZONE, EVOLUTIONARY_CHARACTERISTIC, UNIQUE_FEATURE, GEOGRAPHICAL_DISTRIBUTION, HABITAT, WATER_COLUMN, PHYSICAL_CHARACTERISTIC, BEHAVIOR, NUM_GILLS, NUM_DORSAL_FINS, ANAL_FIN } from "../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION, FEEDING_BEHAVIOR, OCEAN_ZONE, EVOLUTIONARY_CHARACTERISTIC, UNIQUE_FEATURE, GEOGRAPHICAL_DISTRIBUTION, HABITAT, WATER_COLUMN, PHYSICAL_CHARACTERISTIC, BEHAVIOR, NUM_GILLS, NUM_DORSAL_FINS, ANAL_FIN, NICTITATING_MEMBRANE } from "../constants/enums";
 
 export class SharkTree {
     config: SharkTreeNodeConfig
@@ -572,7 +572,8 @@ export class SharkTree {
             "feedingBehavior", 
             "numGills", 
             "numDorsalFins",
-            "analFin"
+            "analFin",
+            "nictitatingMembrane"
         ];
         
         categories.forEach((category, _index) => {
@@ -613,7 +614,8 @@ export class SharkTree {
             "behavior": Object.values(BEHAVIOR),
             "numGills": Object.values(NUM_GILLS),
             "numDorsalFins": Object.values(NUM_DORSAL_FINS),
-            "analFin": Object.values(ANAL_FIN)
+            "analFin": Object.values(ANAL_FIN),
+            "nictitatingMembrane": Object.values(NICTITATING_MEMBRANE),
         };
         for (const [category, values] of Object.entries(tagEnums)) {
             if (values.includes(tag)) return category;

@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../constants/enums";
+
 export const leptochariasSmithii = {
     commonName: "Barbeled Houndshark",
     binomialName: "Leptocharias smithii",
@@ -12,5 +14,9 @@ export const leptochariasSmithii = {
     order: "Carcharhiniformes",
     family: "Leptochariidae",
     genus: "Leptocharias",
-    species: "smithii"
+    species: "smithii",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

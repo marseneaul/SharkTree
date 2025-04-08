@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const mustelusCalifornicus = {
     commonName: "Gray Smooth-Hound",
     binomialName: "Mustelus californicus",
@@ -12,5 +14,9 @@ export const mustelusCalifornicus = {
     order: "Carcharhiniformes",
     family: "Triakidae",
     genus: "Mustelus",
-    species: "californicus"
+    species: "californicus",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

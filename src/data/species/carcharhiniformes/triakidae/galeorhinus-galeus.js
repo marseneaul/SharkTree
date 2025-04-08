@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const galeorhinusGaleus = {
     commonName: "School Shark",
     alternativeNames: ["Tope", "Tope Shark", "Snapper Shark", "Soupfin Shark"],
@@ -13,5 +15,9 @@ export const galeorhinusGaleus = {
     order: "Carcharhiniformes",
     family: "Triakidae",
     genus: "Galeorhinus",
-    species: "galeus"
+    species: "galeus",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const mustelusLunulatus = {
     commonName: "Sicklefin Smooth-Hound",
     binomialName: "Mustelus lunulatus",
@@ -12,5 +14,9 @@ export const mustelusLunulatus = {
     order: "Carcharhiniformes",
     family: "Triakidae",
     genus: "Mustelus",
-    species: "lunulatus"
+    species: "lunulatus",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

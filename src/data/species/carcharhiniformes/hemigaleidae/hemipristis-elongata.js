@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const hemipristisElongata = {
     commonName: "Snaggletooth Shark",
     alternativeNames: ["Fossil Shark"],
@@ -13,5 +15,9 @@ export const hemipristisElongata = {
     order: "Carcharhiniformes",
     family: "Hemigaleidae",
     genus: "Hemipristis",
-    species: "elongata"
+    species: "elongata",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };
