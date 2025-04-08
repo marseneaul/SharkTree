@@ -1,3 +1,5 @@
+import { NUM_DORSAL_FINS, NUM_GILLS } from "../../../constants/enums";
+
 export const hexanchusGriseus = {
     commonName: "Bluntnose Sixgill Shark",
     binomialName: "Hexanchus griseus",
@@ -12,5 +14,10 @@ export const hexanchusGriseus = {
     order: "Hexanchiformes",
     family: "Hexanchidae",
     genus: "Hexanchus",
-    species: "griseus"
+    species: "griseus",
+
+    tags: [
+        NUM_GILLS.SIX, 
+        NUM_DORSAL_FINS.ONE
+    ]
 };

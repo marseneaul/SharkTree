@@ -1,3 +1,5 @@
+import { NUM_DORSAL_FINS, NUM_GILLS } from "../../../constants/enums";
+
 export const chlamydoselachusAnguineus = {
     commonName: "Frilled Shark",
     alternativeNames: ["Lizard Shark", "Scaffold Shark"],
@@ -13,5 +15,10 @@ export const chlamydoselachusAnguineus = {
     order: "Hexanchiformes",
     family: "Chlamydoselachidae",
     genus: "Chlamydoselachus",
-    species: "anguineus"
+    species: "anguineus",
+
+    tags: [
+        NUM_GILLS.SIX, 
+        NUM_DORSAL_FINS.ONE
+    ]
 };

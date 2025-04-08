@@ -1,3 +1,5 @@
+import { NUM_GILLS } from "../../../constants/enums";
+
 export const pliotremaWarreni = {
     commonName: "Sixgill Sawshark",
     binomialName: "Pliotrema warreni",
@@ -12,5 +14,9 @@ export const pliotremaWarreni = {
     order: "Pristiophoriformes",
     family: "Pristiophoridae",
     genus: "Pliotrema",
-    species: "warreni"
+    species: "warreni",
+
+    tags: [
+        NUM_GILLS.SIX
+    ]
 };

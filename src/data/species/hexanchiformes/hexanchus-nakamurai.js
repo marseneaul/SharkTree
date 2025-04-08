@@ -1,3 +1,5 @@
+import { NUM_DORSAL_FINS, NUM_GILLS } from "../../../constants/enums";
+
 export const hexanchusNakamurai = {
     commonName: "Bigeye Sixgill Shark",
     binomialName: "Hexanchus nakamurai",
@@ -12,5 +14,10 @@ export const hexanchusNakamurai = {
     order: "Hexanchiformes",
     family: "Hexanchidae",
     genus: "Hexanchus",
-    species: "nakamurai"
+    species: "nakamurai",
+
+    tags: [
+        NUM_GILLS.SIX, 
+        NUM_DORSAL_FINS.ONE
+    ]
 };

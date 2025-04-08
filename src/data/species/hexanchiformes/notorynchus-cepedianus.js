@@ -1,3 +1,5 @@
+import { NUM_DORSAL_FINS, NUM_GILLS } from "../../../constants/enums";
+
 export const notorhynchusCepedianus = {
     commonName: "Broadnose Sevengill Shark",
     binomialName: "Notorynchus cepedianus",
@@ -12,5 +14,10 @@ export const notorhynchusCepedianus = {
     order: "Hexanchiformes",
     family: "Hexanchidae",
     genus: "Notorynchus",
-    species: "cepedianus"
+    species: "cepedianus",
+
+    tags: [
+        NUM_GILLS.SEVEN, 
+        NUM_DORSAL_FINS.ONE
+    ]
 };

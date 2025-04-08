@@ -1,3 +1,5 @@
+import { NUM_DORSAL_FINS, NUM_GILLS } from "../../../constants/enums";
+
 export const heptranchiasPerlo = {
     commonName: "Sharpnose Sevengill Shark",
     binomialName: "Heptranchias perlo",
@@ -12,5 +14,10 @@ export const heptranchiasPerlo = {
     order: "Hexanchiformes",
     family: "Hexanchidae",
     genus: "Heptranchias",
-    species: "perlo"
+    species: "perlo",
+
+    tags: [
+        NUM_GILLS.SEVEN, 
+        NUM_DORSAL_FINS.ONE
+    ]
 };
