@@ -66,7 +66,6 @@ export class SharkTreeComponent extends HTMLElement {
 
     initializeSharkTree(configKey = "selachii") {
         this.sharkTree = new SharkTree(sharkConfigs[configKey]);
-        console.log(this.sharkTree);
         const sharkTreeSvg = this.sharkTree.draw();
         this.sharkScreen = this.shadow.querySelector("#shark-screen");
     
@@ -78,7 +77,7 @@ export class SharkTreeComponent extends HTMLElement {
         const taxonomicDropdown = this.shadow.querySelector("#taxonomic-dropdown");
         const taxonomicValueDropdown = this.shadow.querySelector("#taxonomic-value-dropdown");
         taxonomicDropdown.value = ""; // Reset to "None"
-        taxonomicValueDropdown.innerHTML = '<option value="">All</option>'; // Reset to "All" with no other options yet
+        taxonomicValueDropdown.innerHTML = "<option value=''>All</option>"; // Reset to "All" with no other options yet
         this.updateTaxonomicValues(); // Refresh values based on new tree
     }
 
@@ -95,7 +94,7 @@ export class SharkTreeComponent extends HTMLElement {
                 ${Array.from(values).map(v => `<option value="${v}">${v}</option>`).join("")}
             `;
         } else {
-            taxonomicValueDropdown.innerHTML = '<option value="">All</option>';
+            taxonomicValueDropdown.innerHTML = "<option value=''>All</option>";
         }
     }
 
@@ -289,7 +288,7 @@ export class SharkTreeComponent extends HTMLElement {
             }
         });
     }
-    
+
     removeEventListeners() {
         window.removeEventListener("select-shark", this.selectSharkHandler.bind(this));
     }
