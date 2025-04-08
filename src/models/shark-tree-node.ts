@@ -96,9 +96,10 @@ export class SharkTreeNode {
     |              HIGHLIGHTING               |
     |----------------------------------------*/
 
-    highlightParentPath(strokeWidth = 3, color = "black"): void {
-        this.parentPath.forEach((segment) => segment.setAttribute("stroke", color));
-        this.parentPath.forEach((segment) => segment.setAttribute("stroke-width", `${strokeWidth}`));
+    highlightParentPath(strokeWidth = 3, color = "black", dashPattern: string = "solid"): void {
+      this.parentPath.forEach(segment => segment.setAttribute("stroke", color));
+      this.parentPath.forEach(segment => segment.setAttribute("stroke-width", `${strokeWidth}`));
+      this.parentPath.forEach(segment => dashPattern === "solid" ? segment.removeAttribute("stroke-dasharray") : segment.setAttribute("stroke-dasharray", dashPattern));
     }
 
 }

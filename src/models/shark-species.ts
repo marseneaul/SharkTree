@@ -25,6 +25,8 @@ export class SharkSpecies {
     genus: string
     species: string
 
+    tags: string[]
+
     x: number
     y: number
     parentPath: (SVGLineElement|SVGPathElement)[]
@@ -39,6 +41,7 @@ export class SharkSpecies {
         this.alternativeNames = [];
 
         this.parentPath = [];
+        this.tags = config.tags || []; 
 
         this.buildShark();
 
@@ -133,10 +136,11 @@ export class SharkSpecies {
     highlightNode(color = "black"): void {
         this.node?.setAttribute("fill", color);
     }
-
-    highlightParentPath(strokeWidth=3, color = "black"): void {
-        this.parentPath.forEach((segment) => segment.setAttribute("stroke", color));
-        this.parentPath.forEach((segment) => segment.setAttribute("stroke-width", `${strokeWidth}`));
+    
+    highlightParentPath(strokeWidth = 3, color = "black", dashPattern: string = "solid"): void {
+        this.parentPath.forEach(segment => segment.setAttribute("stroke", color));
+        this.parentPath.forEach(segment => segment.setAttribute("stroke-width", `${strokeWidth}`));
+        this.parentPath.forEach(segment => dashPattern === "solid" ? segment.removeAttribute("stroke-dasharray") : segment.setAttribute("stroke-dasharray", dashPattern));
     }
 
     buildShark(): void {
@@ -157,6 +161,7 @@ export class SharkSpecies {
         this.family = this.config.family;
         this.genus = this.config.genus;
         this.species = this.config.species;
+        this.tags = this.config.tags || [];
     }
 
     /*----------------------------------------|
@@ -164,7 +169,7 @@ export class SharkSpecies {
     |----------------------------------------*/
 
     getFormattedString(): string {
-        const formattedString = `Common Name: ${this.commonName}<br>Binomial Name: ${this.binomialName}<br>Alternative Names: ${this.getAlternativeNamesSentence()}<br><br>Domain: ${this.domain}<br>Kingdom: ${this.kingdom}<br>Phylum: ${this.phylum}<br>Class: ${this.class}<br>Order: ${this.order}<br>Family: ${this.family}<br>Genus: ${this.genus}<br>Species: ${this.species}`;
+        const formattedString = `Common Name: ${this.commonName}<br>Binomial Name: ${this.binomialName}<br>Alternative Names: ${this.getAlternativeNamesSentence()}<br><br>Domain: ${this.domain}<br>Kingdom: ${this.kingdom}<br>Phylum: ${this.phylum}<br>Class: ${this.class}<br>Order: ${this.order}<br>Family: ${this.family}<br>Genus: ${this.genus}<br>Species: ${this.species}${this.tags.length ? `<br><br>Tags: ${this.tags.join(", ")}` : ""}`;
         return formattedString;
     }
 

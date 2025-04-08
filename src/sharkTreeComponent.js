@@ -73,12 +73,15 @@ export class SharkTreeComponent extends HTMLElement {
         container.innerHTML = "";
         container.appendChild(sharkTreeSvg);
     
-        // Reset taxonomic dropdowns
         const taxonomicDropdown = this.shadow.querySelector("#taxonomic-dropdown");
         const taxonomicValueDropdown = this.shadow.querySelector("#taxonomic-value-dropdown");
-        taxonomicDropdown.value = ""; // Reset to "None"
-        taxonomicValueDropdown.innerHTML = "<option value=''>All</option>"; // Reset to "All" with no other options yet
-        this.updateTaxonomicValues(); // Refresh values based on new tree
+        const tagDropdown = this.shadow.querySelector("#tag-dropdown");
+        const tagValueDropdown = this.shadow.querySelector("#tag-value-dropdown");
+        taxonomicDropdown.value = "";
+        taxonomicValueDropdown.innerHTML = '<option value="">All</option>';
+        tagDropdown.value = "";
+        tagValueDropdown.innerHTML = '<option value="">All</option>';
+        this.updateTaxonomicValues();
     }
 
     updateTaxonomicValues() {
@@ -129,6 +132,29 @@ export class SharkTreeComponent extends HTMLElement {
                             <option value="">All</option>
                         </select>
                     </div>
+                    <div id="tag-container">
+                        <label for="tag-dropdown">Tag Category:</label>
+                        <select id="tag-dropdown">
+                            <option value="">None</option>
+                            <option value="conservationStatus">Conservation Status</option>
+                            <option value="reproductiveStrategy">Reproductive Strategy</option>
+                            <option value="temperatureRegulation">Temperature Regulation</option>
+                            <option value="feedingBehavior">Feeding Behavior</option>
+                            <option value="oceanZone">Ocean Zone</option>
+                            <option value="evolutionaryCharacteristic">Evolutionary Characteristic</option>
+                            <option value="uniqueFeature">Unique Feature</option>
+                            <option value="geographicalDistribution">Geographical Distribution</option>
+                            <option value="habitat">Habitat</option>
+                            <option value="waterColumn">Water Column</option>
+                            <option value="physicalCharacteristic">Physical Characteristic</option>
+                            <option value="behavior">Behavior</option>
+                            <option value="numGills">Number of Gills</option>
+                            <option value="numDorsalFins">Number of Dorsal Fins</option>
+                        </select>
+                        <select id="tag-value-dropdown">
+                            <option value="">All</option>
+                        </select>
+                    </div>
                 </div>
                 <div id="phylo-container"></div>
                 <div id="shark-screen-container">
@@ -137,7 +163,7 @@ export class SharkTreeComponent extends HTMLElement {
             </div>
         `;
     }
-
+    
     css() {
         return `
             #app-container {
@@ -183,38 +209,30 @@ export class SharkTreeComponent extends HTMLElement {
                 line-height: 1.6;
                 color: #2F4F4F;
             }
-            #shark-screen h3 {
-                margin: 0 0 10px 0;
-                font-size: 18px;
-                color: #00688B;
-            }
-            #shark-screen p {
-                margin: 5px 0;
-            }
             #controls-container {
                 position: absolute;
                 top: 10px;
                 left: 10px;
                 display: flex;
-                flex-direction: row; /* Ensure horizontal layout */
+                flex-direction: row;
                 align-items: center;
-                gap: 20px; /* Increased gap between controls */
+                gap: 20px;
                 z-index: 100;
                 padding: 10px;
-                background: rgba(255, 255, 255, 0.9); /* Slight background to separate from tree */
+                background: rgba(255, 255, 255, 0.9);
                 border-radius: 5px;
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             }
-            #dropdown-container, #taxonomic-container {
+            #dropdown-container, #taxonomic-container, #tag-container {
                 display: flex;
                 flex-direction: row;
                 align-items: center;
-                gap: 8px; /* Space between label and dropdown */
+                gap: 8px;
             }
             label {
                 color: #2F4F4F;
                 font-size: 14px;
-                white-space: nowrap; /* Prevent label text wrapping */
+                white-space: nowrap;
             }
             select {
                 padding: 5px 8px;
@@ -224,8 +242,8 @@ export class SharkTreeComponent extends HTMLElement {
                 font-size: 14px;
                 color: #2F4F4F;
                 box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-                min-width: 120px; /* Ensure dropdowns have enough width */
-                max-width: 200px; /* Prevent overly wide dropdowns */
+                min-width: 120px;
+                max-width: 200px;
             }
             select:hover {
                 border-color: #00688B;
@@ -285,6 +303,33 @@ export class SharkTreeComponent extends HTMLElement {
             const value = event.target.value;
             if (level && this.sharkTree) {
                 this.sharkTree.highlightTaxonomicLevel(level, value || undefined);
+            }
+        });
+
+        const tagDropdown = this.shadow.querySelector("#tag-dropdown");
+        const tagValueDropdown = this.shadow.querySelector("#tag-value-dropdown");
+    
+        tagDropdown.addEventListener("change", (event) => {
+            const category = event.target.value;
+            if (category && this.sharkTree) {
+                const categoryData = this.sharkTree.tagCategories.get(category);
+                const values = new Set(categoryData?.species.flatMap(s => s.tags.filter(tag => this.sharkTree.getTagCategory(tag) === category)));
+                tagValueDropdown.innerHTML = `
+                    <option value="">All</option>
+                    ${Array.from(values).map(v => `<option value="${v}">${v}</option>`).join("")}
+                `;
+                this.sharkTree.highlightTagCategory(category);
+            } else {
+                tagValueDropdown.innerHTML = '<option value="">All</option>';
+                this.sharkTree?.clearAllHighlights();
+            }
+        });
+    
+        tagValueDropdown.addEventListener("change", (event) => {
+            const category = tagDropdown.value;
+            const value = event.target.value;
+            if (category && this.sharkTree) {
+                this.sharkTree.highlightTagCategory(category, value || undefined);
             }
         });
     }
