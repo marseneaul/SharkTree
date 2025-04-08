@@ -63,7 +63,8 @@ export enum UNIQUE_FEATURE {
 
 export enum TEMPERATURE_REGULATION {
     ENDOTHERMIC = "Endothermic",
-    EXOTHERMIC = "Exothermic"
+    REGIONALLY_ENDOTHERMIC = "Regionally Endothermic",
+    ECTOTHERMIC = "Ectothermic"
 }
 
 export enum GEOGRAPHICAL_DISTRIBUTION {
@@ -119,12 +120,7 @@ export enum PHYSICAL_CHARACTERISTIC {
     LARGED_SIZED = "Large-sized",
     SMALL_SIZED = "Small-sized",
     FLATTENED = "Flattened",
-    STREAMLINED = "Streamlined",
-    FIVE_GILLS = "Five Gills",
-    SIX_GILLS = "Six Gills",
-    SEVEN_GILLS = "Seven Gills",
-    ONE_DORSAL_FIN = "One Dorsal Fin",
-    TWO_DORSAL_FINS = "Two Dorsal Fins"
+    STREAMLINED = "Streamlined"
 }
 
 export enum BEHAVIOR {
@@ -147,3 +143,26 @@ export enum NUM_DORSAL_FINS {
     ONE = "1",
     TWO = "2"
 }
+
+export function getEnumCategory(tag: any): string | undefined {
+    if (Object.values(NUM_DORSAL_FINS).includes(tag)) return "NUM_DORSAL_FINS";
+    if (Object.values(NUM_GILLS).includes(tag)) return "NUM_GILLS";
+    if (Object.values(TEMPERATURE_REGULATION).includes(tag)) return "TEMPERATURE_REGULATION";
+    if (Object.values(FEEDING_BEHAVIOR).includes(tag)) return "FEEDING_BEHAVIOR";
+    if (Object.values(CONSERVATION_STATUS).includes(tag)) return "CONSERVATION_STATUS";
+    if (Object.values(REPRODUCTIVE_STRATEGY).includes(tag)) return "REPRODUCTIVE_STRATEGY";
+    if (Object.values(REEF_ZONE).includes(tag)) return "REEF_ZONE";
+    if (Object.values(OCEAN_ZONE).includes(tag)) return "OCEAN_ZONE";
+    if (Object.values(EVOLUTIONARY_CHARACTERISTIC).includes(tag)) return "EVOLUTIONARY_CHARACTERISTIC";
+    if (Object.values(UNIQUE_FEATURE).includes(tag)) return "UNIQUE_FEATURE";
+    if (Object.values(GEOGRAPHICAL_DISTRIBUTION).includes(tag)) return "GEOGRAPHICAL_DISTRIBUTION";
+    if (Object.values(HABITAT).includes(tag)) return "HABITAT";
+    if (Object.values(WATER_COLUMN).includes(tag)) return "WATER_COLUMN";
+    if (Object.values(PHYSICAL_CHARACTERISTIC).includes(tag)) return "PHYSICAL_CHARACTERISTIC";
+    if (Object.values(BEHAVIOR).includes(tag)) return "BEHAVIOR";
+    return undefined;
+}
+
+export const DEFAULT_TAGS = [
+    NUM_DORSAL_FINS.TWO, NUM_GILLS.FIVE, TEMPERATURE_REGULATION.ECTOTHERMIC, FEEDING_BEHAVIOR.CARNIVOROUS
+];

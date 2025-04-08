@@ -1,3 +1,4 @@
+import { TEMPERATURE_REGULATION } from "../../../../constants/enums";
 import lamnaNasusImg from "./../../../../images/lamna-nasus.jpeg";
 
 export const lamnaNasus = {
@@ -17,5 +18,9 @@ export const lamnaNasus = {
     order: "Lamniformes",
     family: "Lamnidae",
     genus: "Lamna",
-    species: "nasus"
+    species: "nasus",
+
+    tags: [
+        TEMPERATURE_REGULATION.ENDOTHERMIC
+    ]
 };

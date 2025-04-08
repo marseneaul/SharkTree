@@ -1,3 +1,4 @@
+import { TEMPERATURE_REGULATION } from "../../../../constants/enums";
 import isurusOxyrinchusImg from "./../../../../images/isurus-oxyrinchus.png";
 
 export const isurusOxyrinchus = {
@@ -17,5 +18,9 @@ export const isurusOxyrinchus = {
     order: "Lamniformes",
     family: "Lamnidae",
     genus: "Isurus",
-    species: "oxyrinchus"
+    species: "oxyrinchus",
+
+    tags: [
+        TEMPERATURE_REGULATION.ENDOTHERMIC
+    ]
 };

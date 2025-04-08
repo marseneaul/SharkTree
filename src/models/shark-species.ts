@@ -1,6 +1,7 @@
 import { sha256 } from "js-sha256";
 import { SharkConfig } from "../interfaces/shark-config";
 import { SharkTreeNode } from "./shark-tree-node";
+import { DEFAULT_TAGS, getEnumCategory } from "../constants/enums";
 
 // SharkTreeLeafNode
 export class SharkSpecies {
@@ -161,7 +162,25 @@ export class SharkSpecies {
         this.family = this.config.family;
         this.genus = this.config.genus;
         this.species = this.config.species;
+        this.buildTags();
+    }
+
+    buildTags(): void {
         this.tags = this.config.tags || [];
+        const existingCategories = new Set<string>();
+        this.tags.forEach(tag => {
+            const category = getEnumCategory(tag);
+            if (category) {
+                existingCategories.add(category);
+            }
+        });
+    
+        const tagsToAdd = DEFAULT_TAGS.filter(defaultTag => {
+            const category = getEnumCategory(defaultTag);
+            return category && !existingCategories.has(category);
+        });
+
+        this.tags = [...this.tags, ...tagsToAdd];
     }
 
     /*----------------------------------------|

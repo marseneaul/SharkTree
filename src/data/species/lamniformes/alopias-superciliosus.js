@@ -1,3 +1,5 @@
+import { TEMPERATURE_REGULATION } from "../../../constants/enums";
+
 export const alopiasSuperciliosus = {
     commonName: "Bigeye Thresher",
     binomialName: "Alopias superciliosus",
@@ -12,5 +14,9 @@ export const alopiasSuperciliosus = {
     order: "Lamniformes",
     family: "Alopiidae",
     genus: "Alopias",
-    species: "superciliosus"
+    species: "superciliosus",
+
+    tags: [
+        TEMPERATURE_REGULATION.ENDOTHERMIC
+    ]
 };

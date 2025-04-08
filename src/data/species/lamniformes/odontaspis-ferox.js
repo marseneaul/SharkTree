@@ -1,3 +1,5 @@
+import { TEMPERATURE_REGULATION } from "../../../constants/enums";
+
 export const odontaspisFerox = {
     commonName: "Smalltooth Sand Tiger",
     alternativeNames: ["Bumpytail Ragged-Tooth"],
@@ -13,5 +15,9 @@ export const odontaspisFerox = {
     order: "Lamniformes",
     family: "Odontaspididae",
     genus: "Odontaspis",
-    species: "ferox"
+    species: "ferox",
+
+    tags: [
+        TEMPERATURE_REGULATION.ENDOTHERMIC, TEMPERATURE_REGULATION.REGIONALLY_ENDOTHERMIC
+    ]
 };

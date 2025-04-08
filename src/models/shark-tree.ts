@@ -627,17 +627,13 @@ export class SharkTree {
             ? categoryData.species.filter(s => s.tags.includes(value))
             : categoryData.species.filter(s => s.tags.some(tag => this.getTagCategory(tag) === category));
     
+        // Reset all paths first
         this.getSharkSpeciesList().forEach(shark => this.clearHighlightPath(shark));
         
+        // Highlight nodes for tagged species
         speciesToHighlight.forEach(shark => {
-            const taxonomicColor = this.getTaxonomicColor(shark);
+            const taxonomicColor = this.getTaxonomicColor(shark) || "#2F4F4F";
             shark.highlightNode(taxonomicColor);
-            shark.highlightParentPath(3, taxonomicColor, "5,5");
-            let parent = shark.getParent();
-            while (parent) {
-                parent.highlightParentPath(3, taxonomicColor, "5,5");
-                parent = parent.getParent();
-            }
         });
     }
 
@@ -672,56 +668,11 @@ export class SharkTree {
         const node = shark.getNode();
         if (node) node.setAttribute("fill", "#000000");
     
-        const resetPath = (segments: (SVGLineElement | SVGPathElement)[]) => {
-            segments.forEach(segment => {
-                let strokeColor = "#2F4F4F";
-                let strokeWidth = "1";
-                let dashArray = "";
-    
-                if (this.activeTaxonomicLevel) {
-                    const levelData = this.taxonomicLevels.get(this.activeTaxonomicLevel);
-                    if (levelData && (!this.activeTaxonomicValue || shark[this.activeTaxonomicLevel] === this.activeTaxonomicValue)) {
-                        strokeColor = levelData.color;
-                        strokeWidth = "3";
-                    }
-                }
-    
-                if (this.activeTagCategory) {
-                    const tagData = this.tagCategories.get(this.activeTagCategory);
-                    if (tagData && (!this.activeTagValue || shark.tags.includes(this.activeTagValue))) {
-                        strokeWidth = "3";
-                        dashArray = "5,5";
-                    }
-                }
-    
-                segment.setAttribute("stroke", strokeColor);
-                segment.setAttribute("stroke-width", strokeWidth); // Always reset width
-                if (dashArray) {
-                    segment.setAttribute("stroke-dasharray", dashArray);
-                } else {
-                    segment.removeAttribute("stroke-dasharray");
-                }
-            });
-        };
-    
-        resetPath(shark.getParentPath());
-        let sharkParent = shark.getParent();
-        while (sharkParent) {
-            resetPath(sharkParent.getParentPath());
-            sharkParent = sharkParent.getParent();
-        }
-    }
-    
-    reapplyHighlights(shark: SharkSpecies): void {
-        const node = shark.getNode();
-        if (node) node.setAttribute("fill", "#000000");
-    
         const getPathStyle = (segments: (SVGLineElement | SVGPathElement)[], sharksToCheck: SharkSpecies[]) => {
             let strokeColor = "#2F4F4F";
             let strokeWidth = "1";
             let dashArray = "";
     
-            // Taxonomic color: Apply if any shark matches
             if (this.activeTaxonomicLevel) {
                 const levelData = this.taxonomicLevels.get(this.activeTaxonomicLevel);
                 if (levelData && sharksToCheck.some(s => !this.activeTaxonomicValue || s[this.activeTaxonomicLevel] === this.activeTaxonomicValue)) {
@@ -730,12 +681,11 @@ export class SharkTree {
                 }
             }
     
-            // Tag dash: Apply if any shark has the tag
             if (this.activeTagCategory) {
-                const tagData = this.tagCategories.get(this.activeTagCategory);
-                if (tagData && sharksToCheck.some(s => !this.activeTagValue || s.tags.includes(this.activeTagValue))) {
-                    strokeWidth = "3";
+                const hasTagInCategory = sharksToCheck.some(s => s.tags.some(tag => this.getTagCategory(tag) === this.activeTagCategory));
+                if (hasTagInCategory && (!this.activeTagValue || sharksToCheck.some(s => s.tags.includes(this.activeTagValue)))) {
                     dashArray = "5,5";
+                    strokeWidth = "3";
                 }
             }
     
@@ -754,15 +704,75 @@ export class SharkTree {
             });
         };
     
-        // Direct path: Use only this shark
+        const allSpecies = this.getSharkSpeciesList();
+    
+        // Style direct path
         const directStyle = getPathStyle(shark.getParentPath(), [shark]);
         applyStyle(shark.getParentPath(), directStyle);
     
-        // Parent paths: Consider all sharks in the taxonomic group
+        // Style parent paths
+        let sharkParent = shark.getParent();
+        while (sharkParent) {
+            const relatedSharks = allSpecies.filter(s => {
+                let p = s.getParent();
+                while (p) {
+                    if (p === sharkParent) return true;
+                    p = p.getParent();
+                }
+                return false;
+            });
+            const parentStyle = getPathStyle(sharkParent.getParentPath(), relatedSharks);
+            applyStyle(sharkParent.getParentPath(), parentStyle);
+            sharkParent = sharkParent.getParent();
+        }
+    }
+    
+    reapplyHighlights(shark: SharkSpecies): void {
+        const node = shark.getNode();
+        if (node) node.setAttribute("fill", "#000000");
+    
+        const getPathStyle = (segments: (SVGLineElement | SVGPathElement)[], sharksToCheck: SharkSpecies[]) => {
+            let strokeColor = "#2F4F4F";
+            let strokeWidth = "1";
+            let dashArray = "";
+    
+            if (this.activeTaxonomicLevel) {
+                const levelData = this.taxonomicLevels.get(this.activeTaxonomicLevel);
+                if (levelData && sharksToCheck.some(s => !this.activeTaxonomicValue || s[this.activeTaxonomicLevel] === this.activeTaxonomicValue)) {
+                    strokeColor = levelData.color;
+                    strokeWidth = "3";
+                }
+            }
+    
+            if (this.activeTagCategory) {
+                const hasTagInCategory = sharksToCheck.some(s => s.tags.some(tag => this.getTagCategory(tag) === this.activeTagCategory));
+                if (hasTagInCategory && (!this.activeTagValue || sharksToCheck.some(s => s.tags.includes(this.activeTagValue)))) {
+                    dashArray = "5,5";
+                    strokeWidth = "3";
+                }
+            }
+    
+            return { strokeColor, strokeWidth, dashArray };
+        };
+    
+        const applyStyle = (segments: (SVGLineElement | SVGPathElement)[], style: { strokeColor: string, strokeWidth: string, dashArray: string }) => {
+            segments.forEach(segment => {
+                segment.setAttribute("stroke", style.strokeColor);
+                segment.setAttribute("stroke-width", style.strokeWidth);
+                if (style.dashArray) {
+                    segment.setAttribute("stroke-dasharray", style.dashArray);
+                } else {
+                    segment.removeAttribute("stroke-dasharray");
+                }
+            });
+        };
+    
+        const directStyle = getPathStyle(shark.getParentPath(), [shark]);
+        applyStyle(shark.getParentPath(), directStyle);
+    
         let sharkParent = shark.getParent();
         const allSpecies = this.getSharkSpeciesList();
         while (sharkParent) {
-            // Find all sharks sharing this parent
             const relatedSharks = allSpecies.filter(s => {
                 let p = s.getParent();
                 while (p) {

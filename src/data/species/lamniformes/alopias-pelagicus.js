@@ -1,3 +1,5 @@
+import { TEMPERATURE_REGULATION } from "../../../constants/enums";
+
 export const alopiasPelagicus = {
     commonName: "Pelagic Thresher",
     binomialName: "Alopias pelagicus",
@@ -12,5 +14,9 @@ export const alopiasPelagicus = {
     order: "Lamniformes",
     family: "Alopiidae",
     genus: "Alopias",
-    species: "pelagicus"
+    species: "pelagicus",
+
+    tags: [
+        TEMPERATURE_REGULATION.ENDOTHERMIC
+    ]
 };
