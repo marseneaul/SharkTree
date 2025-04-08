@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../constants/enums";
+
 export const squatinaOculata = {
     commonName: "Smoothback Angelshark",
     binomialName: "Squatina oculata",
@@ -12,5 +14,9 @@ export const squatinaOculata = {
     order: "Squatiniformes",
     family: "Squatinidae",
     genus: "Squatina",
-    species: "oculata"
+    species: "oculata",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

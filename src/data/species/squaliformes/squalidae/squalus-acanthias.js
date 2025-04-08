@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../../constants/enums";
+
 export const squalusAcanthias = {
     commonName: "Spiny Dogfish",
     alternativeNames: ["Spurdog", "Mud Shark", "Piked Dogfish"],
@@ -13,5 +15,9 @@ export const squalusAcanthias = {
     order: "Squaliformes",
     family: "Squalidae",
     genus: "Squalus",
-    species: "acanthias"
+    species: "acanthias",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

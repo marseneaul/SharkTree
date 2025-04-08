@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../../constants/enums";
+
 export const dalatiasLicha = {
     commonName: "Kitefin Shark",
     alternativeNames: ["Seal Shark", "Black Shark", "Darkie Charlie"],
@@ -13,5 +15,9 @@ export const dalatiasLicha = {
     order: "Squaliformes",
     family: "Dalatiidae",
     genus: "Dalatias",
-    species: "licha"
+    species: "licha",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

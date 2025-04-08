@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../../constants/enums";
+
 export const oxynotusParadoxus = {
     commonName: "Sailfin Roughshark",
     binomialName: "Oxynotus paradoxus",
@@ -12,5 +14,9 @@ export const oxynotusParadoxus = {
     order: "Squaliformes",
     family: "Oxynotidae",
     genus: "Oxynotus",
-    species: "paradoxus"
+    species: "paradoxus",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

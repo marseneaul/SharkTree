@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../../constants/enums";
+
 export const proscymnodonPlunketi = {
     commonName: "Plunket Shark",
     alternativeNames: ["Plunket's Shark"],
@@ -13,5 +15,9 @@ export const proscymnodonPlunketi = {
     order: "Squaliformes",
     family: "Somniosidae",
     genus: "Scymnodon",
-    species: "plunketi"
+    species: "plunketi",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

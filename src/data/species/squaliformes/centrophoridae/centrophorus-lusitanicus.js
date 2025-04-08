@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../../constants/enums";
+
 export const centrophorusLusitanicus = {
     commonName: "Lowfin Gulper Shark",
     binomialName: "Centrophorus lusitanicus",
@@ -12,5 +14,9 @@ export const centrophorusLusitanicus = {
     order: "Squaliformes",
     family: "Centrophoridae",
     genus: "Centrophorus",
-    species: "lusitanicus"
+    species: "lusitanicus",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

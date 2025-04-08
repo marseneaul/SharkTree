@@ -188,7 +188,7 @@ export class SharkSpecies {
     |----------------------------------------*/
 
     getFormattedString(): string {
-        const formattedString = `Common Name: ${this.commonName}<br>Binomial Name: ${this.binomialName}<br>Alternative Names: ${this.getAlternativeNamesSentence()}<br><br>Domain: ${this.domain}<br>Kingdom: ${this.kingdom}<br>Phylum: ${this.phylum}<br>Class: ${this.class}<br>Order: ${this.order}<br>Family: ${this.family}<br>Genus: ${this.genus}<br>Species: ${this.species}${this.tags.length ? `<br><br>Tags: ${this.tags.join(", ")}` : ""}`;
+        const formattedString = `Common Name: ${this.commonName}<br>Binomial Name: ${this.binomialName}<br>Alternative Names: ${this.getAlternativeNamesSentence()}<br><br>Domain: ${this.domain}<br>Kingdom: ${this.kingdom}<br>Phylum: ${this.phylum}<br>Class: ${this.class}<br>Order: ${this.order}<br>Family: ${this.family}<br>Genus: ${this.genus}<br>Species: ${this.species}`;
         return formattedString;
     }
 

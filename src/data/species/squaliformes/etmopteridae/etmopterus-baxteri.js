@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../../constants/enums";
+
 export const etmopterusBaxteri = {
     commonName: "New Zealand Lanternshark",
     binomialName: "Etmopterus baxteri",
@@ -12,5 +14,9 @@ export const etmopterusBaxteri = {
     order: "Squaliformes",
     family: "Etmopteridae",
     genus: "Etmopterus",
-    species: "baxteri"
+    species: "baxteri",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

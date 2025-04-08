@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../../constants/enums";
+
 export const etmopterusPolli = {
     commonName: "African Lanternshark",
     binomialName: "Etmopterus polli",
@@ -12,5 +14,9 @@ export const etmopterusPolli = {
     order: "Squaliformes",
     family: "Etmopteridae",
     genus: "Etmopterus",
-    species: "polli"
+    species: "polli",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

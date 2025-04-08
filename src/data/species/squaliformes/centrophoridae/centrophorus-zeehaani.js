@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../../constants/enums";
+
 export const centrophorusZeehaani = {
     commonName: "Southern Dogfish",
     binomialName: "Centrophorus zeehaani",
@@ -12,5 +14,9 @@ export const centrophorusZeehaani = {
     order: "Squaliformes",
     family: "Centrophoridae",
     genus: "Centrophorus",
-    species: "zeehaani"
+    species: "zeehaani",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

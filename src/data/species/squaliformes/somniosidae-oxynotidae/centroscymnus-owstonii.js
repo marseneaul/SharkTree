@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../../constants/enums";
+
 export const centroscymnusOwstonii = {
     commonName: "Roughskin Dogfish",
     binomialName: "Centroscymnus owstonii",
@@ -12,5 +14,9 @@ export const centroscymnusOwstonii = {
     order: "Squaliformes",
     family: "Somniosidae",
     genus: "Centroscyllium",
-    species: "owstonii"
+    species: "owstonii",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

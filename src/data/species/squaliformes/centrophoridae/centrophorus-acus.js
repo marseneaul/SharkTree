@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../../constants/enums";
+
 export const centrophorusAcus = {
     commonName: "Needle Dogfish",
     binomialName: "Centrophorus acus",
@@ -12,5 +14,9 @@ export const centrophorusAcus = {
     order: "Squaliformes",
     family: "Centrophoridae",
     genus: "Centrophorus",
-    species: "acus"
+    species: "acus",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

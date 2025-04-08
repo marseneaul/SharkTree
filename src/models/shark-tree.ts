@@ -6,7 +6,7 @@ import { SharkTreeNode } from "./shark-tree-node";
 import { Svg } from "../drawing/svg";
 import { Utils } from "../utils/utils";
 import { BLACK } from "../constants/colors";
-import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION, FEEDING_BEHAVIOR, OCEAN_ZONE, EVOLUTIONARY_CHARACTERISTIC, UNIQUE_FEATURE, GEOGRAPHICAL_DISTRIBUTION, HABITAT, WATER_COLUMN, PHYSICAL_CHARACTERISTIC, BEHAVIOR, NUM_GILLS, NUM_DORSAL_FINS } from "../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION, FEEDING_BEHAVIOR, OCEAN_ZONE, EVOLUTIONARY_CHARACTERISTIC, UNIQUE_FEATURE, GEOGRAPHICAL_DISTRIBUTION, HABITAT, WATER_COLUMN, PHYSICAL_CHARACTERISTIC, BEHAVIOR, NUM_GILLS, NUM_DORSAL_FINS, ANAL_FIN } from "../constants/enums";
 
 export class SharkTree {
     config: SharkTreeNodeConfig
@@ -244,7 +244,7 @@ export class SharkTree {
 
     drawRim(g: SVGGElement, svg: SVGElement, sharkSpecies: SharkSpecies[], centerX: number, centerY: number): void {
         const outerCircle = Svg.drawCircle(centerX, centerY, this.radius);
-        outerCircle.setAttribute("stroke", "#2F4F4F"); // Dark slate gray
+        outerCircle.setAttribute("stroke", BLACK);
         outerCircle.setAttribute("stroke-width", "2");
         outerCircle.setAttribute("fill", "none");
         g.appendChild(outerCircle);
@@ -252,8 +252,8 @@ export class SharkTree {
         const numSpecies = sharkSpecies.length;
         const spacing = (2 * Math.PI) / numSpecies;
     
-        const dot = Svg.drawCircle(centerX, centerY, 5, "#00688B"); // Darker teal
-        dot.setAttribute("stroke", "#2F4F4F");
+        const dot = Svg.drawCircle(centerX, centerY, 5, BLACK);
+        dot.setAttribute("stroke", BLACK);
         dot.setAttribute("stroke-width", "1");
         g.appendChild(dot);
     
@@ -458,8 +458,8 @@ export class SharkTree {
             const x = !line && item instanceof SharkSpecies ? item.getX() : parseFloat(Utils.getAttributeFromLineOrPath(line, "x2") ?? "0");
             const y = !line && item instanceof SharkSpecies ? item.getY() : parseFloat(Utils.getAttributeFromLineOrPath(line, "y2") ?? "0");
             const newLine = Svg.extendLineToPoint(x, y, this.centerX, this.centerY, this.levelHeight);
-            newLine.setAttribute("stroke", "#2F4F4F"); // Dark slate gray
-            newLine.setAttribute("stroke-linecap", "round"); // Rounded ends
+            newLine.setAttribute("stroke", BLACK);
+            newLine.setAttribute("stroke-linecap", "round");
             item.addParentPathSegment(newLine);
             svg.appendChild(newLine);
         });
@@ -475,9 +475,9 @@ export class SharkTree {
             lines.forEach((line, i) => {
                 if (i !== lines.length - 1) {
                     const [firstArc, secondArc] = Svg.getArcs(this.centerX, this.centerY, this.radius, this.levelHeight, line, lines[i + 1], iteration);
-                    firstArc.setAttribute("stroke", "#2F4F4F");
+                    firstArc.setAttribute("stroke", BLACK);
                     firstArc.setAttribute("stroke-linecap", "round");
-                    secondArc.setAttribute("stroke", "#2F4F4F");
+                    secondArc.setAttribute("stroke", BLACK);
                     secondArc.setAttribute("stroke-linecap", "round");
                     arcSet.push(firstArc, secondArc);
                 }
@@ -536,7 +536,7 @@ export class SharkTree {
                 node.setAttribute("fill", "red");
                 node.classList.add("pulse");
             } else {
-                node.setAttribute("fill", "#000000"); // Black
+                node.setAttribute("fill", BLACK);
                 node.classList.remove("pulse");
             }
         });
@@ -566,13 +566,16 @@ export class SharkTree {
 
     initializeTagCategories(): void {
         const categories = [
-            "conservationStatus", "reproductiveStrategy", "temperatureRegulation",
-            "feedingBehavior", "oceanZone", "evolutionaryCharacteristic", "uniqueFeature",
-            "geographicalDistribution", "habitat", "waterColumn", "physicalCharacteristic",
-            "behavior", "numGills", "numDorsalFins"
+            "conservationStatus", 
+            "reproductiveStrategy", 
+            "temperatureRegulation",
+            "feedingBehavior", 
+            "numGills", 
+            "numDorsalFins",
+            "analFin"
         ];
         
-        categories.forEach((category, index) => {
+        categories.forEach((category, _index) => {
             this.tagCategories.set(category, {
                 species: []
             });
@@ -609,7 +612,8 @@ export class SharkTree {
             "physicalCharacteristic": Object.values(PHYSICAL_CHARACTERISTIC),
             "behavior": Object.values(BEHAVIOR),
             "numGills": Object.values(NUM_GILLS),
-            "numDorsalFins": Object.values(NUM_DORSAL_FINS)
+            "numDorsalFins": Object.values(NUM_DORSAL_FINS),
+            "analFin": Object.values(ANAL_FIN)
         };
         for (const [category, values] of Object.entries(tagEnums)) {
             if (values.includes(tag)) return category;
@@ -632,7 +636,7 @@ export class SharkTree {
         
         // Highlight nodes for tagged species
         speciesToHighlight.forEach(shark => {
-            const taxonomicColor = this.getTaxonomicColor(shark) || "#2F4F4F";
+            const taxonomicColor = this.getTaxonomicColor(shark) || BLACK;
             shark.highlightNode(taxonomicColor);
         });
     }
@@ -666,10 +670,10 @@ export class SharkTree {
 
     clearHighlightPath(shark: SharkSpecies): void {
         const node = shark.getNode();
-        if (node) node.setAttribute("fill", "#000000");
+        if (node) node.setAttribute("fill", BLACK);
     
         const getPathStyle = (segments: (SVGLineElement | SVGPathElement)[], sharksToCheck: SharkSpecies[]) => {
-            let strokeColor = "#2F4F4F";
+            let strokeColor = BLACK;
             let strokeWidth = "1";
             let dashArray = "";
     
@@ -729,10 +733,10 @@ export class SharkTree {
     
     reapplyHighlights(shark: SharkSpecies): void {
         const node = shark.getNode();
-        if (node) node.setAttribute("fill", "#000000");
+        if (node) node.setAttribute("fill", BLACK);
     
         const getPathStyle = (segments: (SVGLineElement | SVGPathElement)[], sharksToCheck: SharkSpecies[]) => {
-            let strokeColor = "#2F4F4F";
+            let strokeColor = BLACK;
             let strokeWidth = "1";
             let dashArray = "";
     

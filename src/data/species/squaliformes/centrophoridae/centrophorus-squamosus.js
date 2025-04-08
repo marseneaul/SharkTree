@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../../constants/enums";
+
 export const centrophorusSquamosus = {
     commonName: "Leafscale Gulper Shark",
     binomialName: "Centrophorus squamosus",
@@ -12,5 +14,9 @@ export const centrophorusSquamosus = {
     order: "Squaliformes",
     family: "Centrophoridae",
     genus: "Centrophorus",
-    species: "squamosus"
+    species: "squamosus",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

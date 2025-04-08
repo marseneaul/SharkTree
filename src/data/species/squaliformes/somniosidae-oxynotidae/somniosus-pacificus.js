@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../../constants/enums";
+
 export const somniosusPacificus = {
     commonName: "Pacific Sleeper Shark",
     binomialName: "Somniosus pacificus",
@@ -12,5 +14,9 @@ export const somniosusPacificus = {
     order: "Squaliformes",
     family: "Somniosidae",
     genus: "Somniosus",
-    species: "pacificus"
+    species: "pacificus",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

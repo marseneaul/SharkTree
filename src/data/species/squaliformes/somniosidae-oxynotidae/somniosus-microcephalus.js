@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../../constants/enums";
+
 export const somniosusMicrocephalus = {
     commonName: "Greenland Dogfish",
     alternativeNames: ["Gurry Shark", "Grey Shark"],
@@ -13,5 +15,9 @@ export const somniosusMicrocephalus = {
     order: "Squaliformes",
     family: "Somniosidae",
     genus: "Somniosus",
-    species: "microcephalus"
+    species: "microcephalus",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

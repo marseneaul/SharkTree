@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../../constants/enums";
+
 export const scymnodonRingens = {
     commonName: "Knifetooth Dogfish",
     binomialName: "Scymnodon ringens",
@@ -12,5 +14,9 @@ export const scymnodonRingens = {
     order: "Squaliformes",
     family: "Somniosidae",
     genus: "Scymnodon",
-    species: "ringens"
+    species: "ringens",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

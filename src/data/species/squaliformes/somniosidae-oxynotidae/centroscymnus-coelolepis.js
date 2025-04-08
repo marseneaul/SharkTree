@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../../constants/enums";
+
 export const centroscymnusCoelolepis = {
     commonName: "Portuguese Dogfish",
     binomialName: "Centroscymnus coelolepis",
@@ -12,5 +14,9 @@ export const centroscymnusCoelolepis = {
     order: "Squaliformes",
     family: "Somniosidae",
     genus: "Centroscymnus",
-    species: "coelolepis"
+    species: "coelolepis",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

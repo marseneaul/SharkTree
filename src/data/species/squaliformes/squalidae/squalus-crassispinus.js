@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../../constants/enums";
+
 export const squalusCrassispinus = {
     commonName: "Fatspine Spurdog",
     binomialName: "Squalus crassispinus",
@@ -12,5 +14,9 @@ export const squalusCrassispinus = {
     order: "Squaliformes",
     family: "Squalidae",
     genus: "Squalus",
-    species: "crassispinus"
+    species: "crassispinus",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../../constants/enums";
+
 export const deaniaQuadrispinosum = {
     commonName: "Longsnout Dogfish",
     binomialName: "Deania quadrispinosa",
@@ -12,5 +14,9 @@ export const deaniaQuadrispinosum = {
     order: "Squaliformes",
     family: "Centrophoridae",
     genus: "Deania",
-    species: "quadrispinosa"
+    species: "quadrispinosa",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

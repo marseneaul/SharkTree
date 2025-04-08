@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../constants/enums";
+
 export const echinorhinusBrucus = {
     commonName: "Bramble Shark",
     binomialName: "Echinorhinus brucus",
@@ -12,5 +14,9 @@ export const echinorhinusBrucus = {
     order: "Squaliformes",
     family: "Echinorhinidae",
     genus: "Echinorhinus",
-    species: "brucus"
+    species: "brucus",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

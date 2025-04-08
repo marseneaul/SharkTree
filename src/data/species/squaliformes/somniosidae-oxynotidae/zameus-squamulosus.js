@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../../constants/enums";
+
 export const zameusSquamulosus = {
     commonName: "Velvet Dogfish",
     binomialName: "Zameus squamulosus",
@@ -12,5 +14,9 @@ export const zameusSquamulosus = {
     order: "Squaliformes",
     family: "Somniosidae",
     genus: "Zameus",
-    species: "squamulosus"
+    species: "squamulosus",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

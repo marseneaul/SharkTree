@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../constants/enums";
+
 export const squatinaTergocellatoides = {
     commonName: "Ocellated Angelshark",
     binomialName: "Squatina tergocellatoides",
@@ -12,5 +14,9 @@ export const squatinaTergocellatoides = {
     order: "Squatiniformes",
     family: "Squatinidae",
     genus: "Squatina",
-    species: "tergocellatoides"
+    species: "tergocellatoides",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

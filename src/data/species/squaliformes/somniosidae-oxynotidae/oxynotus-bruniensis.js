@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../../constants/enums";
+
 export const oxynotusBruniensis = {
     commonName: "Prickly Dogfish",
     binomialName: "Oxynotus bruniensis",
@@ -12,5 +14,9 @@ export const oxynotusBruniensis = {
     order: "Squaliformes",
     family: "Oxynotidae",
     genus: "Oxynotus",
-    species: "bruniensis"
+    species: "bruniensis",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

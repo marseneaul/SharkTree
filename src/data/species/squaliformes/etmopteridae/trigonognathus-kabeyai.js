@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../../constants/enums";
+
 export const trigonognathusKabeyai = {
     commonName: "Viper Dogfish",
     alternativeNames: ["Viper Shark"],
@@ -13,5 +15,9 @@ export const trigonognathusKabeyai = {
     order: "Squaliformes",
     family: "Etmopteridae",
     genus: "Trigonognathus",
-    species: "kabeyai"
+    species: "kabeyai",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

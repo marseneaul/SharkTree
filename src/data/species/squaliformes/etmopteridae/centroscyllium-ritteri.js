@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../../constants/enums";
+
 export const centroscylliumRitteri = {
     commonName: "White Dogfish",
     binomialName: "Centroscyllium ritteri",
@@ -12,5 +14,9 @@ export const centroscylliumRitteri = {
     order: "Squaliformes",
     family: "Etmopteridae",
     genus: "Centroscyllium",
-    species: "ritteri"
+    species: "ritteri",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

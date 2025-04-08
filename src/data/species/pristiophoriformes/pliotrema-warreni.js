@@ -1,4 +1,4 @@
-import { NUM_GILLS } from "../../../constants/enums";
+import { ANAL_FIN, NUM_GILLS } from "../../../constants/enums";
 
 export const pliotremaWarreni = {
     commonName: "Sixgill Sawshark",
@@ -17,6 +17,7 @@ export const pliotremaWarreni = {
     species: "warreni",
 
     tags: [
-        NUM_GILLS.SIX
+        NUM_GILLS.SIX,
+        ANAL_FIN.NO
     ]
 };

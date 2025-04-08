@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../constants/enums";
+
 export const pristiophorusCirratus = {
     commonName: "Longnose Sawshark",
     alternativeNames: ["Common Sawshark"],
@@ -13,5 +15,10 @@ export const pristiophorusCirratus = {
     order: "Pristiophoriformes",
     family: "Pristiophoridae",
     genus: "Pristiophorus",
-    species: "cirratus"
+    species: "cirratus",
+
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

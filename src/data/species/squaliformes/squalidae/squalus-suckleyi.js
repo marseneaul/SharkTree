@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../../constants/enums";
+
 export const squalusSuckleyi = {
     commonName: "Pacific Spiny Dogfish",
     binomialName: "Squalus suckleyi",
@@ -12,5 +14,9 @@ export const squalusSuckleyi = {
     order: "Squaliformes",
     family: "Squalidae",
     genus: "Squalus",
-    species: "suckleyi"
+    species: "suckleyi",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

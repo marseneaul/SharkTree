@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../../constants/enums";
+
 export const deaniaCalcea = {
     commonName: "Birdbeak Dogfish",
     binomialName: "Deania calcea",
@@ -12,5 +14,9 @@ export const deaniaCalcea = {
     order: "Squaliformes",
     family: "Centrophoridae",
     genus: "Deania",
-    species: "calcea"
+    species: "calcea",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

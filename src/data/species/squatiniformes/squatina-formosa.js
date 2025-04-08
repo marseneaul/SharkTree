@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../constants/enums";
+
 export const squatinaFormosa = {
     commonName: "Taiwan Angelshark",
     binomialName: "Squatina formosa",
@@ -12,5 +14,9 @@ export const squatinaFormosa = {
     order: "Squatiniformes",
     family: "Squatinidae",
     genus: "Squatina",
-    species: "formosa"
+    species: "formosa",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../../constants/enums";
+
 export const squaliolusLaticaudus = {
     commonName: "Spined Pygmy Shark",
     alternativeNames: ["Dwarf Shark", "Bigeye Dwarf Shark"],
@@ -13,5 +15,9 @@ export const squaliolusLaticaudus = {
     order: "Squaliformes",
     family: "Dalatiidae",
     genus: "Squaliolus",
-    species: "laticaudus"
+    species: "laticaudus",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

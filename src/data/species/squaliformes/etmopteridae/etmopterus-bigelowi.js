@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../../constants/enums";
+
 export const etmopterusBigelowi = {
     commonName: "Blurred Lanternshark",
     binomialName: "Etmopterus bigelowi",
@@ -12,5 +14,9 @@ export const etmopterusBigelowi = {
     order: "Squaliformes",
     family: "Etmopteridae",
     genus: "Etmopterus",
-    species: "bigelowi"
+    species: "bigelowi",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

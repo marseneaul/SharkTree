@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../../constants/enums";
+
 export const squalusGrahami = {
     commonName: "Eastern Longnose Spurdog",
     binomialName: "Squalus grahami",
@@ -12,5 +14,9 @@ export const squalusGrahami = {
     order: "Squaliformes",
     family: "Squalidae",
     genus: "Squalus",
-    species: "grahami"
+    species: "grahami",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

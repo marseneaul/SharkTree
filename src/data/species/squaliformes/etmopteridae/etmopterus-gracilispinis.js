@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../../constants/enums";
+
 export const etmopterusGracilispinis = {
     commonName: "Broadbanded Lanternshark",
     binomialName: "Etmopterus gracilispinis",
@@ -12,5 +14,9 @@ export const etmopterusGracilispinis = {
     order: "Squaliformes",
     family: "Etmopteridae",
     genus: "Etmopterus",
-    species: "gracilispinis"
+    species: "gracilispinis",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

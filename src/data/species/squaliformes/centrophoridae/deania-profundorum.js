@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../../constants/enums";
+
 export const deaniaProfundorum = {
     commonName: "Arrowhead Dogfish",
     binomialName: "Deania profundorum",
@@ -12,5 +14,9 @@ export const deaniaProfundorum = {
     order: "Squaliformes",
     family: "Centrophoridae",
     genus: "Deania",
-    species: "profundorum"
+    species: "profundorum",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

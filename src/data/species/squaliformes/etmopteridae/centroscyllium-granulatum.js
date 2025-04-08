@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../../constants/enums";
+
 export const centroscylliumGranulatum = {
     commonName: "Granular Dogfish",
     binomialName: "Centroscyllium granulatum",
@@ -12,5 +14,9 @@ export const centroscylliumGranulatum = {
     order: "Squaliformes",
     family: "Etmopteridae",
     genus: "Centroscyllium",
-    species: "granulatum"
+    species: "granulatum",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

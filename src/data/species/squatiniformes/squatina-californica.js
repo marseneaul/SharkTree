@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../constants/enums";
+
 export const squatinaCalifornica = {
     commonName: "Pacific Angelshark",
     binomialName: "Squatina californica",
@@ -12,5 +14,9 @@ export const squatinaCalifornica = {
     order: "Squatiniformes",
     family: "Squatinidae",
     genus: "Squatina",
-    species: "californica"
+    species: "californica",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

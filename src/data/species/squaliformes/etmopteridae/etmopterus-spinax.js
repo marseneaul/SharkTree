@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../../constants/enums";
+
 export const etmopterusSpinax = {
     commonName: "Velvet Belly Lanternshark",
     alternativeNames: ["Velvet Belly"],
@@ -13,5 +15,9 @@ export const etmopterusSpinax = {
     order: "Squaliformes",
     family: "Etmopteridae",
     genus: "Etmopterus",
-    species: "spinax"
+    species: "spinax",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../../constants/enums";
+
 export const centroselachusCrepidater = {
     commonName: "Longnose Velvet Dogfish",
     binomialName: "Centroselachus crepidater",
@@ -12,5 +14,9 @@ export const centroselachusCrepidater = {
     order: "Squaliformes",
     family: "Somniosidae",
     genus: "Centroselachus",
-    species: "crepidater"
+    species: "crepidater",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

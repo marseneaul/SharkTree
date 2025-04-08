@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../constants/enums";
+
 export const squatinaAculeata = {
     commonName: "Sawback Angelshark",
     binomialName: "Squatina aculeata",
@@ -12,5 +14,9 @@ export const squatinaAculeata = {
     order: "Squatiniformes",
     family: "Squatinidae",
     genus: "Squatina",
-    species: "aculeata"
+    species: "aculeata",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

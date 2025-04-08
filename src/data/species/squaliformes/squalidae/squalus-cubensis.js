@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../../constants/enums";
+
 export const squalusCubensis = {
     commonName: "Cuban Dogfish",
     binomialName: "Squalus cubensis",
@@ -12,5 +14,9 @@ export const squalusCubensis = {
     order: "Squaliformes",
     family: "Squalidae",
     genus: "Squalus",
-    species: "cubensis"
+    species: "cubensis",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

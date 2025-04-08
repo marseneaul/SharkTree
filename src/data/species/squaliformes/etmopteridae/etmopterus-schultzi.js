@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../../constants/enums";
+
 export const etmopterusSchultzi = {
     commonName: "Fringefin Lanternshark",
     binomialName: "Etmopterus schultzi",
@@ -12,5 +14,9 @@ export const etmopterusSchultzi = {
     order: "Squaliformes",
     family: "Etmopteridae",
     genus: "Etmopterus",
-    species: "schultzi"
+    species: "schultzi",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

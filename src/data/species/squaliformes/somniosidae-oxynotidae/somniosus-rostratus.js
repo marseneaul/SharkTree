@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../../constants/enums";
+
 export const somniosusRostratus = {
     commonName: "Little Sleeper Shark",
     binomialName: "Somniosus rostratus",
@@ -12,5 +14,9 @@ export const somniosusRostratus = {
     order: "Squaliformes",
     family: "Somniosidae",
     genus: "Somniosus",
-    species: "rostratus"
+    species: "rostratus",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

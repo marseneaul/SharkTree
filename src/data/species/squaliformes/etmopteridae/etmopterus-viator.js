@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../../constants/enums";
+
 export const etmopterusViator = {
     commonName: "Blue-Eye Lantern Shark",
     alternativeNames: ["Traveller Lanternshark", "Slate Lanternshark"],
@@ -13,5 +15,9 @@ export const etmopterusViator = {
     order: "Squaliformes",
     family: "Etmopteridae",
     genus: "Etmopterus",
-    species: "viator"
+    species: "viator",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../../constants/enums";
+
 export const squaliolusAliae = {
     commonName: "Smalleye Pygmy Shark",
     binomialName: "Squaliolus aliae",
@@ -12,5 +14,9 @@ export const squaliolusAliae = {
     order: "Squaliformes",
     family: "Dalatiidae",
     genus: "Squaliolus",
-    species: "aliae"
+    species: "aliae",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

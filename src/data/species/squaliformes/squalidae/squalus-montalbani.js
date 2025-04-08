@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../../constants/enums";
+
 export const squalusMontalbani = {
     commonName: "Philippine Spurdog",
     alternativeNames: ["Indonesian Greeneye Spurdog"],
@@ -13,5 +15,9 @@ export const squalusMontalbani = {
     order: "Squaliformes",
     family: "Squalidae",
     genus: "Squalus",
-    species: "montalbani"
+    species: "montalbani",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

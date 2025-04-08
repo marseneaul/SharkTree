@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../../constants/enums";
+
 export const centroscylliumNigrum = {
     commonName: "Combtooth Dogfish",
     binomialName: "Centroscyllium nigrum",
@@ -12,5 +14,9 @@ export const centroscylliumNigrum = {
     order: "Squaliformes",
     family: "Etmopteridae",
     genus: "Centroscyllium",
-    species: "nigrum"
+    species: "nigrum",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

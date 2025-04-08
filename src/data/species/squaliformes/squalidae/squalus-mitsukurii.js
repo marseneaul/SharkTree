@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../../constants/enums";
+
 export const squalusMitsukurii = {
     commonName: "Shortspine Spurdog",
     binomialName: "Squalus mitsukurii",
@@ -12,5 +14,9 @@ export const squalusMitsukurii = {
     order: "Squaliformes",
     family: "Squalidae",
     genus: "Squalus",
-    species: "mitsukurii"
+    species: "mitsukurii",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

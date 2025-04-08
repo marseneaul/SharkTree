@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../../constants/enums";
+
 export const miroscylliumSheikoi = {
     commonName: "Rasptooth Dogfish",
     binomialName: "Etmopterus sheikoi",
@@ -12,5 +14,9 @@ export const miroscylliumSheikoi = {
     order: "Squaliformes",
     family: "Etmopteridae",
     genus: "Etmopterus",
-    species: "sheikoi"
+    species: "sheikoi",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

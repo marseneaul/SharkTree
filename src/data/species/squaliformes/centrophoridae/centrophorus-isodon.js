@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../../constants/enums";
+
 export const centrophorusIsodon = {
     commonName: "Blackfin Gulper Shark",
     binomialName: "Centrophorus isodon",
@@ -12,5 +14,9 @@ export const centrophorusIsodon = {
     order: "Squaliformes",
     family: "Centrophoridae",
     genus: "Centrophorus",
-    species: "isodon"
+    species: "isodon",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../../constants/enums";
+
 export const centrophorusMoluccensis = {
     commonName: "Smallfin Gulper Shark",
     alternativeNames: ["Endeavour Dogfish"],
@@ -13,5 +15,9 @@ export const centrophorusMoluccensis = {
     order: "Squaliformes",
     family: "Centrophoridae",
     genus: "Centrophorus",
-    species: "moluccensiss"
+    species: "moluccensiss",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

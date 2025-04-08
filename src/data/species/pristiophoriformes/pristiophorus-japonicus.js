@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../constants/enums";
+
 export const pristiophorusJaponicus = {
     commonName: "Japanese Sawshark",
     binomialName: "Pristiophorus japonicus",
@@ -12,5 +14,9 @@ export const pristiophorusJaponicus = {
     order: "Pristiophoriformes",
     family: "Pristiophoridae",
     genus: "Pristiophorus",
-    species: "japonicus"
+    species: "japonicus",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };

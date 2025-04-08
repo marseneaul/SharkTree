@@ -1,3 +1,5 @@
+import { ANAL_FIN } from "../../../constants/enums";
+
 export const echinorhinusCookei = {
     commonName: "Prickly Shark",
     binomialName: "Echinorhinus cookei",
@@ -12,5 +14,9 @@ export const echinorhinusCookei = {
     order: "Squaliformes",
     family: "Echinorhinidae",
     genus: "Echinorhinus",
-    species: "cookei"
+    species: "cookei",
+
+    tags: [
+        ANAL_FIN.NO
+    ]
 };
