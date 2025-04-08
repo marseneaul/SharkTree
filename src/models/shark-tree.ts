@@ -30,7 +30,7 @@ export class SharkTree {
 
     activeTagCategory: string | null;
     activeTagValue: string | null;
-    tagCategories: Map<string, { species: SharkSpecies[], color: string }>;
+    tagCategories: Map<string, { species: SharkSpecies[] }>;
 
 
     constructor(sharkTreeConfig: SharkTreeNodeConfig) {
@@ -352,14 +352,12 @@ export class SharkTree {
                 if (sharkIndex < 0) sharkIndex = numSpecies + sharkIndex;
                 if (sharkIndex !== this.currentSharkIndex) {
                     const previousShark = sharkSpecies[this.currentSharkIndex];
-                    console.log(`Previous shark: ${previousShark.binomialName}, index: ${this.currentSharkIndex}`);
                     previousShark?.getNode()?.setAttribute("fill", "#000000");
                     previousShark?.getNode()?.classList.remove("pulse");
                     this.reapplyHighlights(previousShark);
         
                     this.currentSharkIndex = sharkIndex;
                     const currentShark = sharkSpecies[sharkIndex];
-                    console.log(`Current shark: ${currentShark.binomialName}, index: ${sharkIndex}`);
                     const node = currentShark.getNode();
                     node.setAttribute("fill", "red");
                     node.classList.add("pulse");
@@ -567,7 +565,6 @@ export class SharkTree {
     |----------------------------------------*/
 
     initializeTagCategories(): void {
-        const tagColors = ["#F94144", "#F3722C", "#F9C74F", "#43AA8B", "#577590"]; // Reuse Option 2 colors or define new ones
         const categories = [
             "conservationStatus", "reproductiveStrategy", "temperatureRegulation",
             "feedingBehavior", "oceanZone", "evolutionaryCharacteristic", "uniqueFeature",
@@ -577,8 +574,7 @@ export class SharkTree {
         
         categories.forEach((category, index) => {
             this.tagCategories.set(category, {
-                species: [],
-                color: tagColors[index % tagColors.length]
+                species: []
             });
         });
         
@@ -635,11 +631,11 @@ export class SharkTree {
         
         speciesToHighlight.forEach(shark => {
             const taxonomicColor = this.getTaxonomicColor(shark);
-            shark.highlightNode(taxonomicColor || categoryData.color);
-            shark.highlightParentPath(3, taxonomicColor || categoryData.color, "5,5");
+            shark.highlightNode(taxonomicColor);
+            shark.highlightParentPath(3, taxonomicColor, "5,5");
             let parent = shark.getParent();
             while (parent) {
-                parent.highlightParentPath(3, taxonomicColor || categoryData.color, "5,5");
+                parent.highlightParentPath(3, taxonomicColor, "5,5");
                 parent = parent.getParent();
             }
         });
@@ -695,7 +691,6 @@ export class SharkTree {
                     if (tagData && (!this.activeTagValue || shark.tags.includes(this.activeTagValue))) {
                         strokeWidth = "3";
                         dashArray = "5,5";
-                        if (strokeColor === "#2F4F4F") strokeColor = tagData.color;
                     }
                 }
     
@@ -741,7 +736,6 @@ export class SharkTree {
                 if (tagData && sharksToCheck.some(s => !this.activeTagValue || s.tags.includes(this.activeTagValue))) {
                     strokeWidth = "3";
                     dashArray = "5,5";
-                    if (strokeColor === "#2F4F4F") strokeColor = tagData.color;
                 }
             }
     
@@ -757,7 +751,6 @@ export class SharkTree {
                 } else {
                     segment.removeAttribute("stroke-dasharray");
                 }
-                console.log(`${shark.binomialName} reset: color=${style.strokeColor}, width=${style.strokeWidth}, dash=${style.dashArray}`);
             });
         };
     
