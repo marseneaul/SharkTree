@@ -231,6 +231,11 @@ export class SharkSpecies {
     getFormattedString(allSpecies: SharkSpecies[]): string {
         const relatedSpecies = this.getRelatedSpecies(allSpecies);
 
+        const alternativeNamesSentence = this.getAlternativeNamesSentence();
+        const alternativeNamesString = alternativeNamesSentence.length > 0 
+        ? `<strong>Alternative Names:</strong> ${alternativeNamesSentence}` 
+        : "";
+
         const conservationStatusTags = this.tags.filter(tag => [
             CONSERVATION_STATUS.CR, CONSERVATION_STATUS.EN, CONSERVATION_STATUS.VU, CONSERVATION_STATUS.DD, CONSERVATION_STATUS.LC, CONSERVATION_STATUS.EW, CONSERVATION_STATUS.NT
         ].includes(tag as any)).slice(0, 1);
@@ -238,16 +243,16 @@ export class SharkSpecies {
             ? `<div class="section"><strong>Conservation Status:</strong> ${conservationStatusTags.join(", ")}</div>` 
             : "";
 
-        const description = this.getDescription();
-        const descriptionString = description.length > 0 
-        ? `<div class="section"><strong>Description:</strong> ${description}</div>` 
+        const descriptionSentence = this.getDescription();
+        const descriptionString = descriptionSentence.length > 0 
+        ? `<div class="section"><strong>Description:</strong> ${descriptionSentence}</div>` 
         : "";
         
         return `
             <h2>${this.commonName}</h2>
             <div class="section">
-                <strong>Binomial Name:</strong> ${this.binomialName}<br>
-                <strong>Alternative Names:</strong> ${this.getAlternativeNamesSentence()}
+                <strong>Binomial Name:</strong> ${this.binomialName}
+                <br>${alternativeNamesString}
             </div>
             ${conservationStatusString}
             ${descriptionString}
@@ -270,9 +275,9 @@ export class SharkSpecies {
     }
 
     getAlternativeNamesSentence(): string {
+        let alternativeNamesString = "";
         const numAlternativeNames = this.alternativeNames.length;
         if (numAlternativeNames) {
-            let alternativeNamesString = "";
             this.alternativeNames.forEach((alternativeName, i) => {
                 alternativeNamesString += `${alternativeName}`;
                 if (i !== this.alternativeNames.length - 1) {
@@ -283,7 +288,7 @@ export class SharkSpecies {
             });
             return `The ${this.commonName} is also known as the ${alternativeNamesString}.`;
         }
-        else return `The ${this.commonName} has no known alternative names.`;
+        return alternativeNamesString;
     }
 
     getDescription(): string {
