@@ -78,9 +78,9 @@ export class SharkTreeComponent extends HTMLElement {
         const tagDropdown = this.shadow.querySelector("#tag-dropdown");
         const tagValueDropdown = this.shadow.querySelector("#tag-value-dropdown");
         taxonomicDropdown.value = "";
-        taxonomicValueDropdown.innerHTML = '<option value="">All</option>';
+        taxonomicValueDropdown.innerHTML = "<option value=''>All</option>";
         tagDropdown.value = "";
-        tagValueDropdown.innerHTML = '<option value="">All</option>';
+        tagValueDropdown.innerHTML = "<option value=''>All</option>";
         this.updateTaxonomicValues();
     }
 
