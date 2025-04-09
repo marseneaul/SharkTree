@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../constants/enums";
+
 export const glyphisGangeticus = {
     commonName: "Ganges Shark",
     alternativeNames: ["Borneo River Shark", "Irrawaddy River Shark"],
@@ -13,5 +15,12 @@ export const glyphisGangeticus = {
     order: "Carcharhiniformes",
     family: "Carcharhinidae",
     genus: "Glyphis",
-    species: "gangeticus"
+    species: "gangeticus",
+
+    tags: [
+        CONSERVATION_STATUS.CR,
+        REPRODUCTIVE_STRATEGY.VIVIPAROUS,
+        NICTITATING_MEMBRANE.YES,
+        SPIRACLES.NO
+    ]
 };

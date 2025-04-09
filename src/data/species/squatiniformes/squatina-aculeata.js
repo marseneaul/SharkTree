@@ -1,3 +1,5 @@
+import { ANAL_FIN, CONSERVATION_STATUS, FLATTENED_BODY, REPRODUCTIVE_STRATEGY } from "../../../constants/enums";
+
 export const squatinaAculeata = {
     commonName: "Sawback Angelshark",
     binomialName: "Squatina aculeata",
@@ -12,5 +14,12 @@ export const squatinaAculeata = {
     order: "Squatiniformes",
     family: "Squatinidae",
     genus: "Squatina",
-    species: "aculeata"
+    species: "aculeata",
+
+    tags: [
+        CONSERVATION_STATUS.CR,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+        ANAL_FIN.NO,
+        FLATTENED_BODY.YES
+    ]
 };

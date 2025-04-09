@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, MOUTH_IN_FRONT_OF_EYES, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const chiloscylliumPunctatum = {
     commonName: "Brownbanded Bamboo Shark",
     alternativeNames: ["Cat Shark"],
@@ -13,5 +15,11 @@ export const chiloscylliumPunctatum = {
     order: "Orectolobiformes",
     family: "Hemiscylliidae",
     genus: "Chiloscyllium",
-    species: "punctatum"
+    species: "punctatum",
+
+    tags: [
+        CONSERVATION_STATUS.NT,
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+        MOUTH_IN_FRONT_OF_EYES.MOUTH_IN_FRONT_OF_EYES
+    ]
 };

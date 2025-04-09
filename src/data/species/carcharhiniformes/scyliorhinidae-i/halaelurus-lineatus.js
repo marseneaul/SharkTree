@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const halaelurusLineatus = {
     commonName: "Lined Catshark",
     alternativeNames: ["Banded Catshark"],
@@ -13,5 +15,11 @@ export const halaelurusLineatus = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Halaelurus",
-    species: "lineatus"
+    species: "lineatus",
+
+    tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+        NICTITATING_MEMBRANE.YES
+    ]
 }

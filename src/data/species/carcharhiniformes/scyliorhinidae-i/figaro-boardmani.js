@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const figaroBoardmani = {
     commonName: "Australian Sawtail Catshark",
     binomialName: "Figaro boardmani",
@@ -12,5 +14,11 @@ export const figaroBoardmani = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Figaro",
-    species: "boardmani"
+    species: "boardmani",
+
+    tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+        NICTITATING_MEMBRANE.YES
+    ]
 }

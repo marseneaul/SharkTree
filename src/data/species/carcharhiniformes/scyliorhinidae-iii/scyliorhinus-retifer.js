@@ -1,3 +1,5 @@
+import { BIOLUMINESCENT, CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const scyliorhinusRetifer = {
     commonName: "Chain Catshark",
     alternativeNames: ["Chain Dogfish"],
@@ -13,5 +15,12 @@ export const scyliorhinusRetifer = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Scyliorhinus",
-    species: "retifer"
+    species: "retifer",
+
+    tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+        NICTITATING_MEMBRANE.YES,
+        BIOLUMINESCENT.YES
+    ]
 };

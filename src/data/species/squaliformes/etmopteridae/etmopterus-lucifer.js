@@ -1,3 +1,5 @@
+import { ANAL_FIN, BIOLUMINESCENT, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const etmopterusLucifer = {
     commonName: "Blackbelly Lanternshark",
     alternativeNames: ["Lucifer Shark"],
@@ -13,5 +15,12 @@ export const etmopterusLucifer = {
     order: "Squaliformes",
     family: "Etmopteridae",
     genus: "Etmopterus",
-    species: "lucifer"
+    species: "lucifer",
+
+    tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+        ANAL_FIN.NO,
+        BIOLUMINESCENT.YES
+    ]
 };

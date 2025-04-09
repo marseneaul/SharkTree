@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../constants/enums";
+
 export const glyphisGlyphis = {
     commonName: "Speartooth Shark",
     alternativeNames: ["Bizant River Shark", "Queensland River Shark"],
@@ -13,5 +15,12 @@ export const glyphisGlyphis = {
     order: "Carcharhiniformes",
     family: "Carcharhinidae",
     genus: "Glyphis",
-    species: "glyphis"
+    species: "glyphis",
+
+    tags: [
+        CONSERVATION_STATUS.VU,
+        REPRODUCTIVE_STRATEGY.VIVIPAROUS,
+        NICTITATING_MEMBRANE.YES,
+        SPIRACLES.NO
+    ]
 };

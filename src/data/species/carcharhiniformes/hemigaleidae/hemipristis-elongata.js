@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const hemipristisElongata = {
     commonName: "Snaggletooth Shark",
     alternativeNames: ["Fossil Shark"],
@@ -13,5 +15,11 @@ export const hemipristisElongata = {
     order: "Carcharhiniformes",
     family: "Hemigaleidae",
     genus: "Hemipristis",
-    species: "elongata"
+    species: "elongata",
+
+    tags: [
+        CONSERVATION_STATUS.EN,
+        REPRODUCTIVE_STRATEGY.VIVIPAROUS,
+        NICTITATING_MEMBRANE.YES
+    ]
 };

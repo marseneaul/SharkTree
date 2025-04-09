@@ -1,3 +1,5 @@
+import { ANAL_FIN, BIOLUMINESCENT, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const etmopterusGranulosus = {
     commonName: "Southern Lanternshark",
     binomialName: "Etmopterus granulosus",
@@ -12,5 +14,12 @@ export const etmopterusGranulosus = {
     order: "Squaliformes",
     family: "Etmopteridae",
     genus: "Etmopterus",
-    species: "granulosus"
+    species: "granulosus",
+
+    tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+        ANAL_FIN.NO,
+        BIOLUMINESCENT.YES
+    ]
 };

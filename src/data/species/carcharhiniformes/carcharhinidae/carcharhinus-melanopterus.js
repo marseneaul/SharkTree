@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../constants/enums";
+
 export const carcharhinusMelanopterus = {
     commonName: "Blacktip Reef Shark",
     binomialName: "Carcharhinus melanopterus",
@@ -12,5 +14,13 @@ export const carcharhinusMelanopterus = {
     order: "Carcharhiniformes",
     family: "Carcharhinidae",
     genus: "Carcharhinus",
-    species: "melanopterus"
+    species: "melanopterus",
+
+    tags: [
+        CONSERVATION_STATUS.VU,
+        REPRODUCTIVE_STRATEGY.VIVIPAROUS,
+        NICTITATING_MEMBRANE.YES,
+        SPIRACLES.NO,
+        GROUP_BEHAVIOR.SCHOOLING
+    ]
 };

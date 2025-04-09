@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const furgaleusMacki = {
     commonName: "Whiskery Shark",
     alternativeNames: ["Mack's Whiskery Shark", "Reef Shark", "Shakey Shark", "Sundowner"],
@@ -13,5 +15,12 @@ export const furgaleusMacki = {
     order: "Carcharhiniformes",
     family: "Triakidae",
     genus: "Furgaleus",
-    species: "macki"
+    species: "macki",
+
+    tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+        NICTITATING_MEMBRANE.YES,
+        GROUP_BEHAVIOR.SCHOOLING
+    ]
 };

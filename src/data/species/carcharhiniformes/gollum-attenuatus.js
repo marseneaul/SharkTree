@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../constants/enums";
+
 export const gollumAttenuatus = {
     commonName: "Slender Smooth-Hound",
     alternativeNames: ["Gollumshark"],
@@ -13,5 +15,11 @@ export const gollumAttenuatus = {
     order: "Carcharhiniformes",
     family: "Pseudotriakidae",
     genus: "Gollum",
-    species: "attenuatus"
+    species: "attenuatus",
+
+    tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS, REPRODUCTIVE_STRATEGY.OOPHAGY,
+        NICTITATING_MEMBRANE.YES
+    ]
 };

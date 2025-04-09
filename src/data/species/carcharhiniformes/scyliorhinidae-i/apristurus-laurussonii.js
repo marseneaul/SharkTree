@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const apristurusLaurussonii = {
     commonName: "Iceland Catshark",
     alternativeNames: ["Icelandic Catshark"],
@@ -13,5 +15,11 @@ export const apristurusLaurussonii = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Apristurus",
-    species: "laurussonii"
+    species: "laurussonii",
+
+    tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+        NICTITATING_MEMBRANE.YES
+    ]
 }

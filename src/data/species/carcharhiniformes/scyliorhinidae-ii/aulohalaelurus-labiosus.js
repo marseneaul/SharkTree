@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const aulohalaelurusLabiosus = {
     commonName: "Australian Blackspotted Catshark",
     binomialName: "Aulohalaelurus labiosus",
@@ -12,5 +14,11 @@ export const aulohalaelurusLabiosus = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Aulohalaelurus",
-    species: "labiosus"
+    species: "labiosus",
+
+    tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+        NICTITATING_MEMBRANE.YES
+    ]
 };

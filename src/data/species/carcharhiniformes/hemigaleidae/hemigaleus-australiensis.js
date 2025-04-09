@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const hemigaleusAustraliensis = {
     commonName: "Australian Weasel Shark",
     binomialName: "Hemigaleus australiensis",
@@ -12,5 +14,11 @@ export const hemigaleusAustraliensis = {
     order: "Carcharhiniformes",
     family: "Hemigaleidae",
     genus: "Hemigaleus",
-    species: "australiensis"
+    species: "australiensis",
+
+    tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.VIVIPAROUS,
+        NICTITATING_MEMBRANE.YES
+    ]
 };

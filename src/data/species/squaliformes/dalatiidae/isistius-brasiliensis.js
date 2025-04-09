@@ -1,3 +1,5 @@
+import { ANAL_FIN, BIOLUMINESCENT, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const isistiusBrasiliensis = {
     commonName: "Cookiecutter Shark",
     alternativeNames: ["Cigar Shark", "Demon Whale-Biters", "Luminous Shark", "Smalltooth Cookiecutter Shark", "Smooth Cookiecutter Shark"],
@@ -13,5 +15,12 @@ export const isistiusBrasiliensis = {
     order: "Squaliformes",
     family: "Dalatiidae",
     genus: "Isistius",
-    species: "brasiliensis"
+    species: "brasiliensis",
+
+    tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+        ANAL_FIN.NO,
+        BIOLUMINESCENT.YES
+    ]
 };

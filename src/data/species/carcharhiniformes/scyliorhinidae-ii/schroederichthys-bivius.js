@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const schroederichthysBivius = {
     commonName: "Narrowmouthed Catshark",
     binomialName: "Schroederichthys bivius",
@@ -12,5 +14,11 @@ export const schroederichthysBivius = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Schroederichthys",
-    species: "bivius"
+    species: "bivius",
+
+    tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+        NICTITATING_MEMBRANE.YES
+    ]
 };

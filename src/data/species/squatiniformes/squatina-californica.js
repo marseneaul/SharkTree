@@ -1,3 +1,5 @@
+import { ANAL_FIN, CONSERVATION_STATUS, FLATTENED_BODY, REPRODUCTIVE_STRATEGY } from "../../../constants/enums";
+
 export const squatinaCalifornica = {
     commonName: "Pacific Angelshark",
     binomialName: "Squatina californica",
@@ -12,5 +14,12 @@ export const squatinaCalifornica = {
     order: "Squatiniformes",
     family: "Squatinidae",
     genus: "Squatina",
-    species: "californica"
+    species: "californica",
+
+    tags: [
+        CONSERVATION_STATUS.NT,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+        ANAL_FIN.NO,
+        FLATTENED_BODY.YES
+    ]
 };

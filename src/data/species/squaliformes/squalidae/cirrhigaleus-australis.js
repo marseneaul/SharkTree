@@ -1,3 +1,5 @@
+import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const cirrhigaleusAustralis = {
     commonName: "Southern Mandarin Dogfish",
     binomialName: "Cirrhigaleus australis",
@@ -12,5 +14,12 @@ export const cirrhigaleusAustralis = {
     order: "Squaliformes",
     family: "Squalidae",
     genus: "Cirrhigaleus",
-    species: "australis"
+    species: "australis",
+
+    tags: [
+        CONSERVATION_STATUS.DD,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+        ANAL_FIN.NO,
+        DORSAL_FIN_SPINES.YES
+    ]
 };

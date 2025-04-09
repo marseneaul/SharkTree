@@ -1,3 +1,5 @@
+import { ANAL_FIN, BIOLUMINESCENT, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const etmopterusMolleri = {
     commonName: "Slendertail Lanternshark",
     alternativeNames: ["Moller's Lanternshark"],
@@ -13,5 +15,12 @@ export const etmopterusMolleri = {
     order: "Squaliformes",
     family: "Etmopteridae",
     genus: "Etmopterus",
-    species: "molleri"
+    species: "molleri",
+
+    tags: [
+        CONSERVATION_STATUS.DD,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+        ANAL_FIN.NO,
+        BIOLUMINESCENT.YES
+    ]
 };

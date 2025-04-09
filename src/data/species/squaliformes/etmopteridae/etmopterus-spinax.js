@@ -1,3 +1,5 @@
+import { ANAL_FIN, BIOLUMINESCENT, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const etmopterusSpinax = {
     commonName: "Velvet Belly Lanternshark",
     alternativeNames: ["Velvet Belly"],
@@ -13,5 +15,12 @@ export const etmopterusSpinax = {
     order: "Squaliformes",
     family: "Etmopteridae",
     genus: "Etmopterus",
-    species: "spinax"
+    species: "spinax",
+
+    tags: [
+        CONSERVATION_STATUS.VU,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+        ANAL_FIN.NO,
+        BIOLUMINESCENT.YES
+    ]
 };

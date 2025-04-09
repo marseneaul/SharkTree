@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../constants/enums";
+
 export const carcharhinusIsodon = {
     commonName: "Finetooth Shark",
     binomialName: "Carcharhinus isodon",
@@ -12,5 +14,12 @@ export const carcharhinusIsodon = {
     order: "Carcharhiniformes",
     family: "Carcharhinidae",
     genus: "Carcharhinus",
-    species: "isodon"
+    species: "isodon",
+
+    tags: [
+        CONSERVATION_STATUS.NT,
+        REPRODUCTIVE_STRATEGY.VIVIPAROUS,
+        NICTITATING_MEMBRANE.YES,
+        SPIRACLES.NO
+    ]
 };

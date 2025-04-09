@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../constants/enums";
+
 export const rhizoprionodonLongurio = {
     commonName: "Pacific Sharpnose Shark",
     binomialName: "Rhizoprionodon longurio",
@@ -12,5 +14,12 @@ export const rhizoprionodonLongurio = {
     order: "Carcharhiniformes",
     family: "Carcharhinidae",
     genus: "Rhizoprionodon",
-    species: "longurio"
+    species: "longurio",
+
+    tags: [
+        CONSERVATION_STATUS.VU,
+        REPRODUCTIVE_STRATEGY.VIVIPAROUS,
+        NICTITATING_MEMBRANE.YES,
+        SPIRACLES.NO
+    ]
 };

@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const halaelurusBuergeri = {
     commonName: "Blackspotted Catshark",
     binomialName: "Halaelurus buergeri",
@@ -12,5 +14,11 @@ export const halaelurusBuergeri = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Halaelurus",
-    species: "buergeri"
+    species: "buergeri",
+
+    tags: [
+        CONSERVATION_STATUS.EN,
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+        NICTITATING_MEMBRANE.YES
+    ]
 }

@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const holohalaelurusRegani = {
     commonName: "Izak Catshark",
     alternativeNames: ["Izak"],
@@ -13,5 +15,11 @@ export const holohalaelurusRegani = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Holohalaelurus",
-    species: "regani"
+    species: "regani",
+
+    tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+        NICTITATING_MEMBRANE.YES
+    ]
 }

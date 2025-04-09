@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../constants/enums";
+
 export const galeocerdoCuvier = {
     commonName: "Tiger Shark",
     binomialName: "Galeocerdo cuvier",
@@ -12,5 +14,11 @@ export const galeocerdoCuvier = {
     order: "Carcharhiniformes",
     family: "Galeocerdonidae",
     genus: "Galeocerdo",
-    species: "cuvier"
+    species: "cuvier",
+
+    tags: [
+        CONSERVATION_STATUS.NT,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS, REPRODUCTIVE_STRATEGY.EMBRYTROPHY,
+        NICTITATING_MEMBRANE.YES
+    ]
 };

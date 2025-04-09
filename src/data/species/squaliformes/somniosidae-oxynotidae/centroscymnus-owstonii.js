@@ -1,3 +1,5 @@
+import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const centroscymnusOwstonii = {
     commonName: "Roughskin Dogfish",
     binomialName: "Centroscymnus owstonii",
@@ -12,5 +14,12 @@ export const centroscymnusOwstonii = {
     order: "Squaliformes",
     family: "Somniosidae",
     genus: "Centroscyllium",
-    species: "owstonii"
+    species: "owstonii",
+
+    tags: [
+        CONSERVATION_STATUS.VU,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+        ANAL_FIN.NO,
+        DORSAL_FIN_SPINES.YES
+    ]
 };

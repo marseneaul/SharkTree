@@ -1,3 +1,5 @@
+import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const squalusMegalops = {
     commonName: "Shortnose Spurdog",
     binomialName: "Squalus megalops",
@@ -12,5 +14,12 @@ export const squalusMegalops = {
     order: "Squaliformes",
     family: "Squalidae",
     genus: "Squalus",
-    species: "megalops"
+    species: "megalops",
+
+    tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+        ANAL_FIN.NO,
+        DORSAL_FIN_SPINES.YES
+    ]
 };

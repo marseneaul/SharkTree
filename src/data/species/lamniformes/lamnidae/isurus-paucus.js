@@ -1,3 +1,4 @@
+import { CAUDAL_FIN_SHAPE, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION } from "../../../../constants/enums";
 import isurusPaucusImg from "./../../../../images/isurus-paucus.png";
 
 export const isurusPaucus = {
@@ -16,5 +17,12 @@ export const isurusPaucus = {
     order: "Lamniformes",
     family: "Lamnidae",
     genus: "Isurus",
-    species: "paucus"
+    species: "paucus",
+
+    tags: [
+        CONSERVATION_STATUS.EN,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS, REPRODUCTIVE_STRATEGY.OOPHAGY,
+        TEMPERATURE_REGULATION.ENDOTHERMIC,
+        CAUDAL_FIN_SHAPE.HOMOCERCAL
+    ]
 };

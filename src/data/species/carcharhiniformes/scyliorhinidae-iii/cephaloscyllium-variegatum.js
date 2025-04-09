@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const cephaloscylliumVariegatum = {
     commonName: "Saddled Swellshark",
     binomialName: "Cephaloscyllium variegatum",
@@ -12,5 +14,11 @@ export const cephaloscylliumVariegatum = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Cephaloscyllium",
-    species: "variegatum"
+    species: "variegatum",
+
+    tags: [
+        CONSERVATION_STATUS.NT,
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+        NICTITATING_MEMBRANE.YES
+    ]
 };

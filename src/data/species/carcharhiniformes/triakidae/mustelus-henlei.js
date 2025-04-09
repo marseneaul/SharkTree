@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const mustelusHenlei = {
     commonName: "Brown Smooth-Hound",
     binomialName: "Mustelus henlei",
@@ -12,5 +14,12 @@ export const mustelusHenlei = {
     order: "Carcharhiniformes",
     family: "Triakidae",
     genus: "Mustelus",
-    species: "henlei"
+    species: "henlei",
+
+    tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+        NICTITATING_MEMBRANE.YES,
+        GROUP_BEHAVIOR.SCHOOLING
+    ]
 };

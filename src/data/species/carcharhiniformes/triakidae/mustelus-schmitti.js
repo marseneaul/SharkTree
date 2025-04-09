@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const mustelusSchmitti = {
     commonName: "Narrownose Smooth-Hound",
     binomialName: "Mustelus schmitti",
@@ -12,5 +14,12 @@ export const mustelusSchmitti = {
     order: "Carcharhiniformes",
     family: "Triakidae",
     genus: "Mustelus",
-    species: "schmitti"
+    species: "schmitti",
+
+    tags: [
+        CONSERVATION_STATUS.CR,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+        NICTITATING_MEMBRANE.YES,
+        GROUP_BEHAVIOR.SCHOOLING
+    ]
 };

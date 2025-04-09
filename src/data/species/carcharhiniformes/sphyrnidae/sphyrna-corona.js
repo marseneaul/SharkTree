@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../constants/enums";
+
 export const sphyrnaCorona = {
     commonName: "Scalloped Bonnethead",
     binomialName: "Sphyrna corona",
@@ -12,5 +14,12 @@ export const sphyrnaCorona = {
     order: "Carcharhiniformes",
     family: "Sphyrnidae",
     genus: "Sphyrna",
-    species: "corona"
+    species: "corona",
+
+    tags: [
+        CONSERVATION_STATUS.CR,
+        REPRODUCTIVE_STRATEGY.VIVIPAROUS,
+        NICTITATING_MEMBRANE.YES,
+        SPIRACLES.NO
+    ]
 };

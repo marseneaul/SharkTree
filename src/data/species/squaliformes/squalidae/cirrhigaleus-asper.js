@@ -1,3 +1,5 @@
+import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const cirrhigaleusAsper = {
     commonName: "Roughskin Spurdog",
     alternativeNames: ["Roughskin Dogfish", "Roughskin Dogshark", "Roughskin Spiny Dogfish"],
@@ -13,5 +15,12 @@ export const cirrhigaleusAsper = {
     order: "Squaliformes",
     family: "Squalidae",
     genus: "Cirrhigaleus",
-    species: "asper"
+    species: "asper",
+
+    tags: [
+        CONSERVATION_STATUS.DD,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+        ANAL_FIN.NO,
+        DORSAL_FIN_SPINES.YES
+    ]
 };

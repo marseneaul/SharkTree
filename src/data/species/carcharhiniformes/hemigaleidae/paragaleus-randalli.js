@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const paragaleusRandalli = {
     commonName: "Slender Weasel Shark",
     binomialName: "Paragaleus randalli",
@@ -12,5 +14,11 @@ export const paragaleusRandalli = {
     order: "Carcharhiniformes",
     family: "Hemigaleidae",
     genus: "Paragaleus",
-    species: "randalli"
+    species: "randalli",
+
+    tags: [
+        CONSERVATION_STATUS.VU,
+        REPRODUCTIVE_STRATEGY.VIVIPAROUS,
+        NICTITATING_MEMBRANE.YES
+    ]
 };

@@ -1,3 +1,5 @@
+import { ANAL_FIN, BIOLUMINESCENT, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const etmopterusBrachyurus = {
     commonName: "Short-Tail Lanternshark",
     binomialName: "Etmopterus brachyurus",
@@ -12,5 +14,12 @@ export const etmopterusBrachyurus = {
     order: "Squaliformes",
     family: "Etmopteridae",
     genus: "Etmopterus",
-    species: "brachyurus"
+    species: "brachyurus",
+
+    tags: [
+        CONSERVATION_STATUS.DD,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+        ANAL_FIN.NO,
+        BIOLUMINESCENT.YES
+    ]
 };

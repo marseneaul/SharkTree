@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const parmaturusXaniurus = {
     commonName: "Filetail Catshark",
     binomialName: "Parmaturus xaniurus",
@@ -12,5 +14,11 @@ export const parmaturusXaniurus = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Parmaturus",
-    species: "xaniurus"
+    species: "xaniurus",
+
+    tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+        NICTITATING_MEMBRANE.YES
+    ]
 }

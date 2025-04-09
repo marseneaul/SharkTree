@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, MOUTH_IN_FRONT_OF_EYES, REPRODUCTIVE_STRATEGY } from "../../../constants/enums";
+
 export const brachaelurusColcloughi = {
     commonName: "Bluegrey Carpetshark",
     alternativeNames: ["Colclough's Shark", "Blue-Grey Catshark", "Bluegrey Shark", "Southern Blind Shark"],
@@ -13,5 +15,11 @@ export const brachaelurusColcloughi = {
     order: "Orectolobiformes",
     family: "Brachaeluridae",
     genus: "Brachaelurus",
-    species: "colcloughi"
+    species: "colcloughi",
+
+    tags: [
+        CONSERVATION_STATUS.VU,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+        MOUTH_IN_FRONT_OF_EYES.MOUTH_IN_FRONT_OF_EYES
+    ]
 };

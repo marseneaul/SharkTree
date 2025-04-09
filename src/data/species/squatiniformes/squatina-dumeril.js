@@ -1,3 +1,5 @@
+import { ANAL_FIN, CONSERVATION_STATUS, FLATTENED_BODY, REPRODUCTIVE_STRATEGY } from "../../../constants/enums";
+
 export const squatinaDumeril = {
     commonName: "Atlantic Angelshark",
     binomialName: "Squatina dumeril",
@@ -12,5 +14,12 @@ export const squatinaDumeril = {
     order: "Squatiniformes",
     family: "Squatinidae",
     genus: "Squatina",
-    species: "dumeril"
+    species: "dumeril",
+
+    tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+        ANAL_FIN.NO,
+        FLATTENED_BODY.YES
+    ]
 };

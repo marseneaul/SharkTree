@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../constants/enums";
+
 export const lamiopsisTephrodes = {
     commonName: "Borneo Broadfin Shark",
     alternativeNames: ["Broadfin Shark"],
@@ -13,5 +15,12 @@ export const lamiopsisTephrodes = {
     order: "Carcharhiniformes",
     family: "Carcharhinidae",
     genus: "Lamiopsis",
-    species: "tephrodes"
+    species: "tephrodes",
+
+    tags: [
+        CONSERVATION_STATUS.EN,
+        REPRODUCTIVE_STRATEGY.VIVIPAROUS,
+        NICTITATING_MEMBRANE.YES,
+        SPIRACLES.NO
+    ]
 };

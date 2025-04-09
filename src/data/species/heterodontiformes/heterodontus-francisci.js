@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../constants/enums";
+
 export const heterodontusFrancisci = {
     commonName: "Horn Shark",
     alternativeNames: ["California Horn Shark"],
@@ -13,5 +15,11 @@ export const heterodontusFrancisci = {
     order: "Heterodontiformes",
     family: "Heterodontidae",
     genus: "Heterodontus",
-    species: "francisci"
+    species: "francisci",
+
+    tags: [
+        CONSERVATION_STATUS.DD,
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+        DORSAL_FIN_SPINES.YES
+    ]
 };

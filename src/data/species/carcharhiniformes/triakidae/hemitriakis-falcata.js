@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const hemitriakisFalcata = {
     commonName: "Sicklefin Houndshark",
     binomialName: "Hemitriakis falcata",
@@ -12,5 +14,12 @@ export const hemitriakisFalcata = {
     order: "Carcharhiniformes",
     family: "Triakidae",
     genus: "Hemitriakis",
-    species: "falcata"
+    species: "falcata",
+
+    tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+        NICTITATING_MEMBRANE.YES,
+        GROUP_BEHAVIOR.SCHOOLING
+    ]
 };

@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../constants/enums";
+
 export const isogomphodonOxyrhynchus = {
     commonName: "Daggernose Shark",
     binomialName: "Isogomphodon oxyrhynchus",
@@ -12,5 +14,12 @@ export const isogomphodonOxyrhynchus = {
     order: "Carcharhiniformes",
     family: "Carcharhinidae",
     genus: "Isogomphodon",
-    species: "oxyrhynchus"
+    species: "oxyrhynchus",
+    
+    tags: [
+        CONSERVATION_STATUS.CR,
+        REPRODUCTIVE_STRATEGY.VIVIPAROUS,
+        NICTITATING_MEMBRANE.YES,
+        SPIRACLES.NO
+    ]
 };

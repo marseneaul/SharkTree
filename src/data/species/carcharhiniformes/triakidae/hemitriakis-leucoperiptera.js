@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const hemitriakisLeucoperiptera = {
     commonName: "Whitefin Topeshark",
     binomialName: "Hemitriakis leucoperiptera",
@@ -12,5 +14,12 @@ export const hemitriakisLeucoperiptera = {
     order: "Carcharhiniformes",
     family: "Triakidae",
     genus: "Hemitriakis",
-    species: "leucoperiptera"
+    species: "leucoperiptera",
+
+    tags: [
+        CONSERVATION_STATUS.CR,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+        NICTITATING_MEMBRANE.YES,
+        GROUP_BEHAVIOR.SCHOOLING
+    ]
 };

@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const galeusSauteri = {
     commonName: "Blacktip Sawtail Catshark",
     binomialName: "Galeus sauteri",
@@ -12,5 +14,11 @@ export const galeusSauteri = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Galeus",
-    species: "sauteri"
+    species: "sauteri",
+
+    tags: [
+        CONSERVATION_STATUS.VU,
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+        NICTITATING_MEMBRANE.YES
+    ]
 }

@@ -1,3 +1,5 @@
+import { ANAL_FIN, BIOLUMINESCENT, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const dalatiasLicha = {
     commonName: "Kitefin Shark",
     alternativeNames: ["Seal Shark", "Black Shark", "Darkie Charlie"],
@@ -13,5 +15,12 @@ export const dalatiasLicha = {
     order: "Squaliformes",
     family: "Dalatiidae",
     genus: "Dalatias",
-    species: "licha"
+    species: "licha",
+
+    tags: [
+        CONSERVATION_STATUS.VU,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+        ANAL_FIN.NO,
+        BIOLUMINESCENT.YES
+    ]
 };

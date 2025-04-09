@@ -1,3 +1,5 @@
+import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const squalusAcanthias = {
     commonName: "Spiny Dogfish",
     alternativeNames: ["Spurdog", "Mud Shark", "Piked Dogfish"],
@@ -13,5 +15,12 @@ export const squalusAcanthias = {
     order: "Squaliformes",
     family: "Squalidae",
     genus: "Squalus",
-    species: "acanthias"
+    species: "acanthias",
+
+    tags: [
+        CONSERVATION_STATUS.VU,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+        ANAL_FIN.NO,
+        DORSAL_FIN_SPINES.YES
+    ]
 };

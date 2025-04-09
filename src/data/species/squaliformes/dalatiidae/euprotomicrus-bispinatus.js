@@ -1,3 +1,5 @@
+import { ANAL_FIN, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const euprotomicrusBispinatus = {
     commonName: "Pygmy Shark",
     binomialName: "Euprotomicrus bispinatus",
@@ -12,5 +14,11 @@ export const euprotomicrusBispinatus = {
     order: "Squaliformes",
     family: "Dalatiidae",
     genus: "Euprotomicrus",
-    species: "bispinatus"
+    species: "bispinatus",
+
+    tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+        ANAL_FIN.NO
+    ]
 };

@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const mustelusAntarcticus = {
     commonName: "Gummy Shark",
     alternativeNames: ["Australian Smooth Hound", "Flake", "Sweet William", "Smooth Dog-Shark"],
@@ -13,5 +15,12 @@ export const mustelusAntarcticus = {
     order: "Carcharhiniformes",
     family: "Triakidae",
     genus: "Mustelus",
-    species: "antarcticus"
+    species: "antarcticus",
+
+    tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+        NICTITATING_MEMBRANE.YES,
+        GROUP_BEHAVIOR.SCHOOLING
+    ]
 };

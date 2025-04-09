@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../constants/enums";
+
 export const carcharhinusTilstoni = {
     commonName: "Australian Blacktip Shark",
     binomialName: "Carcharhinus tilstoni",
@@ -12,5 +14,13 @@ export const carcharhinusTilstoni = {
     order: "Carcharhiniformes",
     family: "Carcharhinidae",
     genus: "Carcharhinus",
-    species: "tilstoni"
+    species: "tilstoni",
+
+    tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.VIVIPAROUS,
+        NICTITATING_MEMBRANE.YES,
+        SPIRACLES.NO,
+        GROUP_BEHAVIOR.SCHOOLING
+    ]
 };

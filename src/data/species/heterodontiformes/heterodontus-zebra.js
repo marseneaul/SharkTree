@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../constants/enums";
+
 export const heterodontusZebra = {
     commonName: "Zebra Bullhead Shark",
     binomialName: "Heterodontus zebra",
@@ -12,5 +14,11 @@ export const heterodontusZebra = {
     order: "Heterodontiformes",
     family: "Heterodontidae",
     genus: "Heterodontus",
-    species: "zebra"
+    species: "zebra",
+
+    tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+        DORSAL_FIN_SPINES.YES
+    ]
 };

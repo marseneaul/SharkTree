@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, MOUTH_IN_FRONT_OF_EYES, REPRODUCTIVE_STRATEGY } from "../../../constants/enums";
+
 export const stegostomaFasciatum = {
     commonName: "Zebra Shark",
     alternativeNames: ["Leopard Shark"],
@@ -13,5 +15,11 @@ export const stegostomaFasciatum = {
     order: "Orectolobiformes",
     family: "Stegostomatidae",
     genus: "Stegostoma",
-    species: "fasciatum"
+    species: "fasciatum",
+
+    tags: [
+        CONSERVATION_STATUS.VU,
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+        MOUTH_IN_FRONT_OF_EYES.MOUTH_IN_FRONT_OF_EYES
+    ]
 };

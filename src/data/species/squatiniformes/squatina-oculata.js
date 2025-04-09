@@ -1,3 +1,5 @@
+import { ANAL_FIN, CONSERVATION_STATUS, FLATTENED_BODY, REPRODUCTIVE_STRATEGY } from "../../../constants/enums";
+
 export const squatinaOculata = {
     commonName: "Smoothback Angelshark",
     binomialName: "Squatina oculata",
@@ -12,5 +14,12 @@ export const squatinaOculata = {
     order: "Squatiniformes",
     family: "Squatinidae",
     genus: "Squatina",
-    species: "oculata"
+    species: "oculata",
+
+    tags: [
+        CONSERVATION_STATUS.CR,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+        ANAL_FIN.NO,
+        FLATTENED_BODY.YES
+    ]
 };

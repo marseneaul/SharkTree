@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const cephaloscylliumLaticeps = {
     commonName: "Australian Swellshark",
     binomialName: "Cephaloscyllium laticeps",
@@ -12,5 +14,11 @@ export const cephaloscylliumLaticeps = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Cephaloscyllium",
-    species: "laticeps"
+    species: "laticeps",
+
+    tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+        NICTITATING_MEMBRANE.YES
+    ]
 };

@@ -1,6 +1,8 @@
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../constants/enums";
+
 export const scoliodonLaticaudus = {
     commonName: "Spadenode Shark",
-    alternativeNames: ["Indian Dogfish", "Sharp-Nosed Shark", "Trowel-Nose Shark", "Yellow Dog Sshark"],
+    alternativeNames: ["Indian Dogfish", "Sharp-Nosed Shark", "Trowel-Nose Shark", "Yellow Dog Shark"],
     binomialName: "Scoliodon laticaudus",
 
     domain:	"Eukaryota",
@@ -13,5 +15,12 @@ export const scoliodonLaticaudus = {
     order: "Carcharhiniformes",
     family: "Carcharhinidae",
     genus: "Scoliodon",
-    species: "laticaudus"
+    species: "laticaudus",
+
+    tags: [
+        CONSERVATION_STATUS.NT,
+        REPRODUCTIVE_STRATEGY.VIVIPAROUS,
+        NICTITATING_MEMBRANE.YES,
+        SPIRACLES.NO
+    ]
 };

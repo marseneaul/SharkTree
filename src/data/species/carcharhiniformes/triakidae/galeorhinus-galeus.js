@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const galeorhinusGaleus = {
     commonName: "School Shark",
     alternativeNames: ["Tope", "Tope Shark", "Snapper Shark", "Soupfin Shark"],
@@ -13,5 +15,12 @@ export const galeorhinusGaleus = {
     order: "Carcharhiniformes",
     family: "Triakidae",
     genus: "Galeorhinus",
-    species: "galeus"
+    species: "galeus",
+
+    tags: [
+        CONSERVATION_STATUS.CR,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+        NICTITATING_MEMBRANE.YES,
+        GROUP_BEHAVIOR.SCHOOLING
+    ]
 };

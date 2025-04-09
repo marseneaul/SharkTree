@@ -1,3 +1,4 @@
+import { CAUDAL_FIN_SHAPE, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION } from "../../../../constants/enums";
 import lamnaNasusImg from "./../../../../images/lamna-nasus.jpeg";
 
 export const lamnaNasus = {
@@ -17,5 +18,12 @@ export const lamnaNasus = {
     order: "Lamniformes",
     family: "Lamnidae",
     genus: "Lamna",
-    species: "nasus"
+    species: "nasus",
+
+    tags: [
+        CONSERVATION_STATUS.VU,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS, REPRODUCTIVE_STRATEGY.OOPHAGY,
+        TEMPERATURE_REGULATION.ENDOTHERMIC,
+        CAUDAL_FIN_SHAPE.HOMOCERCAL
+    ]
 };

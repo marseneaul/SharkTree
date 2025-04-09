@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../constants/enums";
+
 export const rhizoprionodonTerraenovae = {
     commonName: "Atlantic Sharpnose Shark",
     binomialName: "Rhizoprionodon terraenovae",
@@ -12,5 +14,12 @@ export const rhizoprionodonTerraenovae = {
     order: "Carcharhiniformes",
     family: "Carcharhinidae",
     genus: "Rhizoprionodon",
-    species: "terraenovae"
+    species: "terraenovae",
+
+    tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.VIVIPAROUS,
+        NICTITATING_MEMBRANE.YES,
+        SPIRACLES.NO
+    ]
 };

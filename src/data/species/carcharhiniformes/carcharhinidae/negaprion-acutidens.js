@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../constants/enums";
+
 export const negaprionAcutidens = {
     commonName: "Sicklefin Lemon Shark",
     alternativeNames: ["Pacific Lemon Shark"],
@@ -13,5 +15,13 @@ export const negaprionAcutidens = {
     order: "Carcharhiniformes",
     family: "Carcharhinidae",
     genus: "Negaprion",
-    species: "acutidens"
+    species: "acutidens",
+
+    tags: [
+        CONSERVATION_STATUS.EN,
+        REPRODUCTIVE_STRATEGY.VIVIPAROUS,
+        NICTITATING_MEMBRANE.YES,
+        SPIRACLES.NO,
+        GROUP_BEHAVIOR.SCHOOLING
+    ]
 };

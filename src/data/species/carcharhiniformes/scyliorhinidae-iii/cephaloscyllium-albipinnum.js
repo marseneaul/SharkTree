@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const cephaloscylliumAlbipinnum = {
     commonName: "Whitefin Swellshark",
     binomialName: "Cephaloscyllium albipinnum",
@@ -12,5 +14,11 @@ export const cephaloscylliumAlbipinnum = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Cephaloscyllium",
-    species: "albipinnum"
+    species: "albipinnum",
+
+    tags: [
+        CONSERVATION_STATUS.CR,
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+        NICTITATING_MEMBRANE.YES
+    ]
 };

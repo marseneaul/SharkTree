@@ -20,4 +20,5 @@ export interface SharkConfig {
     family: string
     genus: string
     species: string
+    tags?: string[]
 }

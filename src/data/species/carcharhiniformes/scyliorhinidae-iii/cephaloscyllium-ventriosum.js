@@ -1,3 +1,5 @@
+import { BIOLUMINESCENT, CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const cephaloscylliumVentriosum = {
     commonName: "Swellshark",
     binomialName: "Cephaloscyllium ventriosum",
@@ -12,5 +14,12 @@ export const cephaloscylliumVentriosum = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Cephaloscyllium",
-    species: "ventriosum"
+    species: "ventriosum",
+
+    tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+        NICTITATING_MEMBRANE.YES,
+        BIOLUMINESCENT.YES
+    ]
 };

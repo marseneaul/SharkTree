@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const bythaelurusCanescens = {
     commonName: "Dusky Catshark",
     binomialName: "Bythaelurus canescens",
@@ -12,5 +14,11 @@ export const bythaelurusCanescens = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Bythaelurus",
-    species: "canescens"
+    species: "canescens",
+
+    tags: [
+        CONSERVATION_STATUS.VU,
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+        NICTITATING_MEMBRANE.YES
+    ]
 }

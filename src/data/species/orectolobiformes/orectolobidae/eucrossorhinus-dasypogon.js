@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, FLATTENED_BODY, MOUTH_IN_FRONT_OF_EYES, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const eucrossorhinusDasypogon = {
     commonName: "Tasselled Wobbegong",
     alternativeNames: ["Bearded Wobbegong", "Ogilby's Wobbegong"],
@@ -13,5 +15,12 @@ export const eucrossorhinusDasypogon = {
     order: "Orectolobiformes",
     family: "Orectolobidae",
     genus: "Eucrossorhinus",
-    species: "dasypogon"
+    species: "dasypogon",
+
+    tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+        MOUTH_IN_FRONT_OF_EYES.MOUTH_IN_FRONT_OF_EYES,
+        FLATTENED_BODY.YES
+    ]
 };

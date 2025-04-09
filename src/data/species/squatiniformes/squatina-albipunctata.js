@@ -1,3 +1,5 @@
+import { ANAL_FIN, CONSERVATION_STATUS, FLATTENED_BODY, REPRODUCTIVE_STRATEGY } from "../../../constants/enums";
+
 export const squatinaAlbipunctata = {
     commonName: "Eastern Angelshark",
     binomialName: "Squatina albipunctata",
@@ -12,5 +14,12 @@ export const squatinaAlbipunctata = {
     order: "Squatiniformes",
     family: "Squatinidae",
     genus: "Squatina",
-    species: "albipunctata"
+    species: "albipunctata",
+
+    tags: [
+        CONSERVATION_STATUS.VU,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+        ANAL_FIN.NO,
+        FLATTENED_BODY.YES
+    ]
 };

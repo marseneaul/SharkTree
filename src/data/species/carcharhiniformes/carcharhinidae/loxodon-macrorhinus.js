@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../constants/enums";
+
 export const loxodonMacrorhinus = {
     commonName: "Sliteye Shark",
     binomialName: "Loxodon macrorhinus",
@@ -12,5 +14,12 @@ export const loxodonMacrorhinus = {
     order: "Carcharhiniformes",
     family: "Carcharhinidae",
     genus: "Loxodon",
-    species: "macrorhinus"
+    species: "macrorhinus",
+
+    tags: [
+        CONSERVATION_STATUS.NT,
+        REPRODUCTIVE_STRATEGY.VIVIPAROUS,
+        NICTITATING_MEMBRANE.YES,
+        SPIRACLES.NO
+    ]
 };

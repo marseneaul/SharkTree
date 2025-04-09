@@ -1,3 +1,5 @@
+import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const squalusCubensis = {
     commonName: "Cuban Dogfish",
     binomialName: "Squalus cubensis",
@@ -12,5 +14,12 @@ export const squalusCubensis = {
     order: "Squaliformes",
     family: "Squalidae",
     genus: "Squalus",
-    species: "cubensis"
+    species: "cubensis",
+
+    tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+        ANAL_FIN.NO,
+        DORSAL_FIN_SPINES.YES
+    ]
 };

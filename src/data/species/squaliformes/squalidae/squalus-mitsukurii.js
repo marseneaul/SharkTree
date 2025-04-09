@@ -1,3 +1,5 @@
+import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const squalusMitsukurii = {
     commonName: "Shortspine Spurdog",
     binomialName: "Squalus mitsukurii",
@@ -12,5 +14,12 @@ export const squalusMitsukurii = {
     order: "Squaliformes",
     family: "Squalidae",
     genus: "Squalus",
-    species: "mitsukurii"
+    species: "mitsukurii",
+
+    tags: [
+        CONSERVATION_STATUS.EN,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+        ANAL_FIN.NO,
+        DORSAL_FIN_SPINES.YES
+    ]
 };

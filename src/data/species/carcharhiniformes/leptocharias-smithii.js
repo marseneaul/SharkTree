@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../constants/enums";
+
 export const leptochariasSmithii = {
     commonName: "Barbeled Houndshark",
     binomialName: "Leptocharias smithii",
@@ -12,5 +14,11 @@ export const leptochariasSmithii = {
     order: "Carcharhiniformes",
     family: "Leptochariidae",
     genus: "Leptocharias",
-    species: "smithii"
+    species: "smithii",
+
+    tags: [
+        CONSERVATION_STATUS.VU,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+        NICTITATING_MEMBRANE.YES
+    ]
 };

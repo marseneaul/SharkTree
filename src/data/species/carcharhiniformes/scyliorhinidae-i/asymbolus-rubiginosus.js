@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const asymbolusRubiginosus = {
     commonName: "Orange-Spotted Catshark",
     alternativeNames: ["Rusty Catshark"],
@@ -13,5 +15,11 @@ export const asymbolusRubiginosus = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Asymbolus",
-    species: "rubiginosus"
+    species: "rubiginosus",
+
+    tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+        NICTITATING_MEMBRANE.YES
+    ]
 }

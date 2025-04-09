@@ -1,3 +1,5 @@
+import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const squalusAlbifrons = {
     commonName: "Eastern Highfin Spurdog",
     binomialName: "Squalus albifrons",
@@ -12,5 +14,12 @@ export const squalusAlbifrons = {
     order: "Squaliformes",
     family: "Squalidae",
     genus: "Squalus",
-    species: "albifrons"
+    species: "albifrons",
+
+    tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+        ANAL_FIN.NO,
+        DORSAL_FIN_SPINES.YES
+    ]
 };

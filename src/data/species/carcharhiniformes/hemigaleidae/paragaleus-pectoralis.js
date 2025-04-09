@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const paragaleusPectoralis = {
     commonName: "Atlantic Weasel Shark",
     alternativeNames: ["Little Tiger Shark"],
@@ -13,5 +15,11 @@ export const paragaleusPectoralis = {
     order: "Carcharhiniformes",
     family: "Hemigaleidae",
     genus: "Paragaleus",
-    species: "pectoralis"
+    species: "pectoralis",
+
+    tags: [
+        CONSERVATION_STATUS.EN,
+        REPRODUCTIVE_STRATEGY.VIVIPAROUS,
+        NICTITATING_MEMBRANE.YES
+    ]
 };

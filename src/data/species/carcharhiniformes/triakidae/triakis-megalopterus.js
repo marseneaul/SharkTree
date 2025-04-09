@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const triakisMegalopterus = {
     commonName: "Sharptooth Houndshark",
     binomialName: "Triakis megalopterus",
@@ -12,5 +14,12 @@ export const triakisMegalopterus = {
     order: "Carcharhiniformes",
     family: "Triakidae",
     genus: "Triakis",
-    species: "megalopterus"
+    species: "megalopterus",
+
+    tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+        NICTITATING_MEMBRANE.YES,
+        GROUP_BEHAVIOR.SCHOOLING
+    ]
 };

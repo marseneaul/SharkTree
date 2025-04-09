@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../constants/enums";
+
 export const pseudotriakisMicrodon = {
     commonName: "False Catshark",
     alternativeNames: ["Sofa Shark"],
@@ -13,5 +15,11 @@ export const pseudotriakisMicrodon = {
     order: "Carcharhiniformes",
     family: "Pseudotriakidae",
     genus: "Pseudotriakis",
-    species: "microdon"
+    species: "microdon",
+
+    tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS, REPRODUCTIVE_STRATEGY.OOPHAGY,
+        NICTITATING_MEMBRANE.YES
+    ]
 };

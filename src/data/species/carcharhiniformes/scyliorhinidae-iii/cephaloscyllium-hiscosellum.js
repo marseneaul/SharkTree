@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const cephaloscylliumHiscosellum = {
     commonName: "Australian Reticulate Swellshark",
     binomialName: "Cephaloscyllium hiscosellum",
@@ -12,5 +14,11 @@ export const cephaloscylliumHiscosellum = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Cephaloscyllium",
-    species: "hiscosellum"
+    species: "hiscosellum",
+
+    tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+        NICTITATING_MEMBRANE.YES
+    ]
 };

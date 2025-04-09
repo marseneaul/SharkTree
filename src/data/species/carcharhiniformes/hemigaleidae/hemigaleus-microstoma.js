@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const hemigaleusMicrostoma = {
     commonName: "Sicklefin Weasel Shark",
     binomialName: "Hemigaleus microstoma",
@@ -12,5 +14,11 @@ export const hemigaleusMicrostoma = {
     order: "Carcharhiniformes",
     family: "Hemigaleidae",
     genus: "Hemigaleus",
-    species: "microstoma"
+    species: "microstoma",
+
+    tags: [
+        CONSERVATION_STATUS.VU,
+        REPRODUCTIVE_STRATEGY.VIVIPAROUS,
+        NICTITATING_MEMBRANE.YES
+    ]
 };

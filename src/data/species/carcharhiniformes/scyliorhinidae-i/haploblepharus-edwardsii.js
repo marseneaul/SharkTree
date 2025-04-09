@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const haploblepharusEdwardsii = {
     commonName: "Puffadder Shyshark",
     alternativeNames: ["Shyshark", "Doughnut", "Happy Eddie"],
@@ -13,5 +15,11 @@ export const haploblepharusEdwardsii = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Haploblepharus",
-    species: "edwardsii"
+    species: "edwardsii",
+
+    tags: [
+        CONSERVATION_STATUS.EN,
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+        NICTITATING_MEMBRANE.YES
+    ]
 }

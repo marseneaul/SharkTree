@@ -1,3 +1,5 @@
+import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const squalusBrevirostris = {
     commonName: "Japanese Shortnose Spurdog",
     binomialName: "Squalus brevirostris",
@@ -12,5 +14,12 @@ export const squalusBrevirostris = {
     order: "Squaliformes",
     family: "Squalidae",
     genus: "Squalus",
-    species: "brevirostris"
+    species: "brevirostris",
+
+    tags: [
+        CONSERVATION_STATUS.EN,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+        ANAL_FIN.NO,
+        DORSAL_FIN_SPINES.YES
+    ]
 };

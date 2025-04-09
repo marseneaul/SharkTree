@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../constants/enums";
+
 export const carcharhinusLongimanus = {
     commonName: "Oceanic Whitetip Shark",
     alternativeNames: ["Brown Milbert's Sand Bar Shark", "Brown Shark", "Shipwreck Shark", "Nigano Shark", "Oceanic White-Tipped Whaler", "Whitetip Shark"],
@@ -13,5 +15,12 @@ export const carcharhinusLongimanus = {
     order: "Carcharhiniformes",
     family: "Carcharhinidae",
     genus: "Carcharhinus",
-    species: "longimanus"
+    species: "longimanus",
+
+    tags: [
+        CONSERVATION_STATUS.CR,
+        REPRODUCTIVE_STRATEGY.VIVIPAROUS,
+        NICTITATING_MEMBRANE.YES,
+        SPIRACLES.NO
+    ]
 };

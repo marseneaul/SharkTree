@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../constants/enums";
+
 export const proscylliumHaberei = {
     commonName: "Graceful Catshark",
     binomialName: "Proscyllium haberei",
@@ -12,5 +14,11 @@ export const proscylliumHaberei = {
     order: "Carcharhiniformes",
     family: "Proscylliidae",
     genus: "Proscyllium",
-    species: "haberei"
+    species: "haberei",
+
+    tags: [
+        CONSERVATION_STATUS.VU,
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+        NICTITATING_MEMBRANE.YES
+    ]
 };

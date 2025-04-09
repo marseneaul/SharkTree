@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, FEEDING_BEHAVIOR, MOUTH_IN_FRONT_OF_EYES, REPRODUCTIVE_STRATEGY } from "../../../constants/enums";
+
 export const rhincodonTypus = {
     commonName: "Whale Shark",
     binomialName: "Rhincodon typus",
@@ -12,5 +14,12 @@ export const rhincodonTypus = {
     order: "Orectolobiformes",
     family: "Rhincodontidae",
     genus: "Rhincodon",
-    species: "typus"
+    species: "typus",
+
+    tags: [
+        CONSERVATION_STATUS.EN,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+        FEEDING_BEHAVIOR.CARNIVOROUS, FEEDING_BEHAVIOR.PLANKTIVOROUS,
+        MOUTH_IN_FRONT_OF_EYES.MOUTH_IN_FRONT_OF_EYES
+    ]
 };

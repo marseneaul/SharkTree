@@ -1,3 +1,5 @@
+import { CAUDAL_FIN_SHAPE, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION } from "../../../constants/enums";
+
 export const odontaspisFerox = {
     commonName: "Smalltooth Sand Tiger",
     alternativeNames: ["Bumpytail Ragged-Tooth"],
@@ -13,5 +15,12 @@ export const odontaspisFerox = {
     order: "Lamniformes",
     family: "Odontaspididae",
     genus: "Odontaspis",
-    species: "ferox"
+    species: "ferox",
+
+    tags: [
+        CONSERVATION_STATUS.EN,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS, REPRODUCTIVE_STRATEGY.OOPHAGY,
+        TEMPERATURE_REGULATION.REGIONALLY_ENDOTHERMIC,
+        CAUDAL_FIN_SHAPE.HOMOCERCAL
+    ]
 };

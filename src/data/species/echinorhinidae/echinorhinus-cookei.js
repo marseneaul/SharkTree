@@ -1,3 +1,5 @@
+import { ANAL_FIN, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../constants/enums";
+
 export const echinorhinusCookei = {
     commonName: "Prickly Shark",
     binomialName: "Echinorhinus cookei",
@@ -12,5 +14,11 @@ export const echinorhinusCookei = {
     order: "Squaliformes",
     family: "Echinorhinidae",
     genus: "Echinorhinus",
-    species: "cookei"
+    species: "cookei",
+
+    tags: [
+        CONSERVATION_STATUS.DD,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+        ANAL_FIN.NO
+    ]
 };

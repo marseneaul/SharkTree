@@ -1,6 +1,8 @@
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const cephaloscylliumUmbratile = {
     commonName: "Blotchy Catshark",
-    alternativeNames: ["Japanese Swellshark"],
+    alternativeNames: ["Japanese Swellshark", "Blotchy Swellshark"],
     binomialName: "Cephaloscyllium umbratile",
 
     domain:	"Eukaryota",
@@ -13,5 +15,11 @@ export const cephaloscylliumUmbratile = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Cephaloscyllium",
-    species: "umbratile"
+    species: "umbratile",
+
+    tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+        NICTITATING_MEMBRANE.YES
+    ]
 };

@@ -1,3 +1,5 @@
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const apristurusPlatyrhynchus = {
     commonName: "Spatulasnout Catshark",
     alternativeNames: ["Borneo Catshark", "Flatnose Catshark"],
@@ -13,5 +15,11 @@ export const apristurusPlatyrhynchus = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Apristurus",
-    species: "platyrhynchus"
+    species: "platyrhynchus",
+
+    tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+        NICTITATING_MEMBRANE.YES
+    ]
 }
