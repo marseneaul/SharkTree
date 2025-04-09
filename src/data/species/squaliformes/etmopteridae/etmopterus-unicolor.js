@@ -1,4 +1,4 @@
-import { ANAL_FIN } from "../../../../constants/enums";
+import { ANAL_FIN, BIOLUMINESCENT } from "../../../../constants/enums";
 
 export const etmopterusUnicolor = {
     commonName: "Brown Lanternshark",
@@ -18,6 +18,7 @@ export const etmopterusUnicolor = {
     species: "unicolor",
 
     tags: [
-        ANAL_FIN.NO
+        ANAL_FIN.NO,
+        BIOLUMINESCENT.YES
     ]
 };

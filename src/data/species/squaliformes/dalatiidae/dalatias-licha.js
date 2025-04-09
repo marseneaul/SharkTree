@@ -1,4 +1,4 @@
-import { ANAL_FIN } from "../../../../constants/enums";
+import { ANAL_FIN, BIOLUMINESCENT } from "../../../../constants/enums";
 
 export const dalatiasLicha = {
     commonName: "Kitefin Shark",
@@ -18,6 +18,7 @@ export const dalatiasLicha = {
     species: "licha",
 
     tags: [
-        ANAL_FIN.NO
+        ANAL_FIN.NO,
+        BIOLUMINESCENT.YES
     ]
 };

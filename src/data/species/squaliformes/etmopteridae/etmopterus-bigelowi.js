@@ -1,4 +1,4 @@
-import { ANAL_FIN } from "../../../../constants/enums";
+import { ANAL_FIN, BIOLUMINESCENT } from "../../../../constants/enums";
 
 export const etmopterusBigelowi = {
     commonName: "Blurred Lanternshark",
@@ -17,6 +17,7 @@ export const etmopterusBigelowi = {
     species: "bigelowi",
 
     tags: [
-        ANAL_FIN.NO
+        ANAL_FIN.NO,
+        BIOLUMINESCENT.YES
     ]
 };

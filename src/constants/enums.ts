@@ -164,6 +164,11 @@ export enum MOUTH_IN_FRONT_OF_EYES {
     MOUTH_NOT_IN_FRONT_OF_EYES = "Mouth Not In Front of Eyes",
 }
 
+export enum BIOLUMINESCENT {
+    YES = "Is Bioluminescent",
+    NO = "Not Bioluminescent",
+}
+
 export function getEnumCategory(tag: any): string | undefined {
     if (Object.values(NUM_DORSAL_FINS).includes(tag)) return "NUM_DORSAL_FINS";
     if (Object.values(NUM_GILLS).includes(tag)) return "NUM_GILLS";
@@ -171,6 +176,8 @@ export function getEnumCategory(tag: any): string | undefined {
     if (Object.values(NICTITATING_MEMBRANE).includes(tag)) return "NICTITATING_MEMBRANE";
     if (Object.values(CAUDAL_FIN_SHAPE).includes(tag)) return "CAUDAL_FIN_SHAPE";
     if (Object.values(MOUTH_IN_FRONT_OF_EYES).includes(tag)) return "MOUTH_IN_FRONT_OF_EYES";
+    if (Object.values(BIOLUMINESCENT).includes(tag)) return "BIOLUMINESCENT";
+
     if (Object.values(TEMPERATURE_REGULATION).includes(tag)) return "TEMPERATURE_REGULATION";
     if (Object.values(FEEDING_BEHAVIOR).includes(tag)) return "FEEDING_BEHAVIOR";
     if (Object.values(CONSERVATION_STATUS).includes(tag)) return "CONSERVATION_STATUS";
@@ -195,5 +202,6 @@ export const DEFAULT_TAGS = [
     ANAL_FIN.YES,
     NICTITATING_MEMBRANE.NO,
     CAUDAL_FIN_SHAPE.HETEROCERCAL,
-    MOUTH_IN_FRONT_OF_EYES.MOUTH_NOT_IN_FRONT_OF_EYES
+    MOUTH_IN_FRONT_OF_EYES.MOUTH_NOT_IN_FRONT_OF_EYES,
+    BIOLUMINESCENT.NO
 ];

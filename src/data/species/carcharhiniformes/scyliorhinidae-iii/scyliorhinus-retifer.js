@@ -1,4 +1,4 @@
-import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+import { BIOLUMINESCENT, NICTITATING_MEMBRANE } from "../../../../constants/enums";
 
 export const scyliorhinusRetifer = {
     commonName: "Chain Catshark",
@@ -18,6 +18,7 @@ export const scyliorhinusRetifer = {
     species: "retifer",
 
     tags: [
-        NICTITATING_MEMBRANE.YES
+        NICTITATING_MEMBRANE.YES,
+        BIOLUMINESCENT.YES
     ]
 };

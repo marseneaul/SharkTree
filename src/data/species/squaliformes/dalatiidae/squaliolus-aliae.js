@@ -1,4 +1,4 @@
-import { ANAL_FIN } from "../../../../constants/enums";
+import { ANAL_FIN, BIOLUMINESCENT } from "../../../../constants/enums";
 
 export const squaliolusAliae = {
     commonName: "Smalleye Pygmy Shark",
@@ -17,6 +17,7 @@ export const squaliolusAliae = {
     species: "aliae",
 
     tags: [
-        ANAL_FIN.NO
+        ANAL_FIN.NO,
+        BIOLUMINESCENT.YES
     ]
 };
