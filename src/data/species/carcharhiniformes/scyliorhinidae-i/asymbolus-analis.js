@@ -1,4 +1,4 @@
-import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const asymbolusAnalis = {
     commonName: "Australian Spotted Catshark",
@@ -17,6 +17,8 @@ export const asymbolusAnalis = {
     species: "analis",
 
     tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
         NICTITATING_MEMBRANE.YES
     ]
 }

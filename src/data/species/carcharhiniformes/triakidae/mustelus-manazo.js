@@ -1,4 +1,4 @@
-import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const mustelusManazo = {
     commonName: "Starspotted Smooth-Hound",
@@ -17,6 +17,8 @@ export const mustelusManazo = {
     species: "manazo",
 
     tags: [
+        CONSERVATION_STATUS.EN,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         NICTITATING_MEMBRANE.YES
     ]
 };

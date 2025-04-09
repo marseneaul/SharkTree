@@ -1,4 +1,4 @@
-import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const prionaceGlauca = {
     commonName: "Blue Shark",
@@ -18,6 +18,8 @@ export const prionaceGlauca = {
     species: "glauca",
 
     tags: [
+        CONSERVATION_STATUS.NT,
+        REPRODUCTIVE_STRATEGY.VIVIPAROUS,
         NICTITATING_MEMBRANE.YES
     ]
 };

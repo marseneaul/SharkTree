@@ -1,4 +1,4 @@
-import { CAUDAL_FIN_SHAPE, TEMPERATURE_REGULATION } from "../../../constants/enums";
+import { CAUDAL_FIN_SHAPE, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION } from "../../../constants/enums";
 
 export const odontaspisFerox = {
     commonName: "Smalltooth Sand Tiger",
@@ -18,6 +18,8 @@ export const odontaspisFerox = {
     species: "ferox",
 
     tags: [
+        CONSERVATION_STATUS.EN,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS, REPRODUCTIVE_STRATEGY.OOPHAGY,
         TEMPERATURE_REGULATION.REGIONALLY_ENDOTHERMIC,
         CAUDAL_FIN_SHAPE.HOMOCERCAL
     ]

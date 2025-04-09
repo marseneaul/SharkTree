@@ -1,4 +1,4 @@
-import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const carcharhinusBrachyurus = {
     commonName: "Copper Shark",
@@ -18,6 +18,8 @@ export const carcharhinusBrachyurus = {
     species: "brachyurus",
 
     tags: [
+        CONSERVATION_STATUS.VU,
+        REPRODUCTIVE_STRATEGY.VIVIPAROUS,
         NICTITATING_MEMBRANE.YES
     ]
 };

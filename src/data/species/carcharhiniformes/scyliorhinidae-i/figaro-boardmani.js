@@ -1,4 +1,4 @@
-import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const figaroBoardmani = {
     commonName: "Australian Sawtail Catshark",
@@ -17,6 +17,8 @@ export const figaroBoardmani = {
     species: "boardmani",
 
     tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
         NICTITATING_MEMBRANE.YES
     ]
 }

@@ -1,4 +1,4 @@
-import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const mustelusSchmitti = {
     commonName: "Narrownose Smooth-Hound",
@@ -17,6 +17,8 @@ export const mustelusSchmitti = {
     species: "schmitti",
 
     tags: [
+        CONSERVATION_STATUS.CR,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         NICTITATING_MEMBRANE.YES
     ]
 };

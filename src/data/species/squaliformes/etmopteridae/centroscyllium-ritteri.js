@@ -1,7 +1,7 @@
-import { ANAL_FIN } from "../../../../constants/enums";
+import { ANAL_FIN, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const centroscylliumRitteri = {
-    commonName: "White Dogfish",
+    commonName: "Whitefin Dogfish",
     binomialName: "Centroscyllium ritteri",
 
     domain:	"Eukaryota",
@@ -17,6 +17,8 @@ export const centroscylliumRitteri = {
     species: "ritteri",
 
     tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO
     ]
 };

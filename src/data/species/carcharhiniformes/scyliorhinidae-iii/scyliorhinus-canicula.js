@@ -1,4 +1,4 @@
-import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const scyliorhinusCanicula = {
     commonName: "Small-Spotted Catshark",
@@ -18,6 +18,8 @@ export const scyliorhinusCanicula = {
     species: "canicula",
 
     tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
         NICTITATING_MEMBRANE.YES
     ]
 };

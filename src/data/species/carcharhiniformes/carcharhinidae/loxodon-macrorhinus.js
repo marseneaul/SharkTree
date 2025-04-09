@@ -1,4 +1,4 @@
-import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const loxodonMacrorhinus = {
     commonName: "Sliteye Shark",
@@ -17,6 +17,8 @@ export const loxodonMacrorhinus = {
     species: "macrorhinus",
 
     tags: [
+        CONSERVATION_STATUS.NT,
+        REPRODUCTIVE_STRATEGY.VIVIPAROUS,
         NICTITATING_MEMBRANE.YES
     ]
 };

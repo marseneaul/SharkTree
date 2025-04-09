@@ -1,4 +1,4 @@
-import { ANAL_FIN } from "../../../constants/enums";
+import { ANAL_FIN, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../constants/enums";
 
 export const echinorhinusBrucus = {
     commonName: "Bramble Shark",
@@ -17,6 +17,8 @@ export const echinorhinusBrucus = {
     species: "brucus",
 
     tags: [
+        CONSERVATION_STATUS.EN,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO
     ]
 };

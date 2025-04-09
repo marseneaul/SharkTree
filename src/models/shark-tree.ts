@@ -6,7 +6,7 @@ import { SharkTreeNode } from "./shark-tree-node";
 import { Svg } from "../drawing/svg";
 import { Utils } from "../utils/utils";
 import { BLACK } from "../constants/colors";
-import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION, FEEDING_BEHAVIOR, OCEAN_ZONE, EVOLUTIONARY_CHARACTERISTIC, UNIQUE_FEATURE, GEOGRAPHICAL_DISTRIBUTION, HABITAT, WATER_COLUMN, PHYSICAL_CHARACTERISTIC, BEHAVIOR, NUM_GILLS, NUM_DORSAL_FINS, ANAL_FIN, NICTITATING_MEMBRANE, CAUDAL_FIN_SHAPE, MOUTH_IN_FRONT_OF_EYES, BIOLUMINESCENT, DORSAL_FIN_SPINES } from "../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION, FEEDING_BEHAVIOR, OCEAN_ZONE, GEOGRAPHICAL_DISTRIBUTION, HABITAT, WATER_COLUMN, PHYSICAL_CHARACTERISTIC, BEHAVIOR, NUM_GILLS, NUM_DORSAL_FINS, ANAL_FIN, NICTITATING_MEMBRANE, CAUDAL_FIN_SHAPE, MOUTH_IN_FRONT_OF_EYES, BIOLUMINESCENT, DORSAL_FIN_SPINES } from "../constants/enums";
 
 export class SharkTree {
     config: SharkTreeNodeConfig
@@ -566,6 +566,7 @@ export class SharkTree {
 
     initializeTagCategories(): void {
         const categories = [
+            "conservationStatus",
             "reproductiveStrategy", 
             "temperatureRegulation",
             "feedingBehavior", 
@@ -608,8 +609,6 @@ export class SharkTree {
             "temperatureRegulation": Object.values(TEMPERATURE_REGULATION),
             "feedingBehavior": Object.values(FEEDING_BEHAVIOR),
             "oceanZone": Object.values(OCEAN_ZONE),
-            "evolutionaryCharacteristic": Object.values(EVOLUTIONARY_CHARACTERISTIC),
-            "uniqueFeature": Object.values(UNIQUE_FEATURE),
             "geographicalDistribution": Object.values(GEOGRAPHICAL_DISTRIBUTION),
             "habitat": Object.values(HABITAT),
             "waterColumn": Object.values(WATER_COLUMN),

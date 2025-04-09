@@ -1,4 +1,4 @@
-import { ANAL_FIN, DORSAL_FIN_SPINES } from "../../../../constants/enums";
+import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const zameusSquamulosus = {
     commonName: "Velvet Dogfish",
@@ -17,6 +17,8 @@ export const zameusSquamulosus = {
     species: "squamulosus",
 
     tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO,
         DORSAL_FIN_SPINES.YES
     ]

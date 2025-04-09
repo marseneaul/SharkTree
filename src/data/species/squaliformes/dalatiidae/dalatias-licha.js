@@ -1,4 +1,4 @@
-import { ANAL_FIN, BIOLUMINESCENT } from "../../../../constants/enums";
+import { ANAL_FIN, BIOLUMINESCENT, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const dalatiasLicha = {
     commonName: "Kitefin Shark",
@@ -18,6 +18,8 @@ export const dalatiasLicha = {
     species: "licha",
 
     tags: [
+        CONSERVATION_STATUS.VU,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO,
         BIOLUMINESCENT.YES
     ]

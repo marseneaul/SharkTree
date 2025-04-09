@@ -1,4 +1,4 @@
-import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const apristurusExsanguis = {
     commonName: "Flaccid Catshark",
@@ -17,6 +17,8 @@ export const apristurusExsanguis = {
     species: "exsanguis",
 
     tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
         NICTITATING_MEMBRANE.YES
     ]
 }

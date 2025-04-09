@@ -1,4 +1,4 @@
-import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const mustelusAntarcticus = {
     commonName: "Gummy Shark",
@@ -18,6 +18,8 @@ export const mustelusAntarcticus = {
     species: "antarcticus",
 
     tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         NICTITATING_MEMBRANE.YES
     ]
 };

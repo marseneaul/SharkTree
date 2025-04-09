@@ -1,4 +1,4 @@
-import { ANAL_FIN } from "../../../../constants/enums";
+import { ANAL_FIN, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const centroscylliumFabricii = {
     commonName: "Black Dogfish",
@@ -17,6 +17,8 @@ export const centroscylliumFabricii = {
     species: "fabricii",
 
     tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO
     ]
 };

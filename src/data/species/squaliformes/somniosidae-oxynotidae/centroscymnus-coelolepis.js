@@ -1,4 +1,4 @@
-import { ANAL_FIN, DORSAL_FIN_SPINES } from "../../../../constants/enums";
+import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const centroscymnusCoelolepis = {
     commonName: "Portuguese Dogfish",
@@ -17,6 +17,8 @@ export const centroscymnusCoelolepis = {
     species: "coelolepis",
 
     tags: [
+        CONSERVATION_STATUS.NT,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO,
         DORSAL_FIN_SPINES.YES
     ]

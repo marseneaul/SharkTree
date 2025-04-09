@@ -1,7 +1,8 @@
-import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const sphyrnaTudes = {
     commonName: "Golden Hammerhead Shark",
+    alternativeNames: ["Curry Shark", "Smalleye Hammerhead"],
     binomialName: "Sphyrna tudes",
 
     domain:	"Eukaryota",
@@ -17,6 +18,8 @@ export const sphyrnaTudes = {
     species: "tudes",
 
     tags: [
+        CONSERVATION_STATUS.CR,
+        REPRODUCTIVE_STRATEGY.VIVIPAROUS,
         NICTITATING_MEMBRANE.YES
     ]
 };

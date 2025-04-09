@@ -1,4 +1,4 @@
-import { MOUTH_IN_FRONT_OF_EYES } from "../../../constants/enums";
+import { CONSERVATION_STATUS, MOUTH_IN_FRONT_OF_EYES, REPRODUCTIVE_STRATEGY } from "../../../constants/enums";
 
 export const nebriusFerrugineus = {
     commonName: "Tawny Nurse Shark",
@@ -18,6 +18,8 @@ export const nebriusFerrugineus = {
     species: "ferrugineus",
 
     tags: [
+        CONSERVATION_STATUS.VU,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         MOUTH_IN_FRONT_OF_EYES.MOUTH_IN_FRONT_OF_EYES
     ]
 };

@@ -1,4 +1,4 @@
-import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const apristurusAmpliceps = {
     commonName: "Roughskin Catshark",
@@ -17,6 +17,8 @@ export const apristurusAmpliceps = {
     species: "ampliceps",
 
     tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
         NICTITATING_MEMBRANE.YES
     ]
 }

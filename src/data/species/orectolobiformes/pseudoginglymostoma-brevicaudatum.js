@@ -1,4 +1,4 @@
-import { MOUTH_IN_FRONT_OF_EYES } from "../../../constants/enums";
+import { CONSERVATION_STATUS, MOUTH_IN_FRONT_OF_EYES, REPRODUCTIVE_STRATEGY } from "../../../constants/enums";
 
 export const pseudoginglymostomaBrevicaudatum = {
     commonName: "Short-Tail Nurse Shark",
@@ -17,6 +17,8 @@ export const pseudoginglymostomaBrevicaudatum = {
     species: "brevicaudatum",
 
     tags: [
+        CONSERVATION_STATUS.CR,
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
         MOUTH_IN_FRONT_OF_EYES.MOUTH_IN_FRONT_OF_EYES
     ]
 };

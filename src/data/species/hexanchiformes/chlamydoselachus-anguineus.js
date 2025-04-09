@@ -1,4 +1,4 @@
-import { NUM_DORSAL_FINS, NUM_GILLS } from "../../../constants/enums";
+import { CONSERVATION_STATUS, NUM_DORSAL_FINS, NUM_GILLS, REPRODUCTIVE_STRATEGY } from "../../../constants/enums";
 
 export const chlamydoselachusAnguineus = {
     commonName: "Frilled Shark",
@@ -18,6 +18,8 @@ export const chlamydoselachusAnguineus = {
     species: "anguineus",
 
     tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         NUM_GILLS.SIX, 
         NUM_DORSAL_FINS.ONE
     ]

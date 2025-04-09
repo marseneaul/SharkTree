@@ -1,4 +1,4 @@
-import { ANAL_FIN } from "../../../constants/enums";
+import { ANAL_FIN, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../constants/enums";
 
 export const squatinaCalifornica = {
     commonName: "Pacific Angelshark",
@@ -17,6 +17,8 @@ export const squatinaCalifornica = {
     species: "californica",
 
     tags: [
+        CONSERVATION_STATUS.NT,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO
     ]
 };

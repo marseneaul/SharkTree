@@ -1,4 +1,4 @@
-import { FEEDING_BEHAVIOR, NICTITATING_MEMBRANE } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, FEEDING_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const sphyrnaTiburo = {
     commonName: "Bonnethead Shark",
@@ -17,6 +17,8 @@ export const sphyrnaTiburo = {
     species: "tiburo",
 
     tags: [
+        CONSERVATION_STATUS.EN,
+        REPRODUCTIVE_STRATEGY.VIVIPAROUS, REPRODUCTIVE_STRATEGY.PARTHENOGENESIS,
         NICTITATING_MEMBRANE.YES,
         FEEDING_BEHAVIOR.CARNIVOROUS, FEEDING_BEHAVIOR.OMNIVOROUS
     ]

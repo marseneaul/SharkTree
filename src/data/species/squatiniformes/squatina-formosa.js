@@ -1,4 +1,4 @@
-import { ANAL_FIN } from "../../../constants/enums";
+import { ANAL_FIN, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../constants/enums";
 
 export const squatinaFormosa = {
     commonName: "Taiwan Angelshark",
@@ -17,6 +17,8 @@ export const squatinaFormosa = {
     species: "formosa",
 
     tags: [
+        CONSERVATION_STATUS.EN,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO
     ]
 };

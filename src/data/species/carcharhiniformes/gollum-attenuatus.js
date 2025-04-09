@@ -1,4 +1,4 @@
-import { NICTITATING_MEMBRANE } from "../../../constants/enums";
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../constants/enums";
 
 export const gollumAttenuatus = {
     commonName: "Slender Smooth-Hound",
@@ -18,6 +18,8 @@ export const gollumAttenuatus = {
     species: "attenuatus",
 
     tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS, REPRODUCTIVE_STRATEGY.OOPHAGY,
         NICTITATING_MEMBRANE.YES
     ]
 };

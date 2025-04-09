@@ -1,4 +1,4 @@
-import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const scylliogaleusQuecketti = {
     commonName: "Flapnose Houndshark",
@@ -17,6 +17,8 @@ export const scylliogaleusQuecketti = {
     species: "quecketti",
 
     tags: [
+        CONSERVATION_STATUS.VU,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         NICTITATING_MEMBRANE.YES
     ]
 };

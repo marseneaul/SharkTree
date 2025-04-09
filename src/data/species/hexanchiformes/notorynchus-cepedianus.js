@@ -1,4 +1,4 @@
-import { NUM_DORSAL_FINS, NUM_GILLS } from "../../../constants/enums";
+import { CONSERVATION_STATUS, NUM_DORSAL_FINS, NUM_GILLS, REPRODUCTIVE_STRATEGY } from "../../../constants/enums";
 
 export const notorhynchusCepedianus = {
     commonName: "Broadnose Sevengill Shark",
@@ -17,6 +17,8 @@ export const notorhynchusCepedianus = {
     species: "cepedianus",
 
     tags: [
+        CONSERVATION_STATUS.VU,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         NUM_GILLS.SEVEN, 
         NUM_DORSAL_FINS.ONE
     ]

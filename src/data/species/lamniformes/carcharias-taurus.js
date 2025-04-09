@@ -1,4 +1,4 @@
-import { CAUDAL_FIN_SHAPE } from "../../../constants/enums";
+import { CAUDAL_FIN_SHAPE, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../constants/enums";
 
 export const carchariasTaurus = {
     commonName: "Sand Tiger Shark",
@@ -18,6 +18,8 @@ export const carchariasTaurus = {
     species: "taurus",
 
     tags: [
+        CONSERVATION_STATUS.CR,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS, REPRODUCTIVE_STRATEGY.EMBRYOPHAGY,
         CAUDAL_FIN_SHAPE.HOMOCERCAL
     ]
 }

@@ -3,6 +3,7 @@ export enum CONSERVATION_STATUS {
     EW = "Extinct in the Wild (EW)",
     CR = "Critically Endangered (CR)",
     EN = "Endangered (EN)",
+    VU = "Vulnerable (VU)",
     NT = "Near Threatened (NT)",
     CD = "Conservation Dependent (CD)",
     LC = "Least Concern (LC)",
@@ -14,9 +15,11 @@ export enum REPRODUCTIVE_STRATEGY {
     OVIPAROUS = "Oviparous",
     VIVIPAROUS = "Viviparous",
     OVOVIVIPAROUS = "Ovoviviparous",
-    PLACENTAL_VIVIPAROUS = "Placental Viviparous",
-    PARTHENOGENIC = "Parthenogenic",
-    OOPHAGY = "Oophagy"
+    EMBRYTROPHY = "Embrytrophy",
+    PARTHENOGENESIS = "Parthenogenesis",
+    OOPHAGY = "Oophagy",
+    EMBRYOPHAGY = "Embryophagy",
+    UNKNOWN = "Unknown"
 }
 
 export enum REEF_ZONE {
@@ -37,7 +40,7 @@ export enum FEEDING_BEHAVIOR {
     CARNIVOROUS = "Carnivorous",
     OMNIVOROUS = "Omnivorous",
     PLANKTIVOROUS = "Planktivorous",
-    PISCIVOROUS = "Piscivore",
+    PISCIVOROUS = "Piscivorous",
     MOLLUSCIVOROUS = "Molluscivorous",
 }
 
@@ -47,18 +50,6 @@ export enum OCEAN_ZONE {
     BATHYPELAGIC = "Bathypelagic",
     ABYSSALPELAGIC = "Abyssalpelagic",
     HADALPELAGIC = "Hadalpelagic"
-} 
-
-export enum EVOLUTIONARY_CHARACTERISTIC {
-    PRIMITIVE = "Primitive",
-    DERIVED = "Derived"
-}
-
-export enum UNIQUE_FEATURE {
-    SPINY = "Spiny",
-    ELECTRIC = "Electric",
-    FILTER_FEEDER = "Filter-Feeder",
-    APEX_PREDATOR = "Apex Predator"
 }
 
 export enum TEMPERATURE_REGULATION {
@@ -105,18 +96,11 @@ export enum WATER_COLUMN {
 
 export enum PHYSICAL_CHARACTERISTIC {
     COUNTERSHADING = "Countershading",
-    HETEROCERCAL_TAIL = "Heterocercal Tail",
-    HOMOCERCAL_TAIL = "Homocercal Tail",
     TORPEDO_SHAPE = "Torpedo Shape",
     WHITE_TIPPED_FIRST_DORSAL_FIN = "White-Tipped First Dorsal Fin",
     WHITE_TIPPED_SECOND_DORSAL_FIN = "White-Tipped Second Dorsal Fin",
     BLACK_TIPPED_FIRST_DORSAL_FIN = "Black-Tipped First Dorsal Fin",
     BLACK_TIPPED_SECOND_DORSAL_FIN = "Black-Tipped Second Dorsal Fin",
-    MOUTH_EXTENDING_BEHIND_THE_EYES = "Mouth Extending Behind the Eyes",
-    MOUTH_NOT_EXTENDING_BEHIND_THE_EYES = "Mouth Not Extending Behind the Eyes",
-    EYES_WITH_NICTITATING_MEMBRANES = "Eyes With Nictitating Membranes",
-    EYES_WITHOUT_NICTITATING_MEMBRANES = "Eyes Without Nictitating Membranes",
-    BIOLUMINESCENT = "Bioluminescent",
     LARGED_SIZED = "Large-sized",
     SMALL_SIZED = "Small-sized",
     FLATTENED = "Flattened",
@@ -185,14 +169,13 @@ export function getEnumCategory(tag: any): string | undefined {
     if (Object.values(BIOLUMINESCENT).includes(tag)) return "BIOLUMINESCENT";
     if (Object.values(DORSAL_FIN_SPINES).includes(tag)) return "DORSAL_FIN_SPINES";
 
+    if (Object.values(CONSERVATION_STATUS).includes(tag)) return "CONSERVATION_STATUS";
     if (Object.values(TEMPERATURE_REGULATION).includes(tag)) return "TEMPERATURE_REGULATION";
     if (Object.values(FEEDING_BEHAVIOR).includes(tag)) return "FEEDING_BEHAVIOR";
-    if (Object.values(CONSERVATION_STATUS).includes(tag)) return "CONSERVATION_STATUS";
     if (Object.values(REPRODUCTIVE_STRATEGY).includes(tag)) return "REPRODUCTIVE_STRATEGY";
+
     if (Object.values(REEF_ZONE).includes(tag)) return "REEF_ZONE";
     if (Object.values(OCEAN_ZONE).includes(tag)) return "OCEAN_ZONE";
-    if (Object.values(EVOLUTIONARY_CHARACTERISTIC).includes(tag)) return "EVOLUTIONARY_CHARACTERISTIC";
-    if (Object.values(UNIQUE_FEATURE).includes(tag)) return "UNIQUE_FEATURE";
     if (Object.values(GEOGRAPHICAL_DISTRIBUTION).includes(tag)) return "GEOGRAPHICAL_DISTRIBUTION";
     if (Object.values(HABITAT).includes(tag)) return "HABITAT";
     if (Object.values(WATER_COLUMN).includes(tag)) return "WATER_COLUMN";
@@ -211,5 +194,7 @@ export const DEFAULT_TAGS = [
     CAUDAL_FIN_SHAPE.HETEROCERCAL,
     MOUTH_IN_FRONT_OF_EYES.MOUTH_NOT_IN_FRONT_OF_EYES,
     BIOLUMINESCENT.NO,
-    DORSAL_FIN_SPINES.NO
+    DORSAL_FIN_SPINES.NO,
+    CONSERVATION_STATUS.LC,
+    REPRODUCTIVE_STRATEGY.UNKNOWN
 ];

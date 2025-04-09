@@ -1,4 +1,4 @@
-import { ANAL_FIN, BIOLUMINESCENT, DORSAL_FIN_SPINES } from "../../../../constants/enums";
+import { ANAL_FIN, BIOLUMINESCENT, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const squaliolusLaticaudus = {
     commonName: "Spined Pygmy Shark",
@@ -18,6 +18,8 @@ export const squaliolusLaticaudus = {
     species: "laticaudus",
 
     tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO,
         BIOLUMINESCENT.YES,
         DORSAL_FIN_SPINES.ONLY_ON_FIRST

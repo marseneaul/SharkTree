@@ -1,4 +1,4 @@
-import { CAUDAL_FIN_SHAPE } from "../../../constants/enums";
+import { CAUDAL_FIN_SHAPE, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../constants/enums";
 
 export const odontaspisNoronhai = {
     commonName: "Bigeye Sand Tiger",
@@ -17,6 +17,8 @@ export const odontaspisNoronhai = {
     species: "noronhai",
 
     tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS, REPRODUCTIVE_STRATEGY.OOPHAGY,
         CAUDAL_FIN_SHAPE.HOMOCERCAL
     ]
 };

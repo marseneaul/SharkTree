@@ -1,4 +1,4 @@
-import { NUM_DORSAL_FINS, NUM_GILLS } from "../../../constants/enums";
+import { CONSERVATION_STATUS, NUM_DORSAL_FINS, NUM_GILLS, REPRODUCTIVE_STRATEGY } from "../../../constants/enums";
 
 export const hexanchusNakamurai = {
     commonName: "Bigeye Sixgill Shark",
@@ -17,6 +17,8 @@ export const hexanchusNakamurai = {
     species: "nakamurai",
 
     tags: [
+        CONSERVATION_STATUS.NT,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         NUM_GILLS.SIX, 
         NUM_DORSAL_FINS.ONE
     ]

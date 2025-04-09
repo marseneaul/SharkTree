@@ -136,6 +136,8 @@ export class SharkTreeComponent extends HTMLElement {
                         <label for="tag-dropdown">Tag Category:</label>
                         <select id="tag-dropdown">
                             <option value="">None</option>
+                            <option value="conservationStatus">Conservation Status</option>
+                            <option value="reproductiveStrategy">Reproductive Strategy</option>
                             <option value="temperatureRegulation">Temperature Regulation</option>
                             <option value="feedingBehavior">Feeding Behavior</option>
                             <option value="numGills">Number of Gills</option>

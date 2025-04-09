@@ -1,4 +1,4 @@
-import { DORSAL_FIN_SPINES } from "../../../constants/enums";
+import { CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../constants/enums";
 
 export const heterodontusZebra = {
     commonName: "Zebra Bullhead Shark",
@@ -17,6 +17,8 @@ export const heterodontusZebra = {
     species: "zebra",
 
     tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
         DORSAL_FIN_SPINES.YES
     ]
 };

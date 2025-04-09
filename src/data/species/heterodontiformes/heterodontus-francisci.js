@@ -1,4 +1,4 @@
-import { DORSAL_FIN_SPINES } from "../../../constants/enums";
+import { CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../constants/enums";
 
 export const heterodontusFrancisci = {
     commonName: "Horn Shark",
@@ -18,6 +18,8 @@ export const heterodontusFrancisci = {
     species: "francisci",
 
     tags: [
+        CONSERVATION_STATUS.DD,
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
         DORSAL_FIN_SPINES.YES
     ]
 };

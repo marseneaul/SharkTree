@@ -1,4 +1,4 @@
-import { BIOLUMINESCENT, NICTITATING_MEMBRANE } from "../../../../constants/enums";
+import { BIOLUMINESCENT, CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const cephaloscylliumVentriosum = {
     commonName: "Swellshark",
@@ -17,6 +17,8 @@ export const cephaloscylliumVentriosum = {
     species: "ventriosum",
 
     tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
         NICTITATING_MEMBRANE.YES,
         BIOLUMINESCENT.YES
     ]

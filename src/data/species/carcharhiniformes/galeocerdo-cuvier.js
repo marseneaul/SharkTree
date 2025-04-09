@@ -1,4 +1,4 @@
-import { NICTITATING_MEMBRANE } from "../../../constants/enums";
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../constants/enums";
 
 export const galeocerdoCuvier = {
     commonName: "Tiger Shark",
@@ -17,6 +17,8 @@ export const galeocerdoCuvier = {
     species: "cuvier",
 
     tags: [
+        CONSERVATION_STATUS.NT,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS, REPRODUCTIVE_STRATEGY.EMBRYTROPHY,
         NICTITATING_MEMBRANE.YES
     ]
 };

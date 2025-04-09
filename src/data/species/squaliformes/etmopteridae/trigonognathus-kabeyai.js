@@ -1,4 +1,4 @@
-import { ANAL_FIN } from "../../../../constants/enums";
+import { ANAL_FIN, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const trigonognathusKabeyai = {
     commonName: "Viper Dogfish",
@@ -18,6 +18,8 @@ export const trigonognathusKabeyai = {
     species: "kabeyai",
 
     tags: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO
     ]
 };
