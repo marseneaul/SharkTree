@@ -256,6 +256,35 @@ export class SharkTree {
                 node.addEventListener("mouseout", () => tooltip.remove(), { once: true });
             });
         });
+
+        svg.addEventListener("dblclick", () => {
+            // Reset viewBox to initial state
+            viewBox = { x: 0, y: 0, width: SVG_SIZE, height: SVG_SIZE };
+            this.updateViewBox(svg, viewBox);
+    
+            // Reset rotation
+            rotation = 0;
+            g.setAttribute("transform", ""); // Clear any rotation
+    
+            // Optionally reset zoom level and focus
+            this.zoomLevel = 0;
+            this.focusNode = this.root;
+    
+            // Optionally reset selection to first shark (like on launch)
+            const firstShark = sharkSpecies[0];
+            this.updateSelection(firstShark);
+            window.dispatchEvent(new CustomEvent("select-shark", { 
+                detail: { sharkSpecies: firstShark } 
+            }));
+    
+            // Reapply any active highlights if needed
+            if (this.activeTaxonomicLevel) {
+                this.highlightTaxonomicLevel(this.activeTaxonomicLevel, this.activeTaxonomicValue);
+            }
+            if (this.activeTagCategory) {
+                this.highlightTagCategory(this.activeTagCategory, this.activeTagValue);
+            }
+        });
     
         svg.addEventListener("wheel", (event: WheelEvent) => {
             event.preventDefault();
