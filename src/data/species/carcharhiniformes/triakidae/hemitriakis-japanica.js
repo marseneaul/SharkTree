@@ -1,4 +1,4 @@
-import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const hemitriakisJapanica = {
     commonName: "Japanese Topeshark",
@@ -19,6 +19,7 @@ export const hemitriakisJapanica = {
     tags: [
         CONSERVATION_STATUS.EN,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
-        NICTITATING_MEMBRANE.YES
+        NICTITATING_MEMBRANE.YES,
+        GROUP_BEHAVIOR.SCHOOLING
     ]
 };

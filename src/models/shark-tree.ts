@@ -6,7 +6,7 @@ import { SharkTreeNode } from "./shark-tree-node";
 import { Svg } from "../drawing/svg";
 import { Utils } from "../utils/utils";
 import { BLACK } from "../constants/colors";
-import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION, FEEDING_BEHAVIOR, OCEAN_ZONE, GEOGRAPHICAL_DISTRIBUTION, HABITAT, WATER_COLUMN, PHYSICAL_CHARACTERISTIC, BEHAVIOR, NUM_GILLS, NUM_DORSAL_FINS, ANAL_FIN, NICTITATING_MEMBRANE, CAUDAL_FIN_SHAPE, MOUTH_IN_FRONT_OF_EYES, BIOLUMINESCENT, DORSAL_FIN_SPINES, SPIRACLES, FLATTENED_BODY } from "../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION, FEEDING_BEHAVIOR, OCEAN_ZONE, GEOGRAPHICAL_DISTRIBUTION, HABITAT, WATER_COLUMN, PHYSICAL_CHARACTERISTIC, BEHAVIOR, NUM_GILLS, NUM_DORSAL_FINS, ANAL_FIN, NICTITATING_MEMBRANE, CAUDAL_FIN_SHAPE, MOUTH_IN_FRONT_OF_EYES, BIOLUMINESCENT, DORSAL_FIN_SPINES, SPIRACLES, FLATTENED_BODY, GROUP_BEHAVIOR } from "../constants/enums";
 
 export class SharkTree {
     config: SharkTreeNodeConfig
@@ -569,7 +569,8 @@ export class SharkTree {
             "conservationStatus",
             "reproductiveStrategy", 
             "temperatureRegulation",
-            "feedingBehavior", 
+            "feedingBehavior",
+            "groupBehavior",
             "numGills", 
             "numDorsalFins",
             "analFin",
@@ -610,6 +611,7 @@ export class SharkTree {
             "reproductiveStrategy": Object.values(REPRODUCTIVE_STRATEGY),
             "temperatureRegulation": Object.values(TEMPERATURE_REGULATION),
             "feedingBehavior": Object.values(FEEDING_BEHAVIOR),
+            "groupBehavior": Object.values(GROUP_BEHAVIOR),
             "oceanZone": Object.values(OCEAN_ZONE),
             "geographicalDistribution": Object.values(GEOGRAPHICAL_DISTRIBUTION),
             "habitat": Object.values(HABITAT),

@@ -101,20 +101,16 @@ export enum PHYSICAL_CHARACTERISTIC {
     WHITE_TIPPED_SECOND_DORSAL_FIN = "White-Tipped Second Dorsal Fin",
     BLACK_TIPPED_FIRST_DORSAL_FIN = "Black-Tipped First Dorsal Fin",
     BLACK_TIPPED_SECOND_DORSAL_FIN = "Black-Tipped Second Dorsal Fin",
-    LARGED_SIZED = "Large-sized",
-    SMALL_SIZED = "Small-sized",
-    FLATTENED = "Flattened",
-    STREAMLINED = "Streamlined"
 }
 
 export enum BEHAVIOR {
-    NOCTURNAL = "Nocturnal",
-    DIURNAL = "Diurnal",
-    SOLITARY = "Solitary",
-    SCHOOLING = "Schooling",
-    MIGRATION = "Migration",
-    HUNTING_IN_PACKS = "Hunting in Packs",
+    MIGRATING = "Migrating",
     BREACHING = "Breaching"
+}
+
+export enum GROUP_BEHAVIOR {
+    SOLITARY = "Solitary",
+    SCHOOLING = "Schooling"
 }
 
 export enum NUM_GILLS {
@@ -178,11 +174,14 @@ export function getEnumCategory(tag: any): string | undefined {
     if (Object.values(MOUTH_IN_FRONT_OF_EYES).includes(tag)) return "MOUTH_IN_FRONT_OF_EYES";
     if (Object.values(BIOLUMINESCENT).includes(tag)) return "BIOLUMINESCENT";
     if (Object.values(DORSAL_FIN_SPINES).includes(tag)) return "DORSAL_FIN_SPINES";
+    if (Object.values(SPIRACLES).includes(tag)) return "SPIRACLES";
+    if (Object.values(FLATTENED_BODY).includes(tag)) return "FLATTENED_BODY";
 
     if (Object.values(CONSERVATION_STATUS).includes(tag)) return "CONSERVATION_STATUS";
     if (Object.values(TEMPERATURE_REGULATION).includes(tag)) return "TEMPERATURE_REGULATION";
     if (Object.values(FEEDING_BEHAVIOR).includes(tag)) return "FEEDING_BEHAVIOR";
     if (Object.values(REPRODUCTIVE_STRATEGY).includes(tag)) return "REPRODUCTIVE_STRATEGY";
+    if (Object.values(GROUP_BEHAVIOR).includes(tag)) return "GROUP_BEHAVIOR";
 
     if (Object.values(REEF_ZONE).includes(tag)) return "REEF_ZONE";
     if (Object.values(OCEAN_ZONE).includes(tag)) return "OCEAN_ZONE";
@@ -191,16 +190,18 @@ export function getEnumCategory(tag: any): string | undefined {
     if (Object.values(WATER_COLUMN).includes(tag)) return "WATER_COLUMN";
     if (Object.values(PHYSICAL_CHARACTERISTIC).includes(tag)) return "PHYSICAL_CHARACTERISTIC";
     if (Object.values(BEHAVIOR).includes(tag)) return "BEHAVIOR";
-    if (Object.values(SPIRACLES).includes(tag)) return "SPIRACLES";
-    if (Object.values(FLATTENED_BODY).includes(tag)) return "FLATTENED_BODY";
     return undefined;
 }
 
 export const DEFAULT_TAGS = [
+    CONSERVATION_STATUS.LC,
+    REPRODUCTIVE_STRATEGY.UNKNOWN,
+    TEMPERATURE_REGULATION.ECTOTHERMIC, 
+    FEEDING_BEHAVIOR.CARNIVOROUS,
+    GROUP_BEHAVIOR.SOLITARY,
+    
     NUM_DORSAL_FINS.TWO, 
     NUM_GILLS.FIVE, 
-    TEMPERATURE_REGULATION.ECTOTHERMIC, 
-    FEEDING_BEHAVIOR.CARNIVOROUS, 
     ANAL_FIN.YES,
     SPIRACLES.YES,
     FLATTENED_BODY.NO,
@@ -208,7 +209,5 @@ export const DEFAULT_TAGS = [
     CAUDAL_FIN_SHAPE.HETEROCERCAL,
     MOUTH_IN_FRONT_OF_EYES.MOUTH_NOT_IN_FRONT_OF_EYES,
     BIOLUMINESCENT.NO,
-    DORSAL_FIN_SPINES.NO,
-    CONSERVATION_STATUS.LC,
-    REPRODUCTIVE_STRATEGY.UNKNOWN
+    DORSAL_FIN_SPINES.NO
 ];

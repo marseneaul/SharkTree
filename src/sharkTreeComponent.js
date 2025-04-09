@@ -140,6 +140,7 @@ export class SharkTreeComponent extends HTMLElement {
                             <option value="reproductiveStrategy">Reproductive Strategy</option>
                             <option value="temperatureRegulation">Temperature Regulation</option>
                             <option value="feedingBehavior">Feeding Behavior</option>
+                            <option value="groupBehavior">Group Behavior</option>
                             <option value="numGills">Number of Gills</option>
                             <option value="numDorsalFins">Number of Dorsal Fins</option>
                             <option value="analFin">Has Anal Fin</option>

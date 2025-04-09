@@ -1,4 +1,4 @@
-import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../constants/enums";
 
 export const carcharhinusAmblyrhynchos = {
     commonName: "Grey Reef Shark",
@@ -20,6 +20,7 @@ export const carcharhinusAmblyrhynchos = {
         CONSERVATION_STATUS.EN,
         REPRODUCTIVE_STRATEGY.VIVIPAROUS,
         NICTITATING_MEMBRANE.YES,
-        SPIRACLES.NO
+        SPIRACLES.NO,
+        GROUP_BEHAVIOR.SCHOOLING
     ]
 }

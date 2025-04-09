@@ -1,4 +1,4 @@
-import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../constants/enums";
 
 export const negaprionBrevirostris = {
     commonName: "Lemon Shark",
@@ -21,6 +21,7 @@ export const negaprionBrevirostris = {
         CONSERVATION_STATUS.VU,
         REPRODUCTIVE_STRATEGY.VIVIPAROUS,
         NICTITATING_MEMBRANE.YES,
-        SPIRACLES.NO
+        SPIRACLES.NO,
+        GROUP_BEHAVIOR.SCHOOLING
     ]
 };
