@@ -242,10 +242,14 @@ export class SharkTree {
                 const tooltip = document.createElement("div");
                 tooltip.innerHTML = `${shark.commonName || shark.binomialName}`;
                 tooltip.style.position = "absolute";
-                tooltip.style.background = WHITE;
-                tooltip.style.border = `1px solid ${BLACK}`;
-                tooltip.style.padding = "5px";
+                tooltip.style.background = "rgba(255, 255, 255, 0.95)";
+                tooltip.style.border = `1px solid #00688B`;
+                tooltip.style.borderRadius = "5px";
+                tooltip.style.padding = "4px 5px";
                 tooltip.style.fontFamily = "'Roboto', sans-serif";
+                tooltip.style.fontWeight = "550";
+                tooltip.style.fontSize = "13px";
+                tooltip.style.boxShadow = "0 2px 4px rgba(0, 0, 0, 0.1)";
                 tooltip.style.left = `${e.pageX + 10}px`;
                 tooltip.style.top = `${e.pageY + 10}px`;
                 document.body.appendChild(tooltip);
