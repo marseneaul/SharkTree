@@ -158,7 +158,7 @@ export class SharkTreeComponent extends HTMLElement {
                         </select>
                     </div>
                     <button id="info-button" aria-label="How to use this app">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="12" cy="12" r="11" stroke="#00688B" stroke-width="1" fill="#FFFFFF" />
                             <text x="12" y="17" font-size="13" font-weight="300" font-family="Open Sans, sans-serif" fill="#00688B" text-anchor="middle">?</text>
                         </svg>
@@ -299,8 +299,8 @@ export class SharkTreeComponent extends HTMLElement {
                 cursor: pointer;
             }
             #info-button {
-                width: 24px;
-                height: 24px;
+                width: 22px;
+                height: 22px;
                 border: none;
                 background: none;
                 padding: 0;
