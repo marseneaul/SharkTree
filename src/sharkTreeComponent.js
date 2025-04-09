@@ -160,7 +160,7 @@ export class SharkTreeComponent extends HTMLElement {
                     <button id="info-button" aria-label="How to use this app">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="12" cy="12" r="11" stroke="#00688B" stroke-width="1" fill="#FFFFFF" />
-                            <text x="12" y="17" font-size="13" font-weight="200" font-family="Roboto, sans-serif" fill="#00688B" text-anchor="middle">?</text>
+                            <text x="12" y="17" font-size="13" font-weight="300" font-family="Open Sans, sans-serif" fill="#00688B" text-anchor="middle">?</text>
                         </svg>
                     </button>
                     <div id="info-tooltip">

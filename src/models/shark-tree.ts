@@ -11,14 +11,12 @@ import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION, FEE
 export class SharkTree {
     config: SharkTreeNodeConfig
     root: SharkTreeNode
-    focusNode: SharkTreeNode
 
     centerX: number
     centerY: number
     radius: number
     levelHeight: number
     maxDepth: number
-    zoomLevel: number
 
 
     currentNode: SharkSpecies|SharkTreeNode|null
@@ -36,14 +34,12 @@ export class SharkTree {
     constructor(sharkTreeConfig: SharkTreeNodeConfig) {
         this.config = sharkTreeConfig;
         this.root = new SharkTreeNode(this.config, null);
-        this.focusNode = this.root;
 
         this.centerX = SVG_SIZE / 2;
         this.centerY = SVG_SIZE / 2;
         this.radius = SVG_SIZE / 3;
         this.maxDepth = this.getMaxDepth();
         this.levelHeight = this.radius / this.maxDepth;
-        this.zoomLevel = 0;
 
         this.currentNode = this.root;
         this.currentSharkIndex = 0;
@@ -262,21 +258,6 @@ export class SharkTree {
             viewBox = { x: 0, y: 0, width: SVG_SIZE, height: SVG_SIZE };
             this.updateViewBox(svg, viewBox);
     
-            // Reset rotation
-            rotation = 0;
-            g.setAttribute("transform", ""); // Clear any rotation
-    
-            // Optionally reset zoom level and focus
-            this.zoomLevel = 0;
-            this.focusNode = this.root;
-    
-            // Optionally reset selection to first shark (like on launch)
-            const firstShark = sharkSpecies[0];
-            this.updateSelection(firstShark);
-            window.dispatchEvent(new CustomEvent("select-shark", { 
-                detail: { sharkSpecies: firstShark } 
-            }));
-    
             // Reapply any active highlights if needed
             if (this.activeTaxonomicLevel) {
                 this.highlightTaxonomicLevel(this.activeTaxonomicLevel, this.activeTaxonomicValue);
@@ -292,6 +273,7 @@ export class SharkTree {
             const mouseY = event.clientY - svg.getBoundingClientRect().top;
     
             if (event.ctrlKey) {
+                console.log(event, event.ctrlKey)
                 const scale = event.deltaY > 0 ? 1.1 : 0.9;
                 viewBox.width *= scale;
                 viewBox.height *= scale;
