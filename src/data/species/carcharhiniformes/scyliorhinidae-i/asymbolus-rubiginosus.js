@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const asymbolusRubiginosus = {
     commonName: "Orange-Spotted Catshark",
     alternativeNames: ["Rusty Catshark"],
@@ -13,5 +15,9 @@ export const asymbolusRubiginosus = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Asymbolus",
-    species: "rubiginosus"
+    species: "rubiginosus",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 }

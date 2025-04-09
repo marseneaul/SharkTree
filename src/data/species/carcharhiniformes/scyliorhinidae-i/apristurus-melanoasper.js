@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const apristurusMelanoasper = {
     commonName: "Black Roughscale Catshark",
     binomialName: "Apristurus melanoasper",
@@ -12,5 +14,9 @@ export const apristurusMelanoasper = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Apristurus",
-    species: "melanoasper"
+    species: "melanoasper",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 }

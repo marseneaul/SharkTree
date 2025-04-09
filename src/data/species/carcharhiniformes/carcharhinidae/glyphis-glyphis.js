@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const glyphisGlyphis = {
     commonName: "Speartooth Shark",
     alternativeNames: ["Bizant River Shark", "Queensland River Shark"],
@@ -13,5 +15,9 @@ export const glyphisGlyphis = {
     order: "Carcharhiniformes",
     family: "Carcharhinidae",
     genus: "Glyphis",
-    species: "glyphis"
+    species: "glyphis",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

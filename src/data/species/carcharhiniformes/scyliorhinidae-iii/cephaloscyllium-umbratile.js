@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const cephaloscylliumUmbratile = {
     commonName: "Blotchy Catshark",
     alternativeNames: ["Japanese Swellshark"],
@@ -13,5 +15,9 @@ export const cephaloscylliumUmbratile = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Cephaloscyllium",
-    species: "umbratile"
+    species: "umbratile",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

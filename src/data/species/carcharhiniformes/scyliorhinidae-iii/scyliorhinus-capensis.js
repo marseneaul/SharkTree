@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const scyliorhinusCapensis = {
     commonName: "Yellowspotted Catshark",
     binomialName: "Scyliorhinus capensis",
@@ -12,5 +14,9 @@ export const scyliorhinusCapensis = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Scyliorhinus",
-    species: "capensis"
+    species: "capensis",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

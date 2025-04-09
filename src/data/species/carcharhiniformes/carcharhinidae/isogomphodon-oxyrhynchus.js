@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const isogomphodonOxyrhynchus = {
     commonName: "Daggernose Shark",
     binomialName: "Isogomphodon oxyrhynchus",
@@ -12,5 +14,9 @@ export const isogomphodonOxyrhynchus = {
     order: "Carcharhiniformes",
     family: "Carcharhinidae",
     genus: "Isogomphodon",
-    species: "oxyrhynchus"
+    species: "oxyrhynchus",
+    
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

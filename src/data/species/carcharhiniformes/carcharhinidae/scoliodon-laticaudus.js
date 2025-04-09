@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const scoliodonLaticaudus = {
     commonName: "Spadenode Shark",
     alternativeNames: ["Indian Dogfish", "Sharp-Nosed Shark", "Trowel-Nose Shark", "Yellow Dog Sshark"],
@@ -13,5 +15,9 @@ export const scoliodonLaticaudus = {
     order: "Carcharhiniformes",
     family: "Carcharhinidae",
     genus: "Scoliodon",
-    species: "laticaudus"
+    species: "laticaudus",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

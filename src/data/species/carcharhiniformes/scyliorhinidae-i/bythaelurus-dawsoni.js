@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const bythaelurusDawsoni = {
     commonName: "New Zealand Catshark",
     binomialName: "Bythaelurus dawsoni",
@@ -12,5 +14,9 @@ export const bythaelurusDawsoni = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Bythaelurus",
-    species: "dawsoni"
+    species: "dawsoni",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 }

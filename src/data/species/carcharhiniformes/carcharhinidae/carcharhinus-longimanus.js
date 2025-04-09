@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const carcharhinusLongimanus = {
     commonName: "Oceanic Whitetip Shark",
     alternativeNames: ["Brown Milbert's Sand Bar Shark", "Brown Shark", "Shipwreck Shark", "Nigano Shark", "Oceanic White-Tipped Whaler", "Whitetip Shark"],
@@ -13,5 +15,9 @@ export const carcharhinusLongimanus = {
     order: "Carcharhiniformes",
     family: "Carcharhinidae",
     genus: "Carcharhinus",
-    species: "longimanus"
+    species: "longimanus",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const galeusPolli = {
     commonName: "African Sawtail Catshark",
     binomialName: "Galeus polli",
@@ -12,5 +14,9 @@ export const galeusPolli = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Galeus",
-    species: "polli"
+    species: "polli",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 }

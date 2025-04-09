@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const carcharhinusAmblyrhynchos = {
     commonName: "Grey Reef Shark",
     binomialName: "Carcharhinus amblyrhynchos",
@@ -12,5 +14,9 @@ export const carcharhinusAmblyrhynchos = {
     order: "Carcharhiniformes",
     family: "Carcharhinidae",
     genus: "Carcharhinus",
-    species: "amblyrhynchos"
-};
+    species: "amblyrhynchos",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
+}

@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const carcharhinusAmblyrhynchoides = {
     commonName: "Graceful Shark",
     alternativeNames: ["Queensland Shark"],
@@ -13,5 +15,9 @@ export const carcharhinusAmblyrhynchoides = {
     order: "Carcharhiniformes",
     family: "Carcharhinidae",
     genus: "Carcharhinus",
-    species: "amblyrhynchoides"
+    species: "amblyrhynchoides",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

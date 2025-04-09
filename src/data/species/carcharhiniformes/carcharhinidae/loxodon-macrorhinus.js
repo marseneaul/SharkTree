@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const loxodonMacrorhinus = {
     commonName: "Sliteye Shark",
     binomialName: "Loxodon macrorhinus",
@@ -12,5 +14,9 @@ export const loxodonMacrorhinus = {
     order: "Carcharhiniformes",
     family: "Carcharhinidae",
     genus: "Loxodon",
-    species: "macrorhinus"
+    species: "macrorhinus",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

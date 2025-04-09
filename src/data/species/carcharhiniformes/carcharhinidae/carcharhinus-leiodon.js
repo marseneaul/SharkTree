@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const carcharhinusLeiodon = {
     commonName: "Smoothtooth Blacktip Shark",
     binomialName: "Carcharhinus leiodon",
@@ -12,5 +14,9 @@ export const carcharhinusLeiodon = {
     order: "Carcharhiniformes",
     family: "Carcharhinidae",
     genus: "Carcharhinus",
-    species: "leiodon"
+    species: "leiodon",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

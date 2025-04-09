@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const scyliorhinusStellaris = {
     commonName: "Nursehound",
     alternativeNames: ["Large-Spotted Dogfish", "Greater Spotted Dogfish", "Bull Huss"],
@@ -13,5 +15,9 @@ export const scyliorhinusStellaris = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Scyliorhinus",
-    species: "stellaris"
+    species: "stellaris",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

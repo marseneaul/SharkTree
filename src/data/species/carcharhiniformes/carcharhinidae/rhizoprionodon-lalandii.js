@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const rhizoprionodonLalandii = {
     commonName: "Brazilian Sharpnose Shark",
     binomialName: "Rhizoprionodon lalandii",
@@ -12,5 +14,9 @@ export const rhizoprionodonLalandii = {
     order: "Carcharhiniformes",
     family: "Carcharhinidae",
     genus: "Rhizoprionodon",
-    species: "lalandii"
+    species: "lalandii",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

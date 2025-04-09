@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const asymbolusAnalis = {
     commonName: "Australian Spotted Catshark",
     binomialName: "Asymbolus analis",
@@ -12,5 +14,9 @@ export const asymbolusAnalis = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Asymbolus",
-    species: "analis"
+    species: "analis",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 }

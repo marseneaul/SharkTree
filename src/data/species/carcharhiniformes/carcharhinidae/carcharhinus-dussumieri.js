@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const carcharhinusDussumieri = {
     commonName: "Whitecheek Shark",
     alternativeNames: ["Widemouth Blackspot Shark"],
@@ -13,5 +15,9 @@ export const carcharhinusDussumieri = {
     order: "Carcharhiniformes",
     family: "Carcharhinidae",
     genus: "Carcharhinus",
-    species: "dussumieri"
+    species: "dussumieri",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

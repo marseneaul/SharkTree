@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const carcharhinusFitzroyensis = {
     commonName: "Creek Whaler",
     binomialName: "Carcharhinus fitzroyensis",
@@ -12,5 +14,9 @@ export const carcharhinusFitzroyensis = {
     order: "Carcharhiniformes",
     family: "Carcharhinidae",
     genus: "Carcharhinus",
-    species: "fitzroyensis"
+    species: "fitzroyensis",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

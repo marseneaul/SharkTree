@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const carcharhinusBrachyurus = {
     commonName: "Copper Shark",
     alternativeNames: ["Bronze Whaler"],
@@ -13,5 +15,9 @@ export const carcharhinusBrachyurus = {
     order: "Carcharhiniformes",
     family: "Carcharhinidae",
     genus: "Carcharhinus",
-    species: "brachyurus"
+    species: "brachyurus",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

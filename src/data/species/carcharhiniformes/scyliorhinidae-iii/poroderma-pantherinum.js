@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const porodermaPantherinum = {
     commonName: "Leopard Catshark",
     binomialName: "Poroderma pantherinum",
@@ -12,5 +14,9 @@ export const porodermaPantherinum = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Poroderma",
-    species: "pantherinum"
+    species: "pantherinum",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

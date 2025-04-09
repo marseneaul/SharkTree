@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const rhizoprionodonAcutus = {
     commonName: "Milk Shark",
     binomialName: "Rhizoprionodon acutus",
@@ -12,5 +14,9 @@ export const rhizoprionodonAcutus = {
     order: "Carcharhiniformes",
     family: "Carcharhinidae",
     genus: "Rhizoprionodon",
-    species: "acutus"
+    species: "acutus",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

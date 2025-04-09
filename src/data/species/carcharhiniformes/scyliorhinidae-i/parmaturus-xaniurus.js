@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const parmaturusXaniurus = {
     commonName: "Filetail Catshark",
     binomialName: "Parmaturus xaniurus",
@@ -12,5 +14,9 @@ export const parmaturusXaniurus = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Parmaturus",
-    species: "xaniurus"
+    species: "xaniurus",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 }

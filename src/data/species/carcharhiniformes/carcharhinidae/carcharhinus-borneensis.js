@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const carcharhinusBorneensis = {
     commonName: "Borneo Shark",
     binomialName: "Carcharhinus borneensis",
@@ -12,5 +14,9 @@ export const carcharhinusBorneensis = {
     order: "Carcharhiniformes",
     family: "Carcharhinidae",
     genus: "Carcharhinus",
-    species: "borneensis"
+    species: "borneensis",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const apristurusExsanguis = {
     commonName: "Flaccid Catshark",
     binomialName: "Apristurus exsanguis",
@@ -12,5 +14,9 @@ export const apristurusExsanguis = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Apristurus",
-    species: "exsanguis"
+    species: "exsanguis",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 }

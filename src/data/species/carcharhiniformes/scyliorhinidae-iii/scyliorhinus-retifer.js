@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const scyliorhinusRetifer = {
     commonName: "Chain Catshark",
     alternativeNames: ["Chain Dogfish"],
@@ -13,5 +15,9 @@ export const scyliorhinusRetifer = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Scyliorhinus",
-    species: "retifer"
+    species: "retifer",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

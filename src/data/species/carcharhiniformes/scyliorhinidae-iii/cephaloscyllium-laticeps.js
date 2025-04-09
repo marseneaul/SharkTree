@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const cephaloscylliumLaticeps = {
     commonName: "Australian Swellshark",
     binomialName: "Cephaloscyllium laticeps",
@@ -12,5 +14,9 @@ export const cephaloscylliumLaticeps = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Cephaloscyllium",
-    species: "laticeps"
+    species: "laticeps",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

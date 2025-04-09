@@ -566,7 +566,6 @@ export class SharkTree {
 
     initializeTagCategories(): void {
         const categories = [
-            "conservationStatus", 
             "reproductiveStrategy", 
             "temperatureRegulation",
             "feedingBehavior", 

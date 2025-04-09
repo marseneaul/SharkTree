@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const apristurusAustralis = {
     commonName: "Pinocchio Catshark",
     binomialName: "Apristurus australis",
@@ -12,5 +14,9 @@ export const apristurusAustralis = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Apristurus",
-    species: "australis"
+    species: "australis",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 }

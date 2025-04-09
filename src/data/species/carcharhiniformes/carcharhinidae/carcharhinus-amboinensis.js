@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const carcharhinusAmboinensis = {
     commonName: "Pigeye Shark",
     binomialName: "Carcharhinus ambioinensis",
@@ -12,5 +14,9 @@ export const carcharhinusAmboinensis = {
     order: "Carcharhiniformes",
     family: "Carcharhinidae",
     genus: "Carcharhinus",
-    species: "ambioinensis"
+    species: "ambioinensis",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

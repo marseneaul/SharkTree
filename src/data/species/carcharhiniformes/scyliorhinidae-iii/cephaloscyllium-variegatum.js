@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const cephaloscylliumVariegatum = {
     commonName: "Saddled Swellshark",
     binomialName: "Cephaloscyllium variegatum",
@@ -12,5 +14,9 @@ export const cephaloscylliumVariegatum = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Cephaloscyllium",
-    species: "variegatum"
+    species: "variegatum",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

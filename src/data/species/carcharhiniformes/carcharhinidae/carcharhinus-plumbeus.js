@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const carcharhinusPlumbeus = {
     commonName: "Sandbar Shark",
     binomialName: "Carcharhinus plumbeus",
@@ -12,5 +14,9 @@ export const carcharhinusPlumbeus = {
     order: "Carcharhiniformes",
     family: "Carcharhinidae",
     genus: "Carcharhinus",
-    species: "plumbeus"
+    species: "plumbeus",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

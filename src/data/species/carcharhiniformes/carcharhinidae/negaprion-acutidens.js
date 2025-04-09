@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const negaprionAcutidens = {
     commonName: "Sicklefin Lemon Shark",
     alternativeNames: ["Pacific Lemon Shark"],
@@ -13,5 +15,9 @@ export const negaprionAcutidens = {
     order: "Carcharhiniformes",
     family: "Carcharhinidae",
     genus: "Negaprion",
-    species: "acutidens"
+    species: "acutidens",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

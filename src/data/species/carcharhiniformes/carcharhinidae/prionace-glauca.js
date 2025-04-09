@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const prionaceGlauca = {
     commonName: "Blue Shark",
     alternativeNames: ["Great Blue Shark"],
@@ -13,5 +15,9 @@ export const prionaceGlauca = {
     order: "Carcharhiniformes",
     family: "Carcharhinidae",
     genus: "Prionace",
-    species: "glauca"
+    species: "glauca",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

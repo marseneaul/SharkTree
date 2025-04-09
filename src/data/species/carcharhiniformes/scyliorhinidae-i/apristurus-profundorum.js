@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const apristurusProfundorum = {
     commonName: "Deepwater Catshark",
     binomialName: "Apristurus profundorum",
@@ -12,5 +14,9 @@ export const apristurusProfundorum = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Apristurus",
-    species: "profundorum"
+    species: "profundorum",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 }

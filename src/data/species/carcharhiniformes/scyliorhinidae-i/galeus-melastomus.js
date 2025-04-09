@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const galeusMelastomus = {
     commonName: "Blackmouth Catshark",
     binomialName: "Galeus melastomus",
@@ -12,5 +14,9 @@ export const galeusMelastomus = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Galeus",
-    species: "melastomus"
+    species: "melastomus",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 }

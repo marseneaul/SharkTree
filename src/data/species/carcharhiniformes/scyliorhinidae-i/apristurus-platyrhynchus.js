@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const apristurusPlatyrhynchus = {
     commonName: "Spatulasnout Catshark",
     alternativeNames: ["Borneo Catshark", "Flatnose Catshark"],
@@ -13,5 +15,9 @@ export const apristurusPlatyrhynchus = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Apristurus",
-    species: "platyrhynchus"
+    species: "platyrhynchus",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 }

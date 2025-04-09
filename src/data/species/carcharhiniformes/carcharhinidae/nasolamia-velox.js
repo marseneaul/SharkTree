@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const nasolamiaVelox = {
     commonName: "Whitenose Shark",
     binomialName: "Nasolamia velox",
@@ -12,5 +14,9 @@ export const nasolamiaVelox = {
     order: "Carcharhiniformes",
     family: "Carcharhinidae",
     genus: "Nasolamia",
-    species: "velox"
+    species: "velox",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

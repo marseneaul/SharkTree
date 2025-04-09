@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const galeusArae = {
     commonName: "Roughtail Catshark",
     alternativeNames: ["Marbled Catshark"],
@@ -13,5 +15,9 @@ export const galeusArae = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Galeus",
-    species: "arae"
+    species: "arae",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 }

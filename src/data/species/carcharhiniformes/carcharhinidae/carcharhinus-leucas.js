@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const carcharhinusLeucas = {
     commonName: "Bull Shark",
     binomialName: "Carcharhinus leucas",
@@ -12,5 +14,9 @@ export const carcharhinusLeucas = {
     order: "Carcharhiniformes",
     family: "Carcharhinidae",
     genus: "Carcharhinus",
-    species: "leucas"
+    species: "leucas",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

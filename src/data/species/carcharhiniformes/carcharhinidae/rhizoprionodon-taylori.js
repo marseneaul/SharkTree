@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const rhizoprionodonTaylori = {
     commonName: "Australian Sharpnose Shark",
     binomialName: "Rhizoprionodon taylori",
@@ -12,5 +14,9 @@ export const rhizoprionodonTaylori = {
     order: "Carcharhiniformes",
     family: "Carcharhinidae",
     genus: "Rhizoprionodon",
-    species: "taylori"
+    species: "taylori",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

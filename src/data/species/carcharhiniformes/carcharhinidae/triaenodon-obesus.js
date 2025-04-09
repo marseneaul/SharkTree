@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const triaenodonObesus = {
     commonName: "Whitetip Reef Shark",
     binomialName: "Triaenodon obesus",
@@ -12,5 +14,9 @@ export const triaenodonObesus = {
     order: "Carcharhiniformes",
     family: "Carcharhinidae",
     genus: "Triaenodon",
-    species: "obesus"
+    species: "obesus",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

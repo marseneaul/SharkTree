@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const holohalaelurusRegani = {
     commonName: "Izak Catshark",
     alternativeNames: ["Izak"],
@@ -13,5 +15,9 @@ export const holohalaelurusRegani = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Holohalaelurus",
-    species: "regani"
+    species: "regani",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 }

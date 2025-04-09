@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const lamiopsisTephrodes = {
     commonName: "Borneo Broadfin Shark",
     alternativeNames: ["Broadfin Shark"],
@@ -13,5 +15,9 @@ export const lamiopsisTephrodes = {
     order: "Carcharhiniformes",
     family: "Carcharhinidae",
     genus: "Lamiopsis",
-    species: "tephrodes"
+    species: "tephrodes",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

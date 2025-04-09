@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const cephaloscylliumHiscosellum = {
     commonName: "Australian Reticulate Swellshark",
     binomialName: "Cephaloscyllium hiscosellum",
@@ -12,5 +14,9 @@ export const cephaloscylliumHiscosellum = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Cephaloscyllium",
-    species: "hiscosellum"
+    species: "hiscosellum",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

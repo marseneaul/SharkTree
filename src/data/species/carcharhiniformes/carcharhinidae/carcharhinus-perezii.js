@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const carcharhinusPerezii = {
     commonName: "Caribbean Reef Shark",
     binomialName: "Carcharhinus perezii",
@@ -12,5 +14,9 @@ export const carcharhinusPerezii = {
     order: "Carcharhiniformes",
     family: "Carcharhinidae",
     genus: "Carcharhinus",
-    species: "perezii"
+    species: "perezii",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const negaprionBrevirostris = {
     commonName: "Lemon Shark",
     alternativeNames: ["Atlantic Lemon Shark"],
@@ -13,5 +15,9 @@ export const negaprionBrevirostris = {
     order: "Carcharhiniformes",
     family: "Carcharhinidae",
     genus: "Negaprion",
-    species: "brevirostris"
+    species: "brevirostris",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const scyliorhinusCanicula = {
     commonName: "Small-Spotted Catshark",
     alternativeNames: ["Sandy Dogfish", "Lesser-Spotted Dogfish", "Rough-Hound", "Morgay"],
@@ -13,5 +15,9 @@ export const scyliorhinusCanicula = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Scyliorhinus",
-    species: "canicula"
+    species: "canicula",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

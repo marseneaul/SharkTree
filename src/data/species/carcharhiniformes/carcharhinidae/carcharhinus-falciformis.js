@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const carcharhinusFalciformis = {
     commonName: "Silky Shark",
     alternativeNames: ["Blackspot Shark", "Gray Whaler Shark", "Olive Shark", "Ridgeback Shark", "Sickle Shark", "Sickle-Shaped Shark", "Sickle Silk Shark"],
@@ -13,5 +15,9 @@ export const carcharhinusFalciformis = {
     order: "Carcharhiniformes",
     family: "Carcharhinidae",
     genus: "Carcharhinus",
-    species: "falciformis"
+    species: "falciformis",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const rhizoprionodonOligolinx = {
     commonName: "Grey Sharpnose Shark",
     binomialName: "Rhizoprionodon oligolinx",
@@ -12,5 +14,9 @@ export const rhizoprionodonOligolinx = {
     order: "Carcharhiniformes",
     family: "Carcharhinidae",
     genus: "Rhizoprionodon",
-    species: "oligolinx"
+    species: "oligolinx",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

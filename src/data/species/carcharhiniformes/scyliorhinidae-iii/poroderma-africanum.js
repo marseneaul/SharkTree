@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const porodermaAfricanum = {
     commonName: "Pyjama Shark",
     alternativeNames: ["Striped Catshark"],
@@ -13,5 +15,9 @@ export const porodermaAfricanum = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Poroderma",
-    species: "africanum"
+    species: "africanum",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };

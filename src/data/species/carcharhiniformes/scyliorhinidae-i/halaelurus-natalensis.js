@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const halaelurusNatalensis = {
     commonName: "Tiger Catshark",
     binomialName: "Halaelurus natalensis",
@@ -12,5 +14,9 @@ export const halaelurusNatalensis = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Halaelurus",
-    species: "natalensis"
+    species: "natalensis",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 }

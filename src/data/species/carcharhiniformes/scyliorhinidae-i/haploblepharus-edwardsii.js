@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const haploblepharusEdwardsii = {
     commonName: "Puffadder Shyshark",
     alternativeNames: ["Shyshark", "Doughnut", "Happy Eddie"],
@@ -13,5 +15,9 @@ export const haploblepharusEdwardsii = {
     order: "Carcharhiniformes",
     family: "Scyliorhinidae",
     genus: "Haploblepharus",
-    species: "edwardsii"
+    species: "edwardsii",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 }

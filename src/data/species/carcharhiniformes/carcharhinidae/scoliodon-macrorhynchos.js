@@ -1,3 +1,5 @@
+import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+
 export const scoliodonMacrorhynchos = {
     commonName: "Pacific Spadenode Shark",
     binomialName: "Scoliodon macrorhynchos",
@@ -12,5 +14,9 @@ export const scoliodonMacrorhynchos = {
     order: "Carcharhiniformes",
     family: "Carcharhinidae",
     genus: "Scoliodon",
-    species: "macrorhynchos"
+    species: "macrorhynchos",
+
+    tags: [
+        NICTITATING_MEMBRANE.YES
+    ]
 };
