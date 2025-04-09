@@ -1,4 +1,4 @@
-import { TEMPERATURE_REGULATION } from "../../../../constants/enums";
+import { CAUDAL_FIN_SHAPE, TEMPERATURE_REGULATION } from "../../../../constants/enums";
 import isurusOxyrinchusImg from "./../../../../images/isurus-oxyrinchus.png";
 
 export const isurusOxyrinchus = {
@@ -21,6 +21,7 @@ export const isurusOxyrinchus = {
     species: "oxyrinchus",
 
     tags: [
-        TEMPERATURE_REGULATION.ENDOTHERMIC
+        TEMPERATURE_REGULATION.ENDOTHERMIC,
+        CAUDAL_FIN_SHAPE.HOMOCERCAL
     ]
 };

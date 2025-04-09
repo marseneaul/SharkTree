@@ -1,3 +1,5 @@
+import { CAUDAL_FIN_SHAPE } from "../../../constants/enums";
+
 export const psuedocarchariasKamoharai = {
     commonName: "Crocodile Shark",
     binomialName: "Psuedocarcharias kamoharai",
@@ -12,5 +14,9 @@ export const psuedocarchariasKamoharai = {
     order: "Lamniformes",
     family: "Pseudocarchariidae",
     genus: "Psuedocarcharias",
-    species: "kamoharai"
+    species: "kamoharai",
+
+    tags: [
+        CAUDAL_FIN_SHAPE.HOMOCERCAL
+    ]
 };

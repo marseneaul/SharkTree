@@ -1,4 +1,4 @@
-import { TEMPERATURE_REGULATION } from "../../../constants/enums";
+import { CAUDAL_FIN_SHAPE, TEMPERATURE_REGULATION } from "../../../constants/enums";
 
 export const alopiasSuperciliosus = {
     commonName: "Bigeye Thresher",
@@ -17,6 +17,7 @@ export const alopiasSuperciliosus = {
     species: "superciliosus",
 
     tags: [
-        TEMPERATURE_REGULATION.ENDOTHERMIC
+        TEMPERATURE_REGULATION.ENDOTHERMIC,
+        CAUDAL_FIN_SHAPE.HOMOCERCAL
     ]
 };

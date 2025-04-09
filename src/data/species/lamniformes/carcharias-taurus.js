@@ -1,3 +1,5 @@
+import { CAUDAL_FIN_SHAPE } from "../../../constants/enums";
+
 export const carchariasTaurus = {
     commonName: "Sand Tiger Shark",
     alternativeNames: ["Grey Nurse Shark", "Spotted Ragged-Tooth Shark", "Blue-Nurse Sand Tiger"],
@@ -13,5 +15,9 @@ export const carchariasTaurus = {
     order: "Lamniformes",
     family: "Odontaspididae",
     genus: "Carcharias",
-    species: "taurus"
-};
+    species: "taurus",
+
+    tags: [
+        CAUDAL_FIN_SHAPE.HOMOCERCAL
+    ]
+}

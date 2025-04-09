@@ -1,3 +1,5 @@
+import { CAUDAL_FIN_SHAPE, FEEDING_BEHAVIOR } from "../../../constants/enums";
+
 export const megachasmaPelagios = {
     commonName: "Megamouth Shark",
     binomialName: "Megachasma pelagios",
@@ -12,5 +14,10 @@ export const megachasmaPelagios = {
     order: "Lamniformes",
     family: "Megachasmidae",
     genus: "Megachasma",
-    species: "pelagios"
+    species: "pelagios",
+
+    tags: [
+        FEEDING_BEHAVIOR.PLANKTIVOROUS,
+        CAUDAL_FIN_SHAPE.HOMOCERCAL
+    ]
 };

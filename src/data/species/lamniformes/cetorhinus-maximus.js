@@ -1,4 +1,4 @@
-import { TEMPERATURE_REGULATION } from "../../../constants/enums";
+import { CAUDAL_FIN_SHAPE, FEEDING_BEHAVIOR, TEMPERATURE_REGULATION } from "../../../constants/enums";
 
 export const cetorhinusMaximus = {
     commonName: "Basking Shark",
@@ -17,6 +17,8 @@ export const cetorhinusMaximus = {
     species: "maximus",
 
     tags: [
-        TEMPERATURE_REGULATION.ENDOTHERMIC, TEMPERATURE_REGULATION.REGIONALLY_ENDOTHERMIC
+        TEMPERATURE_REGULATION.REGIONALLY_ENDOTHERMIC,
+        FEEDING_BEHAVIOR.PLANKTIVOROUS,
+        CAUDAL_FIN_SHAPE.HOMOCERCAL
     ]
 };

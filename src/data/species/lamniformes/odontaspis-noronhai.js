@@ -1,3 +1,5 @@
+import { CAUDAL_FIN_SHAPE } from "../../../constants/enums";
+
 export const odontaspisNoronhai = {
     commonName: "Bigeye Sand Tiger",
     binomialName: "Odontaspis noronhai",
@@ -12,5 +14,9 @@ export const odontaspisNoronhai = {
     order: "Lamniformes",
     family: "Odontaspididae",
     genus: "Odontaspis",
-    species: "noronhai"
+    species: "noronhai",
+
+    tags: [
+        CAUDAL_FIN_SHAPE.HOMOCERCAL
+    ]
 };

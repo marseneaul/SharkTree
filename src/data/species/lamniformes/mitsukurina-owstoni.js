@@ -1,3 +1,5 @@
+import { CAUDAL_FIN_SHAPE } from "../../../constants/enums";
+
 export const mitsukurinaOwstoni = {
     commonName: "Goblin Shark",
     binomialName: "Mitsukruina owstoni",
@@ -12,5 +14,9 @@ export const mitsukurinaOwstoni = {
     order: "Lamniformes",
     family: "Mitsukurinidae",
     genus: "Mitsukruina",
-    species: "owstoni"
+    species: "owstoni",
+
+    tags: [
+        CAUDAL_FIN_SHAPE.HOMOCERCAL
+    ]
 };

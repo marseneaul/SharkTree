@@ -154,11 +154,17 @@ export enum NICTITATING_MEMBRANE {
     NO = "No Nictitating Membrane"
 }
 
+export enum CAUDAL_FIN_SHAPE {
+    HETEROCERCAL = "Heterocercal",
+    HOMOCERCAL = "Homocercal",
+}
+
 export function getEnumCategory(tag: any): string | undefined {
     if (Object.values(NUM_DORSAL_FINS).includes(tag)) return "NUM_DORSAL_FINS";
     if (Object.values(NUM_GILLS).includes(tag)) return "NUM_GILLS";
     if (Object.values(ANAL_FIN).includes(tag)) return "ANAL_FIN";
     if (Object.values(NICTITATING_MEMBRANE).includes(tag)) return "NICTITATING_MEMBRANE";
+    if (Object.values(CAUDAL_FIN_SHAPE).includes(tag)) return "CAUDAL_FIN_SHAPE";
     if (Object.values(TEMPERATURE_REGULATION).includes(tag)) return "TEMPERATURE_REGULATION";
     if (Object.values(FEEDING_BEHAVIOR).includes(tag)) return "FEEDING_BEHAVIOR";
     if (Object.values(CONSERVATION_STATUS).includes(tag)) return "CONSERVATION_STATUS";
@@ -181,5 +187,6 @@ export const DEFAULT_TAGS = [
     TEMPERATURE_REGULATION.ECTOTHERMIC, 
     FEEDING_BEHAVIOR.CARNIVOROUS, 
     ANAL_FIN.YES,
-    NICTITATING_MEMBRANE.NO
+    NICTITATING_MEMBRANE.NO,
+    CAUDAL_FIN_SHAPE.HETEROCERCAL
 ];

@@ -1,4 +1,4 @@
-import { NICTITATING_MEMBRANE } from "../../../../constants/enums";
+import { FEEDING_BEHAVIOR, NICTITATING_MEMBRANE } from "../../../../constants/enums";
 
 export const sphyrnaTiburo = {
     commonName: "Bonnethead Shark",
@@ -17,6 +17,7 @@ export const sphyrnaTiburo = {
     species: "tiburo",
 
     tags: [
-        NICTITATING_MEMBRANE.YES
+        NICTITATING_MEMBRANE.YES,
+        FEEDING_BEHAVIOR.OMNIVOROUS
     ]
 };

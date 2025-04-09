@@ -1,3 +1,5 @@
+import { FEEDING_BEHAVIOR } from "../../../constants/enums";
+
 export const rhincodonTypus = {
     commonName: "Whale Shark",
     binomialName: "Rhincodon typus",
@@ -12,5 +14,9 @@ export const rhincodonTypus = {
     order: "Orectolobiformes",
     family: "Rhincodontidae",
     genus: "Rhincodon",
-    species: "typus"
+    species: "typus",
+
+    tags: [
+        FEEDING_BEHAVIOR.PLANKTIVOROUS
+    ]
 };

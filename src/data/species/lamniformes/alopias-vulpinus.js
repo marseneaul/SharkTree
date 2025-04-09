@@ -1,4 +1,4 @@
-import { TEMPERATURE_REGULATION } from "../../../constants/enums";
+import { CAUDAL_FIN_SHAPE, TEMPERATURE_REGULATION } from "../../../constants/enums";
 
 export const alopiasVulpinus = {
     commonName: "Common Thresher",
@@ -18,6 +18,7 @@ export const alopiasVulpinus = {
     species: "vulpinus",
 
     tags: [
-        TEMPERATURE_REGULATION.ENDOTHERMIC
+        TEMPERATURE_REGULATION.ENDOTHERMIC,
+        CAUDAL_FIN_SHAPE.HOMOCERCAL
     ]
 };
