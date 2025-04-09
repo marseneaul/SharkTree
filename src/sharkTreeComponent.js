@@ -157,6 +157,22 @@ export class SharkTreeComponent extends HTMLElement {
                             <option value="">All</option>
                         </select>
                     </div>
+                    <button id="info-button" aria-label="How to use this app">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="11" stroke="#00688B" stroke-width="1" fill="#FFFFFF" />
+                            <text x="12" y="17" font-size="13" font-weight="200" font-family="Roboto, sans-serif" fill="#00688B" text-anchor="middle">?</text>
+                        </svg>
+                    </button>
+                    <div id="info-tooltip">
+                        <strong>How to Use:</strong>
+                        <ul>
+                            <li>Select a shark group from "Configuration" to view its phylogenetic tree.</li>
+                            <li>Use "Taxonomic Level" to highlight species by genus, family, etc.</li>
+                            <li>Filter by traits like conservation status with "Tag Category".</li>
+                            <li>Click a shark on the tree to see its details on the right.</li>
+                            <li>Scroll to rotate, pinch to zoom, double-click to reset, or drag to pan.</li>
+                        </ul>
+                    </div>
                 </div>
                 <div id="phylo-container"></div>
                 <div id="shark-screen-container">
@@ -196,6 +212,7 @@ export class SharkTreeComponent extends HTMLElement {
                 flex-direction: column;
                 justify-content: center;
                 padding: 20px;
+                margin-right: 20px;
             }
             #shark-screen {
                 position: relative;
@@ -256,6 +273,11 @@ export class SharkTreeComponent extends HTMLElement {
                 align-items: center;
                 gap: 8px;
             }
+            img {
+                width: 80%;
+                border-radius: 5px;
+                margin-top: 10px;
+            }
             label {
                 color: #2F4F4F;
                 font-size: 14px;
@@ -276,10 +298,67 @@ export class SharkTreeComponent extends HTMLElement {
                 border-color: #00688B;
                 cursor: pointer;
             }
-            img {
-                width: 80%;
-                border-radius: 5px;
-                margin-top: 10px;
+            #info-button {
+                width: 24px;
+                height: 24px;
+                border: none;
+                background: none;
+                padding: 0;
+                cursor: help;
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: transform 0.2s ease;
+            }
+            #info-button:hover {
+                transform: scale(1.1); /* Subtle zoom effect */
+            }
+            #info-button svg {
+                stroke: #00688B; /* Match app's accent color */
+            }
+            #info-tooltip {
+                display: none;
+                position: absolute;
+                top: 32px;
+                right: 0;
+                background: rgba(255, 255, 255, 0.95); /* Light, semi-transparent white */
+                color: #2F4F4F; /* Match app text color */
+                padding: 14px; /* More breathing room */
+                border-radius: 6px;
+                border: 1px solid #E0E0E0;
+                font-size: 13px;
+                line-height: 1.6; /* Increased spacing */
+                max-width: 280px; /* Slightly wider */
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                z-index: 101;
+                font-weight: 400;
+            }
+            #info-tooltip strong {
+                font-weight: 600;
+                color: #00688B;
+                display: block;
+                margin-bottom: 6px; /* Space below heading */
+            }
+            #info-tooltip ul {
+                list-style-type: none;
+                padding-left: 0;
+                margin: 0;
+            }
+            #info-tooltip li {
+                position: relative;
+                padding-left: 16px; /* Space for bullet */
+                margin-bottom: 6px; /* Space between items */
+            }
+            #info-tooltip li:before {
+                content: "•"; /* Bullet point */
+                color: #00688B; /* Accent color */
+                position: absolute;
+                left: 4px;
+                font-size: 14px;
+            }
+            #info-button:hover + #info-tooltip {
+                display: block;
             }
         `;
     }
