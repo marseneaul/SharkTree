@@ -1,3 +1,11 @@
+export enum TAXONOMIC_LEVELS {
+    GENUS = "genus",
+    FAMILY = "family",
+    ORDER = "order",
+    SUPERORDER = "superorder",
+    SUBDIVISION = "subdivision"
+}
+
 export enum CONSERVATION_STATUS {
     EX = "Extinct (EX)",
     EW = "Extinct in the Wild (EW)",

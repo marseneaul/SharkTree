@@ -5,8 +5,8 @@ import { SVG_SIZE } from "../constants/constants";
 import { SharkTreeNode } from "./shark-tree-node";
 import { Svg } from "../drawing/svg";
 import { Utils } from "../utils/utils";
-import { BLACK } from "../constants/colors";
-import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION, FEEDING_BEHAVIOR, OCEAN_ZONE, GEOGRAPHICAL_DISTRIBUTION, HABITAT, WATER_COLUMN, PHYSICAL_CHARACTERISTIC, BEHAVIOR, NUM_GILLS, NUM_DORSAL_FINS, ANAL_FIN, NICTITATING_MEMBRANE, CAUDAL_FIN_SHAPE, MOUTH_IN_FRONT_OF_EYES, BIOLUMINESCENT, DORSAL_FIN_SPINES, SPIRACLES, FLATTENED_BODY, GROUP_BEHAVIOR } from "../constants/enums";
+import { BLACK, LIGHT_GRAY, RED, TAXONOMIC_COLORS, WHITE } from "../constants/colors";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION, FEEDING_BEHAVIOR, OCEAN_ZONE, GEOGRAPHICAL_DISTRIBUTION, HABITAT, WATER_COLUMN, PHYSICAL_CHARACTERISTIC, BEHAVIOR, NUM_GILLS, NUM_DORSAL_FINS, ANAL_FIN, NICTITATING_MEMBRANE, CAUDAL_FIN_SHAPE, MOUTH_IN_FRONT_OF_EYES, BIOLUMINESCENT, DORSAL_FIN_SPINES, SPIRACLES, FLATTENED_BODY, GROUP_BEHAVIOR, TAXONOMIC_LEVELS } from "../constants/enums";
 
 export class SharkTree {
     config: SharkTreeNodeConfig
@@ -57,69 +57,6 @@ export class SharkTree {
         this.activeTagValue = null;
         this.tagCategories = new Map();
         this.initializeTagCategories();
-    }
-
-    initializeTaxonomicLevels(): void {
-        const colors = ["#F94144", "#F3722C", "#F9C74F", "#43AA8B", "#577590"];
-        const levels = ["genus", "family", "order", "superorder", "subdivision"];
-        
-        levels.forEach((level, index) => {
-            this.taxonomicLevels.set(level, {
-                species: [],
-                color: colors[index % colors.length]
-            });
-        });
-        
-        const allSpecies = this.getSharkSpeciesList(this.root);
-        this.collectTaxonomicData(allSpecies);
-    }
-
-    collectTaxonomicData(species: SharkSpecies[]) {
-        species.forEach(shark => {
-            ["genus", "family", "order", "superorder", "subdivision"].forEach(level => {
-                const levelData = this.taxonomicLevels.get(level);
-                if (levelData && shark[level]) {
-                    // Only add species if it hasn't been added yet
-                    if (!levelData.species.some(s => s.binomialName === shark.binomialName)) {
-                        levelData.species.push(shark);
-                    }
-                }
-            });
-        });
-    }
-
-    highlightTaxonomicLevel(level: string, value?: string) {
-        this.activeTaxonomicLevel = level;
-        this.activeTaxonomicValue = value || null;
-        const levelData = this.taxonomicLevels.get(level);
-        if (!levelData) return;
-    
-        const speciesToHighlight = value 
-            ? levelData.species.filter(s => s[level] === value)
-            : levelData.species;
-    
-        this.getSharkSpeciesList().forEach(shark => this.clearHighlightPath(shark));
-    
-        speciesToHighlight.forEach(shark => {
-            shark.highlightNode(levelData.color);
-            const hasTag = this.activeTagCategory && (!this.activeTagValue || shark.tags.includes(this.activeTagValue));
-            shark.highlightParentPath(3, levelData.color, hasTag ? "5,5" : "solid");
-            let parent = shark.getParent();
-            const levelOrder = ["species", "genus", "family", "order", "superorder", "subdivision"];
-            const targetLevelIndex = levelOrder.indexOf(level);
-            let currentLevelIndex = 0;
-            while (parent && currentLevelIndex < targetLevelIndex) {
-                parent.highlightParentPath(3, levelData.color, hasTag ? "5,5" : "solid");
-                parent = parent.getParent();
-                currentLevelIndex++;
-            }
-        });
-    }
-
-    clearAllHighlights() {
-        this.activeTaxonomicLevel = null;
-        this.activeTaxonomicValue = null;
-        this.getSharkSpeciesList().forEach(shark => this.clearHighlightPath(shark));
     }
 
     /*----------------------------------------|
@@ -206,10 +143,10 @@ export class SharkTree {
         gradient.setAttribute("r", "50%");
         const stop1 = document.createElementNS(SVG_NAMESPACE, "stop");
         stop1.setAttribute("offset", "0%");
-        stop1.setAttribute("stop-color", "#F5F5F5"); // Very light gray
+        stop1.setAttribute("stop-color", LIGHT_GRAY);
         const stop2 = document.createElementNS(SVG_NAMESPACE, "stop");
         stop2.setAttribute("offset", "100%");
-        stop2.setAttribute("stop-color", "#FFFFFF"); // White
+        stop2.setAttribute("stop-color", WHITE);
         gradient.appendChild(stop1);
         gradient.appendChild(stop2);
         defs.appendChild(gradient);
@@ -270,7 +207,7 @@ export class SharkTree {
         shark.setY(y);
         shark.setIndex(index);
     
-        const circle = Svg.drawCircle(x, y, 5, "#000000"); // Black dots
+        const circle = Svg.drawCircle(x, y, 5, BLACK);
         shark.setNode(circle);
         circle.dataset.shark = JSON.stringify(shark.config);
     
@@ -318,8 +255,8 @@ export class SharkTree {
                 const tooltip = document.createElement("div");
                 tooltip.innerHTML = `${shark.commonName || shark.binomialName}`;
                 tooltip.style.position = "absolute";
-                tooltip.style.background = "#FFF";
-                tooltip.style.border = "1px solid #000";
+                tooltip.style.background = WHITE;
+                tooltip.style.border = `1px solid ${BLACK}`;
                 tooltip.style.padding = "5px";
                 tooltip.style.fontFamily = "'Roboto', sans-serif";
                 tooltip.style.left = `${e.pageX + 10}px`;
@@ -359,7 +296,7 @@ export class SharkTree {
                     this.currentSharkIndex = sharkIndex;
                     const currentShark = sharkSpecies[sharkIndex];
                     const node = currentShark.getNode();
-                    node.setAttribute("fill", "red");
+                    node.setAttribute("fill", RED);
                     node.classList.add("pulse");
                     this.highlightPathToShark(currentShark.binomialName, 2, BLACK);
         
@@ -533,7 +470,7 @@ export class SharkTree {
         sharkSpecies.forEach(shark => {
             const node = shark.getNode();
             if (shark === selectedShark) {
-                node.setAttribute("fill", "red");
+                node.setAttribute("fill", RED);
                 node.classList.add("pulse");
             } else {
                 node.setAttribute("fill", BLACK);
@@ -558,6 +495,65 @@ export class SharkTree {
     
     updateViewBox(svg: SVGElement, viewBox: { x: number, y: number, width: number, height: number }): void {
         svg.setAttribute("viewBox", `${viewBox.x} ${viewBox.y} ${viewBox.width} ${viewBox.height}`);
+    }
+
+    /*----------------------------------------|
+    |           TAXONOMIC GROUPS              |
+    |----------------------------------------*/
+
+    initializeTaxonomicLevels(): void {
+        const levels = Object.values(TAXONOMIC_LEVELS);
+        
+        levels.forEach((level, index) => {
+            this.taxonomicLevels.set(level, {
+                species: [],
+                color: TAXONOMIC_COLORS[level]
+            });
+        });
+        
+        const allSpecies = this.getSharkSpeciesList(this.root);
+        this.collectTaxonomicData(allSpecies);
+    }
+
+    collectTaxonomicData(species: SharkSpecies[]) {
+        species.forEach(shark => {
+            Object.values(TAXONOMIC_LEVELS).forEach(level => {
+                const levelData = this.taxonomicLevels.get(level);
+                if (levelData && shark[level]) {
+                    // Only add species if it hasn't been added yet
+                    if (!levelData.species.some(s => s.binomialName === shark.binomialName)) {
+                        levelData.species.push(shark);
+                    }
+                }
+            });
+        });
+    }
+
+    highlightTaxonomicLevel(level: string, value?: string) {
+        this.activeTaxonomicLevel = level;
+        this.activeTaxonomicValue = value || null;
+        const levelData = this.taxonomicLevels.get(level);
+        if (!levelData) return;
+    
+        const speciesToHighlight = value 
+            ? levelData.species.filter(s => s[level] === value)
+            : levelData.species;
+    
+        this.getSharkSpeciesList().forEach(shark => this.clearHighlightPath(shark));
+    
+        speciesToHighlight.forEach(shark => {
+            shark.highlightNode(levelData.color);
+            const hasTag = this.activeTagCategory && (!this.activeTagValue || shark.tags.includes(this.activeTagValue));
+            shark.highlightParentPath(3, levelData.color, hasTag ? "5,5" : "solid");
+            let parent = shark.getParent();
+            const targetLevelIndex =  Object.values(TAXONOMIC_LEVELS).indexOf(level as TAXONOMIC_LEVELS);
+            let currentLevelIndex = 0;
+            while (parent && currentLevelIndex < targetLevelIndex) {
+                parent.highlightParentPath(3, levelData.color, hasTag ? "5,5" : "solid");
+                parent = parent.getParent();
+                currentLevelIndex++;
+            }
+        });
     }
 
     /*----------------------------------------|
@@ -805,5 +801,11 @@ export class SharkTree {
             applyStyle(sharkParent.getParentPath(), parentStyle);
             sharkParent = sharkParent.getParent();
         }
+    }
+
+    clearAllHighlights() {
+        this.activeTaxonomicLevel = null;
+        this.activeTaxonomicValue = null;
+        this.getSharkSpeciesList().forEach(shark => this.clearHighlightPath(shark));
     }
 }
