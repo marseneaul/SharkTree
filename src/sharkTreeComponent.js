@@ -343,14 +343,14 @@ export class SharkTreeComponent extends HTMLElement {
     selectSharkHandler(event) {
         const selectedShark = event.detail.sharkSpecies;
         if (this.sharkScreen) {
-            this.sharkScreen.innerHTML = selectedShark.getFormattedString();
+            const allSpecies = this.sharkTree.getSharkSpeciesList();
+            this.sharkScreen.innerHTML = selectedShark.getFormattedString(allSpecies);
             if (selectedShark.imageUrl) {
                 const sharkImg = document.createElement("img");
                 sharkImg.src = selectedShark.imageUrl;
                 this.sharkScreen.appendChild(sharkImg);
             }
         }
-        // Trigger visual update in SharkTree
         this.sharkTree.updateSelection(selectedShark);
     }
 

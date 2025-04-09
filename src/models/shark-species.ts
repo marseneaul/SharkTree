@@ -97,6 +97,14 @@ export class SharkSpecies {
         return this.parent?.getHash();
     }
 
+    getRelatedSpecies(allSpecies: SharkSpecies[]): SharkSpecies[] {
+        return allSpecies.filter(s => 
+            s !== this && 
+            (s.genus === this.genus || s.family === this.family) &&
+            s.binomialName !== this.binomialName
+        ).slice(0, 3); // Limit to 3 for brevity
+    }
+
     /*----------------------------------------|
     |                SETTERS                  |
     |----------------------------------------*/
@@ -186,10 +194,13 @@ export class SharkSpecies {
     /*----------------------------------------|
     |              PRINTING                   |
     |----------------------------------------*/
-
-    getFormattedString(): string {
-        const formattedString = `Common Name: ${this.commonName}<br>Binomial Name: ${this.binomialName}<br>Alternative Names: ${this.getAlternativeNamesSentence()}<br><br>Domain: ${this.domain}<br>Kingdom: ${this.kingdom}<br>Phylum: ${this.phylum}<br>Class: ${this.class}<br>Order: ${this.order}<br>Family: ${this.family}<br>Genus: ${this.genus}<br>Species: ${this.species}`;
-        return formattedString;
+    
+    getFormattedString(allSpecies: SharkSpecies[]): string {
+        const relatedSpecies = this.getRelatedSpecies(allSpecies);
+        const relatedString = relatedSpecies.length > 0 
+            ? `<br><br><strong>Related Species:</strong><ul>${relatedSpecies.map(s => `<li>${s.commonName} (${s.binomialName})</li>`).join("")}</ul>`
+            : `<br><br><strong>Related Species:</strong> None in this dataset.`;
+        return `Common Name: ${this.commonName}<br>Binomial Name: ${this.binomialName}<br>Alternative Names: ${this.getAlternativeNamesSentence()}<br><br>Domain: ${this.domain}<br>Kingdom: ${this.kingdom}<br>Phylum: ${this.phylum}<br>Class: ${this.class}<br>Order: ${this.order}<br>Family: ${this.family}<br>Genus: ${this.genus}<br>Species: ${this.species}${relatedString}`;
     }
 
     getAlternativeNamesSentence(): string {

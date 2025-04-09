@@ -214,15 +214,6 @@ export class SharkTree {
         g.appendChild(circle);
     }
 
-    zoomToNode(svg: SVGElement, x: number, y: number): void {
-        const zoomFactor = 0.5; // Zoom to 50% of original size
-        const newWidth = SVG_SIZE * zoomFactor;
-        const newHeight = SVG_SIZE * zoomFactor;
-        const newX = x - newWidth / 2;
-        const newY = y - newHeight / 2;
-        svg.setAttribute("viewBox", `${newX} ${newY} ${newWidth} ${newHeight}`);
-    }
-
     addInteractionListeners(svg: SVGElement, g: SVGGElement, sharkSpecies: SharkSpecies[]): void {
         let viewBox = { x: 0, y: 0, width: SVG_SIZE, height: SVG_SIZE };
         let isDragging = false;
