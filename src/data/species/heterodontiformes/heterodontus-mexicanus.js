@@ -1,3 +1,5 @@
+import { DORSAL_FIN_SPINES } from "../../../constants/enums";
+
 export const heterodontusMexicanus = {
     commonName: "Mexican Horn Shark",
     binomialName: "Heterodontus mexicanus",
@@ -12,5 +14,9 @@ export const heterodontusMexicanus = {
     order: "Heterodontiformes",
     family: "Heterodontidae",
     genus: "Heterodontus",
-    species: "mexicanus"
-};
+    species: "mexicanus",
+
+    tags: [
+        DORSAL_FIN_SPINES.YES
+    ]
+}

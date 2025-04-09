@@ -1,3 +1,5 @@
+import { DORSAL_FIN_SPINES } from "../../../constants/enums";
+
 export const heterodontusZebra = {
     commonName: "Zebra Bullhead Shark",
     binomialName: "Heterodontus zebra",
@@ -12,5 +14,9 @@ export const heterodontusZebra = {
     order: "Heterodontiformes",
     family: "Heterodontidae",
     genus: "Heterodontus",
-    species: "zebra"
+    species: "zebra",
+
+    tags: [
+        DORSAL_FIN_SPINES.YES
+    ]
 };

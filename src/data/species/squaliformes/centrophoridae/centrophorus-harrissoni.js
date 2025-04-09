@@ -1,4 +1,4 @@
-import { ANAL_FIN } from "../../../../constants/enums";
+import { ANAL_FIN, DORSAL_FIN_SPINES } from "../../../../constants/enums";
 
 export const centrophorusHarrissoni = {
     commonName: "Dumb Gulper Shark",
@@ -18,6 +18,7 @@ export const centrophorusHarrissoni = {
     species: "harrissoni",
 
     tags: [
-        ANAL_FIN.NO
+        ANAL_FIN.NO,
+        DORSAL_FIN_SPINES.YES
     ]
 };

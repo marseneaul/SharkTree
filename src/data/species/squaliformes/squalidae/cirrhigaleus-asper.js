@@ -1,4 +1,4 @@
-import { ANAL_FIN } from "../../../../constants/enums";
+import { ANAL_FIN, DORSAL_FIN_SPINES } from "../../../../constants/enums";
 
 export const cirrhigaleusAsper = {
     commonName: "Roughskin Spurdog",
@@ -18,6 +18,7 @@ export const cirrhigaleusAsper = {
     species: "asper",
 
     tags: [
-        ANAL_FIN.NO
+        ANAL_FIN.NO,
+        DORSAL_FIN_SPINES.YES
     ]
 };

@@ -1,3 +1,5 @@
+import { DORSAL_FIN_SPINES } from "../../../constants/enums";
+
 export const heterodontusGaleatus = {
     commonName: "Crested Bullhead Shark",
     alternativeNames: ["Crested Shark", "Crested Bull Shark", "Crested Horn Shark", "Crested Port Jackson Shark"],
@@ -13,5 +15,9 @@ export const heterodontusGaleatus = {
     order: "Heterodontiformes",
     family: "Heterodontidae",
     genus: "Heterodontus",
-    species: "galeatus"
+    species: "galeatus",
+
+    tags: [
+        DORSAL_FIN_SPINES.YES
+    ]
 };

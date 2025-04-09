@@ -156,17 +156,23 @@ export enum NICTITATING_MEMBRANE {
 
 export enum CAUDAL_FIN_SHAPE {
     HETEROCERCAL = "Heterocercal",
-    HOMOCERCAL = "Homocercal",
+    HOMOCERCAL = "Homocercal"
 }
 
 export enum MOUTH_IN_FRONT_OF_EYES {
     MOUTH_IN_FRONT_OF_EYES = "Mouth In Front of Eyes",
-    MOUTH_NOT_IN_FRONT_OF_EYES = "Mouth Not In Front of Eyes",
+    MOUTH_NOT_IN_FRONT_OF_EYES = "Mouth Not In Front of Eyes"
 }
 
 export enum BIOLUMINESCENT {
     YES = "Is Bioluminescent",
-    NO = "Not Bioluminescent",
+    NO = "Not Bioluminescent"
+}
+
+export enum DORSAL_FIN_SPINES {
+    YES = "Both Dorsal Fin Spines",
+    ONLY_ON_FIRST = "Only First Dorsal Fin Spine",
+    NO = "No Dorsal Fin Spines"
 }
 
 export function getEnumCategory(tag: any): string | undefined {
@@ -177,6 +183,7 @@ export function getEnumCategory(tag: any): string | undefined {
     if (Object.values(CAUDAL_FIN_SHAPE).includes(tag)) return "CAUDAL_FIN_SHAPE";
     if (Object.values(MOUTH_IN_FRONT_OF_EYES).includes(tag)) return "MOUTH_IN_FRONT_OF_EYES";
     if (Object.values(BIOLUMINESCENT).includes(tag)) return "BIOLUMINESCENT";
+    if (Object.values(DORSAL_FIN_SPINES).includes(tag)) return "DORSAL_FIN_SPINES";
 
     if (Object.values(TEMPERATURE_REGULATION).includes(tag)) return "TEMPERATURE_REGULATION";
     if (Object.values(FEEDING_BEHAVIOR).includes(tag)) return "FEEDING_BEHAVIOR";
@@ -203,5 +210,6 @@ export const DEFAULT_TAGS = [
     NICTITATING_MEMBRANE.NO,
     CAUDAL_FIN_SHAPE.HETEROCERCAL,
     MOUTH_IN_FRONT_OF_EYES.MOUTH_NOT_IN_FRONT_OF_EYES,
-    BIOLUMINESCENT.NO
+    BIOLUMINESCENT.NO,
+    DORSAL_FIN_SPINES.NO
 ];

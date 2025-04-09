@@ -6,7 +6,7 @@ import { SharkTreeNode } from "./shark-tree-node";
 import { Svg } from "../drawing/svg";
 import { Utils } from "../utils/utils";
 import { BLACK } from "../constants/colors";
-import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION, FEEDING_BEHAVIOR, OCEAN_ZONE, EVOLUTIONARY_CHARACTERISTIC, UNIQUE_FEATURE, GEOGRAPHICAL_DISTRIBUTION, HABITAT, WATER_COLUMN, PHYSICAL_CHARACTERISTIC, BEHAVIOR, NUM_GILLS, NUM_DORSAL_FINS, ANAL_FIN, NICTITATING_MEMBRANE, CAUDAL_FIN_SHAPE, MOUTH_IN_FRONT_OF_EYES, BIOLUMINESCENT } from "../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION, FEEDING_BEHAVIOR, OCEAN_ZONE, EVOLUTIONARY_CHARACTERISTIC, UNIQUE_FEATURE, GEOGRAPHICAL_DISTRIBUTION, HABITAT, WATER_COLUMN, PHYSICAL_CHARACTERISTIC, BEHAVIOR, NUM_GILLS, NUM_DORSAL_FINS, ANAL_FIN, NICTITATING_MEMBRANE, CAUDAL_FIN_SHAPE, MOUTH_IN_FRONT_OF_EYES, BIOLUMINESCENT, DORSAL_FIN_SPINES } from "../constants/enums";
 
 export class SharkTree {
     config: SharkTreeNodeConfig
@@ -575,7 +575,8 @@ export class SharkTree {
             "nictitatingMembrane",
             "caudalFinShape",
             "mouthInFrontOfEyes",
-            "isBioluminescent"
+            "isBioluminescent",
+            "hasDorsalFinSpines"
         ];
         
         categories.forEach((category, _index) => {
@@ -620,7 +621,8 @@ export class SharkTree {
             "nictitatingMembrane": Object.values(NICTITATING_MEMBRANE),
             "caudalFinShape": Object.values(CAUDAL_FIN_SHAPE),
             "mouthInFrontOfEyes": Object.values(MOUTH_IN_FRONT_OF_EYES),
-            "isBioluminescent": Object.values(BIOLUMINESCENT)
+            "isBioluminescent": Object.values(BIOLUMINESCENT),
+            "hasDorsalFinSpines": Object.values(DORSAL_FIN_SPINES)
 
         };
         for (const [category, values] of Object.entries(tagEnums)) {

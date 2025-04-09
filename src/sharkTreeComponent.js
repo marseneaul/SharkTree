@@ -145,6 +145,7 @@ export class SharkTreeComponent extends HTMLElement {
                             <option value="caudalFinShape">Caudal Fin Shape</option>
                             <option value="mouthInFrontOfEyes">Has Mouth in Front of Eyes</option>
                             <option value="isBioluminescent">Bioluminescent</option>
+                            <option value="hasDorsalFinSpines">Has Dorsal Fin Spines</option>
                         </select>
                         <select id="tag-value-dropdown">
                             <option value="">All</option>

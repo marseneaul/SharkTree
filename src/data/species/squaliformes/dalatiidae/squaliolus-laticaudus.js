@@ -1,4 +1,4 @@
-import { ANAL_FIN, BIOLUMINESCENT } from "../../../../constants/enums";
+import { ANAL_FIN, BIOLUMINESCENT, DORSAL_FIN_SPINES } from "../../../../constants/enums";
 
 export const squaliolusLaticaudus = {
     commonName: "Spined Pygmy Shark",
@@ -19,6 +19,7 @@ export const squaliolusLaticaudus = {
 
     tags: [
         ANAL_FIN.NO,
-        BIOLUMINESCENT.YES
+        BIOLUMINESCENT.YES,
+        DORSAL_FIN_SPINES.ONLY_ON_FIRST
     ]
 };

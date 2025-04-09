@@ -1,4 +1,4 @@
-import { ANAL_FIN } from "../../../../constants/enums";
+import { ANAL_FIN, DORSAL_FIN_SPINES } from "../../../../constants/enums";
 
 export const squalusCrassispinus = {
     commonName: "Fatspine Spurdog",
@@ -17,6 +17,7 @@ export const squalusCrassispinus = {
     species: "crassispinus",
 
     tags: [
-        ANAL_FIN.NO
+        ANAL_FIN.NO,
+        DORSAL_FIN_SPINES.YES
     ]
 };

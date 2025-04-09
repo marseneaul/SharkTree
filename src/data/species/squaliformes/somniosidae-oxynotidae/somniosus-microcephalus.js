@@ -1,8 +1,8 @@
 import { ANAL_FIN } from "../../../../constants/enums";
 
 export const somniosusMicrocephalus = {
-    commonName: "Greenland Dogfish",
-    alternativeNames: ["Gurry Shark", "Grey Shark"],
+    commonName: "Greenland Shark",
+    alternativeNames: ["Greenland Dogfish", "Gurry Shark", "Grey Shark"],
     binomialName: "Somniosus microcephalus",
 
     domain:	"Eukaryota",
