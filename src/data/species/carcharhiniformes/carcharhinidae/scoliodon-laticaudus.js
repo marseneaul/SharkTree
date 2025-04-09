@@ -2,7 +2,7 @@ import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRA
 
 export const scoliodonLaticaudus = {
     commonName: "Spadenode Shark",
-    alternativeNames: ["Indian Dogfish", "Sharp-Nosed Shark", "Trowel-Nose Shark", "Yellow Dog Sshark"],
+    alternativeNames: ["Indian Dogfish", "Sharp-Nosed Shark", "Trowel-Nose Shark", "Yellow Dog Shark"],
     binomialName: "Scoliodon laticaudus",
 
     domain:	"Eukaryota",

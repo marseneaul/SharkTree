@@ -1,4 +1,4 @@
-import { CAUDAL_FIN_SHAPE, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION } from "../../../../constants/enums";
+import { BEHAVIOR, CAUDAL_FIN_SHAPE, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION } from "../../../../constants/enums";
 import isurusOxyrinchusImg from "./../../../../images/isurus-oxyrinchus.png";
 
 export const isurusOxyrinchus = {
@@ -24,6 +24,7 @@ export const isurusOxyrinchus = {
         CONSERVATION_STATUS.EN,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS, REPRODUCTIVE_STRATEGY.OOPHAGY,
         TEMPERATURE_REGULATION.ENDOTHERMIC,
+        BEHAVIOR.BREACHING,
         CAUDAL_FIN_SHAPE.HOMOCERCAL
     ]
 };

@@ -1,4 +1,4 @@
-import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../constants/enums";
+import { BEHAVIOR, CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../constants/enums";
 
 export const carcharhinusLimbatus = {
     commonName: "Blacktip Shark",
@@ -21,6 +21,7 @@ export const carcharhinusLimbatus = {
         REPRODUCTIVE_STRATEGY.VIVIPAROUS,
         NICTITATING_MEMBRANE.YES,
         SPIRACLES.NO,
-        GROUP_BEHAVIOR.SCHOOLING
+        GROUP_BEHAVIOR.SCHOOLING,
+        BEHAVIOR.BREACHING
     ]
 };

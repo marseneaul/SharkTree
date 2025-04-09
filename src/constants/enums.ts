@@ -105,7 +105,8 @@ export enum PHYSICAL_CHARACTERISTIC {
 
 export enum BEHAVIOR {
     MIGRATING = "Migrating",
-    BREACHING = "Breaching"
+    BREACHING = "Breaching",
+    NONE = "No Unique Behaviors"
 }
 
 export enum GROUP_BEHAVIOR {
@@ -199,6 +200,7 @@ export const DEFAULT_TAGS = [
     TEMPERATURE_REGULATION.ECTOTHERMIC, 
     FEEDING_BEHAVIOR.CARNIVOROUS,
     GROUP_BEHAVIOR.SOLITARY,
+    BEHAVIOR.NONE,
     
     NUM_DORSAL_FINS.TWO, 
     NUM_GILLS.FIVE, 

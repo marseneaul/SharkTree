@@ -1,4 +1,4 @@
-import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../constants/enums";
 
 export const carcharhinusPlumbeus = {
     commonName: "Sandbar Shark",
@@ -19,6 +19,7 @@ export const carcharhinusPlumbeus = {
     tags: [
         CONSERVATION_STATUS.EN,
         REPRODUCTIVE_STRATEGY.VIVIPAROUS,
+        GROUP_BEHAVIOR.SOLITARY, GROUP_BEHAVIOR.SCHOOLING,
         NICTITATING_MEMBRANE.YES,
         SPIRACLES.NO
     ]
