@@ -6,7 +6,7 @@ import { SharkTreeNode } from "./shark-tree-node";
 import { Svg } from "../drawing/svg";
 import { Utils } from "../utils/utils";
 import { BLACK } from "../constants/colors";
-import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION, FEEDING_BEHAVIOR, OCEAN_ZONE, GEOGRAPHICAL_DISTRIBUTION, HABITAT, WATER_COLUMN, PHYSICAL_CHARACTERISTIC, BEHAVIOR, NUM_GILLS, NUM_DORSAL_FINS, ANAL_FIN, NICTITATING_MEMBRANE, CAUDAL_FIN_SHAPE, MOUTH_IN_FRONT_OF_EYES, BIOLUMINESCENT, DORSAL_FIN_SPINES } from "../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION, FEEDING_BEHAVIOR, OCEAN_ZONE, GEOGRAPHICAL_DISTRIBUTION, HABITAT, WATER_COLUMN, PHYSICAL_CHARACTERISTIC, BEHAVIOR, NUM_GILLS, NUM_DORSAL_FINS, ANAL_FIN, NICTITATING_MEMBRANE, CAUDAL_FIN_SHAPE, MOUTH_IN_FRONT_OF_EYES, BIOLUMINESCENT, DORSAL_FIN_SPINES, SPIRACLES, FLATTENED_BODY } from "../constants/enums";
 
 export class SharkTree {
     config: SharkTreeNodeConfig
@@ -352,7 +352,7 @@ export class SharkTree {
                 if (sharkIndex < 0) sharkIndex = numSpecies + sharkIndex;
                 if (sharkIndex !== this.currentSharkIndex) {
                     const previousShark = sharkSpecies[this.currentSharkIndex];
-                    previousShark?.getNode()?.setAttribute("fill", "#000000");
+                    previousShark?.getNode()?.setAttribute("fill", BLACK);
                     previousShark?.getNode()?.classList.remove("pulse");
                     this.reapplyHighlights(previousShark);
         
@@ -577,7 +577,9 @@ export class SharkTree {
             "caudalFinShape",
             "mouthInFrontOfEyes",
             "isBioluminescent",
-            "hasDorsalFinSpines"
+            "hasDorsalFinSpines",
+            "hasSpiracles",
+            "hasFlattenedBody"
         ];
         
         categories.forEach((category, _index) => {
@@ -621,7 +623,9 @@ export class SharkTree {
             "caudalFinShape": Object.values(CAUDAL_FIN_SHAPE),
             "mouthInFrontOfEyes": Object.values(MOUTH_IN_FRONT_OF_EYES),
             "isBioluminescent": Object.values(BIOLUMINESCENT),
-            "hasDorsalFinSpines": Object.values(DORSAL_FIN_SPINES)
+            "hasDorsalFinSpines": Object.values(DORSAL_FIN_SPINES),
+            "hasSpiracles": Object.values(SPIRACLES),
+            "hasFlattenedBody": Object.values(FLATTENED_BODY)
 
         };
         for (const [category, values] of Object.entries(tagEnums)) {

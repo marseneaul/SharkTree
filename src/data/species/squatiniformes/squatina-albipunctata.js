@@ -1,4 +1,4 @@
-import { ANAL_FIN, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../constants/enums";
+import { ANAL_FIN, CONSERVATION_STATUS, FLATTENED_BODY, REPRODUCTIVE_STRATEGY } from "../../../constants/enums";
 
 export const squatinaAlbipunctata = {
     commonName: "Eastern Angelshark",
@@ -19,6 +19,7 @@ export const squatinaAlbipunctata = {
     tags: [
         CONSERVATION_STATUS.VU,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
-        ANAL_FIN.NO
+        ANAL_FIN.NO,
+        FLATTENED_BODY.YES
     ]
 };

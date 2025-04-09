@@ -1,4 +1,4 @@
-import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../constants/enums";
 
 export const carcharhinusFalciformis = {
     commonName: "Silky Shark",
@@ -20,6 +20,7 @@ export const carcharhinusFalciformis = {
     tags: [
         CONSERVATION_STATUS.VU,
         REPRODUCTIVE_STRATEGY.VIVIPAROUS,
-        NICTITATING_MEMBRANE.YES
+        NICTITATING_MEMBRANE.YES,
+        SPIRACLES.NO
     ]
 };

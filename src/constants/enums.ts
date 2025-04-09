@@ -133,6 +133,16 @@ export enum ANAL_FIN {
     NO = "No Anal Fin"
 }
 
+export enum SPIRACLES {
+    YES = "Yes Spiracles",
+    NO = "No Spiracles"
+}
+
+export enum FLATTENED_BODY {
+    YES = "Yes Flattened Body",
+    NO = "No Flattened Body"
+}
+
 export enum NICTITATING_MEMBRANE {
     YES = "Yes Nictitating Membrane",
     NO = "No Nictitating Membrane"
@@ -181,6 +191,8 @@ export function getEnumCategory(tag: any): string | undefined {
     if (Object.values(WATER_COLUMN).includes(tag)) return "WATER_COLUMN";
     if (Object.values(PHYSICAL_CHARACTERISTIC).includes(tag)) return "PHYSICAL_CHARACTERISTIC";
     if (Object.values(BEHAVIOR).includes(tag)) return "BEHAVIOR";
+    if (Object.values(SPIRACLES).includes(tag)) return "SPIRACLES";
+    if (Object.values(FLATTENED_BODY).includes(tag)) return "FLATTENED_BODY";
     return undefined;
 }
 
@@ -190,6 +202,8 @@ export const DEFAULT_TAGS = [
     TEMPERATURE_REGULATION.ECTOTHERMIC, 
     FEEDING_BEHAVIOR.CARNIVOROUS, 
     ANAL_FIN.YES,
+    SPIRACLES.YES,
+    FLATTENED_BODY.NO,
     NICTITATING_MEMBRANE.NO,
     CAUDAL_FIN_SHAPE.HETEROCERCAL,
     MOUTH_IN_FRONT_OF_EYES.MOUTH_NOT_IN_FRONT_OF_EYES,

@@ -1,4 +1,4 @@
-import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../constants/enums";
 
 export const sphyrnaMokarran = {
     commonName: "Great Hammerhead Shark",
@@ -19,6 +19,7 @@ export const sphyrnaMokarran = {
     tags: [
         CONSERVATION_STATUS.CR,
         REPRODUCTIVE_STRATEGY.VIVIPAROUS,
-        NICTITATING_MEMBRANE.YES
+        NICTITATING_MEMBRANE.YES,
+        SPIRACLES.NO
     ]
 };

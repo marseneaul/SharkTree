@@ -1,4 +1,4 @@
-import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../constants/enums";
 
 export const carcharhinusLeucas = {
     commonName: "Bull Shark",
@@ -19,6 +19,7 @@ export const carcharhinusLeucas = {
     tags: [
         CONSERVATION_STATUS.VU,
         REPRODUCTIVE_STRATEGY.VIVIPAROUS,
-        NICTITATING_MEMBRANE.YES
+        NICTITATING_MEMBRANE.YES,
+        SPIRACLES.NO
     ]
 };

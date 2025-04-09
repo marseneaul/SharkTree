@@ -143,6 +143,8 @@ export class SharkTreeComponent extends HTMLElement {
                             <option value="numGills">Number of Gills</option>
                             <option value="numDorsalFins">Number of Dorsal Fins</option>
                             <option value="analFin">Has Anal Fin</option>
+                            <option value="hasSpiracles">Has Spiracles</option>
+                            <option value="hasFlattenedBody">Has Flattened Body</option>
                             <option value="nictitatingMembrane">Has Nictitating Membrane</option>
                             <option value="caudalFinShape">Caudal Fin Shape</option>
                             <option value="mouthInFrontOfEyes">Has Mouth in Front of Eyes</option>

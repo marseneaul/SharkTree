@@ -1,4 +1,4 @@
-import { CONSERVATION_STATUS, MOUTH_IN_FRONT_OF_EYES, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, FLATTENED_BODY, MOUTH_IN_FRONT_OF_EYES, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const orectolobusParvimaculatus = {
     commonName: "Dwarf Spotted Wobbegong",
@@ -19,6 +19,7 @@ export const orectolobusParvimaculatus = {
     tags: [
         CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
-        MOUTH_IN_FRONT_OF_EYES.MOUTH_IN_FRONT_OF_EYES
+        MOUTH_IN_FRONT_OF_EYES.MOUTH_IN_FRONT_OF_EYES,
+        FLATTENED_BODY.YES
     ]
 };
