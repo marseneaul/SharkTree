@@ -214,7 +214,7 @@ export class SharkTreeComponent extends HTMLElement {
             #shark-screen h2 {
                 color: #00688B;
                 margin: 0 0 10px 0;
-                font-size: 20px;
+                font-size: 21px;
             }
             #shark-screen .section {
                 margin-bottom: 15px;

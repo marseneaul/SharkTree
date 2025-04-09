@@ -1,7 +1,7 @@
 import { sha256 } from "js-sha256";
 import { SharkConfig } from "../interfaces/shark-config";
 import { SharkTreeNode } from "./shark-tree-node";
-import { DEFAULT_TAGS, getEnumCategory } from "../constants/enums";
+import { BEHAVIOR, CONSERVATION_STATUS, DEFAULT_TAGS, getEnumCategory, TEMPERATURE_REGULATION } from "../constants/enums";
 
 // SharkTreeLeafNode
 export class SharkSpecies {
@@ -197,12 +197,29 @@ export class SharkSpecies {
     
     getFormattedString(allSpecies: SharkSpecies[]): string {
         const relatedSpecies = this.getRelatedSpecies(allSpecies);
+
+        const conservationStatusTags = this.tags.filter(tag => [
+            CONSERVATION_STATUS.CR, CONSERVATION_STATUS.EN, CONSERVATION_STATUS.VU, CONSERVATION_STATUS.DD, CONSERVATION_STATUS.LC, CONSERVATION_STATUS.EW, CONSERVATION_STATUS.NT
+        ].includes(tag as any)).slice(0, 1);
+        const conservationStatusString = conservationStatusTags.length > 0 
+            ? `<div class="section"><strong>Conservation Status:</strong> ${conservationStatusTags.join(", ")}</div>` 
+            : "";
+        
+        const keyTags = this.tags.filter(tag => [
+            TEMPERATURE_REGULATION.ENDOTHERMIC, TEMPERATURE_REGULATION.REGIONALLY_ENDOTHERMIC, // Unique temperature regulation
+            BEHAVIOR.BREACHING, BEHAVIOR.MIGRATING // Interesting behaviors
+        ].includes(tag as any)).slice(0, 3); // Limit to 3 for brevity
+        const tagsString = keyTags.length > 0 
+            ? `<div class="section"><strong>Key Traits:</strong> ${keyTags.join(", ")}</div>` 
+            : "";
+
         return `
             <h2>${this.commonName}</h2>
             <div class="section">
                 <strong>Binomial Name:</strong> ${this.binomialName}<br>
                 <strong>Alternative Names:</strong> ${this.getAlternativeNamesSentence()}
             </div>
+            ${conservationStatusString}
             <div class="section">
                 <strong>Taxonomy:</strong><br>
                 Domain: ${this.domain}<br>
@@ -214,6 +231,7 @@ export class SharkSpecies {
                 Genus: ${this.genus}<br>
                 Species: ${this.species}
             </div>
+            ${tagsString}
             <div class="section">
                 <strong>Related Species:</strong>
                 ${relatedSpecies.length > 0 ? `<ul>${relatedSpecies.map(s => `<li>${s.commonName} (${s.binomialName})</li>`).join("")}</ul>` : "None in this dataset"}
