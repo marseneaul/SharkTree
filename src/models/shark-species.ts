@@ -197,10 +197,28 @@ export class SharkSpecies {
     
     getFormattedString(allSpecies: SharkSpecies[]): string {
         const relatedSpecies = this.getRelatedSpecies(allSpecies);
-        const relatedString = relatedSpecies.length > 0 
-            ? `<br><br><strong>Related Species:</strong><ul>${relatedSpecies.map(s => `<li>${s.commonName} (${s.binomialName})</li>`).join("")}</ul>`
-            : `<br><br><strong>Related Species:</strong> None in this dataset.`;
-        return `Common Name: ${this.commonName}<br>Binomial Name: ${this.binomialName}<br>Alternative Names: ${this.getAlternativeNamesSentence()}<br><br>Domain: ${this.domain}<br>Kingdom: ${this.kingdom}<br>Phylum: ${this.phylum}<br>Class: ${this.class}<br>Order: ${this.order}<br>Family: ${this.family}<br>Genus: ${this.genus}<br>Species: ${this.species}${relatedString}`;
+        return `
+            <h2>${this.commonName}</h2>
+            <div class="section">
+                <strong>Binomial Name:</strong> ${this.binomialName}<br>
+                <strong>Alternative Names:</strong> ${this.getAlternativeNamesSentence()}
+            </div>
+            <div class="section">
+                <strong>Taxonomy:</strong><br>
+                Domain: ${this.domain}<br>
+                Kingdom: ${this.kingdom}<br>
+                Phylum: ${this.phylum}<br>
+                Class: ${this.class}<br>
+                Order: ${this.order}<br>
+                Family: ${this.family}<br>
+                Genus: ${this.genus}<br>
+                Species: ${this.species}
+            </div>
+            <div class="section">
+                <strong>Related Species:</strong>
+                ${relatedSpecies.length > 0 ? `<ul>${relatedSpecies.map(s => `<li>${s.commonName} (${s.binomialName})</li>`).join("")}</ul>` : "None in this dataset"}
+            </div>
+        `;
     }
 
     getAlternativeNamesSentence(): string {

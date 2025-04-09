@@ -202,7 +202,7 @@ export class SharkTreeComponent extends HTMLElement {
                 width: 100%;
                 max-height: 70%;
                 padding: 20px;
-                background: #FFFFFF;
+                background: #F9F9F9;
                 border: 1px solid #E0E0E0;
                 border-radius: 8px;
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -210,6 +210,31 @@ export class SharkTreeComponent extends HTMLElement {
                 font-size: 14px;
                 line-height: 1.6;
                 color: #2F4F4F;
+            }
+            #shark-screen h2 {
+                color: #00688B;
+                margin: 0 0 10px 0;
+                font-size: 20px;
+            }
+            #shark-screen .section {
+                margin-bottom: 15px;
+            }
+            #shark-screen .section strong {
+                color: #2F4F4F;
+                font-weight: 600;
+            }
+            #shark-screen ul {
+                list-style-type: none;
+                padding-left: 10px;
+            }
+            #shark-screen li {
+                margin: 5px 0;
+                color: #555;
+            }
+            #shark-screen img {
+                max-width: 100%;
+                border-radius: 5px;
+                margin-top: 10px;
             }
             #controls-container {
                 position: absolute;
