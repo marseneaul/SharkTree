@@ -1,4 +1,4 @@
-import { FEEDING_BEHAVIOR } from "../../../constants/enums";
+import { FEEDING_BEHAVIOR, MOUTH_IN_FRONT_OF_EYES } from "../../../constants/enums";
 
 export const rhincodonTypus = {
     commonName: "Whale Shark",
@@ -17,6 +17,7 @@ export const rhincodonTypus = {
     species: "typus",
 
     tags: [
-        FEEDING_BEHAVIOR.PLANKTIVOROUS
+        FEEDING_BEHAVIOR.CARNIVOROUS, FEEDING_BEHAVIOR.PLANKTIVOROUS,
+        MOUTH_IN_FRONT_OF_EYES.MOUTH_IN_FRONT_OF_EYES
     ]
 };

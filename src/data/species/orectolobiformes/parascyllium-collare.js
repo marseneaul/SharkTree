@@ -1,3 +1,5 @@
+import { MOUTH_IN_FRONT_OF_EYES } from "../../../constants/enums";
+
 export const parascylliumCollare = {
     commonName: "Collared Carpetshark",
     binomialName: "Parascyllium collare",
@@ -12,5 +14,9 @@ export const parascylliumCollare = {
     order: "Orectolobiformes",
     family: "Parascylliidae",
     genus: "Parascyllium",
-    species: "collare"
+    species: "collare",
+
+    tags: [
+        MOUTH_IN_FRONT_OF_EYES.MOUTH_IN_FRONT_OF_EYES
+    ]
 };

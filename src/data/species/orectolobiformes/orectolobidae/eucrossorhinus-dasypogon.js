@@ -1,3 +1,5 @@
+import { MOUTH_IN_FRONT_OF_EYES } from "../../../../constants/enums";
+
 export const eucrossorhinusDasypogon = {
     commonName: "Tasselled Wobbegong",
     alternativeNames: ["Bearded Wobbegong", "Ogilby's Wobbegong"],
@@ -13,5 +15,9 @@ export const eucrossorhinusDasypogon = {
     order: "Orectolobiformes",
     family: "Orectolobidae",
     genus: "Eucrossorhinus",
-    species: "dasypogon"
+    species: "dasypogon",
+
+    tags: [
+        MOUTH_IN_FRONT_OF_EYES.MOUTH_IN_FRONT_OF_EYES
+    ]
 };

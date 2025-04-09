@@ -1,3 +1,5 @@
+import { MOUTH_IN_FRONT_OF_EYES } from "../../../../constants/enums";
+
 export const orectolobusMaculatus = {
     commonName: "Spotted Wobbegong",
     alternativeNames: ["Carpet Shark", "Common Carpet Shark", "Common Catshark", "Tassel Shark", "Wobbegong"],
@@ -13,5 +15,9 @@ export const orectolobusMaculatus = {
     order: "Orectolobiformes",
     family: "Orectolobidae",
     genus: "Orectolobus",
-    species: "maculatus"
+    species: "maculatus",
+
+    tags: [
+        MOUTH_IN_FRONT_OF_EYES.MOUTH_IN_FRONT_OF_EYES
+    ]
 };

@@ -1,3 +1,5 @@
+import { MOUTH_IN_FRONT_OF_EYES } from "../../../../constants/enums";
+
 export const hemiscylliumOcellatum = {
     commonName: "Epaulette Shark",
     binomialName: "Hemiscyllium ocellatum",
@@ -12,5 +14,9 @@ export const hemiscylliumOcellatum = {
     order: "Orectolobiformes",
     family: "Hemiscylliidae",
     genus: "Hemiscyllium",
-    species: "ocellatum"
-};
+    species: "ocellatum",
+
+    tags: [
+        MOUTH_IN_FRONT_OF_EYES.MOUTH_IN_FRONT_OF_EYES
+    ]
+}

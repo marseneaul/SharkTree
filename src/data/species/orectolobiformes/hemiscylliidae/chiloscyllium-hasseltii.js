@@ -1,3 +1,5 @@
+import { MOUTH_IN_FRONT_OF_EYES } from "../../../../constants/enums";
+
 export const chiloscylliumHasseltii = {
     commonName: "Hasselt's Bamboo Shark",
     binomialName: "Chiloscyllium hasseltii",
@@ -12,5 +14,9 @@ export const chiloscylliumHasseltii = {
     order: "Orectolobiformes",
     family: "Hemiscylliidae",
     genus: "Chiloscyllium",
-    species: "hasseltii"
+    species: "hasseltii",
+
+    tags: [
+        MOUTH_IN_FRONT_OF_EYES.MOUTH_IN_FRONT_OF_EYES
+    ]
 };

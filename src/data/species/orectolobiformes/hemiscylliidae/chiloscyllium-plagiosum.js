@@ -1,3 +1,5 @@
+import { MOUTH_IN_FRONT_OF_EYES } from "../../../../constants/enums";
+
 export const chiloscylliumPlagiosum = {
     commonName: "Whitespotted Bamboo Shark",
     binomialName: "Chiloscyllium plagiosum",
@@ -12,5 +14,9 @@ export const chiloscylliumPlagiosum = {
     order: "Orectolobiformes",
     family: "Hemiscylliidae",
     genus: "Chiloscyllium",
-    species: "plagiosum"
+    species: "plagiosum",
+
+    tags: [
+        MOUTH_IN_FRONT_OF_EYES.MOUTH_IN_FRONT_OF_EYES
+    ]
 };

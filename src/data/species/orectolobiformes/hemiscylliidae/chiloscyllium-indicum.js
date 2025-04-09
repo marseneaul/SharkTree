@@ -1,3 +1,5 @@
+import { MOUTH_IN_FRONT_OF_EYES } from "../../../../constants/enums";
+
 export const chiloscylliumIndicum = {
     commonName: "Slender Bamboo Shark",
     binomialName: "Chiloscyllium indicum",
@@ -12,5 +14,9 @@ export const chiloscylliumIndicum = {
     order: "Orectolobiformes",
     family: "Hemiscylliidae",
     genus: "Chiloscyllium",
-    species: "indicum"
+    species: "indicum",
+
+    tags: [
+        MOUTH_IN_FRONT_OF_EYES.MOUTH_IN_FRONT_OF_EYES
+    ]
 };

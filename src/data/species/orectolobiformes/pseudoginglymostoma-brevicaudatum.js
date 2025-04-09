@@ -1,3 +1,5 @@
+import { MOUTH_IN_FRONT_OF_EYES } from "../../../constants/enums";
+
 export const pseudoginglymostomaBrevicaudatum = {
     commonName: "Short-Tail Nurse Shark",
     binomialName: "Pseudoginglymostoma brevicaudatum",
@@ -12,5 +14,9 @@ export const pseudoginglymostomaBrevicaudatum = {
     order: "Orectolobiformes",
     family: "Ginglymostomatidae",
     genus: "Pseudoginglymostoma",
-    species: "brevicaudatum"
+    species: "brevicaudatum",
+
+    tags: [
+        MOUTH_IN_FRONT_OF_EYES.MOUTH_IN_FRONT_OF_EYES
+    ]
 };

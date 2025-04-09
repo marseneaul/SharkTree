@@ -136,7 +136,6 @@ export class SharkTreeComponent extends HTMLElement {
                         <label for="tag-dropdown">Tag Category:</label>
                         <select id="tag-dropdown">
                             <option value="">None</option>
-                            <option value="reproductiveStrategy">Reproductive Strategy</option>
                             <option value="temperatureRegulation">Temperature Regulation</option>
                             <option value="feedingBehavior">Feeding Behavior</option>
                             <option value="numGills">Number of Gills</option>
@@ -144,6 +143,7 @@ export class SharkTreeComponent extends HTMLElement {
                             <option value="analFin">Has Anal Fin</option>
                             <option value="nictitatingMembrane">Has Nictitating Membrane</option>
                             <option value="caudalFinShape">Caudal Fin Shape</option>
+                            <option value="mouthInFrontOfEyes">Has Mouth in Front of Eyes</option>
                         </select>
                         <select id="tag-value-dropdown">
                             <option value="">All</option>

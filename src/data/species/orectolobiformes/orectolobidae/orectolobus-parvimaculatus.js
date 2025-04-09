@@ -1,3 +1,5 @@
+import { MOUTH_IN_FRONT_OF_EYES } from "../../../../constants/enums";
+
 export const orectolobusParvimaculatus = {
     commonName: "Dwarf Spotted Wobbegong",
     binomialName: "Orectolobus parvimaculatus",
@@ -12,5 +14,9 @@ export const orectolobusParvimaculatus = {
     order: "Orectolobiformes",
     family: "Orectolobidae",
     genus: "Orectolobus",
-    species: "parvimaculatus"
+    species: "parvimaculatus",
+
+    tags: [
+        MOUTH_IN_FRONT_OF_EYES.MOUTH_IN_FRONT_OF_EYES
+    ]
 };

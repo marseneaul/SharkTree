@@ -1,3 +1,5 @@
+import { MOUTH_IN_FRONT_OF_EYES } from "../../../constants/enums";
+
 export const ginglymostomaCirratum = {
     commonName: "Nurse Shark",
     binomialName: "Ginglymostoma cirratum",
@@ -12,5 +14,9 @@ export const ginglymostomaCirratum = {
     order: "Orectolobiformes",
     family: "Ginglymostomatidae",
     genus: "Ginglymostoma",
-    species: "cirratum"
+    species: "cirratum",
+
+    tags: [
+        MOUTH_IN_FRONT_OF_EYES.MOUTH_IN_FRONT_OF_EYES
+    ]
 };

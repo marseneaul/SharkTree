@@ -1,3 +1,5 @@
+import { MOUTH_IN_FRONT_OF_EYES } from "../../../../constants/enums";
+
 export const chiloscylliumPunctatum = {
     commonName: "Brownbanded Bamboo Shark",
     alternativeNames: ["Cat Shark"],
@@ -13,5 +15,9 @@ export const chiloscylliumPunctatum = {
     order: "Orectolobiformes",
     family: "Hemiscylliidae",
     genus: "Chiloscyllium",
-    species: "punctatum"
+    species: "punctatum",
+
+    tags: [
+        MOUTH_IN_FRONT_OF_EYES.MOUTH_IN_FRONT_OF_EYES
+    ]
 };

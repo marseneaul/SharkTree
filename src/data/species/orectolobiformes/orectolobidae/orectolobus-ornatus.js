@@ -1,3 +1,5 @@
+import { MOUTH_IN_FRONT_OF_EYES } from "../../../../constants/enums";
+
 export const orectolobusOrnatus = {
     commonName: "Ornate Wobbegong",
     alternativeNames: ["Banded Wobbegong"],
@@ -13,5 +15,9 @@ export const orectolobusOrnatus = {
     order: "Orectolobiformes",
     family: "Orectolobidae",
     genus: "Orectolobus",
-    species: "ornatus"
+    species: "ornatus",
+
+    tags: [
+        MOUTH_IN_FRONT_OF_EYES.MOUTH_IN_FRONT_OF_EYES
+    ]
 };

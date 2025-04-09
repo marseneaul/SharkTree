@@ -17,7 +17,7 @@ export const megachasmaPelagios = {
     species: "pelagios",
 
     tags: [
-        FEEDING_BEHAVIOR.PLANKTIVOROUS,
+        FEEDING_BEHAVIOR.CARNIVOROUS, FEEDING_BEHAVIOR.PLANKTIVOROUS,
         CAUDAL_FIN_SHAPE.HOMOCERCAL
     ]
 };

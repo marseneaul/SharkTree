@@ -1,3 +1,5 @@
+import { MOUTH_IN_FRONT_OF_EYES } from "../../../../constants/enums";
+
 export const orectolobusHutchinsi = {
     commonName: "Western Wobbegong",
     binomialName: "Orectolobus hutchinsi",
@@ -12,5 +14,9 @@ export const orectolobusHutchinsi = {
     order: "Orectolobiformes",
     family: "Orectolobidae",
     genus: "Orectolobus",
-    species: "hutchinsi"
+    species: "hutchinsi",
+
+    tags: [
+        MOUTH_IN_FRONT_OF_EYES.MOUTH_IN_FRONT_OF_EYES
+    ]
 };

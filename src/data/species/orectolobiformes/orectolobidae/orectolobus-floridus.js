@@ -1,3 +1,5 @@
+import { MOUTH_IN_FRONT_OF_EYES } from "../../../../constants/enums";
+
 export const orectolobusFloridus = {
     commonName: "Floral Banded Wobbegong",
     binomialName: "Orectolobus floridus",
@@ -12,5 +14,9 @@ export const orectolobusFloridus = {
     order: "Orectolobiformes",
     family: "Orectolobidae",
     genus: "Orectolobus",
-    species: "floridus"
+    species: "floridus",
+
+    tags: [
+        MOUTH_IN_FRONT_OF_EYES.MOUTH_IN_FRONT_OF_EYES
+    ]
 };

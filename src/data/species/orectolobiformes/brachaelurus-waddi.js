@@ -1,3 +1,5 @@
+import { MOUTH_IN_FRONT_OF_EYES } from "../../../constants/enums";
+
 export const brachaelurusWaddi = {
     commonName: "Blind Shark",
     alternativeNames: ["Brown Catshark", "Dusky Dogfish"],
@@ -13,5 +15,9 @@ export const brachaelurusWaddi = {
     order: "Orectolobiformes",
     family: "Brachaeluridae",
     genus: "Brachaelurus",
-    species: "waddi"
+    species: "waddi",
+
+    tags: [
+        MOUTH_IN_FRONT_OF_EYES.MOUTH_IN_FRONT_OF_EYES
+    ]
 };

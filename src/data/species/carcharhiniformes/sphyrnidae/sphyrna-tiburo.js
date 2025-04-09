@@ -18,6 +18,6 @@ export const sphyrnaTiburo = {
 
     tags: [
         NICTITATING_MEMBRANE.YES,
-        FEEDING_BEHAVIOR.OMNIVOROUS
+        FEEDING_BEHAVIOR.CARNIVOROUS, FEEDING_BEHAVIOR.OMNIVOROUS
     ]
 };
