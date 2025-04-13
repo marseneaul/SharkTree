@@ -534,9 +534,9 @@ export class SharkTreeComponent extends HTMLElement {
                     <option value="">All</option>
                     ${sortedValues.map(v => {
                         let displayText = v;
-                        if (v.startsWith("Yes ") || v === BIOLUMINESCENT.YES || v === MOUTH_IN_FRONT_OF_EYES.YES) {
+                        if (v.startsWith("Yes ") || v === BIOLUMINESCENT.YES || v === MOUTH_IN_FRONT_OF_EYES.MOUTH_IN_FRONT_OF_EYES) {
                             displayText = "Yes";
-                        } else if ((v.startsWith("No ") && v !== BEHAVIOR.NONE) || v === BIOLUMINESCENT.NO|| v === MOUTH_IN_FRONT_OF_EYES.NO) {
+                        } else if ((v.startsWith("No ") && v !== BEHAVIOR.NONE) || v === BIOLUMINESCENT.NO|| v === MOUTH_IN_FRONT_OF_EYES.MOUTH_NOT_IN_FRONT_OF_EYES) {
                             displayText = "No";
                         }
                         return `<option value="${v}">${displayText}</option>`;
