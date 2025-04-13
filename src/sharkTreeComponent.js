@@ -480,11 +480,20 @@ export class SharkTreeComponent extends HTMLElement {
                 const values = new Set(categoryData?.species.flatMap(s => s.tags.filter(tag => this.sharkTree.getTagCategory(tag) === category)));
                 tagValueDropdown.innerHTML = `
                     <option value="">All</option>
-                    ${Array.from(values).map(v => `<option value="${v}">${v}</option>`).join("")}
+                    ${Array.from(values).map(v => {
+                        // Transform display text for "Yes ..." or "No ..." tags
+                        let displayText = v;
+                        if (v.startsWith("Yes ")) {
+                            displayText = "Yes";
+                        } else if (v.startsWith("No ")) {
+                            displayText = "No";
+                        }
+                        return `<option value="${v}">${displayText}</option>`;
+                    }).join("")}
                 `;
                 this.sharkTree.highlightTagCategory(category);
             } else {
-                tagValueDropdown.innerHTML = '<option value="">All</option>';
+                tagValueDropdown.innerHTML = "<option value=''>All</option>";
                 this.sharkTree?.clearAllHighlights();
             }
         });
