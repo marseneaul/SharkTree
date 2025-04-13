@@ -132,30 +132,13 @@ export class SharkTree {
         svg.setAttribute("height", this.svgSize.toString());
         svg.setAttribute("viewBox", `0 0 ${this.svgSize} ${this.svgSize}`);
     
-        // Add gradient background
-        const defs = document.createElementNS(SVG_NAMESPACE, "defs");
-        const gradient = document.createElementNS(SVG_NAMESPACE, "radialGradient");
-        gradient.setAttribute("id", "bgGradient");
-        gradient.setAttribute("cx", "50%");
-        gradient.setAttribute("cy", "50%");
-        gradient.setAttribute("r", "50%");
-        const stop1 = document.createElementNS(SVG_NAMESPACE, "stop");
-        stop1.setAttribute("offset", "0%");
-        stop1.setAttribute("stop-color", LIGHT_GRAY);
-        const stop2 = document.createElementNS(SVG_NAMESPACE, "stop");
-        stop2.setAttribute("offset", "100%");
-        stop2.setAttribute("stop-color", WHITE);
-        gradient.appendChild(stop1);
-        gradient.appendChild(stop2);
-        defs.appendChild(gradient);
-        svg.appendChild(defs);
-    
+        // Add solid background
         const bg = document.createElementNS(SVG_NAMESPACE, "rect");
         bg.setAttribute("x", "0");
         bg.setAttribute("y", "0");
         bg.setAttribute("width", this.svgSize.toString());
         bg.setAttribute("height", this.svgSize.toString());
-        bg.setAttribute("fill", "url(#bgGradient)");
+        bg.setAttribute("fill", "rgba(245, 245, 245, 0.5)"); // Subtle grey, slightly opaque
         svg.appendChild(bg);
     
         const g = document.createElementNS(SVG_NAMESPACE, "g");
