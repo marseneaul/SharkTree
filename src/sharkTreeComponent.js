@@ -1,4 +1,4 @@
-import { ANAL_FIN, BIOLUMINESCENT, CONSERVATION_STATUS, DORSAL_FIN_SPINES, FLATTENED_BODY, MOUTH_IN_FRONT_OF_EYES, NICTITATING_MEMBRANE, NUM_DORSAL_FINS, NUM_GILLS, SPIRACLES } from "./constants/enums";
+import { ANAL_FIN, BEHAVIOR, BIOLUMINESCENT, CONSERVATION_STATUS, DORSAL_FIN_SPINES, FLATTENED_BODY, MOUTH_IN_FRONT_OF_EYES, NICTITATING_MEMBRANE, NUM_DORSAL_FINS, NUM_GILLS, SPIRACLES } from "./constants/enums";
 import {
     lamniformesConfig, heterodontiformesConfig, lamnidaeConfig, carcharhinidaeConfig,
     squatiniformesConfig, hexanchiformesConfig, pristiophoriformesConfig, orectolobiformesConfig,
@@ -536,7 +536,7 @@ export class SharkTreeComponent extends HTMLElement {
                         let displayText = v;
                         if (v.startsWith("Yes ") || v === BIOLUMINESCENT.YES || v === MOUTH_IN_FRONT_OF_EYES.YES) {
                             displayText = "Yes";
-                        } else if (v.startsWith("No ") || v === BIOLUMINESCENT.NO|| v === MOUTH_IN_FRONT_OF_EYES.NO) {
+                        } else if ((v.startsWith("No ") && v !== BEHAVIOR.NONE) || v === BIOLUMINESCENT.NO|| v === MOUTH_IN_FRONT_OF_EYES.NO) {
                             displayText = "No";
                         }
                         return `<option value="${v}">${displayText}</option>`;

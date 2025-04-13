@@ -280,14 +280,19 @@ export class SharkTree {
                 if (sharkIndex < 0) sharkIndex = numSpecies + sharkIndex;
                 if (sharkIndex !== this.currentSharkIndex) {
                     const previousShark = sharkSpecies[this.currentSharkIndex];
-                    previousShark?.getNode()?.setAttribute("fill", BLACK);
-                    previousShark?.getNode()?.classList.remove("pulse");
+                    const previousNode = previousShark?.getNode();
+                    if (previousNode) {
+                        // Use taxonomic color if active, otherwise default to BLACK
+                        const taxonomicColor = this.getTaxonomicColor(previousShark);
+                        previousNode.setAttribute("fill", taxonomicColor || BLACK);
+                        previousNode.classList.remove("pulse");
+                    }
                     this.reapplyHighlights(previousShark);
         
                     this.currentSharkIndex = sharkIndex;
                     const currentShark = sharkSpecies[sharkIndex];
                     const node = currentShark.getNode();
-                    node.setAttribute("fill", RED);
+                    node.setAttribute("fill", RED); // Selected shark remains RED
                     node.classList.add("pulse");
                     this.highlightPathToShark(currentShark.binomialName, 2, BLACK);
         
@@ -464,7 +469,8 @@ export class SharkTree {
                 node.setAttribute("fill", RED);
                 node.classList.add("pulse");
             } else {
-                node.setAttribute("fill", BLACK);
+                const taxonomicColor = this.getTaxonomicColor(shark);
+                node.setAttribute("fill", taxonomicColor || BLACK);
                 node.classList.remove("pulse");
             }
         });
@@ -634,16 +640,29 @@ export class SharkTree {
             ? categoryData.species.filter(s => s.tags.includes(value))
             : categoryData.species.filter(s => s.tags.some(tag => this.getTagCategory(tag) === category));
     
-        // Reset all paths first
-        this.getSharkSpeciesList().forEach(shark => this.clearHighlightPath(shark));
-        
-        // Highlight nodes for tagged species
+        // Reset paths but preserve node colors
+        this.getSharkSpeciesList().forEach(shark => this.clearHighlightPath(shark, true));
+    
+        // Highlight paths for tagged species
         speciesToHighlight.forEach(shark => {
             const taxonomicColor = this.getTaxonomicColor(shark) || BLACK;
-            shark.highlightNode(taxonomicColor);
+            shark.highlightParentPath(3, taxonomicColor, "5,5"); // Apply dashed line for tag
         });
+    
+        // Reapply taxonomic colors to all nodes
+        if (this.activeTaxonomicLevel) {
+            const levelData = this.taxonomicLevels.get(this.activeTaxonomicLevel);
+            if (levelData) {
+                const speciesToColor = this.activeTaxonomicValue
+                    ? levelData.species.filter(s => s[this.activeTaxonomicLevel] === this.activeTaxonomicValue)
+                    : levelData.species;
+                this.getSharkSpeciesList().forEach(shark => {
+                    const color = speciesToColor.includes(shark) ? levelData.color : BLACK;
+                    shark.highlightNode(color);
+                });
+            }
+        }
     }
-
     getTaxonomicColor(shark: SharkSpecies): string | null {
         if (this.activeTaxonomicLevel) {
             const levelData = this.taxonomicLevels.get(this.activeTaxonomicLevel);
@@ -671,9 +690,11 @@ export class SharkTree {
         }
     }
 
-    clearHighlightPath(shark: SharkSpecies): void {
+    clearHighlightPath(shark: SharkSpecies, preserveNodeColor: boolean = false): void {
         const node = shark.getNode();
-        if (node) node.setAttribute("fill", BLACK);
+        if (node && !preserveNodeColor) {
+            node.setAttribute("fill", BLACK);
+        }
     
         const getPathStyle = (segments: (SVGLineElement | SVGPathElement)[], sharksToCheck: SharkSpecies[]) => {
             let strokeColor = BLACK;
