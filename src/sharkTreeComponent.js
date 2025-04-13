@@ -156,6 +156,11 @@ export class SharkTreeComponent extends HTMLElement {
             <style> ${this.css()} </style>
             <div id="app-container">
                 <div id="controls-container">
+                    <div id="search-container">
+                        <label for="shark-search">Search Shark:</label>
+                        <input type="text" id="shark-search" placeholder="Enter common or binomial name" aria-describedby="search-label">
+                        <div id="search-suggestions" class="suggestions"></div>
+                    </div>
                     <div id="dropdown-container">
                         <label for="shark-config-dropdown">Configuration:</label>
                         <select id="shark-config-dropdown">
@@ -260,30 +265,30 @@ export class SharkTreeComponent extends HTMLElement {
             #shark-screen-container {
                 position: relative;
                 width: 40%;
-                height: 100%; /* Ensure full height */
+                height: 100%;
                 display: flex;
                 flex-direction: column;
-                align-items: stretch; /* Prevent shrinking */
+                align-items: stretch;
                 padding: 20px;
                 margin-right: 20px;
-                overflow: hidden; /* Prevent container overflow */
+                overflow: hidden;
             }
             #shark-screen {
                 position: relative;
                 width: 100%;
-                height: auto; /* Let content determine height */
-                min-height: 100%; /* Fill container if content is short */
-                max-height: none; /* Remove restrictive max-height */
+                height: auto;
+                min-height: 100%;
+                max-height: none;
                 padding: 20px;
                 background: #F9F9F9;
                 border: 1px solid #E0E0E0;
                 border-radius: 8px;
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-                overflow-y: auto; /* Scroll only if needed */
+                overflow-y: auto;
                 font-size: 14px;
                 line-height: 1.6;
                 color: #2F4F4F;
-                box-sizing: border-box; /* Include padding in height calculations */
+                box-sizing: border-box;
             }
             #shark-screen h2 {
                 color: #00688B;
@@ -307,8 +312,8 @@ export class SharkTreeComponent extends HTMLElement {
             }
             #shark-screen img {
                 max-width: 100%;
-                max-height: 200px; /* Cap image height to prevent overflow */
-                object-fit: contain; /* Preserve aspect ratio */
+                max-height: 200px;
+                object-fit: contain;
                 border-radius: 5px;
                 margin-top: 10px;
             }
@@ -326,11 +331,58 @@ export class SharkTreeComponent extends HTMLElement {
                 border-radius: 5px;
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             }
-            #dropdown-container, #taxonomic-container, #tag-container {
+            #search-container, #dropdown-container, #taxonomic-container, #tag-container {
                 display: flex;
                 flex-direction: row;
                 align-items: center;
                 gap: 8px;
+                position: relative;
+            }
+            #shark-search {
+                padding: 5px 8px;
+                border: 1px solid #E0E0E0;
+                border-radius: 5px;
+                background: #FFFFFF;
+                font-size: 14px;
+                color: #2F4F4F;
+                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+                width: 200px;
+            }
+            #shark-search:focus {
+                outline: none;
+                border-color: #00688B;
+                box-shadow: 0 0 4px rgba(0, 104, 139, 0.3);
+            }
+            #search-suggestions {
+                position: absolute;
+                top: 100%;
+                left: 70px; /* Align with input, accounting for label */
+                width: 200px;
+                max-height: 150px;
+                overflow-y: auto;
+                background: #FFFFFF;
+                border: 1px solid #E0E0E0;
+                border-radius: 5px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                z-index: 101;
+                display: none;
+            }
+            #search-suggestions.visible {
+                display: block;
+            }
+            .suggestion-item {
+                padding: 8px 12px;
+                font-size: 14px;
+                color: #2F4F4F;
+                cursor: pointer;
+            }
+            .suggestion-item:hover {
+                background: #F0F8FF;
+                color: #00688B;
+            }
+            .suggestion-item mark {
+                background: #E0F7FA;
+                font-weight: 600;
             }
             img {
                 width: 80%;
@@ -371,24 +423,24 @@ export class SharkTreeComponent extends HTMLElement {
                 transition: transform 0.2s ease;
             }
             #info-button:hover {
-                transform: scale(1.1); /* Subtle zoom effect */
+                transform: scale(1.1);
             }
             #info-button svg {
-                stroke: #00688B; /* Match app's accent color */
+                stroke: #00688B;
             }
             #info-tooltip {
                 display: none;
                 position: absolute;
                 top: 32px;
                 right: 0;
-                background: rgba(255, 255, 255, 0.95); /* Light, semi-transparent white */
-                color: #2F4F4F; /* Match app text color */
-                padding: 14px; /* More breathing room */
+                background: rgba(255, 255, 255, 0.95);
+                color: #2F4F4F;
+                padding: 14px;
                 border-radius: 6px;
                 border: 1px solid #E0E0E0;
                 font-size: 13px;
-                line-height: 1.6; /* Increased spacing */
-                max-width: 280px; /* Slightly wider */
+                line-height: 1.6;
+                max-width: 280px;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
                 z-index: 101;
                 font-weight: 400;
@@ -397,7 +449,7 @@ export class SharkTreeComponent extends HTMLElement {
                 font-weight: 600;
                 color: #00688B;
                 display: block;
-                margin-bottom: 6px; /* Space below heading */
+                margin-bottom: 6px;
             }
             #info-tooltip ul {
                 list-style-type: none;
@@ -406,12 +458,12 @@ export class SharkTreeComponent extends HTMLElement {
             }
             #info-tooltip li {
                 position: relative;
-                padding-left: 16px; /* Space for bullet */
-                margin-bottom: 6px; /* Space between items */
+                padding-left: 16px;
+                margin-bottom: 6px;
             }
             #info-tooltip li:before {
-                content: "•"; /* Bullet point */
-                color: #00688B; /* Accent color */
+                content: "•";
+                color: #00688B;
                 position: absolute;
                 left: 4px;
                 font-size: 14px;
@@ -556,6 +608,40 @@ export class SharkTreeComponent extends HTMLElement {
                 this.sharkTree.highlightTagCategory(category, value || undefined);
             }
         });
+
+        const searchInput = this.shadow.querySelector("#shark-search");
+        const suggestions = this.shadow.querySelector("#search-suggestions");
+
+        searchInput.addEventListener("input", () => {
+            const query = searchInput.value.trim().toLowerCase();
+            this.updateSearchSuggestions(query, suggestions);
+        });
+
+        searchInput.addEventListener("keydown", (event) => {
+            if (event.key === "Enter") {
+                const query = searchInput.value.trim().toLowerCase();
+                const species = this.sharkTree?.getSharkSpeciesList();
+                const match = species?.find(
+                    s => s.commonName?.toLowerCase() === query || s.binomialName?.toLowerCase() === query
+                );
+                if (match) {
+                    this.selectShark(match);
+                    suggestions.innerHTML = "";
+                    suggestions.classList.remove("visible");
+                    searchInput.value = match.commonName || match.binomialName;
+                }
+            } else if (event.key === "Escape") {
+                suggestions.innerHTML = "";
+                suggestions.classList.remove("visible");
+            }
+        });
+
+        document.addEventListener("click", (event) => {
+            if (!searchInput.contains(event.target) && !suggestions.contains(event.target)) {
+                suggestions.innerHTML = "";
+                suggestions.classList.remove("visible");
+            }
+        });
     }
 
     removeEventListeners() {
@@ -584,6 +670,78 @@ export class SharkTreeComponent extends HTMLElement {
         const container = this.shadow.querySelector("#phylo-container");
         container.appendChild(sharkTreeSvg);
 
+    }
+
+    updateSearchSuggestions(query, suggestions) {
+        if (!this.sharkTree || !query) {
+            suggestions.innerHTML = "";
+            suggestions.classList.remove("visible");
+            return;
+        }
+    
+        const species = this.sharkTree.getSharkSpeciesList();
+        const matches = species
+            .filter(s => 
+                s.commonName?.toLowerCase().includes(query) || 
+                s.binomialName?.toLowerCase().includes(query)
+            )
+            .slice(0, 5);
+    
+        if (matches.length === 0) {
+            suggestions.innerHTML = "";
+            suggestions.classList.remove("visible");
+            return;
+        }
+    
+        suggestions.innerHTML = matches
+            .map(s => {
+                const name = s.commonName || s.binomialName;
+                const regex = new RegExp(`(${query})`, "gi");
+                const highlighted = name.replace(regex, "<mark>$1</mark>");
+                return `
+                    <div class="suggestion-item" data-binomial="${s.binomialName}">
+                        ${highlighted}
+                    </div>
+                `;
+            })
+            .join("");
+        suggestions.classList.add("visible");
+
+        // Add click handlers to suggestion items
+        suggestions.querySelectorAll(".suggestion-item").forEach(item => {
+            item.addEventListener("click", () => {
+                const binomial = item.dataset.binomial;
+                const selectedShark = species.find(s => s.binomialName === binomial);
+                if (selectedShark) {
+                    this.selectShark(selectedShark);
+                    const searchInput = this.shadow.querySelector("#shark-search");
+                    searchInput.value = selectedShark.commonName || selectedShark.binomialName;
+                    suggestions.innerHTML = "";
+                    suggestions.classList.remove("visible");
+                }
+            });
+        });
+    }
+
+    selectShark(shark) {
+        if (this.sharkScreen) {
+            const allSpecies = this.sharkTree.getSharkSpeciesList();
+            this.sharkScreen.innerHTML = shark.getFormattedString(allSpecies);
+            if (shark.imageUrl) {
+                const sharkImg = document.createElement("img");
+                sharkImg.src = shark.imageUrl;
+                sharkImg.alt = `${shark.name} illustration`;
+                sharkImg.onerror = () => {
+                    sharkImg.src = "path/to/fallback-image.png";
+                    sharkImg.alt = "Image not available";
+                };
+                this.sharkScreen.appendChild(sharkImg);
+            }
+        }
+        this.sharkTree.updateSelection(shark);
+        window.dispatchEvent(new CustomEvent("select-shark", { 
+            detail: { sharkSpecies: shark } 
+        }));
     }
 }
 
