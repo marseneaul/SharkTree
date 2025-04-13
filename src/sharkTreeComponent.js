@@ -259,25 +259,30 @@ export class SharkTreeComponent extends HTMLElement {
             #shark-screen-container {
                 position: relative;
                 width: 40%;
+                height: 100%; /* Ensure full height */
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
+                align-items: stretch; /* Prevent shrinking */
                 padding: 20px;
                 margin-right: 20px;
+                overflow: hidden; /* Prevent container overflow */
             }
             #shark-screen {
                 position: relative;
                 width: 100%;
-                max-height: 70%;
+                height: auto; /* Let content determine height */
+                min-height: 100%; /* Fill container if content is short */
+                max-height: none; /* Remove restrictive max-height */
                 padding: 20px;
                 background: #F9F9F9;
                 border: 1px solid #E0E0E0;
                 border-radius: 8px;
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-                overflow-y: auto;
+                overflow-y: auto; /* Scroll only if needed */
                 font-size: 14px;
                 line-height: 1.6;
                 color: #2F4F4F;
+                box-sizing: border-box; /* Include padding in height calculations */
             }
             #shark-screen h2 {
                 color: #00688B;
@@ -301,6 +306,8 @@ export class SharkTreeComponent extends HTMLElement {
             }
             #shark-screen img {
                 max-width: 100%;
+                max-height: 200px; /* Cap image height to prevent overflow */
+                object-fit: contain; /* Preserve aspect ratio */
                 border-radius: 5px;
                 margin-top: 10px;
             }
