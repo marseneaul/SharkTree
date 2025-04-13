@@ -212,11 +212,11 @@ export class SharkTreeComponent extends HTMLElement {
                     <div id="info-tooltip">
                         <strong>How to Use:</strong>
                         <ul>
-                            <li>Select a shark group from "Configuration" to view its phylogenetic tree.</li>
-                            <li>Use "Taxonomic Level" to highlight species by genus, family, etc.</li>
-                            <li>Filter by traits like conservation status with "Tag Category".</li>
-                            <li>Click a shark on the tree to see its details on the right.</li>
-                            <li>Scroll to rotate, pinch to zoom, double-click to reset, or drag to pan.</li>
+                            <li>Choose a shark group from "Configuration" to display its phylogenetic tree.</li>
+                            <li>Select a "Taxonomic Level" (e.g., genus or family) to color matching species’ nodes and paths.</li>
+                            <li>Pick a "Tag Category" (e.g., conservation status) to add dashed lines to paths of species with that trait.</li>
+                            <li>Click a shark’s node to view its details on the right panel.</li>
+                            <li>Scroll to rotate, pinch to zoom, double-click to reset, or drag to pan the tree.</li>
                         </ul>
                     </div>
                 </div>
