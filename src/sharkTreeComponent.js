@@ -217,6 +217,7 @@ export class SharkTreeComponent extends HTMLElement {
                     <div id="info-tooltip">
                         <strong>How to Use:</strong>
                         <ul>
+                            <li>Type a shark’s common or scientific name in "Search Shark" to find and highlight it.</li>
                             <li>Choose a shark group from "Configuration" to display its phylogenetic tree.</li>
                             <li>Select a "Taxonomic Level" (e.g., genus or family) to color matching species’ nodes and paths.</li>
                             <li>Pick a "Tag Category" (e.g., conservation status) to add dashed lines to paths of species with that trait.</li>
