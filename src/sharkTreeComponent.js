@@ -472,20 +472,70 @@ export class SharkTreeComponent extends HTMLElement {
 
         const tagDropdown = this.shadow.querySelector("#tag-dropdown");
         const tagValueDropdown = this.shadow.querySelector("#tag-value-dropdown");
+
+        const categoryOrders = {
+            conservationStatus: [
+                "Extinct (EX)",
+                "Extinct in the Wild (EW)",
+                "Critically Endangered (CR)",
+                "Endangered (EN)",
+                "Vulnerable (VU)",
+                "Near Threatened (NT)",
+                "Conservation Dependent (CD)",
+                "Least Concern (LC)",
+                "Data Deficient (DD)",
+                "Not Evaluated (NE)"
+            ],
+            numGills: [
+                "5 Gills",
+                "6 Gills",
+                "7 Gills"
+            ],
+            numDorsalFins: [
+                "1 Dorsal Fin",
+                "2 Dorsal Fins"
+            ],
+            dorsalFinSpines: [
+                "Both Dorsal Fin Spines",
+                "Only First Dorsal Fin Spine",
+                "No Dorsal Fin Spines"
+            ],
+            analFin: ["Yes Anal Fin", "No Anal Fin"],
+            nictitatingMembrane: ["Yes Nictitating Membrane", "No Nictitating Membrane"],
+            isBioluminescent: ["Is Bioluminescent", "Not Bioluminescent"],
+            hasSpiracles: ["Yes Spiracles", "No Spiracles"],
+            hasFlattenedBody: ["Yes Flattened Body", "No Flattened Body"],
+            mouthInFrontOfEyes: ["Mouth In Front of Eyes", "Mouth Not In Front of Eyes"]
+        };
     
         tagDropdown.addEventListener("change", (event) => {
             const category = event.target.value;
             if (category && this.sharkTree) {
                 const categoryData = this.sharkTree.tagCategories.get(category);
                 const values = new Set(categoryData?.species.flatMap(s => s.tags.filter(tag => this.sharkTree.getTagCategory(tag) === category)));
+                // Sort values based on category
+                const sortedValues = Array.from(values).sort((a, b) => {
+                    const order = categoryOrders[category];
+                    if (order) {
+                        // Use defined order if available
+                        const indexA = order.indexOf(a);
+                        const indexB = order.indexOf(b);
+                        // Handle cases where a value might not be in the order list
+                        if (indexA === -1 && indexB === -1) return a.localeCompare(b);
+                        if (indexA === -1) return 1;
+                        if (indexB === -1) return -1;
+                        return indexA - indexB;
+                    }
+                    // Default to alphabetical order
+                    return a.localeCompare(b);
+                });
                 tagValueDropdown.innerHTML = `
                     <option value="">All</option>
-                    ${Array.from(values).map(v => {
-                        // Transform display text for "Yes ..." or "No ..." tags
+                    ${sortedValues.map(v => {
                         let displayText = v;
-                        if (v.startsWith("Yes ")) {
+                        if (v.startsWith("Yes ") || v === "Is Bioluminescent" || v === "Mouth In Front of Eyes") {
                             displayText = "Yes";
-                        } else if (v.startsWith("No ")) {
+                        } else if (v.startsWith("No ") || v === "Not Bioluminescent" || v === "Mouth Not In Front of Eyes") {
                             displayText = "No";
                         }
                         return `<option value="${v}">${displayText}</option>`;
