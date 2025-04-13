@@ -1,3 +1,4 @@
+import { ANAL_FIN, BIOLUMINESCENT, CONSERVATION_STATUS, DORSAL_FIN_SPINES, FLATTENED_BODY, MOUTH_IN_FRONT_OF_EYES, NICTITATING_MEMBRANE, NUM_DORSAL_FINS, NUM_GILLS, SPIRACLES } from "./constants/enums";
 import {
     lamniformesConfig, heterodontiformesConfig, lamnidaeConfig, carcharhinidaeConfig,
     squatiniformesConfig, hexanchiformesConfig, pristiophoriformesConfig, orectolobiformesConfig,
@@ -475,37 +476,37 @@ export class SharkTreeComponent extends HTMLElement {
 
         const categoryOrders = {
             conservationStatus: [
-                "Extinct (EX)",
-                "Extinct in the Wild (EW)",
-                "Critically Endangered (CR)",
-                "Endangered (EN)",
-                "Vulnerable (VU)",
-                "Near Threatened (NT)",
-                "Conservation Dependent (CD)",
-                "Least Concern (LC)",
-                "Data Deficient (DD)",
-                "Not Evaluated (NE)"
+                CONSERVATION_STATUS.EX,
+                CONSERVATION_STATUS.EW,
+                CONSERVATION_STATUS.CR,
+                CONSERVATION_STATUS.EN,
+                CONSERVATION_STATUS.VU,
+                CONSERVATION_STATUS.NT,
+                CONSERVATION_STATUS.CD,
+                CONSERVATION_STATUS.LC,
+                CONSERVATION_STATUS.DD,
+                CONSERVATION_STATUS.NE,
             ],
             numGills: [
-                "5 Gills",
-                "6 Gills",
-                "7 Gills"
+                NUM_GILLS.FIVE,
+                NUM_GILLS.SIX,
+                NUM_GILLS.SEVEN
             ],
             numDorsalFins: [
-                "1 Dorsal Fin",
-                "2 Dorsal Fins"
+                NUM_DORSAL_FINS.ONE,
+                NUM_DORSAL_FINS.TWO
             ],
             dorsalFinSpines: [
-                "Both Dorsal Fin Spines",
-                "Only First Dorsal Fin Spine",
-                "No Dorsal Fin Spines"
+                DORSAL_FIN_SPINES.YES,
+                DORSAL_FIN_SPINES.ONLY_ON_FIRST,
+                DORSAL_FIN_SPINES.NO
             ],
-            analFin: ["Yes Anal Fin", "No Anal Fin"],
-            nictitatingMembrane: ["Yes Nictitating Membrane", "No Nictitating Membrane"],
-            isBioluminescent: ["Is Bioluminescent", "Not Bioluminescent"],
-            hasSpiracles: ["Yes Spiracles", "No Spiracles"],
-            hasFlattenedBody: ["Yes Flattened Body", "No Flattened Body"],
-            mouthInFrontOfEyes: ["Mouth In Front of Eyes", "Mouth Not In Front of Eyes"]
+            analFin: [ANAL_FIN.YES, ANAL_FIN.NO],
+            nictitatingMembrane: [NICTITATING_MEMBRANE.YES, NICTITATING_MEMBRANE.NO],
+            isBioluminescent: [BIOLUMINESCENT.YES, BIOLUMINESCENT.NO],
+            hasSpiracles: [SPIRACLES.YES, SPIRACLES.NO],
+            hasFlattenedBody: [FLATTENED_BODY.YES, FLATTENED_BODY.NO],
+            mouthInFrontOfEyes: [MOUTH_IN_FRONT_OF_EYES.YES, MOUTH_IN_FRONT_OF_EYES.NO]
         };
     
         tagDropdown.addEventListener("change", (event) => {
@@ -533,9 +534,9 @@ export class SharkTreeComponent extends HTMLElement {
                     <option value="">All</option>
                     ${sortedValues.map(v => {
                         let displayText = v;
-                        if (v.startsWith("Yes ") || v === "Is Bioluminescent" || v === "Mouth In Front of Eyes") {
+                        if (v.startsWith("Yes ") || v === BIOLUMINESCENT.YES || v === MOUTH_IN_FRONT_OF_EYES.YES) {
                             displayText = "Yes";
-                        } else if (v.startsWith("No ") || v === "Not Bioluminescent" || v === "Mouth Not In Front of Eyes") {
+                        } else if (v.startsWith("No ") || v === BIOLUMINESCENT.NO|| v === MOUTH_IN_FRONT_OF_EYES.NO) {
                             displayText = "No";
                         }
                         return `<option value="${v}">${displayText}</option>`;
