@@ -249,6 +249,7 @@ export class SharkSpecies {
         : "";
         
         return `
+            <br></br>
             <h2>${this.commonName}</h2>
             <div class="section">
                 <strong>Binomial Name:</strong> ${this.binomialName}

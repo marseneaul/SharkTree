@@ -1,3 +1,4 @@
+import { ANAL_FIN, BEHAVIOR, BIOLUMINESCENT, CONSERVATION_STATUS, DORSAL_FIN_SPINES, FLATTENED_BODY, MOUTH_IN_FRONT_OF_EYES, NICTITATING_MEMBRANE, NUM_DORSAL_FINS, NUM_GILLS, SPIRACLES } from "./constants/enums";
 import {
     lamniformesConfig, heterodontiformesConfig, lamnidaeConfig, carcharhinidaeConfig,
     squatiniformesConfig, hexanchiformesConfig, pristiophoriformesConfig, orectolobiformesConfig,
@@ -40,7 +41,6 @@ export class SharkTreeComponent extends HTMLElement {
         this.template = document.createElement("template");
         this.shadow = this.attachShadow({mode: "open"});
         this.sharkTree = null;
-
         this.sharkScreen = null;
     }
 
@@ -48,15 +48,21 @@ export class SharkTreeComponent extends HTMLElement {
     |                LIFECYCLE                |
     |----------------------------------------*/
 
-    disconnectedCallback() {
-        this.removeEventListeners();
-    }
-
     connectedCallback() {
         this.render();
         this.initializeSharkTree();
         this.setupDropdown();
         this.setupEventListeners();
+        this.setupResizeObserver();
+    }
+
+    disconnectedCallback() {
+        this.removeEventListeners();
+        if (this.resizeObserver) {
+            this.resizeObserver.disconnect();
+            this.resizeObserver = null;
+        }
+        this.sharkTree?.destroy();
     }
 
     render() {
@@ -65,14 +71,22 @@ export class SharkTreeComponent extends HTMLElement {
     }
 
     initializeSharkTree(configKey = "selachii") {
-        this.sharkTree = new SharkTree(sharkConfigs[configKey]);
+        if (!sharkConfigs[configKey]) {
+            console.error(`Configuration for ${configKey} not found`);
+            return;
+        }
+        const container = this.shadow.querySelector("#phylo-container");
+        const containerWidth = container ? container.offsetWidth : window.innerWidth * 0.6;
+        this.sharkTree = new SharkTree(sharkConfigs[configKey], containerWidth);
         const sharkTreeSvg = this.sharkTree.draw();
         this.sharkScreen = this.shadow.querySelector("#shark-screen");
-    
-        const container = this.shadow.querySelector("#phylo-container");
         container.innerHTML = "";
         container.appendChild(sharkTreeSvg);
-    
+        this.lastContainerWidth = containerWidth; // Store initial width
+        this.resetDropdowns();
+    }
+
+    resetDropdowns() {
         const taxonomicDropdown = this.shadow.querySelector("#taxonomic-dropdown");
         const taxonomicValueDropdown = this.shadow.querySelector("#taxonomic-value-dropdown");
         const tagDropdown = this.shadow.querySelector("#tag-dropdown");
@@ -99,6 +113,38 @@ export class SharkTreeComponent extends HTMLElement {
         } else {
             taxonomicValueDropdown.innerHTML = "<option value=''>All</option>";
         }
+    }
+
+    setupResizeObserver() {
+        const container = this.shadow.querySelector("#phylo-container");
+        if (!container) return;
+
+        // Debounce resize handler
+        const debounce = (fn, delay) => {
+            let timeout = null;
+            return (...args) => {
+                if (timeout) clearTimeout(timeout);
+                timeout = setTimeout(() => fn(...args), delay);
+            };
+        };
+
+        const handleResize = debounce(() => {
+            const currentWidth = container.offsetWidth;
+            // Only reinitialize if width changed significantly
+            if (this.lastContainerWidth === null || Math.abs(currentWidth - this.lastContainerWidth) > 5) {
+                this.reinitializeSharkTree();
+                this.lastContainerWidth = currentWidth;
+            }
+        }, 200);
+
+        this.resizeObserver = new ResizeObserver(handleResize);
+        this.resizeObserver.observe(container);
+    }
+
+    reinitializeSharkTree() {
+        const configDropdown = this.shadow.querySelector("#shark-config-dropdown");
+        const selectedConfig = configDropdown?.value || "selachii";
+        this.initializeSharkTree(selectedConfig);
     }
 
     /*----------------------------------------|
@@ -166,11 +212,11 @@ export class SharkTreeComponent extends HTMLElement {
                     <div id="info-tooltip">
                         <strong>How to Use:</strong>
                         <ul>
-                            <li>Select a shark group from "Configuration" to view its phylogenetic tree.</li>
-                            <li>Use "Taxonomic Level" to highlight species by genus, family, etc.</li>
-                            <li>Filter by traits like conservation status with "Tag Category".</li>
-                            <li>Click a shark on the tree to see its details on the right.</li>
-                            <li>Scroll to rotate, pinch to zoom, double-click to reset, or drag to pan.</li>
+                            <li>Choose a shark group from "Configuration" to display its phylogenetic tree.</li>
+                            <li>Select a "Taxonomic Level" (e.g., genus or family) to color matching species’ nodes and paths.</li>
+                            <li>Pick a "Tag Category" (e.g., conservation status) to add dashed lines to paths of species with that trait.</li>
+                            <li>Click a shark’s node to view its details on the right panel.</li>
+                            <li>Scroll to rotate, pinch to zoom, double-click to reset, or drag to pan the tree.</li>
                         </ul>
                     </div>
                 </div>
@@ -184,6 +230,11 @@ export class SharkTreeComponent extends HTMLElement {
     
     css() {
         return `
+            :host {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
             #app-container {
                 position: relative;
                 width: 100%;
@@ -204,29 +255,35 @@ export class SharkTreeComponent extends HTMLElement {
                 border-radius: 10px;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
                 margin: 10px;
+                overflow: hidden;
             }
             #shark-screen-container {
                 position: relative;
                 width: 40%;
+                height: 100%; /* Ensure full height */
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
+                align-items: stretch; /* Prevent shrinking */
                 padding: 20px;
                 margin-right: 20px;
+                overflow: hidden; /* Prevent container overflow */
             }
             #shark-screen {
                 position: relative;
                 width: 100%;
-                max-height: 70%;
+                height: auto; /* Let content determine height */
+                min-height: 100%; /* Fill container if content is short */
+                max-height: none; /* Remove restrictive max-height */
                 padding: 20px;
                 background: #F9F9F9;
                 border: 1px solid #E0E0E0;
                 border-radius: 8px;
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-                overflow-y: auto;
+                overflow-y: auto; /* Scroll only if needed */
                 font-size: 14px;
                 line-height: 1.6;
                 color: #2F4F4F;
+                box-sizing: border-box; /* Include padding in height calculations */
             }
             #shark-screen h2 {
                 color: #00688B;
@@ -250,6 +307,8 @@ export class SharkTreeComponent extends HTMLElement {
             }
             #shark-screen img {
                 max-width: 100%;
+                max-height: 200px; /* Cap image height to prevent overflow */
+                object-fit: contain; /* Preserve aspect ratio */
                 border-radius: 5px;
                 margin-top: 10px;
             }
@@ -414,19 +473,78 @@ export class SharkTreeComponent extends HTMLElement {
 
         const tagDropdown = this.shadow.querySelector("#tag-dropdown");
         const tagValueDropdown = this.shadow.querySelector("#tag-value-dropdown");
+
+        const categoryOrders = {
+            conservationStatus: [
+                CONSERVATION_STATUS.EX,
+                CONSERVATION_STATUS.EW,
+                CONSERVATION_STATUS.CR,
+                CONSERVATION_STATUS.EN,
+                CONSERVATION_STATUS.VU,
+                CONSERVATION_STATUS.NT,
+                CONSERVATION_STATUS.CD,
+                CONSERVATION_STATUS.LC,
+                CONSERVATION_STATUS.DD,
+                CONSERVATION_STATUS.NE,
+            ],
+            numGills: [
+                NUM_GILLS.FIVE,
+                NUM_GILLS.SIX,
+                NUM_GILLS.SEVEN
+            ],
+            numDorsalFins: [
+                NUM_DORSAL_FINS.ONE,
+                NUM_DORSAL_FINS.TWO
+            ],
+            dorsalFinSpines: [
+                DORSAL_FIN_SPINES.YES,
+                DORSAL_FIN_SPINES.ONLY_ON_FIRST,
+                DORSAL_FIN_SPINES.NO
+            ],
+            analFin: [ANAL_FIN.YES, ANAL_FIN.NO],
+            nictitatingMembrane: [NICTITATING_MEMBRANE.YES, NICTITATING_MEMBRANE.NO],
+            isBioluminescent: [BIOLUMINESCENT.YES, BIOLUMINESCENT.NO],
+            hasSpiracles: [SPIRACLES.YES, SPIRACLES.NO],
+            hasFlattenedBody: [FLATTENED_BODY.YES, FLATTENED_BODY.NO],
+            mouthInFrontOfEyes: [MOUTH_IN_FRONT_OF_EYES.YES, MOUTH_IN_FRONT_OF_EYES.NO]
+        };
     
         tagDropdown.addEventListener("change", (event) => {
             const category = event.target.value;
             if (category && this.sharkTree) {
                 const categoryData = this.sharkTree.tagCategories.get(category);
                 const values = new Set(categoryData?.species.flatMap(s => s.tags.filter(tag => this.sharkTree.getTagCategory(tag) === category)));
+                // Sort values based on category
+                const sortedValues = Array.from(values).sort((a, b) => {
+                    const order = categoryOrders[category];
+                    if (order) {
+                        // Use defined order if available
+                        const indexA = order.indexOf(a);
+                        const indexB = order.indexOf(b);
+                        // Handle cases where a value might not be in the order list
+                        if (indexA === -1 && indexB === -1) return a.localeCompare(b);
+                        if (indexA === -1) return 1;
+                        if (indexB === -1) return -1;
+                        return indexA - indexB;
+                    }
+                    // Default to alphabetical order
+                    return a.localeCompare(b);
+                });
                 tagValueDropdown.innerHTML = `
                     <option value="">All</option>
-                    ${Array.from(values).map(v => `<option value="${v}">${v}</option>`).join("")}
+                    ${sortedValues.map(v => {
+                        let displayText = v;
+                        if (v.startsWith("Yes ") || v === BIOLUMINESCENT.YES || v === MOUTH_IN_FRONT_OF_EYES.YES) {
+                            displayText = "Yes";
+                        } else if ((v.startsWith("No ") && v !== BEHAVIOR.NONE) || v === BIOLUMINESCENT.NO|| v === MOUTH_IN_FRONT_OF_EYES.NO) {
+                            displayText = "No";
+                        }
+                        return `<option value="${v}">${displayText}</option>`;
+                    }).join("")}
                 `;
                 this.sharkTree.highlightTagCategory(category);
             } else {
-                tagValueDropdown.innerHTML = '<option value="">All</option>';
+                tagValueDropdown.innerHTML = "<option value=''>All</option>";
                 this.sharkTree?.clearAllHighlights();
             }
         });

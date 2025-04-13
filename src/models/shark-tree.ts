@@ -1,7 +1,7 @@
 import { SVG_NAMESPACE } from "../constants/strings";
 import { SharkTreeNodeConfig } from "../interfaces/shark-config";
 import { SharkSpecies } from "./shark-species";
-import { SVG_SIZE } from "../constants/constants";
+import { DEFAULT_SVG_SIZE } from "../constants/constants";
 import { SharkTreeNode } from "./shark-tree-node";
 import { Svg } from "../drawing/svg";
 import { Utils } from "../utils/utils";
@@ -15,6 +15,7 @@ export class SharkTree {
     centerX: number
     centerY: number
     radius: number
+    svgSize: number
     levelHeight: number
     maxDepth: number
 
@@ -31,13 +32,14 @@ export class SharkTree {
     tagCategories: Map<string, { species: SharkSpecies[] }>;
 
 
-    constructor(sharkTreeConfig: SharkTreeNodeConfig) {
+    constructor(sharkTreeConfig: SharkTreeNodeConfig, containerWidth: number) {
         this.config = sharkTreeConfig;
         this.root = new SharkTreeNode(this.config, null);
 
-        this.centerX = SVG_SIZE / 2;
-        this.centerY = SVG_SIZE / 2;
-        this.radius = SVG_SIZE / 3;
+        this.svgSize = containerWidth > 0 ? Math.min(containerWidth, window.innerHeight) : DEFAULT_SVG_SIZE;
+        this.centerX = this.svgSize / 2;
+        this.centerY = this.svgSize / 2;
+        this.radius = this.svgSize / 3;
         this.maxDepth = this.getMaxDepth();
         this.levelHeight = this.radius / this.maxDepth;
 
@@ -126,34 +128,17 @@ export class SharkTree {
 
     draw(): SVGElement {
         const svg = document.createElementNS(SVG_NAMESPACE, "svg");
-        svg.setAttribute("width", SVG_SIZE.toString());
-        svg.setAttribute("height", SVG_SIZE.toString());
-        svg.setAttribute("viewBox", `0 0 ${SVG_SIZE} ${SVG_SIZE}`);
+        svg.setAttribute("width", this.svgSize.toString());
+        svg.setAttribute("height", this.svgSize.toString());
+        svg.setAttribute("viewBox", `0 0 ${this.svgSize} ${this.svgSize}`);
     
-        // Add gradient background
-        const defs = document.createElementNS(SVG_NAMESPACE, "defs");
-        const gradient = document.createElementNS(SVG_NAMESPACE, "radialGradient");
-        gradient.setAttribute("id", "bgGradient");
-        gradient.setAttribute("cx", "50%");
-        gradient.setAttribute("cy", "50%");
-        gradient.setAttribute("r", "50%");
-        const stop1 = document.createElementNS(SVG_NAMESPACE, "stop");
-        stop1.setAttribute("offset", "0%");
-        stop1.setAttribute("stop-color", LIGHT_GRAY);
-        const stop2 = document.createElementNS(SVG_NAMESPACE, "stop");
-        stop2.setAttribute("offset", "100%");
-        stop2.setAttribute("stop-color", WHITE);
-        gradient.appendChild(stop1);
-        gradient.appendChild(stop2);
-        defs.appendChild(gradient);
-        svg.appendChild(defs);
-    
+        // Add solid background
         const bg = document.createElementNS(SVG_NAMESPACE, "rect");
         bg.setAttribute("x", "0");
         bg.setAttribute("y", "0");
-        bg.setAttribute("width", SVG_SIZE.toString());
-        bg.setAttribute("height", SVG_SIZE.toString());
-        bg.setAttribute("fill", "url(#bgGradient)");
+        bg.setAttribute("width", this.svgSize.toString());
+        bg.setAttribute("height", this.svgSize.toString());
+        bg.setAttribute("fill", "rgba(245, 245, 245, 0.5)"); // Subtle grey, slightly opaque
         svg.appendChild(bg);
     
         const g = document.createElementNS(SVG_NAMESPACE, "g");
@@ -181,15 +166,15 @@ export class SharkTree {
         outerCircle.setAttribute("stroke-width", "2");
         outerCircle.setAttribute("fill", "none");
         g.appendChild(outerCircle);
-    
+
         const numSpecies = sharkSpecies.length;
         const spacing = (2 * Math.PI) / numSpecies;
-    
+
         const dot = Svg.drawCircle(centerX, centerY, 5, BLACK);
         dot.setAttribute("stroke", BLACK);
         dot.setAttribute("stroke-width", "1");
         g.appendChild(dot);
-    
+
         sharkSpecies.forEach((shark, index) => {
             this.drawSharkOnRim(g, svg, shark, index, spacing);
         });
@@ -211,7 +196,7 @@ export class SharkTree {
     }
 
     addInteractionListeners(svg: SVGElement, g: SVGGElement, sharkSpecies: SharkSpecies[]): void {
-        let viewBox = { x: 0, y: 0, width: SVG_SIZE, height: SVG_SIZE };
+        let viewBox = { x: 0, y: 0, width: this.svgSize, height: this.svgSize };
         let isDragging = false;
         let startX: number, startY: number;
         let rotation = 0;
@@ -259,7 +244,7 @@ export class SharkTree {
 
         svg.addEventListener("dblclick", () => {
             // Reset viewBox to initial state
-            viewBox = { x: 0, y: 0, width: SVG_SIZE, height: SVG_SIZE };
+            viewBox = { x: 0, y: 0, width: this.svgSize, height: this.svgSize };
             this.updateViewBox(svg, viewBox);
     
             // Reapply any active highlights if needed
@@ -281,8 +266,8 @@ export class SharkTree {
                 const scale = event.deltaY > 0 ? 1.1 : 0.9;
                 viewBox.width *= scale;
                 viewBox.height *= scale;
-                viewBox.x += (mouseX * (1 - scale)) / (SVG_SIZE / viewBox.width);
-                viewBox.y += (mouseY * (1 - scale)) / (SVG_SIZE / viewBox.height);
+                viewBox.x += (mouseX * (1 - scale)) / (this.svgSize / viewBox.width);
+                viewBox.y += (mouseY * (1 - scale)) / (this.svgSize / viewBox.height);
                 this.updateViewBox(svg, viewBox);
             } else {
                 const delta = -event.deltaY;
@@ -295,14 +280,19 @@ export class SharkTree {
                 if (sharkIndex < 0) sharkIndex = numSpecies + sharkIndex;
                 if (sharkIndex !== this.currentSharkIndex) {
                     const previousShark = sharkSpecies[this.currentSharkIndex];
-                    previousShark?.getNode()?.setAttribute("fill", BLACK);
-                    previousShark?.getNode()?.classList.remove("pulse");
+                    const previousNode = previousShark?.getNode();
+                    if (previousNode) {
+                        // Use taxonomic color if active, otherwise default to BLACK
+                        const taxonomicColor = this.getTaxonomicColor(previousShark);
+                        previousNode.setAttribute("fill", taxonomicColor || BLACK);
+                        previousNode.classList.remove("pulse");
+                    }
                     this.reapplyHighlights(previousShark);
         
                     this.currentSharkIndex = sharkIndex;
                     const currentShark = sharkSpecies[sharkIndex];
                     const node = currentShark.getNode();
-                    node.setAttribute("fill", RED);
+                    node.setAttribute("fill", RED); // Selected shark remains RED
                     node.classList.add("pulse");
                     this.highlightPathToShark(currentShark.binomialName, 2, BLACK);
         
@@ -327,8 +317,8 @@ export class SharkTree {
         });
         svg.addEventListener("mousemove", (event: MouseEvent) => {
             if (!isDragging) return;
-            const dx = (event.clientX - startX) * (viewBox.width / SVG_SIZE);
-            const dy = (event.clientY - startY) * (viewBox.height / SVG_SIZE);
+            const dx = (event.clientX - startX) * (viewBox.width / this.svgSize);
+            const dy = (event.clientY - startY) * (viewBox.height / this.svgSize);
             viewBox.x -= dx;
             viewBox.y -= dy;
             startX = event.clientX;
@@ -355,11 +345,11 @@ export class SharkTree {
     
                 viewBox.width *= scale;
                 viewBox.height *= scale;
-                viewBox.x += (initialCenter.x * (1 - scale)) / (SVG_SIZE / viewBox.width);
-                viewBox.y += (initialCenter.y * (1 - scale)) / (SVG_SIZE / viewBox.height);
+                viewBox.x += (initialCenter.x * (1 - scale)) / (this.svgSize / viewBox.width);
+                viewBox.y += (initialCenter.y * (1 - scale)) / (this.svgSize / viewBox.height);
     
-                const dx = (newCenter.x - initialCenter.x) * (viewBox.width / SVG_SIZE);
-                const dy = (newCenter.y - initialCenter.y) * (viewBox.height / SVG_SIZE);
+                const dx = (newCenter.x - initialCenter.x) * (viewBox.width / this.svgSize);
+                const dy = (newCenter.y - initialCenter.y) * (viewBox.height / this.svgSize);
                 viewBox.x -= dx;
                 viewBox.y -= dy;
     
@@ -479,7 +469,8 @@ export class SharkTree {
                 node.setAttribute("fill", RED);
                 node.classList.add("pulse");
             } else {
-                node.setAttribute("fill", BLACK);
+                const taxonomicColor = this.getTaxonomicColor(shark);
+                node.setAttribute("fill", taxonomicColor || BLACK);
                 node.classList.remove("pulse");
             }
         });
@@ -649,16 +640,29 @@ export class SharkTree {
             ? categoryData.species.filter(s => s.tags.includes(value))
             : categoryData.species.filter(s => s.tags.some(tag => this.getTagCategory(tag) === category));
     
-        // Reset all paths first
-        this.getSharkSpeciesList().forEach(shark => this.clearHighlightPath(shark));
-        
-        // Highlight nodes for tagged species
+        // Reset paths but preserve node colors
+        this.getSharkSpeciesList().forEach(shark => this.clearHighlightPath(shark, true));
+    
+        // Highlight paths for tagged species
         speciesToHighlight.forEach(shark => {
             const taxonomicColor = this.getTaxonomicColor(shark) || BLACK;
-            shark.highlightNode(taxonomicColor);
+            shark.highlightParentPath(3, taxonomicColor, "5,5"); // Apply dashed line for tag
         });
+    
+        // Reapply taxonomic colors to all nodes
+        if (this.activeTaxonomicLevel) {
+            const levelData = this.taxonomicLevels.get(this.activeTaxonomicLevel);
+            if (levelData) {
+                const speciesToColor = this.activeTaxonomicValue
+                    ? levelData.species.filter(s => s[this.activeTaxonomicLevel] === this.activeTaxonomicValue)
+                    : levelData.species;
+                this.getSharkSpeciesList().forEach(shark => {
+                    const color = speciesToColor.includes(shark) ? levelData.color : BLACK;
+                    shark.highlightNode(color);
+                });
+            }
+        }
     }
-
     getTaxonomicColor(shark: SharkSpecies): string | null {
         if (this.activeTaxonomicLevel) {
             const levelData = this.taxonomicLevels.get(this.activeTaxonomicLevel);
@@ -686,9 +690,11 @@ export class SharkTree {
         }
     }
 
-    clearHighlightPath(shark: SharkSpecies): void {
+    clearHighlightPath(shark: SharkSpecies, preserveNodeColor: boolean = false): void {
         const node = shark.getNode();
-        if (node) node.setAttribute("fill", BLACK);
+        if (node && !preserveNodeColor) {
+            node.setAttribute("fill", BLACK);
+        }
     
         const getPathStyle = (segments: (SVGLineElement | SVGPathElement)[], sharksToCheck: SharkSpecies[]) => {
             let strokeColor = BLACK;
