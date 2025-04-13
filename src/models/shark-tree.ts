@@ -1,7 +1,7 @@
 import { SVG_NAMESPACE } from "../constants/strings";
 import { SharkTreeNodeConfig } from "../interfaces/shark-config";
 import { SharkSpecies } from "./shark-species";
-import { SVG_SIZE } from "../constants/constants";
+import { DEFAULT_SVG_SIZE } from "../constants/constants";
 import { SharkTreeNode } from "./shark-tree-node";
 import { Svg } from "../drawing/svg";
 import { Utils } from "../utils/utils";
@@ -15,6 +15,7 @@ export class SharkTree {
     centerX: number
     centerY: number
     radius: number
+    svgSize: number
     levelHeight: number
     maxDepth: number
 
@@ -31,13 +32,14 @@ export class SharkTree {
     tagCategories: Map<string, { species: SharkSpecies[] }>;
 
 
-    constructor(sharkTreeConfig: SharkTreeNodeConfig) {
+    constructor(sharkTreeConfig: SharkTreeNodeConfig, containerWidth: number) {
         this.config = sharkTreeConfig;
         this.root = new SharkTreeNode(this.config, null);
 
-        this.centerX = SVG_SIZE / 2;
-        this.centerY = SVG_SIZE / 2;
-        this.radius = SVG_SIZE / 3;
+        this.svgSize = containerWidth > 0 ? Math.min(containerWidth, window.innerHeight) : DEFAULT_SVG_SIZE;
+        this.centerX = this.svgSize / 2;
+        this.centerY = this.svgSize / 2;
+        this.radius = this.svgSize / 3;
         this.maxDepth = this.getMaxDepth();
         this.levelHeight = this.radius / this.maxDepth;
 
@@ -126,9 +128,9 @@ export class SharkTree {
 
     draw(): SVGElement {
         const svg = document.createElementNS(SVG_NAMESPACE, "svg");
-        svg.setAttribute("width", SVG_SIZE.toString());
-        svg.setAttribute("height", SVG_SIZE.toString());
-        svg.setAttribute("viewBox", `0 0 ${SVG_SIZE} ${SVG_SIZE}`);
+        svg.setAttribute("width", this.svgSize.toString());
+        svg.setAttribute("height", this.svgSize.toString());
+        svg.setAttribute("viewBox", `0 0 ${this.svgSize} ${this.svgSize}`);
     
         // Add gradient background
         const defs = document.createElementNS(SVG_NAMESPACE, "defs");
@@ -151,8 +153,8 @@ export class SharkTree {
         const bg = document.createElementNS(SVG_NAMESPACE, "rect");
         bg.setAttribute("x", "0");
         bg.setAttribute("y", "0");
-        bg.setAttribute("width", SVG_SIZE.toString());
-        bg.setAttribute("height", SVG_SIZE.toString());
+        bg.setAttribute("width", this.svgSize.toString());
+        bg.setAttribute("height", this.svgSize.toString());
         bg.setAttribute("fill", "url(#bgGradient)");
         svg.appendChild(bg);
     
@@ -181,15 +183,15 @@ export class SharkTree {
         outerCircle.setAttribute("stroke-width", "2");
         outerCircle.setAttribute("fill", "none");
         g.appendChild(outerCircle);
-    
+
         const numSpecies = sharkSpecies.length;
         const spacing = (2 * Math.PI) / numSpecies;
-    
+
         const dot = Svg.drawCircle(centerX, centerY, 5, BLACK);
         dot.setAttribute("stroke", BLACK);
         dot.setAttribute("stroke-width", "1");
         g.appendChild(dot);
-    
+
         sharkSpecies.forEach((shark, index) => {
             this.drawSharkOnRim(g, svg, shark, index, spacing);
         });
@@ -211,7 +213,7 @@ export class SharkTree {
     }
 
     addInteractionListeners(svg: SVGElement, g: SVGGElement, sharkSpecies: SharkSpecies[]): void {
-        let viewBox = { x: 0, y: 0, width: SVG_SIZE, height: SVG_SIZE };
+        let viewBox = { x: 0, y: 0, width: this.svgSize, height: this.svgSize };
         let isDragging = false;
         let startX: number, startY: number;
         let rotation = 0;
@@ -259,7 +261,7 @@ export class SharkTree {
 
         svg.addEventListener("dblclick", () => {
             // Reset viewBox to initial state
-            viewBox = { x: 0, y: 0, width: SVG_SIZE, height: SVG_SIZE };
+            viewBox = { x: 0, y: 0, width: this.svgSize, height: this.svgSize };
             this.updateViewBox(svg, viewBox);
     
             // Reapply any active highlights if needed
@@ -281,8 +283,8 @@ export class SharkTree {
                 const scale = event.deltaY > 0 ? 1.1 : 0.9;
                 viewBox.width *= scale;
                 viewBox.height *= scale;
-                viewBox.x += (mouseX * (1 - scale)) / (SVG_SIZE / viewBox.width);
-                viewBox.y += (mouseY * (1 - scale)) / (SVG_SIZE / viewBox.height);
+                viewBox.x += (mouseX * (1 - scale)) / (this.svgSize / viewBox.width);
+                viewBox.y += (mouseY * (1 - scale)) / (this.svgSize / viewBox.height);
                 this.updateViewBox(svg, viewBox);
             } else {
                 const delta = -event.deltaY;
@@ -327,8 +329,8 @@ export class SharkTree {
         });
         svg.addEventListener("mousemove", (event: MouseEvent) => {
             if (!isDragging) return;
-            const dx = (event.clientX - startX) * (viewBox.width / SVG_SIZE);
-            const dy = (event.clientY - startY) * (viewBox.height / SVG_SIZE);
+            const dx = (event.clientX - startX) * (viewBox.width / this.svgSize);
+            const dy = (event.clientY - startY) * (viewBox.height / this.svgSize);
             viewBox.x -= dx;
             viewBox.y -= dy;
             startX = event.clientX;
@@ -355,11 +357,11 @@ export class SharkTree {
     
                 viewBox.width *= scale;
                 viewBox.height *= scale;
-                viewBox.x += (initialCenter.x * (1 - scale)) / (SVG_SIZE / viewBox.width);
-                viewBox.y += (initialCenter.y * (1 - scale)) / (SVG_SIZE / viewBox.height);
+                viewBox.x += (initialCenter.x * (1 - scale)) / (this.svgSize / viewBox.width);
+                viewBox.y += (initialCenter.y * (1 - scale)) / (this.svgSize / viewBox.height);
     
-                const dx = (newCenter.x - initialCenter.x) * (viewBox.width / SVG_SIZE);
-                const dy = (newCenter.y - initialCenter.y) * (viewBox.height / SVG_SIZE);
+                const dx = (newCenter.x - initialCenter.x) * (viewBox.width / this.svgSize);
+                const dy = (newCenter.y - initialCenter.y) * (viewBox.height / this.svgSize);
                 viewBox.x -= dx;
                 viewBox.y -= dy;
     

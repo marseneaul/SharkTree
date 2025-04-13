@@ -40,7 +40,6 @@ export class SharkTreeComponent extends HTMLElement {
         this.template = document.createElement("template");
         this.shadow = this.attachShadow({mode: "open"});
         this.sharkTree = null;
-
         this.sharkScreen = null;
     }
 
@@ -48,15 +47,21 @@ export class SharkTreeComponent extends HTMLElement {
     |                LIFECYCLE                |
     |----------------------------------------*/
 
-    disconnectedCallback() {
-        this.removeEventListeners();
-    }
-
     connectedCallback() {
         this.render();
         this.initializeSharkTree();
         this.setupDropdown();
         this.setupEventListeners();
+        this.setupResizeObserver();
+    }
+
+    disconnectedCallback() {
+        this.removeEventListeners();
+        if (this.resizeObserver) {
+            this.resizeObserver.disconnect();
+            this.resizeObserver = null;
+        }
+        this.sharkTree?.destroy();
     }
 
     render() {
@@ -65,14 +70,22 @@ export class SharkTreeComponent extends HTMLElement {
     }
 
     initializeSharkTree(configKey = "selachii") {
-        this.sharkTree = new SharkTree(sharkConfigs[configKey]);
+        if (!sharkConfigs[configKey]) {
+            console.error(`Configuration for ${configKey} not found`);
+            return;
+        }
+        const container = this.shadow.querySelector("#phylo-container");
+        const containerWidth = container ? container.offsetWidth : window.innerWidth * 0.6;
+        this.sharkTree = new SharkTree(sharkConfigs[configKey], containerWidth);
         const sharkTreeSvg = this.sharkTree.draw();
         this.sharkScreen = this.shadow.querySelector("#shark-screen");
-    
-        const container = this.shadow.querySelector("#phylo-container");
         container.innerHTML = "";
         container.appendChild(sharkTreeSvg);
-    
+        this.lastContainerWidth = containerWidth; // Store initial width
+        this.resetDropdowns();
+    }
+
+    resetDropdowns() {
         const taxonomicDropdown = this.shadow.querySelector("#taxonomic-dropdown");
         const taxonomicValueDropdown = this.shadow.querySelector("#taxonomic-value-dropdown");
         const tagDropdown = this.shadow.querySelector("#tag-dropdown");
@@ -99,6 +112,38 @@ export class SharkTreeComponent extends HTMLElement {
         } else {
             taxonomicValueDropdown.innerHTML = "<option value=''>All</option>";
         }
+    }
+
+    setupResizeObserver() {
+        const container = this.shadow.querySelector("#phylo-container");
+        if (!container) return;
+
+        // Debounce resize handler
+        const debounce = (fn, delay) => {
+            let timeout = null;
+            return (...args) => {
+                if (timeout) clearTimeout(timeout);
+                timeout = setTimeout(() => fn(...args), delay);
+            };
+        };
+
+        const handleResize = debounce(() => {
+            const currentWidth = container.offsetWidth;
+            // Only reinitialize if width changed significantly
+            if (this.lastContainerWidth === null || Math.abs(currentWidth - this.lastContainerWidth) > 5) {
+                this.reinitializeSharkTree();
+                this.lastContainerWidth = currentWidth;
+            }
+        }, 200);
+
+        this.resizeObserver = new ResizeObserver(handleResize);
+        this.resizeObserver.observe(container);
+    }
+
+    reinitializeSharkTree() {
+        const configDropdown = this.shadow.querySelector("#shark-config-dropdown");
+        const selectedConfig = configDropdown?.value || "selachii";
+        this.initializeSharkTree(selectedConfig);
     }
 
     /*----------------------------------------|
@@ -184,6 +229,11 @@ export class SharkTreeComponent extends HTMLElement {
     
     css() {
         return `
+            :host {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
             #app-container {
                 position: relative;
                 width: 100%;
@@ -204,6 +254,7 @@ export class SharkTreeComponent extends HTMLElement {
                 border-radius: 10px;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
                 margin: 10px;
+                overflow: hidden;
             }
             #shark-screen-container {
                 position: relative;
