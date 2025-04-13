@@ -10764,8 +10764,8 @@ exports.TAXONOMIC_COLORS = (_a = {},
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.ANGLE_PER_LEVEL = exports.START_ANGLE = exports.SVG_SIZE = void 0;
-exports.SVG_SIZE = 1000; // Size of the SVG canvas
+exports.ANGLE_PER_LEVEL = exports.START_ANGLE = exports.DEFAULT_SVG_SIZE = void 0;
+exports.DEFAULT_SVG_SIZE = 800; // Size of the SVG canvas
 exports.START_ANGLE = -Math.PI / 2; // Starting angle for the root node
 exports.ANGLE_PER_LEVEL = Math.PI / 4; // Angle between nodes at the same depth
 
@@ -11346,7 +11346,7 @@ var SharkSpecies = /** @class */ (function () {
         var descriptionString = descriptionSentence.length > 0
             ? "<div class=\"section\"><strong>Description:</strong> ".concat(descriptionSentence, "</div>")
             : "";
-        return "\n            <h2>".concat(this.commonName, "</h2>\n            <div class=\"section\">\n                <strong>Binomial Name:</strong> ").concat(this.binomialName, "\n                <br>").concat(alternativeNamesString, "\n            </div>\n            ").concat(conservationStatusString, "\n            ").concat(descriptionString, "\n            <div class=\"section\">\n                <strong>Taxonomy:</strong><br>\n                Domain: ").concat(this.domain, "<br>\n                Kingdom: ").concat(this.kingdom, "<br>\n                Phylum: ").concat(this.phylum, "<br>\n                Class: ").concat(this.class, "<br>\n                Order: ").concat(this.order, "<br>\n                Family: ").concat(this.family, "<br>\n                Genus: ").concat(this.genus, "<br>\n                Species: ").concat(this.species, "\n            </div>\n            <div class=\"section\">\n                <strong>Related Species:</strong>\n                ").concat(relatedSpecies.length > 0 ? "<ul>".concat(relatedSpecies.map(function (s) { return "<li>".concat(s.commonName, " (").concat(s.binomialName, ")</li>"); }).join(""), "</ul>") : "None in this dataset", "\n            </div>\n        ");
+        return "\n            <br></br>\n            <h2>".concat(this.commonName, "</h2>\n            <div class=\"section\">\n                <strong>Binomial Name:</strong> ").concat(this.binomialName, "\n                <br>").concat(alternativeNamesString, "\n            </div>\n            ").concat(conservationStatusString, "\n            ").concat(descriptionString, "\n            <div class=\"section\">\n                <strong>Taxonomy:</strong><br>\n                Domain: ").concat(this.domain, "<br>\n                Kingdom: ").concat(this.kingdom, "<br>\n                Phylum: ").concat(this.phylum, "<br>\n                Class: ").concat(this.class, "<br>\n                Order: ").concat(this.order, "<br>\n                Family: ").concat(this.family, "<br>\n                Genus: ").concat(this.genus, "<br>\n                Species: ").concat(this.species, "\n            </div>\n            <div class=\"section\">\n                <strong>Related Species:</strong>\n                ").concat(relatedSpecies.length > 0 ? "<ul>".concat(relatedSpecies.map(function (s) { return "<li>".concat(s.commonName, " (").concat(s.binomialName, ")</li>"); }).join(""), "</ul>") : "None in this dataset", "\n            </div>\n        ");
     };
     SharkSpecies.prototype.getAlternativeNamesSentence = function () {
         var _this = this;
@@ -11605,12 +11605,13 @@ var utils_1 = __webpack_require__(/*! ../utils/utils */ "./src/utils/utils.ts");
 var colors_1 = __webpack_require__(/*! ../constants/colors */ "./src/constants/colors.ts");
 var enums_1 = __webpack_require__(/*! ../constants/enums */ "./src/constants/enums.ts");
 var SharkTree = /** @class */ (function () {
-    function SharkTree(sharkTreeConfig) {
+    function SharkTree(sharkTreeConfig, containerWidth) {
         this.config = sharkTreeConfig;
         this.root = new shark_tree_node_1.SharkTreeNode(this.config, null);
-        this.centerX = constants_1.SVG_SIZE / 2;
-        this.centerY = constants_1.SVG_SIZE / 2;
-        this.radius = constants_1.SVG_SIZE / 3;
+        this.svgSize = containerWidth > 0 ? Math.min(containerWidth, window.innerHeight) : constants_1.DEFAULT_SVG_SIZE;
+        this.centerX = this.svgSize / 2;
+        this.centerY = this.svgSize / 2;
+        this.radius = this.svgSize / 3;
         this.maxDepth = this.getMaxDepth();
         this.levelHeight = this.radius / this.maxDepth;
         this.currentNode = this.root;
@@ -11695,32 +11696,16 @@ var SharkTree = /** @class */ (function () {
     |----------------------------------------*/
     SharkTree.prototype.draw = function () {
         var svg = document.createElementNS(strings_1.SVG_NAMESPACE, "svg");
-        svg.setAttribute("width", constants_1.SVG_SIZE.toString());
-        svg.setAttribute("height", constants_1.SVG_SIZE.toString());
-        svg.setAttribute("viewBox", "0 0 ".concat(constants_1.SVG_SIZE, " ").concat(constants_1.SVG_SIZE));
-        // Add gradient background
-        var defs = document.createElementNS(strings_1.SVG_NAMESPACE, "defs");
-        var gradient = document.createElementNS(strings_1.SVG_NAMESPACE, "radialGradient");
-        gradient.setAttribute("id", "bgGradient");
-        gradient.setAttribute("cx", "50%");
-        gradient.setAttribute("cy", "50%");
-        gradient.setAttribute("r", "50%");
-        var stop1 = document.createElementNS(strings_1.SVG_NAMESPACE, "stop");
-        stop1.setAttribute("offset", "0%");
-        stop1.setAttribute("stop-color", colors_1.LIGHT_GRAY);
-        var stop2 = document.createElementNS(strings_1.SVG_NAMESPACE, "stop");
-        stop2.setAttribute("offset", "100%");
-        stop2.setAttribute("stop-color", colors_1.WHITE);
-        gradient.appendChild(stop1);
-        gradient.appendChild(stop2);
-        defs.appendChild(gradient);
-        svg.appendChild(defs);
+        svg.setAttribute("width", this.svgSize.toString());
+        svg.setAttribute("height", this.svgSize.toString());
+        svg.setAttribute("viewBox", "0 0 ".concat(this.svgSize, " ").concat(this.svgSize));
+        // Add solid background
         var bg = document.createElementNS(strings_1.SVG_NAMESPACE, "rect");
         bg.setAttribute("x", "0");
         bg.setAttribute("y", "0");
-        bg.setAttribute("width", constants_1.SVG_SIZE.toString());
-        bg.setAttribute("height", constants_1.SVG_SIZE.toString());
-        bg.setAttribute("fill", "url(#bgGradient)");
+        bg.setAttribute("width", this.svgSize.toString());
+        bg.setAttribute("height", this.svgSize.toString());
+        bg.setAttribute("fill", "rgba(245, 245, 245, 0.5)"); // Subtle grey, slightly opaque
         svg.appendChild(bg);
         var g = document.createElementNS(strings_1.SVG_NAMESPACE, "g");
         g.setAttribute("id", "shark-tree-group");
@@ -11768,7 +11753,7 @@ var SharkTree = /** @class */ (function () {
     };
     SharkTree.prototype.addInteractionListeners = function (svg, g, sharkSpecies) {
         var _this = this;
-        var viewBox = { x: 0, y: 0, width: constants_1.SVG_SIZE, height: constants_1.SVG_SIZE };
+        var viewBox = { x: 0, y: 0, width: this.svgSize, height: this.svgSize };
         var isDragging = false;
         var startX, startY;
         var rotation = 0;
@@ -11803,7 +11788,7 @@ var SharkTree = /** @class */ (function () {
         });
         svg.addEventListener("dblclick", function () {
             // Reset viewBox to initial state
-            viewBox = { x: 0, y: 0, width: constants_1.SVG_SIZE, height: constants_1.SVG_SIZE };
+            viewBox = { x: 0, y: 0, width: _this.svgSize, height: _this.svgSize };
             _this.updateViewBox(svg, viewBox);
             // Reapply any active highlights if needed
             if (_this.activeTaxonomicLevel) {
@@ -11814,7 +11799,6 @@ var SharkTree = /** @class */ (function () {
             }
         });
         svg.addEventListener("wheel", function (event) {
-            var _a, _b;
             event.preventDefault();
             var mouseX = event.clientX - svg.getBoundingClientRect().left;
             var mouseY = event.clientY - svg.getBoundingClientRect().top;
@@ -11823,8 +11807,8 @@ var SharkTree = /** @class */ (function () {
                 var scale = event.deltaY > 0 ? 1.1 : 0.9;
                 viewBox.width *= scale;
                 viewBox.height *= scale;
-                viewBox.x += (mouseX * (1 - scale)) / (constants_1.SVG_SIZE / viewBox.width);
-                viewBox.y += (mouseY * (1 - scale)) / (constants_1.SVG_SIZE / viewBox.height);
+                viewBox.x += (mouseX * (1 - scale)) / (_this.svgSize / viewBox.width);
+                viewBox.y += (mouseY * (1 - scale)) / (_this.svgSize / viewBox.height);
                 _this.updateViewBox(svg, viewBox);
             }
             else {
@@ -11838,13 +11822,18 @@ var SharkTree = /** @class */ (function () {
                     sharkIndex = numSpecies + sharkIndex;
                 if (sharkIndex !== _this.currentSharkIndex) {
                     var previousShark = sharkSpecies[_this.currentSharkIndex];
-                    (_a = previousShark === null || previousShark === void 0 ? void 0 : previousShark.getNode()) === null || _a === void 0 ? void 0 : _a.setAttribute("fill", colors_1.BLACK);
-                    (_b = previousShark === null || previousShark === void 0 ? void 0 : previousShark.getNode()) === null || _b === void 0 ? void 0 : _b.classList.remove("pulse");
+                    var previousNode = previousShark === null || previousShark === void 0 ? void 0 : previousShark.getNode();
+                    if (previousNode) {
+                        // Use taxonomic color if active, otherwise default to BLACK
+                        var taxonomicColor = _this.getTaxonomicColor(previousShark);
+                        previousNode.setAttribute("fill", taxonomicColor || colors_1.BLACK);
+                        previousNode.classList.remove("pulse");
+                    }
                     _this.reapplyHighlights(previousShark);
                     _this.currentSharkIndex = sharkIndex;
                     var currentShark = sharkSpecies[sharkIndex];
                     var node = currentShark.getNode();
-                    node.setAttribute("fill", colors_1.RED);
+                    node.setAttribute("fill", colors_1.RED); // Selected shark remains RED
                     node.classList.add("pulse");
                     _this.highlightPathToShark(currentShark.binomialName, 2, colors_1.BLACK);
                     g.removeChild(node);
@@ -11867,8 +11856,8 @@ var SharkTree = /** @class */ (function () {
         svg.addEventListener("mousemove", function (event) {
             if (!isDragging)
                 return;
-            var dx = (event.clientX - startX) * (viewBox.width / constants_1.SVG_SIZE);
-            var dy = (event.clientY - startY) * (viewBox.height / constants_1.SVG_SIZE);
+            var dx = (event.clientX - startX) * (viewBox.width / _this.svgSize);
+            var dy = (event.clientY - startY) * (viewBox.height / _this.svgSize);
             viewBox.x -= dx;
             viewBox.y -= dy;
             startX = event.clientX;
@@ -11893,10 +11882,10 @@ var SharkTree = /** @class */ (function () {
                 var newCenter = _this.getTouchCenter(event.touches, svg);
                 viewBox.width *= scale;
                 viewBox.height *= scale;
-                viewBox.x += (initialCenter.x * (1 - scale)) / (constants_1.SVG_SIZE / viewBox.width);
-                viewBox.y += (initialCenter.y * (1 - scale)) / (constants_1.SVG_SIZE / viewBox.height);
-                var dx = (newCenter.x - initialCenter.x) * (viewBox.width / constants_1.SVG_SIZE);
-                var dy = (newCenter.y - initialCenter.y) * (viewBox.height / constants_1.SVG_SIZE);
+                viewBox.x += (initialCenter.x * (1 - scale)) / (_this.svgSize / viewBox.width);
+                viewBox.y += (initialCenter.y * (1 - scale)) / (_this.svgSize / viewBox.height);
+                var dx = (newCenter.x - initialCenter.x) * (viewBox.width / _this.svgSize);
+                var dy = (newCenter.y - initialCenter.y) * (viewBox.height / _this.svgSize);
                 viewBox.x -= dx;
                 viewBox.y -= dy;
                 _this.updateViewBox(svg, viewBox);
@@ -12000,6 +11989,7 @@ var SharkTree = /** @class */ (function () {
         arcs.forEach(function (arc) { return svg.appendChild(arc); });
     };
     SharkTree.prototype.updateSelection = function (selectedShark) {
+        var _this = this;
         var sharkSpecies = this.getSharkSpeciesList();
         sharkSpecies.forEach(function (shark) {
             var node = shark.getNode();
@@ -12008,7 +11998,8 @@ var SharkTree = /** @class */ (function () {
                 node.classList.add("pulse");
             }
             else {
-                node.setAttribute("fill", colors_1.BLACK);
+                var taxonomicColor = _this.getTaxonomicColor(shark);
+                node.setAttribute("fill", taxonomicColor || colors_1.BLACK);
                 node.classList.remove("pulse");
             }
         });
@@ -12166,13 +12157,26 @@ var SharkTree = /** @class */ (function () {
         var speciesToHighlight = value
             ? categoryData.species.filter(function (s) { return s.tags.includes(value); })
             : categoryData.species.filter(function (s) { return s.tags.some(function (tag) { return _this.getTagCategory(tag) === category; }); });
-        // Reset all paths first
-        this.getSharkSpeciesList().forEach(function (shark) { return _this.clearHighlightPath(shark); });
-        // Highlight nodes for tagged species
+        // Reset paths but preserve node colors
+        this.getSharkSpeciesList().forEach(function (shark) { return _this.clearHighlightPath(shark, true); });
+        // Highlight paths for tagged species
         speciesToHighlight.forEach(function (shark) {
             var taxonomicColor = _this.getTaxonomicColor(shark) || colors_1.BLACK;
-            shark.highlightNode(taxonomicColor);
+            shark.highlightParentPath(3, taxonomicColor, "5,5"); // Apply dashed line for tag
         });
+        // Reapply taxonomic colors to all nodes
+        if (this.activeTaxonomicLevel) {
+            var levelData_1 = this.taxonomicLevels.get(this.activeTaxonomicLevel);
+            if (levelData_1) {
+                var speciesToColor_1 = this.activeTaxonomicValue
+                    ? levelData_1.species.filter(function (s) { return s[_this.activeTaxonomicLevel] === _this.activeTaxonomicValue; })
+                    : levelData_1.species;
+                this.getSharkSpeciesList().forEach(function (shark) {
+                    var color = speciesToColor_1.includes(shark) ? levelData_1.color : colors_1.BLACK;
+                    shark.highlightNode(color);
+                });
+            }
+        }
     };
     SharkTree.prototype.getTaxonomicColor = function (shark) {
         if (this.activeTaxonomicLevel) {
@@ -12201,11 +12205,13 @@ var SharkTree = /** @class */ (function () {
             sharkParent = sharkParent.getParent();
         }
     };
-    SharkTree.prototype.clearHighlightPath = function (shark) {
+    SharkTree.prototype.clearHighlightPath = function (shark, preserveNodeColor) {
         var _this = this;
+        if (preserveNodeColor === void 0) { preserveNodeColor = false; }
         var node = shark.getNode();
-        if (node)
+        if (node && !preserveNodeColor) {
             node.setAttribute("fill", colors_1.BLACK);
+        }
         var getPathStyle = function (segments, sharksToCheck) {
             var strokeColor = colors_1.BLACK;
             var strokeWidth = "1";
@@ -12616,10 +12622,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "SharkTreeComponent": () => (/* binding */ SharkTreeComponent)
 /* harmony export */ });
-/* harmony import */ var _data_configs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./data/configs */ "./src/data/configs/index.js");
-/* harmony import */ var _models_shark_tree__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./models/shark-tree */ "./src/models/shark-tree.ts");
-/* harmony import */ var _models_shark_tree__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_models_shark_tree__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _utils_string_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/string-utils */ "./src/utils/string-utils.ts");
+/* harmony import */ var _constants_enums__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./constants/enums */ "./src/constants/enums.ts");
+/* harmony import */ var _data_configs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./data/configs */ "./src/data/configs/index.js");
+/* harmony import */ var _models_shark_tree__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./models/shark-tree */ "./src/models/shark-tree.ts");
+/* harmony import */ var _models_shark_tree__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_models_shark_tree__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _utils_string_utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils/string-utils */ "./src/utils/string-utils.ts");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -12649,27 +12656,28 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 
+
 var sharkConfigs = {
-  selachii: _data_configs__WEBPACK_IMPORTED_MODULE_0__.selachiiConfig,
-  galeomorphii: _data_configs__WEBPACK_IMPORTED_MODULE_0__.galeomorphiiConfig,
-  squalomorphii: _data_configs__WEBPACK_IMPORTED_MODULE_0__.squalomorphiiConfig,
-  squaliformes: _data_configs__WEBPACK_IMPORTED_MODULE_0__.squaliformesConfig,
-  carcharhiniformes: _data_configs__WEBPACK_IMPORTED_MODULE_0__.carcharhiniformesConfig,
-  orectolobiformes: _data_configs__WEBPACK_IMPORTED_MODULE_0__.orectolobiformesConfig,
-  lamniformes: _data_configs__WEBPACK_IMPORTED_MODULE_0__.lamniformesConfig,
-  hexanchiformes: _data_configs__WEBPACK_IMPORTED_MODULE_0__.hexanchiformesConfig,
-  squatiniformes: _data_configs__WEBPACK_IMPORTED_MODULE_0__.squatiniformesConfig,
-  heterodontiformes: _data_configs__WEBPACK_IMPORTED_MODULE_0__.heterodontiformesConfig,
-  pristiophoriformes: _data_configs__WEBPACK_IMPORTED_MODULE_0__.pristiophoriformesConfig,
-  carcharhinidae: _data_configs__WEBPACK_IMPORTED_MODULE_0__.carcharhinidaeConfig,
-  lamnidae: _data_configs__WEBPACK_IMPORTED_MODULE_0__.lamnidaeConfig,
-  scyliorhinidaeI: _data_configs__WEBPACK_IMPORTED_MODULE_0__.scyliorhinidaeIConfig,
-  scyliorhinidaeII: _data_configs__WEBPACK_IMPORTED_MODULE_0__.scyliorhinidaeIIConfig,
-  scyliorhinidaeIII: _data_configs__WEBPACK_IMPORTED_MODULE_0__.scyliorhinidaeIIIConfig,
-  dalatiidae: _data_configs__WEBPACK_IMPORTED_MODULE_0__.dalatiidaeConfig,
-  etmopteridae: _data_configs__WEBPACK_IMPORTED_MODULE_0__.etmopteridaeConfig,
-  squalidae: _data_configs__WEBPACK_IMPORTED_MODULE_0__.squalidaeConfig,
-  triakidae: _data_configs__WEBPACK_IMPORTED_MODULE_0__.triakidaeConfig
+  selachii: _data_configs__WEBPACK_IMPORTED_MODULE_1__.selachiiConfig,
+  galeomorphii: _data_configs__WEBPACK_IMPORTED_MODULE_1__.galeomorphiiConfig,
+  squalomorphii: _data_configs__WEBPACK_IMPORTED_MODULE_1__.squalomorphiiConfig,
+  squaliformes: _data_configs__WEBPACK_IMPORTED_MODULE_1__.squaliformesConfig,
+  carcharhiniformes: _data_configs__WEBPACK_IMPORTED_MODULE_1__.carcharhiniformesConfig,
+  orectolobiformes: _data_configs__WEBPACK_IMPORTED_MODULE_1__.orectolobiformesConfig,
+  lamniformes: _data_configs__WEBPACK_IMPORTED_MODULE_1__.lamniformesConfig,
+  hexanchiformes: _data_configs__WEBPACK_IMPORTED_MODULE_1__.hexanchiformesConfig,
+  squatiniformes: _data_configs__WEBPACK_IMPORTED_MODULE_1__.squatiniformesConfig,
+  heterodontiformes: _data_configs__WEBPACK_IMPORTED_MODULE_1__.heterodontiformesConfig,
+  pristiophoriformes: _data_configs__WEBPACK_IMPORTED_MODULE_1__.pristiophoriformesConfig,
+  carcharhinidae: _data_configs__WEBPACK_IMPORTED_MODULE_1__.carcharhinidaeConfig,
+  lamnidae: _data_configs__WEBPACK_IMPORTED_MODULE_1__.lamnidaeConfig,
+  scyliorhinidaeI: _data_configs__WEBPACK_IMPORTED_MODULE_1__.scyliorhinidaeIConfig,
+  scyliorhinidaeII: _data_configs__WEBPACK_IMPORTED_MODULE_1__.scyliorhinidaeIIConfig,
+  scyliorhinidaeIII: _data_configs__WEBPACK_IMPORTED_MODULE_1__.scyliorhinidaeIIIConfig,
+  dalatiidae: _data_configs__WEBPACK_IMPORTED_MODULE_1__.dalatiidaeConfig,
+  etmopteridae: _data_configs__WEBPACK_IMPORTED_MODULE_1__.etmopteridaeConfig,
+  squalidae: _data_configs__WEBPACK_IMPORTED_MODULE_1__.squalidaeConfig,
+  triakidae: _data_configs__WEBPACK_IMPORTED_MODULE_1__.triakidaeConfig
 };
 
 
@@ -12698,17 +12706,27 @@ var SharkTreeComponent = /*#__PURE__*/function (_HTMLElement) {
 
 
   _createClass(SharkTreeComponent, [{
-    key: "disconnectedCallback",
-    value: function disconnectedCallback() {
-      this.removeEventListeners();
-    }
-  }, {
     key: "connectedCallback",
     value: function connectedCallback() {
       this.render();
       this.initializeSharkTree();
       this.setupDropdown();
       this.setupEventListeners();
+      this.setupResizeObserver();
+    }
+  }, {
+    key: "disconnectedCallback",
+    value: function disconnectedCallback() {
+      var _this$sharkTree;
+
+      this.removeEventListeners();
+
+      if (this.resizeObserver) {
+        this.resizeObserver.disconnect();
+        this.resizeObserver = null;
+      }
+
+      (_this$sharkTree = this.sharkTree) === null || _this$sharkTree === void 0 ? void 0 : _this$sharkTree.destroy();
     }
   }, {
     key: "render",
@@ -12720,12 +12738,26 @@ var SharkTreeComponent = /*#__PURE__*/function (_HTMLElement) {
     key: "initializeSharkTree",
     value: function initializeSharkTree() {
       var configKey = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "selachii";
-      this.sharkTree = new _models_shark_tree__WEBPACK_IMPORTED_MODULE_1__.SharkTree(sharkConfigs[configKey]);
+
+      if (!sharkConfigs[configKey]) {
+        console.error("Configuration for ".concat(configKey, " not found"));
+        return;
+      }
+
+      var container = this.shadow.querySelector("#phylo-container");
+      var containerWidth = container ? container.offsetWidth : window.innerWidth * 0.6;
+      this.sharkTree = new _models_shark_tree__WEBPACK_IMPORTED_MODULE_2__.SharkTree(sharkConfigs[configKey], containerWidth);
       var sharkTreeSvg = this.sharkTree.draw();
       this.sharkScreen = this.shadow.querySelector("#shark-screen");
-      var container = this.shadow.querySelector("#phylo-container");
       container.innerHTML = "";
       container.appendChild(sharkTreeSvg);
+      this.lastContainerWidth = containerWidth; // Store initial width
+
+      this.resetDropdowns();
+    }
+  }, {
+    key: "resetDropdowns",
+    value: function resetDropdowns() {
       var taxonomicDropdown = this.shadow.querySelector("#taxonomic-dropdown");
       var taxonomicValueDropdown = this.shadow.querySelector("#taxonomic-value-dropdown");
       var tagDropdown = this.shadow.querySelector("#tag-dropdown");
@@ -12757,6 +12789,47 @@ var SharkTreeComponent = /*#__PURE__*/function (_HTMLElement) {
         taxonomicValueDropdown.innerHTML = "<option value=''>All</option>";
       }
     }
+  }, {
+    key: "setupResizeObserver",
+    value: function setupResizeObserver() {
+      var _this2 = this;
+
+      var container = this.shadow.querySelector("#phylo-container");
+      if (!container) return; // Debounce resize handler
+
+      var debounce = function debounce(fn, delay) {
+        var timeout = null;
+        return function () {
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+
+          if (timeout) clearTimeout(timeout);
+          timeout = setTimeout(function () {
+            return fn.apply(void 0, args);
+          }, delay);
+        };
+      };
+
+      var handleResize = debounce(function () {
+        var currentWidth = container.offsetWidth; // Only reinitialize if width changed significantly
+
+        if (_this2.lastContainerWidth === null || Math.abs(currentWidth - _this2.lastContainerWidth) > 5) {
+          _this2.reinitializeSharkTree();
+
+          _this2.lastContainerWidth = currentWidth;
+        }
+      }, 200);
+      this.resizeObserver = new ResizeObserver(handleResize);
+      this.resizeObserver.observe(container);
+    }
+  }, {
+    key: "reinitializeSharkTree",
+    value: function reinitializeSharkTree() {
+      var configDropdown = this.shadow.querySelector("#shark-config-dropdown");
+      var selectedConfig = (configDropdown === null || configDropdown === void 0 ? void 0 : configDropdown.value) || "selachii";
+      this.initializeSharkTree(selectedConfig);
+    }
     /*----------------------------------------|
     |               HTML & CSS                |
     |----------------------------------------*/
@@ -12765,13 +12838,13 @@ var SharkTreeComponent = /*#__PURE__*/function (_HTMLElement) {
     key: "html",
     value: function html() {
       return "\n            <style> ".concat(this.css(), " </style>\n            <div id=\"app-container\">\n                <div id=\"controls-container\">\n                    <div id=\"dropdown-container\">\n                        <label for=\"shark-config-dropdown\">Configuration:</label>\n                        <select id=\"shark-config-dropdown\">\n                            ").concat(Object.keys(sharkConfigs).map(function (configKey) {
-        return "<option value=\"".concat(configKey, "\">").concat(_utils_string_utils__WEBPACK_IMPORTED_MODULE_2__.StringUtils.capitalizeFirstLetter(configKey), "</option>");
-      }).join(""), "\n                        </select>\n                    </div>\n                    <div id=\"taxonomic-container\">\n                        <label for=\"taxonomic-dropdown\">Taxonomic Level:</label>\n                        <select id=\"taxonomic-dropdown\">\n                            <option value=\"\">None</option>\n                            <option value=\"genus\">Genus</option>\n                            <option value=\"family\">Family</option>\n                            <option value=\"order\">Order</option>\n                            <option value=\"superorder\">Superorder</option>\n                            <option value=\"subdivision\">Subdivision</option>\n                        </select>\n                        <select id=\"taxonomic-value-dropdown\">\n                            <option value=\"\">All</option>\n                        </select>\n                    </div>\n                    <div id=\"tag-container\">\n                        <label for=\"tag-dropdown\">Tag Category:</label>\n                        <select id=\"tag-dropdown\">\n                            <option value=\"\">None</option>\n                            <option value=\"conservationStatus\">Conservation Status</option>\n                            <option value=\"reproductiveStrategy\">Reproductive Strategy</option>\n                            <option value=\"temperatureRegulation\">Temperature Regulation</option>\n                            <option value=\"behavior\">Behavior</option>\n                            <option value=\"feedingBehavior\">Feeding Behavior</option>\n                            <option value=\"groupBehavior\">Group Behavior</option>\n                            <option value=\"numGills\">Number of Gills</option>\n                            <option value=\"numDorsalFins\">Number of Dorsal Fins</option>\n                            <option value=\"analFin\">Has Anal Fin</option>\n                            <option value=\"hasSpiracles\">Has Spiracles</option>\n                            <option value=\"hasFlattenedBody\">Has Flattened Body</option>\n                            <option value=\"nictitatingMembrane\">Has Nictitating Membrane</option>\n                            <option value=\"caudalFinShape\">Caudal Fin Shape</option>\n                            <option value=\"mouthInFrontOfEyes\">Has Mouth in Front of Eyes</option>\n                            <option value=\"isBioluminescent\">Bioluminescent</option>\n                            <option value=\"hasDorsalFinSpines\">Has Dorsal Fin Spines</option>\n                        </select>\n                        <select id=\"tag-value-dropdown\">\n                            <option value=\"\">All</option>\n                        </select>\n                    </div>\n                    <button id=\"info-button\" aria-label=\"How to use this app\">\n                        <svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n                            <circle cx=\"12\" cy=\"12\" r=\"11\" stroke=\"#00688B\" stroke-width=\"1\" fill=\"#FFFFFF\" />\n                            <text x=\"12\" y=\"17\" font-size=\"13\" font-weight=\"300\" font-family=\"Open Sans, sans-serif\" fill=\"#00688B\" text-anchor=\"middle\">?</text>\n                        </svg>\n                    </button>\n                    <div id=\"info-tooltip\">\n                        <strong>How to Use:</strong>\n                        <ul>\n                            <li>Select a shark group from \"Configuration\" to view its phylogenetic tree.</li>\n                            <li>Use \"Taxonomic Level\" to highlight species by genus, family, etc.</li>\n                            <li>Filter by traits like conservation status with \"Tag Category\".</li>\n                            <li>Click a shark on the tree to see its details on the right.</li>\n                            <li>Scroll to rotate, pinch to zoom, double-click to reset, or drag to pan.</li>\n                        </ul>\n                    </div>\n                </div>\n                <div id=\"phylo-container\"></div>\n                <div id=\"shark-screen-container\">\n                    <div id=\"shark-screen\"></div>\n                </div>\n            </div>\n        ");
+        return "<option value=\"".concat(configKey, "\">").concat(_utils_string_utils__WEBPACK_IMPORTED_MODULE_3__.StringUtils.capitalizeFirstLetter(configKey), "</option>");
+      }).join(""), "\n                        </select>\n                    </div>\n                    <div id=\"taxonomic-container\">\n                        <label for=\"taxonomic-dropdown\">Taxonomic Level:</label>\n                        <select id=\"taxonomic-dropdown\">\n                            <option value=\"\">None</option>\n                            <option value=\"genus\">Genus</option>\n                            <option value=\"family\">Family</option>\n                            <option value=\"order\">Order</option>\n                            <option value=\"superorder\">Superorder</option>\n                            <option value=\"subdivision\">Subdivision</option>\n                        </select>\n                        <select id=\"taxonomic-value-dropdown\">\n                            <option value=\"\">All</option>\n                        </select>\n                    </div>\n                    <div id=\"tag-container\">\n                        <label for=\"tag-dropdown\">Tag Category:</label>\n                        <select id=\"tag-dropdown\">\n                            <option value=\"\">None</option>\n                            <option value=\"conservationStatus\">Conservation Status</option>\n                            <option value=\"reproductiveStrategy\">Reproductive Strategy</option>\n                            <option value=\"temperatureRegulation\">Temperature Regulation</option>\n                            <option value=\"behavior\">Behavior</option>\n                            <option value=\"feedingBehavior\">Feeding Behavior</option>\n                            <option value=\"groupBehavior\">Group Behavior</option>\n                            <option value=\"numGills\">Number of Gills</option>\n                            <option value=\"numDorsalFins\">Number of Dorsal Fins</option>\n                            <option value=\"analFin\">Has Anal Fin</option>\n                            <option value=\"hasSpiracles\">Has Spiracles</option>\n                            <option value=\"hasFlattenedBody\">Has Flattened Body</option>\n                            <option value=\"nictitatingMembrane\">Has Nictitating Membrane</option>\n                            <option value=\"caudalFinShape\">Caudal Fin Shape</option>\n                            <option value=\"mouthInFrontOfEyes\">Has Mouth in Front of Eyes</option>\n                            <option value=\"isBioluminescent\">Bioluminescent</option>\n                            <option value=\"hasDorsalFinSpines\">Has Dorsal Fin Spines</option>\n                        </select>\n                        <select id=\"tag-value-dropdown\">\n                            <option value=\"\">All</option>\n                        </select>\n                    </div>\n                    <button id=\"info-button\" aria-label=\"How to use this app\">\n                        <svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n                            <circle cx=\"12\" cy=\"12\" r=\"11\" stroke=\"#00688B\" stroke-width=\"1\" fill=\"#FFFFFF\" />\n                            <text x=\"12\" y=\"17\" font-size=\"13\" font-weight=\"300\" font-family=\"Open Sans, sans-serif\" fill=\"#00688B\" text-anchor=\"middle\">?</text>\n                        </svg>\n                    </button>\n                    <div id=\"info-tooltip\">\n                        <strong>How to Use:</strong>\n                        <ul>\n                            <li>Choose a shark group from \"Configuration\" to display its phylogenetic tree.</li>\n                            <li>Select a \"Taxonomic Level\" (e.g., genus or family) to color matching species\u2019 nodes and paths.</li>\n                            <li>Pick a \"Tag Category\" (e.g., conservation status) to add dashed lines to paths of species with that trait.</li>\n                            <li>Click a shark\u2019s node to view its details on the right panel.</li>\n                            <li>Scroll to rotate, pinch to zoom, double-click to reset, or drag to pan the tree.</li>\n                        </ul>\n                    </div>\n                </div>\n                <div id=\"phylo-container\"></div>\n                <div id=\"shark-screen-container\">\n                    <div id=\"shark-screen\"></div>\n                </div>\n            </div>\n        ");
     }
   }, {
     key: "css",
     value: function css() {
-      return "\n            #app-container {\n                position: relative;\n                width: 100%;\n                height: 100%;\n                display: flex;\n                flex-direction: row;\n                background: #FFFFFF;\n                font-family: \"Roboto\", sans-serif;\n            }\n            #phylo-container {\n                position: relative;\n                width: 60%;\n                height: 100%;\n                display: flex;\n                justify-content: center;\n                align-items: center;\n                background: #FFFFFF;\n                border-radius: 10px;\n                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n                margin: 10px;\n            }\n            #shark-screen-container {\n                position: relative;\n                width: 40%;\n                display: flex;\n                flex-direction: column;\n                justify-content: center;\n                padding: 20px;\n                margin-right: 20px;\n            }\n            #shark-screen {\n                position: relative;\n                width: 100%;\n                max-height: 70%;\n                padding: 20px;\n                background: #F9F9F9;\n                border: 1px solid #E0E0E0;\n                border-radius: 8px;\n                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);\n                overflow-y: auto;\n                font-size: 14px;\n                line-height: 1.6;\n                color: #2F4F4F;\n            }\n            #shark-screen h2 {\n                color: #00688B;\n                margin: 0 0 10px 0;\n                font-size: 21px;\n            }\n            #shark-screen .section {\n                margin-bottom: 15px;\n            }\n            #shark-screen .section strong {\n                color: #2F4F4F;\n                font-weight: 600;\n            }\n            #shark-screen ul {\n                list-style-type: none;\n                padding-left: 10px;\n            }\n            #shark-screen li {\n                margin: 5px 0;\n                color: #555;\n            }\n            #shark-screen img {\n                max-width: 100%;\n                border-radius: 5px;\n                margin-top: 10px;\n            }\n            #controls-container {\n                position: absolute;\n                top: 10px;\n                left: 10px;\n                display: flex;\n                flex-direction: row;\n                align-items: center;\n                gap: 20px;\n                z-index: 100;\n                padding: 10px;\n                background: rgba(255, 255, 255, 0.9);\n                border-radius: 5px;\n                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n            }\n            #dropdown-container, #taxonomic-container, #tag-container {\n                display: flex;\n                flex-direction: row;\n                align-items: center;\n                gap: 8px;\n            }\n            img {\n                width: 80%;\n                border-radius: 5px;\n                margin-top: 10px;\n            }\n            label {\n                color: #2F4F4F;\n                font-size: 14px;\n                white-space: nowrap;\n            }\n            select {\n                padding: 5px 8px;\n                border: 1px solid #E0E0E0;\n                border-radius: 5px;\n                background: #FFFFFF;\n                font-size: 14px;\n                color: #2F4F4F;\n                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);\n                min-width: 120px;\n                max-width: 200px;\n            }\n            select:hover {\n                border-color: #00688B;\n                cursor: pointer;\n            }\n            #info-button {\n                width: 22px;\n                height: 22px;\n                border: none;\n                background: none;\n                padding: 0;\n                cursor: help;\n                position: relative;\n                display: flex;\n                align-items: center;\n                justify-content: center;\n                transition: transform 0.2s ease;\n            }\n            #info-button:hover {\n                transform: scale(1.1); /* Subtle zoom effect */\n            }\n            #info-button svg {\n                stroke: #00688B; /* Match app's accent color */\n            }\n            #info-tooltip {\n                display: none;\n                position: absolute;\n                top: 32px;\n                right: 0;\n                background: rgba(255, 255, 255, 0.95); /* Light, semi-transparent white */\n                color: #2F4F4F; /* Match app text color */\n                padding: 14px; /* More breathing room */\n                border-radius: 6px;\n                border: 1px solid #E0E0E0;\n                font-size: 13px;\n                line-height: 1.6; /* Increased spacing */\n                max-width: 280px; /* Slightly wider */\n                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n                z-index: 101;\n                font-weight: 400;\n            }\n            #info-tooltip strong {\n                font-weight: 600;\n                color: #00688B;\n                display: block;\n                margin-bottom: 6px; /* Space below heading */\n            }\n            #info-tooltip ul {\n                list-style-type: none;\n                padding-left: 0;\n                margin: 0;\n            }\n            #info-tooltip li {\n                position: relative;\n                padding-left: 16px; /* Space for bullet */\n                margin-bottom: 6px; /* Space between items */\n            }\n            #info-tooltip li:before {\n                content: \"\u2022\"; /* Bullet point */\n                color: #00688B; /* Accent color */\n                position: absolute;\n                left: 4px;\n                font-size: 14px;\n            }\n            #info-button:hover + #info-tooltip {\n                display: block;\n            }\n        ";
+      return "\n            :host {\n                display: block;\n                width: 100%;\n                height: 100%;\n            }\n            #app-container {\n                position: relative;\n                width: 100%;\n                height: 100%;\n                display: flex;\n                flex-direction: row;\n                background: #FFFFFF;\n                font-family: \"Roboto\", sans-serif;\n            }\n            #phylo-container {\n                position: relative;\n                width: 60%;\n                height: 100%;\n                display: flex;\n                justify-content: center;\n                align-items: center;\n                background: #FFFFFF;\n                border-radius: 10px;\n                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n                margin: 10px;\n                overflow: hidden;\n            }\n            #shark-screen-container {\n                position: relative;\n                width: 40%;\n                height: 100%; /* Ensure full height */\n                display: flex;\n                flex-direction: column;\n                align-items: stretch; /* Prevent shrinking */\n                padding: 20px;\n                margin-right: 20px;\n                overflow: hidden; /* Prevent container overflow */\n            }\n            #shark-screen {\n                position: relative;\n                width: 100%;\n                height: auto; /* Let content determine height */\n                min-height: 100%; /* Fill container if content is short */\n                max-height: none; /* Remove restrictive max-height */\n                padding: 20px;\n                background: #F9F9F9;\n                border: 1px solid #E0E0E0;\n                border-radius: 8px;\n                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);\n                overflow-y: auto; /* Scroll only if needed */\n                font-size: 14px;\n                line-height: 1.6;\n                color: #2F4F4F;\n                box-sizing: border-box; /* Include padding in height calculations */\n            }\n            #shark-screen h2 {\n                color: #00688B;\n                margin: 0 0 10px 0;\n                font-size: 21px;\n            }\n            #shark-screen .section {\n                margin-bottom: 15px;\n            }\n            #shark-screen .section strong {\n                color: #2F4F4F;\n                font-weight: 600;\n            }\n            #shark-screen ul {\n                list-style-type: none;\n                padding-left: 10px;\n            }\n            #shark-screen li {\n                margin: 5px 0;\n                color: #555;\n            }\n            #shark-screen img {\n                max-width: 100%;\n                max-height: 200px; /* Cap image height to prevent overflow */\n                object-fit: contain; /* Preserve aspect ratio */\n                border-radius: 5px;\n                margin-top: 10px;\n            }\n            #controls-container {\n                position: absolute;\n                top: 10px;\n                left: 10px;\n                display: flex;\n                flex-direction: row;\n                align-items: center;\n                gap: 20px;\n                z-index: 100;\n                padding: 10px;\n                background: rgba(255, 255, 255, 0.9);\n                border-radius: 5px;\n                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n            }\n            #dropdown-container, #taxonomic-container, #tag-container {\n                display: flex;\n                flex-direction: row;\n                align-items: center;\n                gap: 8px;\n            }\n            img {\n                width: 80%;\n                border-radius: 5px;\n                margin-top: 10px;\n            }\n            label {\n                color: #2F4F4F;\n                font-size: 14px;\n                white-space: nowrap;\n            }\n            select {\n                padding: 5px 8px;\n                border: 1px solid #E0E0E0;\n                border-radius: 5px;\n                background: #FFFFFF;\n                font-size: 14px;\n                color: #2F4F4F;\n                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);\n                min-width: 120px;\n                max-width: 200px;\n            }\n            select:hover {\n                border-color: #00688B;\n                cursor: pointer;\n            }\n            #info-button {\n                width: 22px;\n                height: 22px;\n                border: none;\n                background: none;\n                padding: 0;\n                cursor: help;\n                position: relative;\n                display: flex;\n                align-items: center;\n                justify-content: center;\n                transition: transform 0.2s ease;\n            }\n            #info-button:hover {\n                transform: scale(1.1); /* Subtle zoom effect */\n            }\n            #info-button svg {\n                stroke: #00688B; /* Match app's accent color */\n            }\n            #info-tooltip {\n                display: none;\n                position: absolute;\n                top: 32px;\n                right: 0;\n                background: rgba(255, 255, 255, 0.95); /* Light, semi-transparent white */\n                color: #2F4F4F; /* Match app text color */\n                padding: 14px; /* More breathing room */\n                border-radius: 6px;\n                border: 1px solid #E0E0E0;\n                font-size: 13px;\n                line-height: 1.6; /* Increased spacing */\n                max-width: 280px; /* Slightly wider */\n                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n                z-index: 101;\n                font-weight: 400;\n            }\n            #info-tooltip strong {\n                font-weight: 600;\n                color: #00688B;\n                display: block;\n                margin-bottom: 6px; /* Space below heading */\n            }\n            #info-tooltip ul {\n                list-style-type: none;\n                padding-left: 0;\n                margin: 0;\n            }\n            #info-tooltip li {\n                position: relative;\n                padding-left: 16px; /* Space for bullet */\n                margin-bottom: 6px; /* Space between items */\n            }\n            #info-tooltip li:before {\n                content: \"\u2022\"; /* Bullet point */\n                color: #00688B; /* Accent color */\n                position: absolute;\n                left: 4px;\n                font-size: 14px;\n            }\n            #info-button:hover + #info-tooltip {\n                display: block;\n            }\n        ";
     }
     /*----------------------------------------|
     |                HANDLERS                 |
@@ -12780,28 +12853,28 @@ var SharkTreeComponent = /*#__PURE__*/function (_HTMLElement) {
   }, {
     key: "setupDropdown",
     value: function setupDropdown() {
-      var _this2 = this;
+      var _this3 = this;
 
       var dropdown = this.shadow.querySelector("#shark-config-dropdown");
       dropdown.addEventListener("change", function (event) {
         var selectedConfig = event.target.value;
 
-        _this2.initializeSharkTree(selectedConfig);
+        _this3.initializeSharkTree(selectedConfig);
       });
     }
   }, {
     key: "setupEventListeners",
     value: function setupEventListeners() {
-      var _this3 = this;
+      var _this4 = this;
 
       window.addEventListener("select-shark", this.selectSharkHandler.bind(this));
       var configDropdown = this.shadow.querySelector("#shark-config-dropdown");
       configDropdown.addEventListener("change", function (event) {
         var selectedConfig = event.target.value;
 
-        _this3.initializeSharkTree(selectedConfig);
+        _this4.initializeSharkTree(selectedConfig);
 
-        _this3.updateTaxonomicValues(); // Ensure values update after config change
+        _this4.updateTaxonomicValues(); // Ensure values update after config change
 
       });
       var taxonomicDropdown = this.shadow.querySelector("#taxonomic-dropdown");
@@ -12809,8 +12882,8 @@ var SharkTreeComponent = /*#__PURE__*/function (_HTMLElement) {
       taxonomicDropdown.addEventListener("change", function (event) {
         var level = event.target.value;
 
-        if (level && _this3.sharkTree) {
-          var levelData = _this3.sharkTree.taxonomicLevels.get(level);
+        if (level && _this4.sharkTree) {
+          var levelData = _this4.sharkTree.taxonomicLevels.get(level);
 
           var values = new Set(levelData === null || levelData === void 0 ? void 0 : levelData.species.map(function (s) {
             return s[level];
@@ -12821,53 +12894,91 @@ var SharkTreeComponent = /*#__PURE__*/function (_HTMLElement) {
             return "<option value=\"".concat(v, "\">").concat(v, "</option>");
           }).join(""), "\n                ");
 
-          _this3.sharkTree.highlightTaxonomicLevel(level);
+          _this4.sharkTree.highlightTaxonomicLevel(level);
         } else {
-          var _this3$sharkTree;
+          var _this4$sharkTree;
 
           taxonomicValueDropdown.innerHTML = '<option value="">All</option>';
-          (_this3$sharkTree = _this3.sharkTree) === null || _this3$sharkTree === void 0 ? void 0 : _this3$sharkTree.clearAllHighlights();
+          (_this4$sharkTree = _this4.sharkTree) === null || _this4$sharkTree === void 0 ? void 0 : _this4$sharkTree.clearAllHighlights();
         }
       });
       taxonomicValueDropdown.addEventListener("change", function (event) {
         var level = taxonomicDropdown.value;
         var value = event.target.value;
 
-        if (level && _this3.sharkTree) {
-          _this3.sharkTree.highlightTaxonomicLevel(level, value || undefined);
+        if (level && _this4.sharkTree) {
+          _this4.sharkTree.highlightTaxonomicLevel(level, value || undefined);
         }
       });
       var tagDropdown = this.shadow.querySelector("#tag-dropdown");
       var tagValueDropdown = this.shadow.querySelector("#tag-value-dropdown");
+      var categoryOrders = {
+        conservationStatus: [_constants_enums__WEBPACK_IMPORTED_MODULE_0__.CONSERVATION_STATUS.EX, _constants_enums__WEBPACK_IMPORTED_MODULE_0__.CONSERVATION_STATUS.EW, _constants_enums__WEBPACK_IMPORTED_MODULE_0__.CONSERVATION_STATUS.CR, _constants_enums__WEBPACK_IMPORTED_MODULE_0__.CONSERVATION_STATUS.EN, _constants_enums__WEBPACK_IMPORTED_MODULE_0__.CONSERVATION_STATUS.VU, _constants_enums__WEBPACK_IMPORTED_MODULE_0__.CONSERVATION_STATUS.NT, _constants_enums__WEBPACK_IMPORTED_MODULE_0__.CONSERVATION_STATUS.CD, _constants_enums__WEBPACK_IMPORTED_MODULE_0__.CONSERVATION_STATUS.LC, _constants_enums__WEBPACK_IMPORTED_MODULE_0__.CONSERVATION_STATUS.DD, _constants_enums__WEBPACK_IMPORTED_MODULE_0__.CONSERVATION_STATUS.NE],
+        numGills: [_constants_enums__WEBPACK_IMPORTED_MODULE_0__.NUM_GILLS.FIVE, _constants_enums__WEBPACK_IMPORTED_MODULE_0__.NUM_GILLS.SIX, _constants_enums__WEBPACK_IMPORTED_MODULE_0__.NUM_GILLS.SEVEN],
+        numDorsalFins: [_constants_enums__WEBPACK_IMPORTED_MODULE_0__.NUM_DORSAL_FINS.ONE, _constants_enums__WEBPACK_IMPORTED_MODULE_0__.NUM_DORSAL_FINS.TWO],
+        dorsalFinSpines: [_constants_enums__WEBPACK_IMPORTED_MODULE_0__.DORSAL_FIN_SPINES.YES, _constants_enums__WEBPACK_IMPORTED_MODULE_0__.DORSAL_FIN_SPINES.ONLY_ON_FIRST, _constants_enums__WEBPACK_IMPORTED_MODULE_0__.DORSAL_FIN_SPINES.NO],
+        analFin: [_constants_enums__WEBPACK_IMPORTED_MODULE_0__.ANAL_FIN.YES, _constants_enums__WEBPACK_IMPORTED_MODULE_0__.ANAL_FIN.NO],
+        nictitatingMembrane: [_constants_enums__WEBPACK_IMPORTED_MODULE_0__.NICTITATING_MEMBRANE.YES, _constants_enums__WEBPACK_IMPORTED_MODULE_0__.NICTITATING_MEMBRANE.NO],
+        isBioluminescent: [_constants_enums__WEBPACK_IMPORTED_MODULE_0__.BIOLUMINESCENT.YES, _constants_enums__WEBPACK_IMPORTED_MODULE_0__.BIOLUMINESCENT.NO],
+        hasSpiracles: [_constants_enums__WEBPACK_IMPORTED_MODULE_0__.SPIRACLES.YES, _constants_enums__WEBPACK_IMPORTED_MODULE_0__.SPIRACLES.NO],
+        hasFlattenedBody: [_constants_enums__WEBPACK_IMPORTED_MODULE_0__.FLATTENED_BODY.YES, _constants_enums__WEBPACK_IMPORTED_MODULE_0__.FLATTENED_BODY.NO],
+        mouthInFrontOfEyes: [_constants_enums__WEBPACK_IMPORTED_MODULE_0__.MOUTH_IN_FRONT_OF_EYES.YES, _constants_enums__WEBPACK_IMPORTED_MODULE_0__.MOUTH_IN_FRONT_OF_EYES.NO]
+      };
       tagDropdown.addEventListener("change", function (event) {
         var category = event.target.value;
 
-        if (category && _this3.sharkTree) {
-          var categoryData = _this3.sharkTree.tagCategories.get(category);
+        if (category && _this4.sharkTree) {
+          var categoryData = _this4.sharkTree.tagCategories.get(category);
 
           var values = new Set(categoryData === null || categoryData === void 0 ? void 0 : categoryData.species.flatMap(function (s) {
             return s.tags.filter(function (tag) {
-              return _this3.sharkTree.getTagCategory(tag) === category;
+              return _this4.sharkTree.getTagCategory(tag) === category;
             });
-          }));
-          tagValueDropdown.innerHTML = "\n                    <option value=\"\">All</option>\n                    ".concat(Array.from(values).map(function (v) {
-            return "<option value=\"".concat(v, "\">").concat(v, "</option>");
+          })); // Sort values based on category
+
+          var sortedValues = Array.from(values).sort(function (a, b) {
+            var order = categoryOrders[category];
+
+            if (order) {
+              // Use defined order if available
+              var indexA = order.indexOf(a);
+              var indexB = order.indexOf(b); // Handle cases where a value might not be in the order list
+
+              if (indexA === -1 && indexB === -1) return a.localeCompare(b);
+              if (indexA === -1) return 1;
+              if (indexB === -1) return -1;
+              return indexA - indexB;
+            } // Default to alphabetical order
+
+
+            return a.localeCompare(b);
+          });
+          tagValueDropdown.innerHTML = "\n                    <option value=\"\">All</option>\n                    ".concat(sortedValues.map(function (v) {
+            var displayText = v;
+
+            if (v.startsWith("Yes ") || v === _constants_enums__WEBPACK_IMPORTED_MODULE_0__.BIOLUMINESCENT.YES || v === _constants_enums__WEBPACK_IMPORTED_MODULE_0__.MOUTH_IN_FRONT_OF_EYES.YES) {
+              displayText = "Yes";
+            } else if (v.startsWith("No ") && v !== _constants_enums__WEBPACK_IMPORTED_MODULE_0__.BEHAVIOR.NONE || v === _constants_enums__WEBPACK_IMPORTED_MODULE_0__.BIOLUMINESCENT.NO || v === _constants_enums__WEBPACK_IMPORTED_MODULE_0__.MOUTH_IN_FRONT_OF_EYES.NO) {
+              displayText = "No";
+            }
+
+            return "<option value=\"".concat(v, "\">").concat(displayText, "</option>");
           }).join(""), "\n                ");
 
-          _this3.sharkTree.highlightTagCategory(category);
+          _this4.sharkTree.highlightTagCategory(category);
         } else {
-          var _this3$sharkTree2;
+          var _this4$sharkTree2;
 
-          tagValueDropdown.innerHTML = '<option value="">All</option>';
-          (_this3$sharkTree2 = _this3.sharkTree) === null || _this3$sharkTree2 === void 0 ? void 0 : _this3$sharkTree2.clearAllHighlights();
+          tagValueDropdown.innerHTML = "<option value=''>All</option>";
+          (_this4$sharkTree2 = _this4.sharkTree) === null || _this4$sharkTree2 === void 0 ? void 0 : _this4$sharkTree2.clearAllHighlights();
         }
       });
       tagValueDropdown.addEventListener("change", function (event) {
         var category = tagDropdown.value;
         var value = event.target.value;
 
-        if (category && _this3.sharkTree) {
-          _this3.sharkTree.highlightTagCategory(category, value || undefined);
+        if (category && _this4.sharkTree) {
+          _this4.sharkTree.highlightTagCategory(category, value || undefined);
         }
       });
     }
@@ -12914,4 +13025,4 @@ customElements.define("shark-tree-component", SharkTreeComponent);
 
 /******/ })()
 ;
-//# sourceMappingURL=bundlec3c34ee7511e2e4f8dbe.js.map
+//# sourceMappingURL=bundle4dd97e65ad7e3f0bf7c3.js.map
