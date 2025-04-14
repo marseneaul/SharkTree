@@ -6012,11 +6012,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "scylliogaleusQuecketti": () => (/* binding */ scylliogaleusQuecketti)
 /* harmony export */ });
-/* harmony import */ var _constants_enums__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../constants/enums */ "./src/constants/enums.ts");
+/* harmony import */ var _images_carcharhiniformes_triakidae_scylliogaleus_quecketti_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../images/carcharhiniformes/triakidae/scylliogaleus-quecketti.jpg */ "./src/images/carcharhiniformes/triakidae/scylliogaleus-quecketti.jpg");
+/* harmony import */ var _constants_enums__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../constants/enums */ "./src/constants/enums.ts");
+
 
 var scylliogaleusQuecketti = {
   commonName: "Flapnose Houndshark",
   binomialName: "Scylliogaleus quecketti",
+  imageUrl: _images_carcharhiniformes_triakidae_scylliogaleus_quecketti_jpg__WEBPACK_IMPORTED_MODULE_0__,
   domain: "Eukaryota",
   kingdom: "Animalia",
   phylum: "Chordata",
@@ -6028,7 +6031,7 @@ var scylliogaleusQuecketti = {
   family: "Triakidae",
   genus: "Scylliogaleus",
   species: "quecketti",
-  tags: [_constants_enums__WEBPACK_IMPORTED_MODULE_0__.CONSERVATION_STATUS.VU, _constants_enums__WEBPACK_IMPORTED_MODULE_0__.REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS, _constants_enums__WEBPACK_IMPORTED_MODULE_0__.NICTITATING_MEMBRANE.YES]
+  tags: [_constants_enums__WEBPACK_IMPORTED_MODULE_1__.CONSERVATION_STATUS.VU, _constants_enums__WEBPACK_IMPORTED_MODULE_1__.REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS, _constants_enums__WEBPACK_IMPORTED_MODULE_1__.NICTITATING_MEMBRANE.YES]
 };
 
 /***/ }),
@@ -6560,14 +6563,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "alopiasPelagicus": () => (/* binding */ alopiasPelagicus)
 /* harmony export */ });
-/* harmony import */ var _images_alopias_pelagicus_jpeg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../../images/alopias-pelagicus.jpeg */ "./src/images/alopias-pelagicus.jpeg");
+/* harmony import */ var _images_lamniformes_alopias_pelagicus_jpeg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../../images/lamniformes/alopias-pelagicus.jpeg */ "./src/images/lamniformes/alopias-pelagicus.jpeg");
 /* harmony import */ var _constants_enums__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../constants/enums */ "./src/constants/enums.ts");
 
 
 var alopiasPelagicus = {
   commonName: "Pelagic Thresher",
   binomialName: "Alopias pelagicus",
-  imageUrl: _images_alopias_pelagicus_jpeg__WEBPACK_IMPORTED_MODULE_0__,
+  imageUrl: _images_lamniformes_alopias_pelagicus_jpeg__WEBPACK_IMPORTED_MODULE_0__,
   domain: "Eukaryota",
   kingdom: "Animalia",
   phylum: "Chordata",
@@ -6595,14 +6598,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "alopiasSuperciliosus": () => (/* binding */ alopiasSuperciliosus)
 /* harmony export */ });
-/* harmony import */ var _images_alopias_superciliosus_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../../images/alopias-superciliosus.jpg */ "./src/images/alopias-superciliosus.jpg");
+/* harmony import */ var _images_lamniformes_alopias_superciliosus_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../../images/lamniformes/alopias-superciliosus.jpg */ "./src/images/lamniformes/alopias-superciliosus.jpg");
 /* harmony import */ var _constants_enums__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../constants/enums */ "./src/constants/enums.ts");
 
 
 var alopiasSuperciliosus = {
   commonName: "Bigeye Thresher",
   binomialName: "Alopias superciliosus",
-  imageUrl: _images_alopias_superciliosus_jpg__WEBPACK_IMPORTED_MODULE_0__,
+  imageUrl: _images_lamniformes_alopias_superciliosus_jpg__WEBPACK_IMPORTED_MODULE_0__,
   domain: "Eukaryota",
   kingdom: "Animalia",
   phylum: "Chordata",
@@ -6630,7 +6633,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "alopiasVulpinus": () => (/* binding */ alopiasVulpinus)
 /* harmony export */ });
-/* harmony import */ var _images_alopias_vulpinus_jpeg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../../images/alopias-vulpinus.jpeg */ "./src/images/alopias-vulpinus.jpeg");
+/* harmony import */ var _images_lamniformes_alopias_vulpinus_jpeg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../../images/lamniformes/alopias-vulpinus.jpeg */ "./src/images/lamniformes/alopias-vulpinus.jpeg");
 /* harmony import */ var _constants_enums__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../constants/enums */ "./src/constants/enums.ts");
 
 
@@ -6638,7 +6641,7 @@ var alopiasVulpinus = {
   commonName: "Common Thresher",
   alternativeNames: ["Atlantic Thresher"],
   binomialName: "Alopias vulpinus",
-  imageUrl: _images_alopias_vulpinus_jpeg__WEBPACK_IMPORTED_MODULE_0__,
+  imageUrl: _images_lamniformes_alopias_vulpinus_jpeg__WEBPACK_IMPORTED_MODULE_0__,
   domain: "Eukaryota",
   kingdom: "Animalia",
   phylum: "Chordata",
@@ -6731,7 +6734,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "carcharodonCarcharias": () => (/* binding */ carcharodonCarcharias)
 /* harmony export */ });
-/* harmony import */ var _images_carcharodon_carcharias_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../../../images/carcharodon-carcharias.png */ "./src/images/carcharodon-carcharias.png");
+/* harmony import */ var _images_lamniformes_lamnidae_carcharodon_carcharias_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../../../images/lamniformes/lamnidae/carcharodon-carcharias.png */ "./src/images/lamniformes/lamnidae/carcharodon-carcharias.png");
 /* harmony import */ var _constants_enums__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../constants/enums */ "./src/constants/enums.ts");
 
 
@@ -6739,7 +6742,7 @@ var carcharodonCarcharias = {
   commonName: "Great White Shark",
   alternativeNames: ["White Shark", "White Pointer", "Great White"],
   binomialName: "Carcharodon carcharias",
-  imageUrl: _images_carcharodon_carcharias_png__WEBPACK_IMPORTED_MODULE_0__,
+  imageUrl: _images_lamniformes_lamnidae_carcharodon_carcharias_png__WEBPACK_IMPORTED_MODULE_0__,
   domain: "Eukaryota",
   kingdom: "Animalia",
   phylum: "Chordata",
@@ -6768,14 +6771,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "isurusOxyrinchus": () => (/* binding */ isurusOxyrinchus)
 /* harmony export */ });
 /* harmony import */ var _constants_enums__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../constants/enums */ "./src/constants/enums.ts");
-/* harmony import */ var _images_isurus_oxyrinchus_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../../../images/isurus-oxyrinchus.png */ "./src/images/isurus-oxyrinchus.png");
+/* harmony import */ var _images_lamniformes_lamnidae_isurus_oxyrinchus_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../../../images/lamniformes/lamnidae/isurus-oxyrinchus.png */ "./src/images/lamniformes/lamnidae/isurus-oxyrinchus.png");
 
 
 var isurusOxyrinchus = {
   commonName: "Shortfin Mako",
   alternativeNames: ["Shortfin Mako Shark", "Blue Pointer", "Bonito Shark", "Mako Shark"],
   binomialName: "Isurus oxyrinchus",
-  imageUrl: _images_isurus_oxyrinchus_png__WEBPACK_IMPORTED_MODULE_1__,
+  imageUrl: _images_lamniformes_lamnidae_isurus_oxyrinchus_png__WEBPACK_IMPORTED_MODULE_1__,
   domain: "Eukaryota",
   kingdom: "Animalia",
   phylum: "Chordata",
@@ -6804,13 +6807,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "isurusPaucus": () => (/* binding */ isurusPaucus)
 /* harmony export */ });
 /* harmony import */ var _constants_enums__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../constants/enums */ "./src/constants/enums.ts");
-/* harmony import */ var _images_isurus_paucus_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../../../images/isurus-paucus.png */ "./src/images/isurus-paucus.png");
+/* harmony import */ var _images_lamniformes_lamnidae_isurus_paucus_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../../../images/lamniformes/lamnidae/isurus-paucus.png */ "./src/images/lamniformes/lamnidae/isurus-paucus.png");
 
 
 var isurusPaucus = {
   commonName: "Longfin Mako Shark",
   binomialName: "Isurus paucus",
-  imageUrl: _images_isurus_paucus_png__WEBPACK_IMPORTED_MODULE_1__,
+  imageUrl: _images_lamniformes_lamnidae_isurus_paucus_png__WEBPACK_IMPORTED_MODULE_1__,
   domain: "Eukaryota",
   kingdom: "Animalia",
   phylum: "Chordata",
@@ -6838,14 +6841,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "lamnaDitropis": () => (/* binding */ lamnaDitropis)
 /* harmony export */ });
-/* harmony import */ var _images_lamna_ditropis_jpeg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../../../images/lamna-ditropis.jpeg */ "./src/images/lamna-ditropis.jpeg");
+/* harmony import */ var _images_lamniformes_lamnidae_lamna_ditropis_jpeg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../../../images/lamniformes/lamnidae/lamna-ditropis.jpeg */ "./src/images/lamniformes/lamnidae/lamna-ditropis.jpeg");
 /* harmony import */ var _constants_enums__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../constants/enums */ "./src/constants/enums.ts");
 
 
 var lamnaDitropis = {
   commonName: "Salmon Shark",
   binomialName: "Lamna ditropis",
-  imageUrl: _images_lamna_ditropis_jpeg__WEBPACK_IMPORTED_MODULE_0__,
+  imageUrl: _images_lamniformes_lamnidae_lamna_ditropis_jpeg__WEBPACK_IMPORTED_MODULE_0__,
   domain: "Eukaryota",
   kingdom: "Animalia",
   phylum: "Chordata",
@@ -6874,14 +6877,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "lamnaNasus": () => (/* binding */ lamnaNasus)
 /* harmony export */ });
 /* harmony import */ var _constants_enums__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../constants/enums */ "./src/constants/enums.ts");
-/* harmony import */ var _images_lamna_nasus_jpeg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../../../images/lamna-nasus.jpeg */ "./src/images/lamna-nasus.jpeg");
+/* harmony import */ var _images_lamniformes_lamnidae_lamna_nasus_jpeg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../../../images/lamniformes/lamnidae/lamna-nasus.jpeg */ "./src/images/lamniformes/lamnidae/lamna-nasus.jpeg");
 
 
 var lamnaNasus = {
   commonName: "Porbeagle",
   alternativeNames: ["Porbeagle Shark"],
   binomialName: "Lamna nasus",
-  imageUrl: _images_lamna_nasus_jpeg__WEBPACK_IMPORTED_MODULE_1__,
+  imageUrl: _images_lamniformes_lamnidae_lamna_nasus_jpeg__WEBPACK_IMPORTED_MODULE_1__,
   domain: "Eukaryota",
   kingdom: "Animalia",
   phylum: "Chordata",
@@ -12398,10 +12401,21 @@ exports.Utils = Utils;
 
 /***/ }),
 
-/***/ "./src/images/alopias-pelagicus.jpeg":
-/*!*******************************************!*\
-  !*** ./src/images/alopias-pelagicus.jpeg ***!
-  \*******************************************/
+/***/ "./src/images/carcharhiniformes/triakidae/scylliogaleus-quecketti.jpg":
+/*!****************************************************************************!*\
+  !*** ./src/images/carcharhiniformes/triakidae/scylliogaleus-quecketti.jpg ***!
+  \****************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+module.exports = __webpack_require__.p + "scylliogaleus-quecketti.jpg";
+
+/***/ }),
+
+/***/ "./src/images/lamniformes/alopias-pelagicus.jpeg":
+/*!*******************************************************!*\
+  !*** ./src/images/lamniformes/alopias-pelagicus.jpeg ***!
+  \*******************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -12409,10 +12423,10 @@ module.exports = __webpack_require__.p + "alopias-pelagicus.jpeg";
 
 /***/ }),
 
-/***/ "./src/images/alopias-superciliosus.jpg":
-/*!**********************************************!*\
-  !*** ./src/images/alopias-superciliosus.jpg ***!
-  \**********************************************/
+/***/ "./src/images/lamniformes/alopias-superciliosus.jpg":
+/*!**********************************************************!*\
+  !*** ./src/images/lamniformes/alopias-superciliosus.jpg ***!
+  \**********************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -12420,10 +12434,10 @@ module.exports = __webpack_require__.p + "alopias-superciliosus.jpg";
 
 /***/ }),
 
-/***/ "./src/images/alopias-vulpinus.jpeg":
-/*!******************************************!*\
-  !*** ./src/images/alopias-vulpinus.jpeg ***!
-  \******************************************/
+/***/ "./src/images/lamniformes/alopias-vulpinus.jpeg":
+/*!******************************************************!*\
+  !*** ./src/images/lamniformes/alopias-vulpinus.jpeg ***!
+  \******************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -12431,10 +12445,10 @@ module.exports = __webpack_require__.p + "alopias-vulpinus.jpeg";
 
 /***/ }),
 
-/***/ "./src/images/carcharodon-carcharias.png":
-/*!***********************************************!*\
-  !*** ./src/images/carcharodon-carcharias.png ***!
-  \***********************************************/
+/***/ "./src/images/lamniformes/lamnidae/carcharodon-carcharias.png":
+/*!********************************************************************!*\
+  !*** ./src/images/lamniformes/lamnidae/carcharodon-carcharias.png ***!
+  \********************************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -12442,10 +12456,10 @@ module.exports = __webpack_require__.p + "carcharodon-carcharias.png";
 
 /***/ }),
 
-/***/ "./src/images/isurus-oxyrinchus.png":
-/*!******************************************!*\
-  !*** ./src/images/isurus-oxyrinchus.png ***!
-  \******************************************/
+/***/ "./src/images/lamniformes/lamnidae/isurus-oxyrinchus.png":
+/*!***************************************************************!*\
+  !*** ./src/images/lamniformes/lamnidae/isurus-oxyrinchus.png ***!
+  \***************************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -12453,10 +12467,10 @@ module.exports = __webpack_require__.p + "isurus-oxyrinchus.png";
 
 /***/ }),
 
-/***/ "./src/images/isurus-paucus.png":
-/*!**************************************!*\
-  !*** ./src/images/isurus-paucus.png ***!
-  \**************************************/
+/***/ "./src/images/lamniformes/lamnidae/isurus-paucus.png":
+/*!***********************************************************!*\
+  !*** ./src/images/lamniformes/lamnidae/isurus-paucus.png ***!
+  \***********************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -12464,10 +12478,10 @@ module.exports = __webpack_require__.p + "isurus-paucus.png";
 
 /***/ }),
 
-/***/ "./src/images/lamna-ditropis.jpeg":
-/*!****************************************!*\
-  !*** ./src/images/lamna-ditropis.jpeg ***!
-  \****************************************/
+/***/ "./src/images/lamniformes/lamnidae/lamna-ditropis.jpeg":
+/*!*************************************************************!*\
+  !*** ./src/images/lamniformes/lamnidae/lamna-ditropis.jpeg ***!
+  \*************************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -12475,10 +12489,10 @@ module.exports = __webpack_require__.p + "lamna-ditropis.jpeg";
 
 /***/ }),
 
-/***/ "./src/images/lamna-nasus.jpeg":
-/*!*************************************!*\
-  !*** ./src/images/lamna-nasus.jpeg ***!
-  \*************************************/
+/***/ "./src/images/lamniformes/lamnidae/lamna-nasus.jpeg":
+/*!**********************************************************!*\
+  !*** ./src/images/lamniformes/lamnidae/lamna-nasus.jpeg ***!
+  \**********************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
@@ -12837,14 +12851,14 @@ var SharkTreeComponent = /*#__PURE__*/function (_HTMLElement) {
   }, {
     key: "html",
     value: function html() {
-      return "\n            <style> ".concat(this.css(), " </style>\n            <div id=\"app-container\">\n                <div id=\"controls-container\">\n                    <div id=\"dropdown-container\">\n                        <label for=\"shark-config-dropdown\">Configuration:</label>\n                        <select id=\"shark-config-dropdown\">\n                            ").concat(Object.keys(sharkConfigs).map(function (configKey) {
+      return "\n            <style> ".concat(this.css(), " </style>\n            <div id=\"app-container\">\n                <div id=\"controls-container\">\n                    <div id=\"search-container\">\n                        <label for=\"shark-search\">Search Shark:</label>\n                        <input type=\"text\" id=\"shark-search\" placeholder=\"Enter common or binomial name\" aria-describedby=\"search-label\">\n                        <div id=\"search-suggestions\" class=\"suggestions\"></div>\n                    </div>\n                    <div id=\"dropdown-container\">\n                        <label for=\"shark-config-dropdown\">Configuration:</label>\n                        <select id=\"shark-config-dropdown\">\n                            ").concat(Object.keys(sharkConfigs).map(function (configKey) {
         return "<option value=\"".concat(configKey, "\">").concat(_utils_string_utils__WEBPACK_IMPORTED_MODULE_3__.StringUtils.capitalizeFirstLetter(configKey), "</option>");
-      }).join(""), "\n                        </select>\n                    </div>\n                    <div id=\"taxonomic-container\">\n                        <label for=\"taxonomic-dropdown\">Taxonomic Level:</label>\n                        <select id=\"taxonomic-dropdown\">\n                            <option value=\"\">None</option>\n                            <option value=\"genus\">Genus</option>\n                            <option value=\"family\">Family</option>\n                            <option value=\"order\">Order</option>\n                            <option value=\"superorder\">Superorder</option>\n                            <option value=\"subdivision\">Subdivision</option>\n                        </select>\n                        <select id=\"taxonomic-value-dropdown\">\n                            <option value=\"\">All</option>\n                        </select>\n                    </div>\n                    <div id=\"tag-container\">\n                        <label for=\"tag-dropdown\">Tag Category:</label>\n                        <select id=\"tag-dropdown\">\n                            <option value=\"\">None</option>\n                            <option value=\"conservationStatus\">Conservation Status</option>\n                            <option value=\"reproductiveStrategy\">Reproductive Strategy</option>\n                            <option value=\"temperatureRegulation\">Temperature Regulation</option>\n                            <option value=\"behavior\">Behavior</option>\n                            <option value=\"feedingBehavior\">Feeding Behavior</option>\n                            <option value=\"groupBehavior\">Group Behavior</option>\n                            <option value=\"numGills\">Number of Gills</option>\n                            <option value=\"numDorsalFins\">Number of Dorsal Fins</option>\n                            <option value=\"analFin\">Has Anal Fin</option>\n                            <option value=\"hasSpiracles\">Has Spiracles</option>\n                            <option value=\"hasFlattenedBody\">Has Flattened Body</option>\n                            <option value=\"nictitatingMembrane\">Has Nictitating Membrane</option>\n                            <option value=\"caudalFinShape\">Caudal Fin Shape</option>\n                            <option value=\"mouthInFrontOfEyes\">Has Mouth in Front of Eyes</option>\n                            <option value=\"isBioluminescent\">Bioluminescent</option>\n                            <option value=\"hasDorsalFinSpines\">Has Dorsal Fin Spines</option>\n                        </select>\n                        <select id=\"tag-value-dropdown\">\n                            <option value=\"\">All</option>\n                        </select>\n                    </div>\n                    <button id=\"info-button\" aria-label=\"How to use this app\">\n                        <svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n                            <circle cx=\"12\" cy=\"12\" r=\"11\" stroke=\"#00688B\" stroke-width=\"1\" fill=\"#FFFFFF\" />\n                            <text x=\"12\" y=\"17\" font-size=\"13\" font-weight=\"300\" font-family=\"Open Sans, sans-serif\" fill=\"#00688B\" text-anchor=\"middle\">?</text>\n                        </svg>\n                    </button>\n                    <div id=\"info-tooltip\">\n                        <strong>How to Use:</strong>\n                        <ul>\n                            <li>Choose a shark group from \"Configuration\" to display its phylogenetic tree.</li>\n                            <li>Select a \"Taxonomic Level\" (e.g., genus or family) to color matching species\u2019 nodes and paths.</li>\n                            <li>Pick a \"Tag Category\" (e.g., conservation status) to add dashed lines to paths of species with that trait.</li>\n                            <li>Click a shark\u2019s node to view its details on the right panel.</li>\n                            <li>Scroll to rotate, pinch to zoom, double-click to reset, or drag to pan the tree.</li>\n                        </ul>\n                    </div>\n                </div>\n                <div id=\"phylo-container\"></div>\n                <div id=\"shark-screen-container\">\n                    <div id=\"shark-screen\"></div>\n                </div>\n            </div>\n        ");
+      }).join(""), "\n                        </select>\n                    </div>\n                    <div id=\"taxonomic-container\">\n                        <label for=\"taxonomic-dropdown\">Taxonomic Level:</label>\n                        <select id=\"taxonomic-dropdown\">\n                            <option value=\"\">None</option>\n                            <option value=\"genus\">Genus</option>\n                            <option value=\"family\">Family</option>\n                            <option value=\"order\">Order</option>\n                            <option value=\"superorder\">Superorder</option>\n                            <option value=\"subdivision\">Subdivision</option>\n                        </select>\n                        <select id=\"taxonomic-value-dropdown\">\n                            <option value=\"\">All</option>\n                        </select>\n                    </div>\n                    <div id=\"tag-container\">\n                        <label for=\"tag-dropdown\">Tag Category:</label>\n                        <select id=\"tag-dropdown\">\n                            <option value=\"\">None</option>\n                            <option value=\"conservationStatus\">Conservation Status</option>\n                            <option value=\"reproductiveStrategy\">Reproductive Strategy</option>\n                            <option value=\"temperatureRegulation\">Temperature Regulation</option>\n                            <option value=\"behavior\">Behavior</option>\n                            <option value=\"feedingBehavior\">Feeding Behavior</option>\n                            <option value=\"groupBehavior\">Group Behavior</option>\n                            <option value=\"numGills\">Number of Gills</option>\n                            <option value=\"numDorsalFins\">Number of Dorsal Fins</option>\n                            <option value=\"analFin\">Has Anal Fin</option>\n                            <option value=\"hasSpiracles\">Has Spiracles</option>\n                            <option value=\"hasFlattenedBody\">Has Flattened Body</option>\n                            <option value=\"nictitatingMembrane\">Has Nictitating Membrane</option>\n                            <option value=\"caudalFinShape\">Caudal Fin Shape</option>\n                            <option value=\"mouthInFrontOfEyes\">Has Mouth in Front of Eyes</option>\n                            <option value=\"isBioluminescent\">Bioluminescent</option>\n                            <option value=\"hasDorsalFinSpines\">Has Dorsal Fin Spines</option>\n                        </select>\n                        <select id=\"tag-value-dropdown\">\n                            <option value=\"\">All</option>\n                        </select>\n                    </div>\n                    <button id=\"info-button\" aria-label=\"How to use this app\">\n                        <svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n                            <circle cx=\"12\" cy=\"12\" r=\"11\" stroke=\"#00688B\" stroke-width=\"1\" fill=\"#FFFFFF\" />\n                            <text x=\"12\" y=\"17\" font-size=\"13\" font-weight=\"300\" font-family=\"Open Sans, sans-serif\" fill=\"#00688B\" text-anchor=\"middle\">?</text>\n                        </svg>\n                    </button>\n                    <div id=\"info-tooltip\">\n                        <strong>How to Use:</strong>\n                        <ul>\n                            <li>Type a shark\u2019s common or scientific name in \"Search Shark\" to find and highlight it.</li>\n                            <li>Choose a shark group from \"Configuration\" to display its phylogenetic tree.</li>\n                            <li>Select a \"Taxonomic Level\" (e.g., genus or family) to color matching species\u2019 nodes and paths.</li>\n                            <li>Pick a \"Tag Category\" (e.g., conservation status) to add dashed lines to paths of species with that trait.</li>\n                            <li>Click a shark\u2019s node to view its details on the right panel.</li>\n                            <li>Scroll to rotate, pinch to zoom, double-click to reset, or drag to pan the tree.</li>\n                        </ul>\n                    </div>\n                </div>\n                <div id=\"phylo-container\"></div>\n                <div id=\"shark-screen-container\">\n                    <div id=\"shark-screen\"></div>\n                </div>\n            </div>\n        ");
     }
   }, {
     key: "css",
     value: function css() {
-      return "\n            :host {\n                display: block;\n                width: 100%;\n                height: 100%;\n            }\n            #app-container {\n                position: relative;\n                width: 100%;\n                height: 100%;\n                display: flex;\n                flex-direction: row;\n                background: #FFFFFF;\n                font-family: \"Roboto\", sans-serif;\n            }\n            #phylo-container {\n                position: relative;\n                width: 60%;\n                height: 100%;\n                display: flex;\n                justify-content: center;\n                align-items: center;\n                background: #FFFFFF;\n                border-radius: 10px;\n                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n                margin: 10px;\n                overflow: hidden;\n            }\n            #shark-screen-container {\n                position: relative;\n                width: 40%;\n                height: 100%; /* Ensure full height */\n                display: flex;\n                flex-direction: column;\n                align-items: stretch; /* Prevent shrinking */\n                padding: 20px;\n                margin-right: 20px;\n                overflow: hidden; /* Prevent container overflow */\n            }\n            #shark-screen {\n                position: relative;\n                width: 100%;\n                height: auto; /* Let content determine height */\n                min-height: 100%; /* Fill container if content is short */\n                max-height: none; /* Remove restrictive max-height */\n                padding: 20px;\n                background: #F9F9F9;\n                border: 1px solid #E0E0E0;\n                border-radius: 8px;\n                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);\n                overflow-y: auto; /* Scroll only if needed */\n                font-size: 14px;\n                line-height: 1.6;\n                color: #2F4F4F;\n                box-sizing: border-box; /* Include padding in height calculations */\n            }\n            #shark-screen h2 {\n                color: #00688B;\n                margin: 0 0 10px 0;\n                font-size: 21px;\n            }\n            #shark-screen .section {\n                margin-bottom: 15px;\n            }\n            #shark-screen .section strong {\n                color: #2F4F4F;\n                font-weight: 600;\n            }\n            #shark-screen ul {\n                list-style-type: none;\n                padding-left: 10px;\n            }\n            #shark-screen li {\n                margin: 5px 0;\n                color: #555;\n            }\n            #shark-screen img {\n                max-width: 100%;\n                max-height: 200px; /* Cap image height to prevent overflow */\n                object-fit: contain; /* Preserve aspect ratio */\n                border-radius: 5px;\n                margin-top: 10px;\n            }\n            #controls-container {\n                position: absolute;\n                top: 10px;\n                left: 10px;\n                display: flex;\n                flex-direction: row;\n                align-items: center;\n                gap: 20px;\n                z-index: 100;\n                padding: 10px;\n                background: rgba(255, 255, 255, 0.9);\n                border-radius: 5px;\n                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n            }\n            #dropdown-container, #taxonomic-container, #tag-container {\n                display: flex;\n                flex-direction: row;\n                align-items: center;\n                gap: 8px;\n            }\n            img {\n                width: 80%;\n                border-radius: 5px;\n                margin-top: 10px;\n            }\n            label {\n                color: #2F4F4F;\n                font-size: 14px;\n                white-space: nowrap;\n            }\n            select {\n                padding: 5px 8px;\n                border: 1px solid #E0E0E0;\n                border-radius: 5px;\n                background: #FFFFFF;\n                font-size: 14px;\n                color: #2F4F4F;\n                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);\n                min-width: 120px;\n                max-width: 200px;\n            }\n            select:hover {\n                border-color: #00688B;\n                cursor: pointer;\n            }\n            #info-button {\n                width: 22px;\n                height: 22px;\n                border: none;\n                background: none;\n                padding: 0;\n                cursor: help;\n                position: relative;\n                display: flex;\n                align-items: center;\n                justify-content: center;\n                transition: transform 0.2s ease;\n            }\n            #info-button:hover {\n                transform: scale(1.1); /* Subtle zoom effect */\n            }\n            #info-button svg {\n                stroke: #00688B; /* Match app's accent color */\n            }\n            #info-tooltip {\n                display: none;\n                position: absolute;\n                top: 32px;\n                right: 0;\n                background: rgba(255, 255, 255, 0.95); /* Light, semi-transparent white */\n                color: #2F4F4F; /* Match app text color */\n                padding: 14px; /* More breathing room */\n                border-radius: 6px;\n                border: 1px solid #E0E0E0;\n                font-size: 13px;\n                line-height: 1.6; /* Increased spacing */\n                max-width: 280px; /* Slightly wider */\n                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n                z-index: 101;\n                font-weight: 400;\n            }\n            #info-tooltip strong {\n                font-weight: 600;\n                color: #00688B;\n                display: block;\n                margin-bottom: 6px; /* Space below heading */\n            }\n            #info-tooltip ul {\n                list-style-type: none;\n                padding-left: 0;\n                margin: 0;\n            }\n            #info-tooltip li {\n                position: relative;\n                padding-left: 16px; /* Space for bullet */\n                margin-bottom: 6px; /* Space between items */\n            }\n            #info-tooltip li:before {\n                content: \"\u2022\"; /* Bullet point */\n                color: #00688B; /* Accent color */\n                position: absolute;\n                left: 4px;\n                font-size: 14px;\n            }\n            #info-button:hover + #info-tooltip {\n                display: block;\n            }\n        ";
+      return "\n            :host {\n                display: block;\n                width: 100%;\n                height: 100%;\n            }\n            #app-container {\n                position: relative;\n                width: 100%;\n                height: 100%;\n                display: flex;\n                flex-direction: row;\n                background: #FFFFFF;\n                font-family: \"Roboto\", sans-serif;\n            }\n            #phylo-container {\n                position: relative;\n                width: 60%;\n                height: 100%;\n                display: flex;\n                justify-content: center;\n                align-items: center;\n                background: #FFFFFF;\n                border-radius: 10px;\n                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n                margin: 10px;\n                overflow: hidden;\n            }\n            #shark-screen-container {\n                position: relative;\n                width: 40%;\n                height: 100%;\n                display: flex;\n                flex-direction: column;\n                align-items: stretch;\n                padding: 20px;\n                margin-right: 20px;\n                overflow: hidden;\n            }\n            #shark-screen {\n                position: relative;\n                width: 100%;\n                height: auto;\n                min-height: 100%;\n                max-height: none;\n                padding: 20px;\n                background: #F9F9F9;\n                border: 1px solid #E0E0E0;\n                border-radius: 8px;\n                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);\n                overflow-y: auto;\n                font-size: 14px;\n                line-height: 1.6;\n                color: #2F4F4F;\n                box-sizing: border-box;\n            }\n            #shark-screen h2 {\n                color: #00688B;\n                margin: 0 0 10px 0;\n                font-size: 21px;\n            }\n            #shark-screen .section {\n                margin-bottom: 15px;\n            }\n            #shark-screen .section strong {\n                color: #2F4F4F;\n                font-weight: 600;\n            }\n            #shark-screen ul {\n                list-style-type: none;\n                padding-left: 10px;\n            }\n            #shark-screen li {\n                margin: 5px 0;\n                color: #555;\n            }\n            #shark-screen img {\n                max-width: 100%;\n                max-height: 200px;\n                object-fit: contain;\n                border-radius: 5px;\n                margin-top: 10px;\n            }\n            #controls-container {\n                position: absolute;\n                top: 10px;\n                left: 10px;\n                display: flex;\n                flex-direction: row;\n                align-items: center;\n                gap: 20px;\n                z-index: 100;\n                padding: 10px;\n                background: rgba(255, 255, 255, 0.9);\n                border-radius: 5px;\n                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n            }\n            #search-container, #dropdown-container, #taxonomic-container, #tag-container {\n                display: flex;\n                flex-direction: row;\n                align-items: center;\n                gap: 8px;\n                position: relative;\n            }\n            #shark-search {\n                padding: 5px 8px;\n                border: 1px solid #E0E0E0;\n                border-radius: 5px;\n                background: #FFFFFF;\n                font-size: 14px;\n                color: #2F4F4F;\n                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);\n                width: 200px;\n            }\n            #shark-search:focus {\n                outline: none;\n                border-color: #00688B;\n                box-shadow: 0 0 4px rgba(0, 104, 139, 0.3);\n            }\n            #search-suggestions {\n                position: absolute;\n                top: 100%;\n                left: 70px; /* Align with input, accounting for label */\n                width: 200px;\n                max-height: 150px;\n                overflow-y: auto;\n                background: #FFFFFF;\n                border: 1px solid #E0E0E0;\n                border-radius: 5px;\n                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n                z-index: 101;\n                display: none;\n            }\n            #search-suggestions.visible {\n                display: block;\n            }\n            .suggestion-item {\n                padding: 8px 12px;\n                font-size: 14px;\n                color: #2F4F4F;\n                cursor: pointer;\n            }\n            .suggestion-item:hover {\n                background: #F0F8FF;\n                color: #00688B;\n            }\n            .suggestion-item mark {\n                background: #E0F7FA;\n                font-weight: 600;\n            }\n            img {\n                width: 80%;\n                border-radius: 5px;\n                margin-top: 10px;\n            }\n            label {\n                color: #2F4F4F;\n                font-size: 14px;\n                white-space: nowrap;\n            }\n            select {\n                padding: 5px 8px;\n                border: 1px solid #E0E0E0;\n                border-radius: 5px;\n                background: #FFFFFF;\n                font-size: 14px;\n                color: #2F4F4F;\n                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);\n                min-width: 120px;\n                max-width: 200px;\n            }\n            select:hover {\n                border-color: #00688B;\n                cursor: pointer;\n            }\n            #info-button {\n                width: 22px;\n                height: 22px;\n                border: none;\n                background: none;\n                padding: 0;\n                cursor: help;\n                position: relative;\n                display: flex;\n                align-items: center;\n                justify-content: center;\n                transition: transform 0.2s ease;\n            }\n            #info-button:hover {\n                transform: scale(1.1);\n            }\n            #info-button svg {\n                stroke: #00688B;\n            }\n            #info-tooltip {\n                display: none;\n                position: absolute;\n                top: 32px;\n                right: 0;\n                background: rgba(255, 255, 255, 0.95);\n                color: #2F4F4F;\n                padding: 14px;\n                border-radius: 6px;\n                border: 1px solid #E0E0E0;\n                font-size: 13px;\n                line-height: 1.6;\n                max-width: 280px;\n                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n                z-index: 101;\n                font-weight: 400;\n            }\n            #info-tooltip strong {\n                font-weight: 600;\n                color: #00688B;\n                display: block;\n                margin-bottom: 6px;\n            }\n            #info-tooltip ul {\n                list-style-type: none;\n                padding-left: 0;\n                margin: 0;\n            }\n            #info-tooltip li {\n                position: relative;\n                padding-left: 16px;\n                margin-bottom: 6px;\n            }\n            #info-tooltip li:before {\n                content: \"\u2022\";\n                color: #00688B;\n                position: absolute;\n                left: 4px;\n                font-size: 14px;\n            }\n            #info-button:hover + #info-tooltip {\n                display: block;\n            }\n        ";
     }
     /*----------------------------------------|
     |                HANDLERS                 |
@@ -12956,9 +12970,9 @@ var SharkTreeComponent = /*#__PURE__*/function (_HTMLElement) {
           tagValueDropdown.innerHTML = "\n                    <option value=\"\">All</option>\n                    ".concat(sortedValues.map(function (v) {
             var displayText = v;
 
-            if (v.startsWith("Yes ") || v === _constants_enums__WEBPACK_IMPORTED_MODULE_0__.BIOLUMINESCENT.YES || v === _constants_enums__WEBPACK_IMPORTED_MODULE_0__.MOUTH_IN_FRONT_OF_EYES.YES) {
+            if (v.startsWith("Yes ") || v === _constants_enums__WEBPACK_IMPORTED_MODULE_0__.BIOLUMINESCENT.YES || v === _constants_enums__WEBPACK_IMPORTED_MODULE_0__.MOUTH_IN_FRONT_OF_EYES.MOUTH_IN_FRONT_OF_EYES) {
               displayText = "Yes";
-            } else if (v.startsWith("No ") && v !== _constants_enums__WEBPACK_IMPORTED_MODULE_0__.BEHAVIOR.NONE || v === _constants_enums__WEBPACK_IMPORTED_MODULE_0__.BIOLUMINESCENT.NO || v === _constants_enums__WEBPACK_IMPORTED_MODULE_0__.MOUTH_IN_FRONT_OF_EYES.NO) {
+            } else if (v.startsWith("No ") && v !== _constants_enums__WEBPACK_IMPORTED_MODULE_0__.BEHAVIOR.NONE || v === _constants_enums__WEBPACK_IMPORTED_MODULE_0__.BIOLUMINESCENT.NO || v === _constants_enums__WEBPACK_IMPORTED_MODULE_0__.MOUTH_IN_FRONT_OF_EYES.MOUTH_NOT_IN_FRONT_OF_EYES) {
               displayText = "No";
             }
 
@@ -12979,6 +12993,43 @@ var SharkTreeComponent = /*#__PURE__*/function (_HTMLElement) {
 
         if (category && _this4.sharkTree) {
           _this4.sharkTree.highlightTagCategory(category, value || undefined);
+        }
+      });
+      var searchInput = this.shadow.querySelector("#shark-search");
+      var suggestions = this.shadow.querySelector("#search-suggestions");
+      searchInput.addEventListener("input", function () {
+        var query = searchInput.value.trim().toLowerCase();
+
+        _this4.updateSearchSuggestions(query, suggestions);
+      });
+      searchInput.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+          var _this4$sharkTree3;
+
+          var query = searchInput.value.trim().toLowerCase();
+          var species = (_this4$sharkTree3 = _this4.sharkTree) === null || _this4$sharkTree3 === void 0 ? void 0 : _this4$sharkTree3.getSharkSpeciesList();
+          var match = species === null || species === void 0 ? void 0 : species.find(function (s) {
+            var _s$commonName, _s$binomialName;
+
+            return ((_s$commonName = s.commonName) === null || _s$commonName === void 0 ? void 0 : _s$commonName.toLowerCase()) === query || ((_s$binomialName = s.binomialName) === null || _s$binomialName === void 0 ? void 0 : _s$binomialName.toLowerCase()) === query;
+          });
+
+          if (match) {
+            _this4.selectShark(match);
+
+            suggestions.innerHTML = "";
+            suggestions.classList.remove("visible");
+            searchInput.value = match.commonName || match.binomialName;
+          }
+        } else if (event.key === "Escape") {
+          suggestions.innerHTML = "";
+          suggestions.classList.remove("visible");
+        }
+      });
+      document.addEventListener("click", function (event) {
+        if (!searchInput.contains(event.target) && !suggestions.contains(event.target)) {
+          suggestions.innerHTML = "";
+          suggestions.classList.remove("visible");
         }
       });
     }
@@ -13016,6 +13067,85 @@ var SharkTreeComponent = /*#__PURE__*/function (_HTMLElement) {
       var container = this.shadow.querySelector("#phylo-container");
       container.appendChild(sharkTreeSvg);
     }
+  }, {
+    key: "updateSearchSuggestions",
+    value: function updateSearchSuggestions(query, suggestions) {
+      var _this5 = this;
+
+      if (!this.sharkTree || !query) {
+        suggestions.innerHTML = "";
+        suggestions.classList.remove("visible");
+        return;
+      }
+
+      var species = this.sharkTree.getSharkSpeciesList();
+      var matches = species.filter(function (s) {
+        var _s$commonName2, _s$binomialName2;
+
+        return ((_s$commonName2 = s.commonName) === null || _s$commonName2 === void 0 ? void 0 : _s$commonName2.toLowerCase().includes(query)) || ((_s$binomialName2 = s.binomialName) === null || _s$binomialName2 === void 0 ? void 0 : _s$binomialName2.toLowerCase().includes(query));
+      }).slice(0, 5);
+
+      if (matches.length === 0) {
+        suggestions.innerHTML = "";
+        suggestions.classList.remove("visible");
+        return;
+      }
+
+      suggestions.innerHTML = matches.map(function (s) {
+        var name = s.commonName || s.binomialName;
+        var regex = new RegExp("(".concat(query, ")"), "gi");
+        var highlighted = name.replace(regex, "<mark>$1</mark>");
+        return "\n                    <div class=\"suggestion-item\" data-binomial=\"".concat(s.binomialName, "\">\n                        ").concat(highlighted, "\n                    </div>\n                ");
+      }).join("");
+      suggestions.classList.add("visible"); // Add click handlers to suggestion items
+
+      suggestions.querySelectorAll(".suggestion-item").forEach(function (item) {
+        item.addEventListener("click", function () {
+          var binomial = item.dataset.binomial;
+          var selectedShark = species.find(function (s) {
+            return s.binomialName === binomial;
+          });
+
+          if (selectedShark) {
+            _this5.selectShark(selectedShark);
+
+            var searchInput = _this5.shadow.querySelector("#shark-search");
+
+            searchInput.value = selectedShark.commonName || selectedShark.binomialName;
+            suggestions.innerHTML = "";
+            suggestions.classList.remove("visible");
+          }
+        });
+      });
+    }
+  }, {
+    key: "selectShark",
+    value: function selectShark(shark) {
+      if (this.sharkScreen) {
+        var allSpecies = this.sharkTree.getSharkSpeciesList();
+        this.sharkScreen.innerHTML = shark.getFormattedString(allSpecies);
+
+        if (shark.imageUrl) {
+          var sharkImg = document.createElement("img");
+          sharkImg.src = shark.imageUrl;
+          sharkImg.alt = "".concat(shark.name, " illustration");
+
+          sharkImg.onerror = function () {
+            sharkImg.src = "path/to/fallback-image.png";
+            sharkImg.alt = "Image not available";
+          };
+
+          this.sharkScreen.appendChild(sharkImg);
+        }
+      }
+
+      this.sharkTree.updateSelection(shark);
+      window.dispatchEvent(new CustomEvent("select-shark", {
+        detail: {
+          sharkSpecies: shark
+        }
+      }));
+    }
   }]);
 
   return SharkTreeComponent;
@@ -13025,4 +13155,4 @@ customElements.define("shark-tree-component", SharkTreeComponent);
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle4dd97e65ad7e3f0bf7c3.js.map
+//# sourceMappingURL=bundle624c3d0ac6820272eee6.js.map
