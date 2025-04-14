@@ -1,5 +1,5 @@
 import { CAUDAL_FIN_SHAPE, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION } from "../../../../constants/enums";
-import isurusPaucusImg from "./../../../../images/isurus-paucus.png";
+import isurusPaucusImg from "./../../../../images/lamniformes/lamnidae/isurus-paucus.png";
 
 export const isurusPaucus = {
     commonName: "Longfin Mako Shark",

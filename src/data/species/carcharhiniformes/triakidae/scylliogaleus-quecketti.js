@@ -1,8 +1,12 @@
+
+import scylliogaleusQueckettiImg from "../../../../images/carcharhiniformes/triakidae/scylliogaleus-quecketti.jpg";
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const scylliogaleusQuecketti = {
     commonName: "Flapnose Houndshark",
     binomialName: "Scylliogaleus quecketti",
+
+    imageUrl: scylliogaleusQueckettiImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

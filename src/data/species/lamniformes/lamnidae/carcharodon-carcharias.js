@@ -1,4 +1,4 @@
-import carcharodonCarchariasImg from "./../../../../images/carcharodon-carcharias.png";
+import carcharodonCarchariasImg from "./../../../../images/lamniformes/lamnidae/carcharodon-carcharias.png";
 import { BEHAVIOR, CAUDAL_FIN_SHAPE, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION } from "../../../../constants/enums";
 
 export const carcharodonCarcharias = {

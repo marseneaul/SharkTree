@@ -1,4 +1,4 @@
-import alopiasVulpinusImg from "./../../../images/alopias-vulpinus.jpeg";
+import alopiasVulpinusImg from "./../../../images/lamniformes/alopias-vulpinus.jpeg";
 import { BEHAVIOR, CAUDAL_FIN_SHAPE, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION } from "../../../constants/enums";
 
 export const alopiasVulpinus = {

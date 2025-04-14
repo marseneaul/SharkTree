@@ -1,4 +1,4 @@
-import alopiasSuperciliosusImg from "./../../../images/alopias-superciliosus.jpg";
+import alopiasSuperciliosusImg from "./../../../images/lamniformes/alopias-superciliosus.jpg";
 import { BEHAVIOR, CAUDAL_FIN_SHAPE, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION } from "../../../constants/enums";
 
 export const alopiasSuperciliosus = {

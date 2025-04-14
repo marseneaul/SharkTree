@@ -1,4 +1,4 @@
-import lamnaDitropisImg from "./../../../../images/lamna-ditropis.jpeg";
+import lamnaDitropisImg from "./../../../../images/lamniformes/lamnidae/lamna-ditropis.jpeg";
 import { BEHAVIOR, CAUDAL_FIN_SHAPE, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION } from "../../../../constants/enums";
 
 export const lamnaDitropis = {

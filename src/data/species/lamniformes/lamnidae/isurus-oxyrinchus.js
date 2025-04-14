@@ -1,5 +1,5 @@
 import { BEHAVIOR, CAUDAL_FIN_SHAPE, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION } from "../../../../constants/enums";
-import isurusOxyrinchusImg from "./../../../../images/isurus-oxyrinchus.png";
+import isurusOxyrinchusImg from "./../../../../images/lamniformes/lamnidae/isurus-oxyrinchus.png";
 
 export const isurusOxyrinchus = {
     commonName: "Shortfin Mako",
