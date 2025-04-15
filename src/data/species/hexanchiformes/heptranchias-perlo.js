@@ -21,5 +21,6 @@ export const heptranchiasPerlo = {
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         NUM_GILLS.SEVEN, 
         NUM_DORSAL_FINS.ONE
-    ]
+    ],
+    depthRange: "0-1000 m"
 };

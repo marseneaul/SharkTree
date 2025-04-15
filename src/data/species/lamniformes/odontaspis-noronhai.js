@@ -20,5 +20,6 @@ export const odontaspisNoronhai = {
         CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS, REPRODUCTIVE_STRATEGY.OOPHAGY,
         CAUDAL_FIN_SHAPE.HOMOCERCAL
-    ]
+    ],
+    depthRange: "35-1000 m"
 };

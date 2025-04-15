@@ -21,5 +21,6 @@ export const heterodontusFrancisci = {
         CONSERVATION_STATUS.DD,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
         DORSAL_FIN_SPINES.YES
-    ]
+    ],
+    depthRange: "2-152 m"
 };

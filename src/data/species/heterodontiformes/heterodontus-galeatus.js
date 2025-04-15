@@ -21,5 +21,6 @@ export const heterodontusGaleatus = {
         CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
         DORSAL_FIN_SPINES.YES
-    ]
+    ],
+    depthRange: "0-93 m"
 };

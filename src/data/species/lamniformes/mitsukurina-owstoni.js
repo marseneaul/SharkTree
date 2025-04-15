@@ -20,5 +20,6 @@ export const mitsukurinaOwstoni = {
         CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS, REPRODUCTIVE_STRATEGY.OOPHAGY,
         CAUDAL_FIN_SHAPE.HOMOCERCAL
-    ]
+    ],
+    depthRange: "0-1300 m" 
 };

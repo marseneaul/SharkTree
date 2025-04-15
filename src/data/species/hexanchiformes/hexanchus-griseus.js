@@ -21,5 +21,6 @@ export const hexanchusGriseus = {
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         NUM_GILLS.SIX, 
         NUM_DORSAL_FINS.ONE
-    ]
+    ],
+    depthRange: "0-2490 m"
 };

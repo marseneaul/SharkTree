@@ -26,5 +26,6 @@ export const isurusOxyrinchus = {
         TEMPERATURE_REGULATION.ENDOTHERMIC,
         BEHAVIOR.BREACHING,
         CAUDAL_FIN_SHAPE.HOMOCERCAL
-    ]
+    ],
+    depthRange: "0-888 m"
 };

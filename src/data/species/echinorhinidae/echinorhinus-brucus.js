@@ -20,5 +20,6 @@ export const echinorhinusBrucus = {
         CONSERVATION_STATUS.EN,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO
-    ]
+    ],
+    depthRange: "10-900 m"
 };

@@ -20,5 +20,6 @@ export const echinorhinusCookei = {
         CONSERVATION_STATUS.DD,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO
-    ]
+    ],
+    depthRange: "4-1100 m"
 };

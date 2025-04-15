@@ -21,5 +21,6 @@ export const notorhynchusCepedianus = {
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         NUM_GILLS.SEVEN, 
         NUM_DORSAL_FINS.ONE
-    ]
+    ],
+    depthRange: "0-570 m"
 };

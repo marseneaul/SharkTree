@@ -20,5 +20,6 @@ export const psuedocarchariasKamoharai = {
         CONSERVATION_STATUS.NT,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS, REPRODUCTIVE_STRATEGY.OOPHAGY,
         CAUDAL_FIN_SHAPE.HOMOCERCAL
-    ]
+    ],
+    depthRange: "0-590 m"
 };

@@ -20,5 +20,6 @@ export const heterodontusMexicanus = {
         CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
         DORSAL_FIN_SPINES.YES
-    ]
+    ],
+    depthRange: "0-50 m"
 }

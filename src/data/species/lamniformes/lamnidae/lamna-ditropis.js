@@ -25,5 +25,6 @@ export const lamnaDitropis = {
         TEMPERATURE_REGULATION.ENDOTHERMIC,
         BEHAVIOR.BREACHING,
         CAUDAL_FIN_SHAPE.HOMOCERCAL
-    ]
+    ],
+    depthRange: "0-1864 m"
 };

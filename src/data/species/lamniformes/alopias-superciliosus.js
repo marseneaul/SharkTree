@@ -25,5 +25,6 @@ export const alopiasSuperciliosus = {
         TEMPERATURE_REGULATION.ENDOTHERMIC,
         CAUDAL_FIN_SHAPE.HOMOCERCAL,
         BEHAVIOR.BREACHING
-    ]
+    ],
+    depthRange: "0-955 m"
 };

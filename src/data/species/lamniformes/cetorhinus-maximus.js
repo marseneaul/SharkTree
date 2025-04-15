@@ -23,5 +23,6 @@ export const cetorhinusMaximus = {
         FEEDING_BEHAVIOR.CARNIVOROUS, FEEDING_BEHAVIOR.PLANKTIVOROUS,
         BEHAVIOR.BREACHING,
         CAUDAL_FIN_SHAPE.HOMOCERCAL
-    ]
+    ],
+    depthRange: "0-1264 m"
 };

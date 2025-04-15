@@ -25,5 +25,6 @@ export const alopiasPelagicus = {
         TEMPERATURE_REGULATION.ENDOTHERMIC,
         CAUDAL_FIN_SHAPE.HOMOCERCAL,
         BEHAVIOR.BREACHING
-    ]
+    ],
+    depthRange: "0-300 m"
 };
