@@ -22,5 +22,6 @@ export const dalatiasLicha = {
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO,
         BIOLUMINESCENT.YES
-    ]
+    ],
+    depthRange: "37-1800 m"
 };

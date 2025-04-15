@@ -21,5 +21,6 @@ export const etmopterusBaxteri = {
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO,
         BIOLUMINESCENT.YES
-    ]
+    ],
+    depthRange: "500-1500 m"
 };

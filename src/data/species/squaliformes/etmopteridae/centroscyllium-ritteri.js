@@ -20,5 +20,6 @@ export const centroscylliumRitteri = {
         CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO
-    ]
+    ],
+    depthRange: "150-1100 m"
 };

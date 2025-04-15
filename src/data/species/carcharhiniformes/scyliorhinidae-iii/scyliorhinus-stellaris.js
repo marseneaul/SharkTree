@@ -21,5 +21,6 @@ export const scyliorhinusStellaris = {
         CONSERVATION_STATUS.VU,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
         NICTITATING_MEMBRANE.YES
-    ]
+    ],
+    depthRange: "0-380 m"
 };

@@ -22,5 +22,6 @@ export const centrophorusHarrissoni = {
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO,
         DORSAL_FIN_SPINES.YES
-    ]
+    ],
+    depthRange: "220-1050 m"
 };

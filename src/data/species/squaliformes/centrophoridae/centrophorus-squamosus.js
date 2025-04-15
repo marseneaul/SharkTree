@@ -21,5 +21,6 @@ export const centrophorusSquamosus = {
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO,
         DORSAL_FIN_SPINES.YES
-    ]
+    ],
+    depthRange: "0-3366 m"
 };

@@ -21,5 +21,6 @@ export const squatinaAlbipunctata = {
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO,
         FLATTENED_BODY.YES
-    ]
+    ],
+    depthRange: "35-415 m"
 };

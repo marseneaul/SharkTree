@@ -22,5 +22,6 @@ export const pristiophorusCirratus = {
         CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO
-    ]
+    ],
+    depthRange: "40-630 m"
 };

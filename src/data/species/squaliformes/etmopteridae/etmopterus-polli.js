@@ -21,5 +21,6 @@ export const etmopterusPolli = {
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO,
         BIOLUMINESCENT.YES
-    ]
+    ],
+    depthRange: "300-1000 m"
 };

@@ -21,5 +21,6 @@ export const centrophorusLusitanicus = {
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO,
         DORSAL_FIN_SPINES.YES
-    ]
+    ],
+    depthRange: "300-1400 m"
 };

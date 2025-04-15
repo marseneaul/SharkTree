@@ -21,5 +21,6 @@ export const squatinaDumeril = {
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO,
         FLATTENED_BODY.YES
-    ]
+    ],
+    depthRange: "0-1290 m"
 };

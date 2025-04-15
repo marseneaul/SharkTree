@@ -21,5 +21,6 @@ export const etmopterusSentosus = {
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO,
         BIOLUMINESCENT.YES
-    ]
+    ],
+    depthRange: "200-500 m"
 };

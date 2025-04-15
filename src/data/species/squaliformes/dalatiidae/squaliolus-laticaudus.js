@@ -23,5 +23,6 @@ export const squaliolusLaticaudus = {
         ANAL_FIN.NO,
         BIOLUMINESCENT.YES,
         DORSAL_FIN_SPINES.ONLY_ON_FIRST
-    ]
+    ],
+    depthRange: "10-1800 m"
 };

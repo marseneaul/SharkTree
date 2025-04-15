@@ -21,5 +21,6 @@ export const pliotremaWarreni = {
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         NUM_GILLS.SIX,
         ANAL_FIN.NO
-    ]
+    ],
+    depthRange: "10-915 m"
 };

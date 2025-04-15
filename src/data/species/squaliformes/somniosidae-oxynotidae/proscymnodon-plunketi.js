@@ -22,5 +22,6 @@ export const proscymnodonPlunketi = {
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO,
         DORSAL_FIN_SPINES.YES
-    ]
+    ],
+    depthRange: "180-1550 m"
 };

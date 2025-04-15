@@ -21,5 +21,6 @@ export const oxynotusParadoxus = {
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO,
         DORSAL_FIN_SPINES.YES
-    ]
+    ],
+    depthRange: "265-1104 m"
 };

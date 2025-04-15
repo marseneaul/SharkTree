@@ -21,4 +21,5 @@ export interface SharkConfig {
     genus: string
     species: string
     tags?: string[]
+    depthRange?: string;
 }

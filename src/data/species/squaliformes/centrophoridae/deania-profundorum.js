@@ -21,5 +21,6 @@ export const deaniaProfundorum = {
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO,
         DORSAL_FIN_SPINES.YES
-    ]
+    ],
+    depthRange: "205-1800 m"
 };

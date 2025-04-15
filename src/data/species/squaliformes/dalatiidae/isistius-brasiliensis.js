@@ -22,5 +22,6 @@ export const isistiusBrasiliensis = {
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO,
         BIOLUMINESCENT.YES
-    ]
+    ],
+    depthRange: "0-3500 m"
 };

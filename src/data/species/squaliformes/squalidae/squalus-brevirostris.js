@@ -21,5 +21,6 @@ export const squalusBrevirostris = {
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO,
         DORSAL_FIN_SPINES.YES
-    ]
+    ],
+    depthRange: "40-342 m"
 };

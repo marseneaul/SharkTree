@@ -22,5 +22,6 @@ export const etmopterusViator = {
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO,
         BIOLUMINESCENT.YES
-    ]
+    ],
+    depthRange: "820-1837 m"
 };

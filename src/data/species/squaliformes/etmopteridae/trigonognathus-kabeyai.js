@@ -21,5 +21,6 @@ export const trigonognathusKabeyai = {
         CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO
-    ]
+    ],
+    depthRange: "250-1000 m"
 };

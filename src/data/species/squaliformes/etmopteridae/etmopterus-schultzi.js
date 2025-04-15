@@ -21,5 +21,6 @@ export const etmopterusSchultzi = {
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO,
         BIOLUMINESCENT.YES
-    ]
+    ],
+    depthRange: "220-915 m"
 };

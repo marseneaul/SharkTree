@@ -22,5 +22,6 @@ export const etmopterusUnicolor = {
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO,
         BIOLUMINESCENT.YES
-    ]
+    ],
+    depthRange: "120-1500 m"
 };

@@ -21,5 +21,6 @@ export const somniosusMicrocephalus = {
         CONSERVATION_STATUS.VU,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO
-    ]
+    ],
+    depthRange: "0-2647 m"
 };

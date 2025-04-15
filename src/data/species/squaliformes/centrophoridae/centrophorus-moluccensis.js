@@ -22,5 +22,6 @@ export const centrophorusMoluccensis = {
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO,
         DORSAL_FIN_SPINES.YES
-    ]
+    ],
+    depthRange: "128-823 m"
 };

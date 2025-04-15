@@ -21,5 +21,6 @@ export const cirrhigaleusAustralis = {
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO,
         DORSAL_FIN_SPINES.YES
-    ]
+    ],
+    depthRange: "18-1100 m"
 };

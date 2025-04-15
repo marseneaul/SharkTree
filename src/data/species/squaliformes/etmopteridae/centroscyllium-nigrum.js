@@ -20,5 +20,6 @@ export const centroscylliumNigrum = {
         CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO
-    ]
+    ],
+    depthRange: "269-1143 m"
 };

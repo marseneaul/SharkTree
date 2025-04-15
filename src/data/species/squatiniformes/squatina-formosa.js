@@ -21,5 +21,6 @@ export const squatinaFormosa = {
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO,
         FLATTENED_BODY.YES
-    ]
+    ],
+    depthRange: "100-400 m"
 };

@@ -22,5 +22,6 @@ export const squaliolusAliae = {
         ANAL_FIN.NO,
         BIOLUMINESCENT.YES,
         DORSAL_FIN_SPINES.ONLY_ON_FIRST
-    ]
+    ],
+    depthRange: "150-2000 m"
 };

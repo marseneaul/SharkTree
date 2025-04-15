@@ -22,5 +22,6 @@ export const etmopterusPusillus = {
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO,
         BIOLUMINESCENT.YES
-    ]
+    ],
+    depthRange: "0-1998 m"
 };

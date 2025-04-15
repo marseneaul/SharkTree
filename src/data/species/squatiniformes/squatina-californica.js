@@ -21,5 +21,6 @@ export const squatinaCalifornica = {
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO,
         FLATTENED_BODY.YES
-    ]
+    ],
+    depthRange: "0-100 m"
 };

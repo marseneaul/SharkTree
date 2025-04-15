@@ -21,5 +21,6 @@ export const centrophorusZeehaani = {
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO,
         DORSAL_FIN_SPINES.YES
-    ]
+    ],
+    depthRange: "208-701 m"
 };

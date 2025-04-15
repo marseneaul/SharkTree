@@ -21,5 +21,6 @@ export const centroscymnusCoelolepis = {
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO,
         DORSAL_FIN_SPINES.YES
-    ]
+    ],
+    depthRange: "128-3675 m"
 };

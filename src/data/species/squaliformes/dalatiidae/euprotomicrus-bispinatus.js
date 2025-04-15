@@ -20,5 +20,6 @@ export const euprotomicrusBispinatus = {
         CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO
-    ]
+    ],
+    depthRange: "0-1500 m"
 };

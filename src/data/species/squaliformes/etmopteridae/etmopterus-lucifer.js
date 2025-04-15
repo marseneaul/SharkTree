@@ -22,5 +22,6 @@ export const etmopterusLucifer = {
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO,
         BIOLUMINESCENT.YES
-    ]
+    ],
+    depthRange: "158-1357 m"
 };

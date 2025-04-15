@@ -22,5 +22,6 @@ export const etmopterusSpinax = {
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO,
         BIOLUMINESCENT.YES
-    ]
+    ],
+    depthRange: "70-2000 m"
 };

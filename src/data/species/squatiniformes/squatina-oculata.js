@@ -21,5 +21,6 @@ export const squatinaOculata = {
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO,
         FLATTENED_BODY.YES
-    ]
+    ],
+    depthRange: "10-500 m"
 };

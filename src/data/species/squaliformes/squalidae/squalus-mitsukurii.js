@@ -21,5 +21,6 @@ export const squalusMitsukurii = {
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO,
         DORSAL_FIN_SPINES.YES
-    ]
+    ],
+    depthRange: "22-640 m"
 };

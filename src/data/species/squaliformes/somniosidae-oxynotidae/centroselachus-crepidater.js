@@ -21,5 +21,6 @@ export const centroselachusCrepidater = {
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO,
         DORSAL_FIN_SPINES.YES
-    ]
+    ],
+    depthRange: "200-2080 m"
 };

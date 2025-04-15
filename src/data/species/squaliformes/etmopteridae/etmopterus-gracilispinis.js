@@ -21,5 +21,6 @@ export const etmopterusGracilispinis = {
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO,
         BIOLUMINESCENT.YES
-    ]
+    ],
+    depthRange: "25-2240 m"
 };

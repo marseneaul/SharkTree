@@ -21,5 +21,6 @@ export const etmopterusGranulosus = {
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO,
         BIOLUMINESCENT.YES
-    ]
+    ],
+    depthRange: "220-1500 m"
 };

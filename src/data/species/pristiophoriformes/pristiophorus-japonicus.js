@@ -20,5 +20,6 @@ export const pristiophorusJaponicus = {
         CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO
-    ]
+    ],
+    depthRange: "10-1240 m"
 };

@@ -21,5 +21,6 @@ export const etmopterusBrachyurus = {
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO,
         BIOLUMINESCENT.YES
-    ]
+    ],
+    depthRange: "400-610 m"
 };

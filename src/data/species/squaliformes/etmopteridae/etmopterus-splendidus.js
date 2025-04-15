@@ -21,5 +21,6 @@ export const etmopterusSplendidus = {
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO,
         BIOLUMINESCENT.YES
-    ]
+    ],
+    depthRange: "100-300 m"
 };

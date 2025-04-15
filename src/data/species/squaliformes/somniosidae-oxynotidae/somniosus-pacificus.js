@@ -20,5 +20,6 @@ export const somniosusPacificus = {
         CONSERVATION_STATUS.NT,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO
-    ]
+    ],
+    depthRange: "0-2008 m"
 };

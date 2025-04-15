@@ -22,5 +22,6 @@ export const squalusMontalbani = {
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO,
         DORSAL_FIN_SPINES.YES
-    ]
+    ],
+    depthRange: "154-1370 m"
 };

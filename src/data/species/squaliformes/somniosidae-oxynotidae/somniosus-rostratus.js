@@ -20,5 +20,6 @@ export const somniosusRostratus = {
         CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO
-    ]
+    ],
+    depthRange: "180-2734 m"
 };

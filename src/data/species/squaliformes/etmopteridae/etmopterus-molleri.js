@@ -22,5 +22,6 @@ export const etmopterusMolleri = {
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO,
         BIOLUMINESCENT.YES
-    ]
+    ],
+    depthRange: "238-655 m"
 };

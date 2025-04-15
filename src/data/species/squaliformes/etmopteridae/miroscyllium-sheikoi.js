@@ -20,5 +20,6 @@ export const miroscylliumSheikoi = {
         CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO
-    ]
+    ],
+    depthRange: "340-370 m"
 };

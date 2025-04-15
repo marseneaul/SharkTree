@@ -20,5 +20,6 @@ export const centroscylliumGranulatum = {
         CONSERVATION_STATUS.VU,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO
-    ]
+    ],
+    depthRange: "262-500 m"
 };

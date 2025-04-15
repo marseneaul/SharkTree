@@ -21,5 +21,6 @@ export const etmopterusBigelowi = {
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ANAL_FIN.NO,
         BIOLUMINESCENT.YES
-    ]
+    ],
+    depthRange: "0-1000 m"
 };
