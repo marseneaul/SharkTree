@@ -20,5 +20,6 @@ export const apristurusAmpliceps = {
         CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
         NICTITATING_MEMBRANE.YES
-    ]
+    ],
+    depthRange: "800-1503 m"
 }

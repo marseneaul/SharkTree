@@ -21,5 +21,6 @@ export const loxodonMacrorhinus = {
         REPRODUCTIVE_STRATEGY.VIVIPAROUS,
         NICTITATING_MEMBRANE.YES,
         SPIRACLES.NO
-    ]
+    ],
+    depthRange: "2-120 m"
 };

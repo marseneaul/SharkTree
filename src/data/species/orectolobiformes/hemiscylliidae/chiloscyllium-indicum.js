@@ -20,5 +20,6 @@ export const chiloscylliumIndicum = {
         CONSERVATION_STATUS.VU,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
         MOUTH_IN_FRONT_OF_EYES.MOUTH_IN_FRONT_OF_EYES
-    ]
+    ],
+    depthRange: "0-90 m"
 };

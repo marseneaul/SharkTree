@@ -20,5 +20,6 @@ export const galeusPolli = {
         CONSERVATION_STATUS.VU,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
         NICTITATING_MEMBRANE.YES
-    ]
+    ],
+    depthRange: "159-720 m"
 }

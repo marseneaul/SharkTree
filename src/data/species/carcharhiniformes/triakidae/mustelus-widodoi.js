@@ -21,5 +21,6 @@ export const mustelusWidodoi = {
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         NICTITATING_MEMBRANE.YES,
         GROUP_BEHAVIOR.SCHOOLING
-    ]
+    ],
+    depthRange: "60-120 m"
 };

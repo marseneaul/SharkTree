@@ -21,5 +21,6 @@ export const carcharhinusSignatus = {
         REPRODUCTIVE_STRATEGY.VIVIPAROUS,
         NICTITATING_MEMBRANE.YES,
         SPIRACLES.NO
-    ]
+    ],
+    depthRange: "0-600 m"
 };

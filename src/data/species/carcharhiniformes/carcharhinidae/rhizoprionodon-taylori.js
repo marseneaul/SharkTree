@@ -21,5 +21,6 @@ export const rhizoprionodonTaylori = {
         REPRODUCTIVE_STRATEGY.VIVIPAROUS,
         NICTITATING_MEMBRANE.YES,
         SPIRACLES.NO
-    ]
+    ],
+    depthRange: "0-110 m"
 };

@@ -20,5 +20,6 @@ export const halaelurusNatalensis = {
         CONSERVATION_STATUS.VU,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
         NICTITATING_MEMBRANE.YES
-    ]
+    ],
+    depthRange: "0-172 m"
 }

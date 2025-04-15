@@ -20,5 +20,6 @@ export const chiloscylliumPlagiosum = {
         CONSERVATION_STATUS.NT,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
         MOUTH_IN_FRONT_OF_EYES.MOUTH_IN_FRONT_OF_EYES
-    ]
+    ],
+    depthRange: "0-50 m"
 };

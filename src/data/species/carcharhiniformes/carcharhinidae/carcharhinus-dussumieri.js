@@ -22,5 +22,6 @@ export const carcharhinusDussumieri = {
         REPRODUCTIVE_STRATEGY.VIVIPAROUS,
         NICTITATING_MEMBRANE.YES,
         SPIRACLES.NO
-    ]
+    ],
+    depthRange: "0-100 m"
 };

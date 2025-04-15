@@ -21,5 +21,6 @@ export const gollumAttenuatus = {
         CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS, REPRODUCTIVE_STRATEGY.OOPHAGY,
         NICTITATING_MEMBRANE.YES
-    ]
+    ],
+    depthRange: "130-975 m"
 };

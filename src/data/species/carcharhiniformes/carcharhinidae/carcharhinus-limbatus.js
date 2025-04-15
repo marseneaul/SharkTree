@@ -23,5 +23,6 @@ export const carcharhinusLimbatus = {
         SPIRACLES.NO,
         GROUP_BEHAVIOR.SCHOOLING,
         BEHAVIOR.BREACHING
-    ]
+    ],
+    depthRange: "0-140 m"
 };

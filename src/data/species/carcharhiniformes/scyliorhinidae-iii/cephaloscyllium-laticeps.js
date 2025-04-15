@@ -20,5 +20,6 @@ export const cephaloscylliumLaticeps = {
         CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
         NICTITATING_MEMBRANE.YES
-    ]
+    ],
+    depthRange: "0-60 m"
 };

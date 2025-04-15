@@ -21,5 +21,6 @@ export const hemipristisElongata = {
         CONSERVATION_STATUS.EN,
         REPRODUCTIVE_STRATEGY.VIVIPAROUS,
         NICTITATING_MEMBRANE.YES
-    ]
+    ],
+    depthRange: "0-132 m"
 };

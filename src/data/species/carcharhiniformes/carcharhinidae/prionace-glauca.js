@@ -23,5 +23,6 @@ export const prionaceGlauca = {
         NICTITATING_MEMBRANE.YES,
         SPIRACLES.NO,
         BEHAVIOR.BREACHING
-    ]
+    ],
+    depthRange: "0-1000 m"
 };

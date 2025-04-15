@@ -21,5 +21,6 @@ export const mustelusSchmitti = {
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         NICTITATING_MEMBRANE.YES,
         GROUP_BEHAVIOR.SCHOOLING
-    ]
+    ],
+    depthRange: "2-195 m"
 };

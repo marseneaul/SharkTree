@@ -21,5 +21,6 @@ export const hemitriakisComplicofasciata = {
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         NICTITATING_MEMBRANE.YES,
         GROUP_BEHAVIOR.SCHOOLING
-    ]
+    ],
+    depthRange: "90-100 m"
 };

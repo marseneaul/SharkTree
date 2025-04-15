@@ -21,5 +21,6 @@ export const cephaloscylliumVentriosum = {
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
         NICTITATING_MEMBRANE.YES,
         BIOLUMINESCENT.YES
-    ]
+    ],
+    depthRange: "5-500 m"
 };

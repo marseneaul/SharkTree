@@ -21,5 +21,6 @@ export const carcharhinusAcronotus = {
         REPRODUCTIVE_STRATEGY.VIVIPAROUS,
         NICTITATING_MEMBRANE.YES,
         SPIRACLES.NO
-    ]
+    ],
+    depthRange: "18-64 m"
 };

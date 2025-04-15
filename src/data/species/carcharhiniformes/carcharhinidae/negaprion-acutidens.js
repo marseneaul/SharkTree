@@ -23,5 +23,6 @@ export const negaprionAcutidens = {
         NICTITATING_MEMBRANE.YES,
         SPIRACLES.NO,
         GROUP_BEHAVIOR.SCHOOLING
-    ]
+    ],
+    depthRange: "0-90 m"
 };

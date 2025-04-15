@@ -21,5 +21,6 @@ export const haploblepharusEdwardsii = {
         CONSERVATION_STATUS.EN,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
         NICTITATING_MEMBRANE.YES
-    ]
+    ],
+    depthRange: "0-288 m"
 }

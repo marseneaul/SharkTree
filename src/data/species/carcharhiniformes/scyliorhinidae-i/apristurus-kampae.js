@@ -20,5 +20,6 @@ export const apristurusKampae = {
         CONSERVATION_STATUS.DD,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
         NICTITATING_MEMBRANE.YES
-    ]
+    ],
+    depthRange: "180-1888 m"
 }

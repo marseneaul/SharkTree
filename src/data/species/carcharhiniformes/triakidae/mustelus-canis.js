@@ -22,5 +22,6 @@ export const mustelusCanis = {
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         NICTITATING_MEMBRANE.YES,
         GROUP_BEHAVIOR.SCHOOLING
-    ]
+    ],
+    depthRange: "0-808 m"
 };

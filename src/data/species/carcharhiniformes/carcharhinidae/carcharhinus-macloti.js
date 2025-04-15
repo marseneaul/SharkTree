@@ -21,5 +21,6 @@ export const carcharhinusMacloti = {
         REPRODUCTIVE_STRATEGY.VIVIPAROUS,
         NICTITATING_MEMBRANE.YES,
         SPIRACLES.NO
-    ]
+    ],
+    depthRange: "0-200 m"
 };

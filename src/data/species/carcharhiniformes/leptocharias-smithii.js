@@ -20,5 +20,6 @@ export const leptochariasSmithii = {
         CONSERVATION_STATUS.VU,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         NICTITATING_MEMBRANE.YES
-    ]
+    ],
+    depthRange: "0-90 m"
 };

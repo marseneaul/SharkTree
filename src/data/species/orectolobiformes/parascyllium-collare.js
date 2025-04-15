@@ -20,5 +20,6 @@ export const parascylliumCollare = {
         CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
         MOUTH_IN_FRONT_OF_EYES.MOUTH_IN_FRONT_OF_EYES
-    ]
+    ],
+    depthRange: "20-175 m"
 };

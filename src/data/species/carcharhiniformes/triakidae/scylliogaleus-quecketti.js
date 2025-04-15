@@ -24,5 +24,6 @@ export const scylliogaleusQuecketti = {
         CONSERVATION_STATUS.VU,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         NICTITATING_MEMBRANE.YES
-    ]
+    ],
+    depthRange: "0-73 m"
 };

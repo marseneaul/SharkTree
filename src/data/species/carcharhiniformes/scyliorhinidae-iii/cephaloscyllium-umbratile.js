@@ -21,5 +21,6 @@ export const cephaloscylliumUmbratile = {
         CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
         NICTITATING_MEMBRANE.YES
-    ]
+    ],
+    depthRange: "18-790 m"
 };

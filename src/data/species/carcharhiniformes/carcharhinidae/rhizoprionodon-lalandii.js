@@ -21,5 +21,6 @@ export const rhizoprionodonLalandii = {
         REPRODUCTIVE_STRATEGY.VIVIPAROUS,
         NICTITATING_MEMBRANE.YES,
         SPIRACLES.NO
-    ]
+    ],
+    depthRange: "3-149 m"
 };

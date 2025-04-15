@@ -20,5 +20,6 @@ export const galeusSauteri = {
         CONSERVATION_STATUS.VU,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
         NICTITATING_MEMBRANE.YES
-    ]
+    ],
+    depthRange: "60-600 m"
 }

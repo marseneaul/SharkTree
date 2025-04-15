@@ -22,5 +22,6 @@ export const glyphisGlyphis = {
         REPRODUCTIVE_STRATEGY.VIVIPAROUS,
         NICTITATING_MEMBRANE.YES,
         SPIRACLES.NO
-    ]
+    ],
+    depthRange: "0-23 m"
 };

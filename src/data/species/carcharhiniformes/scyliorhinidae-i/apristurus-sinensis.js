@@ -20,5 +20,6 @@ export const apristurusSinensis = {
         CONSERVATION_STATUS.DD,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
         NICTITATING_MEMBRANE.YES
-    ]
+    ],
+    depthRange: "537-1290 m"
 }

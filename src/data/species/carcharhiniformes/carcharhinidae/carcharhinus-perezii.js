@@ -21,5 +21,6 @@ export const carcharhinusPerezii = {
         REPRODUCTIVE_STRATEGY.VIVIPAROUS,
         NICTITATING_MEMBRANE.YES,
         SPIRACLES.NO
-    ]
+    ],
+    depthRange: "0-378 m"
 };

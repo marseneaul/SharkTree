@@ -21,5 +21,6 @@ export const holohalaelurusRegani = {
         CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
         NICTITATING_MEMBRANE.YES
-    ]
+    ],
+    depthRange: "10-1075 m"
 }

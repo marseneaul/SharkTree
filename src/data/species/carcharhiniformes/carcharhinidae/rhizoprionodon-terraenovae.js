@@ -21,5 +21,6 @@ export const rhizoprionodonTerraenovae = {
         REPRODUCTIVE_STRATEGY.VIVIPAROUS,
         NICTITATING_MEMBRANE.YES,
         SPIRACLES.NO
-    ]
+    ],
+    depthRange: "0-280 m"
 };

@@ -22,5 +22,6 @@ export const scyliorhinusRetifer = {
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
         NICTITATING_MEMBRANE.YES,
         BIOLUMINESCENT.YES
-    ]
+    ],
+    depthRange: "73-754 m"
 };

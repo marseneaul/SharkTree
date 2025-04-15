@@ -20,5 +20,6 @@ export const hemigaleusAustraliensis = {
         CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.VIVIPAROUS,
         NICTITATING_MEMBRANE.YES
-    ]
+    ],
+    depthRange: "1-170 m"
 };

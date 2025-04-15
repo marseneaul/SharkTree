@@ -20,5 +20,6 @@ export const hemiscylliumOcellatum = {
         CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
         MOUTH_IN_FRONT_OF_EYES.MOUTH_IN_FRONT_OF_EYES
-    ]
+    ],
+    depthRange: "0-40 m"
 }

@@ -21,5 +21,6 @@ export const apristurusPlatyrhynchus = {
         CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
         NICTITATING_MEMBRANE.YES
-    ]
+    ],
+    depthRange: "400-1080 m"
 }

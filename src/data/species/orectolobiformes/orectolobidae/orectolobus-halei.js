@@ -22,5 +22,6 @@ export const orectolobusHalei = {
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         MOUTH_IN_FRONT_OF_EYES.MOUTH_IN_FRONT_OF_EYES,
         FLATTENED_BODY.YES
-    ]
+    ],
+    depthRange: "0-195 m"
 };

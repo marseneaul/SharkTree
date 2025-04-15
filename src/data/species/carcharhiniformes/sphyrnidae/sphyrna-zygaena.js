@@ -21,5 +21,6 @@ export const sphyrnaZygaena = {
         REPRODUCTIVE_STRATEGY.VIVIPAROUS,
         NICTITATING_MEMBRANE.YES,
         SPIRACLES.NO
-    ]
+    ],
+    depthRange: "1-200 m"
 };

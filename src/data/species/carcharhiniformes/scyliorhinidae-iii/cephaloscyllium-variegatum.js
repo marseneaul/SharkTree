@@ -20,5 +20,6 @@ export const cephaloscylliumVariegatum = {
         CONSERVATION_STATUS.NT,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
         NICTITATING_MEMBRANE.YES
-    ]
+    ],
+    depthRange: "114-606 m"
 };

@@ -22,5 +22,6 @@ export const carcharhinusBrevipinna = {
         NICTITATING_MEMBRANE.YES,
         SPIRACLES.NO,
         GROUP_BEHAVIOR.SCHOOLING
-    ]
+    ],
+    depthRange: "0-200 m"
 };

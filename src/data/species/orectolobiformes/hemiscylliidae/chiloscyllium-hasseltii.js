@@ -20,5 +20,6 @@ export const chiloscylliumHasseltii = {
         CONSERVATION_STATUS.EN,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
         MOUTH_IN_FRONT_OF_EYES.MOUTH_IN_FRONT_OF_EYES
-    ]
+    ],
+    depthRange: "0-12 m"
 };

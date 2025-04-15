@@ -20,5 +20,6 @@ export const apristurusMelanoasper = {
         CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
         NICTITATING_MEMBRANE.YES
-    ]
+    ],
+    depthRange: "512-1900 m"
 }

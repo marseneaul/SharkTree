@@ -20,5 +20,6 @@ export const scyliorhinusCapensis = {
         CONSERVATION_STATUS.NT,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
         NICTITATING_MEMBRANE.YES
-    ]
+    ],
+    depthRange: "26-695 m"
 };

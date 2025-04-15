@@ -20,5 +20,6 @@ export const galeocerdoCuvier = {
         CONSERVATION_STATUS.NT,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS, REPRODUCTIVE_STRATEGY.EMBRYTROPHY,
         NICTITATING_MEMBRANE.YES
-    ]
+    ],
+    depthRange: "0-1136 m"
 };

@@ -20,5 +20,6 @@ export const pseudoginglymostomaBrevicaudatum = {
         CONSERVATION_STATUS.CR,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
         MOUTH_IN_FRONT_OF_EYES.MOUTH_IN_FRONT_OF_EYES
-    ]
+    ],
+    depthRange: "0-70 m"
 };

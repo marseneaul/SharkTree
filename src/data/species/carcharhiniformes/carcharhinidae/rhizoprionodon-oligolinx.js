@@ -21,5 +21,6 @@ export const rhizoprionodonOligolinx = {
         REPRODUCTIVE_STRATEGY.VIVIPAROUS,
         NICTITATING_MEMBRANE.YES,
         SPIRACLES.NO
-    ]
+    ],
+    depthRange: "0-36 m"
 };

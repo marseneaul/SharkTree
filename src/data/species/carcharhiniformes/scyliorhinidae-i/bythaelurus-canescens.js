@@ -20,5 +20,6 @@ export const bythaelurusCanescens = {
         CONSERVATION_STATUS.VU,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
         NICTITATING_MEMBRANE.YES
-    ]
+    ],
+    depthRange: "200-732 m"
 }

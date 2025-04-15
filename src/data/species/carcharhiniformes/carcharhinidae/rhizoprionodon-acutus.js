@@ -21,5 +21,6 @@ export const rhizoprionodonAcutus = {
         REPRODUCTIVE_STRATEGY.VIVIPAROUS,
         NICTITATING_MEMBRANE.YES,
         SPIRACLES.NO
-    ]
+    ],
+    depthRange: "1-200 m"
 };

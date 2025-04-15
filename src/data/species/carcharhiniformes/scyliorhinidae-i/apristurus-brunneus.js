@@ -20,5 +20,6 @@ export const apristurusBrunneus = {
         CONSERVATION_STATUS.DD,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
         NICTITATING_MEMBRANE.YES
-    ]
+    ],
+    depthRange: "33-1298 m"
 }

@@ -21,5 +21,6 @@ export const isogomphodonOxyrhynchus = {
         REPRODUCTIVE_STRATEGY.VIVIPAROUS,
         NICTITATING_MEMBRANE.YES,
         SPIRACLES.NO
-    ]
+    ],
+    depthRange: "4-40 m"
 };

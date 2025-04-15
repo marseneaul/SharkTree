@@ -22,5 +22,6 @@ export const carcharhinusPlumbeus = {
         GROUP_BEHAVIOR.SOLITARY, GROUP_BEHAVIOR.SCHOOLING,
         NICTITATING_MEMBRANE.YES,
         SPIRACLES.NO
-    ]
+    ],
+    depthRange: "0-280 m"
 };

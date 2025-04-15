@@ -20,5 +20,6 @@ export const cephaloscylliumAlbipinnum = {
         CONSERVATION_STATUS.CR,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
         NICTITATING_MEMBRANE.YES
-    ]
+    ],
+    depthRange: "126-554 m"
 };

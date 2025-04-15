@@ -21,5 +21,6 @@ export const pseudotriakisMicrodon = {
         CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS, REPRODUCTIVE_STRATEGY.OOPHAGY,
         NICTITATING_MEMBRANE.YES
-    ]
+    ],
+    depthRange: "100-2430 m"
 };

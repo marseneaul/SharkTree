@@ -22,5 +22,6 @@ export const sphyrnaTudes = {
         REPRODUCTIVE_STRATEGY.VIVIPAROUS,
         NICTITATING_MEMBRANE.YES,
         SPIRACLES.NO
-    ]
+    ],
+    depthRange: "5-80 m"
 };

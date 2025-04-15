@@ -21,5 +21,6 @@ export const carcharhinusAlbimarginatus = {
         REPRODUCTIVE_STRATEGY.VIVIPAROUS,
         NICTITATING_MEMBRANE.YES,
         SPIRACLES.NO
-    ]
+    ],
+    depthRange: "0-800 m"
 };

@@ -20,5 +20,6 @@ export const proscylliumHaberei = {
         CONSERVATION_STATUS.VU,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
         NICTITATING_MEMBRANE.YES
-    ]
+    ],
+    depthRange: "50-320 m"
 };

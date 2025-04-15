@@ -20,5 +20,6 @@ export const parmaturusXaniurus = {
         CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
         NICTITATING_MEMBRANE.YES
-    ]
+    ],
+    depthRange: "91-1251 m"
 }

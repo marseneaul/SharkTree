@@ -23,5 +23,6 @@ export const negaprionBrevirostris = {
         NICTITATING_MEMBRANE.YES,
         SPIRACLES.NO,
         GROUP_BEHAVIOR.SCHOOLING
-    ]
+    ],
+    depthRange: "0-92 m"
 };

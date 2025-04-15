@@ -21,5 +21,6 @@ export const asymbolusRubiginosus = {
         CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
         NICTITATING_MEMBRANE.YES
-    ]
+    ],
+    depthRange: "25-540 m"
 }

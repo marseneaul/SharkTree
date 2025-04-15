@@ -21,5 +21,6 @@ export const carcharhinusAmboinensis = {
         REPRODUCTIVE_STRATEGY.VIVIPAROUS,
         NICTITATING_MEMBRANE.YES,
         SPIRACLES.NO
-    ]
+    ],
+    depthRange: "0-60 m"
 };

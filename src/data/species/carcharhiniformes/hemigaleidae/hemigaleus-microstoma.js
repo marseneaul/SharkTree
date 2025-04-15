@@ -20,5 +20,6 @@ export const hemigaleusMicrostoma = {
         CONSERVATION_STATUS.VU,
         REPRODUCTIVE_STRATEGY.VIVIPAROUS,
         NICTITATING_MEMBRANE.YES
-    ]
+    ],
+    depthRange: "0-170 m"
 };

@@ -20,5 +20,6 @@ export const atelomycterusMarnkalha = {
         CONSERVATION_STATUS.DD,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
         NICTITATING_MEMBRANE.YES
-    ]
+    ],
+    depthRange: "11-74 m"
 };

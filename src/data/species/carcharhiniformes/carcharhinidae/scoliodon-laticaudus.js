@@ -22,5 +22,6 @@ export const scoliodonLaticaudus = {
         REPRODUCTIVE_STRATEGY.VIVIPAROUS,
         NICTITATING_MEMBRANE.YES,
         SPIRACLES.NO
-    ]
+    ],
+    depthRange: "10-75 m"
 };

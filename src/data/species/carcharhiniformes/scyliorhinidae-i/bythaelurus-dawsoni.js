@@ -20,5 +20,6 @@ export const bythaelurusDawsoni = {
         CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
         NICTITATING_MEMBRANE.YES
-    ]
+    ],
+    depthRange: "50-976 m"
 }

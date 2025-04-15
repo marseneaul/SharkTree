@@ -22,5 +22,6 @@ export const carcharhinusFalciformis = {
         REPRODUCTIVE_STRATEGY.VIVIPAROUS,
         NICTITATING_MEMBRANE.YES,
         SPIRACLES.NO
-    ]
+    ],
+    depthRange: "18-500 m"
 };

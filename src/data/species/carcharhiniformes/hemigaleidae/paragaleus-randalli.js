@@ -20,5 +20,6 @@ export const paragaleusRandalli = {
         CONSERVATION_STATUS.VU,
         REPRODUCTIVE_STRATEGY.VIVIPAROUS,
         NICTITATING_MEMBRANE.YES
-    ]
+    ],
+    depthRange: "1-18 m"
 };

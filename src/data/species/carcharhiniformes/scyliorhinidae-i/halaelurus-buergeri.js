@@ -20,5 +20,6 @@ export const halaelurusBuergeri = {
         CONSERVATION_STATUS.EN,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
         NICTITATING_MEMBRANE.YES
-    ]
+    ],
+    depthRange: "27-100 m"
 }

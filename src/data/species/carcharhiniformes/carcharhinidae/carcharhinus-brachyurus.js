@@ -22,5 +22,6 @@ export const carcharhinusBrachyurus = {
         REPRODUCTIVE_STRATEGY.VIVIPAROUS,
         NICTITATING_MEMBRANE.YES,
         SPIRACLES.NO
-    ]
+    ],
+    depthRange: "1-145 m"
 };

@@ -22,5 +22,6 @@ export const sphyrnaTiburo = {
         NICTITATING_MEMBRANE.YES,
         FEEDING_BEHAVIOR.CARNIVOROUS, FEEDING_BEHAVIOR.OMNIVOROUS,
         SPIRACLES.NO
-    ]
+    ],
+    depthRange: "0-90 m"
 };
