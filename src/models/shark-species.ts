@@ -27,6 +27,7 @@ export class SharkSpecies {
     species: string
 
     tags: string[]
+    depthRange?: string
 
     x: number
     y: number
@@ -191,6 +192,7 @@ export class SharkSpecies {
         this.binomialName = this.config.binomialName;
 
         if (this.config.imageUrl) this.imageUrl = this.config.imageUrl;
+        if (this.config.depthRange) this.depthRange = this.config.depthRange;
 
         this.domain = this.config.domain;
         this.kingdom = this.config.kingdom;
@@ -242,7 +244,9 @@ export class SharkSpecies {
         const conservationStatusString = conservationStatusTags.length > 0 
             ? `<div class="section"><strong>Conservation Status:</strong> ${conservationStatusTags.join(", ")}</div>` 
             : "";
-
+        const depthRangeString = this.depthRange
+            ? `<div class="section"><strong>Depth Range:</strong> ${this.depthRange}</div>`
+            : `<div class="section"><strong>Depth Range:</strong> Unknown</div>`;
         const descriptionSentence = this.getDescription();
         const descriptionString = descriptionSentence.length > 0 
         ? `<div class="section"><strong>Description:</strong> ${descriptionSentence}</div>` 
@@ -256,6 +260,7 @@ export class SharkSpecies {
                 <br>${alternativeNamesString}
             </div>
             ${conservationStatusString}
+            ${depthRangeString}
             ${descriptionString}
             <div class="section">
                 <strong>Taxonomy:</strong><br>

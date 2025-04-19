@@ -153,6 +153,11 @@ export enum NICTITATING_MEMBRANE {
     NO = "No Nictitating Membrane"
 }
 
+export enum PROXIMAL_DORSAL_FINS {
+    YES = "Yes Proximal Dorsal Fins",
+    NO = "No Proximal Dorsal Fins"
+}
+
 export enum CAUDAL_FIN_SHAPE {
     HETEROCERCAL = "Heterocercal",
     HOMOCERCAL = "Homocercal"
@@ -185,6 +190,7 @@ export function getEnumCategory(tag: any): string | undefined {
     if (Object.values(DORSAL_FIN_SPINES).includes(tag)) return "DORSAL_FIN_SPINES";
     if (Object.values(SPIRACLES).includes(tag)) return "SPIRACLES";
     if (Object.values(FLATTENED_BODY).includes(tag)) return "FLATTENED_BODY";
+    if (Object.values(PROXIMAL_DORSAL_FINS).includes(tag)) return "PROXIMAL_DORSAL_FINS";
 
     if (Object.values(CONSERVATION_STATUS).includes(tag)) return "CONSERVATION_STATUS";
     if (Object.values(TEMPERATURE_REGULATION).includes(tag)) return "TEMPERATURE_REGULATION";
@@ -219,5 +225,6 @@ export const DEFAULT_TAGS = [
     CAUDAL_FIN_SHAPE.HETEROCERCAL,
     MOUTH_IN_FRONT_OF_EYES.MOUTH_NOT_IN_FRONT_OF_EYES,
     BIOLUMINESCENT.NO,
-    DORSAL_FIN_SPINES.NO
+    DORSAL_FIN_SPINES.NO,
+    PROXIMAL_DORSAL_FINS.NO
 ];

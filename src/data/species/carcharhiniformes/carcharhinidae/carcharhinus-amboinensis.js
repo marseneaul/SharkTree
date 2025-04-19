@@ -1,4 +1,4 @@
-import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, PROXIMAL_DORSAL_FINS, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../constants/enums";
 
 export const carcharhinusAmboinensis = {
     commonName: "Pigeye Shark",
@@ -20,7 +20,8 @@ export const carcharhinusAmboinensis = {
         CONSERVATION_STATUS.VU,
         REPRODUCTIVE_STRATEGY.VIVIPAROUS,
         NICTITATING_MEMBRANE.YES,
-        SPIRACLES.NO
+        SPIRACLES.NO,
+        PROXIMAL_DORSAL_FINS.YES
     ],
     depthRange: "0-60 m"
 };

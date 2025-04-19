@@ -1,4 +1,4 @@
-import { ANAL_FIN, BEHAVIOR, BIOLUMINESCENT, CONSERVATION_STATUS, DORSAL_FIN_SPINES, FLATTENED_BODY, MOUTH_IN_FRONT_OF_EYES, NICTITATING_MEMBRANE, NUM_DORSAL_FINS, NUM_GILLS, SPIRACLES } from "./constants/enums";
+import { ANAL_FIN, BEHAVIOR, BIOLUMINESCENT, CONSERVATION_STATUS, DORSAL_FIN_SPINES, FLATTENED_BODY, MOUTH_IN_FRONT_OF_EYES, NICTITATING_MEMBRANE, NUM_DORSAL_FINS, NUM_GILLS, PROXIMAL_DORSAL_FINS, SPIRACLES } from "./constants/enums";
 import {
     lamniformesConfig, heterodontiformesConfig, lamnidaeConfig, carcharhinidaeConfig,
     squatiniformesConfig, hexanchiformesConfig, pristiophoriformesConfig, orectolobiformesConfig,
@@ -203,6 +203,7 @@ export class SharkTreeComponent extends HTMLElement {
                             <option value="mouthInFrontOfEyes">Has Mouth in Front of Eyes</option>
                             <option value="isBioluminescent">Bioluminescent</option>
                             <option value="hasDorsalFinSpines">Has Dorsal Fin Spines</option>
+                            <option value="hasProximalDorsalFins">Has Proximal Dorsal Fins</option>
                         </select>
                         <select id="tag-value-dropdown">
                             <option value="">All</option>
@@ -554,6 +555,7 @@ export class SharkTreeComponent extends HTMLElement {
                 DORSAL_FIN_SPINES.ONLY_ON_FIRST,
                 DORSAL_FIN_SPINES.NO
             ],
+            hasProximalDorsalFins: [PROXIMAL_DORSAL_FINS.YES, PROXIMAL_DORSAL_FINS.NO],
             analFin: [ANAL_FIN.YES, ANAL_FIN.NO],
             nictitatingMembrane: [NICTITATING_MEMBRANE.YES, NICTITATING_MEMBRANE.NO],
             isBioluminescent: [BIOLUMINESCENT.YES, BIOLUMINESCENT.NO],
@@ -708,7 +710,6 @@ export class SharkTreeComponent extends HTMLElement {
             .join("");
         suggestions.classList.add("visible");
 
-        // Add click handlers to suggestion items
         suggestions.querySelectorAll(".suggestion-item").forEach(item => {
             item.addEventListener("click", () => {
                 const binomial = item.dataset.binomial;
