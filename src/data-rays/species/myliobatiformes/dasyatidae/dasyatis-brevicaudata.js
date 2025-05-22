@@ -1,0 +1,16 @@
+export const dasyatisBrevicaudata = {
+    commonName: "Short-Tail Stingray",
+    alternativeNames: ["Smooth Stingray"],
+    binomialName: "Dasyatis brevicaudata",
+
+    domain:	"Eukaryota",
+    kingdom: "Animalia",
+    phylum:	"Chordata",
+    class: "Chondrichthyes",
+    subclass: "Elasmobranchii",
+    subdivision: "Batomorphi",
+    order: "Myliobatiformes",
+    family: "Dasyatidae",
+    genus: "Dasyatis",
+    species: "brevicaudata",
+};

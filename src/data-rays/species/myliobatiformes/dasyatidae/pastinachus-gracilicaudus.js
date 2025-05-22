@@ -1,0 +1,15 @@
+export const pastinachusGracilicaudus = {
+    commonName: "Narrowtail Stingray",
+    binomialName: "Pastinachus gracilicaudus",
+
+    domain:	"Eukaryota",
+    kingdom: "Animalia",
+    phylum:	"Chordata",
+    class: "Chondrichthyes",
+    subclass: "Elasmobranchii",
+    subdivision: "Batomorphi",
+    order: "Myliobatiformes",
+    family: "Dasyatidae",
+    genus: "Pastinachus",
+    species: "gracilicaudus",
+};
