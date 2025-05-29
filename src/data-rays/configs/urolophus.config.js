@@ -1,13 +1,13 @@
-import { urolophusCruciatus } from "../species/myliobatiformes/urolophidae/urolophus-cruciatus";
-import { urolophusExpansus } from "../species/myliobatiformes/urolophidae/urolophus-expansus";
-import { urolophusLobatus } from "../species/myliobatiformes/urolophidae/urolophus-lobatus";
-import { urolophusPaucimaculatus } from "../species/myliobatiformes/urolophidae/urolophus-paucimaculatus";
-import { urolophusKapalensis, urolophusViridis } from "../species/myliobatiformes/urolophidae/urolophus-kapalensis";
-import { urolophusWestraliensis } from "../species/myliobatiformes/urolophidae/urolophus-westraliensis";
-import { urolophusFlavomosaicus } from "../species/myliobatiformes/urolophidae/urolophus-flavomosaicus";
-import { urolophusBucculentus } from "../species/myliobatiformes/urolophidae/urolophus-bucculentus";
+import { urolophusCruciatus } from "../species/myliobatiformes/urolophus/urolophus-cruciatus";
+import { urolophusExpansus } from "../species/myliobatiformes/urolophus/urolophus-expansus";
+import { urolophusLobatus } from "../species/myliobatiformes/urolophus/urolophus-lobatus";
+import { urolophusPaucimaculatus } from "../species/myliobatiformes/urolophus/urolophus-paucimaculatus";
+import { urolophusKapalensis, urolophusViridis } from "../species/myliobatiformes/urolophus/urolophus-kapalensis";
+import { urolophusWestraliensis } from "../species/myliobatiformes/urolophus/urolophus-westraliensis";
+import { urolophusFlavomosaicus } from "../species/myliobatiformes/urolophus/urolophus-flavomosaicus";
+import { urolophusBucculentus } from "../species/myliobatiformes/urolophus/urolophus-bucculentus";
 
-export const urolophidaeConfig = {
+export const urolophusConfig = {
     children: [
         {
             children: [
