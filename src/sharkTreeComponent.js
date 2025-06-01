@@ -5,7 +5,7 @@ import {
     scyliorhinidaeIConfig, scyliorhinidaeIIConfig, scyliorhinidaeIIIConfig, triakidaeConfig,
     squalidaeConfig, squaliformesConfig, dalatiidaeConfig, etmopteridaeConfig, carcharhiniformesConfig,
     galeomorphiiConfig, squalomorphiiConfig, selachiiConfig
-} from "./data/configs";
+} from "./data/configs/sharks";
 
 const sharkConfigs = {
     selachii: selachiiConfig,
