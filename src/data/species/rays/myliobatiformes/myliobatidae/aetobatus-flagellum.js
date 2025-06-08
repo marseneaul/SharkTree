@@ -1,4 +1,4 @@
-import { NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES } from "../../../../../constants/enums";
+import { NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
 
 export const aetobatusFlagellum = {
     commonName: "Longheaded Eagle Ray",
@@ -17,6 +17,7 @@ export const aetobatusFlagellum = {
 
     tags: [
         TAIL_SPINES.YES,
+        VENOMOUS_SPINE.YES,
         NUM_DORSAL_FINS.ONE,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],

@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import { REPRODUCTIVE_STRATEGY, VENOMOUS_SPINE } from "../../../../constants/enums";
 
 export const platyrhinoidesTriseriata = {
     commonName: "Thornback Guitarfish",
@@ -17,5 +17,6 @@ export const platyrhinoidesTriseriata = {
 
     tags: [
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+        VENOMOUS_SPINE.NO,
     ],
 };

@@ -1,4 +1,4 @@
-import { NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES } from "../../../../../constants/enums";
+import { NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
 
 export const myliobatisTobjei = {
     commonName: "Japanese Eagle Ray",
@@ -19,6 +19,7 @@ export const myliobatisTobjei = {
     tags: [
         NUM_DORSAL_FINS.ONE,
         TAIL_SPINES.YES,
+        VENOMOUS_SPINE.YES,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],
 };

@@ -1,4 +1,4 @@
-import { BIOLUMINESCENT, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES } from "../../../../../constants/enums";
+import { BIOLUMINESCENT, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
 
 export const taeniuraLymma = {
     commonName: "Bluespotted Ribbontail Ray",
@@ -17,6 +17,7 @@ export const taeniuraLymma = {
 
     tags: [
         NUM_DORSAL_FINS.ZERO,
+        VENOMOUS_SPINE.YES,
         BIOLUMINESCENT.YES,
         TAIL_SPINES.YES,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,

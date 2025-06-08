@@ -1,4 +1,4 @@
-import { NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES } from "../../../../../constants/enums";
+import { NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
 
 export const urotrygonSimulatrix = {
     commonName: "Fake Round Ray",
@@ -18,6 +18,7 @@ export const urotrygonSimulatrix = {
     tags: [
         NUM_DORSAL_FINS.ZERO,
         TAIL_SPINES.YES,
+        VENOMOUS_SPINE.YES,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],
 };

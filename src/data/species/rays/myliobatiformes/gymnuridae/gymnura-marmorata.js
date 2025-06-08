@@ -1,4 +1,4 @@
-import { NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES } from "../../../../../constants/enums";
+import { NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
 
 export const gymnuraMarmorata = {
     commonName: "California Butterfly Ray",
@@ -17,6 +17,7 @@ export const gymnuraMarmorata = {
 
     tags: [
         TAIL_SPINES.YES,
+        VENOMOUS_SPINE.YES,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         NUM_DORSAL_FINS.ZERO,
     ],
