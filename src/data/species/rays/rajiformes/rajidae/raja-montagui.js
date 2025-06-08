@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const rajaMontagui = {
     commonName: "Spotted Ray",
     alternativeNames: ["Spotted Skate"],
@@ -13,4 +15,8 @@ export const rajaMontagui = {
     family: "Rajidae",
     genus: "Raja",
     species: "montagui",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

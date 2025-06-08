@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const atlantorajaCastelnaui = {
     commonName: "Spotback Skate",
     binomialName: "Atlantoraja castelnaui",
@@ -12,4 +14,8 @@ export const atlantorajaCastelnaui = {
     family: "Arhynchobatidae",
     genus: "Atlantoraja",
     species: "castelnaui",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

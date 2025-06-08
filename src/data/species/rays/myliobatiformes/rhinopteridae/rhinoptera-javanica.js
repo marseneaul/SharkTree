@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const rhinopteraJavanica = {
     commonName: "Flapnose Ray",
     alternativeNames: ["Javanese Cownose Ray"],
@@ -13,4 +15,8 @@ export const rhinopteraJavanica = {
     family: "Rhinopteridae",
     genus: "Rhinoptera",
     species: "javanica",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

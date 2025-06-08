@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const himanturaPastinacoides = {
     commonName: "Round Whipray",
     binomialName: "Himantura pastinacoides",
@@ -12,4 +14,8 @@ export const himanturaPastinacoides = {
     family: "Dasyatidae",
     genus: "Himantura",
     species: "pastinacoides",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

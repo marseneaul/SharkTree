@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const himanturaSchmardae = {
     commonName: "Chupare Stingray",
     alternativeNames: ["Caribbean Whiptail Stingray"],
@@ -13,4 +15,8 @@ export const himanturaSchmardae = {
     family: "Potamotrygonidae",
     genus: "Styracura",
     species: "schmardae",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

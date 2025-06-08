@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const irolitaWaitii = {
     commonName: "Southern Round Skate",
     binomialName: "Irolita waitii",
@@ -12,4 +14,8 @@ export const irolitaWaitii = {
     family: "Arhynchobatidae",
     genus: "Irolita",
     species: "waitii",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

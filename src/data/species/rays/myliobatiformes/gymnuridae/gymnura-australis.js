@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const gymnuraAustralis = {
     commonName: "Australian Butterfly Ray",
     binomialName: "Gymnura australis",
@@ -12,4 +14,8 @@ export const gymnuraAustralis = {
     family: "Gymnuridae",
     genus: "Gymnura",
     species: "australis",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

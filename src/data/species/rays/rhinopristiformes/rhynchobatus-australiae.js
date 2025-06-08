@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const rhynchobatusAustraliae = {
     commonName: "White-Spotted Guitarfish",
     alternativeNames: ["White-Spotted Wedgefish", "Bottlenose Wedgefish"],
@@ -13,4 +15,8 @@ export const rhynchobatusAustraliae = {
     family: "Rhinidae",
     genus: "Rhynchobatus",
     species: "australiae",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const gymnuraCrebripunctata = {
     commonName: "Longsnout Butterfly Ray",
     binomialName: "Gymnura crebripunctata",
@@ -12,4 +14,8 @@ export const gymnuraCrebripunctata = {
     family: "Gymnuridae",
     genus: "Gymnura",
     species: "crebripunctata",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

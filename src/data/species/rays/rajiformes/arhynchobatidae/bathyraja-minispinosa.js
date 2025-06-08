@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const bathyrajaMinispinosa = {
     commonName: "Smallthorn Skate",
     binomialName: "Bathyraja minispinosa",
@@ -12,4 +14,8 @@ export const bathyrajaMinispinosa = {
     family: "Arhynchobatidae",
     genus: "Bathyraja",
     species: "minispinosa",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

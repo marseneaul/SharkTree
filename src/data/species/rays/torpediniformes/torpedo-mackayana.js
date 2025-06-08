@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const torpedoMackayana = {
     commonName: "Ringed Torpedo",
     alternativeNames: ["Western African Torpedo", "West African Torpedo Ray", "McKay Electric Ray", "McKay's Torpedo Ray"],
@@ -13,4 +15,8 @@ export const torpedoMackayana = {
     family: "Torpedinidae",
     genus: "Torpedo",
     species: "mackayana",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

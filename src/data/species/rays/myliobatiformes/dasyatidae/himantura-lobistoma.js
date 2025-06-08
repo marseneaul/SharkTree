@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const himanturaLobistoma = {
     commonName: "Tubemouth Whipray",
     binomialName: "Himantura lobistoma",
@@ -12,4 +14,8 @@ export const himanturaLobistoma = {
     family: "Dasyatidae",
     genus: "Himantura",
     species: "lobistoma",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

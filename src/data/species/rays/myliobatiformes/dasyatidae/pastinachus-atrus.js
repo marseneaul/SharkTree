@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const pastinachusAtrus = {
     commonName: "Broad Cowtail Ray",
     binomialName: "Pastinachus pastinachusAtrus",
@@ -12,4 +14,8 @@ export const pastinachusAtrus = {
     family: "Dasyatidae",
     genus: "Pastinachus",
     species: "pastinachusAtrus",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

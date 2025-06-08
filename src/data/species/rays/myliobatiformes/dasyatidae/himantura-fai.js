@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const himanturaFai = {
     commonName: "Pink Whipray",
     binomialName: "Himantura fai",
@@ -12,4 +14,8 @@ export const himanturaFai = {
     family: "Dasyatidae",
     genus: "Himantura",
     species: "fai",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

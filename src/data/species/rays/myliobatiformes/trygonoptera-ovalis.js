@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const trygonopteraOvalis = {
     commonName: "Striped Stingaree",
     binomialName: "Trygonoptera ovalis",
@@ -12,4 +14,8 @@ export const trygonopteraOvalis = {
     family: "Urolophidae",
     genus: "Trygonoptera",
     species: "ovalis",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

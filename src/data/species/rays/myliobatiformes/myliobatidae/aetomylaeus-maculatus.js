@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const aetomylaeusMaculatus = {
     commonName: "Mottled Eagle Ray",
     binomialName: "Aetomylaeus maculatus",
@@ -12,4 +14,8 @@ export const aetomylaeusMaculatus = {
     family: "Myliobatidae",
     genus: "Aetomylaeus",
     species: "maculatus",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

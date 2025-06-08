@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const sinobatisBulbicauda = {
     commonName: "Western Australian Legskate",
     binomialName: "Sinobatis bulbicauda",
@@ -12,4 +14,8 @@ export const sinobatisBulbicauda = {
     family: "Anacanthobatidae",
     genus: "Sinobatis",
     species: "bulbicauda",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

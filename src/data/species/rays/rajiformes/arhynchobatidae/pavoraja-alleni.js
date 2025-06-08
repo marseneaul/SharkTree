@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const pavorajaAlleni = {
     commonName: "Allen's Skate",
     binomialName: "Pavoraja alleni",
@@ -12,4 +14,8 @@ export const pavorajaAlleni = {
     family: "Arhynchobatidae",
     genus: "Pavoraja",
     species: "alleni",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

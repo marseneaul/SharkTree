@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const dasyatisUshiei = {
     commonName: "Cow Stingray",
     alternativeNames: ["Ushi Stingray"],
@@ -13,4 +15,8 @@ export const dasyatisUshiei = {
     family: "Dasyatidae",
     genus: "Dasyatis",
     species: "ushiei",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

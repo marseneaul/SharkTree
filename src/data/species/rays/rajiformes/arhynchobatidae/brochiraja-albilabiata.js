@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const brochirajaAlbilabiata = {
     commonName: "Whitelip Skate",
     binomialName: "Brochiraja albilabiata",
@@ -12,4 +14,8 @@ export const brochirajaAlbilabiata = {
     family: "Arhynchobatidae",
     genus: "Brochiraja",
     species: "albilabiata",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

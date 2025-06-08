@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const rajaClavata = {
     commonName: "Thornback Ray",
     alternativeNames: ["Thornback Skate"],
@@ -13,4 +15,8 @@ export const rajaClavata = {
     family: "Rajidae",
     genus: "Raja",
     species: "clavata",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

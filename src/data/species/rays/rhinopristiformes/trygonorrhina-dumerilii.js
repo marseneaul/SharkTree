@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const trygonorrhinaDumerilii = {
     commonName: "Southern Fiddler Ray",
     binomialName: "Trygonorrhina dumerilii",
@@ -12,4 +14,8 @@ export const trygonorrhinaDumerilii = {
     family: "Trygonorrhinidae",
     genus: "Trygonorrhina",
     species: "dumerilii",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

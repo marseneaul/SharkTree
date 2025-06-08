@@ -1,3 +1,4 @@
+import { SPECIES_TYPE } from "../constants/enums";
 import { SharkConfig, SharkTreeNodeConfig } from "../interfaces/shark-config";
 import { SharkSpecies } from "./shark-species";
 import { sha256 } from "js-sha256";
@@ -7,6 +8,7 @@ export class SharkTreeNode {
     config: SharkTreeNodeConfig
     children: (SharkTreeNode|SharkSpecies)[]
     parent: SharkTreeNode|null
+    speciesType: SPECIES_TYPE
 
     childPaths: ((SVGLineElement|SVGPathElement)[])[]
     parentPath: (SVGLineElement|SVGPathElement)[]
@@ -14,16 +16,17 @@ export class SharkTreeNode {
 
     hash: string
 
-    constructor(sharkTreeConfig: SharkTreeNodeConfig, parent: SharkTreeNode|null = null) {
+    constructor(sharkTreeConfig: SharkTreeNodeConfig, parent: SharkTreeNode|null = null, speciesType = SPECIES_TYPE.SHARKS) {
       this.config = sharkTreeConfig;
       this.parent = parent;
+      this.speciesType = speciesType;
       this.children = [];
       this.childPaths = [];
       this.parentPath = [];
 
       this.config.children?.forEach((child) => {
         if (child.hasOwnProperty("children")) this.addChild(new SharkTreeNode(child as SharkTreeNodeConfig, this));
-        else this.addChild(new SharkSpecies(child as SharkConfig, this));
+        else this.addChild(new SharkSpecies(child as SharkConfig, this, this.speciesType));
       });
 
       this.hash = this.getHash();

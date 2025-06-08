@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const dasyatisZugei = {
     commonName: "Pale-Edged Stingray",
     alternativeNames: ["Sharpnose Stingray"],
@@ -13,4 +15,8 @@ export const dasyatisZugei = {
     family: "Dasyatidae",
     genus: "Dasyatis",
     species: "zugei",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

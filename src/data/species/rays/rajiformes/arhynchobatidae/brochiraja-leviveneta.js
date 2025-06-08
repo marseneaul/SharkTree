@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const brochirajaLeviveneta = {
     commonName: "Blue Deepsea Skate",
     binomialName: "Brochiraja leviveneta",
@@ -12,4 +14,8 @@ export const brochirajaLeviveneta = {
     family: "Arhynchobatidae",
     genus: "Brochiraja",
     species: "leviveneta",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

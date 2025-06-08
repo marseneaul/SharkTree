@@ -1,3 +1,5 @@
+import { BEHAVIOR, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const dasyatisMicrops = {
     commonName: "Smalleye Stingray",
     binomialName: "Megatrygon microps",
@@ -12,4 +14,9 @@ export const dasyatisMicrops = {
     family: "Dasyatidae",
     genus: "Megatrygon",
     species: "microps",
+
+    tags: [
+        BEHAVIOR.MIGRATING,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

@@ -138,7 +138,6 @@ export const arhynchobatidaeConfig = {
                                                                 bathyrajaGriseocauda
                                                             ]
                                                         },
-                                                        bathyrajaAleutica,
                                                         {
                                                             children: [
                                                                 bathyrajaPallida,

@@ -1,3 +1,5 @@
+import { BEHAVIOR, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const pristisPristis = {
     commonName: "Largetooth Sawfish",
     alternativeNames: ["Common Sawfish", "Wide Sawfish", "Freshwater Sawfish", "River Sawfish", "Leichhardt's Sawfish", "Northern Sawfish"],
@@ -13,4 +15,10 @@ export const pristisPristis = {
     family: "Pristidae",
     genus: "Pristis",
     species: "pristis",
+
+    tags: [
+        // "A review of elasmobranch breaching behavior: why do sharks and rays propel themselves out of the water into the air?"
+        BEHAVIOR.BREACHING,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ]
 };

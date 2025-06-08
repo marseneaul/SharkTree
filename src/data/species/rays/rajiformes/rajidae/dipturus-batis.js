@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const dipturusBatis = {
     commonName: "Blue Skate",
     alternativeNames: ["Grey Skate", "Blue-Grey Skate"],
@@ -13,4 +15,8 @@ export const dipturusBatis = {
     family: "Rajidae",
     genus: "Dipturus",
     species: "batis",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

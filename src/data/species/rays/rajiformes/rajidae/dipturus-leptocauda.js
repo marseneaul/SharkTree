@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const dipturusLeptocauda = {
     commonName: "Thintail Skate",
     binomialName: "Dipturus leptocauda",
@@ -12,4 +14,8 @@ export const dipturusLeptocauda = {
     family: "Rajidae",
     genus: "Dipturus",
     species: "leptocauda",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

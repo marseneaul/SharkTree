@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const torpedoNobiliana = {
     commonName: "Atlantic Torpedo",
     binomialName: "Torpedo nobiliana",
@@ -12,4 +14,8 @@ export const torpedoNobiliana = {
     family: "Torpedinidae",
     genus: "Torpedo",
     species: "nobiliana",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

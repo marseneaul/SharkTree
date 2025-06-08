@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const neotrygonNingalooensis = {
     commonName: "Ningaloo Maskray",
     binomialName: "Neotrygon ningalooensis",
@@ -12,4 +14,8 @@ export const neotrygonNingalooensis = {
     family: "Dasyatidae",
     genus: "Neotrygon",
     species: "ningalooensis",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

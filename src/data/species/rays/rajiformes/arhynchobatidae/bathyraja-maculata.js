@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const bathyrajaMaculata = {
     commonName: "White-Blotched Skate",
     binomialName: "Bathyraja maculata",
@@ -12,4 +14,8 @@ export const bathyrajaMaculata = {
     family: "Arhynchobatidae",
     genus: "Bathyraja",
     species: "maculata",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

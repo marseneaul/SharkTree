@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const atlantorajaCyclophora = {
     commonName: "Eyespot Skate",
     binomialName: "Atlantoraja cyclophora",
@@ -12,4 +14,8 @@ export const atlantorajaCyclophora = {
     family: "Arhynchobatidae",
     genus: "Atlantoraja",
     species: "cyclophora",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

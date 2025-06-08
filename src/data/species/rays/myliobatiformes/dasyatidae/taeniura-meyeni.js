@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const taeniuraMeyeni = {
     commonName: "Round Ribbontail Ray",
     alternativeNames: ["Blotched Fantail Ray"],
@@ -13,4 +15,8 @@ export const taeniuraMeyeni = {
     family: "Dasyatidae",
     genus: "Taeniura",
     species: "meyeni",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

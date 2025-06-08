@@ -1,3 +1,5 @@
+import { BEHAVIOR, GROUP_BEHAVIOR, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const aetobatusOcellatus = {
     commonName: "Ocellated Eagle Ray",
     alternativeNames: ["Whitespotted Eagle Ray"],
@@ -13,4 +15,11 @@ export const aetobatusOcellatus = {
     family: "Aetobatidae",
     genus: "Aetobatus",
     species: "ocellatus",
+
+    tags: [
+        BEHAVIOR.BREACHING,
+        BEHAVIOR.MIGRATING,
+        GROUP_BEHAVIOR.SCHOOLING,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

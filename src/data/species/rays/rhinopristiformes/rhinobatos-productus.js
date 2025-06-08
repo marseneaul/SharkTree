@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const rhinobatosProductus = {
     commonName: "Shovelnose Guitarfish",
     binomialName: "Rhinobatos productus",
@@ -11,5 +13,9 @@ export const rhinobatosProductus = {
     order: "Rhinopristiformes",
     family: "Rhinobatidae",
     genus: "Rhinobatos",
-    species: "productus"
+    species: "productus",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

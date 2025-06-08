@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const pristisZijsron = {
     commonName: "Longcomb Sawfish",
     alternativeNames: ["Narrowsnout Sawfish", "Green Sawfish"],
@@ -13,4 +15,8 @@ export const pristisZijsron = {
     family: "Pristidae",
     genus: "Pristis",
     species: "zijsron",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

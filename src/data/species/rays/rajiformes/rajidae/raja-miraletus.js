@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const rajaMiraletus = {
     commonName: "Brown Ray",
     binomialName: "Raja miraletus",
@@ -12,4 +14,8 @@ export const rajaMiraletus = {
     family: "Rajidae",
     genus: "Raja",
     species: "miraletus",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

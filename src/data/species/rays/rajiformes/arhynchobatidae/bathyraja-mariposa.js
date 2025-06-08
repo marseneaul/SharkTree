@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const bathyrajaMariposa = {
     commonName: "Butterfly Skate",
     binomialName: "Bathyraja mariposa",
@@ -12,4 +14,8 @@ export const bathyrajaMariposa = {
     family: "Arhynchobatidae",
     genus: "Bathyraja",
     species: "mariposa",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

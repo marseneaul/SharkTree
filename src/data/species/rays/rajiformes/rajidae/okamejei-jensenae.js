@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const okamejeiJensenae = {
     commonName: "Sulu Sea Skate",
     binomialName: "Okamejei jensenae",
@@ -12,4 +14,8 @@ export const okamejeiJensenae = {
     family: "Rajidae",
     genus: "Okamejei",
     species: "jensenae",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

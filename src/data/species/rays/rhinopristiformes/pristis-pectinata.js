@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const pristisPectinata = {
     commonName: "Smalltooth Sawfish",
     binomialName: "Pristis pectinata",
@@ -12,4 +14,8 @@ export const pristisPectinata = {
     family: "Pristidae",
     genus: "Pristis",
     species: "pectinata",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

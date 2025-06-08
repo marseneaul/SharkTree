@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const rhinopteraNeglecta = {
     commonName: "Australian Cownose Ray",
     binomialName: "Rhinoptera neglecta",
@@ -12,4 +14,8 @@ export const rhinopteraNeglecta = {
     family: "Rhinopteridae",
     genus: "Rhinoptera",
     species: "neglecta",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

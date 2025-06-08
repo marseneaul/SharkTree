@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const gymnuraPoecilura = {
     commonName: "Longtail Butterfly Ray",
     binomialName: "Gymnura poecilura",
@@ -12,4 +14,8 @@ export const gymnuraPoecilura = {
     family: "Gymnuridae",
     genus: "Gymnura",
     species: "poecilura",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

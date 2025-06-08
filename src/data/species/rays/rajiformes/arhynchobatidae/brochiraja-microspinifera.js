@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const brochirajaMicrospinifera = {
     commonName: "Small Deepsea Skate",
     binomialName: "Brochiraja microspinifera",
@@ -12,4 +14,8 @@ export const brochirajaMicrospinifera = {
     family: "Arhynchobatidae",
     genus: "Brochiraja",
     species: "microspinifera",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

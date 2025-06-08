@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const pastinachusSephen = {
     commonName: "Cowtail Stingray",
     binomialName: "Pastinachus sephen",
@@ -12,4 +14,8 @@ export const pastinachusSephen = {
     family: "Dasyatidae",
     genus: "Pastinachus",
     species: "sephen",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

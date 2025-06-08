@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const insentirajaSubtilispinosa = {
     commonName: "Western Looseskin Skate",
     alternativeNames: ["Velvet Skate"],
@@ -13,4 +15,8 @@ export const insentirajaSubtilispinosa = {
     family: "Arhynchobatidae",
     genus: "Insentiraja",
     species: "subtilispinosa",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

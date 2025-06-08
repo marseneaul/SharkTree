@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const dipturusLinteus = {
     commonName: "Sailray",
     binomialName: "Dipturus linteus",
@@ -12,4 +14,8 @@ export const dipturusLinteus = {
     family: "Rajidae",
     genus: "Dipturus",
     species: "linteus",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

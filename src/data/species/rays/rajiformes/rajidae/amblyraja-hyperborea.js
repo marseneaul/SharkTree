@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const amblyrajaHyperborea = {
     commonName: "Arctic Skate",
     binomialName: "Amblyraja hyperborea",
@@ -12,4 +14,8 @@ export const amblyrajaHyperborea = {
     family: "Rajidae",
     genus: "Amblyraja",
     species: "hyperborea",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const typhlonarkeAysoni = {
     commonName: "Blind Electric Ray",
     binomialName: "Typhlonarke aysoni",
@@ -12,4 +14,8 @@ export const typhlonarkeAysoni = {
     family: "Narkidae",
     genus: "Typhlonarke",
     species: "aysoni",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const notorajaAzurea = {
     commonName: "Blue Skate",
     binomialName: "Notoraja azurea",
@@ -12,4 +14,8 @@ export const notorajaAzurea = {
     family: "Arhynchobatidae",
     genus: "Notoraja",
     species: "azurea",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

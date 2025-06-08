@@ -1,3 +1,5 @@
+import { BEHAVIOR, FEEDING_BEHAVIOR, GROUP_BEHAVIOR, TEMPERATURE_REGULATION } from "../../../../../constants/enums";
+
 export const mobulaJapanica = {
     commonName: "Spinetail Mobula",
     alternativeNames: ["Spinetail Devil Ray", "Japanese Mobula Ray"],
@@ -13,4 +15,12 @@ export const mobulaJapanica = {
     family: "Mobulidae",
     genus: "Mobula",
     species: "japanica",
+
+    tags: [
+        BEHAVIOR.BREACHING,
+        BEHAVIOR.MIGRATING,
+        FEEDING_BEHAVIOR.PLANKTIVOROUS,
+        GROUP_BEHAVIOR.SCHOOLING,
+        TEMPERATURE_REGULATION.REGIONALLY_ENDOTHERMIC,
+    ],
 };

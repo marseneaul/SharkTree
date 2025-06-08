@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const zearajaChilensis = {
     commonName: "Yellownose Skate",
     binomialName: "Zearaja chilensis",
@@ -12,4 +14,8 @@ export const zearajaChilensis = {
     family: "Rajidae",
     genus: "Zearaja",
     species: "chilensis",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

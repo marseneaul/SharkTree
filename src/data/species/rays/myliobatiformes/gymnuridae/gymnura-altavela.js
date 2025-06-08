@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const gymnuraAltavela = {
     commonName: "Spiny Butterfly Ray",
     alternativeNames: ["Giant Butterfly Ray"],
@@ -13,4 +15,8 @@ export const gymnuraAltavela = {
     family: "Gymnuridae",
     genus: "Gymnura",
     species: "altavela",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

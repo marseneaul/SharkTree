@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const rajellaKukujevi = {
     commonName: "Mid-Atlantic Skate",
     binomialName: "Rajella kukujevi",
@@ -12,4 +14,8 @@ export const rajellaKukujevi = {
     family: "Rajidae",
     genus: "Rajella",
     species: "kukujevi",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

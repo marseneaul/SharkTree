@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const bathyrajaParmifera = {
     commonName: "Alaskan Skate",
     binomialName: "Bathyraja parmifera",
@@ -12,4 +14,8 @@ export const bathyrajaParmifera = {
     family: "Arhynchobatidae",
     genus: "Bathyraja",
     species: "parmifera",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

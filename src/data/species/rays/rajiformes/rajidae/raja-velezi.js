@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const rajaVelezi = {
     commonName: "Velez Ray",
     binomialName: "Raja velezi",
@@ -12,4 +14,8 @@ export const rajaVelezi = {
     family: "Rajidae",
     genus: "Raja",
     species: "velezi",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

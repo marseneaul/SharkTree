@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const himanturaSignifer = {
     commonName: "White-Edge Freshwater Whipray",
     binomialName: "Himantura signifer",
@@ -12,4 +14,8 @@ export const himanturaSignifer = {
     family: "Dasyatidae",
     genus: "Himantura",
     species: "signifer",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

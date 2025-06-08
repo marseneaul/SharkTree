@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const narkeCapensis = {
     commonName: "Onefin Electric Ray",
     alternativeNames: ["Cape Numbfish"],
@@ -13,4 +15,8 @@ export const narkeCapensis = {
     family: "Narkidae",
     genus: "Narke",
     species: "capensis",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

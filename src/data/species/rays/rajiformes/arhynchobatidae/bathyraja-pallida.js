@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const bathyrajaPallida = {
     commonName: "Pale Ray",
     binomialName: "Bathyraja pallida",
@@ -12,4 +14,8 @@ export const bathyrajaPallida = {
     family: "Arhynchobatidae",
     genus: "Bathyraja",
     species: "pallida",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

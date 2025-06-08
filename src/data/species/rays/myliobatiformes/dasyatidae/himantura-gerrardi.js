@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const himanturaGerrardi = {
     commonName: "Whitespotted Whipray",
     alternativeNames: ["Sharpnose Stingray"],
@@ -13,4 +15,8 @@ export const himanturaGerrardi = {
     family: "Dasyatidae",
     genus: "Himantura",
     species: "gerrardi",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

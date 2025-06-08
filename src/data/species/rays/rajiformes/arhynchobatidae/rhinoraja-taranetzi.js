@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const rhinorajaTaranetzi = {
     commonName: "Mud Skate",
     binomialName: "Rhinoraja taranetzi",
@@ -12,4 +14,8 @@ export const rhinorajaTaranetzi = {
     family: "Arhynchobatidae",
     genus: "Rhinoraja",
     species: "taranetzi",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

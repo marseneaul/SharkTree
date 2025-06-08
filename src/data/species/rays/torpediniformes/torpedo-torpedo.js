@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const torpedoTorpedo = {
     commonName: "Common Torpedo",
     alternativeNames: ["Ocellate Torpedo", "Eyed Electric Ray"],
@@ -13,4 +15,8 @@ export const torpedoTorpedo = {
     family: "Torpedinidae",
     genus: "Torpedo",
     species: "torpedo",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

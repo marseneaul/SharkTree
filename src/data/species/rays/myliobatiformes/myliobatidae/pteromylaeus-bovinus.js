@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const pteromylaeusBovinus = {
     commonName: "Bull Ray",
     alternativeNames: ["Duckbill Ray", "Duckbill Eagle Ray"],
@@ -13,4 +15,8 @@ export const pteromylaeusBovinus = {
     family: "Myliobatidae",
     genus: "Aetomylaeus",
     species: "bovinus",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

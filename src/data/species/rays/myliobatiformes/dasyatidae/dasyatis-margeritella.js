@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const dasyatisMargeritella = {
     commonName: "Pearl Stingray",
     binomialName: "Desyatis margaritella",
@@ -12,4 +14,8 @@ export const dasyatisMargeritella = {
     family: "Dasyatidae",
     genus: "Desyatis",
     species: "margaritella",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

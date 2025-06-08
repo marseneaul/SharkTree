@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const aetomylaeusVespertilio = {
     commonName: "Ornate Eagle Ray",
     alternativeNames: ["Reticulate Eagle Ray"],
@@ -13,4 +15,8 @@ export const aetomylaeusVespertilio = {
     family: "Myliobatidae",
     genus: "Aetomylaeus",
     species: "vespertilio",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

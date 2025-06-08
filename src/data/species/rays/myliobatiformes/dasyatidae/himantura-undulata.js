@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const himanturaUndulata = {
     commonName: "Honeycomb Whipray",
     binomialName: "Himantura undulata",
@@ -12,4 +14,8 @@ export const himanturaUndulata = {
     family: "Dasyatidae",
     genus: "Himantura",
     species: "undulata",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

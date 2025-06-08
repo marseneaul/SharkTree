@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const urogymnusAsperrimus = {
     commonName: "Porcupine Ray",
     binomialName: "Urogymnus asperrimus",
@@ -12,4 +14,8 @@ export const urogymnusAsperrimus = {
     family: "Dasyatidae",
     genus: "Urogymnus",
     species: "asperrimus",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

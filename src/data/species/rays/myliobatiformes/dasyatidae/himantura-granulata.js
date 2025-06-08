@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const himanturaGranulata = {
     commonName: "Mangrove Whipray",
     alternativeNames: ["Whitetail Stingray"],
@@ -13,4 +15,8 @@ export const himanturaGranulata = {
     family: "Dasyatidae",
     genus: "Himantura",
     species: "granulata",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

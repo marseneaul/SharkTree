@@ -1,3 +1,5 @@
+import { BEHAVIOR, GROUP_BEHAVIOR, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const aetobatusNarinari = {
     commonName: "Spotted Eagle Ray",
     binomialName: "Aetobatus narinari",
@@ -12,4 +14,11 @@ export const aetobatusNarinari = {
     family: "Aetobatidae",
     genus: "Aetobatus",
     species: "narinari",
+
+    tags: [
+        BEHAVIOR.BREACHING,
+        BEHAVIOR.MIGRATING,
+        GROUP_BEHAVIOR.SCHOOLING,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

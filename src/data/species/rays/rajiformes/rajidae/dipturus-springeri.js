@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const dipturusSpringeri = {
     commonName: "Roughbelly Skate",
     binomialName: "Dipturus springeri",
@@ -12,4 +14,8 @@ export const dipturusSpringeri = {
     family: "Rajidae",
     genus: "Dipturus",
     species: "springeri",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

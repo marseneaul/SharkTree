@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const rajaStraeleni = {
     commonName: "Buscuit Skate",
     alternativeNames: ["False Thornback Skate", "Spotted Skate"],
@@ -13,4 +15,8 @@ export const rajaStraeleni = {
     family: "Rajidae",
     genus: "Raja",
     species: "straeleni",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

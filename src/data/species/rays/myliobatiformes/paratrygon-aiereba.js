@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const paratrygonAiereba = {
     commonName: "Discus Ray",
     alternativeNames: ["Manzana Ray", "Ceja Ray"],
@@ -13,4 +15,8 @@ export const paratrygonAiereba = {
     family: "Potamotrygonidae",
     genus: "Paratrygon",
     species: "aiereba",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

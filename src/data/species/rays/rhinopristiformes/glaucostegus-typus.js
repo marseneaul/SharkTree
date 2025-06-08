@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const glaucostegusTypus = {
     commonName: "Common Shovelnose Ray",
     alternativeNames: ["Giant Shovelnose Ray", "Giant Guitarfish"],
@@ -13,4 +15,8 @@ export const glaucostegusTypus = {
     family: "Glaucostegidae",
     genus: "Glaucostegus",
     species: "typus",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

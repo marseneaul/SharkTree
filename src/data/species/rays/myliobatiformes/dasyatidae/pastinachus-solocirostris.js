@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const pastinachusSolocirostris = {
     commonName: "Roughnose Stingray",
     binomialName: "Pastinachus solocirostris",
@@ -12,4 +14,8 @@ export const pastinachusSolocirostris = {
     family: "Dasyatidae",
     genus: "Pastinachus",
     species: "solocirostris",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

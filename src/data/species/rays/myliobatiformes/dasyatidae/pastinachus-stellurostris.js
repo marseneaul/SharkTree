@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const pastinachusStellurostris = {
     commonName: "Starrynose Cowtail Ray",
     binomialName: "Pastinachus stellurostris",
@@ -12,4 +14,8 @@ export const pastinachusStellurostris = {
     family: "Dasyatidae",
     genus: "Pastinachus",
     species: "stellurostris",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

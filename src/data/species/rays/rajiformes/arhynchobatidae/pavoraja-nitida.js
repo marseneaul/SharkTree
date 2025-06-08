@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const pavorajaNitida = {
     commonName: "Peacock Skate",
     binomialName: "Pavoraja nitida",
@@ -12,4 +14,8 @@ export const pavorajaNitida = {
     family: "Arhynchobatidae",
     genus: "Pavoraja",
     species: "nitida",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

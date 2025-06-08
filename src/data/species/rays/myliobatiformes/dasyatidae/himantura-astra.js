@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const himanturaAstra = {
     commonName: "Black-Spotted Whipray",
     binomialName: "Himantura astra",
@@ -12,4 +14,8 @@ export const himanturaAstra = {
     family: "Dasyatidae",
     genus: "Himantura",
     species: "astra",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

@@ -1,4 +1,6 @@
-export const mylliobatisAustralis = {
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
+export const myliobatisAustralis = {
     commonName: "Australian Bull Ray",
     binomialName: "Myliobatis australis",
 
@@ -12,4 +14,8 @@ export const mylliobatisAustralis = {
     family: "Myliobatidae",
     genus: "Myliobatis",
     species: "australis",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

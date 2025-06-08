@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const dipturusOxyrhinchus = {
     commonName: "Longnose Skate",
     binomialName: "Dipturus oxyrinchus",
@@ -12,4 +14,8 @@ export const dipturusOxyrhinchus = {
     family: "Rajidae",
     genus: "Dipturus",
     species: "oxyrinchus",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

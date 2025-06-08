@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const aptychotremaRostrata = {
     commonName: "Eastern Shovelnose Ray",
     binomialName: "Aptychotrema rostrata",
@@ -12,4 +14,8 @@ export const aptychotremaRostrata = {
     family: "Trygonorrhinidae",
     genus: "Aptychotrema",
     species: "rostrata",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

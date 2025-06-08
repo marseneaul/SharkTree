@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const pristisClavata = {
     commonName: "Dwarf Sawfish",
     alternativeNames: ["Queensland Sawfish"],
@@ -13,4 +15,8 @@ export const pristisClavata = {
     family: "Rhinobatidae",
     genus: "Pristis",
     species: "clavata",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

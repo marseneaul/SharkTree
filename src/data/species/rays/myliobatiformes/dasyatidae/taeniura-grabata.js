@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const taeniuraGrabata = {
     commonName: "Round Fantail Stingray",
     binomialName: "Taeniura grabata",
@@ -12,4 +14,8 @@ export const taeniuraGrabata = {
     family: "Dasyatidae",
     genus: "Taeniura",
     species: "grabata",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

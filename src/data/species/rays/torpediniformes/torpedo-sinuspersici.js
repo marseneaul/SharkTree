@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const torpedoSinuspersici = {
     commonName: "Gulf Torpedo",
     alternativeNames: ["Variable Electric Ray"],
@@ -13,4 +15,8 @@ export const torpedoSinuspersici = {
     family: "Torpedinidae",
     genus: "Torpedo",
     species: "sinuspersici",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

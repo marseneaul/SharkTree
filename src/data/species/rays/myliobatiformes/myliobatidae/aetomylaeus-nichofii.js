@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const aetomylaeusNichofii = {
     commonName: "Banded Eagle Ray",
     binomialName: "Aetomylaeus nichofii",
@@ -12,4 +14,8 @@ export const aetomylaeusNichofii = {
     family: "Myliobatidae",
     genus: "Aetomylaeus",
     species: "nichofii",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

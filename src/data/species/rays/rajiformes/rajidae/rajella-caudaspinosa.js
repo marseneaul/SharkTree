@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const rajellaCaudaspinosa = {
     commonName: "Munchkin Skate",
     binomialName: "Rajella caudaspinosa",
@@ -12,4 +14,8 @@ export const rajellaCaudaspinosa = {
     family: "Rajidae",
     genus: "Rajella",
     species: "caudaspinosa",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

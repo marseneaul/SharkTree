@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const potamotrygonMotoro = {
     commonName: "Ocellate River Stingray",
     alternativeNames: ["Peacock-Eye Stingray", "Black River Stingray"],
@@ -13,4 +15,8 @@ export const potamotrygonMotoro = {
     family: "Potamotrygonidae",
     genus: "Potamotrygon",
     species: "motoro",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

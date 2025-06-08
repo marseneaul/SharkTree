@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const urolophusCruciatus = {
     commonName: "Crossback Stingaree",
     alternativeNames: ["Banded Stingaree"],
@@ -13,4 +15,8 @@ export const urolophusCruciatus = {
     family: "Urolophidae",
     genus: "Urolophus",
     species: "cruciatus",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

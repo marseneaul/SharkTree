@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const gymnuraMarmorata = {
     commonName: "California Butterfly Ray",
     binomialName: "Gymnura marmorata",
@@ -12,4 +14,8 @@ export const gymnuraMarmorata = {
     family: "Gymnuridae",
     genus: "Gymnura",
     species: "marmorata",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

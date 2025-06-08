@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const amblyrajaDoellojuradoi = {
     commonName: "Southern Thorny Skate",
     binomialName: "Amblyraja doellojuradoi",
@@ -12,4 +14,8 @@ export const amblyrajaDoellojuradoi = {
     family: "Rajidae",
     genus: "Amblyraja",
     species: "doellojuradoi",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

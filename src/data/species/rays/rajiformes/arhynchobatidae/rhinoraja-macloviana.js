@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const rhinorajaMacloviana = {
     commonName: "Patagonian Skate",
     binomialName: "Rhinoraja macloviana",
@@ -12,4 +14,8 @@ export const rhinorajaMacloviana = {
     family: "Arhynchobatidae",
     genus: "Rhinoraja",
     species: "macloviana",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

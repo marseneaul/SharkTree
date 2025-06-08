@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const dipturusHealdi = {
     commonName: "Heald's Skate",
     binomialName: "Dipturus healdi",
@@ -12,4 +14,8 @@ export const dipturusHealdi = {
     family: "Rajidae",
     genus: "Dipturus",
     species: "healdi",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

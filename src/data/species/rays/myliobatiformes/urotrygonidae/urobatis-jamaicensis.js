@@ -1,3 +1,5 @@
+import { BIOLUMINESCENT, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const urobatisJamaicensis = {
     commonName: "Yellow Stingray",
     binomialName: "Urobatis jamaicensis",
@@ -12,4 +14,9 @@ export const urobatisJamaicensis = {
     family: "Urotrygonidae",
     genus: "Urobatis",
     species: "jamaicensis",
+
+    tags: [
+        BIOLUMINESCENT.YES,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

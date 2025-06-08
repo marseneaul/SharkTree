@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const myliobatisAquila = {
     commonName: "Common Eagle Ray",
     alternativeNames: ["Bullray"],
@@ -13,4 +15,8 @@ export const myliobatisAquila = {
     family: "Myliobatidae",
     genus: "Myliobatis",
     species: "aquila",
+    
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

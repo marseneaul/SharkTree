@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const dipturusInnominatus = {
     commonName: "New Zealand Smooth Skate",
     binomialName: "Dipturus innominatus",
@@ -12,4 +14,8 @@ export const dipturusInnominatus = {
     family: "Rajidae",
     genus: "Dipturus",
     species: "innominatus",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

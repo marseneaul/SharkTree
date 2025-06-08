@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const rajaAsterias = {
     commonName: "Mediterranean Starry Ray",
     binomialName: "Raja asterias",
@@ -12,4 +14,8 @@ export const rajaAsterias = {
     family: "Rajidae",
     genus: "Raja",
     species: "asterias",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const trygonopteraPersonata = {
     commonName: "Masked Stingaree",
     binomialName: "Trygonoptera personata",
@@ -12,4 +14,8 @@ export const trygonopteraPersonata = {
     family: "Urolophidae",
     genus: "Trygonoptera",
     species: "personata",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

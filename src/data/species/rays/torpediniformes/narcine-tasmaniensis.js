@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const narcineTasmaniensis = {
     commonName: "Tasmanian Numbfish",
     binomialName: "Narcine tasmaniensis",
@@ -12,4 +14,8 @@ export const narcineTasmaniensis = {
     family: "Narcinidae",
     genus: "Narcine",
     species: "tasmaniensis",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

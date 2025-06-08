@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const dasyatisBrevicaudata = {
     commonName: "Short-Tail Stingray",
     alternativeNames: ["Smooth Stingray"],
@@ -13,4 +15,8 @@ export const dasyatisBrevicaudata = {
     family: "Dasyatidae",
     genus: "Dasyatis",
     species: "brevicaudata",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

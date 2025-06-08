@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const zapteryxExasperata = {
     commonName: "Banded Guitarfish",
     alternativeNames: ["Mottled Guitarfish", "Prickly Skate", "Striped Guitarfish"],
@@ -13,4 +15,8 @@ export const zapteryxExasperata = {
     family: "Trygonorrhinidae",
     genus: "Zapteryx",
     species: "exasperata",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

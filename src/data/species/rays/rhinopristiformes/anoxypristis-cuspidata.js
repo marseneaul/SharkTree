@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const anoxypristisCuspidata = {
     commonName: "Narrow Sawfish",
     alternativeNames: ["Pointed Sawfish", "Knifetooth Sawfish"],
@@ -13,4 +15,8 @@ export const anoxypristisCuspidata = {
     family: "Pristidae",
     genus: "Anoxypristis",
     species: "cuspidata",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const rhinobatosGlaucostigma = {
     commonName: "Speckled Guitarfish",
     binomialName: "Rhinobatos glaucostigma",
@@ -12,4 +14,8 @@ export const rhinobatosGlaucostigma = {
     family: "Rhinobatidae",
     genus: "Rhinobatos",
     species: "glaucostigma",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

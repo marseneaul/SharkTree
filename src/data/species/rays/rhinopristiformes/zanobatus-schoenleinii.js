@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const zanobatusSchoenleinii = {
     commonName: "Striped Panray",
     binomialName: "Zanobatus schoenleinii",
@@ -12,4 +14,8 @@ export const zanobatusSchoenleinii = {
     family: "Zanobatidae",
     genus: "Zanobatus",
     species: "schoenleinii",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

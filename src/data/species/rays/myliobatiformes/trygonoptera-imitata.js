@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const trygonopteraImitata = {
     commonName: "Eastern Shovelnose Stingaree",
     binomialName: "Trygonoptera imitata",
@@ -12,4 +14,8 @@ export const trygonopteraImitata = {
     family: "Urolophidae",
     genus: "Trygonoptera",
     species: "imitata",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

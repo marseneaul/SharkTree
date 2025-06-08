@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const himanturaOxyrhyncha = {
     commonName: "Marbled Whipray",
     binomialName: "Himantura oxyrhyncha",
@@ -12,4 +14,8 @@ export const himanturaOxyrhyncha = {
     family: "Dasyatidae",
     genus: "Himantura",
     species: "oxyrhyncha",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const urolophusWestraliensis = {
     commonName: "Brown Stingaree",
     binomialName: "Urolophus westraliensis",
@@ -12,4 +14,8 @@ export const urolophusWestraliensis = {
     family: "Urolophidae",
     genus: "Urolophus",
     species: "westraliensis",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const myliobatisTobjei = {
     commonName: "Japanese Eagle Ray",
     alternativeNames: ["Cowhead Eagle Ray", "Kite Ray"],
@@ -13,4 +15,8 @@ export const myliobatisTobjei = {
     family: "Myliobatidae",
     genus: "Myliobatis",
     species: "tobijei",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

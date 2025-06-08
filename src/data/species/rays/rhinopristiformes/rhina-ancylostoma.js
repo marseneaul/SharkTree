@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const rhinaAncylostoma = {
     commonName: "Bowmouth Guitarfish",
     alternativeNames: ["Shark Ray", "Mud Skate"],
@@ -13,4 +15,8 @@ export const rhinaAncylostoma = {
     family: "Rhinidae",
     genus: "Rhina",
     species: "ancylostoma",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

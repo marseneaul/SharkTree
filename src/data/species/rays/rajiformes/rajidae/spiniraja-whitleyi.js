@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const spinirajaWhitleyi = {
     commonName: "Melbourne Ray",
     binomialName: "Spiniraja whitleyi",
@@ -12,4 +14,8 @@ export const spinirajaWhitleyi = {
     family: "Rajidae",
     genus: "Spiniraja",
     species: "whitleyi",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

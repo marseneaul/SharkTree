@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const rajaEglanteria = {
     commonName: "Clearnose Skate",
     binomialName: "Raja eglanteria",
@@ -12,4 +14,8 @@ export const rajaEglanteria = {
     family: "Rajidae",
     genus: "Raja",
     species: "eglanteria",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

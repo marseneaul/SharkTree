@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const himanturaWalga = {
     commonName: "Dwarf Whipray",
     alternativeNames: ["Mangrove Whipray"],
@@ -13,4 +15,8 @@ export const himanturaWalga = {
     family: "Dasyatidae",
     genus: "Himantura",
     species: "walga",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

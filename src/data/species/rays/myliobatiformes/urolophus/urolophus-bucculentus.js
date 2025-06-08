@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const urolophusBucculentus = {
     commonName: "Sandyback Stingaree",
     alternativeNames: ["Great Stingaree"],
@@ -13,4 +15,8 @@ export const urolophusBucculentus = {
     family: "Urolophidae",
     genus: "Urolophus",
     species: "bucculentus",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

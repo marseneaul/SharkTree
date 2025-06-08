@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const sympterygiaBonapartii = {
     commonName: "Smallnose Fanskate",
     binomialName: "Sympterygia bonapartii",
@@ -12,4 +14,8 @@ export const sympterygiaBonapartii = {
     family: "Arhynchobatidae",
     genus: "Sympterygia",
     species: "bonapartii",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

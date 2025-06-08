@@ -1,3 +1,5 @@
+import { BEHAVIOR, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const dasyatisAmericana = {
     commonName: "Southern Stingray",
     binomialName: "Dasyatis americana",
@@ -12,4 +14,9 @@ export const dasyatisAmericana = {
     family: "Dasyatidae",
     genus: "Dasyatis",
     species: "americana",
+
+    tags: [
+        BEHAVIOR.BREACHING,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

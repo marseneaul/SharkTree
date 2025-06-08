@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const urolophusLobatus = {
     commonName: "Lobed Stingaree",
     binomialName: "Urolophus lobatus",
@@ -12,4 +14,8 @@ export const urolophusLobatus = {
     family: "Urolophidae",
     genus: "Urolophus",
     species: "lobatus",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

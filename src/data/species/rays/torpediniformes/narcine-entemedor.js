@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const narcineEntemedor = {
     commonName: "Giant Electric Ray",
     alternativeNames: ["Cortez Electric Ray"],
@@ -13,4 +15,8 @@ export const narcineEntemedor = {
     family: "Narcinidae",
     genus: "Narcine",
     species: "entemedor",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

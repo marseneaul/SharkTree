@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const leucorajaOcellata = {
     commonName: "Winter Skate",
     alternativeNames: ["Spotted Skate"],
@@ -13,4 +15,8 @@ export const leucorajaOcellata = {
     family: "Rajidae",
     genus: "Leucoraja",
     species: "ocellata",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const rhinobatosAnnulatus = {
     commonName: "Little Guitarfish",
     binomialName: "Rhinobatos annulatus",
@@ -12,4 +14,8 @@ export const rhinobatosAnnulatus = {
     family: "Rhinobatidae",
     genus: "Rhinobatos",
     species: "annulatus",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

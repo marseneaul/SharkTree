@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const torpedoMacneilli = {
     commonName: "Short-Tail Torpedo",
     binomialName: "Torpedo macneilli",
@@ -12,4 +14,8 @@ export const torpedoMacneilli = {
     family: "Torpedinidae",
     genus: "Torpedo",
     species: "macneilli",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const dipturusAustralis = {
     commonName: "Sydney Skate",
     binomialName: "Dipturus australis",
@@ -12,4 +14,8 @@ export const dipturusAustralis = {
     family: "Rajidae",
     genus: "Dipturus",
     species: "australis",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

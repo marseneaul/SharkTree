@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const leucorajaErinacea = {
     commonName: "Little Skate",
     binomialName: "Leucoraja erinacea",
@@ -12,4 +14,8 @@ export const leucorajaErinacea = {
     family: "Rajidae",
     genus: "Leucoraja",
     species: "erinacea",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

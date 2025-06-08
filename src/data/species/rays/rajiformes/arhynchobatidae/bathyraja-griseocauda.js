@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const bathyrajaGriseocauda = {
     commonName: "Graytail Skate",
     alternativeNames: ["Grey Tail Skate"],
@@ -13,4 +15,8 @@ export const bathyrajaGriseocauda = {
     family: "Arhynchobatidae",
     genus: "Bathyraja",
     species: "griseocauda",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

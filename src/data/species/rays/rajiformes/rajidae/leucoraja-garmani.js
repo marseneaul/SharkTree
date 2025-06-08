@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const leucorajaGarmani = {
     commonName: "Rosette Skate",
     binomialName: "Leucoraja garmani",
@@ -12,4 +14,8 @@ export const leucorajaGarmani = {
     family: "Rajidae",
     genus: "Leucoraja",
     species: "garmani",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const pteroplatytrygonViolacea = {
     commonName: "Pelagic Stingray",
     binomialName: "Pteroplatytrygon violacea",
@@ -12,4 +14,8 @@ export const pteroplatytrygonViolacea = {
     family: "Dasyatidae",
     genus: "Pteroplatytrygon",
     species: "violacea",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

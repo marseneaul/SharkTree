@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const narcineLasti = {
     commonName: "Western Numbfish",
     binomialName: "Narcine lasti",
@@ -12,4 +14,8 @@ export const narcineLasti = {
     family: "Narcinidae",
     genus: "Narcine",
     species: "lasti",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

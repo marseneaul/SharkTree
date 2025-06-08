@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const himanturaLeoparda = {
     commonName: "Leopard Whipray",
     binomialName: "Himantura leoparda",
@@ -12,4 +14,8 @@ export const himanturaLeoparda = {
     family: "Dasyatidae",
     genus: "Himantura",
     species: "leoparda",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

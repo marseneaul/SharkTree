@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const brochirajaAsperula = {
     commonName: "Smooth Deepsea Skate",
     binomialName: "Brochiraja asperula",
@@ -12,4 +14,8 @@ export const brochirajaAsperula = {
     family: "Arhynchobatidae",
     genus: "Brochiraja",
     species: "asperula",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

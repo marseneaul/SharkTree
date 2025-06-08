@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const platyrhinoidesTriseriata = {
     commonName: "Thornback Guitarfish",
     binomialName: "Platyrhinoidis triseriata",
@@ -12,4 +14,8 @@ export const platyrhinoidesTriseriata = {
     family: "Platyrhinidae",
     genus: "Platyrhinoidis",
     species: "triseriata",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

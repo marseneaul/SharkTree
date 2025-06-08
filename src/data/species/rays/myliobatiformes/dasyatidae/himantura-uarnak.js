@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const himanturaUarnak = {
     commonName: "Reticulate Whipray",
     alternativeNames: ["Honeycomb Stingray"],
@@ -13,4 +15,8 @@ export const himanturaUarnak = {
     family: "Dasyatidae",
     genus: "Himantura",
     species: "uarnak",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

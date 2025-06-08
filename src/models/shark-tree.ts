@@ -6,11 +6,12 @@ import { SharkTreeNode } from "./shark-tree-node";
 import { Svg } from "../drawing/svg";
 import { Utils } from "../utils/utils";
 import { BLACK, LIGHT_GRAY, RED, TAXONOMIC_COLORS, WHITE } from "../constants/colors";
-import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION, FEEDING_BEHAVIOR, OCEAN_ZONE, GEOGRAPHICAL_DISTRIBUTION, HABITAT, WATER_COLUMN, PHYSICAL_CHARACTERISTIC, BEHAVIOR, NUM_GILLS, NUM_DORSAL_FINS, ANAL_FIN, NICTITATING_MEMBRANE, CAUDAL_FIN_SHAPE, MOUTH_IN_FRONT_OF_EYES, BIOLUMINESCENT, DORSAL_FIN_SPINES, SPIRACLES, FLATTENED_BODY, GROUP_BEHAVIOR, TAXONOMIC_LEVELS, PROXIMAL_DORSAL_FINS } from "../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION, FEEDING_BEHAVIOR, OCEAN_ZONE, GEOGRAPHICAL_DISTRIBUTION, HABITAT, WATER_COLUMN, PHYSICAL_CHARACTERISTIC, BEHAVIOR, NUM_GILLS, NUM_DORSAL_FINS, ANAL_FIN, NICTITATING_MEMBRANE, CAUDAL_FIN_SHAPE, MOUTH_IN_FRONT_OF_EYES, BIOLUMINESCENT, DORSAL_FIN_SPINES, SPIRACLES, FLATTENED_BODY, GROUP_BEHAVIOR, TAXONOMIC_LEVELS, PROXIMAL_DORSAL_FINS, SPECIES_TYPE } from "../constants/enums";
 
 export class SharkTree {
     config: SharkTreeNodeConfig
     root: SharkTreeNode
+    speciesType: SPECIES_TYPE
 
     centerX: number
     centerY: number
@@ -32,9 +33,10 @@ export class SharkTree {
     tagCategories: Map<string, { species: SharkSpecies[] }>;
 
 
-    constructor(sharkTreeConfig: SharkTreeNodeConfig, containerWidth: number) {
+    constructor(sharkTreeConfig: SharkTreeNodeConfig, containerWidth: number, speciesType = SPECIES_TYPE.SHARKS) {
         this.config = sharkTreeConfig;
         this.root = new SharkTreeNode(this.config, null);
+        this.speciesType = speciesType;
 
         this.svgSize = containerWidth > 0 ? Math.min(containerWidth, window.innerHeight) : DEFAULT_SVG_SIZE;
         this.centerX = this.svgSize / 2;
@@ -558,7 +560,7 @@ export class SharkTree {
     |----------------------------------------*/
 
     initializeTagCategories(): void {
-        const categories = [
+        const sharedCategories = [
             "conservationStatus",
             "reproductiveStrategy", 
             "temperatureRegulation",
@@ -566,16 +568,27 @@ export class SharkTree {
             "groupBehavior",
             "behavior",
             "numGills", 
+            "isBioluminescent",
+            "hasSpiracles",
+            "hasFlattenedBody"
+        ];
+
+        const sharkCategories = [
             "numDorsalFins",
+            "caudalFinShape",
+            "hasDorsalFinSpines",
+            "hasProximalDorsalFins",
             "analFin",
             "nictitatingMembrane",
             "caudalFinShape",
             "mouthInFrontOfEyes",
-            "isBioluminescent",
-            "hasDorsalFinSpines",
-            "hasProximalDorsalFins",
-            "hasSpiracles",
-            "hasFlattenedBody"
+        ];
+
+        const rayCategories = [];
+
+        const categories = [
+            ...sharedCategories,
+            ...(this.speciesType === SPECIES_TYPE.SHARKS ? sharkCategories : rayCategories)
         ];
         
         categories.forEach((category, _index) => {

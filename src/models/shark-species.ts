@@ -1,12 +1,13 @@
 import { sha256 } from "js-sha256";
 import { SharkConfig } from "../interfaces/shark-config";
 import { SharkTreeNode } from "./shark-tree-node";
-import { BEHAVIOR, BIOLUMINESCENT, CONSERVATION_STATUS, DEFAULT_TAGS, DORSAL_FIN_SPINES, FLATTENED_BODY, getEnumCategory, NUM_GILLS, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION } from "../constants/enums";
+import { BEHAVIOR, BIOLUMINESCENT, CONSERVATION_STATUS, DEFAULT_TAGS, DORSAL_FIN_SPINES, FLATTENED_BODY, getEnumCategory, NUM_GILLS, REPRODUCTIVE_STRATEGY, SPECIES_TYPE, TEMPERATURE_REGULATION } from "../constants/enums";
 
 // SharkTreeLeafNode
 export class SharkSpecies {
     config: SharkConfig
     parent: SharkTreeNode|null
+    speciesType: SPECIES_TYPE
 
     commonName: string|undefined
     alternativeNames: string[]
@@ -37,7 +38,7 @@ export class SharkSpecies {
     hash: string
     index: number
 
-    constructor(config: SharkConfig, parent: SharkTreeNode|null = null) {
+    constructor(config: SharkConfig, parent: SharkTreeNode|null = null, speciesType = SPECIES_TYPE.SHARKS) {
         this.config = config;
         this.parent = parent;
         this.alternativeNames = [];
@@ -213,12 +214,11 @@ export class SharkSpecies {
         const existingCategories = new Set<string>();
         this.tags.forEach(tag => {
             const category = getEnumCategory(tag);
-            if (category) {
-                existingCategories.add(category);
-            }
+            if (category) existingCategories.add(category);
         });
-    
-        const tagsToAdd = DEFAULT_TAGS.filter(defaultTag => {
+
+        const defaultTags = this.speciesType === SPECIES_TYPE.RAYS ? DEFAULT_TAGS.rays : DEFAULT_TAGS.sharks;
+        const tagsToAdd = defaultTags.filter(defaultTag => {
             const category = getEnumCategory(defaultTag);
             return category && !existingCategories.has(category);
         });

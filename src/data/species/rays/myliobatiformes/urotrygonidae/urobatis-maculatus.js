@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const urobatisMaculatus = {
     commonName: "Spotted Round Ray",
     alternativeNames: ["Cortez Round Stingray"],
@@ -13,4 +15,8 @@ export const urobatisMaculatus = {
     family: "Urotrygonidae",
     genus: "Urobatis",
     species: "maculatus",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

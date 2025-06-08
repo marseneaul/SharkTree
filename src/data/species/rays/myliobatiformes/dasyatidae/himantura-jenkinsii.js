@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const himanturaJenkinsii = {
     commonName: "Jenkins' Whipray",
     binomialName: "Himantura jenkinsii",
@@ -12,4 +14,8 @@ export const himanturaJenkinsii = {
     family: "Dasyatidae",
     genus: "Himantura",
     species: "jenkinsii",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

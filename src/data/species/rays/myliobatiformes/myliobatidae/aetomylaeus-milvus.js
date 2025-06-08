@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const aetomylaeusMilvus = {
     commonName: "Smooth Eagle Ray",
     binomialName: "Aetomylaeus milvus",
@@ -12,4 +14,8 @@ export const aetomylaeusMilvus = {
     family: "Myliobatidae",
     genus: "Aetomylaeus",
     species: "milvus",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

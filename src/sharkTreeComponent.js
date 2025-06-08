@@ -1,4 +1,18 @@
-import { ANAL_FIN, BEHAVIOR, BIOLUMINESCENT, CONSERVATION_STATUS, DORSAL_FIN_SPINES, FLATTENED_BODY, MOUTH_IN_FRONT_OF_EYES, NICTITATING_MEMBRANE, NUM_DORSAL_FINS, NUM_GILLS, PROXIMAL_DORSAL_FINS, SPIRACLES } from "./constants/enums";
+import { ANAL_FIN, BEHAVIOR, BIOLUMINESCENT, CONSERVATION_STATUS, DORSAL_FIN_SPINES, FLATTENED_BODY, MOUTH_IN_FRONT_OF_EYES, NICTITATING_MEMBRANE, NUM_DORSAL_FINS, NUM_GILLS, PROXIMAL_DORSAL_FINS, SPECIES_TYPE, SPIRACLES } from "./constants/enums";
+import { arhynchobatidaeConfig } from "./data/configs/rays/arhynchobatidae.config";
+import { batomorphiConfig } from "./data/configs/rays/batomorphi.config";
+import { dasyatidaeConfig } from "./data/configs/rays/dasyatidae.config";
+import { gymnuridaeConfig } from "./data/configs/rays/gymnuridae.config";
+import { mobulidaeConfig } from "./data/configs/rays/mobulidae.config";
+import { myliobatidaeConfig } from "./data/configs/rays/myliobatidae.config";
+import { myliobatiformesConfig } from "./data/configs/rays/myliobatiformes.config";
+import { platyrhinidaeConfig } from "./data/configs/rays/platyrhinidae.config";
+import { rajidaeConfig } from "./data/configs/rays/rajidae.config";
+import { rajiformesConfig } from "./data/configs/rays/rajiformes.config";
+import { rhinopristiformesConfig } from "./data/configs/rays/rhinopristiformes.config";
+import { torpediniformesConfig } from "./data/configs/rays/torpediniformes.config";
+import { urolophusConfig } from "./data/configs/rays/urolophus.config";
+import { urotrygonidaeConfig } from "./data/configs/rays/urotrygonidea.config";
 import {
     lamniformesConfig, heterodontiformesConfig, lamnidaeConfig, carcharhinidaeConfig,
     squatiniformesConfig, hexanchiformesConfig, pristiophoriformesConfig, orectolobiformesConfig,
@@ -7,27 +21,45 @@ import {
     galeomorphiiConfig, squalomorphiiConfig, selachiiConfig
 } from "./data/configs/sharks";
 
-const sharkConfigs = {
-    selachii: selachiiConfig,
-    galeomorphii: galeomorphiiConfig,
-    squalomorphii: squalomorphiiConfig,
-    squaliformes: squaliformesConfig,
-    carcharhiniformes: carcharhiniformesConfig,
-    orectolobiformes: orectolobiformesConfig,
-    lamniformes: lamniformesConfig,
-    hexanchiformes: hexanchiformesConfig,
-    squatiniformes: squatiniformesConfig,
-    heterodontiformes: heterodontiformesConfig,
-    pristiophoriformes: pristiophoriformesConfig,
-    carcharhinidae: carcharhinidaeConfig,
-    lamnidae: lamnidaeConfig,
-    scyliorhinidaeI: scyliorhinidaeIConfig,
-    scyliorhinidaeII: scyliorhinidaeIIConfig,
-    scyliorhinidaeIII: scyliorhinidaeIIIConfig,
-    dalatiidae: dalatiidaeConfig,
-    etmopteridae: etmopteridaeConfig,
-    squalidae: squalidaeConfig,
-    triakidae: triakidaeConfig
+const speciesConfigs = {
+    sharks: {
+        selachii: selachiiConfig,
+        galeomorphii: galeomorphiiConfig,
+        squalomorphii: squalomorphiiConfig,
+        squaliformes: squaliformesConfig,
+        carcharhiniformes: carcharhiniformesConfig,
+        orectolobiformes: orectolobiformesConfig,
+        lamniformes: lamniformesConfig,
+        hexanchiformes: hexanchiformesConfig,
+        squatiniformes: squatiniformesConfig,
+        heterodontiformes: heterodontiformesConfig,
+        pristiophoriformes: pristiophoriformesConfig,
+        carcharhinidae: carcharhinidaeConfig,
+        lamnidae: lamnidaeConfig,
+        scyliorhinidaeI: scyliorhinidaeIConfig,
+        scyliorhinidaeII: scyliorhinidaeIIConfig,
+        scyliorhinidaeIII: scyliorhinidaeIIIConfig,
+        dalatiidae: dalatiidaeConfig,
+        etmopteridae: etmopteridaeConfig,
+        squalidae: squalidaeConfig,
+        triakidae: triakidaeConfig
+    },
+    rays: {
+        batomorphi: batomorphiConfig,
+        rajiformes: rajiformesConfig,
+        rhinopristiformes: rhinopristiformesConfig,
+        torpediniformes: torpediniformesConfig,
+        myliobatiformes: myliobatiformesConfig,
+        platyrhinidae: platyrhinidaeConfig,
+        arhynchobatidae: arhynchobatidaeConfig,
+        dasyatidae: dasyatidaeConfig,
+        gymnuridae: gymnuridaeConfig,
+        mobulidae: mobulidaeConfig,
+        myliobatidae: myliobatidaeConfig,
+        rajidae: rajidaeConfig,
+        urotrygonidae: urotrygonidaeConfig,
+        urolophus: urolophusConfig
+    }
 };
 
 import { SharkTree } from "./models/shark-tree";
@@ -70,20 +102,45 @@ export class SharkTreeComponent extends HTMLElement {
         this.shadow.appendChild(this.template.content.cloneNode(true));
     }
 
-    initializeSharkTree(configKey = "selachii") {
-        if (!sharkConfigs[configKey]) {
-            console.error(`Configuration for ${configKey} not found`);
+    initializeSharkTree(speciesType = SPECIES_TYPE.SHARKS, configKey = "selachii") {
+        // Defensive check for speciesConfigs
+        if (!speciesConfigs) {
+            console.error("speciesConfigs is undefined");
             return;
         }
+    
+        // Validate speciesType
+        if (!Object.values(SPECIES_TYPE).includes(speciesType)) {
+            console.error(`Invalid speciesType: ${speciesType}`);
+            speciesType = SPECIES_TYPE.SHARKS; // Fallback
+        }
+    
+        // Validate configKey
+        if (!speciesConfigs[speciesType] || !speciesConfigs[speciesType][configKey]) {
+            console.error(`Configuration for ${speciesType}/${configKey} not found`);
+            return;
+        }
+    
         const container = this.shadow.querySelector("#phylo-container");
-        const containerWidth = container ? container.offsetWidth : window.innerWidth * 0.6;
-        this.sharkTree = new SharkTree(sharkConfigs[configKey], containerWidth);
+        if (!container) {
+            console.error("phylo-container not found");
+            return;
+        }
+    
+        const containerWidth = container.offsetWidth || window.innerWidth * 0.6;
+        this.sharkTree = new SharkTree(speciesConfigs[speciesType][configKey], containerWidth, speciesType);
         const sharkTreeSvg = this.sharkTree.draw();
         this.sharkScreen = this.shadow.querySelector("#shark-screen");
         container.innerHTML = "";
         container.appendChild(sharkTreeSvg);
-        this.lastContainerWidth = containerWidth; // Store initial width
+        this.lastContainerWidth = containerWidth;
         this.resetDropdowns();
+    
+        // Update search label dynamically
+        const searchLabel = this.shadow.querySelector("#search-container label");
+        if (searchLabel) {
+            searchLabel.textContent = `Search ${speciesType === SPECIES_TYPE.RAYS ? "Ray" : "Shark"}:`;
+        }
     }
 
     resetDropdowns() {
@@ -142,9 +199,11 @@ export class SharkTreeComponent extends HTMLElement {
     }
 
     reinitializeSharkTree() {
+        const speciesTypeDropdown = this.shadow.querySelector("#species-type-dropdown");
         const configDropdown = this.shadow.querySelector("#shark-config-dropdown");
-        const selectedConfig = configDropdown?.value || "selachii";
-        this.initializeSharkTree(selectedConfig);
+        const speciesType = speciesTypeDropdown?.value || SPECIES_TYPE.SHARKS;
+        const selectedConfig = configDropdown?.value || (speciesType === SPECIES_TYPE.RAYS ? "batomorphi" : "selachii");
+        this.initializeSharkTree(speciesType, selectedConfig);
     }
 
     /*----------------------------------------|
@@ -156,6 +215,13 @@ export class SharkTreeComponent extends HTMLElement {
             <style> ${this.css()} </style>
             <div id="app-container">
                 <div id="controls-container">
+                    <div id="species-type-container">
+                        <label for="species-type-dropdown">Species Type:</label>
+                        <select id="species-type-dropdown">
+                            <option value="${SPECIES_TYPE.SHARKS}">Sharks</option>
+                            <option value="${SPECIES_TYPE.RAYS}">Rays</option>
+                        </select>
+                    </div>
                     <div id="search-container">
                         <label for="shark-search">Search Shark:</label>
                         <input type="text" id="shark-search" placeholder="Enter common or binomial name" aria-describedby="search-label">
@@ -163,11 +229,7 @@ export class SharkTreeComponent extends HTMLElement {
                     </div>
                     <div id="dropdown-container">
                         <label for="shark-config-dropdown">Configuration:</label>
-                        <select id="shark-config-dropdown">
-                            ${Object.keys(sharkConfigs).map(configKey => 
-                                `<option value="${configKey}">${StringUtils.capitalizeFirstLetter(configKey)}</option>`
-                            ).join("")}
-                        </select>
+                        <select id="shark-config-dropdown"></select>
                     </div>
                     <div id="taxonomic-container">
                         <label for="taxonomic-dropdown">Taxonomic Level:</label>
@@ -194,16 +256,16 @@ export class SharkTreeComponent extends HTMLElement {
                             <option value="feedingBehavior">Feeding Behavior</option>
                             <option value="groupBehavior">Group Behavior</option>
                             <option value="numGills">Number of Gills</option>
-                            <option value="numDorsalFins">Number of Dorsal Fins</option>
-                            <option value="analFin">Has Anal Fin</option>
+                            <option value="numDorsalFins" class="shark-only">Number of Dorsal Fins</option>
+                            <option value="analFin" class="shark-only">Has Anal Fin</option>
                             <option value="hasSpiracles">Has Spiracles</option>
                             <option value="hasFlattenedBody">Has Flattened Body</option>
-                            <option value="nictitatingMembrane">Has Nictitating Membrane</option>
-                            <option value="caudalFinShape">Caudal Fin Shape</option>
-                            <option value="mouthInFrontOfEyes">Has Mouth in Front of Eyes</option>
+                            <option value="nictitatingMembrane" class="shark-only">Has Nictitating Membrane</option>
+                            <option value="caudalFinShape" class="shark-only">Caudal Fin Shape</option>
+                            <option value="mouthInFrontOfEyes" class="shark-only">Has Mouth in Front of Eyes</option>
                             <option value="isBioluminescent">Bioluminescent</option>
-                            <option value="hasDorsalFinSpines">Has Dorsal Fin Spines</option>
-                            <option value="hasProximalDorsalFins">Has Proximal Dorsal Fins</option>
+                            <option value="hasDorsalFinSpines" class="shark-only">Has Dorsal Fin Spines</option>
+                            <option value="hasProximalDorsalFins" class="shark-only">Has Proximal Dorsal Fins</option>
                         </select>
                         <select id="tag-value-dropdown">
                             <option value="">All</option>
@@ -218,11 +280,11 @@ export class SharkTreeComponent extends HTMLElement {
                     <div id="info-tooltip">
                         <strong>How to Use:</strong>
                         <ul>
-                            <li>Type a shark’s common or scientific name in "Search Shark" to find and highlight it.</li>
-                            <li>Choose a shark group from "Configuration" to display its phylogenetic tree.</li>
+                            <li>Type a species' common or scientific name in "Search Species" to find and highlight it.</li>
+                            <li>Choose a species type (Sharks or Rays) and group from "Configuration" to display its phylogenetic tree.</li>
                             <li>Select a "Taxonomic Level" (e.g., genus or family) to color matching species’ nodes and paths.</li>
                             <li>Pick a "Tag Category" (e.g., conservation status) to add dashed lines to paths of species with that trait.</li>
-                            <li>Click a shark’s node to view its details on the right panel.</li>
+                            <li>Click a species' node to view its details on the right panel.</li>
                             <li>Scroll to rotate, pinch to zoom, double-click to reset, or drag to pan the tree.</li>
                         </ul>
                     </div>
@@ -234,6 +296,8 @@ export class SharkTreeComponent extends HTMLElement {
             </div>
         `;
     }
+    // <option value="discShape" class="ray-only">Disc Shape</option>
+    // <option value="tailSpine" class="ray-only">Tail Spine</option>
     
     css() {
         return `
@@ -473,21 +537,49 @@ export class SharkTreeComponent extends HTMLElement {
             #info-button:hover + #info-tooltip {
                 display: block;
             }
+            .shark-only, .ray-only { display: none; }
+            .shark-only.active, .ray-only.active { display: block; }
         `;
     }
 
     /*----------------------------------------|
     |                HANDLERS                 |
     |----------------------------------------*/
-
     setupDropdown() {
-        const dropdown = this.shadow.querySelector("#shark-config-dropdown");
-        dropdown.addEventListener("change", (event) => {
+        const speciesTypeDropdown = this.shadow.querySelector("#species-type-dropdown");
+        const configDropdown = this.shadow.querySelector("#shark-config-dropdown");
+        const tagDropdown = this.shadow.querySelector("#tag-dropdown");
+    
+        const updateConfigDropdown = (speciesType) => {
+            configDropdown.innerHTML = Object.keys(speciesConfigs[speciesType]).map(configKey =>
+                `<option value="${configKey}">${StringUtils.capitalizeFirstLetter(configKey)}</option>`
+            ).join("");
+            this.initializeSharkTree(speciesType, configDropdown.value);
+    
+            // Toggle species-specific tag options
+            const sharkOptions = tagDropdown.querySelectorAll(".shark-only");
+            const rayOptions = tagDropdown.querySelectorAll(".ray-only");
+            sharkOptions.forEach(option => {
+                option.classList.toggle("active", speciesType === SPECIES_TYPE.SHARKS);
+            });
+            rayOptions.forEach(option => {
+                option.classList.toggle("active", speciesType === SPECIES_TYPE.RAYS);
+            });
+        };
+    
+        updateConfigDropdown(SPECIES_TYPE.SHARKS);
+    
+        speciesTypeDropdown.addEventListener("change", (event) => {
+            const speciesType = event.target.value;
+            updateConfigDropdown(speciesType);
+        });
+    
+        configDropdown.addEventListener("change", (event) => {
+            const speciesType = speciesTypeDropdown.value;
             const selectedConfig = event.target.value;
-            this.initializeSharkTree(selectedConfig);
+            this.initializeSharkTree(speciesType, selectedConfig);
         });
     }
-
     setupEventListeners() {
         window.addEventListener("select-shark", this.selectSharkHandler.bind(this));
     

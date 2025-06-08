@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const himanturaPolylepis = {
     commonName: "Giant Freshwater Stingray",
     binomialName: "Himantura polylepis",
@@ -12,4 +14,8 @@ export const himanturaPolylepis = {
     family: "Dasyatidae",
     genus: "Himantura",
     species: "polylepis",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const dasyatisCentroura = {
     commonName: "Roughtail Stingray",
     binomialName: "Dasyatis centroura",
@@ -12,4 +14,8 @@ export const dasyatisCentroura = {
     family: "Dasyatidae",
     genus: "Dasyatis",
     species: "centroura",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

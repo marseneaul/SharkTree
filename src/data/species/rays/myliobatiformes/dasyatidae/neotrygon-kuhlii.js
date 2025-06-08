@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const neotrygonKuhlii = {
     commonName: "Blue-Spotted Stingray",
     alternativeNames: ["Blue-Spotted Maskray", "Kuhl's Stingray"],
@@ -13,4 +15,8 @@ export const neotrygonKuhlii = {
     family: "Dasyatidae",
     genus: "Neotrygon",
     species: "kuhlii",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

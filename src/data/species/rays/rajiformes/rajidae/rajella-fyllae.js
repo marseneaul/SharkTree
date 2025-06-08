@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const rajellaFyllae = {
     commonName: "Round Ray",
     binomialName: "Rajella fyllae",
@@ -12,4 +14,8 @@ export const rajellaFyllae = {
     family: "Rajidae",
     genus: "Rajella",
     species: "fyllae",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

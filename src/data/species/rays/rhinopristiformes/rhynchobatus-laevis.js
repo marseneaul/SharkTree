@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const rhynchobatusLaevis = {
     commonName: "Smooth Wedgefish",
     binomialName: "Rhynchobatus laevis",
@@ -12,4 +14,8 @@ export const rhynchobatusLaevis = {
     family: "Rhinidae",
     genus: "Rhynchobatus",
     species: "laevis",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

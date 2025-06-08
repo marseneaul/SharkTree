@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const rhinorajaMultispinis = {
     commonName: "Multispine Skate",
     binomialName: "Rhinoraja multispinis",
@@ -12,4 +14,8 @@ export const rhinorajaMultispinis = {
     family: "Arhynchobatidae",
     genus: "Rhinoraja",
     species: "multispinis",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const rostrorajaAlba = {
     commonName: "Bottlenose Skate",
     alternativeNames: ["Spearnose Skate", "White Skate"],
@@ -13,4 +15,8 @@ export const rostrorajaAlba = {
     family: "Rajidae",
     genus: "Rostroraja",
     species: "alba",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

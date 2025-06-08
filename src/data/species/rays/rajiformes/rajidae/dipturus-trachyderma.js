@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const dipturusTrachyderma = {
     commonName: "Roughskin Skate",
     binomialName: "Dipturus trachyderma",
@@ -12,4 +14,8 @@ export const dipturusTrachyderma = {
     family: "Rajidae",
     genus: "Dipturus",
     species: "trachyderma",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

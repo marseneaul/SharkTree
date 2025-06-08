@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const urolophusPaucimaculatus = {
     commonName: "Sparsely Spotted Stingaree",
     alternativeNames: ["White-Spotted Stingaree", "Dixon's Stingaree"],
@@ -13,4 +15,8 @@ export const urolophusPaucimaculatus = {
     family: "Urolophidae",
     genus: "Urolophus",
     species: "paucimaculatus",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

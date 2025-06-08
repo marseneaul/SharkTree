@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const glaucostegusThouin = {
     commonName: "Clubnose Guitarfish",
     binomialName: "Glaucostegus thouin",
@@ -12,4 +14,8 @@ export const glaucostegusThouin = {
     family: "Glaucostegidae",
     genus: "Glaucostegus",
     species: "thouin",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

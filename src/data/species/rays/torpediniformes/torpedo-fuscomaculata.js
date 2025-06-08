@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const torpedoFuscomaculata = {
     commonName: "Black-Spotted Torpedo",
     binomialName: "Torpedo fuscomaculata",
@@ -12,4 +14,8 @@ export const torpedoFuscomaculata = {
     family: "Torpedinidae",
     genus: "Torpedo",
     species: "fuscomaculata",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

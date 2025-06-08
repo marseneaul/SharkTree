@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const pastinachusGracilicaudus = {
     commonName: "Narrowtail Stingray",
     binomialName: "Pastinachus gracilicaudus",
@@ -12,4 +14,8 @@ export const pastinachusGracilicaudus = {
     family: "Dasyatidae",
     genus: "Pastinachus",
     species: "gracilicaudus",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

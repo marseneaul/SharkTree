@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const myliobatisLongirostris = {
     commonName: "Longnose Eagle Ray",
     alternativeNames: ["Snouted Eagle Ray"],
@@ -13,4 +15,8 @@ export const myliobatisLongirostris = {
     family: "Myliobatidae",
     genus: "Myliobatis",
     species: "longirostris",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const rhinobatosSchlegelii = {
     commonName: "Brown Guitarfish",
     binomialName: "Rhinobatos schlegelii",
@@ -12,4 +14,8 @@ export const rhinobatosSchlegelii = {
     family: "Rhinobatidae",
     genus: "Rhinobatos",
     species: "schlegelii",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

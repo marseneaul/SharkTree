@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const rhinopteraJayakari = {
     commonName: "Oman Cownose Ray",
     binomialName: "Rhinoptera jayakari",
@@ -12,4 +14,8 @@ export const rhinopteraJayakari = {
     family: "Rhinopteridae",
     genus: "Rhinoptera",
     species: "jayakari",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

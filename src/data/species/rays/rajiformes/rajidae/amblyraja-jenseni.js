@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const amblyrajaJenseni = {
     commonName: "Jensen's Skate",
     alternativeNames: ["Shortail Skate"],
@@ -13,4 +15,8 @@ export const amblyrajaJenseni = {
     family: "Rajidae",
     genus: "Amblyraja",
     species: "jenseni",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

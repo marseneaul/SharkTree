@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const urolophusViridis = {
     commonName: "Greenback Stingaree",
     binomialName: "Urolophus viridis",
@@ -12,4 +14,8 @@ export const urolophusViridis = {
     family: "Urolophidae",
     genus: "Urolophus",
     species: "viridis",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

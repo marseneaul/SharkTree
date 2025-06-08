@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const torpedoMarmorata = {
     commonName: "Marbled Electric Ray",
     binomialName: "Torpedo marmorata",
@@ -12,4 +14,8 @@ export const torpedoMarmorata = {
     family: "Torpedinidae",
     genus: "Torpedo",
     species: "marmorata",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const bathyrajaSmirnovi = {
     commonName: "Golden Skate",
     binomialName: "Bathyraja smirnovi",
@@ -12,4 +14,8 @@ export const bathyrajaSmirnovi = {
     family: "Arhynchobatidae",
     genus: "Bathyraja",
     species: "smirnovi",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

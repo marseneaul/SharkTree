@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const urolophusFlavomosaicus = {
     commonName: "Patchwork Stingaree",
     binomialName: "Urolophus flavomosaicus",
@@ -12,4 +14,8 @@ export const urolophusFlavomosaicus = {
     family: "Urolophidae",
     genus: "Urolophus",
     species: "flavomosaicus",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

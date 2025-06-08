@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const rhynchobatusPalpebratus = {
     commonName: "Egebrow Wedgefish",
     binomialName: "Rhynchobatus palpebratus",
@@ -12,4 +14,8 @@ export const rhynchobatusPalpebratus = {
     family: "Rhinidae",
     genus: "Rhynchobatus",
     species: "palpebratus",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

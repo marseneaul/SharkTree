@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const aetobatusFlagellum = {
     commonName: "Longheaded Eagle Ray",
     binomialName: "Aetobatus flagellum",
@@ -12,4 +14,8 @@ export const aetobatusFlagellum = {
     family: "Aetobatidae",
     genus: "Aetobatus",
     species: "flagellum",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

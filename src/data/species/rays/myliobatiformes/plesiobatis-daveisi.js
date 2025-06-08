@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const plesiobatisDaviesi = {
     commonName: "Deepwater Stingray",
     alternativeNames: ["Giant Stingaree"],
@@ -13,4 +15,8 @@ export const plesiobatisDaviesi = {
     family: "Plesiobatidae",
     genus: "Plesiobatis",
     species: "daviesi",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

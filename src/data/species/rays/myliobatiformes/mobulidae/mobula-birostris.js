@@ -1,3 +1,5 @@
+import { BEHAVIOR, FEEDING_BEHAVIOR, GROUP_BEHAVIOR, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION } from "../../../../../constants/enums";
+
 export const mobulaBirostris = {
     commonName: "Giant Oceanic Manta Ray",
     alternativeNames: ["Giant Manta Ray", "Oceanic Manta Ray"],
@@ -13,4 +15,15 @@ export const mobulaBirostris = {
     family: "Mobulidae",
     genus: "Mobula",
     species: "birostris",
+
+    tags: [
+        BEHAVIOR.BREACHING,
+        BEHAVIOR.MIGRATING,
+        FEEDING_BEHAVIOR.PLANKTIVOROUS,
+        FEEDING_BEHAVIOR.OMNIVOROUS,
+        FEEDING_BEHAVIOR.CARNIVOROUS,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+        GROUP_BEHAVIOR.SCHOOLING,
+        TEMPERATURE_REGULATION.REGIONALLY_ENDOTHERMIC,
+    ],
 };

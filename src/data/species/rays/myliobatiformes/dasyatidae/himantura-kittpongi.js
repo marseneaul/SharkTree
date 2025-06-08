@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const himanturaKittpongi = {
     commonName: "Roughback Whipray",
     binomialName: "Himantura kittipongi",
@@ -12,4 +14,8 @@ export const himanturaKittpongi = {
     family: "Dasyatidae",
     genus: "Himantura",
     species: "kittipongi",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

@@ -1,3 +1,5 @@
+import { BIOLUMINESCENT, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const taeniuraLymma = {
     commonName: "Bluespotted Ribbontail Ray",
     binomialName: "Taeniura lymma",
@@ -12,4 +14,9 @@ export const taeniuraLymma = {
     family: "Dasyatidae",
     genus: "Taeniura",
     species: "lymma",
+
+    tags: [
+        BIOLUMINESCENT.YES,
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

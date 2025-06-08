@@ -11,7 +11,7 @@ import { myliobatisCalifornica } from "../../species/rays/myliobatiformes/myliob
 import { myliobatisFreminvillei } from "../../species/rays/myliobatiformes/myliobatidae/myliobatis-freminvillei";
 import { myliobatisLongirostris } from "../../species/rays/myliobatiformes/myliobatidae/myliobatis-longirostris";
 import { myliobatisTobjei } from "../../species/rays/myliobatiformes/myliobatidae/myliobatis-tobjei";
-import { mylliobatisAustralis } from "../species/myliobatiformes/myliobatidae/mylliobatis-australis copy 11";
+import { myliobatisAustralis } from "../../species/rays/myliobatiformes/myliobatidae/myliobatis-australis";
 import { pteromylaeusBovinus } from "../../species/rays/myliobatiformes/myliobatidae/pteromylaeus-bovinus";
 
 export const myliobatidaeConfig = {
@@ -62,7 +62,7 @@ export const myliobatidaeConfig = {
                                 myliobatisCalifornica
                             ]
                         },
-                        mylliobatisAustralis
+                        myliobatisAustralis
                     ]
                 }
             ]

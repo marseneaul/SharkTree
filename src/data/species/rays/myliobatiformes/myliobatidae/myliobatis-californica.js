@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const myliobatisCalifornica = {
     commonName: "Bat Ray",
     binomialName: "Myliobatis californica",
@@ -12,4 +14,8 @@ export const myliobatisCalifornica = {
     family: "Myliobatidae",
     genus: "Myliobatis",
     species: "californica",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

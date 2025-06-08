@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const urotrygonSimulatrix = {
     commonName: "Fake Round Ray",
     binomialName: "Urotrygon simulatrix",
@@ -12,4 +14,8 @@ export const urotrygonSimulatrix = {
     family: "Urotrygonidae",
     genus: "Urotrygon",
     species: "simulatrix",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const dipturusPullopunctatus = {
     commonName: "Slime Skate",
     binomialName: "Dipturus pullopunctatus",
@@ -12,4 +14,8 @@ export const dipturusPullopunctatus = {
     family: "Rajidae",
     genus: "Dipturus",
     species: "pullopunctatus",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const himanturaUarnacoides = {
     commonName: "Whitenose Whipray",
     binomialName: "Himantura uarnacoides",
@@ -12,4 +14,8 @@ export const himanturaUarnacoides = {
     family: "Dasyatidae",
     genus: "Himantura",
     species: "uarnacoides",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

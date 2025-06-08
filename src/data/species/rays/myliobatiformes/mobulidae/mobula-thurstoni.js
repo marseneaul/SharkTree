@@ -1,3 +1,5 @@
+import { BEHAVIOR, FEEDING_BEHAVIOR, GROUP_BEHAVIOR, TEMPERATURE_REGULATION } from "../../../../../constants/enums";
+
 export const mobulaThurstoni = {
     commonName: "Bentfin Devil Ray",
     alternativeNames: ["Lesser Devil Ray", "Smoothtail Devil Ray", "Smoothtail Mobula", "Thurston's Devil Ray"],
@@ -13,4 +15,12 @@ export const mobulaThurstoni = {
     family: "Mobulidae",
     genus: "Mobula",
     species: "thurstoni",
+
+    tags: [
+        BEHAVIOR.BREACHING,
+        BEHAVIOR.MIGRATING,
+        FEEDING_BEHAVIOR.PLANKTIVOROUS,
+        GROUP_BEHAVIOR.SCHOOLING,
+        TEMPERATURE_REGULATION.REGIONALLY_ENDOTHERMIC,
+    ],
 };

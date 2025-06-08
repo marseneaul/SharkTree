@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const atlantorajaPlatana = {
     commonName: "La Plata Skate",
     binomialName: "Atlantoraja platana",
@@ -12,4 +14,8 @@ export const atlantorajaPlatana = {
     family: "Arhynchobatidae",
     genus: "Atlantoraja",
     species: "platana",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

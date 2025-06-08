@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const arhynchobatisAsperrimus = {
     commonName: "Longtail Skate",
     binomialName: "Arhynchobatis asperrimus",
@@ -12,4 +14,8 @@ export const arhynchobatisAsperrimus = {
     family: "Arhynchobatidae",
     genus: "Arhynchobatis",
     species: "asperrimus",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVIPAROUS,
+    ],
 };

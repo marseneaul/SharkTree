@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const urolophusKapalensis = {
     commonName: "Kapala Stingaree",
     binomialName: "Urolophus kapalensis",
@@ -12,4 +14,8 @@ export const urolophusKapalensis = {
     family: "Urolophidae",
     genus: "Urolophus",
     species: "kapalensis",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

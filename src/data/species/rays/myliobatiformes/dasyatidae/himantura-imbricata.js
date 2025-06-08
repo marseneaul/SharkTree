@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const himanturaImbricata = {
     commonName: "Scaly Whipray",
     alternativeNames: ["Bengal Whipray"],
@@ -13,4 +15,8 @@ export const himanturaImbricata = {
     family: "Dasyatidae",
     genus: "Himantura",
     species: "imbricata",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

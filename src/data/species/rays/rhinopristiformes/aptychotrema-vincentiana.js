@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+
 export const aptychotremaVincentiana = {
     commonName: "Southern Shovelnose Ray",
     alternativeNames: ["Western Shovelnose Ray", "Yellow Shovelnose Ray"],
@@ -13,4 +15,8 @@ export const aptychotremaVincentiana = {
     family: "Trygonorrhinidae",
     genus: "Aptychotrema",
     species: "vincentiana",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };

@@ -1,3 +1,5 @@
+import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+
 export const neotrygonPicta = {
     commonName: "Pepper Maskray",
     alternativeNames: ["Peppered Maskray"],
@@ -13,4 +15,8 @@ export const neotrygonPicta = {
     family: "Dasyatidae",
     genus: "Neotrygon",
     species: "picta",
+
+    tags: [
+        REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+    ],
 };
