@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const pristisClavata = {
     commonName: "Dwarf Sawfish",
@@ -17,6 +17,8 @@ export const pristisClavata = {
     species: "clavata",
 
     tags: [
+        CONSERVATION_STATUS.CR,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],
+    depthRange: "0-20 m",
 };

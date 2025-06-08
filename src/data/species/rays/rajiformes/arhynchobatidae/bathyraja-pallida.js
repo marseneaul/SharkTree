@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 
 export const bathyrajaPallida = {
     commonName: "Pale Ray",
@@ -16,6 +16,8 @@ export const bathyrajaPallida = {
     species: "pallida",
 
     tags: [
+        CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
     ],
+    depthRange: "1869-3366 m",
 };

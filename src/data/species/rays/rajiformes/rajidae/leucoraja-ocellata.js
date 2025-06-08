@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 
 export const leucorajaOcellata = {
     commonName: "Winter Skate",
@@ -17,6 +17,8 @@ export const leucorajaOcellata = {
     species: "ocellata",
 
     tags: [
+        CONSERVATION_STATUS.EN,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
     ],
+    depthRange: "5-725 m",
 };

@@ -1,4 +1,4 @@
-import { ELECTRIC_ORGAN, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, ELECTRIC_ORGAN, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const narcineEntemedor = {
     commonName: "Giant Electric Ray",
@@ -17,7 +17,9 @@ export const narcineEntemedor = {
     species: "entemedor",
 
     tags: [
+        CONSERVATION_STATUS.VU,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ELECTRIC_ORGAN.YES,
     ],
+    depthRange: "0-100 m",
 };

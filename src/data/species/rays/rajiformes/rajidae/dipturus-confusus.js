@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 
 export const dipturusConfusus = {
     commonName: "Australian Longnose Skate",
@@ -16,6 +16,8 @@ export const dipturusConfusus = {
     species: "confusus",
 
     tags: [
+        CONSERVATION_STATUS.CR,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
     ],
+    depthRange: "20-600 m",
 };

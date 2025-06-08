@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 
 export const dipturusSpringeri = {
     commonName: "Roughbelly Skate",
@@ -16,6 +16,8 @@ export const dipturusSpringeri = {
     species: "springeri",
 
     tags: [
+        CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
     ],
+    depthRange: "50-970 m",
 };

@@ -35,7 +35,7 @@ export class SharkTree {
 
     constructor(sharkTreeConfig: SharkTreeNodeConfig, containerWidth: number, speciesType = SPECIES_TYPE.SHARKS) {
         this.config = sharkTreeConfig;
-        this.root = new SharkTreeNode(this.config, null);
+        this.root = new SharkTreeNode(this.config, null, speciesType);
         this.speciesType = speciesType;
 
         this.svgSize = containerWidth > 0 ? Math.min(containerWidth, window.innerHeight) : DEFAULT_SVG_SIZE;
@@ -590,9 +590,11 @@ export class SharkTree {
             "venomousSpine"
         ];
 
+        const chimaeraCategories = [];
+
         const categories = [
             ...sharedCategories,
-            ...(this.speciesType === SPECIES_TYPE.SHARKS ? sharkCategories : rayCategories)
+            ...(this.speciesType === SPECIES_TYPE.SHARKS ? sharkCategories : (this.speciesType === SPECIES_TYPE.RAYS ? rayCategories : chimaeraCategories))
         ];
         
         categories.forEach((category, _index) => {

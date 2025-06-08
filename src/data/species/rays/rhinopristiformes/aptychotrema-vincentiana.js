@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const aptychotremaVincentiana = {
     commonName: "Southern Shovelnose Ray",
@@ -17,6 +17,8 @@ export const aptychotremaVincentiana = {
     species: "vincentiana",
 
     tags: [
+        CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],
+    depthRange: "0-125 m",
 };

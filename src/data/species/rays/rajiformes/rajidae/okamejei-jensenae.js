@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 
 export const okamejeiJensenae = {
     commonName: "Sulu Sea Skate",
@@ -16,6 +16,8 @@ export const okamejeiJensenae = {
     species: "jensenae",
 
     tags: [
+        CONSERVATION_STATUS.NT,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
     ],
+    depthRange: "110-118 m",
 };

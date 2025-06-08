@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const rhinobatosFormosensis = {
     commonName: "Taiwan Guitarfish",
@@ -16,6 +16,8 @@ export const rhinobatosFormosensis = {
     species: "formosensis",
 
     tags: [
+        CONSERVATION_STATUS.CR,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],
+    depthRange: "1-230 m",
 };

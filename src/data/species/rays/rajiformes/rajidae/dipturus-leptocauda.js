@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 
 export const dipturusLeptocauda = {
     commonName: "Thintail Skate",
@@ -16,6 +16,8 @@ export const dipturusLeptocauda = {
     species: "leptocauda",
 
     tags: [
+        CONSERVATION_STATUS.VU,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
     ],
+    depthRange: "10-550 m",
 };

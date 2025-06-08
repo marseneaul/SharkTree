@@ -1,4 +1,4 @@
-import { FLATTENED_BODY, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, FLATTENED_BODY, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const pristisZijsron = {
     commonName: "Longcomb Sawfish",
@@ -17,7 +17,9 @@ export const pristisZijsron = {
     species: "zijsron",
 
     tags: [
+        CONSERVATION_STATUS.CR,
         FLATTENED_BODY.NO,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],
+    depthRange: "0-100 m",
 };

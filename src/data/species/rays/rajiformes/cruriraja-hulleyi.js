@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const crurirajaHulleyi = {
     commonName: "Cuban Leg Skate",
@@ -16,6 +16,8 @@ export const crurirajaHulleyi = {
     species: "hulleyi",
 
     tags: [
+        CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
     ],
+    depthRange: "40-545 m",
 };

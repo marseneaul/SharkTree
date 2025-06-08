@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 
 export const zearajaNasuta = {
     commonName: "New Zealand Rough Skate",
@@ -16,6 +16,8 @@ export const zearajaNasuta = {
     species: "nasuta",
 
     tags: [
+        CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
     ],
+    depthRange: "17-1500 m",
 };

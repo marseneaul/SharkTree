@@ -1,4 +1,4 @@
-import { BEHAVIOR, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import { BEHAVIOR, CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
 
 export const myliobatisFreminvillei = {
     commonName: "Bullnose Ray",
@@ -16,6 +16,7 @@ export const myliobatisFreminvillei = {
     species: "freminvillei",
 
     tags: [
+        CONSERVATION_STATUS.VU,
         // "A review of elasmobranch breaching behavior: why do sharks and rays propel themselves out of the water into the air?"
         BEHAVIOR.BREACHING,
         TAIL_SPINES.YES,
@@ -23,4 +24,5 @@ export const myliobatisFreminvillei = {
         NUM_DORSAL_FINS.ONE,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],
+    depthRange: "0-122 m",
 };

@@ -25,7 +25,7 @@ export class SharkTreeNode {
       this.parentPath = [];
 
       this.config.children?.forEach((child) => {
-        if (child.hasOwnProperty("children")) this.addChild(new SharkTreeNode(child as SharkTreeNodeConfig, this));
+        if (child.hasOwnProperty("children")) this.addChild(new SharkTreeNode(child as SharkTreeNodeConfig, this, this.speciesType));
         else this.addChild(new SharkSpecies(child as SharkConfig, this, this.speciesType));
       });
 

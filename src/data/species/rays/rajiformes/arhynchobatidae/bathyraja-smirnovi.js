@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 
 export const bathyrajaSmirnovi = {
     commonName: "Golden Skate",
@@ -16,6 +16,8 @@ export const bathyrajaSmirnovi = {
     species: "smirnovi",
 
     tags: [
+        CONSERVATION_STATUS.NT,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
     ],
+    depthRange: "58-1125 m",
 };

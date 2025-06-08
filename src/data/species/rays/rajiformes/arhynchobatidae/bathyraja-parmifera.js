@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 
 export const bathyrajaParmifera = {
     commonName: "Alaskan Skate",
@@ -16,6 +16,8 @@ export const bathyrajaParmifera = {
     species: "parmifera",
 
     tags: [
+        CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
     ],
+    depthRange: "17-392 m",
 };

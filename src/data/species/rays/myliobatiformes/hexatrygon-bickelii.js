@@ -1,4 +1,4 @@
-import { NUM_DORSAL_FINS, NUM_GILLS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, NUM_DORSAL_FINS, NUM_GILLS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../constants/enums";
 
 export const hexatrygonBickelii = {
     commonName: "Sixgill Stingray",
@@ -16,10 +16,12 @@ export const hexatrygonBickelii = {
     species: "bickelli",
 
     tags: [
+        CONSERVATION_STATUS.LC,
         NUM_DORSAL_FINS.ZERO,
         TAIL_SPINES.YES,
         VENOMOUS_SPINE.YES,
         NUM_GILLS.SIX,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],
+    depthRange: "300-1636 m",
 };

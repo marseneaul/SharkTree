@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const rhinobatosAnnulatus = {
     commonName: "Little Guitarfish",
@@ -16,6 +16,8 @@ export const rhinobatosAnnulatus = {
     species: "annulatus",
 
     tags: [
+        CONSERVATION_STATUS.VU,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],
+    depthRange: "0-75 m",
 };

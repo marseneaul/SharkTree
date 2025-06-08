@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 
 export const atlantorajaPlatana = {
     commonName: "La Plata Skate",
@@ -16,6 +16,8 @@ export const atlantorajaPlatana = {
     species: "platana",
 
     tags: [
+        CONSERVATION_STATUS.EN,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
     ],
+    depthRange: "0-320 m",
 };

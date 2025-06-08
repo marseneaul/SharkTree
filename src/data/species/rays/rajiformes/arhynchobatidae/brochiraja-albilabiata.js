@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 
 export const brochirajaAlbilabiata = {
     commonName: "Whitelip Skate",
@@ -16,6 +16,8 @@ export const brochirajaAlbilabiata = {
     species: "albilabiata",
 
     tags: [
+        CONSERVATION_STATUS.DD,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
     ],
+    depthRange: "900-1003 m",
 };

@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 
 export const dipturusInnominatus = {
     commonName: "New Zealand Smooth Skate",
@@ -16,6 +16,8 @@ export const dipturusInnominatus = {
     species: "innominatus",
 
     tags: [
+        CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
     ],
+    depthRange: "0-1300 m",
 };

@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 
 export const dipturusBatis = {
     commonName: "Blue Skate",
@@ -17,6 +17,8 @@ export const dipturusBatis = {
     species: "batis",
 
     tags: [
+        CONSERVATION_STATUS.CR,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
     ],
+    depthRange: "10-600 m",
 };

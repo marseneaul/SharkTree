@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 
 export const rajellaKukujevi = {
     commonName: "Mid-Atlantic Skate",
@@ -16,6 +16,8 @@ export const rajellaKukujevi = {
     species: "kukujevi",
 
     tags: [
+        CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
     ],
+    depthRange: "750-2190 m",
 };

@@ -8,7 +8,8 @@ export enum TAXONOMIC_LEVELS {
 
 export enum SPECIES_TYPE {
     SHARKS = "sharks",
-    RAYS = "rays"
+    RAYS = "rays",
+    CHIMAERAS = "chimaeras"
 }
 
 export enum CONSERVATION_STATUS {
@@ -128,6 +129,7 @@ export enum GROUP_BEHAVIOR {
 }
 
 export enum NUM_GILLS {
+    FOUR = "4 Gills",
     FIVE = "5 Gills",
     SIX = "6 Gills",
     SEVEN = "7 Gills",
@@ -192,7 +194,7 @@ export enum TAIL_SPINES {
 
 export enum ELECTRIC_ORGAN {
     YES = "Yes Electric Organ",
-    NO = "NO Electric Organ"
+    NO = "No Electric Organ"
 }
 
 export enum VENOMOUS_SPINE {
@@ -269,5 +271,19 @@ export const DEFAULT_TAGS = {
         TAIL_SPINES.NO,
         ELECTRIC_ORGAN.NO,
         VENOMOUS_SPINE.NO,
+    ],
+    [SPECIES_TYPE.CHIMAERAS]: [
+        CONSERVATION_STATUS.LC,
+        REPRODUCTIVE_STRATEGY.UNKNOWN,
+        TEMPERATURE_REGULATION.ECTOTHERMIC,
+        FEEDING_BEHAVIOR.CARNIVOROUS,
+        GROUP_BEHAVIOR.SOLITARY,
+        BEHAVIOR.NONE,
+
+        NUM_GILLS.FOUR,
+        NUM_DORSAL_FINS.TWO,
+        SPIRACLES.NO,
+        FLATTENED_BODY.NO,
+        BIOLUMINESCENT.NO,
     ]
 };

@@ -1,4 +1,4 @@
-import { ELECTRIC_ORGAN, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, ELECTRIC_ORGAN, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const torpedoMacneilli = {
     commonName: "Short-Tail Torpedo",
@@ -16,7 +16,9 @@ export const torpedoMacneilli = {
     species: "macneilli",
 
     tags: [
+        CONSERVATION_STATUS.DD,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ELECTRIC_ORGAN.YES,
     ],
+    depthRange: "90-750 m",
 };

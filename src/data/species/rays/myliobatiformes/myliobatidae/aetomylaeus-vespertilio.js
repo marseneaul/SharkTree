@@ -1,4 +1,4 @@
-import { NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
 
 export const aetomylaeusVespertilio = {
     commonName: "Ornate Eagle Ray",
@@ -17,9 +17,11 @@ export const aetomylaeusVespertilio = {
     species: "vespertilio",
 
     tags: [
+        CONSERVATION_STATUS.CR,
         NUM_DORSAL_FINS.ONE,
         TAIL_SPINES.NO,
         VENOMOUS_SPINE.NO,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],
+    depthRange: "0-110 m",
 };

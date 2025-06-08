@@ -1,4 +1,4 @@
-import { ELECTRIC_ORGAN, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, ELECTRIC_ORGAN, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const torpedoMackayana = {
     commonName: "Ringed Torpedo",
@@ -17,7 +17,9 @@ export const torpedoMackayana = {
     species: "mackayana",
 
     tags: [
+        CONSERVATION_STATUS.EN,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ELECTRIC_ORGAN.YES,
     ],
+    depthRange: "5-50 m",
 };

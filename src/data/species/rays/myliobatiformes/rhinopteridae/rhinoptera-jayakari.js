@@ -1,4 +1,4 @@
-import { NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
 
 export const rhinopteraJayakari = {
     commonName: "Oman Cownose Ray",
@@ -16,9 +16,11 @@ export const rhinopteraJayakari = {
     species: "jayakari",
 
     tags: [
+        CONSERVATION_STATUS.EN,
         NUM_DORSAL_FINS.ONE,
         TAIL_SPINES.YES,
         VENOMOUS_SPINE.YES,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],
+    depthRange: "0-50 m",
 };

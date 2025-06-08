@@ -1,4 +1,4 @@
-import { ELECTRIC_ORGAN, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, ELECTRIC_ORGAN, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const narcineTasmaniensis = {
     commonName: "Tasmanian Numbfish",
@@ -16,7 +16,9 @@ export const narcineTasmaniensis = {
     species: "tasmaniensis",
 
     tags: [
+        CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ELECTRIC_ORGAN.YES,
     ],
+    depthRange: "0-640 m",
 };

@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const rhinobatosCemiculus = {
     commonName: "Blackchin Guitarfish",
@@ -16,6 +16,8 @@ export const rhinobatosCemiculus = {
     species: "cemiculus",
 
     tags: [
+        CONSERVATION_STATUS.CR,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],
+    depthRange: "0-80 m",
 };

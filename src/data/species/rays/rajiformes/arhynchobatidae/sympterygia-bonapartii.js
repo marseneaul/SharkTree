@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 
 export const sympterygiaBonapartii = {
     commonName: "Smallnose Fanskate",
@@ -16,6 +16,8 @@ export const sympterygiaBonapartii = {
     species: "bonapartii",
 
     tags: [
+        CONSERVATION_STATUS.NT,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
     ],
+    depthRange: "0-500 m",
 };

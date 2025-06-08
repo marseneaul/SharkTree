@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 
 export const rhinorajaMultispinis = {
     commonName: "Multispine Skate",
@@ -16,6 +16,8 @@ export const rhinorajaMultispinis = {
     species: "multispinis",
 
     tags: [
+        CONSERVATION_STATUS.NT,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
     ],
+    depthRange: "70-740 m",
 };

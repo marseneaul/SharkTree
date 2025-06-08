@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const trygonorrhinaDumerilii = {
     commonName: "Southern Fiddler Ray",
@@ -16,6 +16,8 @@ export const trygonorrhinaDumerilii = {
     species: "dumerilii",
 
     tags: [
+        CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],
+    depthRange: "30-205 m",
 };

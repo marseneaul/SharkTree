@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const zapteryxExasperata = {
     commonName: "Banded Guitarfish",
@@ -17,6 +17,8 @@ export const zapteryxExasperata = {
     species: "exasperata",
 
     tags: [
+        CONSERVATION_STATUS.DD,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],
+    depthRange: "0-200 m",
 };

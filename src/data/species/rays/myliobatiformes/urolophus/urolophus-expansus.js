@@ -1,4 +1,4 @@
-import { NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
 
 export const urolophusExpansus = {
     commonName: "Wide Stingaree",
@@ -16,9 +16,11 @@ export const urolophusExpansus = {
     species: "expansus",
 
     tags: [
+        CONSERVATION_STATUS.LC,
         NUM_DORSAL_FINS.ZERO,
         TAIL_SPINES.YES,
         VENOMOUS_SPINE.YES,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],
+    depthRange: "130-420 m",
 };

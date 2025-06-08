@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 
 export const bathyrajaShuntovi = {
     commonName: "Longnose Deepsea Skate",
@@ -16,6 +16,8 @@ export const bathyrajaShuntovi = {
     species: "shuntovi",
 
     tags: [
+        CONSERVATION_STATUS.DD,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
     ],
+    depthRange: "300-1485 m",
 };

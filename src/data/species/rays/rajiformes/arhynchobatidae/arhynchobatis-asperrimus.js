@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 
 export const arhynchobatisAsperrimus = {
     commonName: "Longtail Skate",
@@ -16,6 +16,8 @@ export const arhynchobatisAsperrimus = {
     species: "asperrimus",
 
     tags: [
+        CONSERVATION_STATUS.DD,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
     ],
+    depthRange: "70-1095 m",
 };

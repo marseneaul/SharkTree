@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 
 export const rajaAsterias = {
     commonName: "Mediterranean Starry Ray",
@@ -16,6 +16,8 @@ export const rajaAsterias = {
     species: "asterias",
 
     tags: [
+        CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
     ],
+    depthRange: "0-200 m",
 };

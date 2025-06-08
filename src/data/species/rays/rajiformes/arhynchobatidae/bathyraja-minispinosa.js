@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 
 export const bathyrajaMinispinosa = {
     commonName: "Smallthorn Skate",
@@ -16,6 +16,8 @@ export const bathyrajaMinispinosa = {
     species: "minispinosa",
 
     tags: [
+        CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
     ],
+    depthRange: "106-1420 m",
 };

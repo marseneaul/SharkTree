@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 
 export const insentirajaSubtilispinosa = {
     commonName: "Western Looseskin Skate",
@@ -17,6 +17,8 @@ export const insentirajaSubtilispinosa = {
     species: "subtilispinosa",
 
     tags: [
+        CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
     ],
+    depthRange: "320-1460 m",
 };

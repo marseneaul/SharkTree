@@ -1,4 +1,4 @@
-import { NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
 
 export const dasyatisChrysonota = {
     commonName: "Blue Stingray",
@@ -16,9 +16,11 @@ export const dasyatisChrysonota = {
     species: "chrysonota",
 
     tags: [
+        CONSERVATION_STATUS.NT,
         TAIL_SPINES.YES,
         VENOMOUS_SPINE.YES,
         NUM_DORSAL_FINS.ZERO,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],
+    depthRange: "0-110 m",
 };

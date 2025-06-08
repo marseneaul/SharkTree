@@ -1,4 +1,4 @@
-import { ELECTRIC_ORGAN, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, ELECTRIC_ORGAN, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const narkeCapensis = {
     commonName: "Onefin Electric Ray",
@@ -17,7 +17,9 @@ export const narkeCapensis = {
     species: "capensis",
 
     tags: [
+        CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         ELECTRIC_ORGAN.YES,
     ],
+    depthRange: "3-115 m",
 };

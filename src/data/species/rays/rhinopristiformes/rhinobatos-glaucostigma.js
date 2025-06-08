@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const rhinobatosGlaucostigma = {
     commonName: "Speckled Guitarfish",
@@ -16,6 +16,8 @@ export const rhinobatosGlaucostigma = {
     species: "glaucostigma",
 
     tags: [
+        CONSERVATION_STATUS.VU,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],
+    depthRange: "0-110 m",
 };

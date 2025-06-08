@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 
 export const amblyrajaDoellojuradoi = {
     commonName: "Southern Thorny Skate",
@@ -16,6 +16,8 @@ export const amblyrajaDoellojuradoi = {
     species: "doellojuradoi",
 
     tags: [
+        CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
     ],
+    depthRange: "500-1000 m",
 };

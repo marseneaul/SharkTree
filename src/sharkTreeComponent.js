@@ -1,4 +1,8 @@
 import { ANAL_FIN, BEHAVIOR, BIOLUMINESCENT, CONSERVATION_STATUS, DORSAL_FIN_SPINES, ELECTRIC_ORGAN, FLATTENED_BODY, MOUTH_IN_FRONT_OF_EYES, NICTITATING_MEMBRANE, NUM_DORSAL_FINS, NUM_GILLS, PROXIMAL_DORSAL_FINS, SPECIES_TYPE, SPIRACLES, TAIL_SPINES, VENOMOUS_SPINE } from "./constants/enums";
+import { callorhinchidaeConfig } from "./data/configs/chimaeras/callorhinchidae.config";
+import { chimaeiridaeConfig } from "./data/configs/chimaeras/chimaeiridae.config";
+import { holocephaliConfig } from "./data/configs/chimaeras/holocephali.config";
+import { rhinochimaeridaeConfig } from "./data/configs/chimaeras/rhinochimaeridae.config";
 import { arhynchobatidaeConfig } from "./data/configs/rays/arhynchobatidae.config";
 import { batomorphiConfig } from "./data/configs/rays/batomorphi.config";
 import { dasyatidaeConfig } from "./data/configs/rays/dasyatidae.config";
@@ -6,7 +10,6 @@ import { gymnuridaeConfig } from "./data/configs/rays/gymnuridae.config";
 import { mobulidaeConfig } from "./data/configs/rays/mobulidae.config";
 import { myliobatidaeConfig } from "./data/configs/rays/myliobatidae.config";
 import { myliobatiformesConfig } from "./data/configs/rays/myliobatiformes.config";
-import { platyrhinidaeConfig } from "./data/configs/rays/platyrhinidae.config";
 import { rajidaeConfig } from "./data/configs/rays/rajidae.config";
 import { rajiformesConfig } from "./data/configs/rays/rajiformes.config";
 import { rhinopristiformesConfig } from "./data/configs/rays/rhinopristiformes.config";
@@ -22,7 +25,7 @@ import {
 } from "./data/configs/sharks";
 
 const speciesConfigs = {
-    sharks: {
+    [SPECIES_TYPE.SHARKS]: {
         selachii: selachiiConfig,
         galeomorphii: galeomorphiiConfig,
         squalomorphii: squalomorphiiConfig,
@@ -44,13 +47,12 @@ const speciesConfigs = {
         squalidae: squalidaeConfig,
         triakidae: triakidaeConfig
     },
-    rays: {
+    [SPECIES_TYPE.RAYS]: {
         batomorphi: batomorphiConfig,
         rajiformes: rajiformesConfig,
         rhinopristiformes: rhinopristiformesConfig,
         torpediniformes: torpediniformesConfig,
         myliobatiformes: myliobatiformesConfig,
-        platyrhinidae: platyrhinidaeConfig,
         arhynchobatidae: arhynchobatidaeConfig,
         dasyatidae: dasyatidaeConfig,
         gymnuridae: gymnuridaeConfig,
@@ -59,6 +61,12 @@ const speciesConfigs = {
         rajidae: rajidaeConfig,
         urotrygonidae: urotrygonidaeConfig,
         urolophus: urolophusConfig
+    },
+    [SPECIES_TYPE.CHIMAERAS]: {
+        holocephali: holocephaliConfig,
+        chimaeridae: chimaeiridaeConfig,
+        callorhinchidae: callorhinchidaeConfig,
+        rhinochimaeridae: rhinochimaeridaeConfig,
     }
 };
 
@@ -139,7 +147,7 @@ export class SharkTreeComponent extends HTMLElement {
         // Update search label dynamically
         const searchLabel = this.shadow.querySelector("#search-container label");
         if (searchLabel) {
-            searchLabel.textContent = `Search ${speciesType === SPECIES_TYPE.RAYS ? "Ray" : "Shark"}:`;
+            searchLabel.textContent = `Search ${speciesType === SPECIES_TYPE.RAYS ? "Ray" : (speciesType === SPECIES_TYPE.SHARKS ? "Shark" : "Chimaeras")}:`;
         }
     }
 
@@ -202,7 +210,7 @@ export class SharkTreeComponent extends HTMLElement {
         const speciesTypeDropdown = this.shadow.querySelector("#species-type-dropdown");
         const configDropdown = this.shadow.querySelector("#shark-config-dropdown");
         const speciesType = speciesTypeDropdown?.value || SPECIES_TYPE.SHARKS;
-        const selectedConfig = configDropdown?.value || (speciesType === SPECIES_TYPE.RAYS ? "batomorphi" : "selachii");
+        const selectedConfig = configDropdown?.value || (speciesType === SPECIES_TYPE.RAYS ? "batomorphi" : (speciesType === SPECIES_TYPE.CHIMAERAS ? "holocephali" : "selachii"));
         this.initializeSharkTree(speciesType, selectedConfig);
     }
 
@@ -220,10 +228,11 @@ export class SharkTreeComponent extends HTMLElement {
                         <select id="species-type-dropdown">
                             <option value="${SPECIES_TYPE.SHARKS}">Sharks</option>
                             <option value="${SPECIES_TYPE.RAYS}">Rays</option>
+                            <option value="${SPECIES_TYPE.CHIMAERAS}">Chimaeras</option>
                         </select>
                     </div>
                     <div id="search-container">
-                        <label for="shark-search">Search Shark:</label>
+                        <label for="shark-search">Search Species:</label>
                         <input type="text" id="shark-search" placeholder="Enter common or binomial name" aria-describedby="search-label">
                         <div id="search-suggestions" class="suggestions"></div>
                     </div>
@@ -267,6 +276,8 @@ export class SharkTreeComponent extends HTMLElement {
                             <option value="hasDorsalFinSpines" class="shark-only">Has Dorsal Fin Spines</option>
                             <option value="hasProximalDorsalFins" class="shark-only">Has Proximal Dorsal Fins</option>
                             <option value="tailSpines" class="ray-only">Has Tail Spines</option>
+                            <option value="electricOrgan" class="ray-only">Has Electric Organ</option>
+                            <option value="venomousSpine" class="ray-only">Has Venomous Spine</option>
                         </select>
                         <select id="tag-value-dropdown">
                             <option value="">All</option>
@@ -282,7 +293,7 @@ export class SharkTreeComponent extends HTMLElement {
                         <strong>How to Use:</strong>
                         <ul>
                             <li>Type a species' common or scientific name in "Search Species" to find and highlight it.</li>
-                            <li>Choose a species type (Sharks or Rays) and group from "Configuration" to display its phylogenetic tree.</li>
+                            <li>Choose a species type (Sharks or Rays or Chimaeras) and group from "Configuration" to display its phylogenetic tree.</li>
                             <li>Select a "Taxonomic Level" (e.g., genus or family) to color matching species’ nodes and paths.</li>
                             <li>Pick a "Tag Category" (e.g., conservation status) to add dashed lines to paths of species with that trait.</li>
                             <li>Click a species' node to view its details on the right panel.</li>
@@ -297,7 +308,6 @@ export class SharkTreeComponent extends HTMLElement {
             </div>
         `;
     }
-    // <option value="discShape" class="ray-only">Disc Shape</option>
     
     css() {
         return `
@@ -537,8 +547,8 @@ export class SharkTreeComponent extends HTMLElement {
             #info-button:hover + #info-tooltip {
                 display: block;
             }
-            .shark-only, .ray-only { display: none; }
-            .shark-only.active, .ray-only.active { display: block; }
+            .shark-only, .ray-only .chimaera-only { display: none; }
+            .shark-only.active, .ray-only.active .chimaera-only.active { display: block; }
         `;
     }
 
@@ -559,11 +569,16 @@ export class SharkTreeComponent extends HTMLElement {
             // Toggle species-specific tag options
             const sharkOptions = tagDropdown.querySelectorAll(".shark-only");
             const rayOptions = tagDropdown.querySelectorAll(".ray-only");
+            const chimaeraOptions = tagDropdown.querySelectorAll(".chimaera-only");
+            console.log(rayOptions)
             sharkOptions.forEach(option => {
                 option.classList.toggle("active", speciesType === SPECIES_TYPE.SHARKS);
             });
             rayOptions.forEach(option => {
                 option.classList.toggle("active", speciesType === SPECIES_TYPE.RAYS);
+            });
+            chimaeraOptions.forEach(option => {
+                option.classList.toggle("active", speciesType === SPECIES_TYPE.CHIMAERAS);
             });
         };
     
@@ -580,15 +595,9 @@ export class SharkTreeComponent extends HTMLElement {
             this.initializeSharkTree(speciesType, selectedConfig);
         });
     }
+
     setupEventListeners() {
         window.addEventListener("select-shark", this.selectSharkHandler.bind(this));
-    
-        const configDropdown = this.shadow.querySelector("#shark-config-dropdown");
-        configDropdown.addEventListener("change", (event) => {
-            const selectedConfig = event.target.value;
-            this.initializeSharkTree(selectedConfig);
-            this.updateTaxonomicValues(); // Ensure values update after config change
-        });
     
         const taxonomicDropdown = this.shadow.querySelector("#taxonomic-dropdown");
         const taxonomicValueDropdown = this.shadow.querySelector("#taxonomic-value-dropdown");
@@ -616,10 +625,10 @@ export class SharkTreeComponent extends HTMLElement {
                 this.sharkTree.highlightTaxonomicLevel(level, value || undefined);
             }
         });
-
+    
         const tagDropdown = this.shadow.querySelector("#tag-dropdown");
         const tagValueDropdown = this.shadow.querySelector("#tag-value-dropdown");
-
+    
         const categoryOrders = {
             conservationStatus: [
                 CONSERVATION_STATUS.EX,
@@ -654,7 +663,7 @@ export class SharkTreeComponent extends HTMLElement {
             hasSpiracles: [SPIRACLES.YES, SPIRACLES.NO],
             hasFlattenedBody: [FLATTENED_BODY.YES, FLATTENED_BODY.NO],
             mouthInFrontOfEyes: [MOUTH_IN_FRONT_OF_EYES.YES, MOUTH_IN_FRONT_OF_EYES.NO],
-            tailSpine: [TAIL_SPINES.YES, TAIL_SPINES.NO],
+            tailSpines: [TAIL_SPINES.YES, TAIL_SPINES.NO],
             electricOrgan: [ELECTRIC_ORGAN.YES, ELECTRIC_ORGAN.NO],
             venomousSpine: [VENOMOUS_SPINE.YES, VENOMOUS_SPINE.NO],
         };
@@ -664,29 +673,25 @@ export class SharkTreeComponent extends HTMLElement {
             if (category && this.sharkTree) {
                 const categoryData = this.sharkTree.tagCategories.get(category);
                 const values = new Set(categoryData?.species.flatMap(s => s.tags.filter(tag => this.sharkTree.getTagCategory(tag) === category)));
-                // Sort values based on category
                 const sortedValues = Array.from(values).sort((a, b) => {
                     const order = categoryOrders[category];
                     if (order) {
-                        // Use defined order if available
                         const indexA = order.indexOf(a);
                         const indexB = order.indexOf(b);
-                        // Handle cases where a value might not be in the order list
                         if (indexA === -1 && indexB === -1) return a.localeCompare(b);
                         if (indexA === -1) return 1;
                         if (indexB === -1) return -1;
                         return indexA - indexB;
                     }
-                    // Default to alphabetical order
                     return a.localeCompare(b);
                 });
                 tagValueDropdown.innerHTML = `
                     <option value="">All</option>
                     ${sortedValues.map(v => {
                         let displayText = v;
-                        if (v.startsWith("Yes ") || v === BIOLUMINESCENT.YES || v === MOUTH_IN_FRONT_OF_EYES.MOUTH_IN_FRONT_OF_EYES) {
+                        if (v.includes("Yes") || v === BIOLUMINESCENT.YES || v === MOUTH_IN_FRONT_OF_EYES.MOUTH_IN_FRONT_OF_EYES) {
                             displayText = "Yes";
-                        } else if ((v.startsWith("No ") && v !== BEHAVIOR.NONE) || v === BIOLUMINESCENT.NO|| v === MOUTH_IN_FRONT_OF_EYES.MOUTH_NOT_IN_FRONT_OF_EYES) {
+                        } else if ((v.includes("No") && v !== BEHAVIOR.NONE) || v === BIOLUMINESCENT.NO || v === MOUTH_IN_FRONT_OF_EYES.MOUTH_NOT_IN_FRONT_OF_EYES) {
                             displayText = "No";
                         }
                         return `<option value="${v}">${displayText}</option>`;
@@ -706,15 +711,15 @@ export class SharkTreeComponent extends HTMLElement {
                 this.sharkTree.highlightTagCategory(category, value || undefined);
             }
         });
-
+    
         const searchInput = this.shadow.querySelector("#shark-search");
         const suggestions = this.shadow.querySelector("#search-suggestions");
-
+    
         searchInput.addEventListener("input", () => {
             const query = searchInput.value.trim().toLowerCase();
             this.updateSearchSuggestions(query, suggestions);
         });
-
+    
         searchInput.addEventListener("keydown", (event) => {
             if (event.key === "Enter") {
                 const query = searchInput.value.trim().toLowerCase();
@@ -733,7 +738,7 @@ export class SharkTreeComponent extends HTMLElement {
                 suggestions.classList.remove("visible");
             }
         });
-
+    
         document.addEventListener("click", (event) => {
             if (!searchInput.contains(event.target) && !suggestions.contains(event.target)) {
                 suggestions.innerHTML = "";
@@ -741,7 +746,7 @@ export class SharkTreeComponent extends HTMLElement {
             }
         });
     }
-
+    
     removeEventListeners() {
         window.removeEventListener("select-shark", this.selectSharkHandler.bind(this));
     }

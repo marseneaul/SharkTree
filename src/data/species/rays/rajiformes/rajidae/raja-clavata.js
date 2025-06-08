@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 
 export const rajaClavata = {
     commonName: "Thornback Ray",
@@ -17,6 +17,8 @@ export const rajaClavata = {
     species: "clavata",
 
     tags: [
+        CONSERVATION_STATUS.NT,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
     ],
+    depthRange: "5-1020 m",
 };

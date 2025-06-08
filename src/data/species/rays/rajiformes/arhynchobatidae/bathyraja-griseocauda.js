@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 
 export const bathyrajaGriseocauda = {
     commonName: "Graytail Skate",
@@ -17,6 +17,8 @@ export const bathyrajaGriseocauda = {
     species: "griseocauda",
 
     tags: [
+        CONSERVATION_STATUS.EN,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
     ],
+    depthRange: "30-1010 m",
 };

@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const rhinobatosProductus = {
     commonName: "Shovelnose Guitarfish",
@@ -16,6 +16,8 @@ export const rhinobatosProductus = {
     species: "productus",
 
     tags: [
+        CONSERVATION_STATUS.NT,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],
+    depthRange: "1-91.5 m",
 };

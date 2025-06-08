@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 
 export const rajaVelezi = {
     commonName: "Velez Ray",
@@ -16,6 +16,8 @@ export const rajaVelezi = {
     species: "velezi",
 
     tags: [
+        CONSERVATION_STATUS.VU,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
     ],
+    depthRange: "30-300 m",
 };

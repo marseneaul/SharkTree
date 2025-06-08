@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 
 export const dipturusOxyrhinchus = {
     commonName: "Longnose Skate",
@@ -16,6 +16,8 @@ export const dipturusOxyrhinchus = {
     species: "oxyrinchus",
 
     tags: [
+        CONSERVATION_STATUS.VU,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
     ],
+    depthRange: "70-1230 m",
 };

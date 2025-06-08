@@ -1,4 +1,4 @@
-import { BEHAVIOR, GROUP_BEHAVIOR, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import { BEHAVIOR, CONSERVATION_STATUS, GROUP_BEHAVIOR, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
 
 export const aetobatusLaticeps = {
     commonName: "Pacific White-Spotted Eagle Ray",
@@ -16,6 +16,7 @@ export const aetobatusLaticeps = {
     species: "laticeps",
 
     tags: [
+        CONSERVATION_STATUS.VU,
         // "A review of elasmobranch breaching behavior: why do sharks and rays propel themselves out of the water into the air?"
         BEHAVIOR.BREACHING,
         BEHAVIOR.MIGRATING,
@@ -25,4 +26,5 @@ export const aetobatusLaticeps = {
         GROUP_BEHAVIOR.SCHOOLING,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],
+    depthRange: "1-80 m",
 };

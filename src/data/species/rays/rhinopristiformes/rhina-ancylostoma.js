@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const rhinaAncylostoma = {
     commonName: "Bowmouth Guitarfish",
@@ -17,6 +17,8 @@ export const rhinaAncylostoma = {
     species: "ancylostoma",
 
     tags: [
+        CONSERVATION_STATUS.CR,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],
+    depthRange: "0-70 m",
 };

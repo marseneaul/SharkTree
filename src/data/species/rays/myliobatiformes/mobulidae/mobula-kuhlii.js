@@ -1,4 +1,4 @@
-import { BEHAVIOR, FEEDING_BEHAVIOR, GROUP_BEHAVIOR, NUM_DORSAL_FINS, TAIL_SPINES, TEMPERATURE_REGULATION } from "../../../../../constants/enums";
+import { BEHAVIOR, CONSERVATION_STATUS, FEEDING_BEHAVIOR, GROUP_BEHAVIOR, NUM_DORSAL_FINS, TAIL_SPINES, TEMPERATURE_REGULATION } from "../../../../../constants/enums";
 
 export const mobulaKuhlii = {
     commonName: "Shortfin Devil Ray",
@@ -16,6 +16,7 @@ export const mobulaKuhlii = {
     species: "kuhlii",
 
     tags: [
+        CONSERVATION_STATUS.EN,
         BEHAVIOR.BREACHING,
         BEHAVIOR.MIGRATING,
         FEEDING_BEHAVIOR.PLANKTIVOROUS,
@@ -26,4 +27,5 @@ export const mobulaKuhlii = {
         NUM_DORSAL_FINS.ONE,
         TAIL_SPINES.NO,
     ],
+    depthRange: "50 m",
 };

@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 
 export const atlantorajaCastelnaui = {
     commonName: "Spotback Skate",
@@ -16,6 +16,8 @@ export const atlantorajaCastelnaui = {
     species: "castelnaui",
 
     tags: [
+        CONSERVATION_STATUS.CR,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
     ],
+    depthRange: "0-300 m",
 };

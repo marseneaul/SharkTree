@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const aptychotremaRostrata = {
     commonName: "Eastern Shovelnose Ray",
@@ -16,6 +16,8 @@ export const aptychotremaRostrata = {
     species: "rostrata",
 
     tags: [
+        CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],
+    depthRange: "0-220 m",
 };

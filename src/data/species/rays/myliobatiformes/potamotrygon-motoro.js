@@ -1,4 +1,4 @@
-import { NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../constants/enums";
 
 export const potamotrygonMotoro = {
     commonName: "Ocellate River Stingray",
@@ -17,9 +17,11 @@ export const potamotrygonMotoro = {
     species: "motoro",
 
     tags: [
+        CONSERVATION_STATUS.DD,
         NUM_DORSAL_FINS.ZERO,
         TAIL_SPINES.YES,
         VENOMOUS_SPINE.YES,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],
+    depthRange: "?-? m",
 };

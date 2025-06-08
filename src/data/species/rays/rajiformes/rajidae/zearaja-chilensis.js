@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 
 export const zearajaChilensis = {
     commonName: "Yellownose Skate",
@@ -16,6 +16,8 @@ export const zearajaChilensis = {
     species: "chilensis",
 
     tags: [
+        CONSERVATION_STATUS.EN,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
     ],
+    depthRange: "14-600 m",
 };

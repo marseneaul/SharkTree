@@ -1,4 +1,4 @@
-import { NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
 
 export const pastinachusStellurostris = {
     commonName: "Starrynose Cowtail Ray",
@@ -16,9 +16,11 @@ export const pastinachusStellurostris = {
     species: "stellurostris",
 
     tags: [
+        CONSERVATION_STATUS.CR,
         TAIL_SPINES.YES,
         VENOMOUS_SPINE.YES,
         NUM_DORSAL_FINS.ZERO,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],
+    depthRange: "?-? m",
 };

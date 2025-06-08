@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 
 export const spinirajaWhitleyi = {
     commonName: "Melbourne Ray",
@@ -16,6 +16,8 @@ export const spinirajaWhitleyi = {
     species: "whitleyi",
 
     tags: [
+        CONSERVATION_STATUS.VU,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
     ],
+    depthRange: "0-345 m",
 };

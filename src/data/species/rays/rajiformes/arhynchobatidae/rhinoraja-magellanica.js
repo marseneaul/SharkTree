@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 
 export const rhinorajaMagellanica = {
     commonName: "Magellan Skate",
@@ -16,6 +16,8 @@ export const rhinorajaMagellanica = {
     species: "magellanica",
 
     tags: [
+        CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
     ],
+    depthRange: "30-600 m",
 };

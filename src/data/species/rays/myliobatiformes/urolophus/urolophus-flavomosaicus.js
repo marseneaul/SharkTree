@@ -1,4 +1,4 @@
-import { NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
 
 export const urolophusFlavomosaicus = {
     commonName: "Patchwork Stingaree",
@@ -16,9 +16,11 @@ export const urolophusFlavomosaicus = {
     species: "flavomosaicus",
 
     tags: [
+        CONSERVATION_STATUS.LC,
         NUM_DORSAL_FINS.ONE,
         TAIL_SPINES.YES,
         VENOMOUS_SPINE.YES,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],
+    depthRange: "60-320 m",
 };

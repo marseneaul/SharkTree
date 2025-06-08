@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 
 export const brochirajaMicrospinifera = {
     commonName: "Small Deepsea Skate",
@@ -16,6 +16,8 @@ export const brochirajaMicrospinifera = {
     species: "microspinifera",
 
     tags: [
+        CONSERVATION_STATUS.DD,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
     ],
+    depthRange: "600-1200 m",
 };

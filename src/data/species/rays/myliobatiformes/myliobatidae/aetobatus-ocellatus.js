@@ -1,4 +1,4 @@
-import { BEHAVIOR, GROUP_BEHAVIOR, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import { BEHAVIOR, CONSERVATION_STATUS, GROUP_BEHAVIOR, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
 
 export const aetobatusOcellatus = {
     commonName: "Ocellated Eagle Ray",
@@ -17,6 +17,7 @@ export const aetobatusOcellatus = {
     species: "ocellatus",
 
     tags: [
+        CONSERVATION_STATUS.EN,
         BEHAVIOR.BREACHING,
         BEHAVIOR.MIGRATING,
         GROUP_BEHAVIOR.SCHOOLING,
@@ -25,4 +26,5 @@ export const aetobatusOcellatus = {
         NUM_DORSAL_FINS.ONE,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],
+    depthRange: "0-40 m",
 };

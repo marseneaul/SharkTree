@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 
 export const amblyrajaHyperborea = {
     commonName: "Arctic Skate",
@@ -16,6 +16,8 @@ export const amblyrajaHyperborea = {
     species: "hyperborea",
 
     tags: [
+        CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
     ],
+    depthRange: "260-2500 m",
 };

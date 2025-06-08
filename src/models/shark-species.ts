@@ -42,6 +42,7 @@ export class SharkSpecies {
         this.config = config;
         this.parent = parent;
         this.alternativeNames = [];
+        this.speciesType = speciesType;
 
         this.parentPath = [];
         this.tags = config.tags || []; 
@@ -216,8 +217,7 @@ export class SharkSpecies {
             const category = getEnumCategory(tag);
             if (category) existingCategories.add(category);
         });
-
-        const defaultTags = this.speciesType === SPECIES_TYPE.RAYS ? DEFAULT_TAGS.rays : DEFAULT_TAGS.sharks;
+        const defaultTags = this.speciesType === SPECIES_TYPE.RAYS ? DEFAULT_TAGS.rays : (this.speciesType === SPECIES_TYPE.SHARKS ? DEFAULT_TAGS.sharks : DEFAULT_TAGS.chimaeras);
         const tagsToAdd = defaultTags.filter(defaultTag => {
             const category = getEnumCategory(defaultTag);
             return category && !existingCategories.has(category);
@@ -347,7 +347,7 @@ export class SharkSpecies {
             } else if (this.tags.includes(FLATTENED_BODY.YES)) {
                 addSentence(`Its flattened body lets it hug the ocean floor, perfect for ambush hunting.`);
             } else if (this.tags.includes(NUM_GILLS.SIX) || this.tags.includes(NUM_GILLS.SEVEN)) {
-                addSentence(`With ${this.tags.includes(NUM_GILLS.SEVEN) ? "seven" : "six"} gill slits, it stands out from the typical five-gilled sharks.`);
+                addSentence(`With ${this.tags.includes(NUM_GILLS.SEVEN) ? "seven" : "six"} gill slits, it stands out from the typical five-gilled species.`);
             }
         }
 

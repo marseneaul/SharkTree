@@ -2,7 +2,7 @@ import { dasyatisMicrops } from "../../species/rays/myliobatiformes/dasyatis-mic
 import { hexatrygonBickelii } from "../../species/rays/myliobatiformes/hexatrygon-bickelii";
 import { himanturaSchmardae } from "../../species/rays/myliobatiformes/himantura-schmardae";
 import { paratrygonAiereba } from "../../species/rays/myliobatiformes/paratrygon-aiereba";
-import { plesiobatisDaviesi } from "../../species/rays/myliobatiformes/plesiobatis-daveisi";
+import { plesiobatisDaviesi } from "../../species/rays/myliobatiformes/plesiobatis-daviesi";
 import { potamotrygonMotoro } from "../../species/rays/myliobatiformes/potamotrygon-motoro";
 import { trygonopteraImitata } from "../../species/rays/myliobatiformes/trygonoptera-imitata";
 import { trygonopteraOvalis } from "../../species/rays/myliobatiformes/trygonoptera-ovalis";

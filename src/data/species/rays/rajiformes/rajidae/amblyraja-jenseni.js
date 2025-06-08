@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 
 export const amblyrajaJenseni = {
     commonName: "Jensen's Skate",
@@ -17,6 +17,8 @@ export const amblyrajaJenseni = {
     species: "jenseni",
 
     tags: [
+        CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
     ],
+    depthRange: "265-2550 m",
 };

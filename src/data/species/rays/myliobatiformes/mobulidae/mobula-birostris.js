@@ -1,4 +1,4 @@
-import { BEHAVIOR, FEEDING_BEHAVIOR, GROUP_BEHAVIOR, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, TEMPERATURE_REGULATION } from "../../../../../constants/enums";
+import { BEHAVIOR, CONSERVATION_STATUS, FEEDING_BEHAVIOR, GROUP_BEHAVIOR, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, TEMPERATURE_REGULATION } from "../../../../../constants/enums";
 
 export const mobulaBirostris = {
     commonName: "Giant Oceanic Manta Ray",
@@ -17,6 +17,7 @@ export const mobulaBirostris = {
     species: "birostris",
 
     tags: [
+        CONSERVATION_STATUS.EN,
         BEHAVIOR.BREACHING,
         BEHAVIOR.MIGRATING,
         FEEDING_BEHAVIOR.PLANKTIVOROUS,
@@ -28,4 +29,5 @@ export const mobulaBirostris = {
         NUM_DORSAL_FINS.ONE,
         TAIL_SPINES.NO,
     ],
+    depthRange: "0-1000 m",
 };

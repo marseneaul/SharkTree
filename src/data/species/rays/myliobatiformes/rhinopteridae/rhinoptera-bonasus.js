@@ -1,4 +1,4 @@
-import { BEHAVIOR, GROUP_BEHAVIOR, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import { BEHAVIOR, CONSERVATION_STATUS, GROUP_BEHAVIOR, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
 
 export const rhinopteraBonasus = {
     commonName: "Cownose Ray",
@@ -16,6 +16,7 @@ export const rhinopteraBonasus = {
     species: "bonasus",
 
     tags: [
+        CONSERVATION_STATUS.VU,
         NUM_DORSAL_FINS.ONE,
         TAIL_SPINES.YES,
         VENOMOUS_SPINE.YES,
@@ -23,5 +24,6 @@ export const rhinopteraBonasus = {
         BEHAVIOR.MIGRATING,
         GROUP_BEHAVIOR.SCHOOLING,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
-    ]
+    ],
+    depthRange: "60 m",
 };

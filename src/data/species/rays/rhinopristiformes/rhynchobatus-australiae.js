@@ -1,4 +1,4 @@
-import { FLATTENED_BODY, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, FLATTENED_BODY, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const rhynchobatusAustraliae = {
     commonName: "White-Spotted Guitarfish",
@@ -17,7 +17,9 @@ export const rhynchobatusAustraliae = {
     species: "australiae",
 
     tags: [
+        CONSERVATION_STATUS.CR,
         FLATTENED_BODY.NO,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],
+    depthRange: "0-60 m",
 };
