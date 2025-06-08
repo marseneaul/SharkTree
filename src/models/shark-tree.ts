@@ -5,8 +5,8 @@ import { DEFAULT_SVG_SIZE } from "../constants/constants";
 import { SharkTreeNode } from "./shark-tree-node";
 import { Svg } from "../drawing/svg";
 import { Utils } from "../utils/utils";
-import { BLACK, LIGHT_GRAY, RED, TAXONOMIC_COLORS, WHITE } from "../constants/colors";
-import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION, FEEDING_BEHAVIOR, OCEAN_ZONE, GEOGRAPHICAL_DISTRIBUTION, HABITAT, WATER_COLUMN, PHYSICAL_CHARACTERISTIC, BEHAVIOR, NUM_GILLS, NUM_DORSAL_FINS, ANAL_FIN, NICTITATING_MEMBRANE, CAUDAL_FIN_SHAPE, MOUTH_IN_FRONT_OF_EYES, BIOLUMINESCENT, DORSAL_FIN_SPINES, SPIRACLES, FLATTENED_BODY, GROUP_BEHAVIOR, TAXONOMIC_LEVELS, PROXIMAL_DORSAL_FINS, SPECIES_TYPE } from "../constants/enums";
+import { BLACK, RED, TAXONOMIC_COLORS } from "../constants/colors";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION, FEEDING_BEHAVIOR, OCEAN_ZONE, GEOGRAPHICAL_DISTRIBUTION, HABITAT, WATER_COLUMN, PHYSICAL_CHARACTERISTIC, BEHAVIOR, NUM_GILLS, NUM_DORSAL_FINS, ANAL_FIN, NICTITATING_MEMBRANE, CAUDAL_FIN_SHAPE, MOUTH_IN_FRONT_OF_EYES, BIOLUMINESCENT, DORSAL_FIN_SPINES, SPIRACLES, FLATTENED_BODY, GROUP_BEHAVIOR, TAXONOMIC_LEVELS, PROXIMAL_DORSAL_FINS, SPECIES_TYPE, TAIL_SPINES } from "../constants/enums";
 
 export class SharkTree {
     config: SharkTreeNodeConfig
@@ -570,11 +570,11 @@ export class SharkTree {
             "numGills", 
             "isBioluminescent",
             "hasSpiracles",
+            "numDorsalFins",
             "hasFlattenedBody"
         ];
 
         const sharkCategories = [
-            "numDorsalFins",
             "caudalFinShape",
             "hasDorsalFinSpines",
             "hasProximalDorsalFins",
@@ -584,7 +584,9 @@ export class SharkTree {
             "mouthInFrontOfEyes",
         ];
 
-        const rayCategories = [];
+        const rayCategories = [
+            "tailSpines",
+        ];
 
         const categories = [
             ...sharedCategories,
@@ -635,6 +637,7 @@ export class SharkTree {
             "isBioluminescent": Object.values(BIOLUMINESCENT),
             "hasDorsalFinSpines": Object.values(DORSAL_FIN_SPINES),
             "hasProximalDorsalFins": Object.values(PROXIMAL_DORSAL_FINS),
+            "tailSpines": Object.values(TAIL_SPINES),
             "hasSpiracles": Object.values(SPIRACLES),
             "hasFlattenedBody": Object.values(FLATTENED_BODY)
 

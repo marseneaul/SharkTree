@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 
 export const myliobatisLongirostris = {
     commonName: "Longnose Eagle Ray",
@@ -17,6 +17,7 @@ export const myliobatisLongirostris = {
     species: "longirostris",
 
     tags: [
+        NUM_DORSAL_FINS.ONE,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],
 };

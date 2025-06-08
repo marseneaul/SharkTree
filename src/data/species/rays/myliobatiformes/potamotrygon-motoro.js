@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import { NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const potamotrygonMotoro = {
     commonName: "Ocellate River Stingray",
@@ -17,6 +17,7 @@ export const potamotrygonMotoro = {
     species: "motoro",
 
     tags: [
+        NUM_DORSAL_FINS.ZERO,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],
 };

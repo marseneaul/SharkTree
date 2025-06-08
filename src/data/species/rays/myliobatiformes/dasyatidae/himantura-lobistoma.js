@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 
 export const himanturaLobistoma = {
     commonName: "Tubemouth Whipray",
@@ -16,6 +16,7 @@ export const himanturaLobistoma = {
     species: "lobistoma",
 
     tags: [
+        NUM_DORSAL_FINS.ZERO,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],
 };

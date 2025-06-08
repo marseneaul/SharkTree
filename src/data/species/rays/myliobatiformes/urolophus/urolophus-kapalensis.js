@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 
 export const urolophusKapalensis = {
     commonName: "Kapala Stingaree",
@@ -16,6 +16,7 @@ export const urolophusKapalensis = {
     species: "kapalensis",
 
     tags: [
+        NUM_DORSAL_FINS.ONE,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],
 };

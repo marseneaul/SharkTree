@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 
 export const urobatisMaculatus = {
     commonName: "Spotted Round Ray",
@@ -17,6 +17,7 @@ export const urobatisMaculatus = {
     species: "maculatus",
 
     tags: [
+        NUM_DORSAL_FINS.ZERO,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],
 };

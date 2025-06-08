@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 
 export const gymnuraAustralis = {
     commonName: "Australian Butterfly Ray",
@@ -17,5 +17,6 @@ export const gymnuraAustralis = {
 
     tags: [
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+        NUM_DORSAL_FINS.ZERO,
     ],
 };

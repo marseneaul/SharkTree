@@ -134,6 +134,7 @@ export enum NUM_GILLS {
 }
 
 export enum NUM_DORSAL_FINS {
+    ZERO = "No Dorsal Fins",
     ONE = "1 Dorsal Fin",
     TWO = "2 Dorsal Fins"
 }
@@ -184,6 +185,11 @@ export enum DORSAL_FIN_SPINES {
     NO = "No Dorsal Fin Spines"
 }
 
+export enum TAIL_SPINES {
+    YES = "Yes Tail Spines",
+    NO = "No Tail Spines",
+}
+
 export function getEnumCategory(tag: any): string | undefined {
     if (Object.values(NUM_DORSAL_FINS).includes(tag)) return "NUM_DORSAL_FINS";
     if (Object.values(NUM_GILLS).includes(tag)) return "NUM_GILLS";
@@ -196,6 +202,7 @@ export function getEnumCategory(tag: any): string | undefined {
     if (Object.values(SPIRACLES).includes(tag)) return "SPIRACLES";
     if (Object.values(FLATTENED_BODY).includes(tag)) return "FLATTENED_BODY";
     if (Object.values(PROXIMAL_DORSAL_FINS).includes(tag)) return "PROXIMAL_DORSAL_FINS";
+    if (Object.values(TAIL_SPINES).includes(tag)) return "TAIL_SPINES";
 
     if (Object.values(CONSERVATION_STATUS).includes(tag)) return "CONSERVATION_STATUS";
     if (Object.values(TEMPERATURE_REGULATION).includes(tag)) return "TEMPERATURE_REGULATION";
@@ -243,8 +250,10 @@ export const DEFAULT_TAGS = {
         BEHAVIOR.NONE,
 
         NUM_GILLS.FIVE,
+        NUM_DORSAL_FINS.TWO,
         SPIRACLES.YES,
         FLATTENED_BODY.YES,
-        BIOLUMINESCENT.NO
+        BIOLUMINESCENT.NO,
+        TAIL_SPINES.NO
     ]
 };

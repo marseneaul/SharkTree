@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINE, TAIL_SPINES } from "../../../../../constants/enums";
 
 export const taeniuraMeyeni = {
     commonName: "Round Ribbontail Ray",
@@ -17,6 +17,8 @@ export const taeniuraMeyeni = {
     species: "meyeni",
 
     tags: [
+        NUM_DORSAL_FINS.ZERO,
+        TAIL_SPINES.YES,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],
 };

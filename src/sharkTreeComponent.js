@@ -1,4 +1,4 @@
-import { ANAL_FIN, BEHAVIOR, BIOLUMINESCENT, CONSERVATION_STATUS, DORSAL_FIN_SPINES, FLATTENED_BODY, MOUTH_IN_FRONT_OF_EYES, NICTITATING_MEMBRANE, NUM_DORSAL_FINS, NUM_GILLS, PROXIMAL_DORSAL_FINS, SPECIES_TYPE, SPIRACLES } from "./constants/enums";
+import { ANAL_FIN, BEHAVIOR, BIOLUMINESCENT, CONSERVATION_STATUS, DORSAL_FIN_SPINES, FLATTENED_BODY, MOUTH_IN_FRONT_OF_EYES, NICTITATING_MEMBRANE, NUM_DORSAL_FINS, NUM_GILLS, PROXIMAL_DORSAL_FINS, SPECIES_TYPE, SPIRACLES, TAIL_SPINES } from "./constants/enums";
 import { arhynchobatidaeConfig } from "./data/configs/rays/arhynchobatidae.config";
 import { batomorphiConfig } from "./data/configs/rays/batomorphi.config";
 import { dasyatidaeConfig } from "./data/configs/rays/dasyatidae.config";
@@ -256,7 +256,7 @@ export class SharkTreeComponent extends HTMLElement {
                             <option value="feedingBehavior">Feeding Behavior</option>
                             <option value="groupBehavior">Group Behavior</option>
                             <option value="numGills">Number of Gills</option>
-                            <option value="numDorsalFins" class="shark-only">Number of Dorsal Fins</option>
+                            <option value="numDorsalFins">Number of Dorsal Fins</option>
                             <option value="analFin" class="shark-only">Has Anal Fin</option>
                             <option value="hasSpiracles">Has Spiracles</option>
                             <option value="hasFlattenedBody">Has Flattened Body</option>
@@ -266,6 +266,7 @@ export class SharkTreeComponent extends HTMLElement {
                             <option value="isBioluminescent">Bioluminescent</option>
                             <option value="hasDorsalFinSpines" class="shark-only">Has Dorsal Fin Spines</option>
                             <option value="hasProximalDorsalFins" class="shark-only">Has Proximal Dorsal Fins</option>
+                            <option value="tailSpines" class="ray-only">Has Tail Spines</option>
                         </select>
                         <select id="tag-value-dropdown">
                             <option value="">All</option>
@@ -297,7 +298,6 @@ export class SharkTreeComponent extends HTMLElement {
         `;
     }
     // <option value="discShape" class="ray-only">Disc Shape</option>
-    // <option value="tailSpine" class="ray-only">Tail Spine</option>
     
     css() {
         return `
@@ -653,7 +653,8 @@ export class SharkTreeComponent extends HTMLElement {
             isBioluminescent: [BIOLUMINESCENT.YES, BIOLUMINESCENT.NO],
             hasSpiracles: [SPIRACLES.YES, SPIRACLES.NO],
             hasFlattenedBody: [FLATTENED_BODY.YES, FLATTENED_BODY.NO],
-            mouthInFrontOfEyes: [MOUTH_IN_FRONT_OF_EYES.YES, MOUTH_IN_FRONT_OF_EYES.NO]
+            mouthInFrontOfEyes: [MOUTH_IN_FRONT_OF_EYES.YES, MOUTH_IN_FRONT_OF_EYES.NO],
+            tailSpine: [TAIL_SPINES.YES, TAIL_SPINES.NO],
         };
     
         tagDropdown.addEventListener("change", (event) => {

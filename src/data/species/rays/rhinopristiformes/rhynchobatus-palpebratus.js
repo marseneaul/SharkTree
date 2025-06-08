@@ -1,7 +1,7 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import { FLATTENED_BODY, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const rhynchobatusPalpebratus = {
-    commonName: "Egebrow Wedgefish",
+    commonName: "Eyebrow Wedgefish",
     binomialName: "Rhynchobatus palpebratus",
 
     domain:	"Eukaryota",
@@ -16,6 +16,7 @@ export const rhynchobatusPalpebratus = {
     species: "palpebratus",
 
     tags: [
+        FLATTENED_BODY.NO,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],
 };

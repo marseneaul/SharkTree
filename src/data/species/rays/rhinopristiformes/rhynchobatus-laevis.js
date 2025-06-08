@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import { FLATTENED_BODY, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const rhynchobatusLaevis = {
     commonName: "Smooth Wedgefish",
@@ -16,6 +16,7 @@ export const rhynchobatusLaevis = {
     species: "laevis",
 
     tags: [
+        FLATTENED_BODY.NO,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],
 };

@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import { NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const himanturaSchmardae = {
     commonName: "Chupare Stingray",
@@ -17,6 +17,7 @@ export const himanturaSchmardae = {
     species: "schmardae",
 
     tags: [
+        NUM_DORSAL_FINS.ZERO,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],
 };

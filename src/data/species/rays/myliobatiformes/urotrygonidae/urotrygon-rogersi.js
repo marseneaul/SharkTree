@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 
 export const urotrygonRogersi = {
     commonName: "Rogers' Round Ray",
@@ -16,6 +16,7 @@ export const urotrygonRogersi = {
     species: "rogersi",
 
     tags: [
+        NUM_DORSAL_FINS.ZERO,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],
 };

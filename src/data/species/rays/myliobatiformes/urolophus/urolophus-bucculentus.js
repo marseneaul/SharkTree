@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 
 export const urolophusBucculentus = {
     commonName: "Sandyback Stingaree",
@@ -17,6 +17,7 @@ export const urolophusBucculentus = {
     species: "bucculentus",
 
     tags: [
+        NUM_DORSAL_FINS.ONE,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],
 };

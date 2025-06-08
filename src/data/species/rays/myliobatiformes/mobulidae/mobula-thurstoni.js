@@ -1,4 +1,4 @@
-import { BEHAVIOR, FEEDING_BEHAVIOR, GROUP_BEHAVIOR, TEMPERATURE_REGULATION } from "../../../../../constants/enums";
+import { BEHAVIOR, FEEDING_BEHAVIOR, GROUP_BEHAVIOR, NUM_DORSAL_FINS, TEMPERATURE_REGULATION } from "../../../../../constants/enums";
 
 export const mobulaThurstoni = {
     commonName: "Bentfin Devil Ray",
@@ -22,5 +22,6 @@ export const mobulaThurstoni = {
         FEEDING_BEHAVIOR.PLANKTIVOROUS,
         GROUP_BEHAVIOR.SCHOOLING,
         TEMPERATURE_REGULATION.REGIONALLY_ENDOTHERMIC,
+        NUM_DORSAL_FINS.ONE,
     ],
 };

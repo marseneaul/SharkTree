@@ -1,4 +1,4 @@
-import { BEHAVIOR, GROUP_BEHAVIOR, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { BEHAVIOR, GROUP_BEHAVIOR, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 
 export const aetobatusLaticeps = {
     commonName: "Pacific White-Spotted Eagle Ray",
@@ -19,6 +19,7 @@ export const aetobatusLaticeps = {
         // "A review of elasmobranch breaching behavior: why do sharks and rays propel themselves out of the water into the air?"
         BEHAVIOR.BREACHING,
         BEHAVIOR.MIGRATING,
+        NUM_DORSAL_FINS.ONE,
         GROUP_BEHAVIOR.SCHOOLING,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],

@@ -1,4 +1,4 @@
-import { BEHAVIOR, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { BEHAVIOR, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 
 export const rhinopteraSteindachneri = {
     commonName: "Giant Cownose Ray",
@@ -17,6 +17,7 @@ export const rhinopteraSteindachneri = {
     species: "steindachneri",
 
     tags: [
+        NUM_DORSAL_FINS.ONE,
         BEHAVIOR.MIGRATING,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],

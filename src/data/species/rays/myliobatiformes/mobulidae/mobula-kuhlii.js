@@ -1,4 +1,4 @@
-import { BEHAVIOR, FEEDING_BEHAVIOR, GROUP_BEHAVIOR, TEMPERATURE_REGULATION } from "../../../../../constants/enums";
+import { BEHAVIOR, FEEDING_BEHAVIOR, GROUP_BEHAVIOR, NUM_DORSAL_FINS, TEMPERATURE_REGULATION } from "../../../../../constants/enums";
 
 export const mobulaKuhlii = {
     commonName: "Shortfin Devil Ray",
@@ -23,5 +23,6 @@ export const mobulaKuhlii = {
         FEEDING_BEHAVIOR.CARNIVOROUS,
         GROUP_BEHAVIOR.SCHOOLING,
         TEMPERATURE_REGULATION.REGIONALLY_ENDOTHERMIC,
+        NUM_DORSAL_FINS.ONE,
     ],
 };

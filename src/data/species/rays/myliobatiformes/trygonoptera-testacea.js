@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import { NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const trygonopteraTestacea = {
     commonName: "Common Stingaree",
@@ -16,6 +16,7 @@ export const trygonopteraTestacea = {
     species: "testacea",
 
     tags: [
+        NUM_DORSAL_FINS.ONE,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],
 };

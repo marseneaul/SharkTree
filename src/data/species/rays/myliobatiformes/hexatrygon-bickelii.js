@@ -1,4 +1,4 @@
-import { NUM_GILLS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import { NUM_DORSAL_FINS, NUM_GILLS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const hexatrygonBickelii = {
     commonName: "Sixgill Stingray",
@@ -16,6 +16,7 @@ export const hexatrygonBickelii = {
     species: "bickelli",
 
     tags: [
+        NUM_DORSAL_FINS.ZERO,
         NUM_GILLS.SIX,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],

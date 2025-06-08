@@ -1,4 +1,4 @@
-import { BEHAVIOR, FEEDING_BEHAVIOR, GROUP_BEHAVIOR, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION } from "../../../../../constants/enums";
+import { BEHAVIOR, FEEDING_BEHAVIOR, GROUP_BEHAVIOR, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION } from "../../../../../constants/enums";
 
 export const mobulaBirostris = {
     commonName: "Giant Oceanic Manta Ray",
@@ -25,5 +25,6 @@ export const mobulaBirostris = {
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         GROUP_BEHAVIOR.SCHOOLING,
         TEMPERATURE_REGULATION.REGIONALLY_ENDOTHERMIC,
+        NUM_DORSAL_FINS.ONE,
     ],
 };

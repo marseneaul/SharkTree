@@ -1,4 +1,4 @@
-import { BIOLUMINESCENT, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { BIOLUMINESCENT, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES } from "../../../../../constants/enums";
 
 export const taeniuraLymma = {
     commonName: "Bluespotted Ribbontail Ray",
@@ -16,7 +16,9 @@ export const taeniuraLymma = {
     species: "lymma",
 
     tags: [
+        NUM_DORSAL_FINS.ZERO,
         BIOLUMINESCENT.YES,
+        TAIL_SPINES.YES,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],
 };
