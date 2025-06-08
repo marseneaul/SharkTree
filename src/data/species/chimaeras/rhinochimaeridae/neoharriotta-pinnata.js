@@ -1,4 +1,4 @@
-import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, SNOUT_SHAPE } from "../../../../constants/enums";
 
 export const neoharriottaPinnata = {
     commonName: "Sicklefin Chimaera",
@@ -17,6 +17,7 @@ export const neoharriottaPinnata = {
     tags: [
         CONSERVATION_STATUS.NT,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
+        SNOUT_SHAPE.ELONGATED,
     ],
     depthRange: "200-760 m",
 };

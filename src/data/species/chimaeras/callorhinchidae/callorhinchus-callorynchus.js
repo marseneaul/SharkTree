@@ -1,4 +1,4 @@
-import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, SNOUT_SHAPE } from "../../../../constants/enums";
 
 export const callorhinchusCallorynchus = {
     commonName: "American Elephantfish",
@@ -18,6 +18,7 @@ export const callorhinchusCallorynchus = {
     tags: [
         CONSERVATION_STATUS.VU,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
+        SNOUT_SHAPE.PLOUGH_LIKE,
     ],
     depthRange: "10-481 m",
 };

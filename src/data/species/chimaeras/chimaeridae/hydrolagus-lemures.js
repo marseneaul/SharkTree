@@ -1,4 +1,4 @@
-import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, SNOUT_SHAPE } from "../../../../constants/enums";
 
 export const hydrolagusLemures = {
     commonName: "Ogilby's Ghostshark",
@@ -17,6 +17,7 @@ export const hydrolagusLemures = {
     tags: [
         CONSERVATION_STATUS.NT,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
+        SNOUT_SHAPE.SHORT,
     ],
     depthRange: "139-872 m",
 };

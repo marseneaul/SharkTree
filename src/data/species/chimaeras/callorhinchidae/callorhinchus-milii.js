@@ -1,4 +1,4 @@
-import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, SNOUT_SHAPE } from "../../../../constants/enums";
 
 export const callorhinchusMilii = {
     commonName: "Australian Ghostshark",
@@ -18,6 +18,7 @@ export const callorhinchusMilii = {
     tags: [
         CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
+        SNOUT_SHAPE.PLOUGH_LIKE,
     ],
     depthRange: "0-200 m",
 };

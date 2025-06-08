@@ -1,4 +1,4 @@
-import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, GROUP_BEHAVIOR, REPRODUCTIVE_STRATEGY, SNOUT_SHAPE } from "../../../../constants/enums";
 
 export const hydrolagusColliei = {
     commonName: "Spotted Ratfish",
@@ -17,6 +17,8 @@ export const hydrolagusColliei = {
     tags: [
         CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
+        GROUP_BEHAVIOR.SCHOOLING,
+        SNOUT_SHAPE.SHORT,
     ],
     depthRange: "0-1463 m",
 };

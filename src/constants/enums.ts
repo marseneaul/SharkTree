@@ -202,6 +202,17 @@ export enum VENOMOUS_SPINE {
     NO = "No Venomous Spine"
 }
 
+export enum OPERCULUM {
+    YES = "Yes Operculum",
+    NO = "No Operculum"
+}
+
+export enum SNOUT_SHAPE {
+    ELONGATED = "Elongated Snout",
+    SHORT = "Short Snout",
+    PLOUGH_LIKE = "Plough-like Snout"
+}
+
 export function getEnumCategory(tag: any): string | undefined {
     if (Object.values(NUM_DORSAL_FINS).includes(tag)) return "NUM_DORSAL_FINS";
     if (Object.values(NUM_GILLS).includes(tag)) return "NUM_GILLS";
@@ -217,6 +228,8 @@ export function getEnumCategory(tag: any): string | undefined {
     if (Object.values(TAIL_SPINES).includes(tag)) return "TAIL_SPINES";
     if (Object.values(ELECTRIC_ORGAN).includes(tag)) return "ELECTRIC_ORGAN";
     if (Object.values(VENOMOUS_SPINE).includes(tag)) return "VENOMOUS_SPINE";
+    if (Object.values(OPERCULUM).includes(tag)) return "OPERCULUM";
+    if (Object.values(SNOUT_SHAPE).includes(tag)) return "SNOUT_SHAPE";
 
     if (Object.values(CONSERVATION_STATUS).includes(tag)) return "CONSERVATION_STATUS";
     if (Object.values(TEMPERATURE_REGULATION).includes(tag)) return "TEMPERATURE_REGULATION";
@@ -285,5 +298,7 @@ export const DEFAULT_TAGS = {
         SPIRACLES.NO,
         FLATTENED_BODY.NO,
         BIOLUMINESCENT.NO,
+        OPERCULUM.YES,
+        SNOUT_SHAPE.SHORT,
     ]
 };

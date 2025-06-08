@@ -1,4 +1,4 @@
-import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, SNOUT_SHAPE } from "../../../../constants/enums";
 
 export const rhinochimaeraPacifica = {
     commonName: "Pacific Spookfish",
@@ -18,6 +18,7 @@ export const rhinochimaeraPacifica = {
     tags: [
         CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
+        SNOUT_SHAPE.ELONGATED,        
     ],
     depthRange: "191-1290 m",
 };

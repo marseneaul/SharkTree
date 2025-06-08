@@ -6,7 +6,7 @@ import { SharkTreeNode } from "./shark-tree-node";
 import { Svg } from "../drawing/svg";
 import { Utils } from "../utils/utils";
 import { BLACK, RED, TAXONOMIC_COLORS } from "../constants/colors";
-import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION, FEEDING_BEHAVIOR, OCEAN_ZONE, GEOGRAPHICAL_DISTRIBUTION, HABITAT, WATER_COLUMN, PHYSICAL_CHARACTERISTIC, BEHAVIOR, NUM_GILLS, NUM_DORSAL_FINS, ANAL_FIN, NICTITATING_MEMBRANE, CAUDAL_FIN_SHAPE, MOUTH_IN_FRONT_OF_EYES, BIOLUMINESCENT, DORSAL_FIN_SPINES, SPIRACLES, FLATTENED_BODY, GROUP_BEHAVIOR, TAXONOMIC_LEVELS, PROXIMAL_DORSAL_FINS, SPECIES_TYPE, TAIL_SPINES, ELECTRIC_ORGAN, VENOMOUS_SPINE } from "../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION, FEEDING_BEHAVIOR, OCEAN_ZONE, GEOGRAPHICAL_DISTRIBUTION, HABITAT, WATER_COLUMN, PHYSICAL_CHARACTERISTIC, BEHAVIOR, NUM_GILLS, NUM_DORSAL_FINS, ANAL_FIN, NICTITATING_MEMBRANE, CAUDAL_FIN_SHAPE, MOUTH_IN_FRONT_OF_EYES, BIOLUMINESCENT, DORSAL_FIN_SPINES, SPIRACLES, FLATTENED_BODY, GROUP_BEHAVIOR, TAXONOMIC_LEVELS, PROXIMAL_DORSAL_FINS, SPECIES_TYPE, TAIL_SPINES, ELECTRIC_ORGAN, VENOMOUS_SPINE, OPERCULUM, SNOUT_SHAPE } from "../constants/enums";
 
 export class SharkTree {
     config: SharkTreeNodeConfig
@@ -590,7 +590,10 @@ export class SharkTree {
             "venomousSpine"
         ];
 
-        const chimaeraCategories = [];
+        const chimaeraCategories = [
+            "operculum",
+            "snoutShape",
+        ];
 
         const categories = [
             ...sharedCategories,
@@ -645,7 +648,9 @@ export class SharkTree {
             "electricOrgan": Object.values(ELECTRIC_ORGAN),
             "venomousSpine": Object.values(VENOMOUS_SPINE),
             "hasSpiracles": Object.values(SPIRACLES),
-            "hasFlattenedBody": Object.values(FLATTENED_BODY)
+            "hasFlattenedBody": Object.values(FLATTENED_BODY),
+            "operculum": Object.values(OPERCULUM),
+            "snoutShape": Object.values(SNOUT_SHAPE),
 
         };
         for (const [category, values] of Object.entries(tagEnums)) {

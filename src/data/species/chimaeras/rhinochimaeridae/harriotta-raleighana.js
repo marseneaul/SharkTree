@@ -1,4 +1,4 @@
-import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, SNOUT_SHAPE } from "../../../../constants/enums";
 
 export const harriottaRaleighana = {
     commonName: "Narrownose Chimaera",
@@ -17,6 +17,7 @@ export const harriottaRaleighana = {
     tags: [
         CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
+        SNOUT_SHAPE.ELONGATED,
     ],
     depthRange: "350-2600 m",
 };

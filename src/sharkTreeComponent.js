@@ -1,4 +1,4 @@
-import { ANAL_FIN, BEHAVIOR, BIOLUMINESCENT, CONSERVATION_STATUS, DORSAL_FIN_SPINES, ELECTRIC_ORGAN, FLATTENED_BODY, MOUTH_IN_FRONT_OF_EYES, NICTITATING_MEMBRANE, NUM_DORSAL_FINS, NUM_GILLS, PROXIMAL_DORSAL_FINS, SPECIES_TYPE, SPIRACLES, TAIL_SPINES, VENOMOUS_SPINE } from "./constants/enums";
+import { ANAL_FIN, BEHAVIOR, BIOLUMINESCENT, CONSERVATION_STATUS, DORSAL_FIN_SPINES, ELECTRIC_ORGAN, FLATTENED_BODY, MOUTH_IN_FRONT_OF_EYES, NICTITATING_MEMBRANE, NUM_DORSAL_FINS, NUM_GILLS, OPERCULUM, PROXIMAL_DORSAL_FINS, SNOUT_SHAPE, SPECIES_TYPE, SPIRACLES, TAIL_SPINES, VENOMOUS_SPINE } from "./constants/enums";
 import { callorhinchidaeConfig } from "./data/configs/chimaeras/callorhinchidae.config";
 import { chimaeiridaeConfig } from "./data/configs/chimaeras/chimaeiridae.config";
 import { holocephaliConfig } from "./data/configs/chimaeras/holocephali.config";
@@ -147,7 +147,7 @@ export class SharkTreeComponent extends HTMLElement {
         // Update search label dynamically
         const searchLabel = this.shadow.querySelector("#search-container label");
         if (searchLabel) {
-            searchLabel.textContent = `Search ${speciesType === SPECIES_TYPE.RAYS ? "Ray" : (speciesType === SPECIES_TYPE.SHARKS ? "Shark" : "Chimaeras")}:`;
+            searchLabel.textContent = `Search ${speciesType === SPECIES_TYPE.RAYS ? "Ray" : (speciesType === SPECIES_TYPE.SHARKS ? "Shark" : "Chimaera")}:`;
         }
     }
 
@@ -278,6 +278,8 @@ export class SharkTreeComponent extends HTMLElement {
                             <option value="tailSpines" class="ray-only">Has Tail Spines</option>
                             <option value="electricOrgan" class="ray-only">Has Electric Organ</option>
                             <option value="venomousSpine" class="ray-only">Has Venomous Spine</option>
+                            <option value="operculum" class="chimaera-only">Has Operculum</option>
+                            <option value="snoutShape" class="chimaera-only">Snout Shape</option>
                         </select>
                         <select id="tag-value-dropdown">
                             <option value="">All</option>
@@ -547,8 +549,8 @@ export class SharkTreeComponent extends HTMLElement {
             #info-button:hover + #info-tooltip {
                 display: block;
             }
-            .shark-only, .ray-only .chimaera-only { display: none; }
-            .shark-only.active, .ray-only.active .chimaera-only.active { display: block; }
+            .shark-only, .ray-only, .chimaera-only { display: none; }
+            .shark-only.active, .ray-only.active, .chimaera-only.active { display: block; }
         `;
     }
 
@@ -570,7 +572,6 @@ export class SharkTreeComponent extends HTMLElement {
             const sharkOptions = tagDropdown.querySelectorAll(".shark-only");
             const rayOptions = tagDropdown.querySelectorAll(".ray-only");
             const chimaeraOptions = tagDropdown.querySelectorAll(".chimaera-only");
-            console.log(rayOptions)
             sharkOptions.forEach(option => {
                 option.classList.toggle("active", speciesType === SPECIES_TYPE.SHARKS);
             });
@@ -666,6 +667,8 @@ export class SharkTreeComponent extends HTMLElement {
             tailSpines: [TAIL_SPINES.YES, TAIL_SPINES.NO],
             electricOrgan: [ELECTRIC_ORGAN.YES, ELECTRIC_ORGAN.NO],
             venomousSpine: [VENOMOUS_SPINE.YES, VENOMOUS_SPINE.NO],
+            operculum: [OPERCULUM.YES, OPERCULUM.NO],
+            snoutShape: [SNOUT_SHAPE.SHORT, SNOUT_SHAPE.ELONGATED, SNOUT_SHAPE.PLOUGH_LIKE],
         };
     
         tagDropdown.addEventListener("change", (event) => {

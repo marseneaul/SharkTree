@@ -1,4 +1,4 @@
-import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, SNOUT_SHAPE } from "../../../../constants/enums";
 
 export const chimaeraMonstrosa = {
     commonName: "Rabbit Fish",
@@ -18,6 +18,7 @@ export const chimaeraMonstrosa = {
     tags: [
         CONSERVATION_STATUS.VU,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
+        SNOUT_SHAPE.SHORT,
     ],
     depthRange: "200-1663 m",
 };

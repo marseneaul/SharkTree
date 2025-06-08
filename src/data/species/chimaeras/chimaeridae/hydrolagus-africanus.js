@@ -1,4 +1,4 @@
-import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, SNOUT_SHAPE } from "../../../../constants/enums";
 
 export const hydrolagusAfricanus = {
     commonName: "African Chimaera",
@@ -17,6 +17,7 @@ export const hydrolagusAfricanus = {
     tags: [
         CONSERVATION_STATUS.LC,
         REPRODUCTIVE_STRATEGY.OVIPAROUS,
+        SNOUT_SHAPE.SHORT,
     ],
     depthRange: "300-1030 m",
 };
