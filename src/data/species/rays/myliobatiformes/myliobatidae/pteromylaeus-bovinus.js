@@ -1,4 +1,4 @@
-import { NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES } from "../../../../../constants/enums";
 
 export const pteromylaeusBovinus = {
     commonName: "Bull Ray",
@@ -18,6 +18,7 @@ export const pteromylaeusBovinus = {
 
     tags: [
         NUM_DORSAL_FINS.ONE,
+        TAIL_SPINES.YES,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],
 };

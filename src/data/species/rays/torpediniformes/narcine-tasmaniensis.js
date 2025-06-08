@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import { ELECTRIC_ORGAN, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const narcineTasmaniensis = {
     commonName: "Tasmanian Numbfish",
@@ -17,5 +17,6 @@ export const narcineTasmaniensis = {
 
     tags: [
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+        ELECTRIC_ORGAN.YES,
     ],
 };

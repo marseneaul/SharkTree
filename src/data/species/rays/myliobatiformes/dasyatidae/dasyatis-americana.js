@@ -1,4 +1,4 @@
-import { BEHAVIOR, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { BEHAVIOR, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
 
 export const dasyatisAmericana = {
     commonName: "Southern Stingray",
@@ -16,6 +16,8 @@ export const dasyatisAmericana = {
     species: "americana",
 
     tags: [
+        TAIL_SPINES.YES,
+        VENOMOUS_SPINE.YES,
         NUM_DORSAL_FINS.ZERO,
         BEHAVIOR.BREACHING,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,

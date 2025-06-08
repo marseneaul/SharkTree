@@ -190,6 +190,16 @@ export enum TAIL_SPINES {
     NO = "No Tail Spines",
 }
 
+export enum ELECTRIC_ORGAN {
+    YES = "Yes Electric Organ",
+    NO = "NO Electric Organ"
+}
+
+export enum VENOMOUS_SPINE {
+    YES = "Yes Venomous Spine",
+    NO = "No Venomous Spine"
+}
+
 export function getEnumCategory(tag: any): string | undefined {
     if (Object.values(NUM_DORSAL_FINS).includes(tag)) return "NUM_DORSAL_FINS";
     if (Object.values(NUM_GILLS).includes(tag)) return "NUM_GILLS";
@@ -203,6 +213,8 @@ export function getEnumCategory(tag: any): string | undefined {
     if (Object.values(FLATTENED_BODY).includes(tag)) return "FLATTENED_BODY";
     if (Object.values(PROXIMAL_DORSAL_FINS).includes(tag)) return "PROXIMAL_DORSAL_FINS";
     if (Object.values(TAIL_SPINES).includes(tag)) return "TAIL_SPINES";
+    if (Object.values(ELECTRIC_ORGAN).includes(tag)) return "ELECTRIC_ORGAN";
+    if (Object.values(VENOMOUS_SPINE).includes(tag)) return "VENOMOUS_SPINE";
 
     if (Object.values(CONSERVATION_STATUS).includes(tag)) return "CONSERVATION_STATUS";
     if (Object.values(TEMPERATURE_REGULATION).includes(tag)) return "TEMPERATURE_REGULATION";
@@ -254,6 +266,8 @@ export const DEFAULT_TAGS = {
         SPIRACLES.YES,
         FLATTENED_BODY.YES,
         BIOLUMINESCENT.NO,
-        TAIL_SPINES.NO
+        TAIL_SPINES.NO,
+        ELECTRIC_ORGAN.NO,
+        VENOMOUS_SPINE.NO,
     ]
 };

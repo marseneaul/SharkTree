@@ -1,4 +1,4 @@
-import { NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES } from "../../../../../constants/enums";
 
 export const pastinachusSolocirostris = {
     commonName: "Roughnose Stingray",
@@ -16,6 +16,7 @@ export const pastinachusSolocirostris = {
     species: "solocirostris",
 
     tags: [
+        TAIL_SPINES.YES,
         NUM_DORSAL_FINS.ZERO,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],

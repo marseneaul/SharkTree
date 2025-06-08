@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import { ELECTRIC_ORGAN, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const torpedoMarmorata = {
     commonName: "Marbled Electric Ray",
@@ -17,5 +17,6 @@ export const torpedoMarmorata = {
 
     tags: [
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+        ELECTRIC_ORGAN.YES,
     ],
 };

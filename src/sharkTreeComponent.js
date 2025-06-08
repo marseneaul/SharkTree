@@ -1,4 +1,4 @@
-import { ANAL_FIN, BEHAVIOR, BIOLUMINESCENT, CONSERVATION_STATUS, DORSAL_FIN_SPINES, FLATTENED_BODY, MOUTH_IN_FRONT_OF_EYES, NICTITATING_MEMBRANE, NUM_DORSAL_FINS, NUM_GILLS, PROXIMAL_DORSAL_FINS, SPECIES_TYPE, SPIRACLES, TAIL_SPINES } from "./constants/enums";
+import { ANAL_FIN, BEHAVIOR, BIOLUMINESCENT, CONSERVATION_STATUS, DORSAL_FIN_SPINES, ELECTRIC_ORGAN, FLATTENED_BODY, MOUTH_IN_FRONT_OF_EYES, NICTITATING_MEMBRANE, NUM_DORSAL_FINS, NUM_GILLS, PROXIMAL_DORSAL_FINS, SPECIES_TYPE, SPIRACLES, TAIL_SPINES, VENOMOUS_SPINE } from "./constants/enums";
 import { arhynchobatidaeConfig } from "./data/configs/rays/arhynchobatidae.config";
 import { batomorphiConfig } from "./data/configs/rays/batomorphi.config";
 import { dasyatidaeConfig } from "./data/configs/rays/dasyatidae.config";
@@ -655,6 +655,8 @@ export class SharkTreeComponent extends HTMLElement {
             hasFlattenedBody: [FLATTENED_BODY.YES, FLATTENED_BODY.NO],
             mouthInFrontOfEyes: [MOUTH_IN_FRONT_OF_EYES.YES, MOUTH_IN_FRONT_OF_EYES.NO],
             tailSpine: [TAIL_SPINES.YES, TAIL_SPINES.NO],
+            electricOrgan: [ELECTRIC_ORGAN.YES, ELECTRIC_ORGAN.NO],
+            venomousSpine: [VENOMOUS_SPINE.YES, VENOMOUS_SPINE.NO],
         };
     
         tagDropdown.addEventListener("change", (event) => {

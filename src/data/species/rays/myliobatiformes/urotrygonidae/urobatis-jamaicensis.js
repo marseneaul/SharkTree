@@ -1,4 +1,4 @@
-import { BIOLUMINESCENT, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { BIOLUMINESCENT, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES } from "../../../../../constants/enums";
 
 export const urobatisJamaicensis = {
     commonName: "Yellow Stingray",
@@ -18,6 +18,7 @@ export const urobatisJamaicensis = {
     tags: [
         BIOLUMINESCENT.YES,
         NUM_DORSAL_FINS.ZERO,
+        TAIL_SPINES.YES,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],
 };

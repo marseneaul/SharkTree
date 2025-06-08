@@ -1,4 +1,4 @@
-import { NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES } from "../../../../../constants/enums";
 
 export const gymnuraPoecilura = {
     commonName: "Longtail Butterfly Ray",
@@ -16,6 +16,7 @@ export const gymnuraPoecilura = {
     species: "poecilura",
 
     tags: [
+        TAIL_SPINES.YES,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
         NUM_DORSAL_FINS.ZERO,
     ],

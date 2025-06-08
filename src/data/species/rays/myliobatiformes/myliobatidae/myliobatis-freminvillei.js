@@ -1,4 +1,4 @@
-import { BEHAVIOR, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { BEHAVIOR, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES } from "../../../../../constants/enums";
 
 export const myliobatisFreminvillei = {
     commonName: "Bullnose Ray",
@@ -18,6 +18,7 @@ export const myliobatisFreminvillei = {
     tags: [
         // "A review of elasmobranch breaching behavior: why do sharks and rays propel themselves out of the water into the air?"
         BEHAVIOR.BREACHING,
+        TAIL_SPINES.YES,
         NUM_DORSAL_FINS.ONE,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],

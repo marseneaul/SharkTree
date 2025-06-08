@@ -1,4 +1,4 @@
-import { REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import { ELECTRIC_ORGAN, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 
 export const narcineEntemedor = {
     commonName: "Giant Electric Ray",
@@ -18,5 +18,6 @@ export const narcineEntemedor = {
 
     tags: [
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
+        ELECTRIC_ORGAN.YES,
     ],
 };

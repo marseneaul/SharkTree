@@ -1,4 +1,4 @@
-import { NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
 
 export const dasyatisBrevis = {
     commonName: "Diamond Stingray",
@@ -16,6 +16,8 @@ export const dasyatisBrevis = {
     species: "brevis",
 
     tags: [
+        TAIL_SPINES.YES,
+        VENOMOUS_SPINE.YES,
         NUM_DORSAL_FINS.ZERO,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],

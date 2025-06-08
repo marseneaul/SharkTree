@@ -1,4 +1,4 @@
-import { BEHAVIOR, FEEDING_BEHAVIOR, GROUP_BEHAVIOR, NUM_DORSAL_FINS, TEMPERATURE_REGULATION } from "../../../../../constants/enums";
+import { BEHAVIOR, FEEDING_BEHAVIOR, GROUP_BEHAVIOR, NUM_DORSAL_FINS, TAIL_SPINES, TEMPERATURE_REGULATION } from "../../../../../constants/enums";
 
 export const mobulaMunkiana = {
     commonName: "Manta de Monk",
@@ -23,5 +23,6 @@ export const mobulaMunkiana = {
         GROUP_BEHAVIOR.SCHOOLING,
         TEMPERATURE_REGULATION.REGIONALLY_ENDOTHERMIC,
         NUM_DORSAL_FINS.ONE,
+        TAIL_SPINES.NO,
     ],
 };

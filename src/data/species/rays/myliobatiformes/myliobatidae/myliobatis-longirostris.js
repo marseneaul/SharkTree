@@ -18,6 +18,8 @@ export const myliobatisLongirostris = {
 
     tags: [
         NUM_DORSAL_FINS.ONE,
+        TAIL_SPINES
+        .YES,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],
 };

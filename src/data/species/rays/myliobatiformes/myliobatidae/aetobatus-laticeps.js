@@ -1,4 +1,4 @@
-import { BEHAVIOR, GROUP_BEHAVIOR, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { BEHAVIOR, GROUP_BEHAVIOR, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES } from "../../../../../constants/enums";
 
 export const aetobatusLaticeps = {
     commonName: "Pacific White-Spotted Eagle Ray",
@@ -20,6 +20,7 @@ export const aetobatusLaticeps = {
         BEHAVIOR.BREACHING,
         BEHAVIOR.MIGRATING,
         NUM_DORSAL_FINS.ONE,
+        TAIL_SPINES.YES,
         GROUP_BEHAVIOR.SCHOOLING,
         REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS,
     ],

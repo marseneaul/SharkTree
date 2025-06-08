@@ -1,4 +1,4 @@
-import { BEHAVIOR, GROUP_BEHAVIOR, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import { BEHAVIOR, GROUP_BEHAVIOR, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES } from "../../../../../constants/enums";
 
 export const rhinopteraBonasus = {
     commonName: "Cownose Ray",
@@ -17,6 +17,7 @@ export const rhinopteraBonasus = {
 
     tags: [
         NUM_DORSAL_FINS.ONE,
+        TAIL_SPINES.YES,
         BEHAVIOR.BREACHING,
         BEHAVIOR.MIGRATING,
         GROUP_BEHAVIOR.SCHOOLING,
