@@ -302,3 +302,16 @@ export const DEFAULT_TAGS = {
         SNOUT_SHAPE.SHORT,
     ]
 };
+
+
+//------------------------------------------------------------------------------------------------------------------
+
+export enum GEOCHRONOLOGIC_UNIT {
+    EON = "Eon",
+    ERA = "Era",
+    PERIOD = "Period",
+    SUBPERIOD = "Subperiod",
+    EPOCH = "Epoch",
+    SUBEPOCH = "Subepoch",
+    AGE = "Age"
+}
