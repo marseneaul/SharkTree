@@ -46,17 +46,4 @@ export class TextEventTrack extends BaseTrack {
             }
         }
     }
-
-    private drawStyledText(ctx: CanvasRenderingContext2D, text: string, x: number, y: number, normalFont: string, italicFont: string): void {
-        const parts = text.split('*');
-        let currentX = x;
-        for (let i = 0; i < parts.length; i++) {
-            const part = parts[i];
-            if (part) {  // Skip empty parts
-                ctx.font = (i % 2 === 0) ? normalFont : italicFont;
-                ctx.fillText(part, currentX, y);
-                currentX += ctx.measureText(part).width;
-            }
-        }
-    }
 }

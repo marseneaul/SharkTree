@@ -1,4 +1,4 @@
 export const tantalepis = {
-    name: "Tantalepis",
+    name: "*Tantalepis*",
     estimatedDate: "465(Mya)"
 }

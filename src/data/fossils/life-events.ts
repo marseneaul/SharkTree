@@ -78,7 +78,7 @@ export const lifeEvents: EventConfig[] = [
         estimatedDate: "430(Mya)"
     },
     {
-        eventName: "Late Ordovician (O-S) Extinction Event (LOME),",
+        eventName: "Late Ordovician (O-S) Extinction Event (LOME)",
         estimatedDate: "445(Mya)"
     },
     {

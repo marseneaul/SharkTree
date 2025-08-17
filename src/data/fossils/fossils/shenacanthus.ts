@@ -1,4 +1,4 @@
 export const shenacanthus = {
-    name: "Shenacanthus",
+    name: "*Shenacanthus*",
     estimatedDate: "436(Mya)"
 }

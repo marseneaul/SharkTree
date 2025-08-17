@@ -99,6 +99,19 @@ export class BaseTrack extends HTMLElement implements Listener {
         this.ctx.globalAlpha = 1;   
     }
 
+    drawStyledText(ctx: CanvasRenderingContext2D, text: string, x: number, y: number, normalFont: string, italicFont: string): void {
+        const parts = text.split('*');
+        let currentX = x;
+        for (let i = 0; i < parts.length; i++) {
+            const part = parts[i];
+            if (part) {  // Skip empty parts
+                ctx.font = (i % 2 === 0) ? normalFont : italicFont;
+                ctx.fillText(part, currentX, y);
+                currentX += ctx.measureText(part).width;
+            }
+        }
+    }
+
     /*----------------------------------------|
     |               HTML & CSS                |
     |----------------------------------------*/
@@ -123,6 +136,10 @@ export class BaseTrack extends HTMLElement implements Listener {
                 width: fit-content;
             }
 
+            #track-container, #canvas-container, #track-label {
+                box-sizing: border-box;
+            }
+
             #track-container {
                 display: flex;
                 flex-direction: column;
@@ -137,19 +154,22 @@ export class BaseTrack extends HTMLElement implements Listener {
                 background: #eee;
                 font-size: 14px;
                 font-weight: bold;
-                border: 1px solid black;
             }
 
             #canvas-container {
                 display: block;
                 width: ${this.width}px;
                 height: calc(100% - 30px);
+            }
+
+            #track-label, #canvas-container {
                 border: 1px solid black;
             }
             
             canvas {
                 width: 100%;
                 height: 100%;
+                display: block;
             }
         `;
     }

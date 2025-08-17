@@ -3,11 +3,15 @@ import { TimeTrack } from "./tracks/time-track";
 import { RulerTrack } from "./tracks/ruler-track";
 import { LifeEventsTrack } from "./tracks/life-events-track";
 import { SharksAndKinEventsTrack } from "./tracks/sharks-and-kin-events-track";
+import { FossilSitesEventsTrack } from "./tracks/fossil-sites-events-track";
+import { PhylogeneticTreeTrack } from "./tracks/phylogenetic-tree-track";
 
 customElements.define("time-track", TimeTrack);
 customElements.define("ruler-track", RulerTrack);
 customElements.define("life-events-track", LifeEventsTrack);
 customElements.define("sharks-and-kin-events-track", SharksAndKinEventsTrack);
+customElements.define("fossil-sites-events-track", FossilSitesEventsTrack);
+customElements.define("phylogenetic-tree-track", PhylogeneticTreeTrack);
 
 export class FossilTreeComponent extends HTMLElement {
     constructor() {
@@ -67,10 +71,17 @@ export class FossilTreeComponent extends HTMLElement {
         lifeEventsTrack.setAttribute("store", this.storeId);
         container?.appendChild(lifeEventsTrack);
 
-
         const sharksAndKinEventsTrack = document.createElement("sharks-and-kin-events-track");
         sharksAndKinEventsTrack.setAttribute("store", this.storeId);
         container?.appendChild(sharksAndKinEventsTrack);
+
+        const fossilSitesEventsTrack = document.createElement("fossil-sites-events-track");
+        fossilSitesEventsTrack.setAttribute("store", this.storeId);
+        container?.appendChild(fossilSitesEventsTrack);
+
+        const phylogeneticTreeTrack = document.createElement("phylogenetic-tree-track");
+        phylogeneticTreeTrack.setAttribute("store", this.storeId);
+        container?.appendChild(phylogeneticTreeTrack);
     }
 
     /*----------------------------------------|

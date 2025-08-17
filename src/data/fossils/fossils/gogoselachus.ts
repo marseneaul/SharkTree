@@ -1,4 +1,4 @@
 export const gogoselachus = {
-    name: "Gogoselachus lynbeazleyae",
-    estimatedDate: "380?(Mya)"
+    name: "*Gogoselachus lynbeazleyae*",
+    estimatedDate: "380(Mya)"
 }

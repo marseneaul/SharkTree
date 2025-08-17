@@ -1,4 +1,4 @@
 export const doliodus = {
-    name: "Doliodus",
+    name: "*Doliodus*",
     estimatedDate: "397(Mya)"
 }
