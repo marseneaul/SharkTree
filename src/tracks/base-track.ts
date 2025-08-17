@@ -1,5 +1,4 @@
 import { Drawing } from "../drawing/drawing";
-import { TimeConfig } from "../interfaces/time-config";
 import { CoordinateStore, Listener, Store } from "../store";
 
 export class BaseTrack extends HTMLElement implements Listener {
@@ -8,9 +7,9 @@ export class BaseTrack extends HTMLElement implements Listener {
     shadow: ShadowRoot;
     canvas: HTMLCanvasElement;
     ctx: CanvasRenderingContext2D;
+    label: string;
 
     width: number;
-    data: TimeConfig;
     store: Store;
 
     isPanning: boolean;
@@ -21,6 +20,7 @@ export class BaseTrack extends HTMLElement implements Listener {
         this.template = document.createElement("template");
         this.shadow = this.attachShadow({mode: "open"});
         this.name = "base";
+        this.label = "";
 
         this.isPanning = false;
         this.mouseDownPos = [0, 0];
@@ -106,8 +106,11 @@ export class BaseTrack extends HTMLElement implements Listener {
     html() {
         return `
             <style> ${this.css()} </style>
-            <div id="canvas-container">
-                <canvas id='${this.name}-track'></canvas>
+            <div id="track-container">
+                <div id="track-label">${this.label || '&nbsp;'}</div>
+                <div id="canvas-container">
+                    <canvas id='${this.name}-track'></canvas>
+                </div>
             </div>
         `;
     }
@@ -120,10 +123,27 @@ export class BaseTrack extends HTMLElement implements Listener {
                 width: fit-content;
             }
 
+            #track-container {
+                display: flex;
+                flex-direction: column;
+                width: ${this.width}px;
+                height: 100%;
+            }
+
+            #track-label {
+                height: 30px;
+                line-height: 30px;
+                text-align: center;
+                background: #eee;
+                font-size: 14px;
+                font-weight: bold;
+                border: 1px solid black;
+            }
+
             #canvas-container {
                 display: block;
                 width: ${this.width}px;
-                height: 100%;
+                height: calc(100% - 30px);
                 border: 1px solid black;
             }
             

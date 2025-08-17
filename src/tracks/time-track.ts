@@ -4,9 +4,11 @@ import { TimeConfig } from "../interfaces/time-config";
 import { BaseTrack } from "./base-track";
 
 export class TimeTrack extends BaseTrack {
+    data: TimeConfig;
     constructor() {
         super();
         this.name = "time";
+        this.label = "Geologic Time";
 
         this.width = 240;
         this.data = geologicalTimeConfig;
@@ -48,10 +50,10 @@ export class TimeTrack extends BaseTrack {
             this.ctx.fillStyle = color;
             this.ctx.globalAlpha = 0.7;
             this.ctx.fillRect(x, yEnd, colW, height);
+            this.ctx.strokeStyle = "black";
+            this.ctx.strokeRect(x, yEnd, colW, height);
             this.ctx.globalAlpha = 1;
 
-            // Draw border for separation
-            this.ctx.strokeStyle = "black";
             this.ctx.lineWidth = 1;
             this.ctx.beginPath();
             this.ctx.moveTo(x, yEnd);

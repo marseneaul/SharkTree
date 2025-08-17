@@ -1,9 +1,13 @@
 import { CoordinateStore } from "./store";
 import { TimeTrack } from "./tracks/time-track";
 import { RulerTrack } from "./tracks/ruler-track";
+import { LifeEventsTrack } from "./tracks/life-events-track";
+import { SharksAndKinEventsTrack } from "./tracks/sharks-and-kin-events-track";
 
 customElements.define("time-track", TimeTrack);
 customElements.define("ruler-track", RulerTrack);
+customElements.define("life-events-track", LifeEventsTrack);
+customElements.define("sharks-and-kin-events-track", SharksAndKinEventsTrack);
 
 export class FossilTreeComponent extends HTMLElement {
     constructor() {
@@ -54,9 +58,19 @@ export class FossilTreeComponent extends HTMLElement {
         const rulerTrack = document.createElement("ruler-track");
         rulerTrack.setAttribute("store", this.storeId);
         container?.appendChild(rulerTrack);
+
         const timeTrack = document.createElement("time-track");
         timeTrack.setAttribute("store", this.storeId);
         container?.appendChild(timeTrack);
+
+        const lifeEventsTrack = document.createElement("life-events-track");
+        lifeEventsTrack.setAttribute("store", this.storeId);
+        container?.appendChild(lifeEventsTrack);
+
+
+        const sharksAndKinEventsTrack = document.createElement("sharks-and-kin-events-track");
+        sharksAndKinEventsTrack.setAttribute("store", this.storeId);
+        container?.appendChild(sharksAndKinEventsTrack);
     }
 
     /*----------------------------------------|
