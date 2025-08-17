@@ -5,4 +5,5 @@ export interface TimeConfig {
     geologicalName?: string;
     geochronologicUnit?: GEOCHRONOLOGIC_UNIT;
     timeInterval?: string;
+    color?: string;
 }

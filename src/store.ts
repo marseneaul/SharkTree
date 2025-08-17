@@ -25,15 +25,15 @@ export class Store implements Observer {
     }
 
     initializeStore(): void {
-        this.initializeScale();
         this.listeners = {};
         this.ageOfEarth = new TimeInterval(0, 4567000000);
+        this.initializeScale();
         this.currentTimeInterval = this.ageOfEarth;
     }
 
     initializeScale(): void {
-        const domain = [0, 4567000000];
-        const range = [0, 806]; 
+        const domain = this.ageOfEarth.toArray();
+        const range = [0, 0];
         this.scale = new Scale(domain, range);
     }
 

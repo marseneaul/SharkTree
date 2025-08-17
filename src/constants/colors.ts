@@ -1,4 +1,4 @@
-import { GEOCHRONOLOGIC_UNIT, TAXONOMIC_LEVELS } from "./enums";
+import { TAXONOMIC_LEVELS } from "./enums";
 
 export const BLACK = "rgba(0, 0, 0, 1)";
 export const WHITE = "rgba(255, 255, 255, 1";
@@ -14,11 +14,3 @@ export const TAXONOMIC_COLORS = {
     [TAXONOMIC_LEVELS.SUPERORDER]: "#43AA8B",
     [TAXONOMIC_LEVELS.SUBDIVISION]: "#577590"
 }
-
-export const GEOLOGICAL_COLORS = [
-    "#F94144",
-    "#F3722C",
-    "#F9C74F",
-    "#43AA8B",
-    "#577590"
-];

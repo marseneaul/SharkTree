@@ -116,8 +116,8 @@ export class BaseTrack extends HTMLElement implements Listener {
         return `
             :host {
                 display: block;
-                width: 100%;
                 height: 100%;
+                width: fit-content;
             }
 
             #canvas-container {
