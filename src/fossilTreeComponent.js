@@ -1,9 +1,9 @@
+import { CoordinateStore } from "./store";
 import { TimeTrack } from "./tracks/time-track";
 
 customElements.define("time-track", TimeTrack);
 
 export class FossilTreeComponent extends HTMLElement {
-
     constructor() {
         super();
         this.template = document.createElement("template");
@@ -11,10 +11,20 @@ export class FossilTreeComponent extends HTMLElement {
     }
 
     /*----------------------------------------|
+    |                 GETTERS                 |
+    |----------------------------------------*/
+
+    getStoreId() {
+        return this.storeId
+    }
+
+    /*----------------------------------------|
     |                LIFECYCLE                |
     |----------------------------------------*/
 
     connectedCallback() {
+        this.storeId = this.getAttribute("store");
+
         this.render();
         this.initializeFossilTree();
         this.setupEventListeners();
@@ -76,15 +86,17 @@ export class FossilTreeComponent extends HTMLElement {
     |----------------------------------------*/
 
     setupEventListeners() {
-        window.addEventListener("mousedown", this.mouseHandler());
+        window.addEventListener("wheel", this.wheelHandler.bind(this), { passive: false });
     }
 
     removeEventListeners() {
         return;
     }
 
-    mouseHandler(event) {
-        console.log(event)
+    wheelHandler(event) {
+        const store = CoordinateStore.getInstance(this.storeId);
+        event.preventDefault();
+        store.zoom(event.deltaY);
     }
 }
 

@@ -4,5 +4,5 @@ export interface TimeConfig {
     children?: TimeConfig[];
     geologicalName?: string;
     geochronologicUnit?: GEOCHRONOLOGIC_UNIT;
-    timeRange?: string;
+    timeInterval?: string;
 }

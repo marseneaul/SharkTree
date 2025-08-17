@@ -13,11 +13,17 @@ export class BaseTrack extends HTMLElement implements Listener {
     data: TimeConfig;
     store: Store;
 
+    isPanning: boolean;
+    mouseDownPos: [number, number];
+
     constructor() {
         super();
         this.template = document.createElement("template");
         this.shadow = this.attachShadow({mode: "open"});
         this.name = "base";
+
+        this.isPanning = false;
+        this.mouseDownPos = [0, 0];
     }
 
     /*----------------------------------------|
@@ -36,12 +42,21 @@ export class BaseTrack extends HTMLElement implements Listener {
         return this.canvas.getBoundingClientRect().height;
     }
 
-    update(): void {}
+    /*----------------------------------------|
+    |                 SETTERS                 |
+    |----------------------------------------*/
 
-    redraw(): void {}
+    setCursorStyle(style: string): void {
+        this.canvas.style.cursor = style;
+    }
+
+    /*----------------------------------------|
+    |                LIFECYCLE                |
+    |----------------------------------------*/
 
     connectedCallback() {
         this.render();
+        this.initializeTrack();
     }
     
     render(): void {
@@ -49,9 +64,28 @@ export class BaseTrack extends HTMLElement implements Listener {
         this.shadow.appendChild(this.template.content.cloneNode(true));
         this.canvas = this.shadowRoot.querySelector("canvas");
         this.ctx = this.canvas.getContext("2d");
-        this.store = new Store(this.getStoreId());
+        this.store = CoordinateStore.getInstance(this.getStoreId());
+        this.addEventListeners();
         this.redraw();
     }
+
+    initializeTrack(): void {
+        this.store.registerListener(this);
+    }
+
+    addEventListeners(): void {
+        this.canvas.addEventListener("mouseup", this.mouseUpHandler.bind(this));
+        this.canvas.addEventListener("mousedown", this.mouseDownHandler.bind(this));
+        this.canvas.addEventListener("mousemove", this.mouseMoveHandler.bind(this));
+    }
+
+    /*----------------------------------------|
+    |                 DRAWING                 |
+    |----------------------------------------*/
+
+    update(): void {}
+
+    redraw(): void {}
 
     refreshCanvas(): void {
         this.clearCanvas();
@@ -98,5 +132,37 @@ export class BaseTrack extends HTMLElement implements Listener {
                 height: 100%;
             }
         `;
+    }
+
+    /*----------------------------------------|
+    |                HANDLERS                 |
+    |----------------------------------------*/
+
+    mouseDownHandler(event: MouseEvent): void {
+        event.preventDefault();
+        this.mouseDownPos = [event.offsetX, event.offsetY];
+        this.isPanning = true;
+    }
+
+    mouseMoveHandler(event: MouseEvent): void {
+        if (this.isPanning) this.handlePanning(event);
+        else this.handleMouseNotOverFeature(event);
+    }
+
+    mouseUpHandler(event: MouseEvent): void {
+        if (this.isPanning) this.isPanning = false;
+    }
+
+    handlePanning(event: MouseEvent): void {
+        this.setCursorStyle("grabbing");
+        this.scrollVertically(event);
+    }
+
+    handleMouseNotOverFeature(event: MouseEvent): void {
+        this.setCursorStyle("grab");
+    }
+
+    scrollVertically(event: MouseEvent): void {
+        this.store.scroll(-event.movementY);
     }
 }

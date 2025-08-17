@@ -2,7 +2,7 @@
   "name": "sharktree",
   "version": "1.0.0",
   "description": "",
-  "main": "src/sharkTreeComponent.js",
+  "main": "src/fossilTreeComponent.js",
   "homepage": "https://treeofsharks.com",
   "scripts": {
     "build": "webpack",

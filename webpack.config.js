@@ -6,7 +6,7 @@ const BundleAnalyzerPlugin =
 module.exports = {
   mode: "development",
   entry: {
-    bundle: path.resolve(__dirname, "src/sharkTreeComponent.js"),
+    bundle: path.resolve(__dirname, "src/fossilTreeComponent.js"),
   },
   resolve: {
     extensions: [".ts", ".js"],
