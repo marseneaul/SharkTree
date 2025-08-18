@@ -222,6 +222,9 @@ export class SharkTreeComponent extends HTMLElement {
         return `
             <style> ${this.css()} </style>
             <div id="app-container">
+                <nav id="main-nav">
+                    <a href="/fossil.html">Go to Fossil Tree</a>
+                </nav>
                 <div id="controls-container">
                     <div id="species-type-container">
                         <label for="species-type-dropdown">Species Type:</label>
@@ -303,9 +306,11 @@ export class SharkTreeComponent extends HTMLElement {
                         </ul>
                     </div>
                 </div>
-                <div id="phylo-container"></div>
-                <div id="shark-screen-container">
-                    <div id="shark-screen"></div>
+                <div id="shark-content">
+                    <div id="phylo-container"></div>
+                    <div id="shark-screen-container">
+                        <div id="shark-screen"></div>
+                    </div>
                 </div>
             </div>
         `;
@@ -318,12 +323,35 @@ export class SharkTreeComponent extends HTMLElement {
                 width: 100%;
                 height: 100%;
             }
+            #main-nav {
+                background: #eee;
+                padding: 15px;
+                text-align: center;
+                border-bottom: 1px solid #E0E0E0;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+                font-family: "Roboto", sans-serif;
+                font-size: 16px;
+                font-weight: bold;
+                position: relative;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: 99;
+            }
+            #main-nav a {
+                color: #00688B;
+                text-decoration: none;
+                transition: color 0.2s ease;
+            }
+            #main-nav a:hover {
+                color: #004d6f;
+            }
             #app-container {
                 position: relative;
                 width: 100%;
                 height: 100%;
                 display: flex;
-                flex-direction: row;
+                flex-direction: column;
                 background: #FFFFFF;
                 font-family: "Roboto", sans-serif;
             }
@@ -339,6 +367,11 @@ export class SharkTreeComponent extends HTMLElement {
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
                 margin: 10px;
                 overflow: hidden;
+            }
+            #shark-content {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
             }
             #shark-screen-container {
                 position: relative;
@@ -396,7 +429,7 @@ export class SharkTreeComponent extends HTMLElement {
                 margin-top: 10px;
             }
             #controls-container {
-                position: absolute;
+                position: relative;
                 top: 10px;
                 left: 10px;
                 display: flex;

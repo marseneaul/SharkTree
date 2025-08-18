@@ -75,6 +75,7 @@ export class BaseTrack extends HTMLElement implements Listener {
 
     addEventListeners(): void {
         this.canvas.addEventListener("mouseup", this.mouseUpHandler.bind(this));
+        this.canvas.addEventListener("mouseout", this.mouseOutHandler.bind(this));
         this.canvas.addEventListener("mousedown", this.mouseDownHandler.bind(this));
         this.canvas.addEventListener("mousemove", this.mouseMoveHandler.bind(this));
     }
@@ -189,8 +190,18 @@ export class BaseTrack extends HTMLElement implements Listener {
         else this.handleMouseNotOverFeature(event);
     }
 
+    mouseOutHandler(event: MouseEvent): void {
+        if (this.isPanning) {
+            this.isPanning = false;
+            this.setCursorStyle("grab");
+        }
+    }
+
     mouseUpHandler(event: MouseEvent): void {
-        if (this.isPanning) this.isPanning = false;
+        if (this.isPanning) {
+            this.isPanning = false;
+            this.setCursorStyle("grab");
+        }
     }
 
     handlePanning(event: MouseEvent): void {

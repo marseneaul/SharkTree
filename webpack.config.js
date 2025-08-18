@@ -1,19 +1,19 @@
-const path = require("path")
-const HtmlWebpackPlugin = require("html-webpack-plugin")
-const BundleAnalyzerPlugin =
-  require("webpack-bundle-analyzer").BundleAnalyzerPlugin
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 module.exports = {
   mode: "development",
   entry: {
-    bundle: path.resolve(__dirname, "src/fossilTreeComponent.js"),
+    shark: path.resolve(__dirname, "src/sharkTreeComponent.js"), // Entry for SharkTreeComponent (default page)
+    fossil: path.resolve(__dirname, "src/fossilTreeComponent.js"), // Entry for FossilTreeComponent
   },
   resolve: {
     extensions: [".ts", ".js"],
   },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "[name][contenthash].js",
+    filename: "[name].[contenthash].js",
     clean: true,
     assetModuleFilename: "[name][ext]",
   },
@@ -32,7 +32,7 @@ module.exports = {
     rules: [
       {
         test: /\.ts$/,
-        use: 'ts-loader',
+        use: "ts-loader",
         exclude: /node_modules/,
       },
       {
@@ -57,10 +57,17 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "Webpack App",
-      filename: "index.html",
-      template: "src/template.html",
+      title: "Shark Tree",
+      filename: "index.html", // Default page (opens first)
+      template: "src/template_shark.html",
+      chunks: ["shark"], // Only include shark bundle
+    }),
+    new HtmlWebpackPlugin({
+      title: "Fossil Tree",
+      filename: "fossil.html",
+      template: "src/template_fossil.html",
+      chunks: ["fossil"], // Only include fossil bundle
     }),
     new BundleAnalyzerPlugin(),
   ],
-}
+};

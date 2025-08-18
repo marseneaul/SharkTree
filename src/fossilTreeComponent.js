@@ -92,6 +92,9 @@ export class FossilTreeComponent extends HTMLElement {
         return `
             <style> ${this.css()} </style>
             <div id="app-container">
+                <nav id="main-nav">
+                    <a href="/">Go to Shark Tree</a>
+                </nav>
                 <div id="track-container"></div>
             </div>
         `;
@@ -103,6 +106,29 @@ export class FossilTreeComponent extends HTMLElement {
                 display: block;
                 width: 100%;
                 height: 100vh;
+            }
+            #main-nav {
+                background: #eee;
+                padding: 15px;
+                text-align: center;
+                border-bottom: 1px solid #E0E0E0;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+                font-family: "Roboto", sans-serif;
+                font-size: 16px;
+                font-weight: bold;
+                position: relative;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: 99;
+            }
+            #main-nav a {
+                color: #00688B;
+                text-decoration: none;
+                transition: color 0.2s ease;
+            }
+            #main-nav a:hover {
+                color: #004d6f;
             }
             #app-container {
                 position: relative;
