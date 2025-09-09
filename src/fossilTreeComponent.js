@@ -93,9 +93,16 @@ export class FossilTreeComponent extends HTMLElement {
             <style> ${this.css()} </style>
             <div id="app-container">
                 <nav id="main-nav">
-                    <a href="/">Go to Shark Tree</a>
+                    <a href="/" class="btn btn-ghost">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Shark Tree
+                    </a>
                 </nav>
-                <div id="track-container"></div>
+                <div id="track-container" class="fade-in"></div>
             </div>
         `;
     }
@@ -106,43 +113,90 @@ export class FossilTreeComponent extends HTMLElement {
                 display: block;
                 width: 100%;
                 height: 100vh;
+                font-family: var(--font-family-primary, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
             }
+            
             #main-nav {
-                background: #eee;
-                padding: 15px;
+                background: var(--color-white, #FFFFFF);
+                padding: var(--space-4, 1rem);
                 text-align: center;
-                border-bottom: 1px solid #E0E0E0;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-                font-family: "Roboto", sans-serif;
-                font-size: 16px;
-                font-weight: bold;
-                position: relative;
+                border-bottom: 1px solid var(--color-border-light, #E5E7EB);
+                box-shadow: var(--shadow-sm, 0 1px 2px 0 rgba(0, 0, 0, 0.05));
+                font-size: var(--text-base, 1rem);
+                font-weight: var(--font-weight-semibold, 600);
+                position: sticky;
                 top: 0;
-                left: 0;
-                width: 100%;
-                z-index: 99;
+                z-index: var(--z-sticky, 1020);
+                backdrop-filter: blur(8px);
             }
+            
             #main-nav a {
-                color: #00688B;
+                color: var(--color-primary, #00688B);
                 text-decoration: none;
-                transition: color 0.2s ease;
+                transition: all var(--transition-fast, 150ms ease-in-out);
+                padding: var(--space-2, 0.5rem) var(--space-4, 1rem);
+                border-radius: var(--radius-md, 0.375rem);
+                font-weight: var(--font-weight-medium, 500);
+                display: inline-flex;
+                align-items: center;
+                gap: var(--space-2, 0.5rem);
             }
+            
             #main-nav a:hover {
-                color: #004d6f;
+                color: var(--color-primary-hover, #004d6f);
+                background-color: var(--color-primary-light, #E0F7FA);
             }
+            
             #app-container {
                 position: relative;
                 width: 100%;
-                height: 100%;
-                background: #FFFFFF;
-                font-family: "Roboto", sans-serif;
+                height: calc(100vh - 80px);
+                background: var(--color-bg-primary, #FFFFFF);
+                display: flex;
+                flex-direction: column;
             }
+            
             #track-container {
                 display: flex;
                 flex-direction: row;
                 justify-content: flex-start;
                 width: 100%;
                 height: 100%;
+                overflow-x: auto;
+                overflow-y: hidden;
+                padding: var(--space-4, 1rem);
+                gap: var(--space-4, 1rem);
+            }
+            
+            /* Responsive Design */
+            @media (max-width: 1024px) {
+                #track-container {
+                    flex-direction: column;
+                    overflow-x: hidden;
+                    overflow-y: auto;
+                    height: auto;
+                }
+            }
+            
+            @media (max-width: 768px) {
+                #main-nav {
+                    padding: var(--space-3, 0.75rem);
+                }
+                
+                #track-container {
+                    padding: var(--space-2, 0.5rem);
+                    gap: var(--space-2, 0.5rem);
+                }
+            }
+            
+            /* Loading and Animation States */
+            .fade-in {
+                animation: fadeIn var(--transition-normal, 250ms ease-in-out);
+            }
+            
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
             }
         `;
     }

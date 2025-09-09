@@ -223,28 +223,35 @@ export class SharkTreeComponent extends HTMLElement {
             <style> ${this.css()} </style>
             <div id="app-container">
                 <nav id="main-nav">
-                    <a href="/fossil.html">Go to Fossil Tree</a>
+                    <a href="/fossil.html" class="btn btn-ghost">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Fossil Tree
+                    </a>
                 </nav>
                 <div id="controls-container">
-                    <div id="species-type-container">
-                        <label for="species-type-dropdown">Species Type:</label>
+                    <div class="control-group" id="species-type-container">
+                        <label for="species-type-dropdown">Species Type</label>
                         <select id="species-type-dropdown">
                             <option value="${SPECIES_TYPE.SHARKS}">Sharks</option>
                             <option value="${SPECIES_TYPE.RAYS}">Rays</option>
                             <option value="${SPECIES_TYPE.CHIMAERAS}">Chimaeras</option>
                         </select>
                     </div>
-                    <div id="search-container">
-                        <label for="shark-search">Search Species:</label>
+                    <div class="control-group" id="search-container">
+                        <label for="shark-search">Search Species</label>
                         <input type="text" id="shark-search" placeholder="Enter common or binomial name" aria-describedby="search-label">
                         <div id="search-suggestions" class="suggestions"></div>
                     </div>
-                    <div id="dropdown-container">
-                        <label for="shark-config-dropdown">Configuration:</label>
+                    <div class="control-group" id="dropdown-container">
+                        <label for="shark-config-dropdown">Configuration</label>
                         <select id="shark-config-dropdown"></select>
                     </div>
-                    <div id="taxonomic-container">
-                        <label for="taxonomic-dropdown">Taxonomic Level:</label>
+                    <div class="control-group" id="taxonomic-container">
+                        <label for="taxonomic-dropdown">Taxonomic Level</label>
                         <select id="taxonomic-dropdown">
                             <option value="">None</option>
                             <option value="genus">Genus</option>
@@ -257,8 +264,8 @@ export class SharkTreeComponent extends HTMLElement {
                             <option value="">All</option>
                         </select>
                     </div>
-                    <div id="tag-container">
-                        <label for="tag-dropdown">Tag Category:</label>
+                    <div class="control-group" id="tag-container">
+                        <label for="tag-dropdown">Tag Category</label>
                         <select id="tag-dropdown">
                             <option value="">None</option>
                             <option value="conservationStatus">Conservation Status</option>
@@ -288,28 +295,31 @@ export class SharkTreeComponent extends HTMLElement {
                             <option value="">All</option>
                         </select>
                     </div>
-                    <button id="info-button" aria-label="How to use this app">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="12" cy="12" r="11" stroke="#00688B" stroke-width="1" fill="#FFFFFF" />
-                            <text x="12" y="17" font-size="13" font-weight="300" font-family="Open Sans, sans-serif" fill="#00688B" text-anchor="middle">?</text>
-                        </svg>
-                    </button>
-                    <div id="info-tooltip">
+                    <div class="control-group">
+                        <button id="info-button" class="btn btn-ghost" aria-label="How to use this app">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                <path d="M12 16V12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12 8H12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <div id="info-tooltip">
                         <strong>How to Use:</strong>
                         <ul>
                             <li>Type a species' common or scientific name in "Search Species" to find and highlight it.</li>
                             <li>Choose a species type (Sharks or Rays or Chimaeras) and group from "Configuration" to display its phylogenetic tree.</li>
-                            <li>Select a "Taxonomic Level" (e.g., genus or family) to color matching species’ nodes and paths.</li>
+                            <li>Select a "Taxonomic Level" (e.g., genus or family) to color matching species' nodes and paths.</li>
                             <li>Pick a "Tag Category" (e.g., conservation status) to add dashed lines to paths of species with that trait.</li>
                             <li>Click a species' node to view its details on the right panel.</li>
                             <li>Scroll to rotate, pinch to zoom, double-click to reset, or drag to pan the tree.</li>
                         </ul>
+                        </div>
                     </div>
                 </div>
                 <div id="shark-content">
-                    <div id="phylo-container"></div>
+                    <div id="phylo-container" class="fade-in"></div>
                     <div id="shark-screen-container">
-                        <div id="shark-screen"></div>
+                        <div id="shark-screen" class="fade-in"></div>
                     </div>
                 </div>
             </div>
@@ -321,208 +331,265 @@ export class SharkTreeComponent extends HTMLElement {
             :host {
                 display: block;
                 width: 100%;
-                height: 100%;
+                height: 100vh;
+                font-family: var(--font-family-primary, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
             }
+            
             #main-nav {
-                background: #eee;
-                padding: 15px;
+                background: var(--color-white, #FFFFFF);
+                padding: var(--space-4, 1rem);
                 text-align: center;
-                border-bottom: 1px solid #E0E0E0;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-                font-family: "Roboto", sans-serif;
-                font-size: 16px;
-                font-weight: bold;
-                position: relative;
+                border-bottom: 1px solid var(--color-border-light, #E5E7EB);
+                box-shadow: var(--shadow-sm, 0 1px 2px 0 rgba(0, 0, 0, 0.05));
+                font-size: var(--text-base, 1rem);
+                font-weight: var(--font-weight-semibold, 600);
+                position: sticky;
                 top: 0;
-                left: 0;
-                width: 100%;
-                z-index: 99;
+                z-index: var(--z-sticky, 1020);
+                backdrop-filter: blur(8px);
             }
+            
             #main-nav a {
-                color: #00688B;
+                color: var(--color-primary, #00688B);
                 text-decoration: none;
-                transition: color 0.2s ease;
+                transition: all var(--transition-fast, 150ms ease-in-out);
+                padding: var(--space-2, 0.5rem) var(--space-4, 1rem);
+                border-radius: var(--radius-md, 0.375rem);
+                font-weight: var(--font-weight-medium, 500);
             }
+            
             #main-nav a:hover {
-                color: #004d6f;
+                color: var(--color-primary-hover, #004d6f);
+                background-color: var(--color-primary-light, #E0F7FA);
             }
+            
             #app-container {
                 position: relative;
                 width: 100%;
-                height: 100%;
+                height: calc(100vh - 80px);
                 display: flex;
                 flex-direction: column;
-                background: #FFFFFF;
-                font-family: "Roboto", sans-serif;
+                background: var(--color-bg-primary, #FFFFFF);
             }
+            
+            #controls-container {
+                position: sticky;
+                top: 0;
+                z-index: var(--z-sticky, 1020);
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: var(--space-4, 1rem);
+                padding: var(--space-4, 1rem);
+                background: var(--color-white, #FFFFFF);
+                border-bottom: 1px solid var(--color-border-light, #E5E7EB);
+                box-shadow: var(--shadow-sm, 0 1px 2px 0 rgba(0, 0, 0, 0.05));
+                backdrop-filter: blur(8px);
+            }
+            
+            .control-group {
+                display: flex;
+                flex-direction: column;
+                gap: var(--space-1, 0.25rem);
+                min-width: 0;
+                position: relative;
+            }
+            
+            .control-group label {
+                font-size: var(--text-xs, 0.75rem);
+                font-weight: var(--font-weight-medium, 500);
+                color: var(--color-text-secondary, #6B7280);
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+            }
+            
+            #shark-search {
+                padding: var(--space-2, 0.5rem) var(--space-3, 0.75rem);
+                border: 1px solid var(--color-border-light, #E5E7EB);
+                border-radius: var(--radius-md, 0.375rem);
+                background: var(--color-white, #FFFFFF);
+                font-size: var(--text-sm, 0.875rem);
+                color: var(--color-text-primary, #1F2937);
+                box-shadow: var(--shadow-sm, 0 1px 2px 0 rgba(0, 0, 0, 0.05));
+                width: 200px;
+                transition: all var(--transition-fast, 150ms ease-in-out);
+            }
+            
+            #shark-search:focus {
+                outline: none;
+                border-color: var(--color-primary, #00688B);
+                box-shadow: 0 0 0 3px var(--color-primary-light, #E0F7FA);
+            }
+            
+            #search-suggestions {
+                position: absolute;
+                top: calc(100% + var(--space-1, 0.25rem));
+                left: 0;
+                width: 200px;
+                max-height: 200px;
+                overflow-y: auto;
+                background: var(--color-white, #FFFFFF);
+                border: 1px solid var(--color-border-light, #E5E7EB);
+                border-radius: var(--radius-md, 0.375rem);
+                box-shadow: var(--shadow-lg, 0 10px 15px -3px rgba(0, 0, 0, 0.1));
+                z-index: var(--z-dropdown, 1000);
+                display: none;
+            }
+            
+            #search-suggestions.visible {
+                display: block;
+                animation: slideUp var(--transition-normal, 250ms ease-out);
+            }
+            
+            .suggestion-item {
+                padding: var(--space-2, 0.5rem) var(--space-3, 0.75rem);
+                font-size: var(--text-sm, 0.875rem);
+                color: var(--color-text-primary, #1F2937);
+                cursor: pointer;
+                transition: background-color var(--transition-fast, 150ms ease-in-out);
+                border-bottom: 1px solid var(--color-border-light, #E5E7EB);
+            }
+            
+            .suggestion-item:last-child {
+                border-bottom: none;
+            }
+            
+            .suggestion-item:hover {
+                background: var(--color-primary-light, #E0F7FA);
+                color: var(--color-primary, #00688B);
+            }
+            
+            .suggestion-item mark {
+                background: var(--color-accent, #F9C74F);
+                font-weight: var(--font-weight-semibold, 600);
+                padding: 0 2px;
+                border-radius: 2px;
+            }
+            
+            select {
+                padding: var(--space-2, 0.5rem) var(--space-3, 0.75rem);
+                border: 1px solid var(--color-border-light, #E5E7EB);
+                border-radius: var(--radius-md, 0.375rem);
+                background: var(--color-white, #FFFFFF);
+                font-size: var(--text-sm, 0.875rem);
+                color: var(--color-text-primary, #1F2937);
+                box-shadow: var(--shadow-sm, 0 1px 2px 0 rgba(0, 0, 0, 0.05));
+                min-width: 120px;
+                max-width: 200px;
+                cursor: pointer;
+                transition: all var(--transition-fast, 150ms ease-in-out);
+                appearance: none;
+                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+                background-position: right var(--space-2, 0.5rem) center;
+                background-repeat: no-repeat;
+                background-size: 1.5em 1.5em;
+                padding-right: var(--space-10, 2.5rem);
+            }
+            
+            select:hover {
+                border-color: var(--color-primary, #00688B);
+            }
+            
+            select:focus {
+                outline: none;
+                border-color: var(--color-primary, #00688B);
+                box-shadow: 0 0 0 3px var(--color-primary-light, #E0F7FA);
+            }
+            
+            #shark-content {
+                display: flex;
+                flex: 1;
+                min-height: 0;
+            }
+            
             #phylo-container {
                 position: relative;
-                width: 60%;
-                height: 100%;
+                flex: 1;
+                min-width: 0;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                background: #FFFFFF;
-                border-radius: 10px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                margin: 10px;
+                background: var(--color-white, #FFFFFF);
+                border-radius: var(--radius-lg, 0.5rem);
+                box-shadow: var(--shadow-md, 0 4px 6px -1px rgba(0, 0, 0, 0.1));
+                margin: var(--space-4, 1rem);
                 overflow: hidden;
             }
-            #shark-content {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-            }
+            
             #shark-screen-container {
                 position: relative;
-                width: 40%;
-                height: 100%;
+                width: 400px;
+                min-width: 400px;
                 display: flex;
                 flex-direction: column;
-                align-items: stretch;
-                padding: 20px;
-                margin-right: 20px;
+                padding: var(--space-4, 1rem);
+                margin-right: var(--space-4, 1rem);
                 overflow: hidden;
             }
+            
             #shark-screen {
                 position: relative;
                 width: 100%;
-                height: auto;
-                min-height: 100%;
-                max-height: none;
-                padding: 20px;
-                background: #F9F9F9;
-                border: 1px solid #E0E0E0;
-                border-radius: 8px;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+                height: 100%;
+                padding: var(--space-6, 1.5rem);
+                background: var(--color-bg-secondary, #F9FAFB);
+                border: 1px solid var(--color-border-light, #E5E7EB);
+                border-radius: var(--radius-lg, 0.5rem);
+                box-shadow: var(--shadow-sm, 0 1px 2px 0 rgba(0, 0, 0, 0.05));
                 overflow-y: auto;
-                font-size: 14px;
-                line-height: 1.6;
-                color: #2F4F4F;
+                font-size: var(--text-sm, 0.875rem);
+                line-height: var(--line-height-relaxed, 1.75);
+                color: var(--color-text-primary, #1F2937);
                 box-sizing: border-box;
             }
+            
             #shark-screen h2 {
-                color: #00688B;
-                margin: 0 0 10px 0;
-                font-size: 21px;
+                color: var(--color-primary, #00688B);
+                margin: 0 0 var(--space-4, 1rem) 0;
+                font-size: var(--text-xl, 1.25rem);
+                font-weight: var(--font-weight-semibold, 600);
             }
+            
             #shark-screen .section {
-                margin-bottom: 15px;
+                margin-bottom: var(--space-4, 1rem);
             }
+            
             #shark-screen .section strong {
-                color: #2F4F4F;
-                font-weight: 600;
+                color: var(--color-text-primary, #1F2937);
+                font-weight: var(--font-weight-semibold, 600);
             }
+            
             #shark-screen ul {
                 list-style-type: none;
-                padding-left: 10px;
+                padding-left: var(--space-4, 1rem);
             }
+            
             #shark-screen li {
-                margin: 5px 0;
-                color: #555;
+                margin: var(--space-2, 0.5rem) 0;
+                color: var(--color-text-secondary, #6B7280);
+                position: relative;
             }
+            
+            #shark-screen li:before {
+                content: "•";
+                color: var(--color-primary, #00688B);
+                position: absolute;
+                left: calc(-1 * var(--space-4, 1rem));
+                font-weight: var(--font-weight-bold, 700);
+            }
+            
             #shark-screen img {
                 max-width: 100%;
                 max-height: 200px;
                 object-fit: contain;
-                border-radius: 5px;
-                margin-top: 10px;
+                border-radius: var(--radius-md, 0.375rem);
+                margin-top: var(--space-4, 1rem);
+                box-shadow: var(--shadow-sm, 0 1px 2px 0 rgba(0, 0, 0, 0.05));
             }
-            #controls-container {
-                position: relative;
-                top: 10px;
-                left: 10px;
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                gap: 20px;
-                z-index: 100;
-                padding: 10px;
-                background: rgba(255, 255, 255, 0.9);
-                border-radius: 5px;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            }
-            #search-container, #dropdown-container, #taxonomic-container, #tag-container {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                gap: 8px;
-                position: relative;
-            }
-            #shark-search {
-                padding: 5px 8px;
-                border: 1px solid #E0E0E0;
-                border-radius: 5px;
-                background: #FFFFFF;
-                font-size: 14px;
-                color: #2F4F4F;
-                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-                width: 200px;
-            }
-            #shark-search:focus {
-                outline: none;
-                border-color: #00688B;
-                box-shadow: 0 0 4px rgba(0, 104, 139, 0.3);
-            }
-            #search-suggestions {
-                position: absolute;
-                top: 100%;
-                left: 70px; /* Align with input, accounting for label */
-                width: 200px;
-                max-height: 150px;
-                overflow-y: auto;
-                background: #FFFFFF;
-                border: 1px solid #E0E0E0;
-                border-radius: 5px;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                z-index: 101;
-                display: none;
-            }
-            #search-suggestions.visible {
-                display: block;
-            }
-            .suggestion-item {
-                padding: 8px 12px;
-                font-size: 14px;
-                color: #2F4F4F;
-                cursor: pointer;
-            }
-            .suggestion-item:hover {
-                background: #F0F8FF;
-                color: #00688B;
-            }
-            .suggestion-item mark {
-                background: #E0F7FA;
-                font-weight: 600;
-            }
-            img {
-                width: 80%;
-                border-radius: 5px;
-                margin-top: 10px;
-            }
-            label {
-                color: #2F4F4F;
-                font-size: 14px;
-                white-space: nowrap;
-            }
-            select {
-                padding: 5px 8px;
-                border: 1px solid #E0E0E0;
-                border-radius: 5px;
-                background: #FFFFFF;
-                font-size: 14px;
-                color: #2F4F4F;
-                box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-                min-width: 120px;
-                max-width: 200px;
-            }
-            select:hover {
-                border-color: #00688B;
-                cursor: pointer;
-            }
+            
             #info-button {
-                width: 22px;
-                height: 22px;
+                width: 24px;
+                height: 24px;
                 border: none;
                 background: none;
                 padding: 0;
@@ -531,59 +598,200 @@ export class SharkTreeComponent extends HTMLElement {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                transition: transform 0.2s ease;
+                transition: all var(--transition-fast, 150ms ease-in-out);
+                border-radius: var(--radius-full, 9999px);
+                align-self: flex-start;
             }
+            
             #info-button:hover {
                 transform: scale(1.1);
+                background-color: var(--color-primary-light, #E0F7FA);
             }
+            
             #info-button svg {
-                stroke: #00688B;
+                stroke: var(--color-primary, #00688B);
             }
+            
             #info-tooltip {
                 display: none;
                 position: absolute;
-                top: 32px;
-                right: 0;
-                background: rgba(255, 255, 255, 0.95);
-                color: #2F4F4F;
-                padding: 14px;
-                border-radius: 6px;
-                border: 1px solid #E0E0E0;
-                font-size: 13px;
-                line-height: 1.6;
-                max-width: 280px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                z-index: 101;
-                font-weight: 400;
+                top: calc(100% + var(--space-2, 0.5rem));
+                left: 50%;
+                transform: translateX(-50%);
+                background: var(--color-white, #FFFFFF);
+                color: var(--color-text-primary, #1F2937);
+                padding: var(--space-4, 1rem);
+                border-radius: var(--radius-lg, 0.5rem);
+                border: 1px solid var(--color-border-light, #E5E7EB);
+                font-size: var(--text-sm, 0.875rem);
+                line-height: var(--line-height-relaxed, 1.75);
+                width: 400px;
+                max-width: 90vw;
+                box-shadow: var(--shadow-lg, 0 10px 15px -3px rgba(0, 0, 0, 0.1));
+                z-index: var(--z-tooltip, 1070);
+                font-weight: var(--font-weight-normal, 400);
+                opacity: 0;
+                transition: opacity var(--transition-fast, 150ms ease-in-out);
             }
+            
             #info-tooltip strong {
-                font-weight: 600;
-                color: #00688B;
+                font-weight: var(--font-weight-semibold, 600);
+                color: var(--color-primary, #00688B);
                 display: block;
-                margin-bottom: 6px;
+                margin-bottom: var(--space-2, 0.5rem);
             }
+            
             #info-tooltip ul {
                 list-style-type: none;
                 padding-left: 0;
                 margin: 0;
             }
+            
             #info-tooltip li {
                 position: relative;
-                padding-left: 16px;
-                margin-bottom: 6px;
+                padding-left: var(--space-4, 1rem);
+                margin-bottom: var(--space-2, 0.5rem);
             }
+            
             #info-tooltip li:before {
                 content: "•";
-                color: #00688B;
+                color: var(--color-primary, #00688B);
                 position: absolute;
-                left: 4px;
-                font-size: 14px;
+                left: 0;
+                font-size: var(--text-sm, 0.875rem);
+                font-weight: var(--font-weight-bold, 700);
             }
+            
             #info-button:hover + #info-tooltip {
                 display: block;
+                opacity: 1;
+                transition-delay: 0ms;
+                animation: slideUp var(--transition-normal, 250ms ease-out);
             }
-            .shark-only, .ray-only, .chimaera-only { display: none; }
-            .shark-only.active, .ray-only.active, .chimaera-only.active { display: block; }
+            
+            #info-tooltip {
+                transition-delay: 300ms;
+            }
+            
+            .shark-only, .ray-only, .chimaera-only { 
+                display: none; 
+            }
+            
+            .shark-only.active, .ray-only.active, .chimaera-only.active { 
+                display: block; 
+            }
+            
+            /* Responsive Design */
+            @media (max-width: 1024px) {
+                #shark-content {
+                    flex-direction: column;
+                }
+                
+                #phylo-container {
+                    width: 100%;
+                    height: 60vh;
+                    margin: var(--space-2, 0.5rem);
+                }
+                
+                #shark-screen-container {
+                    width: 100%;
+                    min-width: unset;
+                    height: 40vh;
+                    margin: var(--space-2, 0.5rem);
+                    padding: var(--space-2, 0.5rem);
+                }
+                
+                #controls-container {
+                    flex-direction: column;
+                    align-items: stretch;
+                    gap: var(--space-3, 0.75rem);
+                }
+                
+                .control-group {
+                    width: 100%;
+                }
+                
+                #shark-search {
+                    width: 100%;
+                }
+                
+                select {
+                    width: 100%;
+                    max-width: none;
+                }
+            }
+            
+            @media (max-width: 768px) {
+                #main-nav {
+                    padding: var(--space-3, 0.75rem);
+                }
+                
+                #controls-container {
+                    padding: var(--space-3, 0.75rem);
+                }
+                
+                #phylo-container {
+                    height: 50vh;
+                    margin: var(--space-1, 0.25rem);
+                }
+                
+                #shark-screen-container {
+                    height: 50vh;
+                    margin: var(--space-1, 0.25rem);
+                    padding: var(--space-1, 0.25rem);
+                }
+                
+                #shark-screen {
+                    padding: var(--space-4, 1rem);
+                    font-size: var(--text-xs, 0.75rem);
+                }
+                
+                #shark-screen h2 {
+                    font-size: var(--text-lg, 1.125rem);
+                }
+            }
+            
+            @media (max-width: 480px) {
+                #main-nav a {
+                    font-size: var(--text-sm, 0.875rem);
+                    padding: var(--space-1, 0.25rem) var(--space-2, 0.5rem);
+                }
+                
+                .control-group label {
+                    font-size: 10px;
+                }
+                
+                #shark-search, select {
+                    font-size: var(--text-xs, 0.75rem);
+                    padding: var(--space-1, 0.25rem) var(--space-2, 0.5rem);
+                }
+            }
+            
+            /* Loading and Animation States */
+            .loading {
+                opacity: 0.6;
+                pointer-events: none;
+            }
+            
+            .fade-in {
+                animation: fadeIn var(--transition-normal, 250ms ease-in-out);
+            }
+            
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+            
+            @keyframes slideUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(10px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
         `;
     }
 
