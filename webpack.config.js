@@ -2,12 +2,21 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
-module.exports = {
-  mode: "development",
-  entry: {
-    shark: path.resolve(__dirname, "src/sharkTreeComponent.js"), // Entry for SharkTreeComponent (default page)
-    fossil: path.resolve(__dirname, "src/fossilTreeComponent.js"), // Entry for FossilTreeComponent
-  },
+module.exports = (env) => {
+  // Determine which entry to use based on environment
+  const entry = env?.entry || 'both';
+  
+  const entryConfig = {
+    shark: path.resolve(__dirname, "src/sharkTreeComponent.js"),
+    fossil: path.resolve(__dirname, "src/fossilTreeComponent.js"),
+  };
+
+  // If specific entry is requested, only include that one
+  const selectedEntry = entry === 'both' ? entryConfig : { [entry]: entryConfig[entry] };
+
+  return {
+    mode: "development",
+    entry: selectedEntry,
   resolve: {
     extensions: [".ts", ".js"],
   },
@@ -23,7 +32,7 @@ module.exports = {
       directory: path.resolve(__dirname, "dist"),
     },
     port: 8000,
-    open: true,
+    open: false, // Disable auto-opening browser
     hot: true,
     compress: true,
     historyApiFallback: true,
@@ -68,6 +77,8 @@ module.exports = {
       template: "src/template_fossil.html",
       chunks: ["fossil"], // Only include fossil bundle
     }),
-    new BundleAnalyzerPlugin(),
+    // BundleAnalyzerPlugin disabled for development - use npm run analyze to enable
+    // new BundleAnalyzerPlugin(),
   ],
+  };
 };

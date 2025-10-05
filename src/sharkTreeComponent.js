@@ -631,7 +631,9 @@ export class SharkTreeComponent extends HTMLElement {
                 z-index: var(--z-tooltip, 1070);
                 font-weight: var(--font-weight-normal, 400);
                 opacity: 0;
-                transition: opacity var(--transition-fast, 150ms ease-in-out);
+                transition: opacity var(--transition-fast, 150ms ease-in-out), visibility var(--transition-fast, 150ms ease-in-out);
+                pointer-events: none;
+                visibility: hidden;
             }
             
             #info-tooltip strong {
@@ -665,12 +667,8 @@ export class SharkTreeComponent extends HTMLElement {
             #info-button:hover + #info-tooltip {
                 display: block;
                 opacity: 1;
+                visibility: visible;
                 transition-delay: 0ms;
-                animation: slideUp var(--transition-normal, 250ms ease-out);
-            }
-            
-            #info-tooltip {
-                transition-delay: 300ms;
             }
             
             .shark-only, .ray-only, .chimaera-only { 

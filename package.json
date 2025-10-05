@@ -5,8 +5,12 @@
   "main": "src/fossilTreeComponent.js",
   "homepage": "https://treeofsharks.com",
   "scripts": {
-    "build": "webpack",
     "dev": "webpack serve",
+    "dev:shark": "webpack serve --env entry=shark",
+    "dev:fossil": "webpack serve --env entry=fossil",
+    "build": "webpack --config webpack.prod.config.js",
+    "build:dev": "webpack",
+    "analyze": "webpack --config webpack.prod.config.js --env analyze=true",
     "deploy": "cp CNAME dist/CNAME && gh-pages -d dist"
   },
   "keywords": [],
