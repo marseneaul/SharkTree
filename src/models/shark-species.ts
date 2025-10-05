@@ -187,6 +187,13 @@ export class SharkSpecies {
         this.parentPath.forEach(segment => segment.setAttribute("stroke-width", `${strokeWidth}`));
         this.parentPath.forEach(segment => dashPattern === "solid" ? segment.removeAttribute("stroke-dasharray") : segment.setAttribute("stroke-dasharray", dashPattern));
     }
+    
+    highlightParentPathWithOpacity(strokeWidth = 3, color = "black", dashPattern: string = "solid", opacity = 1): void {
+        this.parentPath.forEach(segment => segment.setAttribute("stroke", color));
+        this.parentPath.forEach(segment => segment.setAttribute("stroke-width", `${strokeWidth}`));
+        this.parentPath.forEach(segment => segment.setAttribute("stroke-opacity", `${opacity}`));
+        this.parentPath.forEach(segment => dashPattern === "solid" ? segment.removeAttribute("stroke-dasharray") : segment.setAttribute("stroke-dasharray", dashPattern));
+    }
 
     buildShark(): void {
         this.commonName = this.config.commonName;
