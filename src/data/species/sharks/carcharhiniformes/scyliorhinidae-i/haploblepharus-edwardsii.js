@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import haploblepharusEdwardsiiImg from "./../../../../../images/carcharhiniformes/scyliorhinidae-i/haploblepharus-edwardsii.png";
 
 export const haploblepharusEdwardsii = {
     commonName: "Puffadder Shyshark",
     alternativeNames: ["Shyshark", "Doughnut", "Happy Eddie"],
     binomialName: "Haploblepharus edwardsii",
+
+    imageUrl: haploblepharusEdwardsiiImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

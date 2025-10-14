@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
+import carcharhinusSignatusImg from "./../../../../../images/carcharhiniformes/carcharhinidae/carcharhinus-signatus.png";
 
 export const carcharhinusSignatus = {
     commonName: "Night Shark",
     binomialName: "Carcharhinus signatus",
+
+    imageUrl: carcharhinusSignatusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

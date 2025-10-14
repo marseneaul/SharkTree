@@ -1,8 +1,10 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-
+import hemigaleusAustraliensisImg from "./../../../../../images/carcharhiniformes/hemigaleidae/hemigaleus-australiensis.png";
 export const hemigaleusAustraliensis = {
     commonName: "Australian Weasel Shark",
     binomialName: "Hemigaleus australiensis",
+
+    imageUrl: hemigaleusAustraliensisImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

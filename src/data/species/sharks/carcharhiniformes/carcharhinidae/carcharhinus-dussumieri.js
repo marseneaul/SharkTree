@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
+import carcharhinusDussumieriImg from "./../../../../../images/carcharhiniformes/carcharhinidae/carcharhinus-dussumieri.png";
 
 export const carcharhinusDussumieri = {
     commonName: "Whitecheek Shark",
     alternativeNames: ["Widemouth Blackspot Shark"],
     binomialName: "Carcharhinus dussumieri",
+
+    imageUrl: carcharhinusDussumieriImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

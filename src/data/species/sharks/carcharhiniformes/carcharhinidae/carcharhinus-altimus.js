@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, PROXIMAL_DORSAL_FINS, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
+import carcharhinusAltimusImg from "./../../../../../images/carcharhiniformes/carcharhinidae/carcharhinus-altimus.png";
 
 export const carcharhinusAltimus = {
     commonName: "Bignose Shark",
     binomialName: "Carcharhinus altimus",
+
+    imageUrl: carcharhinusAltimusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
