@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, FEEDING_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
+import sphyrnaTiburoImg from "./../../../../../images/carcharhiniformes/sphyrnidae/sphyrna-tiburo.png";
 
 export const sphyrnaTiburo = {
     commonName: "Bonnethead Shark",
     binomialName: "Sphyrna tiburo",
+
+    imageUrl: sphyrnaTiburoImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import heterodontusMexicanusImg from "./../../../../images/heterodontiformes/heterodontus-mexicanus.png";
 
 export const heterodontusMexicanus = {
     commonName: "Mexican Horn Shark",
     binomialName: "Heterodontus mexicanus",
+
+    imageUrl: heterodontusMexicanusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

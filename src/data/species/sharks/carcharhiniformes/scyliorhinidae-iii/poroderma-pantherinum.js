@@ -1,8 +1,12 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import porodermaPantherinumImg from "./../../../../../images/carcharhiniformes/scyliorhinidae-iii/poroderma-pantherinum.png";
 
 export const porodermaPantherinum = {
     commonName: "Leopard Catshark",
     binomialName: "Poroderma pantherinum",
+
+    imageUrl: porodermaPantherinumImg,
+
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

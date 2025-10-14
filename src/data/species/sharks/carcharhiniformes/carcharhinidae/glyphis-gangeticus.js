@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
+import glyphisGangeticusImg from "./../../../../../images/carcharhiniformes/carcharhinidae/glyphis-gangeticus.png";
 
 export const glyphisGangeticus = {
     commonName: "Ganges Shark",
     alternativeNames: ["Borneo River Shark", "Irrawaddy River Shark"],
     binomialName: "Glyphis gangeticus",
+
+    imageUrl: glyphisGangeticusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

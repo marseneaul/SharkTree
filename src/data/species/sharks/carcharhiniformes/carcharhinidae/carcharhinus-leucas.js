@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, PROXIMAL_DORSAL_FINS, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
+import carcharhinusLeucasImg from "./../../../../../images/carcharhiniformes/carcharhinidae/carcharhinus-leucas.png";
 
 export const carcharhinusLeucas = {
     commonName: "Bull Shark",
     binomialName: "Carcharhinus leucas",
+
+    imageUrl: carcharhinusLeucasImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

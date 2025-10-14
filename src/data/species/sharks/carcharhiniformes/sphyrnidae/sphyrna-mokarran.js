@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
+import sphyrnaMokarranImg from "./../../../../../images/carcharhiniformes/sphyrnidae/sphyrna-mokarran.png";
 
 export const sphyrnaMokarran = {
     commonName: "Great Hammerhead Shark",
     binomialName: "Sphyrna mokarran",
+
+    imageUrl: sphyrnaMokarranImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

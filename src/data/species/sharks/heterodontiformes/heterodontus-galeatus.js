@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import heterodontusGaleatusImg from "./../../../../images/heterodontiformes/heterodontus-galeatus.png";
 
 export const heterodontusGaleatus = {
     commonName: "Crested Bullhead Shark",
     alternativeNames: ["Crested Shark", "Crested Bull Shark", "Crested Horn Shark", "Crested Port Jackson Shark"],
     binomialName: "Heterodontus galeatus",
+
+    imageUrl: heterodontusGaleatusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
+import negaprionAcutidensImg from "./../../../../../images/carcharhiniformes/carcharhinidae/negaprion-acutidens.png";
 
 export const negaprionAcutidens = {
     commonName: "Sicklefin Lemon Shark",
     alternativeNames: ["Pacific Lemon Shark"],
     binomialName: "Negaprion acutidens",
+
+    imageUrl: negaprionAcutidensImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

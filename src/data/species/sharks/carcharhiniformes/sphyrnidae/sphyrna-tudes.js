@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
+import sphyrnaTudesImg from "./../../../../../images/carcharhiniformes/sphyrnidae/sphyrna-tudes.png";
 
 export const sphyrnaTudes = {
     commonName: "Golden Hammerhead Shark",
     alternativeNames: ["Curry Shark", "Smalleye Hammerhead"],
     binomialName: "Sphyrna tudes",
+
+    imageUrl: sphyrnaTudesImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

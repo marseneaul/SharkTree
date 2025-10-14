@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import triakisSemifasciataImg from "./../../../../../images/carcharhiniformes/triakidae/triakis-semifasciata.png";
 
 export const triakisSemifasciata = {
     commonName: "Leopard Shark",
     alternativeNames: ["Tiger Shark", "Catshark"],
     binomialName: "Triakis semifasciata",
+
+    imageUrl: triakisSemifasciataImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
