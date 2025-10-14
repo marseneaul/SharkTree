@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, MOUTH_IN_FRONT_OF_EYES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import hemiscylliumOcellatumImg from "./../../../../../images/orectolobiformes/hemiscylliidae/hemiscyllium-ocellatum.png";
 
 export const hemiscylliumOcellatum = {
     commonName: "Epaulette Shark",
     binomialName: "Hemiscyllium ocellatum",
+
+    imageUrl: hemiscylliumOcellatumImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

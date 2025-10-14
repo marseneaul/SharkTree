@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, FLATTENED_BODY, MOUTH_IN_FRONT_OF_EYES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import eucrossorhinusDasypogonImg from "./../../../../../images/orectolobiformes/orectolobidae/eucrossorhinus-dasypogon.png";
 
 export const eucrossorhinusDasypogon = {
     commonName: "Tasselled Wobbegong",
     alternativeNames: ["Bearded Wobbegong", "Ogilby's Wobbegong"],
     binomialName: "Eucrossorhinus dasypogon",
+
+    imageUrl: eucrossorhinusDasypogonImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

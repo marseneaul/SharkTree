@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, MOUTH_IN_FRONT_OF_EYES, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import nebriusFerrugineusImg from "./../../../../images/orectolobiformes/nebrius-ferrugineus.png";
 
 export const nebriusFerrugineus = {
     commonName: "Tawny Nurse Shark",
     alternativeNames: ["Giant Sleepy Shark", "Madame X", "Nurse Shark", "Rusty Catshark", "Rusty Shark", "Sleepy Shark", "Spitting Shark", "Tawny Shark"],
     binomialName: "Nebrius ferrugineus",
+
+    imageUrl: nebriusFerrugineusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, FLATTENED_BODY, MOUTH_IN_FRONT_OF_EYES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import orectolobusOrnatusImg from "./../../../../../images/orectolobiformes/orectolobidae/orectolobus-ornatus.png";
 
 export const orectolobusOrnatus = {
     commonName: "Ornate Wobbegong",
     alternativeNames: ["Banded Wobbegong"],
     binomialName: "Orectolobus ornatus",
+
+    imageUrl: orectolobusOrnatusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

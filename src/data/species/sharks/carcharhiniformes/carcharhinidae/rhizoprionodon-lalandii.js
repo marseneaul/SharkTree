@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
+import rhizoprionodonLalandiiImg from "./../../../../../images/carcharhiniformes/carcharhinidae/rhizoprionodon-lalandii.png";
 
 export const rhizoprionodonLalandii = {
     commonName: "Brazilian Sharpnose Shark",
     binomialName: "Rhizoprionodon lalandii",
+
+    imageUrl: rhizoprionodonLalandiiImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

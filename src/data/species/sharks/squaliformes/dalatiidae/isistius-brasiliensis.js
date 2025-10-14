@@ -1,9 +1,12 @@
 import { ANAL_FIN, BIOLUMINESCENT, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import isistiusBrasiliensisImg from "./../../../../../images/squaliformes/dalatiidae/isistius-brasiliensis.png";
 
 export const isistiusBrasiliensis = {
     commonName: "Cookiecutter Shark",
     alternativeNames: ["Cigar Shark", "Demon Whale-Biters", "Luminous Shark", "Smalltooth Cookiecutter Shark", "Smooth Cookiecutter Shark"],
     binomialName: "Isistius brasiliensis",
+
+    imageUrl: isistiusBrasiliensisImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

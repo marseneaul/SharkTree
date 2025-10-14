@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import atelomycterusMarmoratusImg from "./../../../../../images/carcharhiniformes/scyliorhinidae-ii/atelomycterus-marmoratus.png";
 
 export const atelomycterusMarmoratus = {
     commonName: "Coral Catshark",
     binomialName: "Atelomycterus marmoratus",
+
+    imageUrl: atelomycterusMarmoratusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
