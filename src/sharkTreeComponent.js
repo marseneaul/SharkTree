@@ -516,7 +516,7 @@ export class SharkTreeComponent extends HTMLElement {
             #app-container {
                 position: relative;
                 width: 100%;
-                height: calc(100vh - 80px);
+                height: 100vh;
                 display: flex;
                 flex-direction: column;
                 background: var(--color-bg-primary, #FFFFFF);
@@ -650,12 +650,14 @@ export class SharkTreeComponent extends HTMLElement {
                 display: flex;
                 flex: 1;
                 min-height: 0;
+                height: 100%;
             }
             
             #phylo-container {
                 position: relative;
                 flex: 1;
                 min-width: 0;
+                min-height: 0;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -670,6 +672,7 @@ export class SharkTreeComponent extends HTMLElement {
                 position: relative;
                 width: 700px;
                 min-width: 700px;
+                height: 100%;
                 display: flex;
                 flex-direction: row;
                 gap: var(--space-4, 1rem);
@@ -682,6 +685,7 @@ export class SharkTreeComponent extends HTMLElement {
                 position: relative;
                 flex: 1;
                 height: 100%;
+                min-height: 0;
                 padding: var(--space-6, 1.5rem);
                 background: var(--color-bg-secondary, #F9FAFB);
                 border: 1px solid var(--color-border-light, #E5E7EB);
@@ -699,6 +703,7 @@ export class SharkTreeComponent extends HTMLElement {
                 width: 300px;
                 min-width: 300px;
                 height: 100%;
+                min-height: 0;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -981,18 +986,21 @@ export class SharkTreeComponent extends HTMLElement {
             @media (max-width: 1024px) {
                 #shark-content {
                     flex-direction: column;
+                    height: 100%;
                 }
                 
                 #phylo-container {
                     width: 100%;
-                    height: 60vh;
+                    flex: 1;
+                    min-height: 0;
                     margin: var(--space-2, 0.5rem);
                 }
                 
                 #shark-screen-container {
                     width: 100%;
                     min-width: unset;
-                    height: 40vh;
+                    flex: 1;
+                    min-height: 0;
                     margin: var(--space-2, 0.5rem);
                     padding: var(--space-2, 0.5rem);
                     flex-direction: column;
@@ -1002,6 +1010,7 @@ export class SharkTreeComponent extends HTMLElement {
                     width: 100%;
                     min-width: unset;
                     height: auto;
+                    min-height: 0;
                     margin-top: var(--space-4, 1rem);
                 }
                 
@@ -1035,12 +1044,14 @@ export class SharkTreeComponent extends HTMLElement {
                 }
                 
                 #phylo-container {
-                    height: 50vh;
+                    flex: 1;
+                    min-height: 0;
                     margin: var(--space-1, 0.25rem);
                 }
                 
                 #shark-screen-container {
-                    height: 50vh;
+                    flex: 1;
+                    min-height: 0;
                     margin: var(--space-1, 0.25rem);
                     padding: var(--space-1, 0.25rem);
                 }

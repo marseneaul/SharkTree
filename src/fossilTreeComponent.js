@@ -277,7 +277,7 @@ export class FossilTreeComponent extends HTMLElement {
             #app-container {
                 position: relative;
                 width: 100%;
-                height: calc(100vh - 80px);
+                height: 100vh;
                 background: var(--color-bg-primary, #FFFFFF);
                 display: flex;
                 flex-direction: column;
@@ -288,7 +288,8 @@ export class FossilTreeComponent extends HTMLElement {
                 flex-direction: row;
                 justify-content: flex-start;
                 width: 100%;
-                height: 100%;
+                flex: 1;
+                min-height: 0;
                 overflow-x: auto;
                 overflow-y: hidden;
                 padding: var(--space-4, 1rem);
@@ -301,7 +302,8 @@ export class FossilTreeComponent extends HTMLElement {
                     flex-direction: column;
                     overflow-x: hidden;
                     overflow-y: auto;
-                    height: auto;
+                    flex: 1;
+                    min-height: 0;
                 }
             }
             
