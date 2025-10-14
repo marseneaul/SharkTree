@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
+import carcharhinusMelanopterusImg from "./../../../../../images/carcharhiniformes/carcharhinidae/carcharhinus-melanopterus.png";
 
 export const carcharhinusMelanopterus = {
     commonName: "Blacktip Reef Shark",
     binomialName: "Carcharhinus melanopterus",
+
+    imageUrl: carcharhinusMelanopterusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

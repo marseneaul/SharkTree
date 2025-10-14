@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
+import negaprionBrevirostrisImg from "./../../../../../images/carcharhiniformes/carcharhinidae/negaprion-brevirostris.png";
 
 export const negaprionBrevirostris = {
     commonName: "Lemon Shark",
     alternativeNames: ["Atlantic Lemon Shark"],
     binomialName: "Negaprion brevirostris",
+
+    imageUrl: negaprionBrevirostrisImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

@@ -1,8 +1,11 @@
 import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import squalusJaponicusImg from "./../../../../../images/squaliformes/squalidae/squalus-japonicus.png";
 
 export const squalusJaponicus = {
     commonName: "Japanese Spurdog",
     binomialName: "Squalus japonicus",
+
+    imageUrl: squalusJaponicusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

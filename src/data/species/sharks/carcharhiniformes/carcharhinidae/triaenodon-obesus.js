@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import triaenodonObesusImg from "./../../../../../images/carcharhiniformes/carcharhinidae/triaenodon-obesus.png";
 
 export const triaenodonObesus = {
     commonName: "Whitetip Reef Shark",
     binomialName: "Triaenodon obesus",
+
+    imageUrl: triaenodonObesusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import galeorhinusGaleusImg from "./../../../../../images/carcharhiniformes/triakidae/galeorhinus-galeus.png";
 
 export const galeorhinusGaleus = {
     commonName: "School Shark",
     alternativeNames: ["Tope", "Tope Shark", "Snapper Shark", "Soupfin Shark"],
     binomialName: "Galeorhinus galeus",
+
+    imageUrl: galeorhinusGaleusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

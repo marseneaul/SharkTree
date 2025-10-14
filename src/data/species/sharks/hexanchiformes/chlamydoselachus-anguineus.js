@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, NUM_GILLS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import chlamydoselachusAnguineusImg from "./../../../../images/hexanchiformes/chlamydoselachus-anguineus.png";
 
 export const chlamydoselachusAnguineus = {
     commonName: "Frilled Shark",
     alternativeNames: ["Lizard Shark", "Scaffold Shark"],
     binomialName: "Chlamydoselachus anguineus",
+
+    imageUrl: chlamydoselachusAnguineusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

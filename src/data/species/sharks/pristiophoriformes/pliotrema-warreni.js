@@ -1,8 +1,11 @@
 import { ANAL_FIN, CONSERVATION_STATUS, NUM_GILLS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import pliotremaWarreniImg from "./../../../../images/pristiophoriformes/pliotrema-warreni.png";
 
 export const pliotremaWarreni = {
     commonName: "Sixgill Sawshark",
     binomialName: "Pliotrema warreni",
+
+    imageUrl: pliotremaWarreniImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

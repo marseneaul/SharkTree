@@ -1,8 +1,11 @@
 import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import deaniaCalceaImg from "./../../../../../images/squaliformes/centrophoridae/deania-calcea.png";
 
 export const deaniaCalcea = {
     commonName: "Birdbeak Dogfish",
     binomialName: "Deania calcea",
+
+    imageUrl: deaniaCalceaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
