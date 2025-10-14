@@ -519,8 +519,8 @@ export class SharkTreeComponent extends HTMLElement {
             
             #shark-screen-container {
                 position: relative;
-                width: 600px;
-                min-width: 600px;
+                width: 700px;
+                min-width: 700px;
                 display: flex;
                 flex-direction: row;
                 gap: var(--space-4, 1rem);
@@ -547,8 +547,8 @@ export class SharkTreeComponent extends HTMLElement {
             
             #shark-image-container {
                 position: relative;
-                width: 200px;
-                min-width: 200px;
+                width: 300px;
+                min-width: 300px;
                 height: 100%;
                 display: flex;
                 flex-direction: column;
@@ -599,7 +599,7 @@ export class SharkTreeComponent extends HTMLElement {
             
             #shark-image-container img {
                 max-width: 100%;
-                max-height: 250px;
+                max-height: 350px;
                 width: 100%;
                 object-fit: cover;
                 border-radius: var(--radius-lg, 0.5rem);
