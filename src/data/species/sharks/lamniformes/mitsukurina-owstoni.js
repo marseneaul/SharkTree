@@ -1,8 +1,11 @@
 import { CAUDAL_FIN_SHAPE, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import mitsukurinaOwstoniImg from "./../../../../images/lamniformes/mitsukurina-owstoni.png";
 
 export const mitsukurinaOwstoni = {
     commonName: "Goblin Shark",
-    binomialName: "Mitsukruina owstoni",
+    binomialName: "Mitsukurina owstoni",
+
+    imageUrl: mitsukurinaOwstoniImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
@@ -13,7 +16,7 @@ export const mitsukurinaOwstoni = {
     superorder: "Galeomorphii",
     order: "Lamniformes",
     family: "Mitsukurinidae",
-    genus: "Mitsukruina",
+    genus: "Mitsukurina",
     species: "owstoni",
 
     tags: [

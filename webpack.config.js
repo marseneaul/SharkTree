@@ -28,9 +28,16 @@ module.exports = (env) => {
   },
   devtool: "source-map",
   devServer: {
-    static: {
-      directory: path.resolve(__dirname, "dist"),
-    },
+    static: [
+      {
+        directory: path.resolve(__dirname, "dist"),
+        publicPath: "/",
+      },
+      {
+        directory: path.resolve(__dirname, "src/images"),
+        publicPath: "/images",
+      }
+    ],
     port: 8000,
     open: false, // Disable auto-opening browser
     hot: true,

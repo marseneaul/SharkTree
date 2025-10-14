@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import mustelusHenleiImg from "./../../../../../images/carcharhiniformes/triakidae/mustelus-henlei.png";
 
 export const mustelusHenlei = {
     commonName: "Brown Smooth-Hound",
     binomialName: "Mustelus henlei",
+
+    imageUrl: mustelusHenleiImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

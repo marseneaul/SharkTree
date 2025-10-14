@@ -1,8 +1,11 @@
 import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import centroscymnusCoelolepisImg from "./../../../../../images/squaliformes/somniosidae-oxynotidae/centroscymnus-coelolepis.png";
 
 export const centroscymnusCoelolepis = {
     commonName: "Portuguese Dogfish",
     binomialName: "Centroscymnus coelolepis",
+
+    imageUrl: centroscymnusCoelolepisImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

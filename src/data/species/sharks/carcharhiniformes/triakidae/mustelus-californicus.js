@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import mustelusCalifornicusImg from "./../../../../../images/carcharhiniformes/triakidae/mustelus-californicus.png";
 
 export const mustelusCalifornicus = {
     commonName: "Gray Smooth-Hound",
     binomialName: "Mustelus californicus",
+
+    imageUrl: mustelusCalifornicusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

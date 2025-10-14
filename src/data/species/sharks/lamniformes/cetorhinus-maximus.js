@@ -1,8 +1,11 @@
 import { BEHAVIOR, CAUDAL_FIN_SHAPE, CONSERVATION_STATUS, FEEDING_BEHAVIOR, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION } from "../../../../constants/enums";
+import cetorhinusMaximusImg from "./../../../../images/lamniformes/cetorhinus-maximus.png";
 
 export const cetorhinusMaximus = {
     commonName: "Basking Shark",
     binomialName: "Cetorhinus maximus",
+
+    imageUrl: cetorhinusMaximusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

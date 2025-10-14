@@ -1,8 +1,11 @@
 import { CAUDAL_FIN_SHAPE, CONSERVATION_STATUS, FEEDING_BEHAVIOR, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import megachasmaPelagiosImg from "./../../../../images/lamniformes/megachasma-pelagios.png";
 
 export const megachasmaPelagios = {
     commonName: "Megamouth Shark",
     binomialName: "Megachasma pelagios",
+
+    imageUrl: megachasmaPelagiosImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

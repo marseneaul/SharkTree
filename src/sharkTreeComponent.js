@@ -320,6 +320,7 @@ export class SharkTreeComponent extends HTMLElement {
                     <div id="phylo-container" class="fade-in"></div>
                     <div id="shark-screen-container">
                         <div id="shark-screen" class="fade-in"></div>
+                        <div id="shark-image-container" class="fade-in"></div>
                     </div>
                 </div>
             </div>
@@ -518,10 +519,11 @@ export class SharkTreeComponent extends HTMLElement {
             
             #shark-screen-container {
                 position: relative;
-                width: 400px;
-                min-width: 400px;
+                width: 600px;
+                min-width: 600px;
                 display: flex;
-                flex-direction: column;
+                flex-direction: row;
+                gap: var(--space-4, 1rem);
                 padding: var(--space-4, 1rem);
                 margin-right: var(--space-4, 1rem);
                 overflow: hidden;
@@ -529,7 +531,7 @@ export class SharkTreeComponent extends HTMLElement {
             
             #shark-screen {
                 position: relative;
-                width: 100%;
+                flex: 1;
                 height: 100%;
                 padding: var(--space-6, 1.5rem);
                 background: var(--color-bg-secondary, #F9FAFB);
@@ -540,6 +542,23 @@ export class SharkTreeComponent extends HTMLElement {
                 font-size: var(--text-sm, 0.875rem);
                 line-height: var(--line-height-relaxed, 1.75);
                 color: var(--color-text-primary, #1F2937);
+                box-sizing: border-box;
+            }
+            
+            #shark-image-container {
+                position: relative;
+                width: 200px;
+                min-width: 200px;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: var(--space-4, 1rem);
+                background: var(--color-bg-secondary, #F9FAFB);
+                border: 1px solid var(--color-border-light, #E5E7EB);
+                border-radius: var(--radius-lg, 0.5rem);
+                box-shadow: var(--shadow-sm, 0 1px 2px 0 rgba(0, 0, 0, 0.05));
                 box-sizing: border-box;
             }
             
@@ -578,13 +597,104 @@ export class SharkTreeComponent extends HTMLElement {
                 font-weight: var(--font-weight-bold, 700);
             }
             
-            #shark-screen img {
+            #shark-image-container img {
                 max-width: 100%;
-                max-height: 200px;
-                object-fit: contain;
+                max-height: 250px;
+                width: 100%;
+                object-fit: cover;
+                border-radius: var(--radius-lg, 0.5rem);
+                box-shadow: var(--shadow-md, 0 4px 6px -1px rgba(0, 0, 0, 0.1));
+                transition: all var(--transition-normal, 250ms ease-in-out);
+                cursor: pointer;
+            }
+            
+            #shark-image-container img:hover {
+                transform: scale(1.02);
+                box-shadow: var(--shadow-lg, 0 10px 15px -3px rgba(0, 0, 0, 0.1));
+            }
+            
+            #shark-image-container .image-wrapper {
+                position: relative;
+                width: 100%;
+                margin: 0;
+            }
+            
+            #shark-image-container .image-caption {
+                text-align: center;
+                font-size: var(--text-xs, 0.75rem);
+                color: var(--color-text-secondary, #6B7280);
+                margin-top: var(--space-2, 0.5rem);
+                font-style: italic;
+                line-height: 1.4;
+            }
+            
+            .image-loading {
+                text-align: center;
+                color: var(--color-text-secondary, #6B7280);
+                font-size: var(--text-sm, 0.875rem);
+                padding: var(--space-4, 1rem);
+                background: var(--color-bg-secondary, #F9FAFB);
                 border-radius: var(--radius-md, 0.375rem);
-                margin-top: var(--space-4, 1rem);
-                box-shadow: var(--shadow-sm, 0 1px 2px 0 rgba(0, 0, 0, 0.05));
+                border: 1px dashed var(--color-border-light, #E5E7EB);
+            }
+            
+            .image-error {
+                text-align: center;
+                color: var(--color-error, #DC2626);
+                font-size: var(--text-sm, 0.875rem);
+                padding: var(--space-4, 1rem);
+                background: var(--color-error-light, #FEF2F2);
+                border-radius: var(--radius-md, 0.375rem);
+                border: 1px solid var(--color-error-border, #FECACA);
+            }
+            
+            /* Image Modal Styles */
+            .image-modal {
+                display: none;
+                position: fixed;
+                z-index: 1000;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.8);
+                backdrop-filter: blur(4px);
+                animation: fadeIn var(--transition-normal, 250ms ease-in-out);
+            }
+            
+            .image-modal-content {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                max-width: 90vw;
+                max-height: 90vh;
+                object-fit: contain;
+                border-radius: var(--radius-lg, 0.5rem);
+                box-shadow: var(--shadow-2xl, 0 25px 50px -12px rgba(0, 0, 0, 0.25));
+                cursor: pointer;
+            }
+            
+            .image-modal-close {
+                position: absolute;
+                top: -40px;
+                right: 0;
+                color: white;
+                font-size: 28px;
+                font-weight: bold;
+                cursor: pointer;
+                background: rgba(0, 0, 0, 0.5);
+                border-radius: var(--radius-full, 9999px);
+                width: 32px;
+                height: 32px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: background-color var(--transition-fast, 150ms ease-in-out);
+            }
+            
+            .image-modal-close:hover {
+                background: rgba(0, 0, 0, 0.7);
             }
             
             #info-button {
@@ -697,6 +807,14 @@ export class SharkTreeComponent extends HTMLElement {
                     height: 40vh;
                     margin: var(--space-2, 0.5rem);
                     padding: var(--space-2, 0.5rem);
+                    flex-direction: column;
+                }
+                
+                #shark-image-container {
+                    width: 100%;
+                    min-width: unset;
+                    height: auto;
+                    margin-top: var(--space-4, 1rem);
                 }
                 
                 #controls-container {
@@ -744,6 +862,11 @@ export class SharkTreeComponent extends HTMLElement {
                     font-size: var(--text-xs, 0.75rem);
                 }
                 
+                #shark-screen img {
+                    max-height: 200px;
+                    margin: var(--space-3, 0.75rem) 0;
+                }
+                
                 #shark-screen h2 {
                     font-size: var(--text-lg, 1.125rem);
                 }
@@ -762,6 +885,11 @@ export class SharkTreeComponent extends HTMLElement {
                 #shark-search, select {
                     font-size: var(--text-xs, 0.75rem);
                     padding: var(--space-1, 0.25rem) var(--space-2, 0.5rem);
+                }
+                
+                #shark-screen img {
+                    max-height: 150px;
+                    margin: var(--space-2, 0.5rem) 0;
                 }
             }
             
@@ -998,13 +1126,137 @@ export class SharkTreeComponent extends HTMLElement {
         if (this.sharkScreen) {
             const allSpecies = this.sharkTree.getSharkSpeciesList();
             this.sharkScreen.innerHTML = selectedShark.getFormattedString(allSpecies);
+            
+            // Clear previous image
+            const imageContainer = this.shadow.querySelector("#shark-image-container");
+            if (imageContainer) {
+                imageContainer.innerHTML = "";
+            }
+            
             if (selectedShark.imageUrl) {
-                const sharkImg = document.createElement("img");
-                sharkImg.src = selectedShark.imageUrl;
-                this.sharkScreen.appendChild(sharkImg);
+                this.addSharkImage(selectedShark);
             }
         }
         this.sharkTree.updateSelection(selectedShark);
+    }
+    
+    addSharkImage(selectedShark) {
+        const imageContainer = this.shadow.querySelector("#shark-image-container");
+        if (!imageContainer) return;
+        
+        const imageWrapper = document.createElement("div");
+        imageWrapper.className = "image-wrapper";
+        
+        // Create loading state
+        const loadingDiv = document.createElement("div");
+        loadingDiv.className = "image-loading";
+        loadingDiv.textContent = "Loading image...";
+        imageWrapper.appendChild(loadingDiv);
+        
+        // Create image element
+        const sharkImg = document.createElement("img");
+        sharkImg.style.display = "none";
+        sharkImg.alt = `${selectedShark.commonName} image`;
+        
+        // Use the direct mapped URL
+        const imageUrl = this.getDirectImageUrl(selectedShark.imageUrl);
+        
+        // Set up image loading with proper event handling
+        sharkImg.onload = () => {
+            loadingDiv.remove();
+            sharkImg.style.display = "block";
+        };
+        
+        sharkImg.onerror = (error) => {
+            loadingDiv.textContent = "Image not available";
+            loadingDiv.className = "image-error";
+        };
+        
+        // Set the image source
+        sharkImg.src = imageUrl;
+        
+        // Add click handler for modal
+        sharkImg.addEventListener("click", () => {
+            this.showImageModal(sharkImg.src, selectedShark.commonName);
+        });
+        
+        // Create caption
+        const caption = document.createElement("p");
+        caption.className = "image-caption";
+        caption.textContent = `${selectedShark.commonName} (${selectedShark.binomialName})`;
+        
+        // Image source is set in tryNextUrl() function
+        
+        imageWrapper.appendChild(sharkImg);
+        imageWrapper.appendChild(caption);
+        imageContainer.appendChild(imageWrapper);
+    }
+    
+    getDirectImageUrl(webpackUrl) {
+        // Extract filename from webpack URL
+        const filename = webpackUrl.split('/').pop();
+        
+        // Map known filenames to their direct paths
+        const imageMap = {
+            'carcharodon-carcharias.png': '/images/lamniformes/lamnidae/carcharodon-carcharias.png',
+            'isurus-oxyrinchus.png': '/images/lamniformes/lamnidae/isurus-oxyrinchus.png',
+            'isurus-paucus.png': '/images/lamniformes/lamnidae/isurus-paucus.png',
+            'alopias-pelagicus.jpeg': '/images/lamniformes/alopias-pelagicus.jpeg',
+            'alopias-superciliosus.jpg': '/images/lamniformes/alopias-superciliosus.jpg',
+            'alopias-vulpinus.jpeg': '/images/lamniformes/alopias-vulpinus.jpeg',
+            'scylliogaleus-quecketti.jpg': '/images/carcharhiniformes/triakidae/scylliogaleus-quecketti.jpg'
+        };
+        
+        const directPath = imageMap[filename];
+        
+        return directPath || webpackUrl;
+    }
+    
+    showImageModal(imageUrl, speciesName) {
+        // Remove existing modal if any
+        const existingModal = document.querySelector(".image-modal");
+        if (existingModal) {
+            existingModal.remove();
+        }
+        
+        // Create modal
+        const modal = document.createElement("div");
+        modal.className = "image-modal";
+        modal.style.display = "block";
+        
+        // Create modal content
+        const modalImg = document.createElement("img");
+        modalImg.className = "image-modal-content";
+        modalImg.src = imageUrl;
+        modalImg.alt = `${speciesName} - Full size`;
+        
+        // Create close button
+        const closeBtn = document.createElement("span");
+        closeBtn.className = "image-modal-close";
+        closeBtn.innerHTML = "×";
+        closeBtn.addEventListener("click", () => {
+            modal.remove();
+        });
+        
+        // Close modal when clicking on image or background
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal || e.target === modalImg) {
+                modal.remove();
+            }
+        });
+        
+        // Close modal with Escape key
+        const handleEscape = (e) => {
+            if (e.key === "Escape") {
+                modal.remove();
+                document.removeEventListener("keydown", handleEscape);
+            }
+        };
+        document.addEventListener("keydown", handleEscape);
+        
+        modal.appendChild(modalImg);
+        modal.appendChild(closeBtn);
+        document.body.appendChild(modal);
     }
 
     redraw(_event) {
@@ -1071,15 +1323,15 @@ export class SharkTreeComponent extends HTMLElement {
         if (this.sharkScreen) {
             const allSpecies = this.sharkTree.getSharkSpeciesList();
             this.sharkScreen.innerHTML = shark.getFormattedString(allSpecies);
+            
+            // Clear previous image
+            const imageContainer = this.shadow.querySelector("#shark-image-container");
+            if (imageContainer) {
+                imageContainer.innerHTML = "";
+            }
+            
             if (shark.imageUrl) {
-                const sharkImg = document.createElement("img");
-                sharkImg.src = shark.imageUrl;
-                sharkImg.alt = `${shark.name} illustration`;
-                sharkImg.onerror = () => {
-                    sharkImg.src = "path/to/fallback-image.png";
-                    sharkImg.alt = "Image not available";
-                };
-                this.sharkScreen.appendChild(sharkImg);
+                this.addSharkImage(shark);
             }
         }
         this.sharkTree.updateSelection(shark);
