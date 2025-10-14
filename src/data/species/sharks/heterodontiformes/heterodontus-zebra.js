@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import heterodontusZebraImg from "./../../../../images/heterodontiformes/heterodontus-zebra.png";
 
 export const heterodontusZebra = {
     commonName: "Zebra Bullhead Shark",
     binomialName: "Heterodontus zebra",
+
+    imageUrl: heterodontusZebraImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

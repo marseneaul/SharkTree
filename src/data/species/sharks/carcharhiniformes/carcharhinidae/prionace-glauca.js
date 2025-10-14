@@ -1,9 +1,12 @@
 import { BEHAVIOR, CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
+import prionaceGlaucaImg from "./../../../../../images/carcharhiniformes/carcharhinidae/prionace-glauca.png";
 
 export const prionaceGlauca = {
     commonName: "Blue Shark",
     alternativeNames: ["Great Blue Shark"],
     binomialName: "Prionace glauca",
+
+    imageUrl: prionaceGlaucaImg,        
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

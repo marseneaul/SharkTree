@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
+import carcharhinusFalciformisImg from "./../../../../../images/carcharhiniformes/carcharhinidae/carcharhinus-falciformis.png";
 
 export const carcharhinusFalciformis = {
     commonName: "Silky Shark",
     alternativeNames: ["Blackspot Shark", "Gray Whaler Shark", "Olive Shark", "Ridgeback Shark", "Sickle Shark", "Sickle-Shaped Shark", "Sickle Silk Shark"],
     binomialName: "Carcharhinus falciformis",
+
+    imageUrl: carcharhinusFalciformisImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

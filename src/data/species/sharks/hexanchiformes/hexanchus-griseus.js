@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, NUM_GILLS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import hexanchusGriseusImg from "./../../../../images/hexanchiformes/hexanchus-griseus.png";
 
 export const hexanchusGriseus = {
     commonName: "Bluntnose Sixgill Shark",
     binomialName: "Hexanchus griseus",
+
+    imageUrl: hexanchusGriseusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

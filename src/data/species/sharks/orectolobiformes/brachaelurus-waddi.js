@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, MOUTH_IN_FRONT_OF_EYES, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import brachaelurusWaddiImg from "./../../../../images/orectolobiformes/brachaelurus-waddi.png";
 
 export const brachaelurusWaddi = {
     commonName: "Blind Shark",
     alternativeNames: ["Brown Catshark", "Dusky Dogfish"],
     binomialName: "Brachaelurus waddi",
+
+    imageUrl: brachaelurusWaddiImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
