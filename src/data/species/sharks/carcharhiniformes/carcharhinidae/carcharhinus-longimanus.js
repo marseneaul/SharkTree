@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
+import carcharhinusLongimanusImg from "./../../../../../images/carcharhiniformes/carcharhinidae/carcharhinus-longimanus.png";
 
 export const carcharhinusLongimanus = {
     commonName: "Oceanic Whitetip Shark",
     alternativeNames: ["Brown Milbert's Sand Bar Shark", "Brown Shark", "Shipwreck Shark", "Nigano Shark", "Oceanic White-Tipped Whaler", "Whitetip Shark"],
     binomialName: "Carcharhinus longimanus",
+
+    imageUrl: carcharhinusLongimanusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
