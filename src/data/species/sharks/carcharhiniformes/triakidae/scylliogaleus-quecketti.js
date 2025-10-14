@@ -1,5 +1,5 @@
 
-import scylliogaleusQueckettiImg from "../../../../../images/carcharhiniformes/triakidae/scylliogaleus-quecketti.jpg";
+import scylliogaleusQueckettiImg from "../../../../../images/carcharhiniformes/triakidae/scylliogaleus-quecketti.png";
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 
 export const scylliogaleusQuecketti = {

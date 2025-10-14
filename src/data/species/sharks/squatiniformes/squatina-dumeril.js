@@ -1,8 +1,11 @@
 import { ANAL_FIN, CONSERVATION_STATUS, FLATTENED_BODY, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-
+import squatinaDumerilImg from "./../../../../images/squatiniformes/squatina-dumeril.png";
+    
 export const squatinaDumeril = {
     commonName: "Atlantic Angelshark",
     binomialName: "Squatina dumeril",
+
+    imageUrl: squatinaDumerilImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

@@ -1,8 +1,11 @@
 import { CAUDAL_FIN_SHAPE, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import odontaspisNoronhaiImg from "./../../../../images/lamniformes/odontaspis-noronhai.png";
 
 export const odontaspisNoronhai = {
     commonName: "Bigeye Sand Tiger",
     binomialName: "Odontaspis noronhai",
+
+    imageUrl: odontaspisNoronhaiImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

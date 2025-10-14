@@ -1,8 +1,11 @@
 import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import squalusEdmundsiImg from "./../../../../../images/squaliformes/squalidae/squalus-edmundsi.png";
 
 export const squalusEdmundsi = {
     commonName: "Edmund's Spurdog",
     binomialName: "Squalus edmundsi",
+
+    imageUrl: squalusEdmundsiImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

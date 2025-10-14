@@ -1,4 +1,4 @@
-import alopiasPelagicusImg from "./../../../../images/lamniformes/alopias-pelagicus.jpeg";
+import alopiasPelagicusImg from "./../../../../images/lamniformes/alopias-pelagicus.png";
 import { BEHAVIOR, CAUDAL_FIN_SHAPE, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION } from "../../../../constants/enums";
 
 export const alopiasPelagicus = {
