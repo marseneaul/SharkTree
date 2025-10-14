@@ -657,9 +657,20 @@ export class SharkTreeComponent extends HTMLElement {
                 top: 0;
                 width: 100%;
                 height: 100%;
-                background-color: rgba(0, 0, 0, 0.8);
-                backdrop-filter: blur(4px);
-                animation: fadeIn var(--transition-normal, 250ms ease-in-out);
+                background-color: rgba(0, 0, 0, 0.9);
+                backdrop-filter: blur(8px);
+                animation: modalFadeIn var(--transition-normal, 250ms ease-in-out);
+            }
+            
+            @keyframes modalFadeIn {
+                from { 
+                    opacity: 0; 
+                    backdrop-filter: blur(0px);
+                }
+                to { 
+                    opacity: 1; 
+                    backdrop-filter: blur(8px);
+                }
             }
             
             .image-modal-content {
@@ -667,34 +678,62 @@ export class SharkTreeComponent extends HTMLElement {
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-                max-width: 90vw;
-                max-height: 90vh;
+                max-width: 95vw;
+                max-height: 95vh;
+                width: auto;
+                height: auto;
                 object-fit: contain;
                 border-radius: var(--radius-lg, 0.5rem);
                 box-shadow: var(--shadow-2xl, 0 25px 50px -12px rgba(0, 0, 0, 0.25));
                 cursor: pointer;
+                transition: transform var(--transition-normal, 250ms ease-in-out);
+                animation: imageScaleIn var(--transition-normal, 250ms ease-out);
+            }
+            
+            @keyframes imageScaleIn {
+                from { 
+                    transform: translate(-50%, -50%) scale(0.8);
+                    opacity: 0;
+                }
+                to { 
+                    transform: translate(-50%, -50%) scale(1);
+                    opacity: 1;
+                }
+            }
+            
+            .image-modal-content:hover {
+                transform: translate(-50%, -50%) scale(1.02);
             }
             
             .image-modal-close {
                 position: absolute;
-                top: -40px;
-                right: 0;
+                top: 20px;
+                right: 20px;
                 color: white;
-                font-size: 28px;
+                font-size: 24px;
                 font-weight: bold;
                 cursor: pointer;
-                background: rgba(0, 0, 0, 0.5);
+                background: rgba(0, 0, 0, 0.7);
                 border-radius: var(--radius-full, 9999px);
-                width: 32px;
-                height: 32px;
+                width: 48px;
+                height: 48px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                transition: background-color var(--transition-fast, 150ms ease-in-out);
+                transition: all var(--transition-fast, 150ms ease-in-out);
+                border: 2px solid rgba(255, 255, 255, 0.3);
+                backdrop-filter: blur(4px);
+                z-index: 1001;
             }
             
             .image-modal-close:hover {
-                background: rgba(0, 0, 0, 0.7);
+                background: rgba(220, 38, 38, 0.9);
+                border-color: rgba(255, 255, 255, 0.5);
+                transform: scale(1.1);
+            }
+            
+            .image-modal-close:active {
+                transform: scale(0.95);
             }
             
             #info-button {
@@ -1141,8 +1180,12 @@ export class SharkTreeComponent extends HTMLElement {
     }
     
     addSharkImage(selectedShark) {
+        console.log("addSharkImage called for:", selectedShark.commonName);
         const imageContainer = this.shadow.querySelector("#shark-image-container");
-        if (!imageContainer) return;
+        if (!imageContainer) {
+            console.log("Image container not found!");
+            return;
+        }
         
         const imageWrapper = document.createElement("div");
         imageWrapper.className = "image-wrapper";
@@ -1163,11 +1206,13 @@ export class SharkTreeComponent extends HTMLElement {
         
         // Set up image loading with proper event handling
         sharkImg.onload = () => {
+            console.log("Image loaded successfully:", sharkImg.src);
             loadingDiv.remove();
             sharkImg.style.display = "block";
         };
         
         sharkImg.onerror = (error) => {
+            console.log("Image failed to load:", sharkImg.src, error);
             loadingDiv.textContent = "Image not available";
             loadingDiv.className = "image-error";
         };
@@ -1176,7 +1221,9 @@ export class SharkTreeComponent extends HTMLElement {
         sharkImg.src = imageUrl;
         
         // Add click handler for modal
-        sharkImg.addEventListener("click", () => {
+        sharkImg.addEventListener("click", (event) => {
+            console.log("Image clicked!", selectedShark.commonName, sharkImg.src);
+            event.stopPropagation();
             this.showImageModal(sharkImg.src, selectedShark.commonName);
         });
         
@@ -1213,6 +1260,8 @@ export class SharkTreeComponent extends HTMLElement {
     }
     
     showImageModal(imageUrl, speciesName) {
+        console.log("showImageModal called with:", imageUrl, speciesName);
+        
         // Remove existing modal if any
         const existingModal = document.querySelector(".image-modal");
         if (existingModal) {
@@ -1223,17 +1272,68 @@ export class SharkTreeComponent extends HTMLElement {
         const modal = document.createElement("div");
         modal.className = "image-modal";
         modal.style.display = "block";
+        modal.style.position = "fixed";
+        modal.style.top = "0";
+        modal.style.left = "0";
+        modal.style.width = "100%";
+        modal.style.height = "100%";
+        modal.style.backgroundColor = "rgba(0, 0, 0, 0.9)";
+        modal.style.zIndex = "9999";
+        console.log("Modal created:", modal);
         
         // Create modal content
         const modalImg = document.createElement("img");
         modalImg.className = "image-modal-content";
         modalImg.src = imageUrl;
         modalImg.alt = `${speciesName} - Full size`;
+        modalImg.style.position = "absolute";
+        modalImg.style.top = "50%";
+        modalImg.style.left = "50%";
+        modalImg.style.transform = "translate(-50%, -50%)";
+        modalImg.style.maxWidth = "95vw";
+        modalImg.style.maxHeight = "95vh";
+        modalImg.style.objectFit = "contain";
+        modalImg.style.borderRadius = "0.5rem";
+        modalImg.style.boxShadow = "0 25px 50px -12px rgba(0, 0, 0, 0.25)";
+        modalImg.style.cursor = "pointer";
         
         // Create close button
-        const closeBtn = document.createElement("span");
+        const closeBtn = document.createElement("button");
         closeBtn.className = "image-modal-close";
-        closeBtn.innerHTML = "×";
+        closeBtn.innerHTML = `
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        `;
+        closeBtn.style.position = "absolute";
+        closeBtn.style.top = "24px";
+        closeBtn.style.right = "24px";
+        closeBtn.style.color = "white";
+        closeBtn.style.background = "rgba(0, 0, 0, 0.8)";
+        closeBtn.style.border = "none";
+        closeBtn.style.borderRadius = "8px";
+        closeBtn.style.width = "40px";
+        closeBtn.style.height = "40px";
+        closeBtn.style.display = "flex";
+        closeBtn.style.alignItems = "center";
+        closeBtn.style.justifyContent = "center";
+        closeBtn.style.cursor = "pointer";
+        closeBtn.style.transition = "all 150ms ease-in-out";
+        closeBtn.style.boxShadow = "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)";
+        closeBtn.style.zIndex = "10000";
+        closeBtn.style.backdropFilter = "blur(8px)";
+        // Add hover effects
+        closeBtn.addEventListener("mouseenter", () => {
+            closeBtn.style.background = "rgba(220, 38, 38, 0.9)";
+            closeBtn.style.transform = "scale(1.05)";
+        });
+        
+        closeBtn.addEventListener("mouseleave", () => {
+            closeBtn.style.background = "rgba(0, 0, 0, 0.8)";
+            closeBtn.style.transform = "scale(1)";
+        });
+        
         closeBtn.addEventListener("click", () => {
             modal.remove();
         });
@@ -1257,6 +1357,9 @@ export class SharkTreeComponent extends HTMLElement {
         modal.appendChild(modalImg);
         modal.appendChild(closeBtn);
         document.body.appendChild(modal);
+        console.log("Modal added to body:", document.body.contains(modal));
+        console.log("Modal display style:", modal.style.display);
+        console.log("Modal computed style:", window.getComputedStyle(modal).display);
     }
 
     redraw(_event) {
