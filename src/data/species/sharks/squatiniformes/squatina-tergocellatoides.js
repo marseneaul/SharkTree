@@ -1,8 +1,11 @@
 import { ANAL_FIN, CONSERVATION_STATUS, FLATTENED_BODY, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import squatinaTergocellatoidesImg from "./../../../../images/squatiniformes/squatina-tergocellatoides.png";
 
 export const squatinaTergocellatoides = {
     commonName: "Ocellated Angelshark",
     binomialName: "Squatina tergocellatoides",
+
+    imageUrl: squatinaTergocellatoidesImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

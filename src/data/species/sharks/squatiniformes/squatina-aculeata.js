@@ -1,8 +1,11 @@
 import { ANAL_FIN, CONSERVATION_STATUS, FLATTENED_BODY, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import squatinaAculeataImg from "./../../../../images/squatiniformes/squatina-aculeata.png";
 
 export const squatinaAculeata = {
     commonName: "Sawback Angelshark",
     binomialName: "Squatina aculeata",
+
+    imageUrl: squatinaAculeataImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

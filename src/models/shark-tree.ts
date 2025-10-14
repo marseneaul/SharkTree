@@ -719,6 +719,7 @@ export class SharkTree {
             }
         }
     }
+
     getTaxonomicColor(shark: SharkSpecies): string | null {
         if (this.activeTaxonomicLevel) {
             const levelData = this.taxonomicLevels.get(this.activeTaxonomicLevel);

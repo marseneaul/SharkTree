@@ -1,9 +1,12 @@
 import { CAUDAL_FIN_SHAPE, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION } from "../../../../constants/enums";
+import odontaspisFeroxImg from "./../../../../images/lamniformes/odontaspis-ferox.png";
 
 export const odontaspisFerox = {
     commonName: "Smalltooth Sand Tiger",
     alternativeNames: ["Bumpytail Ragged-Tooth"],
     binomialName: "Odontaspis ferox",
+
+    imageUrl: odontaspisFeroxImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

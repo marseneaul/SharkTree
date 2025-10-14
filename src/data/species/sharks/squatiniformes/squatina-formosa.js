@@ -1,8 +1,11 @@
 import { ANAL_FIN, CONSERVATION_STATUS, FLATTENED_BODY, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import squatinaFormosaImg from "./../../../../images/squatiniformes/squatina-formosa.png";
 
 export const squatinaFormosa = {
     commonName: "Taiwan Angelshark",
     binomialName: "Squatina formosa",
+
+    imageUrl: squatinaFormosaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

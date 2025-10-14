@@ -1,9 +1,12 @@
 import { ANAL_FIN, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import somniosusMicrocephalusImg from "./../../../../../images/squaliformes/somniosidae-oxynotidae/somniosus-microcephalus.png";
 
 export const somniosusMicrocephalus = {
     commonName: "Greenland Shark",
     alternativeNames: ["Greenland Dogfish", "Gurry Shark", "Grey Shark"],
     binomialName: "Somniosus microcephalus",
+
+    imageUrl: somniosusMicrocephalusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

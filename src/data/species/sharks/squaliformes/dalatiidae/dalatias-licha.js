@@ -1,9 +1,12 @@
 import { ANAL_FIN, BIOLUMINESCENT, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import dalatiasLichaImg from "./../../../../../images/squaliformes/dalatiidae/dalatias-licha.png";
 
 export const dalatiasLicha = {
     commonName: "Kitefin Shark",
     alternativeNames: ["Seal Shark", "Black Shark", "Darkie Charlie"],
     binomialName: "Dalatias licha",
+
+    imageUrl: dalatiasLichaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
