@@ -1,8 +1,11 @@
 import { ANAL_FIN, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import pristiophorusJaponicusImg from "./../../../../images/pristiophoriformes/pristiophorus-japonicus.png";
 
 export const pristiophorusJaponicus = {
     commonName: "Japanese Sawshark",
     binomialName: "Pristiophorus japonicus",
+
+    imageUrl: pristiophorusJaponicusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

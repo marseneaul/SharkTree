@@ -1,9 +1,12 @@
 import { ANAL_FIN, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import pristiophorusCirratusImg from "./../../../../images/pristiophoriformes/pristiophorus-cirratus.png";
 
 export const pristiophorusCirratus = {
     commonName: "Longnose Sawshark",
     alternativeNames: ["Common Sawshark"],
     binomialName: "Pristiophorus cirratus",
+
+    imageUrl: pristiophorusCirratusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import mustelusMustelusImg from "./../../../../../images/carcharhiniformes/triakidae/mustelus-mustelus.png";
 
 export const mustelusMustelus = {
     commonName: "Common Smooth-Hound",
     binomialName: "Mustelus mustelus",
+
+    imageUrl: mustelusMustelusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
