@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
+import rhizoprionodonTerraenovaeImg from "./../../../../../images/carcharhiniformes/carcharhinidae/rhizoprionodon-terraenovae.png";
 
 export const rhizoprionodonTerraenovae = {
     commonName: "Atlantic Sharpnose Shark",
     binomialName: "Rhizoprionodon terraenovae",
+
+    imageUrl: rhizoprionodonTerraenovaeImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
