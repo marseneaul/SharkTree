@@ -1,4 +1,5 @@
 import { ANAL_FIN, BEHAVIOR, BIOLUMINESCENT, CONSERVATION_STATUS, DORSAL_FIN_SPINES, ELECTRIC_ORGAN, FLATTENED_BODY, MOUTH_IN_FRONT_OF_EYES, NICTITATING_MEMBRANE, NUM_DORSAL_FINS, NUM_GILLS, OPERCULUM, PROXIMAL_DORSAL_FINS, SNOUT_SHAPE, SPECIES_TYPE, SPIRACLES, TAIL_SPINES, VENOMOUS_SPINE } from "./constants/enums";
+import { BreadcrumbComponent } from "./components/breadcrumb";
 import { callorhinchidaeConfig } from "./data/configs/chimaeras/callorhinchidae.config";
 import { chimaeiridaeConfig } from "./data/configs/chimaeras/chimaeiridae.config";
 import { holocephaliConfig } from "./data/configs/chimaeras/holocephali.config";
@@ -82,6 +83,10 @@ export class SharkTreeComponent extends HTMLElement {
         this.shadow = this.attachShadow({mode: "open"});
         this.sharkTree = null;
         this.sharkScreen = null;
+        this.breadcrumbComponent = null;
+        this.currentSpeciesType = SPECIES_TYPE.SHARKS;
+        this.currentConfig = null;
+        this.currentSpecies = null;
     }
 
     /*----------------------------------------|
@@ -90,6 +95,7 @@ export class SharkTreeComponent extends HTMLElement {
 
     connectedCallback() {
         this.render();
+        this.initializeBreadcrumb();
         this.initializeSharkTree();
         this.setupDropdown();
         this.setupEventListeners();
@@ -128,6 +134,11 @@ export class SharkTreeComponent extends HTMLElement {
             console.error(`Configuration for ${speciesType}/${configKey} not found`);
             return;
         }
+
+        // Update current state for breadcrumb
+        this.currentSpeciesType = speciesType;
+        this.currentConfig = configKey;
+        this.currentSpecies = null; // Reset selected species when changing config
     
         const container = this.shadow.querySelector("#phylo-container");
         if (!container) {
@@ -143,6 +154,9 @@ export class SharkTreeComponent extends HTMLElement {
         container.appendChild(sharkTreeSvg);
         this.lastContainerWidth = containerWidth;
         this.resetDropdowns();
+        
+        // Update breadcrumb
+        this.updateBreadcrumb();
     
         // Update search label dynamically
         const searchLabel = this.shadow.querySelector("#search-container label");
@@ -214,6 +228,25 @@ export class SharkTreeComponent extends HTMLElement {
         this.initializeSharkTree(speciesType, selectedConfig);
     }
 
+    initializeBreadcrumb() {
+        const breadcrumbContainer = this.shadow.querySelector("#breadcrumb-container");
+        if (breadcrumbContainer) {
+            this.breadcrumbComponent = new BreadcrumbComponent(breadcrumbContainer);
+            this.updateBreadcrumb();
+        }
+    }
+
+    updateBreadcrumb() {
+        if (this.breadcrumbComponent) {
+            const breadcrumbItems = BreadcrumbComponent.createBreadcrumbForSharkTree(
+                this.currentSpeciesType,
+                this.currentConfig,
+                this.currentSpecies
+            );
+            this.breadcrumbComponent.updateBreadcrumb(breadcrumbItems);
+        }
+    }
+
     /*----------------------------------------|
     |               HTML & CSS                |
     |----------------------------------------*/
@@ -232,6 +265,7 @@ export class SharkTreeComponent extends HTMLElement {
                         Fossil Tree
                     </a>
                 </nav>
+                <div id="breadcrumb-container"></div>
                 <div id="controls-container">
                     <div class="control-group" id="species-type-container">
                         <label for="species-type-dropdown">Species Type</label>
@@ -362,6 +396,121 @@ export class SharkTreeComponent extends HTMLElement {
             #main-nav a:hover {
                 color: var(--color-primary-hover, #004d6f);
                 background-color: var(--color-primary-light, #E0F7FA);
+            }
+            
+            #breadcrumb-container {
+                background: var(--color-white, #FFFFFF);
+                padding: var(--space-3, 0.75rem) var(--space-4, 1rem);
+                border-bottom: 1px solid var(--color-border-light, #E5E7EB);
+                box-shadow: var(--shadow-sm, 0 1px 2px 0 rgba(0, 0, 0, 0.05));
+                font-size: var(--text-sm, 0.875rem);
+                position: sticky;
+                top: 0;
+                z-index: var(--z-sticky, 1020);
+                backdrop-filter: blur(8px);
+            }
+            
+            .breadcrumb {
+                background: var(--color-white, #FFFFFF);
+                padding: var(--space-3, 0.75rem) var(--space-4, 1rem);
+                border-bottom: 1px solid var(--color-border-light, #E5E7EB);
+                box-shadow: var(--shadow-sm, 0 1px 2px 0 rgba(0, 0, 0, 0.05));
+                font-size: var(--text-sm, 0.875rem);
+                position: sticky;
+                top: 0;
+                z-index: var(--z-sticky, 1020);
+                backdrop-filter: blur(8px);
+            }
+            
+            .breadcrumb-list {
+                display: flex;
+                align-items: center;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                flex-wrap: wrap;
+                gap: var(--space-1, 0.25rem);
+            }
+            
+            .breadcrumb-item {
+                display: flex;
+                align-items: center;
+            }
+            
+            .breadcrumb-item:not(:last-child)::after {
+                content: "›";
+                margin: 0 var(--space-2, 0.5rem);
+                color: var(--color-text-muted, #6B7280);
+                font-weight: var(--font-weight-medium, 500);
+            }
+            
+            .breadcrumb-link {
+                color: var(--color-primary, #00688B);
+                text-decoration: none;
+                transition: all var(--transition-fast, 150ms ease-in-out);
+                padding: var(--space-1, 0.25rem) var(--space-2, 0.5rem);
+                border-radius: var(--radius-sm, 0.25rem);
+                font-weight: var(--font-weight-medium, 500);
+            }
+            
+            .breadcrumb-link:hover {
+                color: var(--color-primary-hover, #004d6f);
+                background-color: var(--color-primary-light, #E0F7FA);
+            }
+            
+            .breadcrumb-current {
+                color: var(--color-text-primary, #111827);
+                font-weight: var(--font-weight-semibold, 600);
+                padding: var(--space-1, 0.25rem) var(--space-2, 0.5rem);
+                background-color: var(--color-bg-secondary, #F9FAFB);
+                border-radius: var(--radius-sm, 0.25rem);
+            }
+            
+            .breadcrumb-item.active .breadcrumb-current {
+                background-color: var(--color-primary-light, #E0F7FA);
+                color: var(--color-primary, #00688B);
+            }
+            
+            @media (max-width: 768px) {
+                #breadcrumb-container {
+                    padding: var(--space-2, 0.5rem) var(--space-3, 0.75rem);
+                    font-size: var(--text-xs, 0.75rem);
+                }
+                
+                .breadcrumb-list {
+                    gap: var(--space-1, 0.25rem);
+                }
+                
+                .breadcrumb-item:not(:last-child)::after {
+                    margin: 0 var(--space-1, 0.25rem);
+                }
+                
+                .breadcrumb-link,
+                .breadcrumb-current {
+                    padding: var(--space-1, 0.25rem);
+                }
+            }
+            
+            @media (max-width: 480px) {
+                #breadcrumb-container {
+                    padding: var(--space-2, 0.5rem);
+                }
+                
+                .breadcrumb-list {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: var(--space-1, 0.25rem);
+                }
+                
+                .breadcrumb-item:not(:last-child)::after {
+                    display: none;
+                }
+                
+                .breadcrumb-item:not(:last-child)::before {
+                    content: "↳ ";
+                    color: var(--color-text-muted, #6B7280);
+                    margin-right: var(--space-1, 0.25rem);
+                }
             }
             
             #app-container {
@@ -1162,6 +1311,8 @@ export class SharkTreeComponent extends HTMLElement {
 
     selectSharkHandler(event) {
         const selectedShark = event.detail.sharkSpecies;
+        this.currentSpecies = selectedShark.commonName || selectedShark.binomialName;
+        
         if (this.sharkScreen) {
             const allSpecies = this.sharkTree.getSharkSpeciesList();
             this.sharkScreen.innerHTML = selectedShark.getFormattedString(allSpecies);
@@ -1176,6 +1327,9 @@ export class SharkTreeComponent extends HTMLElement {
                 this.addSharkImage(selectedShark);
             }
         }
+        
+        // Update breadcrumb with selected species
+        this.updateBreadcrumb();
         this.sharkTree.updateSelection(selectedShark);
     }
     

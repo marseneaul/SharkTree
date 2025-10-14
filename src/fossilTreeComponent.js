@@ -5,6 +5,7 @@ import { LifeEventsTrack } from "./tracks/life-events-track";
 import { SharksAndKinEventsTrack } from "./tracks/sharks-and-kin-events-track";
 import { FossilSitesEventsTrack } from "./tracks/fossil-sites-events-track";
 import { PhylogeneticTreeTrack } from "./tracks/phylogenetic-tree-track";
+import { BreadcrumbComponent } from "./components/breadcrumb";
 
 customElements.define("time-track", TimeTrack);
 customElements.define("ruler-track", RulerTrack);
@@ -34,6 +35,7 @@ export class FossilTreeComponent extends HTMLElement {
 
     connectedCallback() {
         this.render();
+        this.initializeBreadcrumb();
         this.initializeFossilTree();
         this.setupEventListeners();
         this.resizeObserver = new ResizeObserver(this.handleResize.bind(this));
@@ -51,6 +53,15 @@ export class FossilTreeComponent extends HTMLElement {
     render() {
         this.template.innerHTML = this.html();
         this.shadow.appendChild(this.template.content.cloneNode(true));
+    }
+
+    initializeBreadcrumb() {
+        const breadcrumbContainer = this.shadow.querySelector("#breadcrumb-container");
+        if (breadcrumbContainer) {
+            this.breadcrumbComponent = new BreadcrumbComponent(breadcrumbContainer);
+            const breadcrumbItems = BreadcrumbComponent.createBreadcrumbForFossilTree();
+            this.breadcrumbComponent.updateBreadcrumb(breadcrumbItems);
+        }
     }
 
     initializeFossilTree() {
@@ -102,6 +113,7 @@ export class FossilTreeComponent extends HTMLElement {
                         Shark Tree
                     </a>
                 </nav>
+                <div id="breadcrumb-container"></div>
                 <div id="track-container" class="fade-in"></div>
             </div>
         `;
@@ -145,6 +157,121 @@ export class FossilTreeComponent extends HTMLElement {
             #main-nav a:hover {
                 color: var(--color-primary-hover, #004d6f);
                 background-color: var(--color-primary-light, #E0F7FA);
+            }
+            
+            #breadcrumb-container {
+                background: var(--color-white, #FFFFFF);
+                padding: var(--space-3, 0.75rem) var(--space-4, 1rem);
+                border-bottom: 1px solid var(--color-border-light, #E5E7EB);
+                box-shadow: var(--shadow-sm, 0 1px 2px 0 rgba(0, 0, 0, 0.05));
+                font-size: var(--text-sm, 0.875rem);
+                position: sticky;
+                top: 0;
+                z-index: var(--z-sticky, 1020);
+                backdrop-filter: blur(8px);
+            }
+            
+            .breadcrumb {
+                background: var(--color-white, #FFFFFF);
+                padding: var(--space-3, 0.75rem) var(--space-4, 1rem);
+                border-bottom: 1px solid var(--color-border-light, #E5E7EB);
+                box-shadow: var(--shadow-sm, 0 1px 2px 0 rgba(0, 0, 0, 0.05));
+                font-size: var(--text-sm, 0.875rem);
+                position: sticky;
+                top: 0;
+                z-index: var(--z-sticky, 1020);
+                backdrop-filter: blur(8px);
+            }
+            
+            .breadcrumb-list {
+                display: flex;
+                align-items: center;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                flex-wrap: wrap;
+                gap: var(--space-1, 0.25rem);
+            }
+            
+            .breadcrumb-item {
+                display: flex;
+                align-items: center;
+            }
+            
+            .breadcrumb-item:not(:last-child)::after {
+                content: "›";
+                margin: 0 var(--space-2, 0.5rem);
+                color: var(--color-text-muted, #6B7280);
+                font-weight: var(--font-weight-medium, 500);
+            }
+            
+            .breadcrumb-link {
+                color: var(--color-primary, #00688B);
+                text-decoration: none;
+                transition: all var(--transition-fast, 150ms ease-in-out);
+                padding: var(--space-1, 0.25rem) var(--space-2, 0.5rem);
+                border-radius: var(--radius-sm, 0.25rem);
+                font-weight: var(--font-weight-medium, 500);
+            }
+            
+            .breadcrumb-link:hover {
+                color: var(--color-primary-hover, #004d6f);
+                background-color: var(--color-primary-light, #E0F7FA);
+            }
+            
+            .breadcrumb-current {
+                color: var(--color-text-primary, #111827);
+                font-weight: var(--font-weight-semibold, 600);
+                padding: var(--space-1, 0.25rem) var(--space-2, 0.5rem);
+                background-color: var(--color-bg-secondary, #F9FAFB);
+                border-radius: var(--radius-sm, 0.25rem);
+            }
+            
+            .breadcrumb-item.active .breadcrumb-current {
+                background-color: var(--color-primary-light, #E0F7FA);
+                color: var(--color-primary, #00688B);
+            }
+            
+            @media (max-width: 768px) {
+                #breadcrumb-container {
+                    padding: var(--space-2, 0.5rem) var(--space-3, 0.75rem);
+                    font-size: var(--text-xs, 0.75rem);
+                }
+                
+                .breadcrumb-list {
+                    gap: var(--space-1, 0.25rem);
+                }
+                
+                .breadcrumb-item:not(:last-child)::after {
+                    margin: 0 var(--space-1, 0.25rem);
+                }
+                
+                .breadcrumb-link,
+                .breadcrumb-current {
+                    padding: var(--space-1, 0.25rem);
+                }
+            }
+            
+            @media (max-width: 480px) {
+                #breadcrumb-container {
+                    padding: var(--space-2, 0.5rem);
+                }
+                
+                .breadcrumb-list {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: var(--space-1, 0.25rem);
+                }
+                
+                .breadcrumb-item:not(:last-child)::after {
+                    display: none;
+                }
+                
+                .breadcrumb-item:not(:last-child)::before {
+                    content: "↳ ";
+                    color: var(--color-text-muted, #6B7280);
+                    margin-right: var(--space-1, 0.25rem);
+                }
             }
             
             #app-container {
