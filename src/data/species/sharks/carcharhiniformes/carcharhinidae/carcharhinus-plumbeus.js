@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, PROXIMAL_DORSAL_FINS, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
+import carcharhinusPlumbeusImg from "./../../../../../images/carcharhiniformes/carcharhinidae/carcharhinus-plumbeus.png";
 
 export const carcharhinusPlumbeus = {
     commonName: "Sandbar Shark",
     binomialName: "Carcharhinus plumbeus",
+
+    imageUrl: carcharhinusPlumbeusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
