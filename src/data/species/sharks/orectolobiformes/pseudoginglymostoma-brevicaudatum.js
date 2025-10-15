@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, MOUTH_IN_FRONT_OF_EYES, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import pseudoginglymostomaBrevicaudatumImg from "./../../../../images/orectolobiformes/pseudoginglymostoma-brevicaudatum.png";
 
 export const pseudoginglymostomaBrevicaudatum = {
     commonName: "Short-Tail Nurse Shark",
     binomialName: "Pseudoginglymostoma brevicaudatum",
+
+    imageUrl: pseudoginglymostomaBrevicaudatumImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

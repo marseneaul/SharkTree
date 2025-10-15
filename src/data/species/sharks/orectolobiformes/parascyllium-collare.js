@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, MOUTH_IN_FRONT_OF_EYES, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import parascylliumCollareImg from "./../../../../images/orectolobiformes/parascyllium-collare.png";
 
 export const parascylliumCollare = {
     commonName: "Collared Carpetshark",
     binomialName: "Parascyllium collare",
+
+    imageUrl: parascylliumCollareImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
