@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, MOUTH_IN_FRONT_OF_EYES, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import brachaelurusColcloughiImg from "./../../../../images/orectolobiformes/brachaelurus-colcloughi.png";
 
 export const brachaelurusColcloughi = {
     commonName: "Bluegrey Carpetshark",
     alternativeNames: ["Colclough's Shark", "Blue-Grey Catshark", "Bluegrey Shark", "Southern Blind Shark"],
     binomialName: "Brachaelurus colcloughi",
+
+    imageUrl: brachaelurusColcloughiImg,        
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

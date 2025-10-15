@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
+import sphyrnaCoronaImg from "./../../../../../images/carcharhiniformes/sphyrnidae/sphyrna-corona.png";
 
 export const sphyrnaCorona = {
     commonName: "Scalloped Bonnethead",
     binomialName: "Sphyrna corona",
+
+    imageUrl: sphyrnaCoronaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

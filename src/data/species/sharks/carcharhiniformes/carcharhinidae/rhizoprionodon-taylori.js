@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
+import rhizoprionodonTayloriImg from "./../../../../../images/carcharhiniformes/carcharhinidae/rhizoprionodon-taylori.png";
 
 export const rhizoprionodonTaylori = {
     commonName: "Australian Sharpnose Shark",
     binomialName: "Rhizoprionodon taylori",
+
+    imageUrl: rhizoprionodonTayloriImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
