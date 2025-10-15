@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, FLATTENED_BODY, MOUTH_IN_FRONT_OF_EYES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import orectolobusMaculatusImg from "./../../../../../images/orectolobiformes/orectolobidae/orectolobus-maculatus.png";
 
 export const orectolobusMaculatus = {
     commonName: "Spotted Wobbegong",
     alternativeNames: ["Carpet Shark", "Common Carpet Shark", "Common Catshark", "Tassel Shark", "Wobbegong"],
     binomialName: "Orectolobus maculatus",
+
+    imageUrl: orectolobusMaculatusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

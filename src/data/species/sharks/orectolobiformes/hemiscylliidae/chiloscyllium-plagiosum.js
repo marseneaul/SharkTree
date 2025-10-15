@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, MOUTH_IN_FRONT_OF_EYES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import chiloscylliumPlagiosumImg from "./../../../../../images/orectolobiformes/hemiscylliidae/chiloscyllium-plagiosum.png";
 
 export const chiloscylliumPlagiosum = {
     commonName: "Whitespotted Bamboo Shark",
     binomialName: "Chiloscyllium plagiosum",
+
+    imageUrl: chiloscylliumPlagiosumImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

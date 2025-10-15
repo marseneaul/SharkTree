@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, PROXIMAL_DORSAL_FINS, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
+import carcharhinusAmboinensisImg from "./../../../../../images/carcharhiniformes/carcharhinidae/carcharhinus-amboinensis.png";
 
 export const carcharhinusAmboinensis = {
     commonName: "Pigeye Shark",
-    binomialName: "Carcharhinus ambioinensis",
+    binomialName: "Carcharhinus amboinensis",
+
+    imageUrl: carcharhinusAmboinensisImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
@@ -14,7 +17,7 @@ export const carcharhinusAmboinensis = {
     order: "Carcharhiniformes",
     family: "Carcharhinidae",
     genus: "Carcharhinus",
-    species: "ambioinensis",
+    species: "amboinensis",
 
     tags: [
         CONSERVATION_STATUS.VU,

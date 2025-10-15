@@ -1,8 +1,11 @@
 import { CAUDAL_FIN_SHAPE, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import pseudocarchariasKamoharaiImg from "./../../../../images/lamniformes/pseudocarcharias-kamoharai.png";
 
-export const psuedocarchariasKamoharai = {
+export const pseudocarchariasKamoharai = {
     commonName: "Crocodile Shark",
-    binomialName: "Psuedocarcharias kamoharai",
+    binomialName: "Pseudocarcharias kamoharai",
+
+    imageUrl: pseudocarchariasKamoharaiImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
@@ -13,7 +16,7 @@ export const psuedocarchariasKamoharai = {
     superorder: "Galeomorphii",
     order: "Lamniformes",
     family: "Pseudocarchariidae",
-    genus: "Psuedocarcharias",
+    genus: "Pseudocarcharias",
     species: "kamoharai",
 
     tags: [

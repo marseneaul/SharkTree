@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, MOUTH_IN_FRONT_OF_EYES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import chiloscylliumHasseltiiImg from "./../../../../../images/orectolobiformes/hemiscylliidae/chiloscyllium-hasseltii.png";
 
 export const chiloscylliumHasseltii = {
     commonName: "Hasselt's Bamboo Shark",
     binomialName: "Chiloscyllium hasseltii",
+
+    imageUrl: chiloscylliumHasseltiiImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

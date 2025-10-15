@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
+import carcharhinusBorneensisImg from "./../../../../../images/carcharhiniformes/carcharhinidae/carcharhinus-borneensis.png";
 
 export const carcharhinusBorneensis = {
     commonName: "Borneo Shark",
     binomialName: "Carcharhinus borneensis",
+
+    imageUrl: carcharhinusBorneensisImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

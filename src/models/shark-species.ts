@@ -2,6 +2,7 @@ import { sha256 } from "js-sha256";
 import { SharkConfig } from "../interfaces/shark-config";
 import { SharkTreeNode } from "./shark-tree-node";
 import { BEHAVIOR, BIOLUMINESCENT, CONSERVATION_STATUS, DEFAULT_TAGS, DORSAL_FIN_SPINES, FLATTENED_BODY, getEnumCategory, NUM_GILLS, REPRODUCTIVE_STRATEGY, SPECIES_TYPE, TEMPERATURE_REGULATION } from "../constants/enums";
+import { getIUCNGraphic, getIUCNDescription } from "../utils/iucn-graphics";
 
 // SharkTreeLeafNode
 export class SharkSpecies {
@@ -249,7 +250,13 @@ export class SharkSpecies {
             CONSERVATION_STATUS.CR, CONSERVATION_STATUS.EN, CONSERVATION_STATUS.VU, CONSERVATION_STATUS.DD, CONSERVATION_STATUS.LC, CONSERVATION_STATUS.EW, CONSERVATION_STATUS.NT
         ].includes(tag as any)).slice(0, 1);
         const conservationStatusString = conservationStatusTags.length > 0 
-            ? `<div class="section"><strong>Conservation Status:</strong> ${conservationStatusTags.join(", ")}</div>` 
+            ? `<div class="section conservation-status">
+                <strong>Conservation Status:</strong> 
+                <span class="iucn-status">
+                    <span class="iucn-text">${getIUCNDescription(conservationStatusTags[0] as CONSERVATION_STATUS)}</span>
+                    ${getIUCNGraphic(conservationStatusTags[0] as CONSERVATION_STATUS)}
+                </span>
+            </div>` 
             : "";
         const depthRangeString = this.depthRange
             ? `<div class="section"><strong>Depth Range:</strong> ${this.depthRange}</div>`

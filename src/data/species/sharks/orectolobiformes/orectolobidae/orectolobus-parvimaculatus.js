@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, FLATTENED_BODY, MOUTH_IN_FRONT_OF_EYES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import orectolobusParvimaculatusImg from "./../../../../../images/orectolobiformes/orectolobidae/orectolobus-parvimaculatus.png";
 
 export const orectolobusParvimaculatus = {
     commonName: "Dwarf Spotted Wobbegong",
     binomialName: "Orectolobus parvimaculatus",
+
+    imageUrl: orectolobusParvimaculatusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
+import carcharhinusSorrahImg from "./../../../../../images/carcharhiniformes/carcharhinidae/carcharhinus-sorrah.png";
 
 export const carcharhinusSorrah = {
     commonName: "Spot-Tail Shark",
     binomialName: "Carcharhinus sorrah",
+
+    imageUrl: carcharhinusSorrahImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

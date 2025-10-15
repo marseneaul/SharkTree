@@ -1117,6 +1117,26 @@ export class SharkTreeComponent extends HTMLElement {
                     transform: translateY(0);
                 }
             }
+            
+            /* IUCN Conservation Status Graphics */
+            .conservation-status .iucn-status {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                margin-top: 0.25rem;
+            }
+            
+            .conservation-status .iucn-text {
+                font-size: 0.875rem;
+                font-weight: 500;
+            }
+            
+            .conservation-status svg {
+                display: inline-block !important;
+                vertical-align: middle;
+                border-radius: 0.25rem;
+                box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            }
         `;
     }
 

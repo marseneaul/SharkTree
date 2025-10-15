@@ -7,7 +7,7 @@ import { megachasmaPelagios } from "../../species/sharks/lamniformes/megachasma-
 import { mitsukurinaOwstoni } from "../../species/sharks/lamniformes/mitsukurina-owstoni";
 import { odontaspisFerox } from "../../species/sharks/lamniformes/odontaspis-ferox";
 import { odontaspisNoronhai } from "../../species/sharks/lamniformes/odontaspis-noronhai";
-import { psuedocarchariasKamoharai } from "../../species/sharks/lamniformes/pseudocarcharias-kamoharai";
+import { pseudocarchariasKamoharai } from "../../species/sharks/lamniformes/pseudocarcharias-kamoharai";
 
 import { lamnidaeConfig } from "./lamnidae.config";
 
@@ -34,7 +34,7 @@ export const lamniformesConfig = {
                                                 odontaspisNoronhai
                                             ]
                                         },
-                                        psuedocarchariasKamoharai
+                                        pseudocarchariasKamoharai
                                     ]
                                 },
                                 megachasmaPelagios

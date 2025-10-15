@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
+import nasolamiaVeloxImg from "./../../../../../images/carcharhiniformes/carcharhinidae/nasolamia-velox.png";
 
 export const nasolamiaVelox = {
     commonName: "Whitenose Shark",
     binomialName: "Nasolamia velox",
+
+    imageUrl: nasolamiaVeloxImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
