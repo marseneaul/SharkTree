@@ -1,7 +1,7 @@
 import { sha256 } from "js-sha256";
 import { SharkConfig } from "../interfaces/shark-config";
 import { SharkTreeNode } from "./shark-tree-node";
-import { BEHAVIOR, BIOLUMINESCENT, CONSERVATION_STATUS, DEFAULT_TAGS, DORSAL_FIN_SPINES, FLATTENED_BODY, getEnumCategory, NUM_GILLS, REPRODUCTIVE_STRATEGY, SPECIES_TYPE, TEMPERATURE_REGULATION } from "../constants/enums";
+import { BEHAVIOR, BIOLUMINESCENT, CONSERVATION_STATUS, DEFAULT_TAGS, DORSAL_FIN_SPINES, FLATTENED_BODY, getEnumCategory, NUM_GILLS, REPRODUCTIVE_STRATEGY, SPECIES_TYPE, TEMPERATURE_REGULATION, FEEDING_BEHAVIOR, GROUP_BEHAVIOR, NUM_DORSAL_FINS, ANAL_FIN, SPIRACLES, NICTITATING_MEMBRANE, CAUDAL_FIN_SHAPE, MOUTH_IN_FRONT_OF_EYES, PROXIMAL_DORSAL_FINS, HABITAT, WATER_COLUMN, PHYSICAL_CHARACTERISTIC, GEOGRAPHICAL_DISTRIBUTION, OCEAN_ZONE } from "../constants/enums";
 import { getIUCNGraphic, getIUCNDescription } from "../utils/iucn-graphics";
 
 // SharkTreeLeafNode
@@ -311,107 +311,247 @@ export class SharkSpecies {
     }
 
     getDescription(): string {
-        let description = "";
-        const addSentence = (sentence: string) => {
-            if (description) description += " ";
-            description += sentence;
+        const descriptionParts: string[] = [];
+        const addPart = (part: string) => {
+            if (part.trim()) descriptionParts.push(part.trim());
         };
-    
-        // Temperature Regulation
-        if (this.hasUnusualTemperatureRegulation()) {
-            if (this.tags.includes(TEMPERATURE_REGULATION.REGIONALLY_ENDOTHERMIC)) {
-                addSentence(`The ${this.commonName} maintains warm muscles in key regions of its body, aiding its agility in cooler waters.`);
-            } else if (this.tags.includes(TEMPERATURE_REGULATION.ENDOTHERMIC)) {
-                addSentence(`Unlike most sharks, the ${this.commonName} is fully endothermic, keeping its body warmer than the surrounding ocean.`);
-            }
-        } else if (this.tags.includes(TEMPERATURE_REGULATION.ECTOTHERMIC)) {
-            addSentence(`The ${this.commonName} relies on the ocean's temperature to regulate its body heat, typical of many shark species.`);
+
+        // Start with taxonomic context and physical characteristics
+        const taxonomicIntro = this.getTaxonomicIntroduction();
+        if (taxonomicIntro) addPart(taxonomicIntro);
+
+        // Physical characteristics and morphology
+        const physicalTraits = this.getPhysicalCharacteristics();
+        if (physicalTraits) addPart(physicalTraits);
+
+        // Habitat and distribution
+        const habitatInfo = this.getHabitatInformation();
+        if (habitatInfo) addPart(habitatInfo);
+
+        // Feeding behavior and ecology
+        const feedingInfo = this.getFeedingBehavior();
+        if (feedingInfo) addPart(feedingInfo);
+
+        // Reproductive strategy
+        const reproductiveInfo = this.getReproductiveInformation();
+        if (reproductiveInfo) addPart(reproductiveInfo);
+
+        // Behavioral characteristics
+        const behavioralInfo = this.getBehavioralCharacteristics();
+        if (behavioralInfo) addPart(behavioralInfo);
+
+        // Conservation status
+        const conservationInfo = this.getConservationInformation();
+        if (conservationInfo) addPart(conservationInfo);
+
+        // Fallback if no specific information is available
+        if (descriptionParts.length === 0) {
+            addPart(`The ${this.commonName} (${this.binomialName}) is a member of the ${this.family} family within the order ${this.order}, representing an important component of marine ecosystems.`);
         }
-    
-        // Conservation Status
-        const conservationTag = this.tags.find(tag => Object.values(CONSERVATION_STATUS).includes(tag as CONSERVATION_STATUS));
-        if (conservationTag) {
-            switch (conservationTag) {
-                case CONSERVATION_STATUS.CR:
-                    addSentence(`Sadly, this species is critically endangered, facing a high risk of extinction in the wild.`);
-                    break;
-                case CONSERVATION_STATUS.EN:
-                    addSentence(`It’s listed as endangered, making conservation efforts crucial for its survival.`);
-                    break;
-                case CONSERVATION_STATUS.VU:
-                    addSentence(`The ${this.commonName} is vulnerable to population declines due to environmental pressures.`);
-                    break;
-                case CONSERVATION_STATUS.NT:
-                    addSentence(`While not yet endangered, it’s considered near threatened and warrants close monitoring.`);
-                    break;
-                case CONSERVATION_STATUS.LC:
-                    addSentence(`Fortunately, it’s currently of least concern, thriving in its natural habitat.`);
-                    break;
-                case CONSERVATION_STATUS.DD:
-                    addSentence(`Little is known about its status—data is deficient, leaving its future uncertain.`);
-                    break;
+
+        return descriptionParts.join(" ");
+    }
+
+    private getTaxonomicIntroduction(): string {
+        const familyDescriptions: { [key: string]: string } = {
+            "Carcharhinidae": "requiem sharks",
+            "Lamnidae": "mackerel sharks", 
+            "Sphyrnidae": "hammerhead sharks",
+            "Squalidae": "dogfish sharks",
+            "Hexanchidae": "cow sharks",
+            "Chlamydoselachidae": "frilled sharks",
+            "Heterodontidae": "bullhead sharks",
+            "Orectolobidae": "carpet sharks",
+            "Ginglymostomatidae": "nurse sharks",
+            "Rhincodontidae": "whale sharks"
+        };
+
+        const familyDesc = familyDescriptions[this.family] || "sharks";
+        return `The ${this.commonName} (${this.binomialName}) is a species of ${familyDesc} belonging to the ${this.order} order.`;
+    }
+
+    private getPhysicalCharacteristics(): string {
+        const traits: string[] = [];
+
+        // Body shape and structure
+        if (this.tags.includes(FLATTENED_BODY.YES)) {
+            traits.push("possesses a dorsoventrally flattened body adapted for benthic life");
+        }
+
+        // Gill characteristics
+        const gillCount = this.tags.find(tag => Object.values(NUM_GILLS).includes(tag as NUM_GILLS));
+        if (gillCount === NUM_GILLS.SIX) {
+            traits.push("features six gill slits, a primitive characteristic shared with ancient shark lineages");
+        } else if (gillCount === NUM_GILLS.SEVEN) {
+            traits.push("possesses seven gill slits, an extremely rare trait among modern sharks");
+        }
+
+        // Dorsal fin characteristics
+        const dorsalFinCount = this.tags.find(tag => Object.values(NUM_DORSAL_FINS).includes(tag as NUM_DORSAL_FINS));
+        if (dorsalFinCount === NUM_DORSAL_FINS.ONE) {
+            traits.push("has a single dorsal fin, distinguishing it from most shark species");
+        }
+
+        // Dorsal fin spines
+        const dorsalSpines = this.tags.find(tag => Object.values(DORSAL_FIN_SPINES).includes(tag as DORSAL_FIN_SPINES));
+        if (dorsalSpines === DORSAL_FIN_SPINES.YES) {
+            traits.push("bears spines on both dorsal fins for defense");
+        } else if (dorsalSpines === DORSAL_FIN_SPINES.ONLY_ON_FIRST) {
+            traits.push("features a spine on the first dorsal fin");
+        }
+
+        // Caudal fin shape
+        const caudalShape = this.tags.find(tag => Object.values(CAUDAL_FIN_SHAPE).includes(tag as CAUDAL_FIN_SHAPE));
+        if (caudalShape === CAUDAL_FIN_SHAPE.HOMOCERCAL) {
+            traits.push("has a homocercal caudal fin, providing efficient propulsion");
+        }
+
+        // Specialized features
+        if (this.tags.includes(BIOLUMINESCENT.YES)) {
+            traits.push("exhibits bioluminescence, producing light through specialized photophores");
+        }
+
+        if (this.tags.includes(NICTITATING_MEMBRANE.YES)) {
+            traits.push("possesses a nictitating membrane, a protective third eyelid");
+        }
+
+        if (this.tags.includes(SPIRACLES.NO)) {
+            traits.push("lacks spiracles, relying entirely on gill ventilation");
+        }
+
+        if (this.tags.includes(ANAL_FIN.NO)) {
+            traits.push("lacks an anal fin, a characteristic of certain shark orders");
+        }
+
+        if (this.tags.includes(MOUTH_IN_FRONT_OF_EYES.MOUTH_IN_FRONT_OF_EYES)) {
+            traits.push("has a terminal mouth position, with the mouth extending in front of the eyes");
+        }
+
+        if (this.tags.includes(PROXIMAL_DORSAL_FINS.YES)) {
+            traits.push("features proximal dorsal fins positioned close together");
+        }
+
+        if (traits.length > 0) {
+            return `Morphologically, this species ${traits.join(", ")}.`;
+        }
+        return "";
+    }
+
+    private getHabitatInformation(): string {
+        const habitatInfo: string[] = [];
+
+        // Depth range
+        if (this.depthRange) {
+            const [minDepth, maxDepth] = this.depthRange.split('-').map(d => parseInt(d.trim()));
+            if (maxDepth > 1000) {
+                habitatInfo.push("inhabits deep oceanic waters");
+            } else if (maxDepth > 200) {
+                habitatInfo.push("occupies mid-water and continental slope habitats");
+            } else {
+                habitatInfo.push("frequents coastal and shallow waters");
             }
         }
 
-        // Physical Traits
-        if (this.hasUniquePhysicalTrait()) {
-            if (this.tags.includes(BIOLUMINESCENT.YES)) {
-                addSentence(`It glows in the dark thanks to bioluminescence, a stunning deep-sea adaptation.`);
-            } else if (this.tags.includes(FLATTENED_BODY.YES)) {
-                addSentence(`Its flattened body lets it hug the ocean floor, perfect for ambush hunting.`);
-            } else if (this.tags.includes(NUM_GILLS.SIX) || this.tags.includes(NUM_GILLS.SEVEN)) {
-                addSentence(`With ${this.tags.includes(NUM_GILLS.SEVEN) ? "seven" : "six"} gill slits, it stands out from the typical five-gilled species.`);
-            }
+        // Habitat preferences
+        const habitatTags = this.tags.filter(tag => Object.values(HABITAT).includes(tag as HABITAT));
+        if (habitatTags.length > 0) {
+            const habitatNames = habitatTags.map(tag => tag.toLowerCase().replace(/_/g, ' '));
+            habitatInfo.push(`preferring ${habitatNames.join(", ")} environments`);
         }
 
-        // Reproduction
-        if (this.hasNotableReproduction()) {
-            const reproTag = this.tags.find(tag => Object.values(REPRODUCTIVE_STRATEGY).includes(tag as REPRODUCTIVE_STRATEGY));
-            switch (reproTag) {
-                case REPRODUCTIVE_STRATEGY.OVIPAROUS:
-                    if (this.order === "Heterodontiformes") {
-                        addSentence(`The ${this.commonName} produces spiral-shaped egg cases with tendrils that cling to rocky crevices, safeguarding its young in a horn shark’s signature style.`);
-                    } else {
-                        addSentence(`The ${this.commonName} lays eggs in tough, leathery cases—sometimes called mermaid’s purses—that anchor to the ocean floor, protecting its young until they hatch.`);
-                    }
-                    break;
-                case REPRODUCTIVE_STRATEGY.VIVIPAROUS:
-                    addSentence(`This shark gives birth to live young, nourishing them through a placental-like connection in the womb, much like mammals do.`);
-                    break;
-                case REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS:
-                    addSentence(`Its eggs hatch inside the mother’s body, and the pups emerge fully formed, ready to face the ocean after a sheltered start.`);
-                    break;
-                case REPRODUCTIVE_STRATEGY.EMBRYTROPHY:
-                    addSentence(`The ${this.commonName} sustains its embryos with a rich yolk supply, a nurturing strategy that ensures robust development before birth.`);
-                    break;
-                case REPRODUCTIVE_STRATEGY.PARTHENOGENESIS:
-                    addSentence(`In a rare twist, this shark can reproduce without a mate, its females producing offspring from unfertilized eggs—a marvel of survival in isolation.`);
-                    break;
-                case REPRODUCTIVE_STRATEGY.OOPHAGY:
-                    addSentence(`Its embryos feast on unfertilized eggs within the womb, a fierce intrauterine competition where only the strongest pups survive to be born.`);
-                    break;
-                case REPRODUCTIVE_STRATEGY.EMBRYOPHAGY:
-                    addSentence(`The ${this.commonName} takes sibling rivalry to the extreme: its embryos cannibalize each other in the womb, leaving only the toughest to emerge.`);
-                    break;
-                case REPRODUCTIVE_STRATEGY.UNKNOWN:
-                    addSentence(`How this shark brings new life into the world remains a mystery, cloaking its reproductive habits in oceanic secrecy.`);
-                    break;
-            }
+        // Ocean zones
+        const oceanZoneTags = this.tags.filter(tag => Object.values(OCEAN_ZONE).includes(tag as OCEAN_ZONE));
+        if (oceanZoneTags.length > 0) {
+            const zoneNames = oceanZoneTags.map(tag => tag.toLowerCase().replace(/_/g, ' '));
+            habitatInfo.push(`primarily found in the ${zoneNames.join(" and ")} zones`);
         }
-    
-        // Behavior
+
+        // Water column position
+        const waterColumnTags = this.tags.filter(tag => Object.values(WATER_COLUMN).includes(tag as WATER_COLUMN));
+        if (waterColumnTags.length > 0) {
+            const columnNames = waterColumnTags.map(tag => tag.toLowerCase().replace(/_/g, ' '));
+            habitatInfo.push(`typically occupying the ${columnNames.join(" and ")}`);
+        }
+
+        if (habitatInfo.length > 0) {
+            return `This species ${habitatInfo.join(", ")}.`;
+        }
+        return "";
+    }
+
+    private getFeedingBehavior(): string {
+        const feedingTag = this.tags.find(tag => Object.values(FEEDING_BEHAVIOR).includes(tag as FEEDING_BEHAVIOR));
+        if (!feedingTag) return "";
+
+        const feedingDescriptions: { [key: string]: string } = {
+            [FEEDING_BEHAVIOR.CARNIVOROUS]: "carnivorous diet",
+            [FEEDING_BEHAVIOR.PISCIVOROUS]: "piscivorous diet, primarily consuming fish",
+            [FEEDING_BEHAVIOR.PLANKTIVOROUS]: "planktivorous diet, feeding on plankton and small organisms",
+            [FEEDING_BEHAVIOR.MOLLUSCIVOROUS]: "molluscivorous diet, specializing in mollusks and crustaceans",
+            [FEEDING_BEHAVIOR.OMNIVOROUS]: "omnivorous diet"
+        };
+
+        return `It maintains a ${feedingDescriptions[feedingTag as FEEDING_BEHAVIOR]}, playing a crucial role in marine food webs.`;
+    }
+
+    private getReproductiveInformation(): string {
+        const reproTag = this.tags.find(tag => Object.values(REPRODUCTIVE_STRATEGY).includes(tag as REPRODUCTIVE_STRATEGY));
+        if (!reproTag) return "";
+
+        const reproductiveDescriptions: { [key: string]: string } = {
+            [REPRODUCTIVE_STRATEGY.OVIPAROUS]: "exhibits oviparous reproduction, laying leathery egg cases that develop externally",
+            [REPRODUCTIVE_STRATEGY.VIVIPAROUS]: "demonstrates viviparous reproduction, giving birth to live young through placental connections",
+            [REPRODUCTIVE_STRATEGY.OVOVIVIPAROUS]: "employs ovoviviparous reproduction, with eggs hatching internally before live birth",
+            [REPRODUCTIVE_STRATEGY.EMBRYTROPHY]: "practices embryotrophy, providing additional nutrition to developing embryos",
+            [REPRODUCTIVE_STRATEGY.OOPHAGY]: "exhibits oophagy, where embryos consume unfertilized eggs for nutrition",
+            [REPRODUCTIVE_STRATEGY.EMBRYOPHAGY]: "demonstrates embryophagy, with embryos engaging in intrauterine cannibalism",
+            [REPRODUCTIVE_STRATEGY.PARTHENOGENESIS]: "is capable of parthenogenesis, reproducing asexually when mates are unavailable",
+            [REPRODUCTIVE_STRATEGY.UNKNOWN]: "has reproductive strategies that remain poorly understood"
+        };
+
+        return `Reproductively, this species ${reproductiveDescriptions[reproTag as REPRODUCTIVE_STRATEGY]}.`;
+    }
+
+    private getBehavioralCharacteristics(): string {
+        const behaviors: string[] = [];
+
+        // Group behavior
+        const groupBehaviorTag = this.tags.find(tag => Object.values(GROUP_BEHAVIOR).includes(tag as GROUP_BEHAVIOR));
+        if (groupBehaviorTag === GROUP_BEHAVIOR.SCHOOLING) {
+            behaviors.push("forms schools for enhanced foraging efficiency and predator avoidance");
+        } else if (groupBehaviorTag === GROUP_BEHAVIOR.SOLITARY) {
+            behaviors.push("exhibits solitary behavior, typically hunting and traveling alone");
+        }
+
+        // Specific behaviors
         const behaviorTag = this.tags.find(tag => Object.values(BEHAVIOR).includes(tag as BEHAVIOR));
         if (behaviorTag === BEHAVIOR.MIGRATING) {
-            addSentence(`This shark is a long-distance traveler, migrating across vast ocean expanses.`);
+            behaviors.push("undertakes extensive migrations across ocean basins");
         } else if (behaviorTag === BEHAVIOR.BREACHING) {
-            addSentence(`It’s known to leap dramatically out of the water, a behavior called breaching.`);
+            behaviors.push("is known for spectacular breaching behavior, leaping from the water");
         }
-    
-        // Fallback if description is still empty
-        if (!description) {
-            addSentence(`The ${this.commonName} is a fascinating member of the ${this.family} family, thriving in the oceans with its unique adaptations.`);
+
+        if (behaviors.length > 0) {
+            return `Behaviorally, this species ${behaviors.join(" and ")}.`;
         }
-    
-        return description;
+        return "";
+    }
+
+    private getConservationInformation(): string {
+        const conservationTag = this.tags.find(tag => Object.values(CONSERVATION_STATUS).includes(tag as CONSERVATION_STATUS));
+        if (!conservationTag) return "";
+
+        const conservationDescriptions: { [key: string]: string } = {
+            [CONSERVATION_STATUS.CR]: "is critically endangered, facing an extremely high risk of extinction in the wild",
+            [CONSERVATION_STATUS.EN]: "is classified as endangered, requiring immediate conservation intervention",
+            [CONSERVATION_STATUS.VU]: "is listed as vulnerable, with populations declining due to various threats",
+            [CONSERVATION_STATUS.NT]: "is near threatened, approaching vulnerable status and requiring monitoring",
+            [CONSERVATION_STATUS.LC]: "is of least concern, with stable populations and no immediate threats",
+            [CONSERVATION_STATUS.DD]: "has data deficient status, with insufficient information for proper assessment",
+            [CONSERVATION_STATUS.EW]: "is extinct in the wild, surviving only in captivity",
+            [CONSERVATION_STATUS.EX]: "is extinct, with no known surviving individuals"
+        };
+
+        return `Conservation-wise, this species ${conservationDescriptions[conservationTag as CONSERVATION_STATUS]}.`;
     }
 }
