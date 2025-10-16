@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
+import glyphisGarrickiImg from "./../../../../../images/carcharhiniformes/carcharhinidae/glyphis-garricki.png";
 
 export const glyphisGarricki = {
     commonName: "Northern River Shark",
     alternativeNames: ["New Guinea River Shark"],
     binomialName: "Glyphis garricki",
+
+    imageUrl: glyphisGarrickiImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

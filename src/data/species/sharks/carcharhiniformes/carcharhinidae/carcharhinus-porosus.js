@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
+import carcharhinusPorosusImg from "./../../../../../images/carcharhiniformes/carcharhinidae/carcharhinus-porosus.png";
 
 export const carcharhinusPorosus = {
     commonName: "Smalltail Shark",
     binomialName: "Carcharhinus porosus",
+
+    imageUrl: carcharhinusPorosusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

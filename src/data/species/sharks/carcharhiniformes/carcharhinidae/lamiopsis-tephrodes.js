@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
+import lamiopsisTephrodesImg from "./../../../../../images/carcharhiniformes/carcharhinidae/lamiopsis-tephrodes.png";
 
 export const lamiopsisTephrodes = {
     commonName: "Borneo Broadfin Shark",
     alternativeNames: ["Broadfin Shark"],
     binomialName: "Lamiopsis tephrodes",
+
+    imageUrl: lamiopsisTephrodesImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
