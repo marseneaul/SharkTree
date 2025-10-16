@@ -289,20 +289,17 @@ export class SharkTreeComponent extends HTMLElement {
                     </div>
                     <div class="control-group" id="taxonomic-container">
                         <label for="taxonomic-level-dropdown">Taxonomic Level</label>
-                        <div class="hierarchical-dropdown">
-                            <select id="taxonomic-level-dropdown">
-                                <option value="">None</option>
-                                <option value="genus">Genus</option>
-                                <option value="family">Family</option>
-                                <option value="order">Order</option>
-                                <option value="superorder">Superorder</option>
-                                <option value="subdivision">Subdivision</option>
-                            </select>
-                            <div class="dropdown-arrow">›</div>
-                            <select id="taxonomic-group-dropdown" disabled>
-                                <option value="">Select a level first</option>
-                            </select>
-                        </div>
+                        <select id="taxonomic-level-dropdown">
+                            <option value="">None</option>
+                            <option value="genus">Genus</option>
+                            <option value="family">Family</option>
+                            <option value="order">Order</option>
+                            <option value="superorder">Superorder</option>
+                            <option value="subdivision">Subdivision</option>
+                        </select>
+                        <select id="taxonomic-group-dropdown" disabled>
+                            <option value="">Select a level first</option>
+                        </select>
                     </div>
                     <div class="control-group" id="tag-container">
                         <label for="tag-dropdown">Tag Category</label>
@@ -652,33 +649,6 @@ export class SharkTreeComponent extends HTMLElement {
                 box-shadow: 0 0 0 3px var(--color-primary-light, #E0F7FA);
             }
             
-            .hierarchical-dropdown {
-                display: flex;
-                align-items: center;
-                gap: var(--space-2, 0.5rem);
-                position: relative;
-            }
-            
-            .hierarchical-dropdown select {
-                min-width: 120px;
-                max-width: 150px;
-            }
-            
-            .hierarchical-dropdown select:disabled {
-                background-color: var(--color-bg-secondary, #F9FAFB);
-                color: var(--color-text-muted, #6B7280);
-                cursor: not-allowed;
-                opacity: 0.6;
-            }
-            
-            .dropdown-arrow {
-                color: var(--color-text-muted, #6B7280);
-                font-size: var(--text-lg, 1.125rem);
-                font-weight: var(--font-weight-bold, 700);
-                pointer-events: none;
-                user-select: none;
-                flex-shrink: 0;
-            }
             
             #shark-content {
                 display: flex;
