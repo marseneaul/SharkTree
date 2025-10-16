@@ -296,7 +296,9 @@ export class SharkTree {
                     const node = currentShark.getNode();
                     node.setAttribute("fill", RED); // Selected shark remains RED
                     node.classList.add("pulse");
-                    this.highlightPathToShark(currentShark.binomialName, 2, BLACK);
+                    // Use taxonomic color for path highlighting if available, otherwise use BLACK
+                    const pathColor = this.getTaxonomicColor(currentShark) || BLACK;
+                    this.highlightPathToShark(currentShark.binomialName, 2, pathColor, true); // Preserve node color
         
                     g.removeChild(node);
                     g.appendChild(node);
@@ -472,7 +474,18 @@ export class SharkTree {
                 node.classList.add("pulse");
             } else {
                 const taxonomicColor = this.getTaxonomicColor(shark);
-                node.setAttribute("fill", taxonomicColor || BLACK);
+                let nodeColor = taxonomicColor;
+                
+                // If no taxonomic color and tag highlighting is active, use tag color
+                if (!nodeColor && this.activeTagCategory) {
+                    const hasTagInCategory = shark.tags.some(tag => this.getTagCategory(tag) === this.activeTagCategory);
+                    if (hasTagInCategory && (!this.activeTagValue || shark.tags.includes(this.activeTagValue))) {
+                        const tagProps = getTagVisualProps(this.activeTagCategory);
+                        nodeColor = tagProps.color;
+                    }
+                }
+                
+                node.setAttribute("fill", nodeColor || BLACK);
                 node.classList.remove("pulse");
             }
         });
@@ -734,11 +747,16 @@ export class SharkTree {
     |           PATH HIGHLIGHTING             |
     |----------------------------------------*/
 
-    highlightPathToShark(binomialName: string, strokeWidth = 2, color = BLACK): void {
+    highlightPathToShark(binomialName: string, strokeWidth = 2, color = BLACK, preserveNodeColor = false): void {
         const sharkSpecies = this.getSharkSpeciesList();
         const shark = sharkSpecies.find((s) => s.binomialName === binomialName);
         if (!shark) return;
-        shark.highlightNode(color);
+        
+        // Only override node color if not preserving it
+        if (!preserveNodeColor) {
+            shark.highlightNode(color);
+        }
+        
         shark.highlightParentPath(strokeWidth, color, "solid");
         let sharkParent = shark.getParent();
         while (sharkParent) {
@@ -814,7 +832,22 @@ export class SharkTree {
     
     reapplyHighlights(shark: SharkSpecies): void {
         const node = shark.getNode();
-        if (node) node.setAttribute("fill", BLACK);
+        if (node) {
+            // Preserve taxonomic color if active, otherwise use tag color if available
+            const taxonomicColor = this.getTaxonomicColor(shark);
+            let nodeColor = taxonomicColor;
+            
+            // If no taxonomic color and tag highlighting is active, use tag color
+            if (!nodeColor && this.activeTagCategory) {
+                const hasTagInCategory = shark.tags.some(tag => this.getTagCategory(tag) === this.activeTagCategory);
+                if (hasTagInCategory && (!this.activeTagValue || shark.tags.includes(this.activeTagValue))) {
+                    const tagProps = getTagVisualProps(this.activeTagCategory);
+                    nodeColor = tagProps.color;
+                }
+            }
+            
+            node.setAttribute("fill", nodeColor || BLACK);
+        }
     
         const getPathStyle = (segments: (SVGLineElement | SVGPathElement)[], sharksToCheck: SharkSpecies[]) => {
             let strokeColor = BLACK;

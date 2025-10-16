@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import schroederichthysBiviusImg from "./../../../../../images/carcharhiniformes/scyliorhinidae-ii/schroederichthys-bivius.png";
 
 export const schroederichthysBivius = {
     commonName: "Narrowmouthed Catshark",
     binomialName: "Schroederichthys bivius",
+
+    imageUrl: schroederichthysBiviusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

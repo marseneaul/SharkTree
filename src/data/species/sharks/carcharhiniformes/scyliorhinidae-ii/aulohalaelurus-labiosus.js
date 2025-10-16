@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import aulohalaelurusLabiosusImg from "./../../../../../images/carcharhiniformes/scyliorhinidae-ii/aulohalaelurus-labiosus.png";
 
 export const aulohalaelurusLabiosus = {
     commonName: "Australian Blackspotted Catshark",
     binomialName: "Aulohalaelurus labiosus",
+
+    imageUrl: aulohalaelurusLabiosusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
