@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import figaroBoardmaniImg from "./../../../../../images/carcharhiniformes/scyliorhinidae-i/figaro-boardmani.png";
 
 export const figaroBoardmani = {
     commonName: "Australian Sawtail Catshark",
     binomialName: "Figaro boardmani",
+
+    imageUrl: figaroBoardmaniImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
