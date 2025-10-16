@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import apristurusSinensisImg from "./../../../../../images/carcharhiniformes/scyliorhinidae-i/apristurus-sinensis.png";
 
 export const apristurusSinensis = {
     commonName: "South China Catshark",
     binomialName: "Apristurus sinensis",
+
+    imageUrl: apristurusSinensisImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

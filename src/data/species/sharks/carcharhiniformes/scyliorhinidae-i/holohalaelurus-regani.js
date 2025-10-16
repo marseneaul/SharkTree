@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import holohalaelurusReganiImg from "./../../../../../images/carcharhiniformes/scyliorhinidae-i/holohalaelurus-regani.png";
 
 export const holohalaelurusRegani = {
     commonName: "Izak Catshark",
     alternativeNames: ["Izak"],
     binomialName: "Holohalaelurus regani",
+
+    imageUrl: holohalaelurusReganiImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
