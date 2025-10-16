@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import galeusAraeImg from "./../../../../../images/carcharhiniformes/scyliorhinidae-i/galeus-arae.png";
 
 export const galeusArae = {
     commonName: "Roughtail Catshark",
     alternativeNames: ["Marbled Catshark"],
     binomialName: "Galeus arae",
+
+    imageUrl: galeusAraeImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

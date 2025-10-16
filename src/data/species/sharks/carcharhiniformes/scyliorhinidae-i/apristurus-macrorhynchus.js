@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import apristurusMacrorhynchusImg from "./../../../../../images/carcharhiniformes/scyliorhinidae-i/apristurus-macrorhynchus.png";
 
 export const apristurusMacrorhynchus = {
     commonName: "Flathead Catshark",
     binomialName: "Apristurus macrorhynchus",
+
+    imageUrl: apristurusMacrorhynchusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

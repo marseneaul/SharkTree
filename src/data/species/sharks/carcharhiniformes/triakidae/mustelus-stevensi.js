@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import mustelusStevensiImg from "./../../../../../images/carcharhiniformes/triakidae/mustelus-stevensi.png";
 
 export const mustelusStevensi = {
     commonName: "Western Spotted Gummy Shark",
     binomialName: "Mustelus stevensi",
+
+    imageUrl: mustelusStevensiImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

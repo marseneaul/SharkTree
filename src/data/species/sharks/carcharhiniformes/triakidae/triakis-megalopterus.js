@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import triakisMegalopterusImg from "./../../../../../images/carcharhiniformes/triakidae/triakis-megalopterus.png";
 
 export const triakisMegalopterus = {
     commonName: "Sharptooth Houndshark",
     binomialName: "Triakis megalopterus",
+
+    imageUrl: triakisMegalopterusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

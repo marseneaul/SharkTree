@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import galeusSauteriImg from "./../../../../../images/carcharhiniformes/scyliorhinidae-i/galeus-sauteri.png";
 
 export const galeusSauteri = {
     commonName: "Blacktip Sawtail Catshark",
     binomialName: "Galeus sauteri",
+
+    imageUrl: galeusSauteriImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
