@@ -1,8 +1,11 @@
 import { ANAL_FIN, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import echinorhinusBrucusImg from "./../../../../images/echinorhinidae/echinorhinus-brucus.png";
 
 export const echinorhinusBrucus = {
     commonName: "Bramble Shark",
     binomialName: "Echinorhinus brucus",
+
+    imageUrl: echinorhinusBrucusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

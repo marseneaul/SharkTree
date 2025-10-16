@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
+import rhizoprionodonOligolinxImg from "./../../../../../images/carcharhiniformes/carcharhinidae/rhizoprionodon-oligolinx.png";
 
 export const rhizoprionodonOligolinx = {
     commonName: "Grey Sharpnose Shark",
     binomialName: "Rhizoprionodon oligolinx",
+
+    imageUrl: rhizoprionodonOligolinxImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

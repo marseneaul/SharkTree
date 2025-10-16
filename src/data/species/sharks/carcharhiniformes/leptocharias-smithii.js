@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import leptochariasSmithiiImg from "./../../../../images/carcharhiniformes/leptocharias-smithii.png";
 
 export const leptochariasSmithii = {
     commonName: "Barbeled Houndshark",
     binomialName: "Leptocharias smithii",
+
+    imageUrl: leptochariasSmithiiImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

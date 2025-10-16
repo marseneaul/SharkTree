@@ -346,6 +346,8 @@ export class SharkSpecies {
 
         // Fallback if no specific information is available
         if (descriptionParts.length === 0) {
+            const speciesTypeDesc = this.speciesType === SPECIES_TYPE.RAYS ? "ray" : 
+                                  this.speciesType === SPECIES_TYPE.CHIMAERAS ? "chimaera" : "shark";
             addPart(`The ${this.commonName} (${this.binomialName}) is a member of the ${this.family} family within the order ${this.order}, representing an important component of marine ecosystems.`);
         }
 
@@ -366,7 +368,15 @@ export class SharkSpecies {
             "Rhincodontidae": "whale sharks"
         };
 
-        const familyDesc = familyDescriptions[this.family] || "sharks";
+        // Get the appropriate species type description
+        let speciesTypeDesc = "shark";
+        if (this.speciesType === SPECIES_TYPE.RAYS) {
+            speciesTypeDesc = "ray";
+        } else if (this.speciesType === SPECIES_TYPE.CHIMAERAS) {
+            speciesTypeDesc = "chimaera";
+        }
+
+        const familyDesc = familyDescriptions[this.family] || speciesTypeDesc;
         return `The ${this.commonName} (${this.binomialName}) is a species of ${familyDesc} belonging to the ${this.order} order.`;
     }
 

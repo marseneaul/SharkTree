@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import cephaloscylliumUmbratileImg from "./../../../../../images/carcharhiniformes/scyliorhinidae-iii/cephaloscyllium-umbratile.png";
 
 export const cephaloscylliumUmbratile = {
     commonName: "Blotchy Catshark",
     alternativeNames: ["Japanese Swellshark", "Blotchy Swellshark"],
     binomialName: "Cephaloscyllium umbratile",
+
+    imageUrl: cephaloscylliumUmbratileImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

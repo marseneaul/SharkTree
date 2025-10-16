@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import halaelurusBuergeriImg from "./../../../../../images/carcharhiniformes/scyliorhinidae-i/halaelurus-buergeri.png";
 
 export const halaelurusBuergeri = {
     commonName: "Blackspotted Catshark",
     binomialName: "Halaelurus buergeri",
+
+    imageUrl: halaelurusBuergeriImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

@@ -1,8 +1,10 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-
+import atelomycterusMarnkalhaImg from "./../../../../../images/carcharhiniformes/scyliorhinidae-ii/atelomycterus-marnkalha.png";
 export const atelomycterusMarnkalha = {
     commonName: "Eastern Banded Catshark",
     binomialName: "Atelomycterus marnkalha",
+
+    imageUrl: atelomycterusMarnkalhaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

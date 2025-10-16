@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import mustelusAsteriasImg from "./../../../../../images/carcharhiniformes/triakidae/mustelus-asterias.png";
 
 export const mustelusAsterias = {
     commonName: "Starry Smooth-Hound",
     binomialName: "Mustelus asterias",
+
+    imageUrl: mustelusAsteriasImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
