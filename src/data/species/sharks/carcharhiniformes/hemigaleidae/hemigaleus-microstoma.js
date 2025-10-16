@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import hemigaleusMicrostomaImg from "./../../../../../images/carcharhiniformes/hemigaleidae/hemigaleus-microstoma.png";
 
 export const hemigaleusMicrostoma = {
     commonName: "Sicklefin Weasel Shark",
     binomialName: "Hemigaleus microstoma",
+
+    imageUrl: hemigaleusMicrostomaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

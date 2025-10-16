@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import hemitriakisJapanicaImg from "./../../../../../images/carcharhiniformes/triakidae/hemitriakis-japanica.png";
 
 export const hemitriakisJapanica = {
     commonName: "Japanese Topeshark",
     binomialName: "Hemitriakis japanica",
+
+    imageUrl: hemitriakisJapanicaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

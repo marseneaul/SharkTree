@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import mustelusNorrisiImg from "./../../../../../images/carcharhiniformes/triakidae/mustelus-norrisi.png";
 
 export const mustelusNorrisi = {
     commonName: "Narrowfin Smooth-Hound",
     alternativeNames: ["Florida Smooth-Hound"],
     binomialName: "Mustelus norrisi",
+
+    imageUrl: mustelusNorrisiImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

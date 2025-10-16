@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import furgaleusMackiImg from "./../../../../../images/carcharhiniformes/triakidae/furgaleus-macki.png";
 
 export const furgaleusMacki = {
     commonName: "Whiskery Shark",
     alternativeNames: ["Mack's Whiskery Shark", "Reef Shark", "Shakey Shark", "Sundowner"],
     binomialName: "Furgaleus macki",
+
+    imageUrl: furgaleusMackiImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

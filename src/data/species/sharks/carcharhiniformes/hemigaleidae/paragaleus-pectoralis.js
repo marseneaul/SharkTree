@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import paragaleusPectoralisImg from "./../../../../../images/carcharhiniformes/hemigaleidae/paragaleus-pectoralis.png";
 
 export const paragaleusPectoralis = {
     commonName: "Atlantic Weasel Shark",
     alternativeNames: ["Little Tiger Shark"],
     binomialName: "Paragaleus pectoralis",
+
+    imageUrl: paragaleusPectoralisImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import mustelusRavidusImg from "./../../../../../images/carcharhiniformes/triakidae/mustelus-ravidus.png";
 
 export const mustelusRavidus = {
     commonName: "Australian Grey Smooth-Hound",
     alternativeNames: ["Grey Gummy Shark"],
     binomialName: "Mustelus ravidus",
+
+    imageUrl: mustelusRavidusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import mustelusLunulatusImg from "./../../../../../images/carcharhiniformes/triakidae/mustelus-lunulatus.png";
 
 export const mustelusLunulatus = {
     commonName: "Sicklefin Smooth-Hound",
     binomialName: "Mustelus lunulatus",
+
+    imageUrl: mustelusLunulatusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

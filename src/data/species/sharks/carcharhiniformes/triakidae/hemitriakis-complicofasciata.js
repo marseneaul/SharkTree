@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import hemitriakisComplicofasciataImg from "./../../../../../images/carcharhiniformes/triakidae/hemitriakis-complicofasciata.png";
 
 export const hemitriakisComplicofasciata = {
     commonName: "Ocellate Topeshark",
     binomialName: "Hemitriakis complicofasciata",
+
+    imageUrl: hemitriakisComplicofasciataImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

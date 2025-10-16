@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import proscylliumHabereiImg from "./../../../../images/carcharhiniformes/proscyllium-haberei.png";
 
 export const proscylliumHaberei = {
     commonName: "Graceful Catshark",
     binomialName: "Proscyllium haberei",
+
+    imageUrl: proscylliumHabereiImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
