@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import apristurusManisImg from "./../../../../../images/carcharhiniformes/scyliorhinidae-i/apristurus-manis.png";
 
 export const apristurusManis = {
     commonName: "Ghost Catshark",
     binomialName: "Apristurus manis",
+
+    imageUrl: apristurusManisImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
