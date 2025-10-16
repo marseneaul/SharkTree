@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import mustelusManazoImg from "./../../../../../images/carcharhiniformes/triakidae/mustelus-manazo.png";
 
 export const mustelusManazo = {
     commonName: "Starspotted Smooth-Hound",
     binomialName: "Mustelus manazo",
+
+    imageUrl: mustelusManazoImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

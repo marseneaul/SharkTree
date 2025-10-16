@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import halaelurusSellusImg from "./../../../../../images/carcharhiniformes/scyliorhinidae-i/halaelurus-sellus.png";
 
 export const halaelurusSellus = {
     commonName: "Rusty Catshark",
     binomialName: "Halaelurus sellus",
+
+    imageUrl: halaelurusSellusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

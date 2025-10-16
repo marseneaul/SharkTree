@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import bythaelurusDawsoniImg from "./../../../../../images/carcharhiniformes/scyliorhinidae-i/bythaelurus-dawsoni.png";
 
 export const bythaelurusDawsoni = {
     commonName: "New Zealand Catshark",
     binomialName: "Bythaelurus dawsoni",
+
+    imageUrl: bythaelurusDawsoniImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

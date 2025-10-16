@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import asymbolusRubiginosusImg from "./../../../../../images/carcharhiniformes/scyliorhinidae-i/asymbolus-rubiginosus.png";
 
 export const asymbolusRubiginosus = {
     commonName: "Orange-Spotted Catshark",
     alternativeNames: ["Rusty Catshark"],
     binomialName: "Asymbolus rubiginosus",
+
+    imageUrl: asymbolusRubiginosusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import parmaturusXaniurusImg from "./../../../../../images/carcharhiniformes/scyliorhinidae-i/parmaturus-xaniurus.png";
 
 export const parmaturusXaniurus = {
     commonName: "Filetail Catshark",
     binomialName: "Parmaturus xaniurus",
+
+    imageUrl: parmaturusXaniurusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

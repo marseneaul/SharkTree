@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import cephaloscylliumAlbipinnumImg from "./../../../../../images/carcharhiniformes/scyliorhinidae-iii/cephaloscyllium-albipinnum.png";
 
 export const cephaloscylliumAlbipinnum = {
     commonName: "Whitefin Swellshark",
     binomialName: "Cephaloscyllium albipinnum",
+
+    imageUrl: cephaloscylliumAlbipinnumImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

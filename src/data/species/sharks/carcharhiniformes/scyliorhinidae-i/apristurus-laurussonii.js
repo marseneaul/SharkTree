@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import apristurusLaurussoniiImg from "./../../../../../images/carcharhiniformes/scyliorhinidae-i/apristurus-laurussonii.png";
 
 export const apristurusLaurussonii = {
     commonName: "Iceland Catshark",
     alternativeNames: ["Icelandic Catshark"],
     binomialName: "Apristurus laurussonii",
+
+    imageUrl: apristurusLaurussoniiImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

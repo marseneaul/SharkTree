@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import apristurusExsanguisImg from "./../../../../../images/carcharhiniformes/scyliorhinidae-i/apristurus-exsanguis.png";
 
 export const apristurusExsanguis = {
     commonName: "Flaccid Catshark",
     binomialName: "Apristurus exsanguis",
+
+    imageUrl: apristurusExsanguisImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

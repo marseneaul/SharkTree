@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import apristurusBrunneusImg from "./../../../../../images/carcharhiniformes/scyliorhinidae-i/apristurus-brunneus.png";
 
 export const apristurusBrunneus = {
     commonName: "Brown Catshark",
     binomialName: "Apristurus brunneus",
+
+    imageUrl: apristurusBrunneusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
