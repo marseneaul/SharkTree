@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, ELECTRIC_ORGAN, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import narcineLastiImg from "./../../../../images/rays/torpediniformes/narcine-lasti.png";
 
 export const narcineLasti = {
     commonName: "Western Numbfish",
     binomialName: "Narcine lasti",
+
+    imageUrl: narcineLastiImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

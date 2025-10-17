@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, ELECTRIC_ORGAN, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import narcineEntemedorImg from "./../../../../images/rays/torpediniformes/narcine-entemedor.png";
 
 export const narcineEntemedor = {
     commonName: "Giant Electric Ray",
     alternativeNames: ["Cortez Electric Ray"],
     binomialName: "Narcine entemedor",
+
+    imageUrl: narcineEntemedorImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

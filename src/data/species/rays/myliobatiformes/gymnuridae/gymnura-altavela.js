@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import gymnuraAltavelaImg from "./../../../../../images/rays/myliobatiformes/gymnuridae/gymnura-altavela.png";
 
 export const gymnuraAltavela = {
     commonName: "Spiny Butterfly Ray",
     alternativeNames: ["Giant Butterfly Ray"],
     binomialName: "Gymnura altavela",
+
+    imageUrl: gymnuraAltavelaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

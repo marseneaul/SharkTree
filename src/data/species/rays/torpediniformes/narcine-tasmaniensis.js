@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, ELECTRIC_ORGAN, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import narcineTasmaniensisImg from "./../../../../images/rays/torpediniformes/narcine-tasmaniensis.png";
 
 export const narcineTasmaniensis = {
     commonName: "Tasmanian Numbfish",
     binomialName: "Narcine tasmaniensis",
+
+    imageUrl: narcineTasmaniensisImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, ELECTRIC_ORGAN, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import torpedoFuscomaculataImg from "./../../../../images/rays/torpediniformes/torpedo-fuscomaculata.png";
 
 export const torpedoFuscomaculata = {
     commonName: "Black-Spotted Torpedo",
     binomialName: "Torpedo fuscomaculata",
+
+    imageUrl: torpedoFuscomaculataImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import gymnuraCrebripunctataImg from "./../../../../../images/rays/myliobatiformes/gymnuridae/gymnura-crebripunctata.png";
 
 export const gymnuraCrebripunctata = {
     commonName: "Longsnout Butterfly Ray",
     binomialName: "Gymnura crebripunctata",
+
+    imageUrl: gymnuraCrebripunctataImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

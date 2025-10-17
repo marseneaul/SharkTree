@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import gymnuraZonuraImg from "./../../../../../images/rays/myliobatiformes/gymnuridae/gymnura-zonura.png";
 
 export const gymnuraZonura = {
     commonName: "Zonetail Butterfly Ray",
     binomialName: "Gymnura zonura",
+
+    imageUrl: gymnuraZonuraImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

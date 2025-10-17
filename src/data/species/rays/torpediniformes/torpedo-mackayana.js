@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, ELECTRIC_ORGAN, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import torpedoMackayanaImg from "./../../../../images/rays/torpediniformes/torpedo-mackayana.png";
 
 export const torpedoMackayana = {
     commonName: "Ringed Torpedo",
     alternativeNames: ["Western African Torpedo", "West African Torpedo Ray", "McKay Electric Ray", "McKay's Torpedo Ray"],
     binomialName: "Torpedo mackayana",
+
+    imageUrl: torpedoMackayanaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

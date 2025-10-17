@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, ELECTRIC_ORGAN, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import narkeCapensisImg from "./../../../../images/rays/torpediniformes/narke-capensis.png";
 
 export const narkeCapensis = {
     commonName: "Onefin Electric Ray",
     alternativeNames: ["Cape Numbfish"],
     binomialName: "Narke capensis",
+
+    imageUrl: narkeCapensisImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

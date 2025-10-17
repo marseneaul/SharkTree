@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, ELECTRIC_ORGAN, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import torpedoNobilianaImg from "./../../../../images/rays/torpediniformes/torpedo-nobiliana.png";
 
 export const torpedoNobiliana = {
     commonName: "Atlantic Torpedo",
     binomialName: "Torpedo nobiliana",
+
+    imageUrl: torpedoNobilianaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
