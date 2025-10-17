@@ -1,9 +1,12 @@
 import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import squalusAcanthiasImg from "./../../../../../images/squaliformes/squalidae/squalus-acanthias.png";
 
 export const squalusAcanthias = {
     commonName: "Spiny Dogfish",
     alternativeNames: ["Spurdog", "Mud Shark", "Piked Dogfish"],
     binomialName: "Squalus acanthias",
+
+    imageUrl: squalusAcanthiasImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

@@ -1,9 +1,12 @@
 import { BEHAVIOR, CONSERVATION_STATUS, FEEDING_BEHAVIOR, GROUP_BEHAVIOR, NUM_DORSAL_FINS, TAIL_SPINES, TEMPERATURE_REGULATION } from "../../../../../constants/enums";
+import mobulaJapanicaImg from "./../../../../../images/rays/myliobatiformes/mobulidae/mobula-japanica.png";
 
 export const mobulaJapanica = {
     commonName: "Spinetail Mobula",
     alternativeNames: ["Spinetail Devil Ray", "Japanese Mobula Ray"],
     binomialName: "Mobula japanica",
+
+    imageUrl: mobulaJapanicaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, GROUP_BEHAVIOR, REPRODUCTIVE_STRATEGY, SNOUT_SHAPE } from "../../../../constants/enums";
+import hydrolagusCollieiImg from "./../../../../images/chimaeras/chimaeridae/hydrolagus-colliei.png";
 
 export const hydrolagusColliei = {
     commonName: "Spotted Ratfish",
     binomialName: "Chimaera colliei",
+
+    imageUrl: hydrolagusCollieiImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

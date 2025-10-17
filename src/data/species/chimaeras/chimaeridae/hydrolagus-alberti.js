@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, SNOUT_SHAPE } from "../../../../constants/enums";
+import hydrolagusAlbertiImg from "./../../../../images/chimaeras/chimaeridae/hydrolagus-alberti.png";
 
 export const hydrolagusAlberti = {
     commonName: "Gulf Chimaera",
     binomialName: "Hydrolagus alberti",
+
+    imageUrl: hydrolagusAlbertiImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

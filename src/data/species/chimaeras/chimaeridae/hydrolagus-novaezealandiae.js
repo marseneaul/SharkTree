@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, SNOUT_SHAPE } from "../../../../constants/enums";
+import hydrolagusNovaezealandiaeImg from "./../../../../images/chimaeras/chimaeridae/hydrolagus-novaezealandiae.png";
 
 export const hydrolagusNovaezealandiae = {
     commonName: "Dark Ghostshark",
     binomialName: "Hydrolagus novaezealandiae",
+
+    imageUrl: hydrolagusNovaezealandiaeImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

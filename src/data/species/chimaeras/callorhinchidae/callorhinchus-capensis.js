@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, SNOUT_SHAPE } from "../../../../constants/enums";
+import callorhinchusCapensisImg from "./../../../../images/chimaeras/callorhinchidae/callorhinchus-capensis.png";
 
 export const callorhinchusCapensis = {
     commonName: "Cape Elephantfish",
     alternativeNames: ["St Joseph Shark", "Josef"],
     binomialName: "Callorhinchus capensis",
+
+    imageUrl: callorhinchusCapensisImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

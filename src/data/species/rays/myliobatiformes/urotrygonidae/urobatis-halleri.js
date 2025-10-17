@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import urobatisHalleriImg from "./../../../../../images/rays/myliobatiformes/urotrygonidae/urobatis-halleri.png";
 
 export const urobatisHalleri = {
     commonName: "Round Stingray",
     alternativeNames: ["Haller's Round Ray", "Little Round Stingray"],
     binomialName: "Urobatis halleri",
+
+    imageUrl: urobatisHalleriImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

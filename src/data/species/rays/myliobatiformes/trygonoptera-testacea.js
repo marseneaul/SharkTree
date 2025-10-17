@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../constants/enums";
+import trygonopteraTestaceaImg from "./../../../../images/rays/myliobatiformes/trygonoptera-testacea.png";
 
 export const trygonopteraTestacea = {
     commonName: "Common Stingaree",
     binomialName: "Trygonoptera testacea",
+
+    imageUrl: trygonopteraTestaceaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

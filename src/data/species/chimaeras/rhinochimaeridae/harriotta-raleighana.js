@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, SNOUT_SHAPE } from "../../../../constants/enums";
+import harriottaRaleighanaImg from "./../../../../images/chimaeras/rhinochimaeridae/harriotta-raleighana.png";
 
 export const harriottaRaleighana = {
     commonName: "Narrownose Chimaera",
     binomialName: "Harriotta raleighana",
+
+    imageUrl: harriottaRaleighanaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

@@ -1,9 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, SNOUT_SHAPE } from "../../../../constants/enums";
-
+import chimaeraMonstrosaImg from "./../../../../images/chimaeras/chimaeridae/chimaera-monstrosa.png";
 export const chimaeraMonstrosa = {
     commonName: "Rabbit Fish",
     alternativeNames: ["Rat Fish"],
     binomialName: "Chimaera monstrosa",
+
+    imageUrl: chimaeraMonstrosaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

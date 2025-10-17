@@ -1,9 +1,12 @@
 import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import squalusMegalopsImg from "./../../../../../images/squaliformes/squalidae/squalus-megalops.png";
 
 export const squalusMegalops = {
     commonName: "Shortnose Spurdog",
     binomialName: "Squalus megalops",
 
+    imageUrl: squalusMegalopsImg,
+    
     domain:	"Eukaryota",
     kingdom: "Animalia",
     phylum:	"Chordata",

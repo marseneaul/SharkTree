@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, SNOUT_SHAPE } from "../../../../constants/enums";
+import callorhinchusMiliiImg from "./../../../../images/chimaeras/callorhinchidae/callorhinchus-milii.png";
 
 export const callorhinchusMilii = {
     commonName: "Australian Ghostshark",
     alternativeNames: ["Elephant Shark", "Makorepe", "Whitefish", "Plough-Nose Chimaera", "Elephant Fish"],
     binomialName: "Callorhinchus milii",
+
+    imageUrl: callorhinchusMiliiImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

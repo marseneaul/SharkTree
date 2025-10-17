@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, SNOUT_SHAPE } from "../../../../constants/enums";
+import chimaeraPhantasmaImg from "./../../../../images/chimaeras/chimaeridae/chimaera-phantasma.png";
 
 export const chimaeraPhantasma = {
     commonName: "Silver Chimaera",
     binomialName: "Chimaera phantasma",
+
+    imageUrl: chimaeraPhantasmaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

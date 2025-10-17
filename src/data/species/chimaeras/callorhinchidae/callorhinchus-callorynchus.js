@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, SNOUT_SHAPE } from "../../../../constants/enums";
+import callorhinchusCallorynchusImg from "./../../../../images/chimaeras/callorhinchidae/callorhinchus-callorynchus.png";
 
 export const callorhinchusCallorynchus = {
     commonName: "American Elephantfish",
     alternativeNames: ["Cockfish"],
     binomialName: "Callorhinchus callorynchus",
+
+    imageUrl: callorhinchusCallorynchusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
