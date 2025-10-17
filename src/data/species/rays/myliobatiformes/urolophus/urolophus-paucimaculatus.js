@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import urolophusPaucimaculatusImg from "./../../../../../images/rays/myliobatiformes/urolophus/urolophus-paucimaculatus.png";
 
 export const urolophusPaucimaculatus = {
     commonName: "Sparsely Spotted Stingaree",
     alternativeNames: ["White-Spotted Stingaree", "Dixon's Stingaree"],
     binomialName: "Urolophus paucimaculatus",
+
+    imageUrl: urolophusPaucimaculatusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

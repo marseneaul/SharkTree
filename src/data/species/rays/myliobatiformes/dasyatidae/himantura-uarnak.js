@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import himanturaUarnakImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/himantura-uarnak.png";
 
 export const himanturaUarnak = {
     commonName: "Reticulate Whipray",
     alternativeNames: ["Honeycomb Stingray", "Coach Whipray"],
     binomialName: "Himantura uarnak",
+
+    imageUrl: himanturaUarnakImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

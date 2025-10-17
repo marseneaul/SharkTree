@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import aetomylaeusVespertilioImg from "./../../../../../images/rays/myliobatiformes/myliobatidae/aetomylaeus-vespertilio.png";
 
 export const aetomylaeusVespertilio = {
     commonName: "Ornate Eagle Ray",
     alternativeNames: ["Reticulate Eagle Ray"],
     binomialName: "Aetomylaeus vespertilio",
+
+    imageUrl: aetomylaeusVespertilioImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

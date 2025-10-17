@@ -1,8 +1,11 @@
 import { BEHAVIOR, CONSERVATION_STATUS, GROUP_BEHAVIOR, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import aetobatusLaticepsImg from "./../../../../../images/rays/myliobatiformes/myliobatidae/aetobatus-laticeps.png";
 
 export const aetobatusLaticeps = {
     commonName: "Pacific White-Spotted Eagle Ray",
     binomialName: "Aetobatus laticeps",
+
+    imageUrl: aetobatusLaticepsImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

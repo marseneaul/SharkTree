@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import urobatisMaculatusImg from "./../../../../../images/rays/myliobatiformes/urotrygonidae/urobatis-maculatus.png";
 
 export const urobatisMaculatus = {
     commonName: "Spotted Round Ray",
     alternativeNames: ["Cortez Round Stingray"],
     binomialName: "Urobatis maculatus",
+
+    imageUrl: urobatisMaculatusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

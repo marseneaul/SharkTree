@@ -1,9 +1,12 @@
 import { BEHAVIOR, CONSERVATION_STATUS, GROUP_BEHAVIOR, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import aetobatusOcellatusImg from "./../../../../../images/rays/myliobatiformes/myliobatidae/aetobatus-ocellatus.png";
 
 export const aetobatusOcellatus = {
     commonName: "Ocellated Eagle Ray",
     alternativeNames: ["Whitespotted Eagle Ray"],
     binomialName: "Aetobatus ocellatus",
+
+    imageUrl: aetobatusOcellatusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

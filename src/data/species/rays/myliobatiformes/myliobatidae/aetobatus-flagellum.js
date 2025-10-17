@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import aetobatusFlagellumImg from "./../../../../../images/rays/myliobatiformes/myliobatidae/aetobatus-flagellum.png";
 
 export const aetobatusFlagellum = {
     commonName: "Longheaded Eagle Ray",
     binomialName: "Aetobatus flagellum",
+
+    imageUrl: aetobatusFlagellumImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

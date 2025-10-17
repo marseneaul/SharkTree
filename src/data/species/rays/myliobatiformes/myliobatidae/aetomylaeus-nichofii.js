@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import aetomylaeusNichofiiImg from "./../../../../../images/rays/myliobatiformes/myliobatidae/aetomylaeus-nichofii.png";
 
 export const aetomylaeusNichofii = {
     commonName: "Banded Eagle Ray",
     binomialName: "Aetomylaeus nichofii",
 
+    imageUrl: aetomylaeusNichofiiImg,
+    
     domain:	"Eukaryota",
     kingdom: "Animalia",
     phylum:	"Chordata",

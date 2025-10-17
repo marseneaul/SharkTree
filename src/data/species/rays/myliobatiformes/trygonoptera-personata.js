@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../constants/enums";
+import trygonopteraPersonataImg from "./../../../../images/rays/myliobatiformes/trygonoptera-personata.png";
 
 export const trygonopteraPersonata = {
     commonName: "Masked Stingaree",
     binomialName: "Trygonoptera personata",
+
+    imageUrl: trygonopteraPersonataImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

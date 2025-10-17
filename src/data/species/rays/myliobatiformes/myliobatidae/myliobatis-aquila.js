@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import myliobatisAquilaImg from "./../../../../../images/rays/myliobatiformes/myliobatidae/myliobatis-aquila.png";
 
 export const myliobatisAquila = {
     commonName: "Common Eagle Ray",
     alternativeNames: ["Bullray"],
     binomialName: "Myliobatis aquila",
+
+    imageUrl: myliobatisAquilaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import aetomylaeusMaculatusImg from "./../../../../../images/rays/myliobatiformes/myliobatidae/aetomylaeus-maculatus.png";
 
 export const aetomylaeusMaculatus = {
     commonName: "Mottled Eagle Ray",
     binomialName: "Aetomylaeus maculatus",
+
+    imageUrl: aetomylaeusMaculatusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

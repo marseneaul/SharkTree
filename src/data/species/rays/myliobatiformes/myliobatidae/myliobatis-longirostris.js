@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import myliobatisLongirostrisImg from "./../../../../../images/rays/myliobatiformes/myliobatidae/myliobatis-longirostris.png";
 
 export const myliobatisLongirostris = {
     commonName: "Longnose Eagle Ray",
     alternativeNames: ["Snouted Eagle Ray"],
     binomialName: "Myliobatis longirostris",
+
+    imageUrl: myliobatisLongirostrisImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

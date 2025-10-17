@@ -10,7 +10,7 @@ import { myliobatisAquila } from "../../species/rays/myliobatiformes/myliobatida
 import { myliobatisCalifornica } from "../../species/rays/myliobatiformes/myliobatidae/myliobatis-californica";
 import { myliobatisFreminvillei } from "../../species/rays/myliobatiformes/myliobatidae/myliobatis-freminvillei";
 import { myliobatisLongirostris } from "../../species/rays/myliobatiformes/myliobatidae/myliobatis-longirostris";
-import { myliobatisTobjei } from "../../species/rays/myliobatiformes/myliobatidae/myliobatis-tobjei";
+import { myliobatisTobijei } from "../../species/rays/myliobatiformes/myliobatidae/myliobatis-tobijei";
 import { myliobatisAustralis } from "../../species/rays/myliobatiformes/myliobatidae/myliobatis-australis";
 import { pteromylaeusBovinus } from "../../species/rays/myliobatiformes/myliobatidae/pteromylaeus-bovinus";
 
@@ -48,7 +48,7 @@ export const myliobatidaeConfig = {
                                         {
                                             children: [
                                                 myliobatisAquila,
-                                                myliobatisTobjei
+                                                myliobatisTobijei
                                             ]
                                         },
                                         {

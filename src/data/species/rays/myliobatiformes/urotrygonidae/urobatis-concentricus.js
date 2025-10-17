@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import urobatisConcentricusImg from "./../../../../../images/rays/myliobatiformes/urotrygonidae/urobatis-concentricus.png";
 
 export const urobatisConcentricus = {
     commonName: "Bullseye Round Ray",
     alternativeNames: ["Reticulated Round Ray", "Spot-On-Spot Round Ray"],
     binomialName: "Urobatis concentricus",
+
+    imageUrl: urobatisConcentricusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

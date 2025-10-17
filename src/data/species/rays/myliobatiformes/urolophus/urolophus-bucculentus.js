@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import urolophusBucculentusImg from "./../../../../../images/rays/myliobatiformes/urolophus/urolophus-bucculentus.png";
 
 export const urolophusBucculentus = {
     commonName: "Sandyback Stingaree",
     alternativeNames: ["Great Stingaree"],
     binomialName: "Urolophus bucculentus",
+
+    imageUrl: urolophusBucculentusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

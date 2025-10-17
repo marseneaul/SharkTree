@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import urotrygonRogersiImg from "./../../../../../images/rays/myliobatiformes/urotrygonidae/urotrygon-rogersi.png";
 
 export const urotrygonRogersi = {
     commonName: "Rogers' Round Ray",
     binomialName: "Urotrygon rogersi",
+
+    imageUrl: urotrygonRogersiImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

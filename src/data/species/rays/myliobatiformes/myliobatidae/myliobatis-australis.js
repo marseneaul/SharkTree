@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import myliobatisAustralisImg from "./../../../../../images/rays/myliobatiformes/myliobatidae/myliobatis-australis.png";
 
 export const myliobatisAustralis = {
     commonName: "Australian Bull Ray",
     alternativeNames: ["Southern Eagle Ray"],
     binomialName: "Myliobatis australis",
+
+    imageUrl: myliobatisAustralisImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

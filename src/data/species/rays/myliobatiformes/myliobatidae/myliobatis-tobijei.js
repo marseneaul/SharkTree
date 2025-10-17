@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import myliobatisTobijeiImg from "./../../../../../images/rays/myliobatiformes/myliobatidae/myliobatis-tobijei.png";
 
-export const myliobatisTobjei = {
+export const myliobatisTobijei = {
     commonName: "Japanese Eagle Ray",
     alternativeNames: ["Cowhead Eagle Ray", "Kite Ray"],
     binomialName: "Myliobatis tobijei",
+
+    imageUrl: myliobatisTobijeiImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import myliobatisCalifornicaImg from "./../../../../../images/rays/myliobatiformes/myliobatidae/myliobatis-californica.png";
 
 export const myliobatisCalifornica = {
     commonName: "Bat Ray",
     binomialName: "Myliobatis californica",
+
+    imageUrl: myliobatisCalifornicaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
