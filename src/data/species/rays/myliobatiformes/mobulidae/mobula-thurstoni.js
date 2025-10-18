@@ -1,9 +1,12 @@
 import { BEHAVIOR, CONSERVATION_STATUS, FEEDING_BEHAVIOR, GROUP_BEHAVIOR, NUM_DORSAL_FINS, TAIL_SPINES, TEMPERATURE_REGULATION } from "../../../../../constants/enums";
+import mobulaThurstoniImg from "./../../../../../images/rays/myliobatiformes/mobulidae/mobula-thurstoni.png";
 
 export const mobulaThurstoni = {
     commonName: "Bentfin Devil Ray",
     alternativeNames: ["Lesser Devil Ray", "Smoothtail Devil Ray", "Smoothtail Mobula", "Thurston's Devil Ray"],
     binomialName: "Mobula thurstoni",
+
+    imageUrl: mobulaThurstoniImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

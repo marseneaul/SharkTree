@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import rajaClavataImg from "./../../../../../images/rays/rajiformes/rajidae/raja-clavata.png";
 
 export const rajaClavata = {
     commonName: "Thornback Ray",
     alternativeNames: ["Thornback Skate"],
     binomialName: "Raja clavata",
+
+    imageUrl: rajaClavataImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

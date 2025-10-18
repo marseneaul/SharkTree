@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import rajaMontaguiImg from "./../../../../../images/rays/rajiformes/rajidae/raja-montagui.png";
 
 export const rajaMontagui = {
     commonName: "Spotted Ray",
     alternativeNames: ["Spotted Skate"],
     binomialName: "Raja montagui",
+
+    imageUrl: rajaMontaguiImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

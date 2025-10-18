@@ -1,8 +1,11 @@
 import { BEHAVIOR, CONSERVATION_STATUS, FEEDING_BEHAVIOR, GROUP_BEHAVIOR, NUM_DORSAL_FINS, TAIL_SPINES, TEMPERATURE_REGULATION } from "../../../../../constants/enums";
+import mobulaHypostomaImg from "./../../../../../images/rays/myliobatiformes/mobulidae/mobula-hypostoma.png";
 
 export const mobulaHypostoma = {
     commonName: "Lesser Devil Ray",
     binomialName: "Mobula hypostoma",
+
+    imageUrl: mobulaHypostomaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

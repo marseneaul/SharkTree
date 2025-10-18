@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import dipturusSpringeriImg from "./../../../../../images/rays/rajiformes/rajidae/dipturus-springeri.png";
 
 export const dipturusSpringeri = {
     commonName: "Roughbelly Skate",
     binomialName: "Dipturus springeri",
 
+    imageUrl: dipturusSpringeriImg,
+    
     domain:	"Eukaryota",
     kingdom: "Animalia",
     phylum:	"Chordata",

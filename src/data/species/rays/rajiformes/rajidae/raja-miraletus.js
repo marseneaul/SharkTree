@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import rajaMiraletusImg from "./../../../../../images/rays/rajiformes/rajidae/raja-miraletus.png";
 
 export const rajaMiraletus = {
     commonName: "Brown Ray",
     binomialName: "Raja miraletus",
+
+    imageUrl: rajaMiraletusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

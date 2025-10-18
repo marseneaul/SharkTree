@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import dipturusLaevisImg from "./../../../../../images/rays/rajiformes/rajidae/dipturus-laevis.png";
 
 export const dipturusLaevis = {
     commonName: "Barndoor Skate",
     binomialName: "Dipturus laevis",
+
+    imageUrl: dipturusLaevisImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

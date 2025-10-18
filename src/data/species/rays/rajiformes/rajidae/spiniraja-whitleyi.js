@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import spinirajaWhitleyiImg from "./../../../../../images/rays/rajiformes/rajidae/spiniraja-whitleyi.png";
 
 export const spinirajaWhitleyi = {
     commonName: "Melbourne Ray",
     binomialName: "Spiniraja whitleyi",
+
+    imageUrl: spinirajaWhitleyiImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
