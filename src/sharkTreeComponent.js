@@ -565,7 +565,7 @@ export class SharkTreeComponent extends HTMLElement {
                 font-size: var(--text-sm, 0.875rem);
                 color: var(--color-text-primary, #1F2937);
                 box-shadow: var(--shadow-sm, 0 1px 2px 0 rgba(0, 0, 0, 0.05));
-                width: 200px;
+                width: 202px;
                 transition: all var(--transition-fast, 150ms ease-in-out);
             }
             
