@@ -284,9 +284,8 @@ export class SharkTree {
                     const previousShark = sharkSpecies[this.currentSharkIndex];
                     const previousNode = previousShark?.getNode();
                     if (previousNode) {
-                        // Use taxonomic color if active, otherwise default to BLACK
-                        const taxonomicColor = this.getTaxonomicColor(previousShark);
-                        previousNode.setAttribute("fill", taxonomicColor || BLACK);
+                        // Always use BLACK for nodes
+                        previousNode.setAttribute("fill", BLACK);
                         previousNode.classList.remove("pulse");
                     }
                     this.reapplyHighlights(previousShark);
@@ -296,8 +295,8 @@ export class SharkTree {
                     const node = currentShark.getNode();
                     node.setAttribute("fill", RED); // Selected shark remains RED
                     node.classList.add("pulse");
-                    // Use taxonomic color for path highlighting if available, otherwise use BLACK
-                    const pathColor = this.getTaxonomicColor(currentShark) || BLACK;
+                    // Always use BLACK for path highlighting
+                    const pathColor = BLACK;
                     this.highlightPathToShark(currentShark.binomialName, 2, pathColor, true); // Preserve node color
         
                     g.removeChild(node);
@@ -473,19 +472,8 @@ export class SharkTree {
                 node.setAttribute("fill", RED);
                 node.classList.add("pulse");
             } else {
-                const taxonomicColor = this.getTaxonomicColor(shark);
-                let nodeColor = taxonomicColor;
-                
-                // If no taxonomic color and tag highlighting is active, use tag color
-                if (!nodeColor && this.activeTagCategory) {
-                    const hasTagInCategory = shark.tags.some(tag => this.getTagCategory(tag) === this.activeTagCategory);
-                    if (hasTagInCategory && (!this.activeTagValue || shark.tags.includes(this.activeTagValue))) {
-                        const tagProps = getTagVisualProps(this.activeTagCategory);
-                        nodeColor = tagProps.color;
-                    }
-                }
-                
-                node.setAttribute("fill", nodeColor || BLACK);
+                // Always use BLACK for nodes
+                node.setAttribute("fill", BLACK);
                 node.classList.remove("pulse");
             }
         });
@@ -557,11 +545,11 @@ export class SharkTree {
         this.getSharkSpeciesList().forEach(shark => this.clearHighlightPath(shark));
     
         speciesToHighlight.forEach(shark => {
-            shark.highlightNode(levelData.color);
+            shark.highlightNode(BLACK);
             
             // Determine tag styling if active
             let tagPattern = "solid";
-            let tagColor = levelData.color;
+            let tagColor = BLACK;
             let tagOpacity = levelData.opacity;
             let tagThickness = levelData.thickness;
             
@@ -570,8 +558,8 @@ export class SharkTree {
                 if (hasTag) {
                     const tagProps = getTagVisualProps(this.activeTagCategory);
                     tagPattern = tagProps.dashPattern;
-                    // Keep taxonomic color but use tag opacity for subtle differentiation
-                    tagColor = levelData.color;
+                    // Keep black color but use tag opacity for subtle differentiation
+                    tagColor = BLACK;
                     tagOpacity = Math.min(levelData.opacity, tagProps.opacity);
                     tagThickness = levelData.thickness;
                 }
@@ -582,7 +570,7 @@ export class SharkTree {
             const targetLevelIndex =  Object.values(TAXONOMIC_LEVELS).indexOf(level as TAXONOMIC_LEVELS);
             let currentLevelIndex = 0;
             while (parent && currentLevelIndex < targetLevelIndex) {
-                parent.highlightParentPathWithOpacity(tagThickness, tagColor, tagPattern, tagOpacity);
+                parent.highlightParentPathWithOpacity(tagThickness, BLACK, tagPattern, tagOpacity);
                 parent = parent.getParent();
                 currentLevelIndex++;
             }
@@ -711,26 +699,17 @@ export class SharkTree {
             const taxonomicColor = this.getTaxonomicColor(shark) || BLACK;
             const tagProps = getTagVisualProps(category);
             
-            // Use tag color and opacity if no taxonomic highlighting, otherwise use taxonomic color with tag pattern
-            const finalColor = this.activeTaxonomicLevel ? taxonomicColor : tagProps.color;
+            // Always use BLACK for paths, but keep tag patterns and opacity
+            const finalColor = BLACK;
             const finalOpacity = this.activeTaxonomicLevel ? 0.7 : tagProps.opacity; // Slightly reduced when combined
             
             shark.highlightParentPathWithOpacity(2.5, finalColor, tagProps.dashPattern, finalOpacity);
         });
     
-        // Reapply taxonomic colors to all nodes
-        if (this.activeTaxonomicLevel) {
-            const levelData = this.taxonomicLevels.get(this.activeTaxonomicLevel);
-            if (levelData) {
-                const speciesToColor = this.activeTaxonomicValue
-                    ? levelData.species.filter(s => s[this.activeTaxonomicLevel] === this.activeTaxonomicValue)
-                    : levelData.species;
-                this.getSharkSpeciesList().forEach(shark => {
-                    const color = speciesToColor.includes(shark) ? levelData.color : BLACK;
-                    shark.highlightNode(color);
-                });
-            }
-        }
+        // Always use BLACK for all nodes
+        this.getSharkSpeciesList().forEach(shark => {
+            shark.highlightNode(BLACK);
+        });
     }
 
     getTaxonomicColor(shark: SharkSpecies): string | null {
@@ -757,10 +736,10 @@ export class SharkTree {
             shark.highlightNode(color);
         }
         
-        shark.highlightParentPath(strokeWidth, color, "solid");
+        shark.highlightParentPath(strokeWidth, BLACK, "solid");
         let sharkParent = shark.getParent();
         while (sharkParent) {
-            sharkParent.highlightParentPath(strokeWidth, color, "solid");
+            sharkParent.highlightParentPath(strokeWidth, BLACK, "solid");
             sharkParent = sharkParent.getParent();
         }
     }
@@ -779,8 +758,8 @@ export class SharkTree {
             if (this.activeTaxonomicLevel) {
                 const levelData = this.taxonomicLevels.get(this.activeTaxonomicLevel);
                 if (levelData && sharksToCheck.some(s => !this.activeTaxonomicValue || s[this.activeTaxonomicLevel] === this.activeTaxonomicValue)) {
-                    strokeColor = levelData.color;
-                    strokeWidth = "3";
+                    strokeColor = BLACK;
+                    strokeWidth = levelData.thickness.toString();
                 }
             }
     
@@ -833,20 +812,8 @@ export class SharkTree {
     reapplyHighlights(shark: SharkSpecies): void {
         const node = shark.getNode();
         if (node) {
-            // Preserve taxonomic color if active, otherwise use tag color if available
-            const taxonomicColor = this.getTaxonomicColor(shark);
-            let nodeColor = taxonomicColor;
-            
-            // If no taxonomic color and tag highlighting is active, use tag color
-            if (!nodeColor && this.activeTagCategory) {
-                const hasTagInCategory = shark.tags.some(tag => this.getTagCategory(tag) === this.activeTagCategory);
-                if (hasTagInCategory && (!this.activeTagValue || shark.tags.includes(this.activeTagValue))) {
-                    const tagProps = getTagVisualProps(this.activeTagCategory);
-                    nodeColor = tagProps.color;
-                }
-            }
-            
-            node.setAttribute("fill", nodeColor || BLACK);
+            // Always use BLACK for nodes
+            node.setAttribute("fill", BLACK);
         }
     
         const getPathStyle = (segments: (SVGLineElement | SVGPathElement)[], sharksToCheck: SharkSpecies[]) => {
@@ -857,11 +824,11 @@ export class SharkTree {
             let hasTaxonomicHighlight = false;
             let hasTagHighlight = false;
     
-            // Taxonomic highlighting (opacity-based with thickness)
+            // Taxonomic highlighting (thickness only, keep black color)
             if (this.activeTaxonomicLevel) {
                 const levelData = this.taxonomicLevels.get(this.activeTaxonomicLevel);
                 if (levelData && sharksToCheck.some(s => !this.activeTaxonomicValue || s[this.activeTaxonomicLevel] === this.activeTaxonomicValue)) {
-                    strokeColor = levelData.color;
+                    strokeColor = BLACK;
                     strokeWidth = levelData.thickness.toString();
                     strokeOpacity = levelData.opacity.toString();
                     hasTaxonomicHighlight = true;
@@ -875,7 +842,7 @@ export class SharkTree {
                     const tagProps = getTagVisualProps(this.activeTagCategory);
                     
                     if (!hasTaxonomicHighlight) {
-                        strokeColor = tagProps.color;
+                        strokeColor = BLACK;
                         strokeOpacity = tagProps.opacity.toString();
                     }
                     dashArray = tagProps.dashPattern;

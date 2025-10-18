@@ -7,8 +7,8 @@ export const RED = "rgba(255, 0, 0, 1)";
 export const LIGHT_GRAY = "rgba(245, 245, 245, 1)";
 export const BLOOD_RED = "rgba(136, 8, 8, 1)";
 
-// Base color for all taxonomic highlighting (subtle blue-gray)
-export const TAXONOMIC_BASE_COLOR = "#4A5568"; // Gray-600
+// Base color for all taxonomic highlighting (deep teal for accessibility and clarity)
+export const TAXONOMIC_BASE_COLOR = "#2D5A87"; // Deep teal - accessible, professional, high contrast
 
 // Opacity levels for different taxonomic levels (all set to full opacity)
 export const TAXONOMIC_OPACITIES = {
