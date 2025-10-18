@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
-import isogomphodonOxyrhynchusImg from "./../../../../../images/carcharhiniformes/carcharhinidae/isogomphodon-oxyrhynchus.png";
+import isogomphodonOxyrhynchusImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/isogomphodon-oxyrhynchus.png";
 
 export const isogomphodonOxyrhynchus = {
     commonName: "Daggernose Shark",

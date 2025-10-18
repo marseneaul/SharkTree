@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
-import carcharhinusTilstoniImg from "./../../../../../images/carcharhiniformes/carcharhinidae/carcharhinus-tilstoni.png";
+import carcharhinusTilstoniImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/carcharhinus-tilstoni.png";
 
 export const carcharhinusTilstoni = {
     commonName: "Australian Blacktip Shark",

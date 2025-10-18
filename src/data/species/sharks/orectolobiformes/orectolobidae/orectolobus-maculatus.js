@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, FLATTENED_BODY, MOUTH_IN_FRONT_OF_EYES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import orectolobusMaculatusImg from "./../../../../../images/orectolobiformes/orectolobidae/orectolobus-maculatus.png";
+import orectolobusMaculatusImg from "./../../../../../images/sharks/orectolobiformes/orectolobidae/orectolobus-maculatus.png";
 
 export const orectolobusMaculatus = {
     commonName: "Spotted Wobbegong",

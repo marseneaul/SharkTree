@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import asymbolusAnalisImg from "./../../../../../images/carcharhiniformes/scyliorhinidae-i/asymbolus-analis.png";
+import asymbolusAnalisImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-i/asymbolus-analis.png";
 
 export const asymbolusAnalis = {
     commonName: "Australian Spotted Catshark",

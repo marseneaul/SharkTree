@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, FLATTENED_BODY, MOUTH_IN_FRONT_OF_EYES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import orectolobusHutchinsiImg from "./../../../../../images/orectolobiformes/orectolobidae/orectolobus-hutchinsi.png";
+import orectolobusHutchinsiImg from "./../../../../../images/sharks/orectolobiformes/orectolobidae/orectolobus-hutchinsi.png";
 
 export const orectolobusHutchinsi = {
     commonName: "Western Wobbegong",

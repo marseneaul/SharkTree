@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
-import carcharhinusIsodonImg from "./../../../../../images/carcharhiniformes/carcharhinidae/carcharhinus-isodon.png";
+import carcharhinusIsodonImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/carcharhinus-isodon.png";
 
 export const carcharhinusIsodon = {
     commonName: "Finetooth Shark",

@@ -1,5 +1,5 @@
 import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import squalusCrassispinusImg from "./../../../../../images/squaliformes/squalidae/squalus-crassispinus.png";
+import squalusCrassispinusImg from "./../../../../../images/sharks/squaliformes/squalidae/squalus-crassispinus.png";
 
 export const squalusCrassispinus = {
     commonName: "Fatspine Spurdog",

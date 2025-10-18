@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, NUM_GILLS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import chlamydoselachusAnguineusImg from "./../../../../images/hexanchiformes/chlamydoselachus-anguineus.png";
+import chlamydoselachusAnguineusImg from "./../../../../images/sharks/hexanchiformes/chlamydoselachus-anguineus.png";
 
 export const chlamydoselachusAnguineus = {
     commonName: "Frilled Shark",

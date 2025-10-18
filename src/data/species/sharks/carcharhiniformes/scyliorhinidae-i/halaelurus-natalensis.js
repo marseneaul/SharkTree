@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import halaelurusNatalensisImg from "./../../../../../images/carcharhiniformes/scyliorhinidae-i/halaelurus-natalensis.png";
+import halaelurusNatalensisImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-i/halaelurus-natalensis.png";
 export const halaelurusNatalensis = {
     commonName: "Tiger Catshark",
     binomialName: "Halaelurus natalensis",

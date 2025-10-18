@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import dipturusBatisImg from "./../../../../../images/rays/rajiformes/rajidae/dipturus-batis.png";
 
 export const dipturusBatis = {
     commonName: "Blue Skate",
     alternativeNames: ["Grey Skate", "Blue-Grey Skate"],
     binomialName: "Dipturus batis",
+
+    imageUrl: dipturusBatisImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

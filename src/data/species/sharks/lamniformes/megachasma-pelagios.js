@@ -1,5 +1,5 @@
 import { CAUDAL_FIN_SHAPE, CONSERVATION_STATUS, FEEDING_BEHAVIOR, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import megachasmaPelagiosImg from "./../../../../images/lamniformes/megachasma-pelagios.png";
+import megachasmaPelagiosImg from "./../../../../images/sharks/lamniformes/megachasma-pelagios.png";
 
 export const megachasmaPelagios = {
     commonName: "Megamouth Shark",

@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import mustelusPalumbesImg from "./../../../../../images/carcharhiniformes/triakidae/mustelus-palumbes.png";
+import mustelusPalumbesImg from "./../../../../../images/sharks/carcharhiniformes/triakidae/mustelus-palumbes.png";
 
 export const mustelusPalumbes = {
     commonName: "Whitespotted Smooth-Hound",

@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, FLATTENED_BODY, MOUTH_IN_FRONT_OF_EYES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import orectolobusFloridusImg from "./../../../../../images/orectolobiformes/orectolobidae/orectolobus-floridus.png";
+import orectolobusFloridusImg from "./../../../../../images/sharks/orectolobiformes/orectolobidae/orectolobus-floridus.png";
 
 export const orectolobusFloridus = {
     commonName: "Floral Banded Wobbegong",

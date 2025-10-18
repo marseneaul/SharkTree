@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
-import scoliodonLaticaudusImg from "./../../../../../images/carcharhiniformes/carcharhinidae/scoliodon-laticaudus.png";
+import scoliodonLaticaudusImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/scoliodon-laticaudus.png";
 
 export const scoliodonLaticaudus = {
     commonName: "Spadenose Shark",

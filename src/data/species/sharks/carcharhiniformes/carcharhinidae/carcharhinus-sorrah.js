@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
-import carcharhinusSorrahImg from "./../../../../../images/carcharhiniformes/carcharhinidae/carcharhinus-sorrah.png";
+import carcharhinusSorrahImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/carcharhinus-sorrah.png";
 
 export const carcharhinusSorrah = {
     commonName: "Spot-Tail Shark",

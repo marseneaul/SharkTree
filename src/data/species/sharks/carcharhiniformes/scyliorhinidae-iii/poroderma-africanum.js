@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import porodermaAfricanumImg from "./../../../../../images/carcharhiniformes/scyliorhinidae-iii/poroderma-africanum.png";
+import porodermaAfricanumImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-iii/poroderma-africanum.png";
 
 export const porodermaAfricanum = {
     commonName: "Pyjama Shark",

@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import leptochariasSmithiiImg from "./../../../../images/carcharhiniformes/leptocharias-smithii.png";
+import leptochariasSmithiiImg from "./../../../../images/sharks/carcharhiniformes/leptocharias-smithii.png";
 
 export const leptochariasSmithii = {
     commonName: "Barbeled Houndshark",

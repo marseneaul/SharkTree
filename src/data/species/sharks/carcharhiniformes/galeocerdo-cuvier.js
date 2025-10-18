@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import galeocerdoCuvierImg from "./../../../../images/carcharhiniformes/galeocerdo-cuvier.png";
+import galeocerdoCuvierImg from "./../../../../images/sharks/carcharhiniformes/galeocerdo-cuvier.png";
 
 export const galeocerdoCuvier = {
     commonName: "Tiger Shark",

@@ -1,10 +1,13 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import amblyrajaJenseniImg from "./../../../../../images/rays/rajiformes/rajidae/amblyraja-jenseni.png";
 
 export const amblyrajaJenseni = {
     commonName: "Jensen's Skate",
     alternativeNames: ["Shortail Skate"],
     binomialName: "Amblyraja jenseni",
 
+    imageUrl: amblyrajaJenseniImg,
+    
     domain:	"Eukaryota",
     kingdom: "Animalia",
     phylum:	"Chordata",

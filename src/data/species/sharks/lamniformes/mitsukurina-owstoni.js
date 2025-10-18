@@ -1,5 +1,5 @@
 import { CAUDAL_FIN_SHAPE, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import mitsukurinaOwstoniImg from "./../../../../images/lamniformes/mitsukurina-owstoni.png";
+import mitsukurinaOwstoniImg from "./../../../../images/sharks/lamniformes/mitsukurina-owstoni.png";
 
 export const mitsukurinaOwstoni = {
     commonName: "Goblin Shark",

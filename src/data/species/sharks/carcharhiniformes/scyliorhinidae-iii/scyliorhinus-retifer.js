@@ -1,5 +1,5 @@
 import { BIOLUMINESCENT, CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import scyliorhinusRetiferImg from "./../../../../../images/carcharhiniformes/scyliorhinidae-iii/scyliorhinus-retifer.png";
+import scyliorhinusRetiferImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-iii/scyliorhinus-retifer.png";
 
 export const scyliorhinusRetifer = {
     commonName: "Chain Catshark",

@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
-import carcharhinusBrevipinnaImg from "./../../../../../images/carcharhiniformes/carcharhinidae/carcharhinus-brevipinna.png";
+import carcharhinusBrevipinnaImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/carcharhinus-brevipinna.png";
 
 export const carcharhinusBrevipinna = {
     commonName: "Spinner Shark",

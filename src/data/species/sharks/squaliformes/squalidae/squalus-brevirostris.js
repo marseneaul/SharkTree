@@ -1,8 +1,11 @@
 import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import squalusBrevirostrisImg from "./../../../../../images/sharks/squaliformes/squalidae/squalus-brevirostris.png";
 
 export const squalusBrevirostris = {
     commonName: "Japanese Shortnose Spurdog",
     binomialName: "Squalus brevirostris",
+
+    imageUrl: squalusBrevirostrisImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

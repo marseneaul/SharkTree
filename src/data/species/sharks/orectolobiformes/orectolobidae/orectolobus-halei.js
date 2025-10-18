@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, FLATTENED_BODY, MOUTH_IN_FRONT_OF_EYES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import orectolobusHaleiImg from "./../../../../../images/orectolobiformes/orectolobidae/orectolobus-halei.png";
+import orectolobusHaleiImg from "./../../../../../images/sharks/orectolobiformes/orectolobidae/orectolobus-halei.png";
 
 export const orectolobusHalei = {
     commonName: "Gulf Wobbegong",

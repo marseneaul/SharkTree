@@ -1,5 +1,5 @@
 import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import centrophorusGranulosusImg from "./../../../../../images/squaliformes/centrophoridae/centrophorus-granulosus.png";
+import centrophorusGranulosusImg from "./../../../../../images/sharks/squaliformes/centrophoridae/centrophorus-granulosus.png";
 
 export const centrophorusGranulosus = {
     commonName: "Gulper Shark",

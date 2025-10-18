@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import triakisScylliumImg from "./../../../../../images/carcharhiniformes/triakidae/triakis-scyllium.png";
+import triakisScylliumImg from "./../../../../../images/sharks/carcharhiniformes/triakidae/triakis-scyllium.png";
 
 export const triakisScyllium = {
     commonName: "Banded Houndshark",

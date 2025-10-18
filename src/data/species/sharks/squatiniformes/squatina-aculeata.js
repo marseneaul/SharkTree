@@ -1,5 +1,5 @@
 import { ANAL_FIN, CONSERVATION_STATUS, FLATTENED_BODY, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import squatinaAculeataImg from "./../../../../images/squatiniformes/squatina-aculeata.png";
+import squatinaAculeataImg from "./../../../../images/sharks/squatiniformes/squatina-aculeata.png";
 
 export const squatinaAculeata = {
     commonName: "Sawback Angelshark",

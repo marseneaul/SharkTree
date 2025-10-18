@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
-import sphyrnaZygaenaImg from "./../../../../../images/carcharhiniformes/sphyrnidae/sphyrna-zygaena.png";
+import sphyrnaZygaenaImg from "./../../../../../images/sharks/carcharhiniformes/sphyrnidae/sphyrna-zygaena.png";
 
 export const sphyrnaZygaena = {
     commonName: "Smooth Hammerhead Shark",

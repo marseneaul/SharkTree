@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
-import carcharhinusAmblyrhynchoidesImg from "./../../../../../images/carcharhiniformes/carcharhinidae/carcharhinus-amblyrhynchoides.png";
+import carcharhinusAmblyrhynchoidesImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/carcharhinus-amblyrhynchoides.png";
 export const carcharhinusAmblyrhynchoides = {
     commonName: "Graceful Shark",
     alternativeNames: ["Queensland Shark"],

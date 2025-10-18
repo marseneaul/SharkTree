@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
-import carcharhinusBrachyurusImg from "./../../../../../images/carcharhiniformes/carcharhinidae/carcharhinus-brachyurus.png";
+import carcharhinusBrachyurusImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/carcharhinus-brachyurus.png";
 
 export const carcharhinusBrachyurus = {
     commonName: "Copper Shark",

@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import mustelusAntarcticusImg from "./../../../../../images/carcharhiniformes/triakidae/mustelus-antarcticus.png";
+import mustelusAntarcticusImg from "./../../../../../images/sharks/carcharhiniformes/triakidae/mustelus-antarcticus.png";
 
 export const mustelusAntarcticus = {
     commonName: "Gummy Shark",

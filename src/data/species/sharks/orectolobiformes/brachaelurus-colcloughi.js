@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, MOUTH_IN_FRONT_OF_EYES, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import brachaelurusColcloughiImg from "./../../../../images/orectolobiformes/brachaelurus-colcloughi.png";
+import brachaelurusColcloughiImg from "./../../../../images/sharks/orectolobiformes/brachaelurus-colcloughi.png";
 
 export const brachaelurusColcloughi = {
     commonName: "Bluegrey Carpetshark",

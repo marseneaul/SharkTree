@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import galeusPolliImg from "./../../../../../images/carcharhiniformes/scyliorhinidae-i/galeus-polli.png";
+import galeusPolliImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-i/galeus-polli.png";
 
 export const galeusPolli = {
     commonName: "African Sawtail Catshark",

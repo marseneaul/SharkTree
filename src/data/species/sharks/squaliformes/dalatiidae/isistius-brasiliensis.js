@@ -1,5 +1,5 @@
 import { ANAL_FIN, BIOLUMINESCENT, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import isistiusBrasiliensisImg from "./../../../../../images/squaliformes/dalatiidae/isistius-brasiliensis.png";
+import isistiusBrasiliensisImg from "./../../../../../images/sharks/squaliformes/dalatiidae/isistius-brasiliensis.png";
 
 export const isistiusBrasiliensis = {
     commonName: "Cookiecutter Shark",

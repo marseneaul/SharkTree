@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
-import sphyrnaMokarranImg from "./../../../../../images/carcharhiniformes/sphyrnidae/sphyrna-mokarran.png";
+import sphyrnaMokarranImg from "./../../../../../images/sharks/carcharhiniformes/sphyrnidae/sphyrna-mokarran.png";
 
 export const sphyrnaMokarran = {
     commonName: "Great Hammerhead Shark",

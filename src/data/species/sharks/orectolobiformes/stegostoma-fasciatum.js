@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, MOUTH_IN_FRONT_OF_EYES, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import stegostomaFasciatumImg from "./../../../../images/orectolobiformes/stegostoma-fasciatum.png";
+import stegostomaFasciatumImg from "./../../../../images/sharks/orectolobiformes/stegostoma-fasciatum.png";
 
 export const stegostomaFasciatum = {
     commonName: "Zebra Shark",

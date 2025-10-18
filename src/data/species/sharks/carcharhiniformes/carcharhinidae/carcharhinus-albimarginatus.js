@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
-import carcharhinusAlbimarginatusImg from "./../../../../../images/carcharhiniformes/carcharhinidae/carcharhinus-albimarginatus.png";
+import carcharhinusAlbimarginatusImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/carcharhinus-albimarginatus.png";
 
 export const carcharhinusAlbimarginatus = {
     commonName: "Silvertip Shark",

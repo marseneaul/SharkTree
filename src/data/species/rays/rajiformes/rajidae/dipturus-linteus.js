@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import dipturusLinteusImg from "./../../../../../images/rays/rajiformes/rajidae/dipturus-linteus.png";
 
 export const dipturusLinteus = {
     commonName: "Sailray",
     binomialName: "Dipturus linteus",
+
+    imageUrl: dipturusLinteusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

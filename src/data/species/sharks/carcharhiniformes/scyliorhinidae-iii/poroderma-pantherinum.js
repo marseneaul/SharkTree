@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import porodermaPantherinumImg from "./../../../../../images/carcharhiniformes/scyliorhinidae-iii/poroderma-pantherinum.png";
+import porodermaPantherinumImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-iii/poroderma-pantherinum.png";
 
 export const porodermaPantherinum = {
     commonName: "Leopard Catshark",

@@ -1,5 +1,5 @@
 import { ANAL_FIN, BIOLUMINESCENT, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import dalatiasLichaImg from "./../../../../../images/squaliformes/dalatiidae/dalatias-licha.png";
+import dalatiasLichaImg from "./../../../../../images/sharks/squaliformes/dalatiidae/dalatias-licha.png";
 
 export const dalatiasLicha = {
     commonName: "Kitefin Shark",

@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
-import carcharhinusPereziiImg from "./../../../../../images/carcharhiniformes/carcharhinidae/carcharhinus-perezii.png";
+import carcharhinusPereziiImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/carcharhinus-perezii.png";
 
 export const carcharhinusPerezii = {
     commonName: "Caribbean Reef Shark",

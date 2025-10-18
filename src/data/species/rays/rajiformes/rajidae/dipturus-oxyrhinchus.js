@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import dipturusOxyrhinchusImg from "./../../../../../images/rays/rajiformes/rajidae/dipturus-oxyrinchus.png";
 
 export const dipturusOxyrhinchus = {
     commonName: "Longnose Skate",
     binomialName: "Dipturus oxyrinchus",
+
+    imageUrl: dipturusOxyrhinchusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

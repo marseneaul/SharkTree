@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import cephaloscylliumAlbipinnumImg from "./../../../../../images/carcharhiniformes/scyliorhinidae-iii/cephaloscyllium-albipinnum.png";
+import cephaloscylliumAlbipinnumImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-iii/cephaloscyllium-albipinnum.png";
 
 export const cephaloscylliumAlbipinnum = {
     commonName: "Whitefin Swellshark",

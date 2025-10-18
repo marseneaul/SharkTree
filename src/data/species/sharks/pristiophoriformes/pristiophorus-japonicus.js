@@ -1,5 +1,5 @@
 import { ANAL_FIN, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import pristiophorusJaponicusImg from "./../../../../images/pristiophoriformes/pristiophorus-japonicus.png";
+import pristiophorusJaponicusImg from "./../../../../images/sharks/pristiophoriformes/pristiophorus-japonicus.png";
 
 export const pristiophorusJaponicus = {
     commonName: "Japanese Sawshark",

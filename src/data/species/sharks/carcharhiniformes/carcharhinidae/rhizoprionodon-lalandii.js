@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
-import rhizoprionodonLalandiiImg from "./../../../../../images/carcharhiniformes/carcharhinidae/rhizoprionodon-lalandii.png";
+import rhizoprionodonLalandiiImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/rhizoprionodon-lalandii.png";
 
 export const rhizoprionodonLalandii = {
     commonName: "Brazilian Sharpnose Shark",

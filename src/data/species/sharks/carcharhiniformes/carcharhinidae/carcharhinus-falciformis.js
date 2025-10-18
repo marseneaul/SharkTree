@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
-import carcharhinusFalciformisImg from "./../../../../../images/carcharhiniformes/carcharhinidae/carcharhinus-falciformis.png";
+import carcharhinusFalciformisImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/carcharhinus-falciformis.png";
 
 export const carcharhinusFalciformis = {
     commonName: "Silky Shark",

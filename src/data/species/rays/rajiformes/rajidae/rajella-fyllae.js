@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import rajellaFyllaeImg from "./../../../../../images/rays/rajiformes/rajidae/rajella-fyllae.png";
 
 export const rajellaFyllae = {
     commonName: "Round Ray",
     binomialName: "Rajella fyllae",
+
+    imageUrl: rajellaFyllaeImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

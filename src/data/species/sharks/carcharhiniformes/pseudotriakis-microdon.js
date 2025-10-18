@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import pseudotriakisMicrodonImg from "./../../../../images/carcharhiniformes/pseudotriakis-microdon.png";
+import pseudotriakisMicrodonImg from "./../../../../images/sharks/carcharhiniformes/pseudotriakis-microdon.png";
 
 export const pseudotriakisMicrodon = {
     commonName: "False Catshark",

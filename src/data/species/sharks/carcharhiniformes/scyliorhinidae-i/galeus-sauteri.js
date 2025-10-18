@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import galeusSauteriImg from "./../../../../../images/carcharhiniformes/scyliorhinidae-i/galeus-sauteri.png";
+import galeusSauteriImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-i/galeus-sauteri.png";
 
 export const galeusSauteri = {
     commonName: "Blacktip Sawtail Catshark",

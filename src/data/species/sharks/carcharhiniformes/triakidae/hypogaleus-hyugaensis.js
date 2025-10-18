@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import hypogaleusHyugaensisImg from "./../../../../../images/carcharhiniformes/triakidae/hypogaleus-hyugaensis.png";
+import hypogaleusHyugaensisImg from "./../../../../../images/sharks/carcharhiniformes/triakidae/hypogaleus-hyugaensis.png";
 
 export const hypogaleusHyugaensis = {
     commonName: "Blacktip Tope",

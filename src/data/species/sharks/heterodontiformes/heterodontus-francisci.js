@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import heterodontusFrancisciImg from "./../../../../images/heterodontiformes/heterodontus-francisci.png";
+import heterodontusFrancisciImg from "./../../../../images/sharks/heterodontiformes/heterodontus-francisci.png";
 
 export const heterodontusFrancisci = {
     commonName: "Horn Shark",

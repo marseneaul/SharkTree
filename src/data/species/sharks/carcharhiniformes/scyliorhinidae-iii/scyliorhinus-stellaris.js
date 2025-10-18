@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import scyliorhinusStellarisImg from "./../../../../../images/carcharhiniformes/scyliorhinidae-iii/scyliorhinus-stellaris.png";
+import scyliorhinusStellarisImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-iii/scyliorhinus-stellaris.png";
 
 export const scyliorhinusStellaris = {
     commonName: "Nursehound",

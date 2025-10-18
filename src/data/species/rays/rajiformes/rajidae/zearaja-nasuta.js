@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import zearajaNasutaImg from "./../../../../../images/rays/rajiformes/rajidae/zearaja-nasuta.png";
 
 export const zearajaNasuta = {
     commonName: "New Zealand Rough Skate",
     binomialName: "Zearaja nasuta",
+
+    imageUrl: zearajaNasutaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

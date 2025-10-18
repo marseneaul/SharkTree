@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
-import negaprionBrevirostrisImg from "./../../../../../images/carcharhiniformes/carcharhinidae/negaprion-brevirostris.png";
+import negaprionBrevirostrisImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/negaprion-brevirostris.png";
 
 export const negaprionBrevirostris = {
     commonName: "Lemon Shark",

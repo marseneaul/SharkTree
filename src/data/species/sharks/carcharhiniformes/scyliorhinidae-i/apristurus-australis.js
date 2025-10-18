@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import apristurusAustralisImg from "./../../../../../images/carcharhiniformes/scyliorhinidae-i/apristurus-australis.png";
+import apristurusAustralisImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-i/apristurus-australis.png";
 
 export const apristurusAustralis = {
     commonName: "Pinocchio Catshark",
