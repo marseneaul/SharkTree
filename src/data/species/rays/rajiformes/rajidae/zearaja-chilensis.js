@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import zearajaChilensisImg from "./../../../../../images/rays/rajiformes/rajidae/zearaja-chilensis.png";
 
 export const zearajaChilensis = {
     commonName: "Yellownose Skate",
     binomialName: "Zearaja chilensis",
+
+    imageUrl: zearajaChilensisImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

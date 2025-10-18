@@ -1,8 +1,11 @@
 import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import squalusSuckleyiImg from "./../../../../../images/sharks/squaliformes/squalidae/squalus-suckleyi.png";
 
 export const squalusSuckleyi = {
     commonName: "Pacific Spiny Dogfish",
     binomialName: "Squalus suckleyi",
+
+    imageUrl: squalusSuckleyiImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

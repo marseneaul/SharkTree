@@ -1,9 +1,12 @@
 import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import squalusMontalbaniImg from "./../../../../../images/sharks/squaliformes/squalidae/squalus-montalbani.png";
 
 export const squalusMontalbani = {
     commonName: "Philippine Spurdog",
     alternativeNames: ["Indonesian Greeneye Spurdog"],
     binomialName: "Squalus montalbani",
+
+    imageUrl: squalusMontalbaniImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

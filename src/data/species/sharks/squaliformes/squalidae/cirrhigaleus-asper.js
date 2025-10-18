@@ -1,9 +1,12 @@
 import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import cirrhigaleusAsperImg from "./../../../../../images/sharks/squaliformes/squalidae/cirrhigaleus-asper.png";
 
 export const cirrhigaleusAsper = {
     commonName: "Roughskin Spurdog",
     alternativeNames: ["Roughskin Dogfish", "Roughskin Dogshark", "Roughskin Spiny Dogfish"],
     binomialName: "Cirrhigaleus asper",
+
+    imageUrl: cirrhigaleusAsperImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

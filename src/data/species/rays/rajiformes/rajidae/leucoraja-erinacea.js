@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import leucorajaErinaceaImg from "./../../../../../images/rays/rajiformes/rajidae/leucoraja-erinacea.png";
 
 export const leucorajaErinacea = {
     commonName: "Little Skate",
     binomialName: "Leucoraja erinacea",
+
+    imageUrl: leucorajaErinaceaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

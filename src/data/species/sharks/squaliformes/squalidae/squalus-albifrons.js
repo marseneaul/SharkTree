@@ -1,8 +1,11 @@
 import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import squalusAlbifronsImg from "./../../../../../images/sharks/squaliformes/squalidae/squalus-albifrons.png";
 
 export const squalusAlbifrons = {
     commonName: "Eastern Highfin Spurdog",
     binomialName: "Squalus albifrons",
+
+    imageUrl: squalusAlbifronsImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

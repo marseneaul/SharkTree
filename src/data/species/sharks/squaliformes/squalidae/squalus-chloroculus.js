@@ -1,8 +1,11 @@
 import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import squalusChloroculusImg from "./../../../../../images/sharks/squaliformes/squalidae/squalus-chloroculus.png";
 
 export const squalusChloroculus = {
     commonName: "Greeneye Spurdog",
     binomialName: "Squalus chloroculus",
+
+    imageUrl: squalusChloroculusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

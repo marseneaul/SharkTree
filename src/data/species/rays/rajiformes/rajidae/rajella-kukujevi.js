@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import rajellaKukujeviImg from "./../../../../../images/rays/rajiformes/rajidae/rajella-kukujevi.png";
 
 export const rajellaKukujevi = {
     commonName: "Mid-Atlantic Skate",
     binomialName: "Rajella kukujevi",
+
+    imageUrl: rajellaKukujeviImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

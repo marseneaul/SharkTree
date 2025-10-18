@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import amblyrajaRadiataImg from "./../../../../../images/rays/rajiformes/rajidae/amblyraja-radiata.png";
 
 export const amblyrajaRadiata = {
     commonName: "Thorny Skate",
     binomialName: "Amblyraja radiata",
+
+    imageUrl: amblyrajaRadiataImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import rajellaLeopardusImg from "./../../../../../images/rays/rajiformes/rajidae/rajella-leopardus.png";
 
 export const rajellaLeopardus = {
     commonName: "Leopard Skate",
     binomialName: "Rajella leopardus",
+
+    imageUrl: rajellaLeopardusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
