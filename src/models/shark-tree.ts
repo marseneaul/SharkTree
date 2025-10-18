@@ -565,16 +565,6 @@ export class SharkTree {
                     tagThickness = levelData.thickness;
                 }
             }
-            
-            shark.highlightParentPathWithOpacity(tagThickness, tagColor, tagPattern, tagOpacity);
-            let parent = shark.getParent();
-            const targetLevelIndex =  Object.values(TAXONOMIC_LEVELS).indexOf(level as TAXONOMIC_LEVELS);
-            let currentLevelIndex = 0;
-            while (parent && currentLevelIndex < targetLevelIndex) {
-                parent.highlightParentPathWithOpacity(tagThickness, BLACK, tagPattern, tagOpacity);
-                parent = parent.getParent();
-                currentLevelIndex++;
-            }
         });
     }
 
