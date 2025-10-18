@@ -10,13 +10,13 @@ export const BLOOD_RED = "rgba(136, 8, 8, 1)";
 // Base color for all taxonomic highlighting (subtle blue-gray)
 export const TAXONOMIC_BASE_COLOR = "#4A5568"; // Gray-600
 
-// Opacity levels for different taxonomic levels (higher = more specific)
+// Opacity levels for different taxonomic levels (all set to full opacity)
 export const TAXONOMIC_OPACITIES = {
-    [TAXONOMIC_LEVELS.GENUS]: 1.0,        // Most specific - full opacity
-    [TAXONOMIC_LEVELS.FAMILY]: 0.8,       // High opacity
-    [TAXONOMIC_LEVELS.ORDER]: 0.6,        // Medium opacity
-    [TAXONOMIC_LEVELS.SUPERORDER]: 0.4,   // Lower opacity
-    [TAXONOMIC_LEVELS.SUBDIVISION]: 0.2   // Most general - lowest opacity
+    [TAXONOMIC_LEVELS.GENUS]: 1.0,        // Full opacity
+    [TAXONOMIC_LEVELS.FAMILY]: 1.0,       // Full opacity
+    [TAXONOMIC_LEVELS.ORDER]: 1.0,        // Full opacity
+    [TAXONOMIC_LEVELS.SUPERORDER]: 1.0,   // Full opacity
+    [TAXONOMIC_LEVELS.SUBDIVISION]: 1.0   // Full opacity
 }
 
 // Line thickness for taxonomic levels (thicker = more specific)
