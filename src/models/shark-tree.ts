@@ -687,7 +687,6 @@ export class SharkTree {
     
         // Highlight paths for tagged species
         speciesToHighlight.forEach(shark => {
-            const taxonomicColor = this.getTaxonomicColor(shark) || BLACK;
             const tagProps = getTagVisualProps(category);
             
             // Always use BLACK for paths, with full opacity
@@ -701,16 +700,6 @@ export class SharkTree {
         this.getSharkSpeciesList().forEach(shark => {
             shark.highlightNode(BLACK);
         });
-    }
-
-    getTaxonomicColor(shark: SharkSpecies): string | null {
-        if (this.activeTaxonomicLevel) {
-            const levelData = this.taxonomicLevels.get(this.activeTaxonomicLevel);
-            if (levelData && (!this.activeTaxonomicValue || shark[this.activeTaxonomicLevel] === this.activeTaxonomicValue)) {
-                return levelData.color;
-            }
-        }
-        return null;
     }
 
     /*----------------------------------------|
