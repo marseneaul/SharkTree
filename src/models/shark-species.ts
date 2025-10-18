@@ -327,7 +327,7 @@ export class SharkSpecies {
             "Scyliorhinidae": "Catsharks",
             "Oxynotus": "Roughsharks",
             "Alopiidae": "Threshers",
-            "Orectolobus": "Wobbegongs",
+            "Orectolobidae": "Wobbegongs",
             "Hemigaleidae": "Weasel Sharks",
             "Centrophoridae": "Gulper Sharks",
 
