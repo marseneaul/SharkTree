@@ -1374,7 +1374,6 @@ export class SharkTreeComponent extends HTMLElement {
     }
     
     addSharkImage(selectedShark) {
-        console.log("addSharkImage called for:", selectedShark.commonName);
         const imageContainer = this.shadow.querySelector("#shark-image-container");
         if (!imageContainer) {
             console.log("Image container not found!");
@@ -1396,11 +1395,10 @@ export class SharkTreeComponent extends HTMLElement {
         sharkImg.alt = `${selectedShark.commonName} image`;
         
         // Use the direct mapped URL
-        const imageUrl = this.getDirectImageUrl(selectedShark.imageUrl);
+        const imageUrl = selectedShark.imageUrl;
         
         // Set up image loading with proper event handling
         sharkImg.onload = () => {
-            console.log("Image loaded successfully:", sharkImg.src);
             loadingDiv.remove();
             sharkImg.style.display = "block";
         };
@@ -1416,7 +1414,6 @@ export class SharkTreeComponent extends HTMLElement {
         
         // Add click handler for modal
         sharkImg.addEventListener("click", (event) => {
-            console.log("Image clicked!", selectedShark.commonName, sharkImg.src);
             event.stopPropagation();
             this.showImageModal(sharkImg.src, selectedShark.commonName);
         });
@@ -1433,29 +1430,7 @@ export class SharkTreeComponent extends HTMLElement {
         imageContainer.appendChild(imageWrapper);
     }
     
-    getDirectImageUrl(webpackUrl) {
-        // Extract filename from webpack URL
-        const filename = webpackUrl.split('/').pop();
-        
-        // Map known filenames to their direct paths
-        const imageMap = {
-            'carcharodon-carcharias.png': '/images/lamniformes/lamnidae/carcharodon-carcharias.png',
-            'isurus-oxyrinchus.png': '/images/lamniformes/lamnidae/isurus-oxyrinchus.png',
-            'isurus-paucus.png': '/images/lamniformes/lamnidae/isurus-paucus.png',
-            'alopias-pelagicus.jpeg': '/images/lamniformes/alopias-pelagicus.jpeg',
-            'alopias-superciliosus.jpg': '/images/lamniformes/alopias-superciliosus.jpg',
-            'alopias-vulpinus.jpeg': '/images/lamniformes/alopias-vulpinus.jpeg',
-            'scylliogaleus-quecketti.jpg': '/images/carcharhiniformes/triakidae/scylliogaleus-quecketti.jpg'
-        };
-        
-        const directPath = imageMap[filename];
-        
-        return directPath || webpackUrl;
-    }
-    
     showImageModal(imageUrl, speciesName) {
-        console.log("showImageModal called with:", imageUrl, speciesName);
-        
         // Remove existing modal if any
         const existingModal = document.querySelector(".image-modal");
         if (existingModal) {
@@ -1473,7 +1448,6 @@ export class SharkTreeComponent extends HTMLElement {
         modal.style.height = "100%";
         modal.style.backgroundColor = "rgba(0, 0, 0, 0.9)";
         modal.style.zIndex = "9999";
-        console.log("Modal created:", modal);
         
         // Create modal content
         const modalImg = document.createElement("img");
@@ -1551,9 +1525,6 @@ export class SharkTreeComponent extends HTMLElement {
         modal.appendChild(modalImg);
         modal.appendChild(closeBtn);
         document.body.appendChild(modal);
-        console.log("Modal added to body:", document.body.contains(modal));
-        console.log("Modal display style:", modal.style.display);
-        console.log("Modal computed style:", window.getComputedStyle(modal).display);
     }
 
     redraw(_event) {

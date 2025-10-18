@@ -277,13 +277,13 @@ export class SharkSpecies {
             ${descriptionString}
             <div class="section">
                 <strong>Taxonomy:</strong><br>
-                Domain: ${this.domain}<br>
-                Kingdom: ${this.kingdom}<br>
-                Phylum: ${this.phylum}<br>
-                Class: ${this.class}<br>
-                Order: ${this.order}<br>
-                Family: ${this.family}<br>
-                Genus: ${this.genus}<br>
+                Domain: ${this.domain}${this.getCommonNameFromTaxonomicGroup(this.domain) ?? ''}<br>
+                Kingdom: ${this.kingdom}${this.getCommonNameFromTaxonomicGroup(this.kingdom) ?? ''}<br>
+                Phylum: ${this.phylum}${this.getCommonNameFromTaxonomicGroup(this.phylum) ?? ''}<br>
+                Class: ${this.class}${this.getCommonNameFromTaxonomicGroup(this.class) ?? ''}<br>
+                Order: ${this.order}${this.getCommonNameFromTaxonomicGroup(this.order) ?? ''}<br>
+                Family: ${this.family}${this.getCommonNameFromTaxonomicGroup(this.family) ?? ''}<br>
+                Genus: ${this.genus}${this.getCommonNameFromTaxonomicGroup(this.genus) ?? ''}<br>
                 Species: ${this.species}
             </div>
             <div class="section">
@@ -291,6 +291,89 @@ export class SharkSpecies {
                 ${relatedSpecies.length > 0 ? `<ul>${relatedSpecies.map(s => `<li>${s.commonName} (${s.binomialName})</li>`).join("")}</ul>` : "None in this dataset"}
             </div>
         `;
+    }
+
+    private getCommonNameFromTaxonomicGroup(taxonomicGroup: string): string {
+        const commonNames: { [key: string]: string } = {
+            "Eukaryota": "Eukaryotes",
+            "Animalia": "Animals",
+
+            "Chordata": "Vertebrates",
+
+            "Chondrichthyes": "Cartilagenous Fishes",
+
+            // ----------------------------------//
+
+            "Carcharhiniformes": "Ground Sharks",
+            "Lamniformes": "Mackerel Sharks", 
+            "Squatiniformes": "Angelsharks",
+            "Heterodontiformes": "Bullhead Sharks",
+            "Orectolobiformes": "Carpet Sharks",
+            "Pristiophoriformes": "Sawsharks",
+            "Squaliformes": "Dogfishes",
+
+            "Rajiformes": "Skates",
+            "Rhinopristiformes": "Guitarfishes and Sawfishes",
+            "Torpediniformes": "Torpedo Rays",
+            "Myliobatiformes": "Whiptail Rays",
+
+            "Chimaeriformes": "Chimaeras",
+
+            // ----------------------------------//
+
+
+            "Carcharhinidae": "Requiem Sharks",
+            "Triakidae": "Houndsharks",
+            "Sphyrnidae": "Hammerhead Sharks",
+            "Hexanchidae": "Cow Sharks",
+            "Chlamydoselachidae": "Frilled Sharks",
+            "Ginglymostomatidae": "Nurse Sharks",
+            "Rhincodontidae": "Whale Sharks",
+            "Etmopteridae": "Lanternsharks",
+            "Somniosidae": "Sleeper Sharks",
+            "Scyliorhinidae": "Catsharks",
+            "Oxynotus": "Roughsharks",
+            "Alopiidae": "Threshers",
+            "Orectolobus": "Wobbegongs",
+            "Hemigaleidae": "Weasel Sharks",
+            "Centrophoridae": "Gulper Sharks",
+
+            // FRESHWATER RAYS?
+            "Urotrygonidae": "Round Rays",
+            "Urolophidae": "Stingarees",
+            "Gymnuridae": "Butterfly Rays",
+            "Mobulidae": "Mobula Rays",
+            "Myliobatidae": "Eagle Rays",
+            "Aetobatidae": "Eagle Rays",
+            "Dasyatidae": "Stingrays",
+            "Rhinopteridae": "Cownose Rays",
+            "Torpedinidae": "Torpedo Rays",
+
+            "Chimaeridae": "Shortnosed Chimaeras",
+            "Callorhinchidae": "Plough-Nosed Chimaeras",
+            "Rhinochimaeridae": "Longnosed Chimaeras",
+
+            // ----------------------------------//
+
+            "Squalus": "Spurdogs",
+            "Chiloscyllium": "Bamboo Sharks",
+            "Cephaloscyllium": "Swellsharks",
+            "Rhizoprionodon": "Sharpnose Sharks",
+            "Mustelus": "Smooth-Hounds",
+            "Scoliodon": "Spadenose Sharks",
+            "Negaprion": "Lemon Sharks",
+            "Echinorhinus": "Bramble Sharks",
+            "Brachaelurus": "Blind Sharks",
+            "Hemiscyllium": "Epaulette Sharks",
+
+            "Neotrygon": "Maskrays",
+            "Himantura": "Whiprays",
+            "Dasyatis": "Stingrays"
+
+            // ----------------------------------//
+        };
+        if (taxonomicGroup in commonNames) return ` (${commonNames[taxonomicGroup]})`;
+        else return '';
     }
 
     getAlternativeNamesSentence(): string {
@@ -356,16 +439,16 @@ export class SharkSpecies {
 
     private getTaxonomicIntroduction(): string {
         const familyDescriptions: { [key: string]: string } = {
-            "Carcharhinidae": "requiem sharks",
-            "Lamnidae": "mackerel sharks", 
-            "Sphyrnidae": "hammerhead sharks",
-            "Squalidae": "dogfish sharks",
-            "Hexanchidae": "cow sharks",
-            "Chlamydoselachidae": "frilled sharks",
-            "Heterodontidae": "bullhead sharks",
-            "Orectolobidae": "carpet sharks",
-            "Ginglymostomatidae": "nurse sharks",
-            "Rhincodontidae": "whale sharks"
+            "Carcharhinidae": "requiem shark",
+            "Lamnidae": "mackerel shark",
+            "Sphyrnidae": "hammerhead shark",
+            "Squalidae": "dogfish shark",
+            "Hexanchidae": "cow shark",
+            "Chlamydoselachidae": "frilled shark",
+            "Heterodontidae": "bullhead shark",
+            "Orectolobidae": "carpet shark",
+            "Ginglymostomatidae": "nurse shark",
+            "Rhincodontidae": "whale shark"
         };
 
         // Get the appropriate species type description
