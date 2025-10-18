@@ -174,7 +174,8 @@ export class SharkTreeComponent extends HTMLElement {
         taxonomicGroupDropdown.innerHTML = "<option value=''>Select a level first</option>";
         taxonomicGroupDropdown.disabled = true;
         tagDropdown.value = "";
-        tagValueDropdown.innerHTML = "<option value=''>All</option>";
+        tagValueDropdown.innerHTML = '<option value="">Select a category first</option>';
+        tagValueDropdown.disabled = true;
         this.updateTaxonomicValues();
     }
 
@@ -328,8 +329,8 @@ export class SharkTreeComponent extends HTMLElement {
                             <option value="operculum" class="chimaera-only">Has Operculum</option>
                             <option value="snoutShape" class="chimaera-only">Snout Shape</option>
                         </select>
-                        <select id="tag-value-dropdown">
-                            <option value="">All</option>
+                        <select id="tag-value-dropdown" disabled>
+                            <option value="">Select a category first</option>
                         </select>
                     </div>
                     <div class="control-group">
@@ -1292,9 +1293,11 @@ export class SharkTreeComponent extends HTMLElement {
                         return `<option value="${v}">${displayText}</option>`;
                     }).join("")}
                 `;
+                tagValueDropdown.disabled = false;
                 this.sharkTree.highlightTagCategory(category);
             } else {
-                tagValueDropdown.innerHTML = "<option value=''>All</option>";
+                tagValueDropdown.innerHTML = '<option value="">Select a category first</option>';
+                tagValueDropdown.disabled = true;
                 this.sharkTree?.clearAllHighlights();
             }
         });
