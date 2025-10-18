@@ -1,8 +1,11 @@
 import { ANAL_FIN, BIOLUMINESCENT, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import etmopterusPrincepsImg from "./../../../../../images/sharks/squaliformes/etmopteridae/etmopterus-princeps.png";
 
 export const etmopterusPrinceps = {
     commonName: "Great Lanternshark",
     binomialName: "Etmopterus princeps",
+
+    imageUrl: etmopterusPrincepsImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

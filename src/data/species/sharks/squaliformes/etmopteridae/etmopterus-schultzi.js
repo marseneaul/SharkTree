@@ -1,8 +1,11 @@
 import { ANAL_FIN, BIOLUMINESCENT, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import etmopterusSchultziImg from "./../../../../../images/sharks/squaliformes/etmopteridae/etmopterus-schultzi.png";
 
 export const etmopterusSchultzi = {
     commonName: "Fringefin Lanternshark",
     binomialName: "Etmopterus schultzi",
+
+    imageUrl: etmopterusSchultziImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

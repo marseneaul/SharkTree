@@ -1,9 +1,12 @@
 import { ANAL_FIN, BIOLUMINESCENT, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import etmopterusSpinaxImg from "./../../../../../images/sharks/squaliformes/etmopteridae/etmopterus-spinax.png";
 
 export const etmopterusSpinax = {
     commonName: "Velvet Belly Lanternshark",
     alternativeNames: ["Velvet Belly"],
     binomialName: "Etmopterus spinax",
+
+    imageUrl: etmopterusSpinaxImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
