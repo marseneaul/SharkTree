@@ -1,8 +1,11 @@
 import { ANAL_FIN, BIOLUMINESCENT, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import squaliolusAliaeImg from "./../../../../../images/sharks/squaliformes/dalatiidae/squaliolus-aliae.png";
 
 export const squaliolusAliae = {
     commonName: "Smalleye Pygmy Shark",
     binomialName: "Squaliolus aliae",
+
+    imageUrl: squaliolusAliaeImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

@@ -1,8 +1,11 @@
 import { ANAL_FIN, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import euprotomicrusBispinatusImg from "./../../../../../images/sharks/squaliformes/dalatiidae/euprotomicrus-bispinatus.png";
 
 export const euprotomicrusBispinatus = {
     commonName: "Pygmy Shark",
     binomialName: "Euprotomicrus bispinatus",
+
+    imageUrl: euprotomicrusBispinatusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
