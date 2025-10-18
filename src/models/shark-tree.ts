@@ -716,16 +716,6 @@ export class SharkTree {
         let finalStrokeWidth = strokeWidth;
         let finalColor = BLACK;
         
-        if (this.activeTagCategory) {
-            const hasTag = !this.activeTagValue || shark.tags.includes(this.activeTagValue);
-            if (hasTag) {
-                const tagProps = getTagVisualProps(this.activeTagCategory);
-                dashPattern = tagProps.dashPattern;
-                finalStrokeWidth = 2.5; // Slightly thinner for tags
-                finalColor = BLACK;
-            }
-        }
-        
         shark.highlightParentPath(finalStrokeWidth, finalColor, dashPattern);
         let sharkParent = shark.getParent();
         while (sharkParent) {
