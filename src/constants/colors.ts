@@ -10,7 +10,7 @@ export const BLOOD_RED = "rgba(136, 8, 8, 1)";
 // Base color for all taxonomic highlighting (deep teal for accessibility and clarity)
 export const TAXONOMIC_BASE_COLOR = "#2D5A87"; // Deep teal - accessible, professional, high contrast
 
-// Opacity levels for different taxonomic levels (all set to full opacity)
+// Single opacity for all taxonomic levels
 export const TAXONOMIC_OPACITIES = {
     [TAXONOMIC_LEVELS.GENUS]: 1.0,        // Full opacity
     [TAXONOMIC_LEVELS.FAMILY]: 1.0,       // Full opacity
@@ -41,17 +41,17 @@ export const TAG_CATEGORY_COLORS = {
     distribution: "#3182CE"             // Blue for distribution
 }
 
-// Opacity levels for tag categories (based on importance/urgency)
+// Single opacity for all tag categories
 export const TAG_OPACITIES = {
-    conservationStatus: 0.9,            // High opacity for conservation (urgent)
-    reproductiveStrategy: 0.7,          // Medium-high for reproduction
-    temperatureRegulation: 0.6,         // Medium for temperature
-    behavior: 0.5,                      // Medium for behavior
-    feedingBehavior: 0.6,               // Medium for feeding
-    groupBehavior: 0.4,                 // Lower for group dynamics
-    physicalCharacteristics: 0.3,       // Low for physical traits
-    habitat: 0.5,                       // Medium for habitat
-    distribution: 0.4                   // Lower for distribution
+    conservationStatus: 1.0,            // Full opacity
+    reproductiveStrategy: 1.0,          // Full opacity
+    temperatureRegulation: 1.0,         // Full opacity
+    behavior: 1.0,                      // Full opacity
+    feedingBehavior: 1.0,               // Full opacity
+    groupBehavior: 1.0,                 // Full opacity
+    physicalCharacteristics: 1.0,       // Full opacity
+    habitat: 1.0,                       // Full opacity
+    distribution: 1.0                   // Full opacity
 }
 
 // Dash patterns for different tag categories (more subtle)
@@ -78,17 +78,17 @@ export const getColorWithOpacity = (hexColor: string, opacity: number): string =
 // Helper function to get taxonomic visual properties
 export const getTaxonomicVisualProps = (level: string) => {
     return {
-        color: getColorWithOpacity(TAXONOMIC_BASE_COLOR, TAXONOMIC_OPACITIES[level] || 0.5),
+        color: getColorWithOpacity(TAXONOMIC_BASE_COLOR, TAXONOMIC_OPACITIES[level] || 1.0),
         thickness: TAXONOMIC_THICKNESS[level] || 2,
-        opacity: TAXONOMIC_OPACITIES[level] || 0.5
+        opacity: TAXONOMIC_OPACITIES[level] || 1.0
     };
 };
 
 // Helper function to get tag visual properties
 export const getTagVisualProps = (category: string) => {
     return {
-        color: getColorWithOpacity(TAG_CATEGORY_COLORS[category] || TAXONOMIC_BASE_COLOR, TAG_OPACITIES[category] || 0.5),
+        color: getColorWithOpacity(TAG_CATEGORY_COLORS[category] || TAXONOMIC_BASE_COLOR, TAG_OPACITIES[category] || 1.0),
         dashPattern: TAG_DASH_PATTERNS[category] || "5,5",
-        opacity: TAG_OPACITIES[category] || 0.5
+        opacity: TAG_OPACITIES[category] || 1.0
     };
 };

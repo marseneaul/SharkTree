@@ -133,6 +133,7 @@ export class SharkTree {
         svg.setAttribute("width", this.svgSize.toString());
         svg.setAttribute("height", this.svgSize.toString());
         svg.setAttribute("viewBox", `0 0 ${this.svgSize} ${this.svgSize}`);
+        svg.setAttribute("opacity", "1.0"); // Single opacity for entire SVG
     
         // Add solid background
         const bg = document.createElementNS(SVG_NAMESPACE, "rect");
@@ -140,7 +141,7 @@ export class SharkTree {
         bg.setAttribute("y", "0");
         bg.setAttribute("width", this.svgSize.toString());
         bg.setAttribute("height", this.svgSize.toString());
-        bg.setAttribute("fill", "rgba(245, 245, 245, 0.5)"); // Subtle grey, slightly opaque
+        bg.setAttribute("fill", "rgba(245, 245, 245, 1.0)"); // Subtle grey, full opacity
         svg.appendChild(bg);
     
         const g = document.createElementNS(SVG_NAMESPACE, "g");
@@ -550,7 +551,7 @@ export class SharkTree {
             // Determine tag styling if active
             let tagPattern = "solid";
             let tagColor = BLACK;
-            let tagOpacity = levelData.opacity;
+            let tagOpacity = 1.0; // Single opacity value
             let tagThickness = levelData.thickness;
             
             if (this.activeTagCategory) {
@@ -558,9 +559,9 @@ export class SharkTree {
                 if (hasTag) {
                     const tagProps = getTagVisualProps(this.activeTagCategory);
                     tagPattern = tagProps.dashPattern;
-                    // Keep black color but use tag opacity for subtle differentiation
+                    // Keep black color with full opacity
                     tagColor = BLACK;
-                    tagOpacity = Math.min(levelData.opacity, tagProps.opacity);
+                    tagOpacity = 1.0;
                     tagThickness = levelData.thickness;
                 }
             }
@@ -699,9 +700,9 @@ export class SharkTree {
             const taxonomicColor = this.getTaxonomicColor(shark) || BLACK;
             const tagProps = getTagVisualProps(category);
             
-            // Always use BLACK for paths, but keep tag patterns and opacity
+            // Always use BLACK for paths, with full opacity
             const finalColor = BLACK;
-            const finalOpacity = this.activeTaxonomicLevel ? 0.7 : tagProps.opacity; // Slightly reduced when combined
+            const finalOpacity = 1.0; // Single opacity value
             
             shark.highlightParentPathWithOpacity(2.5, finalColor, tagProps.dashPattern, finalOpacity);
         });
@@ -837,7 +838,7 @@ export class SharkTree {
             let strokeColor = BLACK;
             let strokeWidth = "1";
             let dashArray = "";
-            let strokeOpacity = "1";
+            let strokeOpacity = "1.0"; // Single opacity value
             let hasTaxonomicHighlight = false;
             let hasTagHighlight = false;
     
@@ -847,12 +848,12 @@ export class SharkTree {
                 if (levelData && sharksToCheck.some(s => !this.activeTaxonomicValue || s[this.activeTaxonomicLevel] === this.activeTaxonomicValue)) {
                     strokeColor = BLACK;
                     strokeWidth = levelData.thickness.toString();
-                    strokeOpacity = levelData.opacity.toString();
+                    strokeOpacity = "1.0"; // Single opacity value
                     hasTaxonomicHighlight = true;
                 }
             }
     
-            // Tag highlighting (dashed lines with category-specific opacity and patterns)
+            // Tag highlighting (dashed lines with full opacity)
             if (this.activeTagCategory) {
                 const hasTagInCategory = sharksToCheck.some(s => s.tags.some(tag => this.getTagCategory(tag) === this.activeTagCategory));
                 if (hasTagInCategory && (!this.activeTagValue || sharksToCheck.some(s => s.tags.includes(this.activeTagValue)))) {
@@ -860,7 +861,7 @@ export class SharkTree {
                     
                     if (!hasTaxonomicHighlight) {
                         strokeColor = BLACK;
-                        strokeOpacity = tagProps.opacity.toString();
+                        strokeOpacity = "1.0"; // Single opacity value
                     }
                     dashArray = tagProps.dashPattern;
                     strokeWidth = "2.5"; // Slightly thinner for tags
