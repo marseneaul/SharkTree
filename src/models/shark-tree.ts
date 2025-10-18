@@ -736,10 +736,27 @@ export class SharkTree {
             shark.highlightNode(color);
         }
         
-        shark.highlightParentPath(strokeWidth, BLACK, "solid");
+        // Determine styling based on active tag category
+        let dashPattern = "solid";
+        let finalStrokeWidth = strokeWidth;
+        let finalColor = BLACK;
+        let finalOpacity = 1;
+        
+        if (this.activeTagCategory) {
+            const hasTag = !this.activeTagValue || shark.tags.includes(this.activeTagValue);
+            if (hasTag) {
+                const tagProps = getTagVisualProps(this.activeTagCategory);
+                dashPattern = tagProps.dashPattern;
+                finalStrokeWidth = 2.5; // Slightly thinner for tags
+                finalColor = BLACK;
+                finalOpacity = tagProps.opacity;
+            }
+        }
+        
+        shark.highlightParentPathWithOpacity(finalStrokeWidth, finalColor, dashPattern, finalOpacity);
         let sharkParent = shark.getParent();
         while (sharkParent) {
-            sharkParent.highlightParentPath(strokeWidth, BLACK, "solid");
+            sharkParent.highlightParentPathWithOpacity(finalStrokeWidth, finalColor, dashPattern, finalOpacity);
             sharkParent = sharkParent.getParent();
         }
     }
