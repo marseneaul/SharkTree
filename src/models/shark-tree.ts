@@ -518,9 +518,10 @@ export class SharkTree {
 
         if (this.activeTagCategory) {
             const hasTagInCategory = sharksToCheck.some(s => s.tags.some(tag => this.getTagCategory(tag) === this.activeTagCategory));
+            strokeOpacity = `${HIGHLIGHTED_STROKE_OPACITY}`;
             if (hasTagInCategory && (!this.activeTagValue || sharksToCheck.some(s => s.tags.includes(this.activeTagValue)))) {
                 dashPattern = DEFAULT_DASH_PATTERN;
-                strokeOpacity = `${HIGHLIGHTED_STROKE_OPACITY}`;
+                strokeOpacity = `${DEFAULT_STROKE_OPACITY}`;
             }
         }
         return { strokeColor, strokeWidth, strokeOpacity, dashPattern };
@@ -722,9 +723,11 @@ export class SharkTree {
     
         // Reset paths but preserve node colors
         this.getSharkSpeciesList().forEach(shark => this.resetHighlightPath(shark, true));
+
+        this.getSharkSpeciesList().forEach(shark => { shark.highlightParentPath(null, null, HIGHLIGHTED_STROKE_OPACITY, DEFAULT_DASH_PATTERN); });
     
         // Highlight paths for tagged species
-        speciesToHighlight.forEach(shark => { shark.highlightParentPath(null, null, HIGHLIGHTED_STROKE_OPACITY, DEFAULT_DASH_PATTERN); });
+        speciesToHighlight.forEach(shark => { shark.highlightParentPath(null, null, DEFAULT_STROKE_OPACITY, DEFAULT_DASH_PATTERN); });
     }
 
     /*----------------------------------------|
