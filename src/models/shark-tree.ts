@@ -725,7 +725,7 @@ export class SharkTree {
         // Reset paths but preserve node colors
         this.getSharkSpeciesList().forEach(shark => this.resetHighlightPath(shark, true));
 
-        this.getSharkSpeciesList().forEach(shark => { shark.highlightParentPath(null, null, HIGHLIGHTED_STROKE_OPACITY, DEFAULT_DASH_PATTERN); });
+        this.getSharkSpeciesList().forEach(shark => { shark.highlightParentPath(null, null, HIGHLIGHTED_STROKE_OPACITY, null); });
     
         // Highlight paths for tagged species
         speciesToHighlight.forEach(shark => { shark.highlightParentPath(null, null, DEFAULT_STROKE_OPACITY, DEFAULT_DASH_PATTERN); });
