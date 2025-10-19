@@ -3,7 +3,7 @@ import { SharkConfig } from "../interfaces/shark-config";
 import { SharkTreeNode } from "./shark-tree-node";
 import { BEHAVIOR, BIOLUMINESCENT, CONSERVATION_STATUS, DEFAULT_TAGS, DORSAL_FIN_SPINES, FLATTENED_BODY, getEnumCategory, NUM_GILLS, REPRODUCTIVE_STRATEGY, SPECIES_TYPE, TEMPERATURE_REGULATION, FEEDING_BEHAVIOR, GROUP_BEHAVIOR, NUM_DORSAL_FINS, ANAL_FIN, SPIRACLES, NICTITATING_MEMBRANE, CAUDAL_FIN_SHAPE, MOUTH_IN_FRONT_OF_EYES, PROXIMAL_DORSAL_FINS, HABITAT, WATER_COLUMN, PHYSICAL_CHARACTERISTIC, GEOGRAPHICAL_DISTRIBUTION, OCEAN_ZONE } from "../constants/enums";
 import { getIUCNGraphic, getIUCNDescription } from "../utils/iucn-graphics";
-import { DEFAULT_DASH_PATTERN, DEFAULT_STROKE_WIDTH } from "../constants/style";
+import { DEFAULT_SOLID_PATTERN, DEFAULT_STROKE_WIDTH } from "../constants/style";
 
 // SharkTreeLeafNode
 export class SharkSpecies {
@@ -184,7 +184,7 @@ export class SharkSpecies {
         this.node?.setAttribute("fill", color);
     }
     
-    highlightParentPath(strokeWidth = 3, color = "black", dashPattern: string = DEFAULT_DASH_PATTERN): void {
+    highlightParentPath(strokeWidth = 3, color = "black", dashPattern: string = DEFAULT_SOLID_PATTERN): void {
         this.parentPath.forEach(segment => segment.setAttribute("stroke", color));
         this.parentPath.forEach(segment => {
             if (!strokeWidth) {

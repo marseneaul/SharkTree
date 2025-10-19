@@ -5,10 +5,10 @@ import { DEFAULT_SVG_SIZE } from "../constants/constants";
 import { SharkTreeNode } from "./shark-tree-node";
 import { Svg } from "../drawing/svg";
 import { Utils } from "../utils/utils";
-import { BLACK, RED, getTaxonomicVisualProps, getTagVisualProps } from "../constants/colors";
+import { BLACK, DEFAULT_NODE_COLOR, DEFAULT_PATH_COLOR, PULSING_NODE_COLOR, RED } from "../constants/colors";
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION, FEEDING_BEHAVIOR, OCEAN_ZONE, GEOGRAPHICAL_DISTRIBUTION, HABITAT, WATER_COLUMN, PHYSICAL_CHARACTERISTIC, BEHAVIOR, NUM_GILLS, NUM_DORSAL_FINS, ANAL_FIN, NICTITATING_MEMBRANE, CAUDAL_FIN_SHAPE, MOUTH_IN_FRONT_OF_EYES, BIOLUMINESCENT, DORSAL_FIN_SPINES, SPIRACLES, FLATTENED_BODY, GROUP_BEHAVIOR, TAXONOMIC_LEVELS, PROXIMAL_DORSAL_FINS, SPECIES_TYPE, TAIL_SPINES, ELECTRIC_ORGAN, VENOMOUS_SPINE, OPERCULUM, SNOUT_SHAPE } from "../constants/enums";
 import { PathStyle } from "../interfaces/path-style";
-import { DEFAULT_DASH_PATTERN, DEFAULT_STROKE_WIDTH, HIGHLIGHTED_STROKE_WIDTH } from "../constants/style";
+import { DEFAULT_DASH_PATTERN, DEFAULT_SOLID_PATTERN, DEFAULT_STROKE_WIDTH, HIGHLIGHTED_STROKE_WIDTH, TAXONOMIC_THICKNESS } from "../constants/style";
 
 export class SharkTree {
     config: SharkTreeNodeConfig
@@ -288,7 +288,7 @@ export class SharkTree {
                     const previousNode = previousShark?.getNode();
                     if (previousNode) {
                         // Always use BLACK for nodes
-                        previousNode.setAttribute("fill", BLACK);
+                        previousNode.setAttribute("fill", DEFAULT_NODE_COLOR);
                         previousNode.classList.remove("pulse");
                     }
                     this.resetHighlightPath(previousShark);
@@ -296,11 +296,10 @@ export class SharkTree {
                     this.currentSharkIndex = sharkIndex;
                     const currentShark = sharkSpecies[sharkIndex];
                     const node = currentShark.getNode();
-                    node.setAttribute("fill", RED); // Selected shark remains RED
+                    node.setAttribute("fill", PULSING_NODE_COLOR);
                     node.classList.add("pulse");
-                    // Always use BLACK for path highlighting
-                    const pathColor = BLACK;
-                    this.highlightPathToShark(currentShark.binomialName, 2, pathColor, true); // Preserve node color
+
+                    this.highlightPathToShark(currentShark.binomialName, 2, DEFAULT_PATH_COLOR, true); // Preserve node color
         
                     g.removeChild(node);
                     g.appendChild(node);
@@ -544,12 +543,12 @@ export class SharkTree {
     initializeTaxonomicLevels(): void {
         const levels = Object.values(TAXONOMIC_LEVELS);
         
-        levels.forEach((level, index) => {
-            const visualProps = getTaxonomicVisualProps(level);
+        levels.forEach((level) => {
+            const thickness = TAXONOMIC_THICKNESS[level] || DEFAULT_STROKE_WIDTH;
             this.taxonomicLevels.set(level, {
                 species: [],
-                color: visualProps.color,
-                thickness: visualProps.thickness
+                color: DEFAULT_PATH_COLOR,
+                thickness: thickness
             });
         });
         
@@ -587,20 +586,15 @@ export class SharkTree {
             shark.highlightNode(BLACK);
             
             // Determine tag styling if active
-            let tagPattern = DEFAULT_DASH_PATTERN;
+            let dashPattern = DEFAULT_SOLID_PATTERN;
             let tagColor = BLACK;
             let tagThickness = levelData.thickness;
             
             if (this.activeTagCategory) {
                 const hasTag = !this.activeTagValue || shark.tags.includes(this.activeTagValue);
-                if (hasTag) {
-                    const tagProps = getTagVisualProps(this.activeTagCategory);
-                    tagPattern = tagProps.dashPattern;
-                    tagColor = BLACK;
-                    tagThickness = levelData.thickness;
-                }
+                if (hasTag) dashPattern = DEFAULT_DASH_PATTERN;
             }
-            shark.highlightParentPath(tagThickness, tagColor, tagPattern);
+            shark.highlightParentPath(tagThickness, tagColor, dashPattern);
         });
     }
 
@@ -722,25 +716,17 @@ export class SharkTree {
         this.getSharkSpeciesList().forEach(shark => this.resetHighlightPath(shark, true));
     
         // Highlight paths for tagged species
-        speciesToHighlight.forEach(shark => {
-            const tagProps = getTagVisualProps(category);
-            
-            // Always use BLACK for paths, with full opacity
-            const finalColor = BLACK;
-            shark.highlightParentPath(null, finalColor, tagProps.dashPattern);
-        });
+        speciesToHighlight.forEach(shark => { shark.highlightParentPath(null, DEFAULT_PATH_COLOR, DEFAULT_DASH_PATTERN); });
     
         // Always use BLACK for all nodes
-        this.getSharkSpeciesList().forEach(shark => {
-            shark.highlightNode(BLACK);
-        });
+        this.getSharkSpeciesList().forEach(shark => { shark.highlightNode(DEFAULT_NODE_COLOR); });
     }
 
     /*----------------------------------------|
     |           PATH HIGHLIGHTING             |
     |----------------------------------------*/
 
-    highlightPathToShark(binomialName: string, strokeWidth = HIGHLIGHTED_STROKE_WIDTH, color = BLACK, preserveNodeColor = false): void {
+    highlightPathToShark(binomialName: string, strokeWidth = HIGHLIGHTED_STROKE_WIDTH, color = DEFAULT_PATH_COLOR, preserveNodeColor = false): void {
         const sharkSpecies = this.getSharkSpeciesList();
         const shark = sharkSpecies.find((s) => s.binomialName === binomialName);
         if (!shark) return;
@@ -751,14 +737,13 @@ export class SharkTree {
         }
         
         // Determine styling based on active tag category
-        let dashPattern = DEFAULT_DASH_PATTERN;
         let finalStrokeWidth = strokeWidth;
-        let finalColor = BLACK;
+        let finalColor = DEFAULT_PATH_COLOR;
         
-        shark.highlightParentPath(finalStrokeWidth, finalColor, dashPattern);
+        shark.highlightParentPath(finalStrokeWidth, finalColor, DEFAULT_SOLID_PATTERN);
         let sharkParent = shark.getParent();
         while (sharkParent) {
-            sharkParent.highlightParentPath(finalStrokeWidth, finalColor, dashPattern);
+            sharkParent.highlightParentPath(finalStrokeWidth, finalColor, DEFAULT_SOLID_PATTERN);
             sharkParent = sharkParent.getParent();
         }
     }
