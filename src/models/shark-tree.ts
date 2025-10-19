@@ -589,19 +589,12 @@ export class SharkTree {
     
         speciesToHighlight.forEach(shark => {
             if (shark.getNode().getAttribute("fill") !== PULSING_NODE_COLOR) shark.highlightNode(DEFAULT_NODE_COLOR);
-            
-            // Determine tag styling if active
-            let dashPattern = DEFAULT_SOLID_PATTERN;
-            let strokeColor = TAXONOMIC_LEVEL_COLORS[this.activeTaxonomicLevel];
-            let strokeOpacity = DEFAULT_STROKE_OPACITY;
-            let strokeWidth = levelData.thickness;
-            
-            if (this.activeTagCategory) {
-                const hasTag = !this.activeTagValue || shark.tags.includes(this.activeTagValue);
-                if (hasTag) dashPattern = DEFAULT_DASH_PATTERN;
-            }
-            shark.highlightParentPath(strokeWidth, strokeColor, strokeOpacity, dashPattern);
+            shark.highlightParentPath(levelData.thickness, TAXONOMIC_LEVEL_COLORS[this.activeTaxonomicLevel], DEFAULT_STROKE_OPACITY, DEFAULT_SOLID_PATTERN);
         });
+        
+        if (this.activeTagCategory) {
+            this.highlightTagCategory(this.activeTagCategory, this.activeTagValue);
+        }
 
         speciesToHighlight.forEach(shark => {
             if (shark.getNode().getAttribute("fill") !== PULSING_NODE_COLOR) shark.highlightNode(TAXONOMIC_LEVEL_COLORS[this.activeTaxonomicLevel]);
