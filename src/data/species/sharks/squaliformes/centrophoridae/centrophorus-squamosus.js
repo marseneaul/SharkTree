@@ -1,8 +1,11 @@
 import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import centrophorusSquamosusImg from "./../../../../../images/sharks/squaliformes/centrophoridae/centrophorus-squamosus.png";
 
 export const centrophorusSquamosus = {
     commonName: "Leafscale Gulper Shark",
     binomialName: "Centrophorus squamosus",
+
+    imageUrl: centrophorusSquamosusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

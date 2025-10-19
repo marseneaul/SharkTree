@@ -1,8 +1,11 @@
 import { ANAL_FIN, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import somniosusRostratusImg from "./../../../../../images/sharks/squaliformes/somniosidae-oxynotidae/somniosus-rostratus.png";
 
 export const somniosusRostratus = {
     commonName: "Little Sleeper Shark",
     binomialName: "Somniosus rostratus",
+
+    imageUrl: somniosusRostratusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

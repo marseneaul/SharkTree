@@ -1,8 +1,11 @@
 import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import centrophorusAcusImg from "./../../../../../images/sharks/squaliformes/centrophoridae/centrophorus-acus.png";
 
 export const centrophorusAcus = {
     commonName: "Needle Dogfish",
     binomialName: "Centrophorus acus",
+
+    imageUrl: centrophorusAcusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

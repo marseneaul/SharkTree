@@ -1,8 +1,11 @@
 import { ANAL_FIN, BIOLUMINESCENT, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import etmopterusBaxteriImg from "./../../../../../images/sharks/squaliformes/etmopteridae/etmopterus-baxteri.png";
 
 export const etmopterusBaxteri = {
     commonName: "New Zealand Lanternshark",
     binomialName: "Etmopterus baxteri",
+    
+    imageUrl: etmopterusBaxteriImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

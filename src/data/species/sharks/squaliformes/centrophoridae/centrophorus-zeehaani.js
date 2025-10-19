@@ -1,8 +1,11 @@
 import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import centrophorusZeehaaniImg from "./../../../../../images/sharks/squaliformes/centrophoridae/centrophorus-zeehaani.png";
 
 export const centrophorusZeehaani = {
     commonName: "Southern Dogfish",
     binomialName: "Centrophorus zeehaani",
+
+    imageUrl: centrophorusZeehaaniImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

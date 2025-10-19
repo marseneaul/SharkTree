@@ -1,8 +1,11 @@
 import { ANAL_FIN, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import somniosusPacificusImg from "./../../../../../images/sharks/squaliformes/somniosidae-oxynotidae/somniosus-pacificus.png";
 
 export const somniosusPacificus = {
     commonName: "Pacific Sleeper Shark",
     binomialName: "Somniosus pacificus",
+
+    imageUrl: somniosusPacificusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

@@ -1,9 +1,12 @@
 import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import centrophorusMoluccensisImg from "./../../../../../images/sharks/squaliformes/centrophoridae/centrophorus-moluccensis.png";
 
 export const centrophorusMoluccensis = {
     commonName: "Smallfin Gulper Shark",
     alternativeNames: ["Endeavour Dogfish"],
     binomialName: "Centrophorus moluccensiss",
+
+    imageUrl: centrophorusMoluccensisImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
