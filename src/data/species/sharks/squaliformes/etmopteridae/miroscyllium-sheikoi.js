@@ -1,8 +1,11 @@
 import { ANAL_FIN, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import miroscylliumSheikoiImg from "./../../../../../images/sharks/squaliformes/etmopteridae/etmopterus-sheikoi.png";
 
 export const miroscylliumSheikoi = {
     commonName: "Rasptooth Dogfish",
     binomialName: "Etmopterus sheikoi",
+
+    imageUrl: miroscylliumSheikoiImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

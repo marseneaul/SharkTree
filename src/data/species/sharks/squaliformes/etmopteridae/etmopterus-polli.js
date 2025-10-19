@@ -1,8 +1,11 @@
 import { ANAL_FIN, BIOLUMINESCENT, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import etmopterusPolliImg from "./../../../../../images/sharks/squaliformes/etmopteridae/etmopterus-polli.png";
 
 export const etmopterusPolli = {
     commonName: "African Lanternshark",
     binomialName: "Etmopterus polli",
+
+    imageUrl: etmopterusPolliImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

@@ -1,8 +1,11 @@
 import { ANAL_FIN, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import centroscylliumRitteriImg from "./../../../../../images/sharks/squaliformes/etmopteridae/centroscyllium-ritteri.png";
 
 export const centroscylliumRitteri = {
     commonName: "Whitefin Dogfish",
     binomialName: "Centroscyllium ritteri",
+
+    imageUrl: centroscylliumRitteriImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

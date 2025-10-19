@@ -1,8 +1,11 @@
 import { ANAL_FIN, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import centroscylliumFabriciiImg from "./../../../../../images/sharks/squaliformes/etmopteridae/centroscyllium-fabricii.png";
 
 export const centroscylliumFabricii = {
     commonName: "Black Dogfish",
     binomialName: "Centroscyllium fabricii",
+
+    imageUrl: centroscylliumFabriciiImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

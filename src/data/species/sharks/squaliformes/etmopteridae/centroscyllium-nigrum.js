@@ -1,8 +1,11 @@
 import { ANAL_FIN, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import centroscylliumNigrumImg from "./../../../../../images/sharks/squaliformes/etmopteridae/centroscyllium-nigrum.png";
 
 export const centroscylliumNigrum = {
     commonName: "Combtooth Dogfish",
     binomialName: "Centroscyllium nigrum",
+
+    imageUrl: centroscylliumNigrumImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

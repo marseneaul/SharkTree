@@ -1,9 +1,12 @@
 import { ANAL_FIN, BIOLUMINESCENT, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import etmopterusMolleriImg from "./../../../../../images/sharks/squaliformes/etmopteridae/etmopterus-molleri.png";
 
 export const etmopterusMolleri = {
     commonName: "Slendertail Lanternshark",
     alternativeNames: ["Moller's Lanternshark"],
     binomialName: "Etmopterus molleri",
+
+    imageUrl: etmopterusMolleriImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
