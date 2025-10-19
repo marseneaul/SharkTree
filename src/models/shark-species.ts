@@ -299,6 +299,9 @@ export class SharkSpecies {
                 Kingdom: ${this.kingdom}${this.getCommonNameFromTaxonomicGroup(this.kingdom) ?? ''}<br>
                 Phylum: ${this.phylum}${this.getCommonNameFromTaxonomicGroup(this.phylum) ?? ''}<br>
                 Class: ${this.class}${this.getCommonNameFromTaxonomicGroup(this.class) ?? ''}<br>
+            `
+            + (this.superorder ? `Superorder: ${this.superorder}${this.getCommonNameFromTaxonomicGroup(this.superorder) ?? ''}<br>` : "")
+            + `
                 Order: ${this.order}${this.getCommonNameFromTaxonomicGroup(this.order) ?? ''}<br>
                 Family: ${this.family}${this.getCommonNameFromTaxonomicGroup(this.family) ?? ''}<br>
                 Genus: ${this.genus}${this.getCommonNameFromTaxonomicGroup(this.genus) ?? ''}<br>
@@ -320,6 +323,11 @@ export class SharkSpecies {
 
             "Chondrichthyes": "Cartilagenous Fishes",
 
+            // ----------------------------------
+
+            "Squalomorphii": "Squalean Sharks",
+            "Galeomorphii": "Galean Sharks",
+
             // ----------------------------------//
 
             "Carcharhiniformes": "Ground Sharks",
@@ -328,61 +336,96 @@ export class SharkSpecies {
             "Heterodontiformes": "Bullhead Sharks",
             "Orectolobiformes": "Carpet Sharks",
             "Pristiophoriformes": "Sawsharks",
-            "Squaliformes": "Dogfishes",
+            "Squaliformes": "Dogfish Sharks",
+            "Hexanchiformes": "Cow Sharks and Frilled Sharks",
 
             "Rajiformes": "Skates",
-            "Rhinopristiformes": "Guitarfishes and Sawfishes",
-            "Torpediniformes": "Torpedo Rays",
-            "Myliobatiformes": "Whiptail Rays",
+            "Rhinopristiformes": "Rhino Rays",
+            "Torpediniformes": "Electric Rays",
+            "Myliobatiformes": "Stingrays",
 
             "Chimaeriformes": "Chimaeras",
 
+
             // ----------------------------------//
 
-
-            "Carcharhinidae": "Requiem Sharks",
-            "Triakidae": "Houndsharks",
-            "Sphyrnidae": "Hammerhead Sharks",
-            "Hexanchidae": "Cow Sharks",
-            "Chlamydoselachidae": "Frilled Sharks",
+            "Alopiidae": "Thresher Sharks",
+            "Lamnidae": "Mackerel Sharks",
+            "Carchariidae": "Sand Tiger Sharks",
+            "Cetorhinidae": "Basking Sharks",
+            "Megachasmidae": "Megamouth Sharks",
+            "Mitsukurinidae": "Goblin Sharks",
+            "Odontaspididae": "Sand Sharks",
+            "Pseudocarchariidae": "Crocodile Sharks",
+            "Stegostomatidae": "Zebra Sharks",
             "Ginglymostomatidae": "Nurse Sharks",
             "Rhincodontidae": "Whale Sharks",
-            "Etmopteridae": "Lanternsharks",
-            "Somniosidae": "Sleeper Sharks",
-            "Scyliorhinidae": "Catsharks",
-            "Oxynotus": "Roughsharks",
-            "Alopiidae": "Threshers",
-            "Orectolobidae": "Wobbegongs",
+            "Parascylliidae": "Collared Carpet Sharks",
+            "Orectolobidae": "Wobbegong Sharks",
+            "Hemiscylliidae": "Bamboo Sharks",
+            "Brachaeluridae": "Blind Sharks",
             "Hemigaleidae": "Weasel Sharks",
+            "Atelomycteridae": "Colored Catsharks",
+            "Pentanchidae": "Deepwater Catsharks",
+            "Dichichthyidae": "Bristle Sharks",
+            "Scyliorhinidae": "Catsharks",
+            "Pseudotriakidae": "False Catsharks",
+            "Proscylliidae": "Finback Catsharks",
+            "Leptochariidae": "Barbeled Houndsharks",
+            "Triakidae": "Houndsharks",
+            "Carcharhinidae": "Requiem Sharks",
+            "Sphyrnidae": "Hammerhead Sharks",
+            "Galeocerdonidae": "Tiger Sharks",
+            "Hexanchidae": "Cow Sharks",
+            "Chlamydoselachidae": "Frilled Sharks",
+            "Etmopteridae": "Lantern Sharks",
+            "Somniosidae": "Sleeper Sharks",
+            "Oxynotidae": "Roughsharks",
             "Centrophoridae": "Gulper Sharks",
+            "Dalatiidae": "Kitefin Sharks",
+            "Squalidae": "Dogfish Sharks",
+            "Echinorhinidae": "Bramble Sharks",
 
-            // FRESHWATER RAYS?
-            "Urotrygonidae": "Round Rays",
-            "Urolophidae": "Stingarees",
-            "Gymnuridae": "Butterfly Rays",
-            "Mobulidae": "Mobula Rays",
-            "Myliobatidae": "Eagle Rays",
-            "Aetobatidae": "Eagle Rays",
-            "Dasyatidae": "Stingrays",
-            "Rhinopteridae": "Cownose Rays",
+            "Anacanthobatidae": "Smooth Skates",
+            "Arhynchobatidae": "Softnose Skates",
+            "Gurgesiellidae": "Pygmy Skates",
+            "Rajidae": "Skates",
+            "Trygonorrhinidae": "Fiddler Rays or Banjo Rays",
+            "Rhinobatidae": "Guitarfishes",
+            "Rhinidae": "Bowmouth Guitarfishes or Wedgefishes",
+            "Glaucostegidae": "Giant Guitarfishes",
+            "Pristidae": "Sawfishes",
+            "Zanobatidae": "Pan Rays",
+            "Platyrhinidae": "Thornback Rays",
+            "Narkidae": "Sleeper Rays",
+            "Narcinidae": "Electric Rays",
+            "Hypnidae": "Coffin Rays",
             "Torpedinidae": "Torpedo Rays",
+            "Hexatrygonidae": "Sixgill Stingrays",
+            "Dasyatidae": "Whiptail Stingrays",
+            "Potamotrygonidae": "Neotropical Stingrays",
+            "Urotrygonidae": "American Round Stingrays",
+            "Gymnuridae": "Butterfly Rays",
+            "Plesiobatidae": "Deepwater Stingrays or Giant Stingarees",
+            "Urolophidae": "Round Stingrays or Stingarees",
+            "Aetobatidae": "Pelagic Eagle Rays",
+            "Myliobatidae": "Eagle Rays",
+            "Mobulidae": "Mantas or Devil Rays",
+            "Rhinopteridae": "Cownose Rays",
 
-            "Chimaeridae": "Shortnosed Chimaeras",
-            "Callorhinchidae": "Plough-Nosed Chimaeras",
-            "Rhinochimaeridae": "Longnosed Chimaeras",
+            "Chimaeridae": "Short-Nosed Chimaeras",
+            "Callorhinchidae": "Plough-Nosed Chimaeras or Elephantfish",
+            "Rhinochimaeridae": "Long-Nosed Chimaeras",
 
             // ----------------------------------//
 
-            "Squalus": "Spurdogs",
             "Chiloscyllium": "Bamboo Sharks",
             "Cephaloscyllium": "Swellsharks",
             "Rhizoprionodon": "Sharpnose Sharks",
             "Mustelus": "Smooth-Hounds",
             "Scoliodon": "Spadenose Sharks",
             "Negaprion": "Lemon Sharks",
-            "Echinorhinus": "Bramble Sharks",
-            "Brachaelurus": "Blind Sharks",
-            "Hemiscyllium": "Epaulette Sharks",
+            "Squalus": "Spurdogs",
 
             "Neotrygon": "Maskrays",
             "Himantura": "Whiprays",
