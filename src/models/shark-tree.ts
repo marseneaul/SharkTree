@@ -584,7 +584,7 @@ export class SharkTree {
         this.getSharkSpeciesList().forEach(shark => this.resetHighlightPath(shark));
     
         speciesToHighlight.forEach(shark => {
-            shark.highlightNode(DEFAULT_NODE_COLOR);
+            if (shark.getNode().getAttribute("fill") !== PULSING_NODE_COLOR) shark.highlightNode(DEFAULT_NODE_COLOR);
             
             // Determine tag styling if active
             let dashPattern = DEFAULT_SOLID_PATTERN;
@@ -599,7 +599,7 @@ export class SharkTree {
         });
 
         speciesToHighlight.forEach(shark => {
-            shark.highlightNode(ORANGE);
+            if (shark.getNode().getAttribute("fill") !== PULSING_NODE_COLOR) shark.highlightNode(ORANGE);
         });
     }
 
@@ -752,7 +752,7 @@ export class SharkTree {
     resetHighlightPath(shark: SharkSpecies, preserveNodeColor: boolean = false): void {
         const node = shark.getNode();
         if (node && !preserveNodeColor) {
-            node.setAttribute("fill", DEFAULT_NODE_COLOR);
+            if (node.getAttribute("fill") != PULSING_NODE_COLOR) node.setAttribute("fill", DEFAULT_NODE_COLOR);
         }
     
         const allSpecies = this.getSharkSpeciesList();
