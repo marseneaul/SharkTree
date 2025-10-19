@@ -425,7 +425,6 @@ export class SharkTree {
         return indicesRemoved;
     }
 
-
     getNextStackLayer(sharkTreeStack: (SharkSpecies|SharkTreeNode)[], indicesRemoved: number[]): (SharkSpecies|SharkTreeNode)[] {
         const newSharkTreeStack: (SharkSpecies|SharkTreeNode)[] = [];
         const parentHashes = new Set();
@@ -481,8 +480,24 @@ export class SharkTree {
             }
         }
 
+        if (this.activeTagCategory) {
+            const categoryData = this.tagCategories.get(this.activeTagCategory);
+            if (categoryData) { 
+                sharkSpecies.forEach(shark => {
+                    shark.setNodeOpacity(HIGHLIGHTED_STROKE_OPACITY);
+                });
+                const speciesToHighlight = this.activeTagValue 
+                    ? categoryData.species.filter(s => s.tags.includes(this.activeTagValue))
+                    : categoryData.species.filter(s => s.tags.some(tag => this.getTagCategory(tag) === this.activeTagCategory));
+                speciesToHighlight.forEach(shark => {
+                    shark.setNodeOpacity(DEFAULT_STROKE_OPACITY);
+                });
+            }
+        }
+
         const selectedSharkNode = selectedShark.getNode();
         selectedSharkNode.setAttribute("fill", PULSING_NODE_COLOR);
+        selectedSharkNode.setAttribute("fill-opacity", `${DEFAULT_STROKE_OPACITY}`);
         selectedSharkNode.classList.add("pulse");
     }
 
