@@ -286,18 +286,11 @@ export class SharkTree {
 
                 if (sharkIndex !== this.currentSharkIndex) {
                     const previousShark = sharkSpecies[this.currentSharkIndex];
-                    const previousNode = previousShark?.getNode();
-                    if (previousNode) {
-                        previousNode.setAttribute("fill", DEFAULT_NODE_COLOR);
-                        previousNode.classList.remove("pulse");
-                    }
                     this.resetHighlightPath(previousShark, true);
         
                     this.currentSharkIndex = sharkIndex;
                     const currentShark = sharkSpecies[sharkIndex];
                     const node = currentShark.getNode();
-                    node.setAttribute("fill", PULSING_NODE_COLOR);
-                    node.classList.add("pulse");
 
                     this.highlightPathToShark(currentShark.binomialName, HIGHLIGHTED_STROKE_WIDTH, DEFAULT_PATH_COLOR, true);
         
