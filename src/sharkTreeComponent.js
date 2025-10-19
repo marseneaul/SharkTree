@@ -1148,6 +1148,7 @@ export class SharkTreeComponent extends HTMLElement {
     /*----------------------------------------|
     |                HANDLERS                 |
     |----------------------------------------*/
+    
     setupDropdown() {
         const speciesTypeDropdown = this.shadow.querySelector("#species-type-dropdown");
         const configDropdown = this.shadow.querySelector("#shark-config-dropdown");

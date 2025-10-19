@@ -500,24 +500,21 @@ export class SharkTree {
     }
 
     getPathStyle(sharksToCheck: SharkSpecies[]): PathStyle {
-        let strokeColor = BLACK;
+        let strokeColor = DEFAULT_PATH_COLOR;
         let strokeWidth = `${DEFAULT_STROKE_WIDTH}`;
-        let dashPattern = "";
+        let dashPattern = DEFAULT_SOLID_PATTERN;
 
         if (this.activeTaxonomicLevel) {
             const levelData = this.taxonomicLevels.get(this.activeTaxonomicLevel);
             if (levelData && sharksToCheck.some(s => !this.activeTaxonomicValue || s[this.activeTaxonomicLevel] === this.activeTaxonomicValue)) {
-                strokeColor = BLACK;
                 strokeWidth = levelData.thickness.toString();
             }
         }
 
         if (this.activeTagCategory) {
             const hasTagInCategory = sharksToCheck.some(s => s.tags.some(tag => this.getTagCategory(tag) === this.activeTagCategory));
-            const strokeWidthNumber = this.taxonomicLevels.get(this.activeTaxonomicLevel)?.thickness ?? 1;
-            strokeWidth = `${strokeWidthNumber}`;
             if (hasTagInCategory && (!this.activeTagValue || sharksToCheck.some(s => s.tags.includes(this.activeTagValue)))) {
-                dashPattern = "5,5";
+                dashPattern = DEFAULT_DASH_PATTERN;
             }
         }
 
