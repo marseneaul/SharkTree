@@ -164,6 +164,10 @@ export class SharkSpecies {
         this.index = index;
     }
 
+    setNodeOpacity(opacity: number): void {
+        this.node?.setAttribute("fill-opacity", `${opacity}`);
+    }
+
     /*----------------------------------------|
     |                ADDERS                   |
     |----------------------------------------*/

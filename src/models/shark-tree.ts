@@ -168,6 +168,7 @@ export class SharkTree {
 
     drawRim(g: SVGGElement, svg: SVGElement, sharkSpecies: SharkSpecies[], centerX: number, centerY: number): void {
         const outerCircle = Svg.drawCircle(centerX, centerY, this.radius);
+        outerCircle.setAttribute("id", "shark-rim");
         outerCircle.setAttribute("stroke", BLACK);
         outerCircle.setAttribute("stroke-width", "2");
         outerCircle.setAttribute("fill", "none");
@@ -182,11 +183,11 @@ export class SharkTree {
         g.appendChild(dot);
 
         sharkSpecies.forEach((shark, index) => {
-            this.drawSharkOnRim(g, svg, shark, index, spacing);
+            this.drawSharkOnRim(g, shark, index, spacing);
         });
     }
 
-    drawSharkOnRim(g: SVGGElement, svg: SVGElement, shark, index, spacing: number): void {
+    drawSharkOnRim(g: SVGGElement, shark: SharkSpecies, index: number, spacing: number): void {
         const angle = index * spacing;
         const x = this.centerX + this.radius * Math.cos(angle);
         const y = this.centerY + this.radius * Math.sin(angle);
@@ -718,10 +719,16 @@ export class SharkTree {
         // Reset paths but preserve node colors
         this.getSharkSpeciesList().forEach(shark => this.resetHighlightPath(shark, true));
 
-        this.getSharkSpeciesList().forEach(shark => { shark.highlightParentPath(null, null, HIGHLIGHTED_STROKE_OPACITY, null); });
+        this.getSharkSpeciesList().forEach(shark => { 
+            shark.highlightParentPath(null, null, HIGHLIGHTED_STROKE_OPACITY, null); 
+            if (shark.getNode().getAttribute("fill") !== PULSING_NODE_COLOR) shark.setNodeOpacity(HIGHLIGHTED_STROKE_OPACITY);
+        });
     
         // Highlight paths for tagged species
-        speciesToHighlight.forEach(shark => { shark.highlightParentPath(null, null, DEFAULT_STROKE_OPACITY, DEFAULT_DASH_PATTERN); });
+        speciesToHighlight.forEach(shark => { 
+            shark.highlightParentPath(null, null, DEFAULT_STROKE_OPACITY, DEFAULT_DASH_PATTERN);
+            if (shark.getNode().getAttribute("fill") !== PULSING_NODE_COLOR) shark.setNodeOpacity(DEFAULT_STROKE_OPACITY);
+        });
     }
 
     /*----------------------------------------|
