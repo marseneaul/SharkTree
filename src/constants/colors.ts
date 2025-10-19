@@ -1,3 +1,4 @@
+import { PathStyle } from "../interfaces/path-style";
 import { TAXONOMIC_LEVELS } from "./enums";
 
 export const BLACK = "rgba(0, 0, 0, 1)";
@@ -85,10 +86,10 @@ export const getTaxonomicVisualProps = (level: string) => {
 };
 
 // Helper function to get tag visual properties
-export const getTagVisualProps = (category: string) => {
+export const getTagVisualProps = (category: string): PathStyle => {
     return {
-        color: getColorWithOpacity(TAG_CATEGORY_COLORS[category] || TAXONOMIC_BASE_COLOR, TAG_OPACITIES[category] || 1.0),
-        dashPattern: TAG_DASH_PATTERNS[category] || "5,5",
-        opacity: TAG_OPACITIES[category] || 1.0
+        strokeColor: getColorWithOpacity(TAG_CATEGORY_COLORS[category] || TAXONOMIC_BASE_COLOR, TAG_OPACITIES[category] || 1.0),
+        strokeWidth: "1",
+        dashPattern: TAG_DASH_PATTERNS[category] || "5,5"
     };
 };
