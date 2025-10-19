@@ -5,7 +5,7 @@ import { DEFAULT_SVG_SIZE } from "../constants/constants";
 import { SharkTreeNode } from "./shark-tree-node";
 import { Svg } from "../drawing/svg";
 import { Utils } from "../utils/utils";
-import { BLACK, DEFAULT_NODE_COLOR, DEFAULT_PATH_COLOR, ORANGE, PULSING_NODE_COLOR } from "../constants/colors";
+import { BLACK, DEFAULT_NODE_COLOR, DEFAULT_PATH_COLOR, PULSING_NODE_COLOR, TAXONOMIC_LEVEL_COLORS } from "../constants/colors";
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION, FEEDING_BEHAVIOR, OCEAN_ZONE, GEOGRAPHICAL_DISTRIBUTION, HABITAT, WATER_COLUMN, PHYSICAL_CHARACTERISTIC, BEHAVIOR, NUM_GILLS, NUM_DORSAL_FINS, ANAL_FIN, NICTITATING_MEMBRANE, CAUDAL_FIN_SHAPE, MOUTH_IN_FRONT_OF_EYES, BIOLUMINESCENT, DORSAL_FIN_SPINES, SPIRACLES, FLATTENED_BODY, GROUP_BEHAVIOR, TAXONOMIC_LEVELS, PROXIMAL_DORSAL_FINS, SPECIES_TYPE, TAIL_SPINES, ELECTRIC_ORGAN, VENOMOUS_SPINE, OPERCULUM, SNOUT_SHAPE } from "../constants/enums";
 import { PathStyle } from "../interfaces/path-style";
 import { DEFAULT_DASH_PATTERN, DEFAULT_SOLID_PATTERN, DEFAULT_STROKE_WIDTH, HIGHLIGHTED_STROKE_WIDTH, TAXONOMIC_THICKNESS } from "../constants/style";
@@ -474,7 +474,7 @@ export class SharkTree {
                     : levelData.species;
                 speciesToHighlight.forEach(shark => {
                     const node = shark.getNode();
-                    node.setAttribute("fill", ORANGE);
+                    node.setAttribute("fill", TAXONOMIC_LEVEL_COLORS[this.activeTaxonomicLevel]);
                 });
             }
         }
@@ -511,7 +511,7 @@ export class SharkTree {
             const levelData = this.taxonomicLevels.get(this.activeTaxonomicLevel);
             if (levelData && sharksToCheck.some(s => !this.activeTaxonomicValue || s[this.activeTaxonomicLevel] === this.activeTaxonomicValue)) {
                 strokeWidth = levelData.thickness.toString();
-                strokeColor = ORANGE;
+                strokeColor = TAXONOMIC_LEVEL_COLORS[this.activeTaxonomicLevel];
             }
         }
 
@@ -521,7 +521,6 @@ export class SharkTree {
                 dashPattern = DEFAULT_DASH_PATTERN;
             }
         }
-
         return { strokeColor, strokeWidth, dashPattern };
     };
 
@@ -588,7 +587,7 @@ export class SharkTree {
             
             // Determine tag styling if active
             let dashPattern = DEFAULT_SOLID_PATTERN;
-            let strokeColor = ORANGE;
+            let strokeColor = TAXONOMIC_LEVEL_COLORS[this.activeTaxonomicLevel];
             let strokeWidth = levelData.thickness;
             
             if (this.activeTagCategory) {
@@ -599,7 +598,7 @@ export class SharkTree {
         });
 
         speciesToHighlight.forEach(shark => {
-            if (shark.getNode().getAttribute("fill") !== PULSING_NODE_COLOR) shark.highlightNode(ORANGE);
+            if (shark.getNode().getAttribute("fill") !== PULSING_NODE_COLOR) shark.highlightNode(TAXONOMIC_LEVEL_COLORS[this.activeTaxonomicLevel]);
         });
     }
 
@@ -781,6 +780,8 @@ export class SharkTree {
     clearAllHighlights() {
         this.activeTaxonomicLevel = null;
         this.activeTaxonomicValue = null;
+        this.activeTagCategory = null;
+        this.activeTagValue = null;
         this.getSharkSpeciesList().forEach(shark => this.resetHighlightPath(shark));
     }
 }

@@ -1148,7 +1148,7 @@ export class SharkTreeComponent extends HTMLElement {
     /*----------------------------------------|
     |                HANDLERS                 |
     |----------------------------------------*/
-    
+
     setupDropdown() {
         const speciesTypeDropdown = this.shadow.querySelector("#species-type-dropdown");
         const configDropdown = this.shadow.querySelector("#shark-config-dropdown");
@@ -1297,6 +1297,7 @@ export class SharkTreeComponent extends HTMLElement {
                 tagValueDropdown.disabled = false;
                 this.sharkTree.highlightTagCategory(category);
             } else {
+                console.log("HIIII")
                 tagValueDropdown.innerHTML = '<option value="">Select a category first</option>';
                 tagValueDropdown.disabled = true;
                 this.sharkTree?.clearAllHighlights();
