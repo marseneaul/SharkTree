@@ -346,8 +346,8 @@ export class SharkTreeComponent extends HTMLElement {
                         <ul>
                             <li>Type a species' common or scientific name in "Search Species" to find and highlight it.</li>
                             <li>Choose a species type (Sharks or Rays or Chimaeras) and group from "Configuration" to display its phylogenetic tree.</li>
-                            <li>Select a "Taxonomic Level" (e.g., genus or family) to color matching species' nodes and paths.</li>
-                            <li>Pick a "Tag Category" (e.g., conservation status) to add dashed lines to paths of species with that trait.</li>
+                            <li>Select a "Taxonomic Level" (e.g., genus or family) to add color and line thickness to matching species' nodes and paths.</li>
+                            <li>Pick a "Tag Category" (e.g., conservation status) to add dashed lines and opacity focus to paths of species with that trait.</li>
                             <li>Click a species' node to view its details on the right panel.</li>
                             <li>Scroll to rotate, pinch to zoom, double-click to reset, or drag to pan the tree.</li>
                         </ul>
