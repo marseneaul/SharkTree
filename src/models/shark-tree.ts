@@ -777,11 +777,15 @@ export class SharkTree {
         }
     }
 
-    clearAllHighlights() {
-        this.activeTaxonomicLevel = null;
-        this.activeTaxonomicValue = null;
+    clearAllTagHighlights(): void {
         this.activeTagCategory = null;
         this.activeTagValue = null;
+        this.getSharkSpeciesList().forEach(shark => this.resetHighlightPath(shark));
+    }
+
+    clearAllTaxonomicHighlights(): void {
+        this.activeTaxonomicLevel = null;
+        this.activeTaxonomicValue = null;
         this.getSharkSpeciesList().forEach(shark => this.resetHighlightPath(shark));
     }
 }

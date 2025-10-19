@@ -1209,7 +1209,7 @@ export class SharkTreeComponent extends HTMLElement {
             } else {
                 taxonomicGroupDropdown.innerHTML = '<option value="">Select a level first</option>';
                 taxonomicGroupDropdown.disabled = true;
-                this.sharkTree?.clearAllHighlights();
+                this.sharkTree?.clearAllTaxonomicHighlights();
             }
         });
     
@@ -1297,10 +1297,9 @@ export class SharkTreeComponent extends HTMLElement {
                 tagValueDropdown.disabled = false;
                 this.sharkTree.highlightTagCategory(category);
             } else {
-                console.log("HIIII")
                 tagValueDropdown.innerHTML = '<option value="">Select a category first</option>';
                 tagValueDropdown.disabled = true;
-                this.sharkTree?.clearAllHighlights();
+                this.sharkTree?.clearAllTagHighlights();
             }
         });
     
