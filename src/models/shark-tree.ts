@@ -803,7 +803,10 @@ export class SharkTree {
     clearAllTagHighlights(): void {
         this.activeTagCategory = null;
         this.activeTagValue = null;
-        this.getSharkSpeciesList().forEach(shark => this.resetHighlightPath(shark));
+        this.getSharkSpeciesList().forEach(shark => {
+            this.resetHighlightPath(shark);
+            shark.setNodeOpacity(DEFAULT_STROKE_OPACITY);
+        });
     }
 
     clearAllTaxonomicHighlights(): void {
