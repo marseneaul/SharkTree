@@ -4,6 +4,7 @@ import { SharkTreeNode } from "./shark-tree-node";
 import { BEHAVIOR, BIOLUMINESCENT, CONSERVATION_STATUS, DEFAULT_TAGS, DORSAL_FIN_SPINES, FLATTENED_BODY, getEnumCategory, NUM_GILLS, REPRODUCTIVE_STRATEGY, SPECIES_TYPE, TEMPERATURE_REGULATION, FEEDING_BEHAVIOR, GROUP_BEHAVIOR, NUM_DORSAL_FINS, ANAL_FIN, SPIRACLES, NICTITATING_MEMBRANE, CAUDAL_FIN_SHAPE, MOUTH_IN_FRONT_OF_EYES, PROXIMAL_DORSAL_FINS, HABITAT, WATER_COLUMN, PHYSICAL_CHARACTERISTIC, GEOGRAPHICAL_DISTRIBUTION, OCEAN_ZONE } from "../constants/enums";
 import { getIUCNGraphic, getIUCNDescription } from "../utils/iucn-graphics";
 import { DEFAULT_SOLID_PATTERN, DEFAULT_STROKE_WIDTH } from "../constants/style";
+import { DEFAULT_PATH_COLOR } from "../constants/colors";
 
 // SharkTreeLeafNode
 export class SharkSpecies {
@@ -184,14 +185,20 @@ export class SharkSpecies {
         this.node?.setAttribute("fill", color);
     }
     
-    highlightParentPath(strokeWidth = 3, color = "black", dashPattern: string = DEFAULT_SOLID_PATTERN): void {
-        this.parentPath.forEach(segment => segment.setAttribute("stroke", color));
+    highlightParentPath(strokeWidth = 3, strokeColor = DEFAULT_PATH_COLOR, dashPattern: string = DEFAULT_SOLID_PATTERN): void {
+        this.parentPath.forEach(segment => {
+            if (!strokeColor) {
+                const previousStrokeColor = segment.getAttribute("stroke");
+                if (!previousStrokeColor) segment.setAttribute("stroke", DEFAULT_PATH_COLOR);
+            }
+            else segment.setAttribute("stroke", strokeColor);
+        });
         this.parentPath.forEach(segment => {
             if (!strokeWidth) {
                 const previousStrokeWidth = segment.getAttribute("stroke-width");
                 if (!previousStrokeWidth) segment.setAttribute("stroke-width", `${DEFAULT_STROKE_WIDTH}`);
             }
-            else segment.setAttribute("stroke-width", `${strokeWidth}`)
+            else segment.setAttribute("stroke-width", `${strokeWidth}`);
         });
         this.parentPath.forEach(segment => dashPattern === "solid" ? segment.removeAttribute("stroke-dasharray") : segment.setAttribute("stroke-dasharray", dashPattern));
     }

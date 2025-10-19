@@ -267,7 +267,6 @@ export class SharkTree {
             const mouseY = event.clientY - svg.getBoundingClientRect().top;
     
             if (event.ctrlKey) {
-                console.log(event, event.ctrlKey)
                 const scale = event.deltaY > 0 ? 1.1 : 0.9;
                 viewBox.width *= scale;
                 viewBox.height *= scale;
@@ -722,7 +721,7 @@ export class SharkTree {
         this.getSharkSpeciesList().forEach(shark => this.resetHighlightPath(shark, true));
     
         // Highlight paths for tagged species
-        speciesToHighlight.forEach(shark => { shark.highlightParentPath(null, DEFAULT_PATH_COLOR, DEFAULT_DASH_PATTERN); });
+        speciesToHighlight.forEach(shark => { shark.highlightParentPath(null, null, DEFAULT_DASH_PATTERN); });
     }
 
     /*----------------------------------------|
