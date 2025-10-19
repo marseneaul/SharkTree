@@ -1,8 +1,11 @@
 import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import oxynotusBruniensisImg from "./../../../../../images/sharks/squaliformes/somniosidae-oxynotidae/oxynotus-bruniensis.png";
 
 export const oxynotusBruniensis = {
     commonName: "Prickly Dogfish",
     binomialName: "Oxynotus bruniensis",
+
+    imageUrl: oxynotusBruniensisImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

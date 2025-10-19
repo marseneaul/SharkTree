@@ -1,8 +1,11 @@
 import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import scymnodonRingensImg from "./../../../../../images/sharks/squaliformes/somniosidae-oxynotidae/scymnodon-ringens.png";
 
 export const scymnodonRingens = {
     commonName: "Knifetooth Dogfish",
     binomialName: "Scymnodon ringens",
+
+    imageUrl: scymnodonRingensImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

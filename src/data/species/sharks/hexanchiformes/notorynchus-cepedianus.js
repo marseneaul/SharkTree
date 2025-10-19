@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, NUM_GILLS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import notorhynchusCepedianusImg from "./../../../../images/sharks/hexanchiformes/notorynchus-cepedianus.png";
 
 export const notorhynchusCepedianus = {
     commonName: "Broadnose Sevengill Shark",
     binomialName: "Notorynchus cepedianus",
+
+    imageUrl: notorhynchusCepedianusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

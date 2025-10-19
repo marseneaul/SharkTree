@@ -1,9 +1,12 @@
 import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import proscymnodonPlunketiImg from "./../../../../../images/sharks/squaliformes/somniosidae-oxynotidae/scymnodon-plunketi.png";
 
 export const proscymnodonPlunketi = {
     commonName: "Plunket Shark",
     alternativeNames: ["Plunket's Shark"],
     binomialName: "Scymnodon plunketi",
+
+    imageUrl: proscymnodonPlunketiImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
