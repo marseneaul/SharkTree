@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, NUM_GILLS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import hexanchusVitulusImg from "./../../../../images/sharks/hexanchiformes/hexanchus-vitulus.png";
 
 export const hexanchusVitulus = {
     commonName: "Atlantic Sixgill Shark",
     binomialName: "Hexanchus vitulus",
+
+    imageUrl: hexanchusVitulusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
