@@ -6,3 +6,5 @@ export const DEFAULT_NODE_COLOR = BLACK;
 export const PULSING_NODE_COLOR = RED;
 
 export const DEFAULT_PATH_COLOR = BLACK;
+
+export const ORANGE = "orange";
