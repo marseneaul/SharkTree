@@ -13,8 +13,8 @@ export const ORANGE = "orange";
 
 export const TAXONOMIC_LEVEL_COLORS = {
     [TAXONOMIC_LEVELS.GENUS]: "orange",
-    [TAXONOMIC_LEVELS.FAMILY]: "blue",
-    [TAXONOMIC_LEVELS.ORDER]: "purple",
-    [TAXONOMIC_LEVELS.SUPERORDER]: "yellow",
-    [TAXONOMIC_LEVELS.SUBDIVISION]: "grey"
+    [TAXONOMIC_LEVELS.FAMILY]: "coral",
+    [TAXONOMIC_LEVELS.ORDER]: "lightgreen",
+    [TAXONOMIC_LEVELS.SUPERORDER]: "pink",
+    [TAXONOMIC_LEVELS.SUBDIVISION]: "darkgrey"
 };
