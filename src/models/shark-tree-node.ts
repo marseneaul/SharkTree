@@ -1,4 +1,6 @@
+import { DEFAULT_PATH_COLOR } from "../constants/colors";
 import { SPECIES_TYPE } from "../constants/enums";
+import { DEFAULT_SOLID_PATTERN, DEFAULT_STROKE_OPACITY, HIGHLIGHTED_STROKE_WIDTH } from "../constants/style";
 import { SharkConfig, SharkTreeNodeConfig } from "../interfaces/shark-config";
 import { SharkSpecies } from "./shark-species";
 import { sha256 } from "js-sha256";
@@ -99,16 +101,10 @@ export class SharkTreeNode {
     |              HIGHLIGHTING               |
     |----------------------------------------*/
 
-    highlightParentPath(strokeWidth = 3, color = "black", dashPattern: string = "solid"): void {
-      this.parentPath.forEach(segment => segment.setAttribute("stroke", color));
+    highlightParentPath(strokeWidth = HIGHLIGHTED_STROKE_WIDTH, strokeColor = DEFAULT_PATH_COLOR, strokeOpacity = DEFAULT_STROKE_OPACITY, dashPattern: string = DEFAULT_SOLID_PATTERN): void {
+      this.parentPath.forEach(segment => segment.setAttribute("stroke", strokeColor));
       this.parentPath.forEach(segment => segment.setAttribute("stroke-width", `${strokeWidth}`));
-      this.parentPath.forEach(segment => dashPattern === "solid" ? segment.removeAttribute("stroke-dasharray") : segment.setAttribute("stroke-dasharray", dashPattern));
-    }
-    
-    highlightParentPathWithOpacity(strokeWidth = 3, color = "black", dashPattern: string = "solid", opacity = 1): void {
-      this.parentPath.forEach(segment => segment.setAttribute("stroke", color));
-      this.parentPath.forEach(segment => segment.setAttribute("stroke-width", `${strokeWidth}`));
-      this.parentPath.forEach(segment => segment.setAttribute("stroke-opacity", `${opacity}`));
+      this.parentPath.forEach(segment => segment.setAttribute("stroke-opacity", `${strokeOpacity}`));
       this.parentPath.forEach(segment => dashPattern === "solid" ? segment.removeAttribute("stroke-dasharray") : segment.setAttribute("stroke-dasharray", dashPattern));
     }
 
