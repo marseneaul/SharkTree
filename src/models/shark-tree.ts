@@ -5,7 +5,7 @@ import { DEFAULT_SVG_SIZE } from "../constants/constants";
 import { SharkTreeNode } from "./shark-tree-node";
 import { Svg } from "../drawing/svg";
 import { Utils } from "../utils/utils";
-import { BLACK, DEFAULT_NODE_COLOR, DEFAULT_PATH_COLOR, PULSING_NODE_COLOR, RED } from "../constants/colors";
+import { BLACK, DEFAULT_NODE_COLOR, DEFAULT_PATH_COLOR, PULSING_NODE_COLOR } from "../constants/colors";
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION, FEEDING_BEHAVIOR, OCEAN_ZONE, GEOGRAPHICAL_DISTRIBUTION, HABITAT, WATER_COLUMN, PHYSICAL_CHARACTERISTIC, BEHAVIOR, NUM_GILLS, NUM_DORSAL_FINS, ANAL_FIN, NICTITATING_MEMBRANE, CAUDAL_FIN_SHAPE, MOUTH_IN_FRONT_OF_EYES, BIOLUMINESCENT, DORSAL_FIN_SPINES, SPIRACLES, FLATTENED_BODY, GROUP_BEHAVIOR, TAXONOMIC_LEVELS, PROXIMAL_DORSAL_FINS, SPECIES_TYPE, TAIL_SPINES, ELECTRIC_ORGAN, VENOMOUS_SPINE, OPERCULUM, SNOUT_SHAPE } from "../constants/enums";
 import { PathStyle } from "../interfaces/path-style";
 import { DEFAULT_DASH_PATTERN, DEFAULT_SOLID_PATTERN, DEFAULT_STROKE_WIDTH, HIGHLIGHTED_STROKE_WIDTH, TAXONOMIC_THICKNESS } from "../constants/style";
@@ -287,7 +287,6 @@ export class SharkTree {
                     const previousShark = sharkSpecies[this.currentSharkIndex];
                     const previousNode = previousShark?.getNode();
                     if (previousNode) {
-                        // Always use BLACK for nodes
                         previousNode.setAttribute("fill", DEFAULT_NODE_COLOR);
                         previousNode.classList.remove("pulse");
                     }
@@ -396,7 +395,7 @@ export class SharkTree {
             const x = !line && item instanceof SharkSpecies ? item.getX() : parseFloat(Utils.getAttributeFromLineOrPath(line, "x2") ?? "0");
             const y = !line && item instanceof SharkSpecies ? item.getY() : parseFloat(Utils.getAttributeFromLineOrPath(line, "y2") ?? "0");
             const newLine = Svg.extendLineToPoint(x, y, this.centerX, this.centerY, this.levelHeight);
-            newLine.setAttribute("stroke", BLACK);
+            newLine.setAttribute("stroke", DEFAULT_PATH_COLOR);
             newLine.setAttribute("stroke-linecap", "round");
             item.addParentPathSegment(newLine);
             svg.appendChild(newLine);
@@ -413,9 +412,9 @@ export class SharkTree {
             lines.forEach((line, i) => {
                 if (i !== lines.length - 1) {
                     const [firstArc, secondArc] = Svg.getArcs(this.centerX, this.centerY, this.radius, this.levelHeight, line, lines[i + 1], iteration);
-                    firstArc.setAttribute("stroke", BLACK);
+                    firstArc.setAttribute("stroke", DEFAULT_PATH_COLOR);
                     firstArc.setAttribute("stroke-linecap", "round");
-                    secondArc.setAttribute("stroke", BLACK);
+                    secondArc.setAttribute("stroke", DEFAULT_PATH_COLOR);
                     secondArc.setAttribute("stroke-linecap", "round");
                     arcSet.push(firstArc, secondArc);
                 }
@@ -471,11 +470,10 @@ export class SharkTree {
         sharkSpecies.forEach(shark => {
             const node = shark.getNode();
             if (shark === selectedShark) {
-                node.setAttribute("fill", RED);
+                node.setAttribute("fill", PULSING_NODE_COLOR);
                 node.classList.add("pulse");
             } else {
-                // Always use BLACK for nodes
-                node.setAttribute("fill", BLACK);
+                node.setAttribute("fill", DEFAULT_NODE_COLOR);
                 node.classList.remove("pulse");
             }
         });
@@ -580,18 +578,18 @@ export class SharkTree {
         this.getSharkSpeciesList().forEach(shark => this.resetHighlightPath(shark));
     
         speciesToHighlight.forEach(shark => {
-            shark.highlightNode(BLACK);
+            shark.highlightNode(DEFAULT_NODE_COLOR);
             
             // Determine tag styling if active
             let dashPattern = DEFAULT_SOLID_PATTERN;
-            let tagColor = BLACK;
-            let tagThickness = levelData.thickness;
+            let strokeColor = DEFAULT_PATH_COLOR;
+            let strokeWidth = levelData.thickness;
             
             if (this.activeTagCategory) {
                 const hasTag = !this.activeTagValue || shark.tags.includes(this.activeTagValue);
                 if (hasTag) dashPattern = DEFAULT_DASH_PATTERN;
             }
-            shark.highlightParentPath(tagThickness, tagColor, dashPattern);
+            shark.highlightParentPath(strokeWidth, strokeColor, dashPattern);
         });
     }
 
@@ -714,9 +712,6 @@ export class SharkTree {
     
         // Highlight paths for tagged species
         speciesToHighlight.forEach(shark => { shark.highlightParentPath(null, DEFAULT_PATH_COLOR, DEFAULT_DASH_PATTERN); });
-    
-        // Always use BLACK for all nodes
-        this.getSharkSpeciesList().forEach(shark => { shark.highlightNode(DEFAULT_NODE_COLOR); });
     }
 
     /*----------------------------------------|
@@ -748,7 +743,7 @@ export class SharkTree {
     resetHighlightPath(shark: SharkSpecies, preserveNodeColor: boolean = false): void {
         const node = shark.getNode();
         if (node && !preserveNodeColor) {
-            node.setAttribute("fill", BLACK);
+            node.setAttribute("fill", DEFAULT_NODE_COLOR);
         }
     
         const allSpecies = this.getSharkSpeciesList();
