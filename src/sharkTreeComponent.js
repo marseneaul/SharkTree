@@ -262,6 +262,9 @@ export class SharkTreeComponent extends HTMLElement {
                 <div id="breadcrumb-container">
                     <div class="breadcrumb-header">
                         <div class="breadcrumb-content"></div>
+                        <div class="breadcrumb-center">
+                            <img src="/images/tree-of-sharks.png" alt="Tree of Sharks" class="tree-image">
+                        </div>
                         <div class="breadcrumb-actions">
                             <a href="/fossil.html" class="btn btn-ghost">
                                 <img src="/images/trilobite.png" alt="Fossil Tree" width="16" height="16" style="object-fit: contain;">
@@ -391,10 +394,26 @@ export class SharkTreeComponent extends HTMLElement {
                 align-items: center;
                 justify-content: space-between;
                 width: 100%;
+                position: relative;
             }
             
             .breadcrumb-content {
                 flex: 1;
+            }
+            
+            .breadcrumb-center {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .tree-image {
+                max-height: 40px;
+                width: auto;
+                object-fit: contain;
             }
             
             .breadcrumb-actions {
