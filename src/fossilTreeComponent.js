@@ -6,6 +6,8 @@ import { SharksAndKinEventsTrack } from "./tracks/sharks-and-kin-events-track";
 import { FossilSitesEventsTrack } from "./tracks/fossil-sites-events-track";
 import { PhylogeneticTreeTrack } from "./tracks/phylogenetic-tree-track";
 import { BreadcrumbComponent } from "./components/breadcrumb";
+import treeOfSharksImage from "./images/tree-of-sharks.png";
+import sharkFinImage from "./images/shark-fin.png";
 
 customElements.define("time-track", TimeTrack);
 customElements.define("ruler-track", RulerTrack);
@@ -107,11 +109,11 @@ export class FossilTreeComponent extends HTMLElement {
                     <div class="breadcrumb-header">
                         <div class="breadcrumb-content"></div>
                         <div class="breadcrumb-center">
-                            <img src="/images/tree-of-sharks.png" alt="Tree of Sharks" class="tree-image">
+                            <img src="${treeOfSharksImage}" alt="Tree of Sharks" class="tree-image">
                         </div>
                         <div class="breadcrumb-actions">
                             <a href="/" class="btn btn-ghost">
-                                <img src="/images/shark-fin.png" alt="Shark Tree" width="16" height="16" style="object-fit: contain;">
+                                <img src=${sharkFinImage}" alt="Shark Tree" width="16" height="16" style="object-fit: contain;">
                                 Shark Tree
                             </a>
                         </div>
@@ -128,7 +130,7 @@ export class FossilTreeComponent extends HTMLElement {
                 display: block;
                 width: 100%;
                 height: 100vh;
-                font-family: var(--font-family-primary, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+                font-family: var(--font-family-primary, "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
             }
             
             #breadcrumb-container {

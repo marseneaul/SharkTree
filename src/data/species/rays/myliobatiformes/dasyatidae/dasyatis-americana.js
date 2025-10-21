@@ -1,8 +1,11 @@
 import { BEHAVIOR, CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import dasyatisAmericanaImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/dasyatis-americana.png";
 
 export const dasyatisAmericana = {
     commonName: "Southern Stingray",
     binomialName: "Dasyatis americana",
+
+    imageUrl: dasyatisAmericanaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

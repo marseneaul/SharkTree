@@ -24,6 +24,8 @@ import {
     squalidaeConfig, squaliformesConfig, dalatiidaeConfig, etmopteridaeConfig, carcharhiniformesConfig,
     galeomorphiiConfig, squalomorphiiConfig, selachiiConfig
 } from "./data/configs/sharks";
+import treeOfSharksImage from "./images/tree-of-sharks.png";
+import trilobiteImage from "./images/trilobite.png";
 
 const speciesConfigs = {
     [SPECIES_TYPE.SHARKS]: {
@@ -263,11 +265,11 @@ export class SharkTreeComponent extends HTMLElement {
                     <div class="breadcrumb-header">
                         <div class="breadcrumb-content"></div>
                         <div class="breadcrumb-center">
-                            <img src="/images/tree-of-sharks.png" alt="Tree of Sharks" class="tree-image">
+                            <img src="${treeOfSharksImage}" alt="Tree of Sharks" class="tree-image">
                         </div>
                         <div class="breadcrumb-actions">
                             <a href="/fossil.html" class="btn btn-ghost">
-                                <img src="/images/trilobite.png" alt="Fossil Tree" width="16" height="16" style="object-fit: contain;">
+                                <img src="${trilobiteImage}" alt="Fossil Tree" width="16" height="16" style="object-fit: contain;">
                                 Fossil Tree
                             </a>
                         </div>
