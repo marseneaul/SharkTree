@@ -269,7 +269,7 @@ export class SharkTreeComponent extends HTMLElement {
                         </div>
                         <div class="breadcrumb-actions">
                             <a href="/fossil.html" class="btn btn-ghost">
-                                <img src="${trilobiteImage}" alt="Fossil Tree" width="16" height="16" style="object-fit: contain;">
+                                <img src="${trilobiteImage}" alt="Fossil Tree" width="24" height="24" style="object-fit: contain; background-color: #f0f0f0; border: 1px solid #ccc;">
                                 Fossil Tree
                             </a>
                         </div>
