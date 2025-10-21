@@ -1,9 +1,12 @@
 import { BEHAVIOR, CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import rhinopteraSteindachneriImg from "./../../../../../images/rays/myliobatiformes/rhinopteridae/rhinoptera-steindachneri.png";
 
 export const rhinopteraSteindachneri = {
     commonName: "Giant Cownose Ray",
     alternativeNames: ["Pacific Cownose Ray", "Golden Cownose Ray"],
     binomialName: "Rhinoptera steindachneri",
+
+    imageUrl: rhinopteraSteindachneriImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

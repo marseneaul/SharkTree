@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import rhinopteraJavanicaImg from "./../../../../../images/rays/myliobatiformes/rhinopteridae/rhinoptera-javanica.png";
 
 export const rhinopteraJavanica = {
     commonName: "Flapnose Ray",
     alternativeNames: ["Javanese Cownose Ray"],
     binomialName: "Rhinoptera javanica",
+
+    imageUrl: rhinopteraJavanicaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

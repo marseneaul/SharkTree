@@ -1,8 +1,11 @@
 import { BEHAVIOR, CONSERVATION_STATUS, GROUP_BEHAVIOR, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import rhinopteraBonasusImg from "./../../../../../images/rays/myliobatiformes/rhinopteridae/rhinoptera-bonasus.png";
 
 export const rhinopteraBonasus = {
     commonName: "Cownose Ray",
     binomialName: "Rhinoptera bonasus",
+
+    imageUrl: rhinopteraBonasusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import rhinopteraJayakariImg from "./../../../../../images/rays/myliobatiformes/rhinopteridae/rhinoptera-jayakari.png";
 
 export const rhinopteraJayakari = {
     commonName: "Oman Cownose Ray",
     binomialName: "Rhinoptera jayakari",
+
+    imageUrl: rhinopteraJayakariImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
