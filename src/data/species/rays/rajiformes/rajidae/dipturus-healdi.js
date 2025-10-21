@@ -4,6 +4,7 @@ export const dipturusHealdi = {
     commonName: "Heald's Skate",
     binomialName: "Dipturus healdi",
 
+
     domain:	"Eukaryota",
     kingdom: "Animalia",
     phylum:	"Chordata",

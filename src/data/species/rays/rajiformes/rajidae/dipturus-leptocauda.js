@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import dipturusLeptocaudaImg from "./../../../../../images/rays/rajiformes/rajidae/dipturus-leptocauda.png";
 
 export const dipturusLeptocauda = {
     commonName: "Thintail Skate",
     binomialName: "Dipturus leptocauda",
+
+    imageUrl: dipturusLeptocaudaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

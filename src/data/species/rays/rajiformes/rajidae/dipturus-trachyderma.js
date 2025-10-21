@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import dipturusTrachydermaImg from "./../../../../../images/rays/rajiformes/rajidae/dipturus-trachyderma.png";
 
 export const dipturusTrachyderma = {
     commonName: "Roughskin Skate",
     binomialName: "Dipturus trachyderma",
+    
+    imageUrl: dipturusTrachydermaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

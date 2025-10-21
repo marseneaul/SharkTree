@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import aptychotremaVincentianaImg from "./../../../../images/rays/rhinopristiformes/aptychotrema-vincentiana.png";
 
 export const aptychotremaVincentiana = {
     commonName: "Southern Shovelnose Ray",
     alternativeNames: ["Western Shovelnose Ray", "Yellow Shovelnose Ray"],
     binomialName: "Aptychotrema vincentiana",
+
+    imageUrl: aptychotremaVincentianaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

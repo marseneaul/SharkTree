@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import okamejeiJensenaeImg from "./../../../../../images/rays/rajiformes/rajidae/okamejei-jensenae.png";
 
 export const okamejeiJensenae = {
     commonName: "Sulu Sea Skate",
     binomialName: "Okamejei jensenae",
+
+    imageUrl: okamejeiJensenaeImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

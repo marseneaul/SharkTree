@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import rajaEglanteriaImg from "./../../../../../images/rays/rajiformes/rajidae/raja-eglanteria.png";
 
 export const rajaEglanteria = {
     commonName: "Clearnose Skate",
     binomialName: "Raja eglanteria",
+
+    imageUrl: rajaEglanteriaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

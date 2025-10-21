@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import rostrorajaAlbaImg from "./../../../../../images/rays/rajiformes/rajidae/rostroraja-alba.png";
 
 export const rostrorajaAlba = {
     commonName: "Bottlenose Skate",
     alternativeNames: ["Spearnose Skate", "White Skate"],
     binomialName: "Rostroraja alba",
+
+    imageUrl: rostrorajaAlbaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import leucorajaGarmaniImg from "./../../../../../images/rays/rajiformes/rajidae/leucoraja-garmani.png";
 
 export const leucorajaGarmani = {
     commonName: "Rosette Skate",
     binomialName: "Leucoraja garmani",
+
+    imageUrl: leucorajaGarmaniImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

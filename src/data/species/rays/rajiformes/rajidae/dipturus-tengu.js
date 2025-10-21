@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import dipturusTenguImg from "./../../../../../images/rays/rajiformes/rajidae/dipturus-tengu.png";
 
 export const dipturusTengu = {
     commonName: "Acutenose Skate",
     binomialName: "Dipturus tengu",
+
+    imageUrl: dipturusTenguImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

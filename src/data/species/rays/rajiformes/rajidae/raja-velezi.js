@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import rajaVeleziImg from "./../../../../../images/rays/rajiformes/rajidae/raja-velezi.png";
 
 export const rajaVelezi = {
     commonName: "Velez Ray",
     binomialName: "Raja velezi",
+
+    imageUrl: rajaVeleziImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

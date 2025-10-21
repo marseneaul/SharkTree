@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import dipturusInnominatusImg from "./../../../../../images/rays/rajiformes/rajidae/dipturus-innominatus.png";
 
 export const dipturusInnominatus = {
     commonName: "New Zealand Smooth Skate",
     binomialName: "Dipturus innominatus",
+
+    imageUrl: dipturusInnominatusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

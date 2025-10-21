@@ -2,7 +2,7 @@ import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINE
 
 export const dasyatisMargeritella = {
     commonName: "Pearl Stingray",
-    binomialName: "Desyatis margaritella",
+    binomialName: "Dasyatis margaritella",
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

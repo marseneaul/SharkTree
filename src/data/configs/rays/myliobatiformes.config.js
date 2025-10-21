@@ -1,5 +1,5 @@
 import { dasyatisMicrops } from "../../species/rays/myliobatiformes/dasyatis-microps";
-import { hexatrygonBickelii } from "../../species/rays/myliobatiformes/hexatrygon-bickelii";
+import { hexatrygonBickelli } from "../../species/rays/myliobatiformes/hexatrygon-bickelli";
 import { himanturaSchmardae } from "../../species/rays/myliobatiformes/himantura-schmardae";
 import { paratrygonAiereba } from "../../species/rays/myliobatiformes/paratrygon-aiereba";
 import { plesiobatisDaviesi } from "../../species/rays/myliobatiformes/plesiobatis-daviesi";
@@ -51,7 +51,7 @@ export const myliobatiformesConfig = {
                         gymnuridaeConfig,
                         {
                             children: [
-                                hexatrygonBickelii,
+                                hexatrygonBickelli,
                                 {
                                     children: [
                                         {

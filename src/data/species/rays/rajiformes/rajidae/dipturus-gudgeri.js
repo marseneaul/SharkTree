@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import dipturusGudgeriImg from "./../../../../../images/rays/rajiformes/rajidae/dipturus-gudgeri.png";
 
 export const dipturusGudgeri = {
     commonName: "Greenback Skate",
     binomialName: "Dipturus gudgeri",
+
+    imageUrl: dipturusGudgeriImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
