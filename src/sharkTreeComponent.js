@@ -259,8 +259,6 @@ export class SharkTreeComponent extends HTMLElement {
         return `
             <style> ${this.css()} </style>
             <div id="app-container">
-                <nav id="main-nav">
-                </nav>
                 <div id="breadcrumb-container">
                     <div class="breadcrumb-header">
                         <div class="breadcrumb-content"></div>
@@ -378,34 +376,6 @@ export class SharkTreeComponent extends HTMLElement {
                 width: 100%;
                 height: 100vh;
                 font-family: var(--font-family-primary, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
-            }
-            
-            #main-nav {
-                background: var(--color-white, #FFFFFF);
-                padding: var(--space-4, 1rem);
-                text-align: center;
-                border-bottom: 1px solid var(--color-border-light, #E5E7EB);
-                box-shadow: var(--shadow-sm, 0 1px 2px 0 rgba(0, 0, 0, 0.05));
-                font-size: var(--text-base, 1rem);
-                font-weight: var(--font-weight-semibold, 600);
-                position: sticky;
-                top: 0;
-                z-index: var(--z-sticky, 1020);
-                backdrop-filter: blur(8px);
-            }
-            
-            #main-nav a {
-                color: var(--color-primary, #00688B);
-                text-decoration: none;
-                transition: all var(--transition-fast, 150ms ease-in-out);
-                padding: var(--space-2, 0.5rem) var(--space-4, 1rem);
-                border-radius: var(--radius-md, 0.375rem);
-                font-weight: var(--font-weight-medium, 500);
-            }
-            
-            #main-nav a:hover {
-                color: var(--color-primary-hover, #004d6f);
-                background-color: var(--color-primary-light, #E0F7FA);
             }
             
             #breadcrumb-container {
@@ -1080,9 +1050,6 @@ export class SharkTreeComponent extends HTMLElement {
             }
             
             @media (max-width: 768px) {
-                #main-nav {
-                    padding: var(--space-3, 0.75rem);
-                }
                 
                 #controls-container {
                     padding: var(--space-3, 0.75rem);
@@ -1117,10 +1084,6 @@ export class SharkTreeComponent extends HTMLElement {
             }
             
             @media (max-width: 480px) {
-                #main-nav a {
-                    font-size: var(--text-sm, 0.875rem);
-                    padding: var(--space-1, 0.25rem) var(--space-2, 0.5rem);
-                }
                 
                 .control-group label {
                     font-size: 10px;
