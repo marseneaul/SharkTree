@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../constants/enums";
+import trygonopteraImitataImg from "./../../../../images/rays/myliobatiformes/trygonoptera-imitata.png";
 
 export const trygonopteraImitata = {
     commonName: "Eastern Shovelnose Stingaree",
     binomialName: "Trygonoptera imitata",
 
+    imageUrl: trygonopteraImitataImg,
+    
     domain:	"Eukaryota",
     kingdom: "Animalia",
     phylum:	"Chordata",

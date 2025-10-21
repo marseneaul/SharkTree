@@ -113,7 +113,7 @@ export class FossilTreeComponent extends HTMLElement {
                         </div>
                         <div class="breadcrumb-actions">
                             <a href="/" class="btn btn-ghost">
-                                <img src="${sharkFinImage}" alt="Shark Tree" width="16" height="16" style="object-fit: contain;">
+                                <img src="${sharkFinImage}" alt="Shark Tree" width="20" height="20" style="object-fit: contain;">
                                 Shark Tree
                             </a>
                         </div>

@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINE, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import taeniuraMeyeniImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/taeniura-meyeni.png";
 
 export const taeniuraMeyeni = {
     commonName: "Round Ribbontail Ray",
     alternativeNames: ["Blotched Fantail Ray"],
     binomialName: "Taeniura meyeni",
+
+    imageUrl: taeniuraMeyeniImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
