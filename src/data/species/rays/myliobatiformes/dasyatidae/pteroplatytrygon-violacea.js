@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import pteroplatytrygonViolaceaImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/pteroplatytrygon-violacea.png";
 
 export const pteroplatytrygonViolacea = {
     commonName: "Pelagic Stingray",
     binomialName: "Pteroplatytrygon violacea",
+    
+    imageUrl: pteroplatytrygonViolaceaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
