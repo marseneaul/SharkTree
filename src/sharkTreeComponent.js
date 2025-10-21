@@ -1282,8 +1282,18 @@ export class SharkTreeComponent extends HTMLElement {
                     }
                     return a.localeCompare(b);
                 });
+                
+                // Define binary categories that should only have Yes/No options (no All option)
+                const binaryCategories = [
+                    'analFin', 'hasSpiracles', 'hasFlattenedBody', 'nictitatingMembrane', 
+                    'hasProximalDorsalFins', 'isBioluminescent', 'tailSpines', 
+                    'electricOrgan', 'venomousSpine', 'operculum'
+                ];
+                
+                const isBinaryCategory = binaryCategories.includes(category);
+                
                 tagValueDropdown.innerHTML = `
-                    <option value="">All</option>
+                    ${!isBinaryCategory ? '<option value="">All</option>' : ''}
                     ${sortedValues.map(v => {
                         let displayText = v;
                         if (v.includes("Yes") || v === BIOLUMINESCENT.YES || v === MOUTH_IN_FRONT_OF_EYES.MOUTH_IN_FRONT_OF_EYES) {
@@ -1294,8 +1304,23 @@ export class SharkTreeComponent extends HTMLElement {
                         return `<option value="${v}">${displayText}</option>`;
                     }).join("")}
                 `;
+                
+                // For binary categories, default to "Yes" option
+                if (isBinaryCategory) {
+                    const yesOption = sortedValues.find(v => 
+                        v.includes("Yes") || v === BIOLUMINESCENT.YES || v === MOUTH_IN_FRONT_OF_EYES.MOUTH_IN_FRONT_OF_EYES
+                    );
+                    if (yesOption) {
+                        tagValueDropdown.value = yesOption;
+                        // Manually trigger the tag filtering for binary categories
+                        this.sharkTree.highlightTagCategory(category, yesOption);
+                    }
+                } else {
+                    // For non-binary categories, just highlight the category without a specific value
+                    this.sharkTree.highlightTagCategory(category);
+                }
+                
                 tagValueDropdown.disabled = false;
-                this.sharkTree.highlightTagCategory(category);
             } else {
                 tagValueDropdown.innerHTML = '<option value="">Select a category first</option>';
                 tagValueDropdown.disabled = true;

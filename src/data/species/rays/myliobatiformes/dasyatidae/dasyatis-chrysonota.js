@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import dasyatisChrysonotaImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/dasyatis-chrysonota.png";
 
 export const dasyatisChrysonota = {
     commonName: "Blue Stingray",
     binomialName: "Dasyatis chrysonota",
+
+    imageUrl: dasyatisChrysonotaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

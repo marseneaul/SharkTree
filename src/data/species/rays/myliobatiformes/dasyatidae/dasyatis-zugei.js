@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import dasyatisZugeiImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/dasyatis-zugei.png";
 
 export const dasyatisZugei = {
     commonName: "Pale-Edged Stingray",
     alternativeNames: ["Sharpnose Stingray"],
     binomialName: "Dasyatis zugei",
+
+    imageUrl: dasyatisZugeiImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
