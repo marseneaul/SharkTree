@@ -1422,7 +1422,7 @@ export class SharkTreeComponent extends HTMLElement {
         // Create caption
         const caption = document.createElement("p");
         caption.className = "image-caption";
-        caption.textContent = `${selectedShark.commonName} (${selectedShark.binomialName})`;
+        caption.innerHTML = `${selectedShark.commonName}<br>(${selectedShark.binomialName})`;
         
         // Image source is set in tryNextUrl() function
         
