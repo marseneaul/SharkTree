@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../constants/enums";
+import plesiobatisDaviesiImg from "./../../../../images/rays/myliobatiformes/plesiobatis-daviesi.png";
 
 export const plesiobatisDaviesi = {
     commonName: "Deepwater Stingray",
     alternativeNames: ["Giant Stingaree"],
     binomialName: "Plesiobatis daviesi",
+
+    imageUrl: plesiobatisDaviesiImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

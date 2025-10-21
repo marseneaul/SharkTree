@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import dasyatisLongaImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/dasyatis-longa.png";
 
 export const dasyatisLonga = {
     commonName: "Longtail Stingray",
     binomialName: "Dasyatis longa",
+
+    imageUrl: dasyatisLongaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import dasyatisBrevicaudataImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/dasyatis-brevicaudata.png";
 
 export const dasyatisBrevicaudata = {
     commonName: "Short-Tail Stingray",
     alternativeNames: ["Smooth Stingray"],
     binomialName: "Dasyatis brevicaudata",
+
+    imageUrl: dasyatisBrevicaudataImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
