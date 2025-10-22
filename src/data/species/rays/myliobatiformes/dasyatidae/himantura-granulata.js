@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import himanturaGranulataImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/himantura-granulata.png";
 
 export const himanturaGranulata = {
     commonName: "Mangrove Whipray",
     alternativeNames: ["Whitetail Stingray"],
     binomialName: "Himantura granulata",
+
+    imageUrl: himanturaGranulataImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

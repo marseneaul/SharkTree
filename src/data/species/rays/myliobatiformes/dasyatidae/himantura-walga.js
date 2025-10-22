@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import himanturaWalgaImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/himantura-walga.png";
 
 export const himanturaWalga = {
     commonName: "Dwarf Whipray",
     alternativeNames: ["Mangrove Whipray"],
     binomialName: "Himantura walga",
+
+    imageUrl: himanturaWalgaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
