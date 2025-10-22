@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import pastinachusStellurostrisImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/pastinachus-stellurostris.png";
 
 export const pastinachusStellurostris = {
     commonName: "Starrynose Cowtail Ray",
     binomialName: "Pastinachus stellurostris",
+
+    imageUrl: pastinachusStellurostrisImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

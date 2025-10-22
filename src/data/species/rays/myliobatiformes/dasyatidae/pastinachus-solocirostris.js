@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import pastinachusSolocirostrisImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/pastinachus-solocirostris.png";
 
 export const pastinachusSolocirostris = {
     commonName: "Roughnose Stingray",
     binomialName: "Pastinachus solocirostris",
+
+    imageUrl: pastinachusSolocirostrisImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

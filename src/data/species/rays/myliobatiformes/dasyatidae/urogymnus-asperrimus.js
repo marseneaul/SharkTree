@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import urogymnusAsperrimusImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/urogymnus-asperrimus.png";
 
 export const urogymnusAsperrimus = {
     commonName: "Porcupine Ray",
     binomialName: "Urogymnus asperrimus",
+
+    imageUrl: urogymnusAsperrimusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

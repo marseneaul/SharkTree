@@ -1,4 +1,4 @@
-import { dasyatisMicrops } from "../../species/rays/myliobatiformes/dasyatis-microps";
+import { megatrygonMicrops } from "../../species/rays/myliobatiformes/megatrygon-microps";
 import { hexatrygonBickelli } from "../../species/rays/myliobatiformes/hexatrygon-bickelli";
 import { himanturaSchmardae } from "../../species/rays/myliobatiformes/himantura-schmardae";
 import { paratrygonAiereba } from "../../species/rays/myliobatiformes/paratrygon-aiereba";
@@ -25,7 +25,7 @@ export const myliobatiformesConfig = {
                     children: [
                         {
                             children: [
-                                dasyatisMicrops,
+                                megatrygonMicrops,
                                 {
                                     children: [
                                         himanturaSchmardae,
