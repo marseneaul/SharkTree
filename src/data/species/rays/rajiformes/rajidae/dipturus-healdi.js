@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import dipturusHealdiImg from "./../../../../../images/rays/rajiformes/rajidae/dipturus-healdi.png";
 
 export const dipturusHealdi = {
     commonName: "Heald's Skate",
     binomialName: "Dipturus healdi",
+
+    imageUrl: dipturusHealdiImg,
 
 
     domain:	"Eukaryota",
