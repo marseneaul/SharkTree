@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import himanturaImbricataImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/himantura-imbricata.png";
 
 export const himanturaImbricata = {
     commonName: "Scaly Whipray",
     alternativeNames: ["Bengal Whipray"],
     binomialName: "Himantura imbricata",
+
+    imageUrl: himanturaImbricataImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

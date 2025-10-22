@@ -5,7 +5,7 @@ import { dasyatisCentroura } from "../../species/rays/myliobatiformes/dasyatidae
 import { dasyatisChrysonota } from "../../species/rays/myliobatiformes/dasyatidae/dasyatis-chrysonota";
 import { dasyatisLonga } from "../../species/rays/myliobatiformes/dasyatidae/dasyatis-longa";
 import { dasyatisMargarita } from "../../species/rays/myliobatiformes/dasyatidae/dasyatis-margarita";
-import { dasyatisMargeritella } from "../../species/rays/myliobatiformes/dasyatidae/dasyatis-margeritella";
+import { dasyatisMargaritella } from "../../species/rays/myliobatiformes/dasyatidae/dasyatis-margaritella";
 import { dasyatisSabina } from "../../species/rays/myliobatiformes/dasyatidae/dasyatis-sabina";
 import { dasyatisSay } from "../../species/rays/myliobatiformes/dasyatidae/dasyatis-say";
 import { dasyatisUshiei } from "../../species/rays/myliobatiformes/dasyatidae/dasyatis-ushiei";
@@ -105,7 +105,7 @@ export const dasyatidaeConfig = {
                 {
                     children: [
                         dasyatisMargarita,
-                        dasyatisMargeritella
+                        dasyatisMargaritella
                     ]
                 },
                 {

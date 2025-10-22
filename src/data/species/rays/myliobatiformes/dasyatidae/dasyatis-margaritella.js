@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import dasyatisMargaritellaImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/dasyatis-margaritella.png";
 
-export const dasyatisMargeritella = {
+export const dasyatisMargaritella = {
     commonName: "Pearl Stingray",
     binomialName: "Dasyatis margaritella",
+
+    imageUrl: dasyatisMargaritellaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
@@ -12,7 +15,7 @@ export const dasyatisMargeritella = {
     subdivision: "Batomorphi",
     order: "Myliobatiformes",
     family: "Dasyatidae",
-    genus: "Desyatis",
+    genus: "Dasyatis",
     species: "margaritella",
 
     tags: [

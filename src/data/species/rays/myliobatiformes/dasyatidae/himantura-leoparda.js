@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import himanturaLeopardaImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/himantura-leoparda.png";
 
 export const himanturaLeoparda = {
     commonName: "Leopard Whipray",
     binomialName: "Himantura leoparda",
+
+    imageUrl: himanturaLeopardaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

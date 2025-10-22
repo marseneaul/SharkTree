@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../constants/enums";
+import trygonopteraOvalisImg from "./../../../../images/rays/myliobatiformes/trygonoptera-ovalis.png";
 
 export const trygonopteraOvalis = {
     commonName: "Striped Stingaree",
     binomialName: "Trygonoptera ovalis",
+
+    imageUrl: trygonopteraOvalisImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

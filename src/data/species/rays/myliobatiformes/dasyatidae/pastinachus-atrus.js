@@ -2,7 +2,7 @@ import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINE
 
 export const pastinachusAtrus = {
     commonName: "Broad Cowtail Ray",
-    binomialName: "Pastinachus pastinachusAtrus",
+    binomialName: "Pastinachus atrus",
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
@@ -13,7 +13,7 @@ export const pastinachusAtrus = {
     order: "Myliobatiformes",
     family: "Dasyatidae",
     genus: "Pastinachus",
-    species: "pastinachusAtrus",
+    species: "atrus",
 
     tags: [
         CONSERVATION_STATUS.VU,

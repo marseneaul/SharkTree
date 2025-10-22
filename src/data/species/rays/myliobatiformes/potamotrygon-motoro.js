@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../constants/enums";
+import potamotrygonMotoroImg from "./../../../../images/rays/myliobatiformes/potamotrygon-motoro.png";
 
 export const potamotrygonMotoro = {
     commonName: "Ocellate River Stingray",
     alternativeNames: ["Peacock-Eye Stingray", "Black River Stingray"],
     binomialName: "Potamotrygon motoro",
+
+    imageUrl: potamotrygonMotoroImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

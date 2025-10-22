@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../constants/enums";
+import paratrygonAierebaImg from "./../../../../images/rays/myliobatiformes/paratrygon-aiereba.png";
 
 export const paratrygonAiereba = {
     commonName: "Discus Ray",
     alternativeNames: ["Manzana Ray", "Ceja Ray"],
     binomialName: "Paratrygon aiereba",
+
+    imageUrl: paratrygonAierebaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

@@ -77,12 +77,14 @@ module.exports = (env) => {
       filename: "index.html", // Default page (opens first)
       template: "src/template_shark.html",
       chunks: ["shark"], // Only include shark bundle
+      favicon: "src/images/shark-fin.png",
     }),
     new HtmlWebpackPlugin({
       title: "Fossil Tree",
       filename: "fossil.html",
       template: "src/template_fossil.html",
       chunks: ["fossil"], // Only include fossil bundle
+      favicon: "src/images/shark-fin.png",
     }),
     // BundleAnalyzerPlugin disabled for development - use npm run analyze to enable
     // new BundleAnalyzerPlugin(),

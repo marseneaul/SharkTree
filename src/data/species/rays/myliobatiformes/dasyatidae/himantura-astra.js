@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import himanturaAstraImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/himantura-astra.png";
 
 export const himanturaAstra = {
     commonName: "Black-Spotted Whipray",
     binomialName: "Himantura astra",
+
+    imageUrl: himanturaAstraImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
