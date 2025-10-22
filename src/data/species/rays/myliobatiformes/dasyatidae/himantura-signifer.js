@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import himanturaSigniferImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/himantura-signifer.png";
 
 export const himanturaSignifer = {
     commonName: "White-Edge Freshwater Whipray",
     binomialName: "Himantura signifer",
+
+    imageUrl: himanturaSigniferImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

@@ -16,7 +16,7 @@ import { himanturaGerrardi } from "../../species/rays/myliobatiformes/dasyatidae
 import { himanturaGranulata } from "../../species/rays/myliobatiformes/dasyatidae/himantura-granulata";
 import { himanturaImbricata } from "../../species/rays/myliobatiformes/dasyatidae/himantura-imbricata";
 import { himanturaJenkinsii } from "../../species/rays/myliobatiformes/dasyatidae/himantura-jenkinsii";
-import { himanturaKittpongi } from "../../species/rays/myliobatiformes/dasyatidae/himantura-kittpongi";
+import { himanturaKittipongi } from "../../species/rays/myliobatiformes/dasyatidae/himantura-kittipongi";
 import { himanturaLeoparda } from "../../species/rays/myliobatiformes/dasyatidae/himantura-leoparda";
 import { himanturaLobistoma } from "../../species/rays/myliobatiformes/dasyatidae/himantura-lobistoma";
 import { himanturaOxyrhyncha } from "../../species/rays/myliobatiformes/dasyatidae/himantura-oxyrhyncha";
@@ -152,7 +152,7 @@ export const dasyatidaeConfig = {
                                                     children: [
                                                         {
                                                             children: [
-                                                                himanturaKittpongi,
+                                                                himanturaKittipongi,
                                                                 himanturaSignifer
                                                             ]
                                                         },
