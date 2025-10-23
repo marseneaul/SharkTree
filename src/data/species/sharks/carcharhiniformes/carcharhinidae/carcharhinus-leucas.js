@@ -2,12 +2,13 @@ import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, PROXIMAL_DORSAL_FINS, REPROD
 import carcharhinusLeucasImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/carcharhinus-leucas.png";
 import photographyImg from "./../../../../../images/photography/carcharhinus-leucas.jpg";
 import photographyImg2 from "./../../../../../images/photography/carcharhinus-leucas-2.jpg";
+import photographyImg3 from "./../../../../../images/photography/carcharhinus-leucas-3.jpg";
 
 export const carcharhinusLeucas = {
     commonName: "Bull Shark",
     binomialName: "Carcharhinus leucas",
 
-    imageUrls: [carcharhinusLeucasImg, photographyImg, photographyImg2],
+    imageUrls: [carcharhinusLeucasImg, photographyImg, photographyImg2, photographyImg3],
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

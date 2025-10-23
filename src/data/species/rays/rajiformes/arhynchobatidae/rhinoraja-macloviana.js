@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import rhinorajaMaclovianaImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/rhinoraja-macloviana.png";
 
 export const rhinorajaMacloviana = {
     commonName: "Patagonian Skate",
     binomialName: "Rhinoraja macloviana",
+
+    imageUrl: rhinorajaMaclovianaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

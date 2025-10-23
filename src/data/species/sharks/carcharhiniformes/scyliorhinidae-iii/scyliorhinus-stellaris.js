@@ -1,12 +1,14 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 import scyliorhinusStellarisImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-iii/scyliorhinus-stellaris.png";
+import photographyImg from "./../../../../../images/photography/scyliorhinus-stellaris.jpg";
+import photographyImg2 from "./../../../../../images/photography/scyliorhinus-stellaris-2.jpg";
 
 export const scyliorhinusStellaris = {
     commonName: "Nursehound",
     alternativeNames: ["Large-Spotted Dogfish", "Greater Spotted Dogfish", "Bull Huss"],
     binomialName: "Scyliorhinus stellaris",
 
-    imageUrl: scyliorhinusStellarisImg,
+    imageUrls: [scyliorhinusStellarisImg, photographyImg, photographyImg2],
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

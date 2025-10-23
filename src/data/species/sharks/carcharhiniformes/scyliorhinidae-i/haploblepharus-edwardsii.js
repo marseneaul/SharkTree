@@ -2,13 +2,14 @@ import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from
 import haploblepharusEdwardsiiImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-i/haploblepharus-edwardsii.png";
 import photographyImg from "./../../../../../images/photography/haploblepharus-edwardsii.jpg";
 import photographyImg2 from "./../../../../../images/photography/haploblepharus-edwardsii-2.jpg";
+import photographyImg3 from "./../../../../../images/photography/haploblepharus-edwardsii-3.jpg";
 
 export const haploblepharusEdwardsii = {
     commonName: "Puffadder Shyshark",
     alternativeNames: ["Shyshark", "Doughnut", "Happy Eddie"],
     binomialName: "Haploblepharus edwardsii",
 
-    imageUrls: [haploblepharusEdwardsiiImg, photographyImg, photographyImg2],
+    imageUrls: [haploblepharusEdwardsiiImg, photographyImg, photographyImg2, photographyImg3],
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

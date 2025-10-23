@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import bathyrajaMinispinosaImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/bathyraja-minispinosa.png";
 
 export const bathyrajaMinispinosa = {
     commonName: "Smallthorn Skate",
     binomialName: "Bathyraja minispinosa",
+
+    imageUrl: bathyrajaMinispinosaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

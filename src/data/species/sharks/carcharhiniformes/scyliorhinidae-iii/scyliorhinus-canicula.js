@@ -1,12 +1,13 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 import scyliorhinusCaniculaImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-iii/scyliorhinus-canicula.png";
+import photographyImg from "./../../../../../images/photography/scyliorhinus-canicula.jpg";
 
 export const scyliorhinusCanicula = {
     commonName: "Small-Spotted Catshark",
     alternativeNames: ["Sandy Dogfish", "Lesser-Spotted Dogfish", "Rough-Hound", "Morgay"],
     binomialName: "Scyliorhinus canicula",
 
-    imageUrl: scyliorhinusCaniculaImg,
+    imageUrls: [scyliorhinusCaniculaImg, photographyImg],
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

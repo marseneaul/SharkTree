@@ -3,13 +3,14 @@ import carcharhinusFalciformisImg from "./../../../../../images/sharks/carcharhi
 import photographyImg from "./../../../../../images/photography/carcharhinus-falciformis.jpg";
 import photographyImg2 from "./../../../../../images/photography/carcharhinus-falciformis-2.jpg";
 import photographyImg3 from "./../../../../../images/photography/carcharhinus-falciformis-3.jpg";
+import photographyImg4 from "./../../../../../images/photography/carcharhinus-falciformis-4.jpg";
 
 export const carcharhinusFalciformis = {
     commonName: "Silky Shark",
     alternativeNames: ["Blackspot Shark", "Gray Whaler Shark", "Olive Shark", "Ridgeback Shark", "Sickle Shark", "Sickle-Shaped Shark", "Sickle Silk Shark"],
     binomialName: "Carcharhinus falciformis",
 
-    imageUrls: [carcharhinusFalciformisImg, photographyImg, photographyImg2, photographyImg3],
+    imageUrls: [carcharhinusFalciformisImg, photographyImg, photographyImg2, photographyImg3, photographyImg4],
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

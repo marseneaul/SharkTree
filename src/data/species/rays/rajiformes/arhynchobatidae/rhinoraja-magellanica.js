@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import rhinorajaMagellanicaImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/rhinoraja-magellanica.png";
 
 export const rhinorajaMagellanica = {
     commonName: "Magellan Skate",
     binomialName: "Rhinoraja magellanica",
+
+    imageUrl: rhinorajaMagellanicaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

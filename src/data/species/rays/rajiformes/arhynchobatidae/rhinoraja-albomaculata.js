@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import rhinorajaAlbomaculataImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/rhinoraja-albomaculata.png";
 
 export const rhinorajaAlbomaculata = {
     commonName: "White-Dotted Skate",
     binomialName: "Rhinoraja albomaculata",
+
+    imageUrl: rhinorajaAlbomaculataImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

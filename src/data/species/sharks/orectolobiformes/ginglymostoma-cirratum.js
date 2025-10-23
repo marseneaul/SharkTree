@@ -1,11 +1,12 @@
 import { CONSERVATION_STATUS, MOUTH_IN_FRONT_OF_EYES, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 import ginglymostomaCirratumImg from "./../../../../images/sharks/orectolobiformes/ginglymostoma-cirratum.png";
+import photographyImg from "./../../../../images/photography/ginglymostoma-cirratum.jpg";
 
 export const ginglymostomaCirratum = {
     commonName: "Nurse Shark",
     binomialName: "Ginglymostoma cirratum",
 
-    imageUrl: ginglymostomaCirratumImg,
+    imageUrls: [ginglymostomaCirratumImg, photographyImg],
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

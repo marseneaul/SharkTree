@@ -1,12 +1,13 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 import porodermaAfricanumImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-iii/poroderma-africanum.png";
+import photographyImg from "./../../../../../images/photography/poroderma-africanum.jpg";
 
 export const porodermaAfricanum = {
     commonName: "Pyjama Shark",
     alternativeNames: ["Striped Catshark"],
     binomialName: "Poroderma africanum",
 
-    imageUrl: porodermaAfricanumImg,
+    imageUrls: [porodermaAfricanumImg, photographyImg],
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
