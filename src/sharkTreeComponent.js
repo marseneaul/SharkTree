@@ -1,4 +1,4 @@
-import { ANAL_FIN, BEHAVIOR, BIOLUMINESCENT, CONSERVATION_STATUS, DORSAL_FIN_SPINES, ELECTRIC_ORGAN, FLATTENED_BODY, MOUTH_IN_FRONT_OF_EYES, NICTITATING_MEMBRANE, NUM_DORSAL_FINS, NUM_GILLS, OPERCULUM, PROXIMAL_DORSAL_FINS, SNOUT_SHAPE, SPECIES_TYPE, SPIRACLES, TAIL_SPINES, VENOMOUS_SPINE } from "./constants/enums";
+import { ANAL_FIN, BEHAVIOR, BIOLUMINESCENT, CONSERVATION_STATUS, DEPTH_ZONE, DORSAL_FIN_SPINES, ELECTRIC_ORGAN, FLATTENED_BODY, MOUTH_IN_FRONT_OF_EYES, NICTITATING_MEMBRANE, NUM_DORSAL_FINS, NUM_GILLS, OPERCULUM, PROXIMAL_DORSAL_FINS, SNOUT_SHAPE, SPECIES_TYPE, SPIRACLES, TAIL_SPINES, VENOMOUS_SPINE } from "./constants/enums";
 import { BreadcrumbComponent } from "./components/breadcrumb";
 import { callorhinchidaeConfig } from "./data/configs/chimaeras/callorhinchidae.config";
 import { chimaeiridaeConfig } from "./data/configs/chimaeras/chimaeiridae.config";
@@ -326,6 +326,7 @@ export class SharkTreeComponent extends HTMLElement {
                             <option value="caudalFinShape" class="shark-only">Caudal Fin Shape</option>
                             <option value="mouthInFrontOfEyes" class="shark-only">Has Mouth in Front of Eyes</option>
                             <option value="isBioluminescent">Bioluminescent</option>
+                            <option value="depthZone">Depth Zone</option>
                             <option value="hasDorsalFinSpines" class="shark-only">Has Dorsal Fin Spines</option>
                             <option value="hasProximalDorsalFins" class="shark-only">Has Proximal Dorsal Fins</option>
                             <option value="tailSpines" class="ray-only">Has Tail Spines</option>
@@ -1256,6 +1257,13 @@ export class SharkTreeComponent extends HTMLElement {
                 CONSERVATION_STATUS.LC,
                 CONSERVATION_STATUS.DD,
                 CONSERVATION_STATUS.NE,
+            ],
+            depthZone: [
+                DEPTH_ZONE.SHALLOW_WATER,
+                DEPTH_ZONE.MID_WATER,
+                DEPTH_ZONE.DEEP_WATER,
+                DEPTH_ZONE.ABYSSAL,
+                DEPTH_ZONE.HADAL
             ],
             numGills: [
                 NUM_GILLS.FIVE,

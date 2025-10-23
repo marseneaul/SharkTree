@@ -6,7 +6,7 @@ import { SharkTreeNode } from "./shark-tree-node";
 import { Svg } from "../drawing/svg";
 import { Utils } from "../utils/utils";
 import { BLACK, DEFAULT_NODE_COLOR, DEFAULT_PATH_COLOR, PULSING_NODE_COLOR, TAXONOMIC_LEVEL_COLORS, WHITE } from "../constants/colors";
-import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION, FEEDING_BEHAVIOR, OCEAN_ZONE, GEOGRAPHICAL_DISTRIBUTION, HABITAT, WATER_COLUMN, PHYSICAL_CHARACTERISTIC, BEHAVIOR, NUM_GILLS, NUM_DORSAL_FINS, ANAL_FIN, NICTITATING_MEMBRANE, CAUDAL_FIN_SHAPE, MOUTH_IN_FRONT_OF_EYES, BIOLUMINESCENT, DORSAL_FIN_SPINES, SPIRACLES, FLATTENED_BODY, GROUP_BEHAVIOR, TAXONOMIC_LEVELS, PROXIMAL_DORSAL_FINS, SPECIES_TYPE, TAIL_SPINES, ELECTRIC_ORGAN, VENOMOUS_SPINE, OPERCULUM, SNOUT_SHAPE } from "../constants/enums";
+import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION, FEEDING_BEHAVIOR, OCEAN_ZONE, GEOGRAPHICAL_DISTRIBUTION, HABITAT, WATER_COLUMN, PHYSICAL_CHARACTERISTIC, BEHAVIOR, NUM_GILLS, NUM_DORSAL_FINS, ANAL_FIN, NICTITATING_MEMBRANE, CAUDAL_FIN_SHAPE, MOUTH_IN_FRONT_OF_EYES, BIOLUMINESCENT, DORSAL_FIN_SPINES, SPIRACLES, FLATTENED_BODY, GROUP_BEHAVIOR, TAXONOMIC_LEVELS, PROXIMAL_DORSAL_FINS, SPECIES_TYPE, TAIL_SPINES, ELECTRIC_ORGAN, VENOMOUS_SPINE, OPERCULUM, SNOUT_SHAPE, DEPTH_ZONE } from "../constants/enums";
 import { PathStyle } from "../interfaces/path-style";
 import { DEFAULT_DASH_PATTERN, DEFAULT_SOLID_PATTERN, DEFAULT_STROKE_OPACITY, DEFAULT_STROKE_WIDTH, HIGHLIGHTED_STROKE_OPACITY, HIGHLIGHTED_STROKE_WIDTH, TAXONOMIC_THICKNESS } from "../constants/style";
 
@@ -675,7 +675,8 @@ export class SharkTree {
             "isBioluminescent",
             "hasSpiracles",
             "numDorsalFins",
-            "hasFlattenedBody"
+            "hasFlattenedBody",
+            "depthZone"
         ];
 
         const sharkCategories = [
@@ -755,6 +756,7 @@ export class SharkTree {
             "hasFlattenedBody": Object.values(FLATTENED_BODY),
             "operculum": Object.values(OPERCULUM),
             "snoutShape": Object.values(SNOUT_SHAPE),
+            "depthZone": Object.values(DEPTH_ZONE),
 
         };
         for (const [category, values] of Object.entries(tagEnums)) {

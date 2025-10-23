@@ -25,6 +25,14 @@ export enum CONSERVATION_STATUS {
     NE = "Not Evaluated (NE)"
 }
 
+export enum DEPTH_ZONE {
+    SHALLOW_WATER = "Shallow Water (0-200m)",
+    MID_WATER = "Mid-Water (200-1000m)", 
+    DEEP_WATER = "Deep Water (1000-4000m)",
+    ABYSSAL = "Abyssal (4000-6000m)",
+    HADAL = "Hadal (6000m+)"
+}
+
 export enum REPRODUCTIVE_STRATEGY {
     OVIPAROUS = "Oviparous",
     VIVIPAROUS = "Viviparous",
@@ -242,6 +250,7 @@ export function getEnumCategory(tag: any): string | undefined {
     if (Object.values(GEOGRAPHICAL_DISTRIBUTION).includes(tag)) return "GEOGRAPHICAL_DISTRIBUTION";
     if (Object.values(HABITAT).includes(tag)) return "HABITAT";
     if (Object.values(WATER_COLUMN).includes(tag)) return "WATER_COLUMN";
+    if (Object.values(DEPTH_ZONE).includes(tag)) return "depthZone";
     if (Object.values(PHYSICAL_CHARACTERISTIC).includes(tag)) return "PHYSICAL_CHARACTERISTIC";
     if (Object.values(BEHAVIOR).includes(tag)) return "BEHAVIOR";
     return undefined;

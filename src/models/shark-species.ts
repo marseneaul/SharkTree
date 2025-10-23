@@ -1,7 +1,7 @@
 import { sha256 } from "js-sha256";
 import { SharkConfig } from "../interfaces/shark-config";
 import { SharkTreeNode } from "./shark-tree-node";
-import { BEHAVIOR, BIOLUMINESCENT, CONSERVATION_STATUS, DEFAULT_TAGS, DORSAL_FIN_SPINES, FLATTENED_BODY, getEnumCategory, NUM_GILLS, REPRODUCTIVE_STRATEGY, SPECIES_TYPE, TEMPERATURE_REGULATION, FEEDING_BEHAVIOR, GROUP_BEHAVIOR, NUM_DORSAL_FINS, ANAL_FIN, SPIRACLES, NICTITATING_MEMBRANE, CAUDAL_FIN_SHAPE, MOUTH_IN_FRONT_OF_EYES, PROXIMAL_DORSAL_FINS, HABITAT, WATER_COLUMN, PHYSICAL_CHARACTERISTIC, GEOGRAPHICAL_DISTRIBUTION, OCEAN_ZONE } from "../constants/enums";
+import { BEHAVIOR, BIOLUMINESCENT, CONSERVATION_STATUS, DEFAULT_TAGS, DORSAL_FIN_SPINES, FLATTENED_BODY, getEnumCategory, NUM_GILLS, REPRODUCTIVE_STRATEGY, SPECIES_TYPE, TEMPERATURE_REGULATION, FEEDING_BEHAVIOR, GROUP_BEHAVIOR, NUM_DORSAL_FINS, ANAL_FIN, SPIRACLES, NICTITATING_MEMBRANE, CAUDAL_FIN_SHAPE, MOUTH_IN_FRONT_OF_EYES, PROXIMAL_DORSAL_FINS, HABITAT, WATER_COLUMN, PHYSICAL_CHARACTERISTIC, GEOGRAPHICAL_DISTRIBUTION, OCEAN_ZONE, DEPTH_ZONE } from "../constants/enums";
 import { getIUCNGraphic, getIUCNDescription } from "../utils/iucn-graphics";
 import { DEFAULT_SOLID_PATTERN, DEFAULT_STROKE_OPACITY, DEFAULT_STROKE_WIDTH, HIGHLIGHTED_STROKE_WIDTH } from "../constants/style";
 import { DEFAULT_NODE_COLOR, DEFAULT_PATH_COLOR } from "../constants/colors";
@@ -243,6 +243,7 @@ export class SharkSpecies {
             const category = getEnumCategory(tag);
             if (category) existingCategories.add(category);
         });
+        this.addDepthZoneTag();
         const defaultTags = this.speciesType === SPECIES_TYPE.RAYS ? DEFAULT_TAGS.rays : (this.speciesType === SPECIES_TYPE.SHARKS ? DEFAULT_TAGS.sharks : DEFAULT_TAGS.chimaeras);
         const tagsToAdd = defaultTags.filter(defaultTag => {
             const category = getEnumCategory(defaultTag);
@@ -250,6 +251,21 @@ export class SharkSpecies {
         });
 
         this.tags = [...this.tags, ...tagsToAdd];
+    }
+
+    addDepthZoneTag(): void {
+        const [_minDepth, maxDepth] = this.depthRange?.split('-').map(d => parseInt(d.trim())) || [0, 0];
+        if (maxDepth <= 200)
+            this.tags.push(DEPTH_ZONE.SHALLOW_WATER);
+        else if (maxDepth <= 1000) {
+            this.tags.push(DEPTH_ZONE.MID_WATER);
+        } else if (maxDepth <= 4000) {
+            this.tags.push(DEPTH_ZONE.DEEP_WATER);
+        } else if (maxDepth <= 6000) {
+            this.tags.push(DEPTH_ZONE.ABYSSAL);
+        } else {
+            this.tags.push(DEPTH_ZONE.HADAL);
+        }
     }
 
     /*----------------------------------------|
