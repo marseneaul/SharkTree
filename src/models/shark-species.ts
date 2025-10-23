@@ -17,6 +17,7 @@ export class SharkSpecies {
     binomialName: string|undefined
 
     imageUrl?: string
+    imageUrls?: string[]
 
     domain:	string
     kingdom: string
@@ -220,6 +221,7 @@ export class SharkSpecies {
         this.binomialName = this.config.binomialName;
 
         if (this.config.imageUrl) this.imageUrl = this.config.imageUrl;
+        if (this.config.imageUrls) this.imageUrls = this.config.imageUrls;
         if (this.config.depthRange) this.depthRange = this.config.depthRange;
 
         this.domain = this.config.domain;

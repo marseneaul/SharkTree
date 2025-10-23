@@ -815,6 +815,37 @@ export class SharkTreeComponent extends HTMLElement {
                 line-height: 1.4;
             }
             
+            /* Multiple images container */
+            #shark-image-container .images-container {
+                display: flex;
+                flex-direction: column;
+                gap: var(--space-3, 0.75rem);
+                width: 100%;
+            }
+            
+            /* Stacked images styling */
+            #shark-image-container .image-wrapper.stacked-image {
+                position: relative;
+                margin-bottom: var(--space-2, 0.5rem);
+            }
+            
+            #shark-image-container .image-wrapper.stacked-image:not(:last-child) {
+                margin-bottom: var(--space-3, 0.75rem);
+            }
+            
+            #shark-image-container .image-wrapper.stacked-image img {
+                max-height: 200px;
+                width: 100%;
+                object-fit: cover;
+                border-radius: var(--radius-md, 0.375rem);
+                box-shadow: var(--shadow-sm, 0 1px 2px 0 rgba(0, 0, 0, 0.05));
+            }
+            
+            #shark-image-container .image-wrapper.stacked-image img:hover {
+                transform: scale(1.01);
+                box-shadow: var(--shadow-md, 0 4px 6px -1px rgba(0, 0, 0, 0.1));
+            }
+            
             .image-loading {
                 text-align: center;
                 color: var(--color-text-secondary, #6B7280);
@@ -1417,7 +1448,7 @@ export class SharkTreeComponent extends HTMLElement {
                 imageContainer.innerHTML = "";
             }
             
-            if (selectedShark.imageUrl) {
+            if (selectedShark.imageUrl || (selectedShark.imageUrls && selectedShark.imageUrls.length > 0)) {
                 this.addSharkImage(selectedShark);
             }
         }
@@ -1434,54 +1465,73 @@ export class SharkTreeComponent extends HTMLElement {
             return;
         }
         
-        const imageWrapper = document.createElement("div");
-        imageWrapper.className = "image-wrapper";
+        // Determine which images to display
+        const imagesToDisplay = [];
+        if (selectedShark.imageUrls && selectedShark.imageUrls.length > 0) {
+            imagesToDisplay.push(...selectedShark.imageUrls);
+        } else if (selectedShark.imageUrl) {
+            imagesToDisplay.push(selectedShark.imageUrl);
+        }
         
-        // Create loading state
-        const loadingDiv = document.createElement("div");
-        loadingDiv.className = "image-loading";
-        loadingDiv.textContent = "Loading image...";
-        imageWrapper.appendChild(loadingDiv);
+        if (imagesToDisplay.length === 0) {
+            return;
+        }
         
-        // Create image element
-        const sharkImg = document.createElement("img");
-        sharkImg.style.display = "none";
-        sharkImg.alt = `${selectedShark.commonName} image`;
+        // Create main image wrapper
+        const mainImageWrapper = document.createElement("div");
+        mainImageWrapper.className = "images-container";
         
-        // Use the direct mapped URL
-        const imageUrl = selectedShark.imageUrl;
-        
-        // Set up image loading with proper event handling
-        sharkImg.onload = () => {
-            loadingDiv.remove();
-            sharkImg.style.display = "block";
-        };
-        
-        sharkImg.onerror = (error) => {
-            console.log("Image failed to load:", sharkImg.src, error);
-            loadingDiv.textContent = "Image not available";
-            loadingDiv.className = "image-error";
-        };
-        
-        // Set the image source
-        sharkImg.src = imageUrl;
-        
-        // Add click handler for modal
-        sharkImg.addEventListener("click", (event) => {
-            event.stopPropagation();
-            this.showImageModal(sharkImg.src, selectedShark.commonName);
-        });
-        
-        // Create caption
+        // Create caption (shared for all images)
         const caption = document.createElement("p");
         caption.className = "image-caption";
         caption.innerHTML = `${selectedShark.commonName}<br>(${selectedShark.binomialName})`;
         
-        // Image source is set in tryNextUrl() function
+        // Create individual image wrappers
+        imagesToDisplay.forEach((imageUrl, index) => {
+            const imageWrapper = document.createElement("div");
+            imageWrapper.className = "image-wrapper";
+            if (imagesToDisplay.length > 1) {
+                imageWrapper.classList.add("stacked-image");
+            }
+            
+            // Create loading state
+            const loadingDiv = document.createElement("div");
+            loadingDiv.className = "image-loading";
+            loadingDiv.textContent = "Loading image...";
+            imageWrapper.appendChild(loadingDiv);
+            
+            // Create image element
+            const sharkImg = document.createElement("img");
+            sharkImg.style.display = "none";
+            sharkImg.alt = `${selectedShark.commonName} image ${index + 1}`;
+            
+            // Set up image loading with proper event handling
+            sharkImg.onload = () => {
+                loadingDiv.remove();
+                sharkImg.style.display = "block";
+            };
+            
+            sharkImg.onerror = (error) => {
+                console.log("Image failed to load:", sharkImg.src, error);
+                loadingDiv.textContent = "Image not available";
+                loadingDiv.className = "image-error";
+            };
+            
+            // Set the image source
+            sharkImg.src = imageUrl;
+            
+            // Add click handler for modal
+            sharkImg.addEventListener("click", (event) => {
+                event.stopPropagation();
+                this.showImageModal(sharkImg.src, selectedShark.commonName);
+            });
+            
+            imageWrapper.appendChild(sharkImg);
+            mainImageWrapper.appendChild(imageWrapper);
+        });
         
-        imageWrapper.appendChild(sharkImg);
-        imageWrapper.appendChild(caption);
-        imageContainer.appendChild(imageWrapper);
+        mainImageWrapper.appendChild(caption);
+        imageContainer.appendChild(mainImageWrapper);
     }
     
     showImageModal(imageUrl, speciesName) {
@@ -1652,7 +1702,7 @@ export class SharkTreeComponent extends HTMLElement {
                 imageContainer.innerHTML = "";
             }
             
-            if (shark.imageUrl) {
+            if (shark.imageUrl || (shark.imageUrls && shark.imageUrls.length > 0)) {
                 this.addSharkImage(shark);
             }
         }

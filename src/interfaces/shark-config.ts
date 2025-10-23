@@ -8,6 +8,7 @@ export interface SharkConfig {
     binomialName: string
 
     imageUrl?: string
+    imageUrls?: string[]
 
     domain:	string
     kingdom: string
