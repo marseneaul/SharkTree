@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import sinobatisBulbicaudaImg from "./../../../../images/rays/rajiformes/sinobatis-bulbicauda.png";
 
 export const sinobatisBulbicauda = {
     commonName: "Western Australian Legskate",
     binomialName: "Sinobatis bulbicauda",
+
+    imageUrl: sinobatisBulbicaudaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

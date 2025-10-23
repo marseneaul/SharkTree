@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, FLATTENED_BODY, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import rhynchobatusPalpebratusImg from "./../../../../images/rays/rhinopristiformes/rhynchobatus-palpebratus.png";
 
 export const rhynchobatusPalpebratus = {
     commonName: "Eyebrow Wedgefish",
     binomialName: "Rhynchobatus palpebratus",
+
+    imageUrl: rhynchobatusPalpebratusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

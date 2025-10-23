@@ -1,9 +1,12 @@
 import { BEHAVIOR, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import pristisPristisImg from "./../../../../images/rays/rhinopristiformes/pristis-pristis.png";
 
 export const pristisPristis = {
     commonName: "Largetooth Sawfish",
     alternativeNames: ["Common Sawfish", "Wide Sawfish", "Freshwater Sawfish", "River Sawfish", "Leichhardt's Sawfish", "Northern Sawfish"],
     binomialName: "Pristis pristis",
+
+    imageUrl: pristisPristisImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

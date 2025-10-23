@@ -1,10 +1,13 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import glaucostegusTypusImg from "./../../../../images/rays/rhinopristiformes/glaucostegus-typus.png";
 
 export const glaucostegusTypus = {
     commonName: "Common Shovelnose Ray",
     alternativeNames: ["Giant Shovelnose Ray", "Giant Guitarfish"],
     binomialName: "Glaucostegus typus",
 
+    imageUrl: glaucostegusTypusImg,
+    
     domain:	"Eukaryota",
     kingdom: "Animalia",
     phylum:	"Chordata",

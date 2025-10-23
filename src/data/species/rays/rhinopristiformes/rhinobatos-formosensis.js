@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import rhinobatosFormosensisImg from "./../../../../images/rays/rhinopristiformes/rhinobatos-formosensis.png";
 
 export const rhinobatosFormosensis = {
     commonName: "Taiwan Guitarfish",
     binomialName: "Rhinobatos formosensis",
+
+    imageUrl: rhinobatosFormosensisImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

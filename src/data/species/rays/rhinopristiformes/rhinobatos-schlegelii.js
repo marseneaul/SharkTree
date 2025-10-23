@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import rhinobatosSchlegeliiImg from "./../../../../images/rays/rhinopristiformes/rhinobatos-schlegelii.png";
 
 export const rhinobatosSchlegelii = {
     commonName: "Brown Guitarfish",
     binomialName: "Rhinobatos schlegelii",
+
+    imageUrl: rhinobatosSchlegeliiImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

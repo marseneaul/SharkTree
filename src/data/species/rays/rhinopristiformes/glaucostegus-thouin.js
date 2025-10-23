@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import glaucostegusThouinImg from "./../../../../images/rays/rhinopristiformes/glaucostegus-thouin.png";
 
 export const glaucostegusThouin = {
     commonName: "Clubnose Guitarfish",
     binomialName: "Glaucostegus thouin",
+
+    imageUrl: glaucostegusThouinImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import pristisClavataImg from "./../../../../images/rays/rhinopristiformes/pristis-clavata.png";
 
 export const pristisClavata = {
     commonName: "Dwarf Sawfish",
     alternativeNames: ["Queensland Sawfish"],
     binomialName: "Pristis clavata",
+
+    imageUrl: pristisClavataImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

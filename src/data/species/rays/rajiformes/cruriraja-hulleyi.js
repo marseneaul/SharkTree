@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import crurirajaHulleyiImg from "./../../../../images/rays/rajiformes/cruriraja-hulleyi.png";
 
 export const crurirajaHulleyi = {
     commonName: "Cuban Leg Skate",
     binomialName: "Cruriraja hulleyi",
+
+    imageUrl: crurirajaHulleyiImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

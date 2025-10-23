@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import zanobatusSchoenleiniiImg from "./../../../../images/rays/rhinopristiformes/zanobatus-schoenleinii.png";
 
 export const zanobatusSchoenleinii = {
     commonName: "Striped Panray",
     binomialName: "Zanobatus schoenleinii",
+
+    imageUrl: zanobatusSchoenleiniiImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

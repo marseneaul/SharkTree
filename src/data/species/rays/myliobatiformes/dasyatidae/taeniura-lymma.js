@@ -1,8 +1,11 @@
 import { BIOLUMINESCENT, CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import taeniuraLymmaImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/taeniura-lymma.png";
 
 export const taeniuraLymma = {
     commonName: "Bluespotted Ribbontail Ray",
     binomialName: "Taeniura lymma",
+
+    imageUrl: taeniuraLymmaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

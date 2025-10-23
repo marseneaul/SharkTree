@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import anoxypristisCuspidataImg from "./../../../../images/rays/rhinopristiformes/anoxypristis-cuspidata.png";
 
 export const anoxypristisCuspidata = {
     commonName: "Narrow Sawfish",
     alternativeNames: ["Pointed Sawfish", "Knifetooth Sawfish"],
     binomialName: "Anoxypristis cuspidata",
+
+    imageUrl: anoxypristisCuspidataImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

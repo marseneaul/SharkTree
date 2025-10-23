@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import rhinobatosCemiculusImg from "./../../../../images/rays/rhinopristiformes/rhinobatos-cemiculus.png";
 
 export const rhinobatosCemiculus = {
     commonName: "Blackchin Guitarfish",
     binomialName: "Rhinobatos cemiculus",
+
+    imageUrl: rhinobatosCemiculusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

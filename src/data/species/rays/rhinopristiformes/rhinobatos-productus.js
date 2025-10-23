@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import rhinobatosProductusImg from "./../../../../images/rays/rhinopristiformes/rhinobatos-productus.png";
 
 export const rhinobatosProductus = {
     commonName: "Shovelnose Guitarfish",
     binomialName: "Rhinobatos productus",
+
+    imageUrl: rhinobatosProductusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

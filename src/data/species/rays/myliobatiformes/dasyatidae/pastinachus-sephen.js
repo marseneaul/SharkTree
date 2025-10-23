@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
+import pastinachusSephenImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/pastinachus-sephen.png";
 
 export const pastinachusSephen = {
     commonName: "Cowtail Stingray",
     binomialName: "Pastinachus sephen",
+
+    imageUrl: pastinachusSephenImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
