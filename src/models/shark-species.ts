@@ -254,16 +254,22 @@ export class SharkSpecies {
     }
 
     addDepthZoneTag(): void {
-        const [_minDepth, maxDepth] = this.depthRange?.split('-').map(d => parseInt(d.trim())) || [0, 0];
-        if (maxDepth <= 200)
+        const [minDepth, maxDepth] = this.depthRange?.split('-').map(d => parseInt(d.trim())) || [0, 0];
+        
+        // Add tags for all depth zones that the species overlaps with
+        if (minDepth <= 200) {
             this.tags.push(DEPTH_ZONE.SHALLOW_WATER);
-        else if (maxDepth <= 1000) {
+        }
+        if (minDepth <= 1000 && maxDepth >= 200) {
             this.tags.push(DEPTH_ZONE.MID_WATER);
-        } else if (maxDepth <= 4000) {
+        }
+        if (minDepth <= 4000 && maxDepth >= 1000) {
             this.tags.push(DEPTH_ZONE.DEEP_WATER);
-        } else if (maxDepth <= 6000) {
+        }
+        if (minDepth <= 6000 && maxDepth >= 4000) {
             this.tags.push(DEPTH_ZONE.ABYSSAL);
-        } else {
+        }
+        if (maxDepth >= 6000) {
             this.tags.push(DEPTH_ZONE.HADAL);
         }
     }
