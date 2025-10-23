@@ -1,11 +1,12 @@
 import { BEHAVIOR, CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
 import carcharhinusLimbatusImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/carcharhinus-limbatus.png";
+import photographyImg from "./../../../../../images/photography/carcharhinus-limbatus.jpg";
 
 export const carcharhinusLimbatus = {
     commonName: "Blacktip Shark",
     binomialName: "Carcharhinus limbatus",
 
-    imageUrl: carcharhinusLimbatusImg,
+    imageUrls: [carcharhinusLimbatusImg, photographyImg],
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
