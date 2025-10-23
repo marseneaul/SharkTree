@@ -202,6 +202,28 @@ export class SharkTree {
         g.appendChild(circle);
     }
 
+    animateRotation(g: SVGGElement, startRotation: number, endRotation: number, centerX: number, centerY: number): void {
+        const duration = 500; // Animation duration in milliseconds
+        const startTime = performance.now();
+        
+        const animate = (currentTime: number) => {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            
+            // Use easing function for smooth animation
+            const easeProgress = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+            
+            const currentRotation = startRotation + (endRotation - startRotation) * easeProgress;
+            g.setAttribute("transform", `rotate(${currentRotation}, ${centerX}, ${centerY})`);
+            
+            if (progress < 1) {
+                requestAnimationFrame(animate);
+            }
+        };
+        
+        requestAnimationFrame(animate);
+    }
+
     addInteractionListeners(svg: SVGElement, g: SVGGElement, sharkSpecies: SharkSpecies[]): void {
         let viewBox = { x: 0, y: 0, width: this.svgSize, height: this.svgSize };
         let isDragging = false;
@@ -225,10 +247,30 @@ export class SharkTree {
         sharkSpecies.forEach(shark => {
             const node = shark.getNode();
             node.addEventListener("click", () => {
+                const previousShark = sharkSpecies[this.currentSharkIndex];
+                this.resetHighlightPath(previousShark, true);
+
                 this.updateSelection(shark);
                 window.dispatchEvent(new CustomEvent("select-shark", { 
                     detail: { sharkSpecies: shark } 
                 }));
+                
+                // Calculate rotation needed to bring this species to 0 degrees
+                const numSpecies = sharkSpecies.length;
+                const spacing = 360 / numSpecies;
+                const currentAngle = shark.index * spacing;
+                const targetRotation = -currentAngle;
+                
+                // Animate the rotation smoothly
+                this.animateRotation(g, rotation, targetRotation, this.centerX, this.centerY);
+                rotation = targetRotation;
+                
+                // Update current shark index
+                this.currentSharkIndex = shark.index;
+                const node = shark.getNode();
+                this.highlightPathToShark(shark.binomialName, HIGHLIGHTED_STROKE_WIDTH, DEFAULT_PATH_COLOR, DEFAULT_STROKE_OPACITY, true);
+                g.removeChild(node);
+                g.appendChild(node);
             });
             node.addEventListener("mouseover", (e) => {
                 const tooltip = document.createElement("div");
