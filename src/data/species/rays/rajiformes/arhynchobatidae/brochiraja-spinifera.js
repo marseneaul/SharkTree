@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import brochirajaSpiniferaImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/brochiraja-spinifera.png";
 
 export const brochirajaSpinifera = {
     commonName: "Spiny Deepsea Skate",
     binomialName: "Brochiraja spinifera",
+
+    imageUrl: brochirajaSpiniferaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

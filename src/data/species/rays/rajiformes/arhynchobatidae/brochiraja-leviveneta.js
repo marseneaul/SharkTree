@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import brochirajaLevivenetaImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/brochiraja-leviveneta.png";
 
 export const brochirajaLeviveneta = {
     commonName: "Blue Deepsea Skate",
     binomialName: "Brochiraja leviveneta",
+
+    imageUrl: brochirajaLevivenetaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

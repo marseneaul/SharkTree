@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import pavorajaAlleniImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/pavoraja-alleni.png";
 
 export const pavorajaAlleni = {
     commonName: "Allen's Skate",
     binomialName: "Pavoraja alleni",
+
+    imageUrl: pavorajaAlleniImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import brochirajaAlbilabiataImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/brochiraja-albilabiata.png";
 
 export const brochirajaAlbilabiata = {
     commonName: "Whitelip Skate",
     binomialName: "Brochiraja albilabiata",
+
+    imageUrl: brochirajaAlbilabiataImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

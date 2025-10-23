@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import notorajaAzureaImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/notoraja-azurea.png";
 
 export const notorajaAzurea = {
     commonName: "Blue Skate",
     binomialName: "Notoraja azurea",
+
+    imageUrl: notorajaAzureaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

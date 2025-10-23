@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import insentirajaSubtilispinosaImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/insentiraja-subtilispinosa.png";
 
 export const insentirajaSubtilispinosa = {
     commonName: "Western Looseskin Skate",
     alternativeNames: ["Velvet Skate"],
     binomialName: "Insentiraja subtilispinosa",
+
+    imageUrl: insentirajaSubtilispinosaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

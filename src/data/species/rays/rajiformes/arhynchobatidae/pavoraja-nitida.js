@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import pavorajaNitidaImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/pavoraja-nitida.png";
 
 export const pavorajaNitida = {
     commonName: "Peacock Skate",
     binomialName: "Pavoraja nitida",
+
+    imageUrl: pavorajaNitidaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
