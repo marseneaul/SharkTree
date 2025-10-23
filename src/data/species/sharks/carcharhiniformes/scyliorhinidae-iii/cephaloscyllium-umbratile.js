@@ -1,12 +1,14 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 import cephaloscylliumUmbratileImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-iii/cephaloscyllium-umbratile.png";
+import photographyImg from "./../../../../../images/photography/cephaloscyllium-umbratile.jpg";
+import photographyImg2 from "./../../../../../images/photography/cephaloscyllium-umbratile-2.jpg";
 
 export const cephaloscylliumUmbratile = {
     commonName: "Blotchy Catshark",
     alternativeNames: ["Japanese Swellshark", "Blotchy Swellshark"],
     binomialName: "Cephaloscyllium umbratile",
 
-    imageUrl: cephaloscylliumUmbratileImg,
+    imageUrls: [cephaloscylliumUmbratileImg, photographyImg, photographyImg2],
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

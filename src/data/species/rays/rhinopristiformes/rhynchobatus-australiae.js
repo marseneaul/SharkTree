@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, FLATTENED_BODY, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
+import rhynchobatusAustraliaeImg from "./../../../../images/rays/rhinopristiformes/rhynchobatus-australiae.png";
 
 export const rhynchobatusAustraliae = {
     commonName: "White-Spotted Guitarfish",
     alternativeNames: ["White-Spotted Wedgefish", "Bottlenose Wedgefish"],
     binomialName: "Rhynchobatus australiae",
+
+    imageUrl: rhynchobatusAustraliaeImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

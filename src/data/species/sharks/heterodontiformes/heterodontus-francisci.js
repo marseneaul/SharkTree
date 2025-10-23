@@ -1,12 +1,15 @@
 import { CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 import heterodontusFrancisciImg from "./../../../../images/sharks/heterodontiformes/heterodontus-francisci.png";
+import photographyImg from "./../../../../images/photography/heterodontus-francisci.jpg";
+import photographyImg2 from "./../../../../images/photography/heterodontus-francisci-2.jpg";
+import photographyImg3 from "./../../../../images/photography/heterodontus-francisci-3.jpg";
 
 export const heterodontusFrancisci = {
     commonName: "Horn Shark",
     alternativeNames: ["California Horn Shark"],
     binomialName: "Heterodontus francisci",
 
-    imageUrl: heterodontusFrancisciImg,
+    imageUrls: [heterodontusFrancisciImg, photographyImg, photographyImg2, photographyImg3],
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

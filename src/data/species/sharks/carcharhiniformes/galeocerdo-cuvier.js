@@ -1,11 +1,14 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 import galeocerdoCuvierImg from "./../../../../images/sharks/carcharhiniformes/galeocerdo-cuvier.png";
+import photographyImg from "./../../../../images/photography/galeocerdo-cuvier.jpg";
+import photographyImg2 from "./../../../../images/photography/galeocerdo-cuvier-2.jpg";
+import photographyImg3 from "./../../../../images/photography/galeocerdo-cuvier-3.jpg";
 
 export const galeocerdoCuvier = {
     commonName: "Tiger Shark",
     binomialName: "Galeocerdo cuvier",
 
-    imageUrl: galeocerdoCuvierImg,
+    imageUrls: [galeocerdoCuvierImg, photographyImg, photographyImg2, photographyImg3],
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

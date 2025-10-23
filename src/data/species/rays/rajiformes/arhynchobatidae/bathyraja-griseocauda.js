@@ -1,9 +1,12 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import bathyrajaGriseocaudaImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/bathyraja-griseocauda.png";
 
 export const bathyrajaGriseocauda = {
     commonName: "Graytail Skate",
     alternativeNames: ["Grey Tail Skate"],
     binomialName: "Bathyraja griseocauda",
+
+    imageUrl: bathyrajaGriseocaudaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

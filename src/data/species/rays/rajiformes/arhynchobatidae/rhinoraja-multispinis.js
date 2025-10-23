@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import rhinorajaMultispinisImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/rhinoraja-multispinis.png";
 
 export const rhinorajaMultispinis = {
     commonName: "Multispine Skate",
     binomialName: "Rhinoraja multispinis",
+
+    imageUrl: rhinorajaMultispinisImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

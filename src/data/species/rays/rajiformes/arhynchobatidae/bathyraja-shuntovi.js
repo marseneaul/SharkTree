@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import bathyrajaShuntoviImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/bathyraja-shuntovi.png";
 
 export const bathyrajaShuntovi = {
     commonName: "Longnose Deepsea Skate",
     binomialName: "Bathyraja shuntovi",
+
+    imageUrl: bathyrajaShuntoviImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

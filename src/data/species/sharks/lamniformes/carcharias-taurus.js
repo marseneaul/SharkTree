@@ -1,12 +1,13 @@
 import { CAUDAL_FIN_SHAPE, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 import carchariasTaurusImg from "./../../../../images/sharks/lamniformes/carcharias-taurus.png";
+import photographyImg from "./../../../../images/photography/carcharias-taurus.jpg";
 
 export const carchariasTaurus = {
     commonName: "Sand Tiger Shark",
     alternativeNames: ["Grey Nurse Shark", "Spotted Ragged-Tooth Shark", "Blue-Nurse Sand Tiger"],
     binomialName: "Carcharias taurus",
 
-    imageUrl: carchariasTaurusImg,
+    imageUrls: [carchariasTaurusImg, photographyImg],
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

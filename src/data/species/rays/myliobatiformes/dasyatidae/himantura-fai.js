@@ -1,11 +1,12 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
 import himanturaFaiImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/himantura-fai.png";
+import photographyImg from "./../../../../../images/photography/himantura-fai.jpg";
 
 export const himanturaFai = {
     commonName: "Pink Whipray",
     binomialName: "Himantura fai",
 
-    imageUrl: himanturaFaiImg,
+    imageUrls: [himanturaFaiImg, photographyImg],
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

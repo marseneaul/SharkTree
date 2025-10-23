@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import bathyrajaPallidaImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/bathyraja-pallida.png";
 
 export const bathyrajaPallida = {
     commonName: "Pale Ray",
     binomialName: "Bathyraja pallida",
+
+    imageUrl: bathyrajaPallidaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

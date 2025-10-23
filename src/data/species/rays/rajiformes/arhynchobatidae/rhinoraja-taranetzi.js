@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import rhinorajaTaranetziImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/rhinoraja-taranetzi.png";
 
 export const rhinorajaTaranetzi = {
     commonName: "Mud Skate",
     binomialName: "Rhinoraja taranetzi",
+
+    imageUrl: rhinorajaTaranetziImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

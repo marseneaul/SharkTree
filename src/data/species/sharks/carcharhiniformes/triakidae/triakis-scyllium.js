@@ -1,11 +1,14 @@
 import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 import triakisScylliumImg from "./../../../../../images/sharks/carcharhiniformes/triakidae/triakis-scyllium.png";
+import photographyImg from "./../../../../../images/photography/triakis-scyllium.jpg";
+import photographyImg2 from "./../../../../../images/photography/triakis-scyllium-2.jpg";
+import photographyImg3 from "./../../../../../images/photography/triakis-scyllium-3.jpg";
 
 export const triakisScyllium = {
     commonName: "Banded Houndshark",
     binomialName: "Triakis scyllium",
 
-    imageUrl: triakisScylliumImg,
+    imageUrls: [triakisScylliumImg, photographyImg, photographyImg2, photographyImg3],
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

@@ -747,6 +747,8 @@ export class SharkTreeComponent extends HTMLElement {
                 border-radius: var(--radius-lg, 0.5rem);
                 box-shadow: var(--shadow-sm, 0 1px 2px 0 rgba(0, 0, 0, 0.05));
                 box-sizing: border-box;
+                overflow-y: auto;
+                overflow-x: hidden;
             }
             
             #shark-screen h2 {
@@ -821,6 +823,19 @@ export class SharkTreeComponent extends HTMLElement {
                 flex-direction: column;
                 gap: var(--space-3, 0.75rem);
                 width: 100%;
+                max-height: 100%;
+                overflow-y: auto;
+                overflow-x: hidden;
+            }
+            
+            /* Single image - keep centered */
+            #shark-image-container .images-container.single-image {
+                justify-content: center;
+            }
+            
+            /* Multiple images - start from top */
+            #shark-image-container .images-container.multiple-images {
+                justify-content: flex-start;
             }
             
             /* Stacked images styling */
@@ -844,6 +859,25 @@ export class SharkTreeComponent extends HTMLElement {
             #shark-image-container .image-wrapper.stacked-image img:hover {
                 transform: scale(1.01);
                 box-shadow: var(--shadow-md, 0 4px 6px -1px rgba(0, 0, 0, 0.1));
+            }
+            
+            /* Custom scrollbar for image container */
+            #shark-image-container::-webkit-scrollbar {
+                width: 6px;
+            }
+            
+            #shark-image-container::-webkit-scrollbar-track {
+                background: var(--color-bg-tertiary, #F3F4F6);
+                border-radius: var(--radius-sm, 0.25rem);
+            }
+            
+            #shark-image-container::-webkit-scrollbar-thumb {
+                background: var(--color-border-dark, #9CA3AF);
+                border-radius: var(--radius-sm, 0.25rem);
+            }
+            
+            #shark-image-container::-webkit-scrollbar-thumb:hover {
+                background: var(--color-text-tertiary, #6B7280);
             }
             
             .image-loading {
@@ -1480,6 +1514,13 @@ export class SharkTreeComponent extends HTMLElement {
         // Create main image wrapper
         const mainImageWrapper = document.createElement("div");
         mainImageWrapper.className = "images-container";
+        
+        // Add class based on number of images for styling
+        if (imagesToDisplay.length === 1) {
+            mainImageWrapper.classList.add("single-image");
+        } else {
+            mainImageWrapper.classList.add("multiple-images");
+        }
         
         // Create caption (shared for all images)
         const caption = document.createElement("p");

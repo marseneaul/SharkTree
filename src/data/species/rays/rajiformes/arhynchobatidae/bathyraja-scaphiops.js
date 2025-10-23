@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import bathyrajaScaphiopsImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/bathyraja-scaphiops.png";
 
 export const bathyrajaScaphiops = {
     commonName: "Cuphead Skate",
     binomialName: "Bathyraja scaphiops",
+
+    imageUrl: bathyrajaScaphiopsImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

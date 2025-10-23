@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import bathyrajaMaculataImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/bathyraja-maculata.png";
 
 export const bathyrajaMaculata = {
     commonName: "White-Blotched Skate",
     binomialName: "Bathyraja maculata",
+
+    imageUrl: bathyrajaMaculataImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

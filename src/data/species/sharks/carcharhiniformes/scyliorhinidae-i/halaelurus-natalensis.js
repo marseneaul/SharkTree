@@ -1,10 +1,13 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
 import halaelurusNatalensisImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-i/halaelurus-natalensis.png";
+import photographyImg from "./../../../../../images/photography/halaelurus-natalensis.jpg";
+import photographyImg2 from "./../../../../../images/photography/halaelurus-natalensis-2.jpg";
+
 export const halaelurusNatalensis = {
     commonName: "Tiger Catshark",
     binomialName: "Halaelurus natalensis",
 
-    imageUrl: halaelurusNatalensisImg,
+    imageUrls: [halaelurusNatalensisImg, photographyImg, photographyImg2],
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
