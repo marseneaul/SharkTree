@@ -1,12 +1,13 @@
 import { CONSERVATION_STATUS, ELECTRIC_ORGAN, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 import torpedoSinuspersiciImg from "./../../../../images/rays/torpediniformes/torpedo-sinuspersici.png";
+import photographyImg from "./../../../../images/photography/torpedo-sinuspersici.jpg";
 
 export const torpedoSinuspersici = {
     commonName: "Gulf Torpedo",
     alternativeNames: ["Variable Electric Ray"],
     binomialName: "Torpedo sinuspersici",
 
-    imageUrl: torpedoSinuspersiciImg,
+    imageUrls: [torpedoSinuspersiciImg, photographyImg],
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

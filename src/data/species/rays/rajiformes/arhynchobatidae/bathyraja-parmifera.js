@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import bathyrajaParmiferaImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/bathyraja-parmifera.png";
 
 export const bathyrajaParmifera = {
     commonName: "Alaskan Skate",
     binomialName: "Bathyraja parmifera",
+
+    imageUrl: bathyrajaParmiferaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

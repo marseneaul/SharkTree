@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import bathyrajaMariposaImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/bathyraja-mariposa.png";
 
 export const bathyrajaMariposa = {
     commonName: "Butterfly Skate",
     binomialName: "Bathyraja mariposa",
+
+    imageUrl: bathyrajaMariposaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
