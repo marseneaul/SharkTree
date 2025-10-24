@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import atlantorajaPlatanaImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/atlantoraja-platana.png";
 
 export const atlantorajaPlatana = {
     commonName: "La Plata Skate",
     binomialName: "Atlantoraja platana",
+
+    imageUrl: atlantorajaPlatanaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

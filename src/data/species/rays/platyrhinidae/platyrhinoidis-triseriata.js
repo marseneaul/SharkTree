@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, VENOMOUS_SPINE } from "../../../../constants/enums";
+import platyrhinoidisTriseriataImg from "./../../../../images/rays/platyrhinidae/platyrhinoidis-triseriata.png";
 
-export const platyrhinoidesTriseriata = {
+export const platyrhinoidisTriseriata = {
     commonName: "Thornback Guitarfish",
     binomialName: "Platyrhinoidis triseriata",
+
+    imageUrl: platyrhinoidisTriseriataImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

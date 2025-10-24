@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import riorajaAgassiziiImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/rioraja-agassizii.png";
 
 export const riorajaAgassizii = {
     commonName: "Rio Skate",
     binomialName: "Rioraja agassizii",
+
+    imageUrl: riorajaAgassiziiImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

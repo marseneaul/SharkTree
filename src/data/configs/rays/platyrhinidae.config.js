@@ -1,7 +1,7 @@
-import { platyrhinoidesTriseriata } from "../../species/rays/platyrhinidae/platyrhinoides-triseriata";
+import { platyrhinoidisTriseriata } from "../../species/rays/platyrhinidae/platyrhinoidis-triseriata";
 
 export const platyrhinidaeConfig = {
     children: [
-        platyrhinoidesTriseriata
+        platyrhinoidisTriseriata
     ]
 }

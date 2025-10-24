@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import arhynchobatisAsperrimusImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/arhynchobatis-asperrimus.png";
 
 export const arhynchobatisAsperrimus = {
     commonName: "Longtail Skate",
     binomialName: "Arhynchobatis asperrimus",
+
+    imageUrl: arhynchobatisAsperrimusImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

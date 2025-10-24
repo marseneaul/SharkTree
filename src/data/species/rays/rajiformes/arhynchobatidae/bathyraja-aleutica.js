@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import bathyrajaAleuticaImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/bathyraja-aleutica.png";
 
 export const bathyrajaAleutica = {
     commonName: "Aleutian Skate",
     binomialName: "Bathyraja aleutica",
+
+    imageUrl: bathyrajaAleuticaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

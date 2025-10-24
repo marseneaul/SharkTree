@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import sympterygiaAcutaImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/sympterygia-acuta.png";
 
 export const sympterygiaAcuta = {
     commonName: "Bignose Fanskate",
     binomialName: "Sympterygia acuta",
+
+    imageUrl: sympterygiaAcutaImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

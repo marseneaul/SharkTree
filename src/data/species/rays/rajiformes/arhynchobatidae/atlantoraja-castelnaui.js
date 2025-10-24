@@ -1,8 +1,11 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
+import atlantorajaCastelnauiImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/atlantoraja-castelnaui.png";
 
 export const atlantorajaCastelnaui = {
     commonName: "Spotback Skate",
     binomialName: "Atlantoraja castelnaui",
+
+    imageUrl: atlantorajaCastelnauiImg,
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
