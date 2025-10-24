@@ -1,11 +1,12 @@
 import { CONSERVATION_STATUS, ELECTRIC_ORGAN, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
 import torpedoMarmorataImg from "./../../../../images/rays/torpediniformes/torpedo-marmorata.png";
+import photographyImg from "./../../../../images/photography/torpedo-marmorata.jpg";
 
 export const torpedoMarmorata = {
     commonName: "Marbled Electric Ray",
     binomialName: "Torpedo marmorata",
 
-    imageUrl: torpedoMarmorataImg,
+    imageUrls: [torpedoMarmorataImg, photographyImg],
 
     domain:	"Eukaryota",
     kingdom: "Animalia",

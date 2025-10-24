@@ -1,11 +1,12 @@
 import { BIOLUMINESCENT, CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
 import urobatisJamaicensisImg from "./../../../../../images/rays/myliobatiformes/urotrygonidae/urobatis-jamaicensis.png";
+import photographyImg from "./../../../../../images/photography/urobatis-jamaicensis.jpg";
 
 export const urobatisJamaicensis = {
     commonName: "Yellow Stingray",
     binomialName: "Urobatis jamaicensis",
 
-    imageUrl: urobatisJamaicensisImg,
+    imageUrls: [urobatisJamaicensisImg, photographyImg],
 
     domain:	"Eukaryota",
     kingdom: "Animalia",
