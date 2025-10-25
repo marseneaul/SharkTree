@@ -1,77 +1,59 @@
 import { ANAL_FIN, BEHAVIOR, BIOLUMINESCENT, CONSERVATION_STATUS, DEPTH_ZONE, DORSAL_FIN_SPINES, ELECTRIC_ORGAN, FLATTENED_BODY, MOUTH_IN_FRONT_OF_EYES, NICTITATING_MEMBRANE, NUM_DORSAL_FINS, NUM_GILLS, OPERCULUM, PROXIMAL_DORSAL_FINS, SNOUT_SHAPE, SPECIES_TYPE, SPIRACLES, TAIL_SPINES, VENOMOUS_SPINE } from "./constants/enums";
 import { BreadcrumbComponent } from "./components/breadcrumb";
-import { callorhinchidaeConfig } from "./data/configs/chimaeras/callorhinchidae.config";
-import { chimaeiridaeConfig } from "./data/configs/chimaeras/chimaeiridae.config";
-import { holocephaliConfig } from "./data/configs/chimaeras/holocephali.config";
-import { rhinochimaeridaeConfig } from "./data/configs/chimaeras/rhinochimaeridae.config";
-import { arhynchobatidaeConfig } from "./data/configs/rays/arhynchobatidae.config";
-import { batomorphiConfig } from "./data/configs/rays/batomorphi.config";
-import { dasyatidaeConfig } from "./data/configs/rays/dasyatidae.config";
-import { gymnuridaeConfig } from "./data/configs/rays/gymnuridae.config";
-import { mobulidaeConfig } from "./data/configs/rays/mobulidae.config";
-import { myliobatidaeConfig } from "./data/configs/rays/myliobatidae.config";
-import { myliobatiformesConfig } from "./data/configs/rays/myliobatiformes.config";
-import { rajidaeConfig } from "./data/configs/rays/rajidae.config";
-import { rajiformesConfig } from "./data/configs/rays/rajiformes.config";
-import { rhinopristiformesConfig } from "./data/configs/rays/rhinopristiformes.config";
-import { torpediniformesConfig } from "./data/configs/rays/torpediniformes.config";
-import { urolophusConfig } from "./data/configs/rays/urolophus.config";
-import { urotrygonidaeConfig } from "./data/configs/rays/urotrygonidea.config";
-import {
-    lamniformesConfig, heterodontiformesConfig, lamnidaeConfig, carcharhinidaeConfig,
-    squatiniformesConfig, hexanchiformesConfig, pristiophoriformesConfig, orectolobiformesConfig,
-    scyliorhinidaeIConfig, scyliorhinidaeIIConfig, scyliorhinidaeIIIConfig, triakidaeConfig,
-    squalidaeConfig, squaliformesConfig, dalatiidaeConfig, etmopteridaeConfig, carcharhiniformesConfig,
-    galeomorphiiConfig, squalomorphiiConfig, selachiiConfig
-} from "./data/configs/sharks";
+import { speciesDataLoader } from "./utils/data-loader";
 import treeOfSharksImage from "./images/tree-of-sharks.png";
 import trilobiteImage from "./images/trilobite.png";
 
-const speciesConfigs = {
-    [SPECIES_TYPE.SHARKS]: {
-        selachii: selachiiConfig,
-        galeomorphii: galeomorphiiConfig,
-        squalomorphii: squalomorphiiConfig,
-        squaliformes: squaliformesConfig,
-        carcharhiniformes: carcharhiniformesConfig,
-        orectolobiformes: orectolobiformesConfig,
-        lamniformes: lamniformesConfig,
-        hexanchiformes: hexanchiformesConfig,
-        squatiniformes: squatiniformesConfig,
-        heterodontiformes: heterodontiformesConfig,
-        pristiophoriformes: pristiophoriformesConfig,
-        carcharhinidae: carcharhinidaeConfig,
-        lamnidae: lamnidaeConfig,
-        scyliorhinidaeI: scyliorhinidaeIConfig,
-        scyliorhinidaeII: scyliorhinidaeIIConfig,
-        scyliorhinidaeIII: scyliorhinidaeIIIConfig,
-        dalatiidae: dalatiidaeConfig,
-        etmopteridae: etmopteridaeConfig,
-        squalidae: squalidaeConfig,
-        triakidae: triakidaeConfig
-    },
-    [SPECIES_TYPE.RAYS]: {
-        batomorphi: batomorphiConfig,
-        rajiformes: rajiformesConfig,
-        rhinopristiformes: rhinopristiformesConfig,
-        torpediniformes: torpediniformesConfig,
-        myliobatiformes: myliobatiformesConfig,
-        arhynchobatidae: arhynchobatidaeConfig,
-        dasyatidae: dasyatidaeConfig,
-        gymnuridae: gymnuridaeConfig,
-        mobulidae: mobulidaeConfig,
-        myliobatidae: myliobatidaeConfig,
-        rajidae: rajidaeConfig,
-        urotrygonidae: urotrygonidaeConfig,
-        urolophus: urolophusConfig
-    },
-    [SPECIES_TYPE.CHIMAERAS]: {
-        holocephali: holocephaliConfig,
-        chimaeridae: chimaeiridaeConfig,
-        callorhinchidae: callorhinchidaeConfig,
-        rhinochimaeridae: rhinochimaeridaeConfig,
+// Dynamic species configuration loader
+class SpeciesConfigManager {
+    constructor() {
+        this.speciesDataLoader = speciesDataLoader;
+        this.loadedConfigs = new Map();
     }
-};
+
+    async getSpeciesConfig(speciesType, configKey) {
+        const cacheKey = `${speciesType}-${configKey}`;
+        
+        // Return cached config if available
+        if (this.loadedConfigs.has(cacheKey)) {
+            return this.loadedConfigs.get(cacheKey);
+        }
+
+        // Load config dynamically
+        try {
+            const config = await this.speciesDataLoader.loadSpeciesConfig(speciesType, configKey);
+            this.loadedConfigs.set(cacheKey, config);
+            return config;
+        } catch (error) {
+            console.error(`Failed to load config for ${speciesType}/${configKey}:`, error);
+            throw error;
+        }
+    }
+
+    async preloadCriticalConfigs() {
+        // Preload the most commonly used configurations
+        const criticalConfigs = {
+            [SPECIES_TYPE.SHARKS]: ['selachii', 'galeomorphii', 'squalomorphii'],
+            [SPECIES_TYPE.RAYS]: ['batomorphi', 'rajiformes'],
+            [SPECIES_TYPE.CHIMAERAS]: ['holocephali']
+        };
+
+        const preloadPromises = [];
+        for (const [speciesType, configKeys] of Object.entries(criticalConfigs)) {
+            preloadPromises.push(
+                this.speciesDataLoader.preloadConfigs(speciesType, configKeys)
+            );
+        }
+
+        await Promise.allSettled(preloadPromises);
+    }
+
+    getCacheStats() {
+        return this.speciesDataLoader.getCacheStats();
+    }
+}
+
+const speciesConfigManager = new SpeciesConfigManager();
 
 import { SharkTree } from "./models/shark-tree";
 import { StringUtils } from "./utils/string-utils";
@@ -89,16 +71,21 @@ export class SharkTreeComponent extends HTMLElement {
         this.currentSpeciesType = SPECIES_TYPE.SHARKS;
         this.currentConfig = null;
         this.currentSpecies = null;
+        this.speciesDataLoader = speciesDataLoader;
     }
 
     /*----------------------------------------|
     |                LIFECYCLE                |
     |----------------------------------------*/
 
-    connectedCallback() {
+    async connectedCallback() {
         this.render();
         this.initializeBreadcrumb();
-        this.initializeSharkTree();
+        
+        // Preload critical configurations
+        await speciesConfigManager.preloadCriticalConfigs();
+        
+        await this.initializeSharkTree();
         this.setupDropdown();
         this.setupEventListeners();
         this.setupResizeObserver();
@@ -118,12 +105,7 @@ export class SharkTreeComponent extends HTMLElement {
         this.shadow.appendChild(this.template.content.cloneNode(true));
     }
 
-    initializeSharkTree(speciesType = SPECIES_TYPE.SHARKS, configKey = "selachii") {
-        // Defensive check for speciesConfigs
-        if (!speciesConfigs) {
-            console.error("speciesConfigs is undefined");
-            return;
-        }
+    async initializeSharkTree(speciesType = SPECIES_TYPE.SHARKS, configKey = "selachii") {
     
         // Validate speciesType
         if (!Object.values(SPECIES_TYPE).includes(speciesType)) {
@@ -131,8 +113,9 @@ export class SharkTreeComponent extends HTMLElement {
             speciesType = SPECIES_TYPE.SHARKS; // Fallback
         }
     
-        // Validate configKey
-        if (!speciesConfigs[speciesType] || !speciesConfigs[speciesType][configKey]) {
+        // Validate configKey using available configs
+        const availableConfigs = this.speciesDataLoader.getAvailableConfigs(speciesType);
+        if (!availableConfigs.includes(configKey)) {
             console.error(`Configuration for ${speciesType}/${configKey} not found`);
             return;
         }
@@ -149,7 +132,15 @@ export class SharkTreeComponent extends HTMLElement {
         }
     
         const containerWidth = container.offsetWidth || window.innerWidth * 0.6;
-        this.sharkTree = new SharkTree(speciesConfigs[speciesType][configKey], containerWidth, speciesType);
+        
+        // Load configuration dynamically
+        try {
+            const config = await speciesConfigManager.getSpeciesConfig(speciesType, configKey);
+            this.sharkTree = new SharkTree(config, containerWidth, speciesType);
+        } catch (error) {
+            console.error(`Failed to load configuration for ${speciesType}/${configKey}:`, error);
+            return;
+        }
         const sharkTreeSvg = this.sharkTree.draw();
         this.sharkScreen = this.shadow.querySelector("#shark-screen");
         container.innerHTML = "";
@@ -213,11 +204,11 @@ export class SharkTreeComponent extends HTMLElement {
             };
         };
 
-        const handleResize = debounce(() => {
+        const handleResize = debounce(async () => {
             const currentWidth = container.offsetWidth;
             // Only reinitialize if width changed significantly
             if (this.lastContainerWidth === null || Math.abs(currentWidth - this.lastContainerWidth) > 5) {
-                this.reinitializeSharkTree();
+                await this.reinitializeSharkTree();
                 this.lastContainerWidth = currentWidth;
             }
         }, 200);
@@ -226,12 +217,12 @@ export class SharkTreeComponent extends HTMLElement {
         this.resizeObserver.observe(container);
     }
 
-    reinitializeSharkTree() {
+    async reinitializeSharkTree() {
         const speciesTypeDropdown = this.shadow.querySelector("#species-type-dropdown");
         const configDropdown = this.shadow.querySelector("#shark-config-dropdown");
         const speciesType = speciesTypeDropdown?.value || SPECIES_TYPE.SHARKS;
         const selectedConfig = configDropdown?.value || (speciesType === SPECIES_TYPE.RAYS ? "batomorphi" : (speciesType === SPECIES_TYPE.CHIMAERAS ? "holocephali" : "selachii"));
-        this.initializeSharkTree(speciesType, selectedConfig);
+        await this.initializeSharkTree(speciesType, selectedConfig);
     }
 
     initializeBreadcrumb() {
@@ -1240,11 +1231,12 @@ export class SharkTreeComponent extends HTMLElement {
         const configDropdown = this.shadow.querySelector("#shark-config-dropdown");
         const tagDropdown = this.shadow.querySelector("#tag-dropdown");
     
-        const updateConfigDropdown = (speciesType) => {
-            configDropdown.innerHTML = Object.keys(speciesConfigs[speciesType]).map(configKey =>
+        const updateConfigDropdown = async (speciesType) => {
+            const availableConfigs = this.speciesDataLoader.getAvailableConfigs(speciesType);
+            configDropdown.innerHTML = availableConfigs.map(configKey =>
                 `<option value="${configKey}">${StringUtils.capitalizeFirstLetter(configKey)}</option>`
             ).join("");
-            this.initializeSharkTree(speciesType, configDropdown.value);
+            await this.initializeSharkTree(speciesType, configDropdown.value);
     
             // Toggle species-specific tag options
             const sharkOptions = tagDropdown.querySelectorAll(".shark-only");
@@ -1268,10 +1260,10 @@ export class SharkTreeComponent extends HTMLElement {
             updateConfigDropdown(speciesType);
         });
     
-        configDropdown.addEventListener("change", (event) => {
+        configDropdown.addEventListener("change", async (event) => {
             const speciesType = speciesTypeDropdown.value;
             const selectedConfig = event.target.value;
-            this.initializeSharkTree(speciesType, selectedConfig);
+            await this.initializeSharkTree(speciesType, selectedConfig);
         });
     }
 
