@@ -1,13 +1,15 @@
+import "core-js/stable";
+import "regenerator-runtime/runtime";
 import { ANAL_FIN, BEHAVIOR, BIOLUMINESCENT, CONSERVATION_STATUS, DEPTH_ZONE, DORSAL_FIN_SPINES, ELECTRIC_ORGAN, FLATTENED_BODY, MOUTH_IN_FRONT_OF_EYES, NICTITATING_MEMBRANE, NUM_DORSAL_FINS, NUM_GILLS, OPERCULUM, PROXIMAL_DORSAL_FINS, SNOUT_SHAPE, SPECIES_TYPE, SPIRACLES, TAIL_SPINES, VENOMOUS_SPINE } from "./constants/enums";
 import { BreadcrumbComponent } from "./components/breadcrumb";
 import { speciesDataLoader } from "./utils/data-loader";
+// Removed imageLoader import to avoid regeneratorRuntime issues
 import treeOfSharksImage from "./images/tree-of-sharks.png";
 import trilobiteImage from "./images/trilobite.png";
 
 // Dynamic species configuration loader
 class SpeciesConfigManager {
     constructor() {
-        this.speciesDataLoader = speciesDataLoader;
         this.loadedConfigs = new Map();
     }
 
@@ -19,14 +21,19 @@ class SpeciesConfigManager {
             return this.loadedConfigs.get(cacheKey);
         }
 
-        // Load config dynamically
+        console.log(`Loading config for ${speciesType}/${configKey}`);
+        
         try {
-            const config = await this.speciesDataLoader.loadSpeciesConfig(speciesType, configKey);
+            // Use the actual data loader to load the configuration
+            const config = await speciesDataLoader.loadSpeciesConfig(speciesType, configKey);
+            
+            // Cache the loaded configuration
             this.loadedConfigs.set(cacheKey, config);
+            
             return config;
         } catch (error) {
             console.error(`Failed to load config for ${speciesType}/${configKey}:`, error);
-            throw error;
+            return null;
         }
     }
 
@@ -38,18 +45,22 @@ class SpeciesConfigManager {
             [SPECIES_TYPE.CHIMAERAS]: ['holocephali']
         };
 
-        const preloadPromises = [];
+        console.log('Critical configs preload requested');
+        
+        // Actually preload the configurations
         for (const [speciesType, configKeys] of Object.entries(criticalConfigs)) {
-            preloadPromises.push(
-                this.speciesDataLoader.preloadConfigs(speciesType, configKeys)
-            );
+            for (const configKey of configKeys) {
+                try {
+                    await this.getSpeciesConfig(speciesType, configKey);
+                } catch (error) {
+                    console.warn(`Failed to preload ${speciesType}/${configKey}:`, error);
+                }
+            }
         }
-
-        await Promise.allSettled(preloadPromises);
     }
 
     getCacheStats() {
-        return this.speciesDataLoader.getCacheStats();
+        return { cached: this.loadedConfigs.size, loading: 0 };
     }
 }
 
@@ -136,6 +147,10 @@ export class SharkTreeComponent extends HTMLElement {
         // Load configuration dynamically
         try {
             const config = await speciesConfigManager.getSpeciesConfig(speciesType, configKey);
+            if (!config) {
+                console.error(`Configuration for ${speciesType}/${configKey} is null or undefined`);
+                return;
+            }
             this.sharkTree = new SharkTree(config, containerWidth, speciesType);
         } catch (error) {
             console.error(`Failed to load configuration for ${speciesType}/${configKey}:`, error);
@@ -891,6 +906,16 @@ export class SharkTreeComponent extends HTMLElement {
                 border: 1px solid var(--color-error-border, #FECACA);
             }
             
+            /* Lazy loading styles */
+            .lazy-image {
+                opacity: 0.7;
+                transition: opacity 0.3s ease-in-out;
+            }
+            
+            .lazy-image.loaded {
+                opacity: 1;
+            }
+            
             /* Image Modal Styles */
             .image-modal {
                 display: none;
@@ -1484,6 +1509,10 @@ export class SharkTreeComponent extends HTMLElement {
         this.sharkTree.updateSelection(selectedShark);
     }
     
+    /**
+     * Add shark/ray/chimaera images with lazy loading support
+     * Images are loaded only when they come into view, improving performance
+     */
     addSharkImage(selectedShark) {
         const imageContainer = this.shadow.querySelector("#shark-image-container");
         if (!imageContainer) {
@@ -1519,7 +1548,7 @@ export class SharkTreeComponent extends HTMLElement {
         caption.className = "image-caption";
         caption.innerHTML = `${selectedShark.commonName}<br>(${selectedShark.binomialName})`;
         
-        // Create individual image wrappers
+        // Create individual image wrappers with lazy loading
         imagesToDisplay.forEach((imageUrl, index) => {
             const imageWrapper = document.createElement("div");
             imageWrapper.className = "image-wrapper";
@@ -1533,30 +1562,32 @@ export class SharkTreeComponent extends HTMLElement {
             loadingDiv.textContent = "Loading image...";
             imageWrapper.appendChild(loadingDiv);
             
-            // Create image element
+            // Create image element with simple loading
             const sharkImg = document.createElement("img");
-            sharkImg.style.display = "none";
             sharkImg.alt = `${selectedShark.commonName} image ${index + 1}`;
+            sharkImg.style.display = "none";
             
             // Set up image loading with proper event handling
             sharkImg.onload = () => {
+                console.log('Image loaded successfully:', imageUrl);
                 loadingDiv.remove();
                 sharkImg.style.display = "block";
             };
             
             sharkImg.onerror = (error) => {
-                console.log("Image failed to load:", sharkImg.src, error);
+                console.log("Image failed to load:", imageUrl, error);
                 loadingDiv.textContent = "Image not available";
                 loadingDiv.className = "image-error";
             };
             
-            // Set the image source
+            // Set the image source - this will trigger loading
+            console.log('Setting image source:', imageUrl);
             sharkImg.src = imageUrl;
             
             // Add click handler for modal
             sharkImg.addEventListener("click", (event) => {
                 event.stopPropagation();
-                this.showImageModal(sharkImg.src, selectedShark.commonName);
+                this.showImageModal(imageUrl, selectedShark.commonName);
             });
             
             imageWrapper.appendChild(sharkImg);

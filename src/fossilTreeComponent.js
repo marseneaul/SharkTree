@@ -1,3 +1,5 @@
+import "core-js/stable";
+import "regenerator-runtime/runtime";
 import { CoordinateStore } from "./store";
 import { TimeTrack } from "./tracks/time-track";
 import { RulerTrack } from "./tracks/ruler-track";
