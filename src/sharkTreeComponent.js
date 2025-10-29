@@ -101,8 +101,8 @@ export class SharkTreeComponent extends HTMLElement {
         // Setup lazy loading observer after shadow DOM is ready
         this.setupLazyImageObserver();
         
-        // Preload critical configurations
-        await speciesConfigManager.preloadCriticalConfigs();
+        // Preload critical configurations - disabled to prevent loading all species on startup
+        // await speciesConfigManager.preloadCriticalConfigs();
         
         await this.initializeSharkTree();
         this.setupDropdown();
@@ -1566,9 +1566,8 @@ export class SharkTreeComponent extends HTMLElement {
             return;
         }
         
-        // Clear previous current shark images and pending images
+        // Clear previous current shark images
         this.currentSharkImages.clear();
-        this.pendingImages.clear();
         
         // Determine which images to display
         const imagesToDisplay = [];
@@ -1582,7 +1581,7 @@ export class SharkTreeComponent extends HTMLElement {
             return;
         }
         
-        // Add current shark's images to priority set
+        // Mark these as current shark images for immediate loading
         imagesToDisplay.forEach(url => this.currentSharkImages.add(url));
         
         // Create main image wrapper
@@ -1649,10 +1648,8 @@ export class SharkTreeComponent extends HTMLElement {
         mainImageWrapper.appendChild(caption);
         imageContainer.appendChild(mainImageWrapper);
         
-        // After a short delay, prioritize any pending images from previous sharks
-        setTimeout(() => {
-            this.prioritizePendingImages();
-        }, 100);
+        // Note: Pending images from other sharks will load when they come into view
+        // or after their timeout expires
     }
     
     /**
@@ -1702,27 +1699,6 @@ export class SharkTreeComponent extends HTMLElement {
             console.log('No observer available, loading immediately:', imageUrl);
             this.loadImageImmediately(img, imageUrl, loadingDiv);
         }
-    }
-    
-    /**
-     * Prioritize loading of pending images (for images that were briefly scrolled through)
-     */
-    prioritizePendingImages() {
-        if (this.pendingImages.size === 0) return;
-        
-        console.log(`Prioritizing ${this.pendingImages.size} pending images`);
-        
-        // Find all pending images in the DOM and load them
-        const pendingImages = Array.from(this.pendingImages);
-        pendingImages.forEach(imageUrl => {
-            const img = this.shadow.querySelector(`img[data-src="${imageUrl}"]`);
-            if (img) {
-                const loadingDiv = img.parentElement.querySelector('.image-loading');
-                this.loadImageImmediately(img, imageUrl, loadingDiv);
-                this.pendingImages.delete(imageUrl);
-                this.imageObserver.unobserve(img);
-            }
-        });
     }
     
     showImageModal(imageUrl, speciesName) {
