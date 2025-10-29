@@ -83,6 +83,9 @@ export class SharkTreeComponent extends HTMLElement {
         this.currentConfig = null;
         this.currentSpecies = null;
         this.speciesDataLoader = speciesDataLoader;
+        
+        // Initialize lazy loading observer
+        this.imageObserver = null;
     }
 
     /*----------------------------------------|
@@ -92,6 +95,9 @@ export class SharkTreeComponent extends HTMLElement {
     async connectedCallback() {
         this.render();
         this.initializeBreadcrumb();
+        
+        // Setup lazy loading observer after shadow DOM is ready
+        this.setupLazyImageObserver();
         
         // Preload critical configurations
         await speciesConfigManager.preloadCriticalConfigs();
@@ -107,6 +113,10 @@ export class SharkTreeComponent extends HTMLElement {
         if (this.resizeObserver) {
             this.resizeObserver.disconnect();
             this.resizeObserver = null;
+        }
+        if (this.imageObserver) {
+            this.imageObserver.disconnect();
+            this.imageObserver = null;
         }
         this.sharkTree?.destroy();
     }
@@ -230,6 +240,58 @@ export class SharkTreeComponent extends HTMLElement {
 
         this.resizeObserver = new ResizeObserver(handleResize);
         this.resizeObserver.observe(container);
+    }
+
+    setupLazyImageObserver() {
+        // Check if IntersectionObserver is supported
+        if (typeof IntersectionObserver === 'undefined') {
+            console.warn('IntersectionObserver not supported, images will load immediately');
+            return;
+        }
+
+        this.imageObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    const dataSrc = img.dataset.src;
+                    
+                    if (dataSrc) {
+                        console.log('Lazy loading image:', dataSrc);
+                        
+                        // Load the image
+                        img.src = dataSrc;
+                        img.removeAttribute('data-src');
+                        
+                        // Show image when loaded
+                        img.onload = () => {
+                            console.log('Image loaded successfully:', dataSrc);
+                            img.style.opacity = '1';
+                            const loadingDiv = img.parentElement.querySelector('.image-loading');
+                            if (loadingDiv) {
+                                loadingDiv.remove();
+                            }
+                        };
+                        
+                        // Handle errors
+                        img.onerror = () => {
+                            console.log('Image failed to load:', dataSrc);
+                            const loadingDiv = img.parentElement.querySelector('.image-loading');
+                            if (loadingDiv) {
+                                loadingDiv.textContent = 'Image not available';
+                                loadingDiv.className = 'image-error';
+                            }
+                            img.style.opacity = '0';
+                        };
+                        
+                        // Stop observing this image
+                        this.imageObserver.unobserve(img);
+                    }
+                }
+            });
+        }, {
+            rootMargin: '50px 0px', // Start loading 50px before image enters viewport
+            threshold: 0.1
+        });
     }
 
     async reinitializeSharkTree() {
@@ -1550,6 +1612,8 @@ export class SharkTreeComponent extends HTMLElement {
         
         // Create individual image wrappers with lazy loading
         imagesToDisplay.forEach((imageUrl, index) => {
+            console.log('Creating image wrapper for:', imageUrl);
+            
             const imageWrapper = document.createElement("div");
             imageWrapper.className = "image-wrapper";
             if (imagesToDisplay.length > 1) {
@@ -1562,27 +1626,20 @@ export class SharkTreeComponent extends HTMLElement {
             loadingDiv.textContent = "Loading image...";
             imageWrapper.appendChild(loadingDiv);
             
-            // Create image element with simple loading
+            // Create image element with lazy loading
             const sharkImg = document.createElement("img");
             sharkImg.alt = `${selectedShark.commonName} image ${index + 1}`;
-            sharkImg.style.display = "none";
+            sharkImg.style.display = "block"; // Make visible for IntersectionObserver
+            sharkImg.style.opacity = "0";
+            sharkImg.style.transition = "opacity 0.3s ease-in-out";
+            sharkImg.style.width = "100%";
+            sharkImg.style.height = "auto";
             
-            // Set up image loading with proper event handling
-            sharkImg.onload = () => {
-                console.log('Image loaded successfully:', imageUrl);
-                loadingDiv.remove();
-                sharkImg.style.display = "block";
-            };
+            // Store the image URL in data-src for lazy loading
+            sharkImg.dataset.src = imageUrl;
             
-            sharkImg.onerror = (error) => {
-                console.log("Image failed to load:", imageUrl, error);
-                loadingDiv.textContent = "Image not available";
-                loadingDiv.className = "image-error";
-            };
-            
-            // Set the image source - this will trigger loading
-            console.log('Setting image source:', imageUrl);
-            sharkImg.src = imageUrl;
+            // Use native lazy loading as fallback
+            sharkImg.loading = "lazy";
             
             // Add click handler for modal
             sharkImg.addEventListener("click", (event) => {
@@ -1592,6 +1649,37 @@ export class SharkTreeComponent extends HTMLElement {
             
             imageWrapper.appendChild(sharkImg);
             mainImageWrapper.appendChild(imageWrapper);
+            
+            // Observe the image for lazy loading using IntersectionObserver
+            if (this.imageObserver) {
+                console.log('Observing image for lazy loading:', imageUrl);
+                this.imageObserver.observe(sharkImg);
+                
+                // Fallback: force load after 2 seconds if not triggered
+                setTimeout(() => {
+                    if (sharkImg.dataset.src) {
+                        console.log('Forcing image load after timeout:', imageUrl);
+                        sharkImg.src = sharkImg.dataset.src;
+                        sharkImg.removeAttribute('data-src');
+                        this.imageObserver.unobserve(sharkImg);
+                    }
+                }, 2000);
+            } else {
+                console.log('No observer available, loading immediately:', imageUrl);
+                // Fallback: load immediately if IntersectionObserver is not available
+                sharkImg.src = imageUrl;
+                sharkImg.onload = () => {
+                    console.log('Fallback image loaded:', imageUrl);
+                    loadingDiv.remove();
+                    sharkImg.style.opacity = "1";
+                };
+                sharkImg.onerror = () => {
+                    console.log('Fallback image failed:', imageUrl);
+                    loadingDiv.textContent = "Image not available";
+                    loadingDiv.className = "image-error";
+                    sharkImg.style.opacity = "0";
+                };
+            }
         });
         
         mainImageWrapper.appendChild(caption);
