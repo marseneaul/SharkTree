@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunksharktree=self.webpackChunksharktree||[]).push([[97382],{97382:(a,e,i)=>{i.r(e),i.d(e,{rajaVelezi:()=>r});var s=i(23615),r={commonName:"Velez Ray",binomialName:"Raja velezi",imageUrl:i(49253),domain:"Eukaryota",kingdom:"Animalia",phylum:"Chordata",class:"Chondrichthyes",subclass:"Elasmobranchii",subdivision:"Batomorphi",order:"Rajiformes",family:"Rajidae",genus:"Raja",species:"velezi",tags:[s.__.VU,s.xA.OVIPAROUS],depthRange:"30-300 m"}},49253:(a,e,i)=>{a.exports=i.p+"raja-velezi.png"}}]);
-//# sourceMappingURL=97382.0b24d9f2e8e456ec089b.js.map
