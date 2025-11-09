@@ -1307,6 +1307,14 @@ export class SharkTreeComponent extends HTMLElement {
             configDropdown.innerHTML = availableConfigs.map(configKey =>
                 `<option value="${configKey}">${StringUtils.capitalizeFirstLetter(configKey)}</option>`
             ).join("");
+            
+            // Set default config based on species type
+            let defaultConfig = configDropdown.value; // Default to first option
+            if (speciesType === SPECIES_TYPE.CHIMAERAS) {
+                defaultConfig = 'holocephali';
+            }
+            configDropdown.value = defaultConfig;
+            
             await this.initializeSharkTree(speciesType, configDropdown.value);
     
             // Toggle species-specific tag options
