@@ -1,7 +1,7 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
-import urobatisHalleriImg from "./../../../../../images/rays/myliobatiformes/urotrygonidae/urobatis-halleri.png";
-import photographyImg from "./../../../../../images/photography/urobatis-halleri.jpg";
-import photography2Img from "./../../../../../images/photography/urobatis-halleri-2.jpg";
+import urobatisHalleriImg from "./../../../../../images/rays/myliobatiformes/urotrygonidae/urobatis-halleri.webp";
+import photographyImg from "./../../../../../images/photography/urobatis-halleri.webp";
+import photography2Img from "./../../../../../images/photography/urobatis-halleri-2.webp";
 
 export const urobatisHalleri = {
     commonName: "Round Stingray",

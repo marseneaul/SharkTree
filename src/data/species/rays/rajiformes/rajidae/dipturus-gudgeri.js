@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import dipturusGudgeriImg from "./../../../../../images/rays/rajiformes/rajidae/dipturus-gudgeri.png";
+import dipturusGudgeriImg from "./../../../../../images/rays/rajiformes/rajidae/dipturus-gudgeri.webp";
 
 export const dipturusGudgeri = {
     commonName: "Greenback Skate",

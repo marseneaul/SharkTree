@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import rhinaAncylostomaImg from "./../../../../images/rays/rhinopristiformes/rhina-ancylostoma.png";
+import rhinaAncylostomaImg from "./../../../../images/rays/rhinopristiformes/rhina-ancylostoma.webp";
 
 export const rhinaAncylostoma = {
     commonName: "Bowmouth Guitarfish",

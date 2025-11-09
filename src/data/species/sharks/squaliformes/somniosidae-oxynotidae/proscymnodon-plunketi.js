@@ -1,5 +1,5 @@
 import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import proscymnodonPlunketiImg from "./../../../../../images/sharks/squaliformes/somniosidae-oxynotidae/scymnodon-plunketi.png";
+import proscymnodonPlunketiImg from "./../../../../../images/sharks/squaliformes/somniosidae-oxynotidae/scymnodon-plunketi.webp";
 
 export const proscymnodonPlunketi = {
     commonName: "Plunket Shark",

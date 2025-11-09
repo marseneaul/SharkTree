@@ -1,5 +1,5 @@
 import { ANAL_FIN, BIOLUMINESCENT, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import etmopterusBaxteriImg from "./../../../../../images/sharks/squaliformes/etmopteridae/etmopterus-baxteri.png";
+import etmopterusBaxteriImg from "./../../../../../images/sharks/squaliformes/etmopteridae/etmopterus-baxteri.webp";
 
 export const etmopterusBaxteri = {
     commonName: "New Zealand Lanternshark",

@@ -1,5 +1,5 @@
 import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import squalusAcanthiasImg from "./../../../../../images/sharks/squaliformes/squalidae/squalus-acanthias.png";
+import squalusAcanthiasImg from "./../../../../../images/sharks/squaliformes/squalidae/squalus-acanthias.webp";
 
 export const squalusAcanthias = {
     commonName: "Spiny Dogfish",

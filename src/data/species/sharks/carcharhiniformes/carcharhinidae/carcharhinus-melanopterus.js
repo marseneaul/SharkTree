@@ -1,6 +1,6 @@
 import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
-import carcharhinusMelanopterusImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/carcharhinus-melanopterus.png";
-import photographyImg from "./../../../../../images/photography/carcharhinus-melanopterus.jpg";
+import carcharhinusMelanopterusImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/carcharhinus-melanopterus.webp";
+import photographyImg from "./../../../../../images/photography/carcharhinus-melanopterus.webp";
 
 export const carcharhinusMelanopterus = {
     commonName: "Blacktip Reef Shark",

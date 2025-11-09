@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import brochirajaSpiniferaImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/brochiraja-spinifera.png";
+import brochirajaSpiniferaImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/brochiraja-spinifera.webp";
 
 export const brochirajaSpinifera = {
     commonName: "Spiny Deepsea Skate",

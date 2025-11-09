@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import apristurusKampaeImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-i/apristurus-kampae.png";
+import apristurusKampaeImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-i/apristurus-kampae.webp";
 
 export const apristurusKampae = {
     commonName: "Longnose Catshark",

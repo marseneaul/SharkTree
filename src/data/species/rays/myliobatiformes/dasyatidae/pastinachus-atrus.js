@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
-import pastinachusAtrusImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/pastinachus-atrus.png";
+import pastinachusAtrusImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/pastinachus-atrus.webp";
 
 export const pastinachusAtrus = {
     commonName: "Broad Cowtail Ray",

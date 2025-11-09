@@ -1,5 +1,5 @@
 import { BEHAVIOR, CONSERVATION_STATUS, FEEDING_BEHAVIOR, GROUP_BEHAVIOR, NUM_DORSAL_FINS, TAIL_SPINES, TEMPERATURE_REGULATION } from "../../../../../constants/enums";
-import mobulaKuhliiImg from "./../../../../../images/rays/myliobatiformes/mobulidae/mobula-kuhlii.png";
+import mobulaKuhliiImg from "./../../../../../images/rays/myliobatiformes/mobulidae/mobula-kuhlii.webp";
 
 export const mobulaKuhlii = {
     commonName: "Shortfin Devil Ray",

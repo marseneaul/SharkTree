@@ -4,8 +4,8 @@ import { ANAL_FIN, BEHAVIOR, BIOLUMINESCENT, CONSERVATION_STATUS, DEPTH_ZONE, DO
 import { BreadcrumbComponent } from "./components/breadcrumb";
 import { speciesDataLoader } from "./utils/data-loader";
 // Removed imageLoader import to avoid regeneratorRuntime issues
-import treeOfSharksImage from "./images/tree-of-sharks.png";
-import trilobiteImage from "./images/trilobite.png";
+import treeOfSharksImage from "./images/tree-of-sharks.webp";
+import trilobiteImage from "./images/trilobite.webp";
 
 // Dynamic species configuration loader
 class SpeciesConfigManager {

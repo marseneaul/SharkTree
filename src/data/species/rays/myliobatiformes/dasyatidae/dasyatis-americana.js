@@ -1,5 +1,5 @@
 import { BEHAVIOR, CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
-import dasyatisAmericanaImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/dasyatis-americana.png";
+import dasyatisAmericanaImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/dasyatis-americana.webp";
 
 export const dasyatisAmericana = {
     commonName: "Southern Stingray",

@@ -1,5 +1,5 @@
 import { ANAL_FIN, BIOLUMINESCENT, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import squaliolusLaticaudusImg from "./../../../../../images/sharks/squaliformes/dalatiidae/squaliolus-laticaudus.png";
+import squaliolusLaticaudusImg from "./../../../../../images/sharks/squaliformes/dalatiidae/squaliolus-laticaudus.webp";
 
 export const squaliolusLaticaudus = {
     commonName: "Spined Pygmy Shark",

@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
-import rhinopteraNeglectaImg from "./../../../../../images/rays/myliobatiformes/rhinopteridae/rhinoptera-neglecta.png";
+import rhinopteraNeglectaImg from "./../../../../../images/rays/myliobatiformes/rhinopteridae/rhinoptera-neglecta.webp";
 
 export const rhinopteraNeglecta = {
     commonName: "Australian Cownose Ray",

@@ -1,5 +1,5 @@
 import { CAUDAL_FIN_SHAPE, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import pseudocarchariasKamoharaiImg from "./../../../../images/sharks/lamniformes/pseudocarcharias-kamoharai.png";
+import pseudocarchariasKamoharaiImg from "./../../../../images/sharks/lamniformes/pseudocarcharias-kamoharai.webp";
 
 export const pseudocarchariasKamoharai = {
     commonName: "Crocodile Shark",

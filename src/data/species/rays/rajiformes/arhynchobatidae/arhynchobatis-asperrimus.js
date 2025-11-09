@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import arhynchobatisAsperrimusImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/arhynchobatis-asperrimus.png";
+import arhynchobatisAsperrimusImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/arhynchobatis-asperrimus.webp";
 
 export const arhynchobatisAsperrimus = {
     commonName: "Longtail Skate",

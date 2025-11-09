@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import hemitriakisJapanicaImg from "./../../../../../images/sharks/carcharhiniformes/triakidae/hemitriakis-japanica.png";
+import hemitriakisJapanicaImg from "./../../../../../images/sharks/carcharhiniformes/triakidae/hemitriakis-japanica.webp";
 
 export const hemitriakisJapanica = {
     commonName: "Japanese Topeshark",

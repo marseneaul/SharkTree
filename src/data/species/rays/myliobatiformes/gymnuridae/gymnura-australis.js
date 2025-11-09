@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
-import gymnuraAustralisImg from "./../../../../../images/rays/myliobatiformes/gymnuridae/gymnura-australis.png";
+import gymnuraAustralisImg from "./../../../../../images/rays/myliobatiformes/gymnuridae/gymnura-australis.webp";
 
 export const gymnuraAustralis = {
     commonName: "Australian Butterfly Ray",

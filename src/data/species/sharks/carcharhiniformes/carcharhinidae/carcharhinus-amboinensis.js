@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, PROXIMAL_DORSAL_FINS, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
-import carcharhinusAmboinensisImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/carcharhinus-amboinensis.png";
+import carcharhinusAmboinensisImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/carcharhinus-amboinensis.webp";
 
 export const carcharhinusAmboinensis = {
     commonName: "Pigeye Shark",

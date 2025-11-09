@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import irolitaWaitiiImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/irolita-waitii.png";
+import irolitaWaitiiImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/irolita-waitii.webp";
 export const irolitaWaitii = {
     commonName: "Southern Round Skate",
     binomialName: "Irolita waitii",

@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import okamejeiJensenaeImg from "./../../../../../images/rays/rajiformes/rajidae/okamejei-jensenae.png";
+import okamejeiJensenaeImg from "./../../../../../images/rays/rajiformes/rajidae/okamejei-jensenae.webp";
 
 export const okamejeiJensenae = {
     commonName: "Sulu Sea Skate",

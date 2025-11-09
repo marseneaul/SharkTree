@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import atelomycterusMarmoratusImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-ii/atelomycterus-marmoratus.png";
+import atelomycterusMarmoratusImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-ii/atelomycterus-marmoratus.webp";
 
 export const atelomycterusMarmoratus = {
     commonName: "Coral Catshark",

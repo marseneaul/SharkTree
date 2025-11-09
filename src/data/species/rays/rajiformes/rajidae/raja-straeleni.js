@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import rajaStraeleniImg from "./../../../../../images/rays/rajiformes/rajidae/raja-straeleni.png";
+import rajaStraeleniImg from "./../../../../../images/rays/rajiformes/rajidae/raja-straeleni.webp";
 
 export const rajaStraeleni = {
     commonName: "Buscuit Skate",

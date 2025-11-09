@@ -1,5 +1,5 @@
 import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import oxynotusParadoxusImg from "./../../../../../images/sharks/squaliformes/somniosidae-oxynotidae/oxynotus-paradoxus.png";
+import oxynotusParadoxusImg from "./../../../../../images/sharks/squaliformes/somniosidae-oxynotidae/oxynotus-paradoxus.webp";
 
 export const oxynotusParadoxus = {
     commonName: "Sailfin Roughshark",

@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
-import myliobatisTobijeiImg from "./../../../../../images/rays/myliobatiformes/myliobatidae/myliobatis-tobijei.png";
+import myliobatisTobijeiImg from "./../../../../../images/rays/myliobatiformes/myliobatidae/myliobatis-tobijei.webp";
 
 export const myliobatisTobijei = {
     commonName: "Japanese Eagle Ray",

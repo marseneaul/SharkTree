@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import leucorajaGarmaniImg from "./../../../../../images/rays/rajiformes/rajidae/leucoraja-garmani.png";
+import leucorajaGarmaniImg from "./../../../../../images/rays/rajiformes/rajidae/leucoraja-garmani.webp";
 
 export const leucorajaGarmani = {
     commonName: "Rosette Skate",

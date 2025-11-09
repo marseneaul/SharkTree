@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
-import himanturaKittipongiImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/himantura-kittipongi.png";
+import himanturaKittipongiImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/himantura-kittipongi.webp";
 
 export const himanturaKittipongi = {
     commonName: "Roughback Whipray",

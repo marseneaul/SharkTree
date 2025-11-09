@@ -1,5 +1,5 @@
 import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import zameusSquamulosusImg from "./../../../../../images/sharks/squaliformes/somniosidae-oxynotidae/zameus-squamulosus.png";
+import zameusSquamulosusImg from "./../../../../../images/sharks/squaliformes/somniosidae-oxynotidae/zameus-squamulosus.webp";
 
 export const zameusSquamulosus = {
     commonName: "Velvet Dogfish",

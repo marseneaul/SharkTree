@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
-import himanturaOxyrhynchaImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/himantura-oxyrhyncha.png";
+import himanturaOxyrhynchaImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/himantura-oxyrhyncha.webp";
 
 export const himanturaOxyrhyncha = {
     commonName: "Marbled Whipray",

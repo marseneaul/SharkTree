@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, SNOUT_SHAPE } from "../../../../constants/enums";
-import hydrolagusLemuresImg from "./../../../../images/chimaeras/chimaeridae/hydrolagus-lemures.png";
+import hydrolagusLemuresImg from "./../../../../images/chimaeras/chimaeridae/hydrolagus-lemures.webp";
 
 export const hydrolagusLemures = {
     commonName: "Ogilby's Ghostshark",

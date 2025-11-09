@@ -1,6 +1,6 @@
 import { BEHAVIOR, CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
-import prionaceGlaucaImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/prionace-glauca.png";
-import photographyImg from "./../../../../../images/photography/prionace-glauca.jpg";
+import prionaceGlaucaImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/prionace-glauca.webp";
+import photographyImg from "./../../../../../images/photography/prionace-glauca.webp";
 
 export const prionaceGlauca = {
     commonName: "Blue Shark",

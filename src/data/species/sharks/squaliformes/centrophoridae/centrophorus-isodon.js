@@ -1,5 +1,5 @@
 import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import centrophorusIsodonImg from "./../../../../../images/sharks/squaliformes/centrophoridae/centrophorus-isodon.png";
+import centrophorusIsodonImg from "./../../../../../images/sharks/squaliformes/centrophoridae/centrophorus-isodon.webp";
 
 export const centrophorusIsodon = {
     commonName: "Blackfin Gulper Shark",

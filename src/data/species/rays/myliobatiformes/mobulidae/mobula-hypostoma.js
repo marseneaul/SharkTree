@@ -1,5 +1,5 @@
 import { BEHAVIOR, CONSERVATION_STATUS, FEEDING_BEHAVIOR, GROUP_BEHAVIOR, NUM_DORSAL_FINS, TAIL_SPINES, TEMPERATURE_REGULATION } from "../../../../../constants/enums";
-import mobulaHypostomaImg from "./../../../../../images/rays/myliobatiformes/mobulidae/mobula-hypostoma.png";
+import mobulaHypostomaImg from "./../../../../../images/rays/myliobatiformes/mobulidae/mobula-hypostoma.webp";
 
 export const mobulaHypostoma = {
     commonName: "Lesser Devil Ray",

@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, SNOUT_SHAPE } from "../../../../constants/enums";
-import rhinochimaeraPacificaImg from "./../../../../images/chimaeras/rhinochimaeridae/rhinochimaera-pacifica.png";
+import rhinochimaeraPacificaImg from "./../../../../images/chimaeras/rhinochimaeridae/rhinochimaera-pacifica.webp";
 
 export const rhinochimaeraPacifica = {
     commonName: "Pacific Spookfish",

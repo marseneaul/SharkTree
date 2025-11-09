@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
-import neotrygonKuhliiImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/neotrygon-kuhlii.png";
+import neotrygonKuhliiImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/neotrygon-kuhlii.webp";
 
 export const neotrygonKuhlii = {
     commonName: "Blue-Spotted Stingray",

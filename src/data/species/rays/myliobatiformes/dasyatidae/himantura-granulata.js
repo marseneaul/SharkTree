@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
-import himanturaGranulataImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/himantura-granulata.png";
+import himanturaGranulataImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/himantura-granulata.webp";
 
 export const himanturaGranulata = {
     commonName: "Mangrove Whipray",

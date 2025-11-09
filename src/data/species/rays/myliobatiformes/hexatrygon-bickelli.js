@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, NUM_GILLS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../constants/enums";
-import hexatrygonBickelliImg from "./../../../../images/rays/myliobatiformes/hexatrygon-bickelli.png";
+import hexatrygonBickelliImg from "./../../../../images/rays/myliobatiformes/hexatrygon-bickelli.webp";
 
 export const hexatrygonBickelli = {
     commonName: "Sixgill Stingray",

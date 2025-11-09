@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import dipturusTenguImg from "./../../../../../images/rays/rajiformes/rajidae/dipturus-tengu.png";
+import dipturusTenguImg from "./../../../../../images/rays/rajiformes/rajidae/dipturus-tengu.webp";
 
 export const dipturusTengu = {
     commonName: "Acutenose Skate",

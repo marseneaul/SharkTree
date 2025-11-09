@@ -1,7 +1,7 @@
 import { ANAL_FIN, CONSERVATION_STATUS, FLATTENED_BODY, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import squatinaCalifornicaImg from "./../../../../images/sharks/squatiniformes/squatina-californica.png";
-import photographyImg from "./../../../../images/photography/squatina-californica.jpg";
-import photographyImg2 from "./../../../../images/photography/squatina-californica-2.jpg";
+import squatinaCalifornicaImg from "./../../../../images/sharks/squatiniformes/squatina-californica.webp";
+import photographyImg from "./../../../../images/photography/squatina-californica.webp";
+import photographyImg2 from "./../../../../images/photography/squatina-californica-2.webp";
 
 export const squatinaCalifornica = {
     commonName: "Pacific Angelshark",

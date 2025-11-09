@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import asymbolusRubiginosusImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-i/asymbolus-rubiginosus.png";
+import asymbolusRubiginosusImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-i/asymbolus-rubiginosus.webp";
 
 export const asymbolusRubiginosus = {
     commonName: "Orange-Spotted Catshark",

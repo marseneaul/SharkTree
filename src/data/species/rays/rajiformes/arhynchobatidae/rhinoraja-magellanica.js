@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import rhinorajaMagellanicaImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/rhinoraja-magellanica.png";
+import rhinorajaMagellanicaImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/rhinoraja-magellanica.webp";
 
 export const rhinorajaMagellanica = {
     commonName: "Magellan Skate",

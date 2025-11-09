@@ -1,5 +1,5 @@
 import { BEHAVIOR, CONSERVATION_STATUS, GROUP_BEHAVIOR, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
-import aetobatusOcellatusImg from "./../../../../../images/rays/myliobatiformes/myliobatidae/aetobatus-ocellatus.png";
+import aetobatusOcellatusImg from "./../../../../../images/rays/myliobatiformes/myliobatidae/aetobatus-ocellatus.webp";
 
 export const aetobatusOcellatus = {
     commonName: "Ocellated Eagle Ray",

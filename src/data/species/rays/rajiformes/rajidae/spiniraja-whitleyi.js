@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import spinirajaWhitleyiImg from "./../../../../../images/rays/rajiformes/rajidae/spiniraja-whitleyi.png";
+import spinirajaWhitleyiImg from "./../../../../../images/rays/rajiformes/rajidae/spiniraja-whitleyi.webp";
 
 export const spinirajaWhitleyi = {
     commonName: "Melbourne Ray",

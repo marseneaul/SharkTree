@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import bathyrajaPallidaImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/bathyraja-pallida.png";
+import bathyrajaPallidaImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/bathyraja-pallida.webp";
 
 export const bathyrajaPallida = {
     commonName: "Pale Ray",

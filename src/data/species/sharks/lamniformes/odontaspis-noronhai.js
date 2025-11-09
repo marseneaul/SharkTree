@@ -1,5 +1,5 @@
 import { CAUDAL_FIN_SHAPE, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import odontaspisNoronhaiImg from "./../../../../images/sharks/lamniformes/odontaspis-noronhai.png";
+import odontaspisNoronhaiImg from "./../../../../images/sharks/lamniformes/odontaspis-noronhai.webp";
 
 export const odontaspisNoronhai = {
     commonName: "Bigeye Sand Tiger",

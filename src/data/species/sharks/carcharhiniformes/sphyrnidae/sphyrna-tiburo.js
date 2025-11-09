@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, FEEDING_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
-import sphyrnaTiburoImg from "./../../../../../images/sharks/carcharhiniformes/sphyrnidae/sphyrna-tiburo.png";
+import sphyrnaTiburoImg from "./../../../../../images/sharks/carcharhiniformes/sphyrnidae/sphyrna-tiburo.webp";
 
 export const sphyrnaTiburo = {
     commonName: "Bonnethead Shark",

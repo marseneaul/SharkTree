@@ -1,5 +1,5 @@
 import { ANAL_FIN, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import trigonognathusKabeyaiImg from "./../../../../../images/sharks/squaliformes/etmopteridae/trigonognathus-kabeyai.png";
+import trigonognathusKabeyaiImg from "./../../../../../images/sharks/squaliformes/etmopteridae/trigonognathus-kabeyai.webp";
 
 export const trigonognathusKabeyai = {
     commonName: "Viper Dogfish",

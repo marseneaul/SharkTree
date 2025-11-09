@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import iagoOmanensisImg from "./../../../../images/sharks/carcharhiniformes/iago-omanensis.png";
+import iagoOmanensisImg from "./../../../../images/sharks/carcharhiniformes/iago-omanensis.webp";
 
 export const iagoOmanensis = {
     commonName: "Bigeye Houndshark",

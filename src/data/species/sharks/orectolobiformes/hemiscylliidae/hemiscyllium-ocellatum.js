@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, MOUTH_IN_FRONT_OF_EYES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import hemiscylliumOcellatumImg from "./../../../../../images/sharks/orectolobiformes/hemiscylliidae/hemiscyllium-ocellatum.png";
+import hemiscylliumOcellatumImg from "./../../../../../images/sharks/orectolobiformes/hemiscylliidae/hemiscyllium-ocellatum.webp";
 
 export const hemiscylliumOcellatum = {
     commonName: "Epaulette Shark",

@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../constants/enums";
-import potamotrygonMotoroImg from "./../../../../images/rays/myliobatiformes/potamotrygon-motoro.png";
+import potamotrygonMotoroImg from "./../../../../images/rays/myliobatiformes/potamotrygon-motoro.webp";
 
 export const potamotrygonMotoro = {
     commonName: "Ocellate River Stingray",

@@ -1,5 +1,5 @@
 import { ANAL_FIN, BIOLUMINESCENT, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import etmopterusUnicolorImg from "./../../../../../images/sharks/squaliformes/etmopteridae/etmopterus-unicolor.png";
+import etmopterusUnicolorImg from "./../../../../../images/sharks/squaliformes/etmopteridae/etmopterus-unicolor.webp";
 
 export const etmopterusUnicolor = {
     commonName: "Brown Lanternshark",

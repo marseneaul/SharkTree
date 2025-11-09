@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import apristurusMelanoasperImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-i/apristurus-melanoasper.png";
+import apristurusMelanoasperImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-i/apristurus-melanoasper.webp";
 export const apristurusMelanoasper = {
     commonName: "Black Roughscale Catshark",
     binomialName: "Apristurus melanoasper",

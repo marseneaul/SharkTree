@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, ELECTRIC_ORGAN, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import narcineTasmaniensisImg from "./../../../../images/rays/torpediniformes/narcine-tasmaniensis.png";
+import narcineTasmaniensisImg from "./../../../../images/rays/torpediniformes/narcine-tasmaniensis.webp";
 
 export const narcineTasmaniensis = {
     commonName: "Tasmanian Numbfish",

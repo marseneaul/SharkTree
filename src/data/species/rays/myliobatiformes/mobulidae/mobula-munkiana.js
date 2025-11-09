@@ -1,5 +1,5 @@
 import { BEHAVIOR, CONSERVATION_STATUS, FEEDING_BEHAVIOR, GROUP_BEHAVIOR, NUM_DORSAL_FINS, TAIL_SPINES, TEMPERATURE_REGULATION } from "../../../../../constants/enums";
-import mobulaMunkianaImg from "./../../../../../images/rays/myliobatiformes/mobulidae/mobula-munkiana.png";
+import mobulaMunkianaImg from "./../../../../../images/rays/myliobatiformes/mobulidae/mobula-munkiana.webp";
 
 export const mobulaMunkiana = {
     commonName: "Manta de Monk",

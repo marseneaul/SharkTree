@@ -1,6 +1,6 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import rhinobatosSchlegeliiImg from "./../../../../images/rays/rhinopristiformes/rhinobatos-schlegelii.png";
-import photographyImg from "./../../../../images/photography/rhinobatos-schlegelii.jpg";
+import rhinobatosSchlegeliiImg from "./../../../../images/rays/rhinopristiformes/rhinobatos-schlegelii.webp";
+import photographyImg from "./../../../../images/photography/rhinobatos-schlegelii.webp";
 
 export const rhinobatosSchlegelii = {
     commonName: "Brown Guitarfish",

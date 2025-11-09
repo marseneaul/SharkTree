@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import pristisClavataImg from "./../../../../images/rays/rhinopristiformes/pristis-clavata.png";
+import pristisClavataImg from "./../../../../images/rays/rhinopristiformes/pristis-clavata.webp";
 
 export const pristisClavata = {
     commonName: "Dwarf Sawfish",

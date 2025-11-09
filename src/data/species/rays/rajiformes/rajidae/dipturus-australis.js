@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import dipturusAustralisImg from "./../../../../../images/rays/rajiformes/rajidae/dipturus-australis.png";
+import dipturusAustralisImg from "./../../../../../images/rays/rajiformes/rajidae/dipturus-australis.webp";
 
 export const dipturusAustralis = {
     commonName: "Sydney Skate",

@@ -1,6 +1,6 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import scyliorhinusCaniculaImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-iii/scyliorhinus-canicula.png";
-import photographyImg from "./../../../../../images/photography/scyliorhinus-canicula.jpg";
+import scyliorhinusCaniculaImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-iii/scyliorhinus-canicula.webp";
+import photographyImg from "./../../../../../images/photography/scyliorhinus-canicula.webp";
 
 export const scyliorhinusCanicula = {
     commonName: "Small-Spotted Catshark",

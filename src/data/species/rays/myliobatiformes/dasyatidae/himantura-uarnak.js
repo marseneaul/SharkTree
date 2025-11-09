@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
-import himanturaUarnakImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/himantura-uarnak.png";
+import himanturaUarnakImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/himantura-uarnak.webp";
 
 export const himanturaUarnak = {
     commonName: "Reticulate Whipray",

@@ -1,6 +1,6 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
-import carcharhinusGalapagensisImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/carcharhinus-galapagensis.png";
-import photographyImg from "./../../../../../images/photography/carcharhinus-galapagensis.jpg";
+import carcharhinusGalapagensisImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/carcharhinus-galapagensis.webp";
+import photographyImg from "./../../../../../images/photography/carcharhinus-galapagensis.webp";
 
 export const carcharhinusGalapagensis = {
     commonName: "Galapagos Shark",

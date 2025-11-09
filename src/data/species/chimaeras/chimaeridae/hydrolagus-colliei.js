@@ -1,8 +1,8 @@
 import { CONSERVATION_STATUS, GROUP_BEHAVIOR, REPRODUCTIVE_STRATEGY, SNOUT_SHAPE } from "../../../../constants/enums";
-import hydrolagusCollieiImg from "./../../../../images/chimaeras/chimaeridae/hydrolagus-colliei.png";
-import photographyImg from "./../../../../images/photography/hydrolagus-colliei.jpg";
-import photographyImg2 from "./../../../../images/photography/hydrolagus-colliei-2.jpg";
-import photographyImg3 from "./../../../../images/photography/hydrolagus-colliei-3.jpg";
+import hydrolagusCollieiImg from "./../../../../images/chimaeras/chimaeridae/hydrolagus-colliei.webp";
+import photographyImg from "./../../../../images/photography/hydrolagus-colliei.webp";
+import photographyImg2 from "./../../../../images/photography/hydrolagus-colliei-2.webp";
+import photographyImg3 from "./../../../../images/photography/hydrolagus-colliei-3.webp";
 
 export const hydrolagusColliei = {
     commonName: "Spotted Ratfish",

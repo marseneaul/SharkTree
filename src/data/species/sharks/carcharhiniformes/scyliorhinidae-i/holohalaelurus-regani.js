@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import holohalaelurusReganiImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-i/holohalaelurus-regani.png";
+import holohalaelurusReganiImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-i/holohalaelurus-regani.webp";
 
 export const holohalaelurusRegani = {
     commonName: "Izak Catshark",

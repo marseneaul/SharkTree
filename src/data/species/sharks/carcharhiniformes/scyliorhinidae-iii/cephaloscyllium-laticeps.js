@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import cephaloscylliumLaticepsImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-iii/cephaloscyllium-laticeps.png";
+import cephaloscylliumLaticepsImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-iii/cephaloscyllium-laticeps.webp";
 
 export const cephaloscylliumLaticeps = {
     commonName: "Australian Swellshark",

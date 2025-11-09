@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import cephaloscylliumVariegatumImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-iii/cephaloscyllium-variegatum.png";
+import cephaloscylliumVariegatumImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-iii/cephaloscyllium-variegatum.webp";
 
 export const cephaloscylliumVariegatum = {
     commonName: "Saddled Swellshark",

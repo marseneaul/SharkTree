@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import mustelusSchmittiImg from "./../../../../../images/sharks/carcharhiniformes/triakidae/mustelus-schmitti.png";
+import mustelusSchmittiImg from "./../../../../../images/sharks/carcharhiniformes/triakidae/mustelus-schmitti.webp";
 
 export const mustelusSchmitti = {
     commonName: "Narrownose Smooth-Hound",

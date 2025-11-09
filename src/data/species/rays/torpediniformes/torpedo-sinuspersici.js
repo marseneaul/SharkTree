@@ -1,6 +1,6 @@
 import { CONSERVATION_STATUS, ELECTRIC_ORGAN, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import torpedoSinuspersiciImg from "./../../../../images/rays/torpediniformes/torpedo-sinuspersici.png";
-import photographyImg from "./../../../../images/photography/torpedo-sinuspersici.jpg";
+import torpedoSinuspersiciImg from "./../../../../images/rays/torpediniformes/torpedo-sinuspersici.webp";
+import photographyImg from "./../../../../images/photography/torpedo-sinuspersici.webp";
 
 export const torpedoSinuspersici = {
     commonName: "Gulf Torpedo",

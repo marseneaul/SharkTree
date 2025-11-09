@@ -1,7 +1,7 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import halaelurusNatalensisImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-i/halaelurus-natalensis.png";
-import photographyImg from "./../../../../../images/photography/halaelurus-natalensis.jpg";
-import photographyImg2 from "./../../../../../images/photography/halaelurus-natalensis-2.jpg";
+import halaelurusNatalensisImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-i/halaelurus-natalensis.webp";
+import photographyImg from "./../../../../../images/photography/halaelurus-natalensis.webp";
+import photographyImg2 from "./../../../../../images/photography/halaelurus-natalensis-2.webp";
 
 export const halaelurusNatalensis = {
     commonName: "Tiger Catshark",

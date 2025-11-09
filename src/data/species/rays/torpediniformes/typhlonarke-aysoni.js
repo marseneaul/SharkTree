@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, ELECTRIC_ORGAN, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import typhlonarkeAysoniImg from "./../../../../images/rays/torpediniformes/typhlonarke-aysoni.png";
+import typhlonarkeAysoniImg from "./../../../../images/rays/torpediniformes/typhlonarke-aysoni.webp";
 
 export const typhlonarkeAysoni = {
     commonName: "Blind Electric Ray",

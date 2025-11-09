@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
-import urolophusPaucimaculatusImg from "./../../../../../images/rays/myliobatiformes/urolophus/urolophus-paucimaculatus.png";
+import urolophusPaucimaculatusImg from "./../../../../../images/rays/myliobatiformes/urolophus/urolophus-paucimaculatus.webp";
 
 export const urolophusPaucimaculatus = {
     commonName: "Sparsely Spotted Stingaree",

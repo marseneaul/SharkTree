@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import riorajaAgassiziiImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/rioraja-agassizii.png";
+import riorajaAgassiziiImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/rioraja-agassizii.webp";
 
 export const riorajaAgassizii = {
     commonName: "Rio Skate",

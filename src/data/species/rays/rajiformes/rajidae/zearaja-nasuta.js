@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import zearajaNasutaImg from "./../../../../../images/rays/rajiformes/rajidae/zearaja-nasuta.png";
+import zearajaNasutaImg from "./../../../../../images/rays/rajiformes/rajidae/zearaja-nasuta.webp";
 
 export const zearajaNasuta = {
     commonName: "New Zealand Rough Skate",

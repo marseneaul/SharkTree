@@ -1,7 +1,7 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import rhinobatosProductusImg from "./../../../../images/rays/rhinopristiformes/rhinobatos-productus.png";
-import photographyImg from "./../../../../images/photography/rhinobatos-productus.jpg";
-import photographyImg2 from "./../../../../images/photography/rhinobatos-productus-2.jpg";
+import rhinobatosProductusImg from "./../../../../images/rays/rhinopristiformes/rhinobatos-productus.webp";
+import photographyImg from "./../../../../images/photography/rhinobatos-productus.webp";
+import photographyImg2 from "./../../../../images/photography/rhinobatos-productus-2.webp";
 
 export const rhinobatosProductus = {
     commonName: "Shovelnose Guitarfish",

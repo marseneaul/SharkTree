@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
-import urotrygonSimulatrixImg from "./../../../../../images/rays/myliobatiformes/urotrygonidae/urotrygon-simulatrix.png";
+import urotrygonSimulatrixImg from "./../../../../../images/rays/myliobatiformes/urotrygonidae/urotrygon-simulatrix.webp";
 
 export const urotrygonSimulatrix = {
     commonName: "Fake Round Ray",

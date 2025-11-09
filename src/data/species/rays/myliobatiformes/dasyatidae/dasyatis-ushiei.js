@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
-import dasyatisUshieiImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/dasyatis-ushiei.png";
+import dasyatisUshieiImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/dasyatis-ushiei.webp";
 
 export const dasyatisUshiei = {
     commonName: "Cow Stingray",

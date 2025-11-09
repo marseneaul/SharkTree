@@ -1,5 +1,5 @@
 import { BEHAVIOR, CONSERVATION_STATUS, GROUP_BEHAVIOR, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
-import aetobatusLaticepsImg from "./../../../../../images/rays/myliobatiformes/myliobatidae/aetobatus-laticeps.png";
+import aetobatusLaticepsImg from "./../../../../../images/rays/myliobatiformes/myliobatidae/aetobatus-laticeps.webp";
 
 export const aetobatusLaticeps = {
     commonName: "Pacific White-Spotted Eagle Ray",

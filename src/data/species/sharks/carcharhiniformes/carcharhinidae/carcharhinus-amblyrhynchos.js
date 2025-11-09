@@ -1,6 +1,6 @@
 import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
-import carcharhinusAmblyrhynchosImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/carcharhinus-amblyrhynchos.png";
-import photographyImg from "./../../../../../images/photography/carcharhinus-amblyrhynchos.jpg";
+import carcharhinusAmblyrhynchosImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/carcharhinus-amblyrhynchos.webp";
+import photographyImg from "./../../../../../images/photography/carcharhinus-amblyrhynchos.webp";
 
 export const carcharhinusAmblyrhynchos = {
     commonName: "Grey Reef Shark",

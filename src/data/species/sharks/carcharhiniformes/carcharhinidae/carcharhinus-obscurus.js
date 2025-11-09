@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
-import carcharhinusObscurusImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/carcharhinus-obscurus.png";
+import carcharhinusObscurusImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/carcharhinus-obscurus.webp";
 
 export const carcharhinusObscurus = {
     commonName: "Dusky Shark",

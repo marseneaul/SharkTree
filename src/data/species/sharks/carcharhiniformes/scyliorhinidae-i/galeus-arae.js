@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import galeusAraeImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-i/galeus-arae.png";
+import galeusAraeImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-i/galeus-arae.webp";
 
 export const galeusArae = {
     commonName: "Roughtail Catshark",

@@ -1,8 +1,8 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import galeocerdoCuvierImg from "./../../../../images/sharks/carcharhiniformes/galeocerdo-cuvier.png";
-import photographyImg from "./../../../../images/photography/galeocerdo-cuvier.jpg";
-import photographyImg2 from "./../../../../images/photography/galeocerdo-cuvier-2.jpg";
-import photographyImg3 from "./../../../../images/photography/galeocerdo-cuvier-3.jpg";
+import galeocerdoCuvierImg from "./../../../../images/sharks/carcharhiniformes/galeocerdo-cuvier.webp";
+import photographyImg from "./../../../../images/photography/galeocerdo-cuvier.webp";
+import photographyImg2 from "./../../../../images/photography/galeocerdo-cuvier-2.webp";
+import photographyImg3 from "./../../../../images/photography/galeocerdo-cuvier-3.webp";
 
 export const galeocerdoCuvier = {
     commonName: "Tiger Shark",

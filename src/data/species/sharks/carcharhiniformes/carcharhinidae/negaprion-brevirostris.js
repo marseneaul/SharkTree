@@ -1,9 +1,9 @@
 import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
-import negaprionBrevirostrisImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/negaprion-brevirostris.png";
-import photographyImg from "./../../../../../images/photography/negaprion-brevirostris.jpg";
-import photographyImg2 from "./../../../../../images/photography/negaprion-brevirostris-2.jpg";
-import photographyImg3 from "./../../../../../images/photography/negaprion-brevirostris-3.jpg";
-import photographyImg4 from "./../../../../../images/photography/negaprion-brevirostris-4.jpg";
+import negaprionBrevirostrisImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/negaprion-brevirostris.webp";
+import photographyImg from "./../../../../../images/photography/negaprion-brevirostris.webp";
+import photographyImg2 from "./../../../../../images/photography/negaprion-brevirostris-2.webp";
+import photographyImg3 from "./../../../../../images/photography/negaprion-brevirostris-3.webp";
+import photographyImg4 from "./../../../../../images/photography/negaprion-brevirostris-4.webp";
 
 export const negaprionBrevirostris = {
     commonName: "Lemon Shark",

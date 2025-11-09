@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import paragaleusRandalliImg from "./../../../../../images/sharks/carcharhiniformes/hemigaleidae/paragaleus-randalli.png";
+import paragaleusRandalliImg from "./../../../../../images/sharks/carcharhiniformes/hemigaleidae/paragaleus-randalli.webp";
 
 export const paragaleusRandalli = {
     commonName: "Slender Weasel Shark",

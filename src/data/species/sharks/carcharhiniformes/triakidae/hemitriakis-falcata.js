@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import hemitriakisFalcataImg from "./../../../../../images/sharks/carcharhiniformes/triakidae/hemitriakis-falcata.png";
+import hemitriakisFalcataImg from "./../../../../../images/sharks/carcharhiniformes/triakidae/hemitriakis-falcata.webp";
 
 export const hemitriakisFalcata = {
     commonName: "Sicklefin Houndshark",

@@ -1,6 +1,6 @@
 import { CAUDAL_FIN_SHAPE, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import carchariasTaurusImg from "./../../../../images/sharks/lamniformes/carcharias-taurus.png";
-import photographyImg from "./../../../../images/photography/carcharias-taurus.jpg";
+import carchariasTaurusImg from "./../../../../images/sharks/lamniformes/carcharias-taurus.webp";
+import photographyImg from "./../../../../images/photography/carcharias-taurus.webp";
 
 export const carchariasTaurus = {
     commonName: "Sand Tiger Shark",

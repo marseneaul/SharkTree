@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import sympterygiaBonapartiiImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/sympterygia-bonapartii.png";
+import sympterygiaBonapartiiImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/sympterygia-bonapartii.webp";
 
 export const sympterygiaBonapartii = {
     commonName: "Smallnose Fanskate",

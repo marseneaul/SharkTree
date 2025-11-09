@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
-import carcharhinusFitzroyensisImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/carcharhinus-fitzroyensis.png";
+import carcharhinusFitzroyensisImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/carcharhinus-fitzroyensis.webp";
 
 export const carcharhinusFitzroyensis = {
     commonName: "Creek Whaler",

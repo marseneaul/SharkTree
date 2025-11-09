@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINE, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
-import taeniuraMeyeniImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/taeniura-meyeni.png";
+import taeniuraMeyeniImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/taeniura-meyeni.webp";
 
 export const taeniuraMeyeni = {
     commonName: "Round Ribbontail Ray",

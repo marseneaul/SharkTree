@@ -1,7 +1,7 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import cephaloscylliumUmbratileImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-iii/cephaloscyllium-umbratile.png";
-import photographyImg from "./../../../../../images/photography/cephaloscyllium-umbratile.jpg";
-import photographyImg2 from "./../../../../../images/photography/cephaloscyllium-umbratile-2.jpg";
+import cephaloscylliumUmbratileImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-iii/cephaloscyllium-umbratile.webp";
+import photographyImg from "./../../../../../images/photography/cephaloscyllium-umbratile.webp";
+import photographyImg2 from "./../../../../../images/photography/cephaloscyllium-umbratile-2.webp";
 
 export const cephaloscylliumUmbratile = {
     commonName: "Blotchy Catshark",

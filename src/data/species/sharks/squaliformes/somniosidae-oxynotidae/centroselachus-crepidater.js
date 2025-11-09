@@ -1,5 +1,5 @@
 import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import centroselachusCrepidaterImg from "./../../../../../images/sharks/squaliformes/somniosidae-oxynotidae/centroselachus-crepidater.png";
+import centroselachusCrepidaterImg from "./../../../../../images/sharks/squaliformes/somniosidae-oxynotidae/centroselachus-crepidater.webp";
 
 export const centroselachusCrepidater = {
     commonName: "Longnose Velvet Dogfish",

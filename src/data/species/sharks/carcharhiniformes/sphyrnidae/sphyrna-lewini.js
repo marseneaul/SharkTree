@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
-import sphyrnaLewiniImg from "./../../../../../images/sharks/carcharhiniformes/sphyrnidae/sphyrna-lewini.png";
+import sphyrnaLewiniImg from "./../../../../../images/sharks/carcharhiniformes/sphyrnidae/sphyrna-lewini.webp";
 
 export const sphyrnaLewini = {
     commonName: "Scalloped Hammerhead Shark",

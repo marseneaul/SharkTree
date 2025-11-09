@@ -1,5 +1,5 @@
 import { ANAL_FIN, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import centroscylliumFabriciiImg from "./../../../../../images/sharks/squaliformes/etmopteridae/centroscyllium-fabricii.png";
+import centroscylliumFabriciiImg from "./../../../../../images/sharks/squaliformes/etmopteridae/centroscyllium-fabricii.webp";
 
 export const centroscylliumFabricii = {
     commonName: "Black Dogfish",

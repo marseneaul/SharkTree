@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import mustelusLunulatusImg from "./../../../../../images/sharks/carcharhiniformes/triakidae/mustelus-lunulatus.png";
+import mustelusLunulatusImg from "./../../../../../images/sharks/carcharhiniformes/triakidae/mustelus-lunulatus.webp";
 
 export const mustelusLunulatus = {
     commonName: "Sicklefin Smooth-Hound",

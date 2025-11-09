@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, FEEDING_BEHAVIOR, MOUTH_IN_FRONT_OF_EYES, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import rhincodonTypusImg from "./../../../../images/sharks/orectolobiformes/rhincodon-typus.png";
+import rhincodonTypusImg from "./../../../../images/sharks/orectolobiformes/rhincodon-typus.webp";
 
 export const rhincodonTypus = {
     commonName: "Whale Shark",

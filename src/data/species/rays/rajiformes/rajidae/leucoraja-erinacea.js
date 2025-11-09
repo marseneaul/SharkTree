@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import leucorajaErinaceaImg from "./../../../../../images/rays/rajiformes/rajidae/leucoraja-erinacea.png";
+import leucorajaErinaceaImg from "./../../../../../images/rays/rajiformes/rajidae/leucoraja-erinacea.webp";
 
 export const leucorajaErinacea = {
     commonName: "Little Skate",

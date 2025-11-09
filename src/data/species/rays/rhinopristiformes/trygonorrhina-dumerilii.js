@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import trygonorrhinaDumeriliiImg from "./../../../../images/rays/rhinopristiformes/trygonorrhina-dumerilii.png";
+import trygonorrhinaDumeriliiImg from "./../../../../images/rays/rhinopristiformes/trygonorrhina-dumerilii.webp";
 
 export const trygonorrhinaDumerilii = {
     commonName: "Southern Fiddler Ray",

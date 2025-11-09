@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
-import myliobatisAustralisImg from "./../../../../../images/rays/myliobatiformes/myliobatidae/myliobatis-australis.png";
+import myliobatisAustralisImg from "./../../../../../images/rays/myliobatiformes/myliobatidae/myliobatis-australis.webp";
 
 export const myliobatisAustralis = {
     commonName: "Australian Bull Ray",

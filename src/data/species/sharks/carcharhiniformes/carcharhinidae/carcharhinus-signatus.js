@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
-import carcharhinusSignatusImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/carcharhinus-signatus.png";
+import carcharhinusSignatusImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/carcharhinus-signatus.webp";
 
 export const carcharhinusSignatus = {
     commonName: "Night Shark",

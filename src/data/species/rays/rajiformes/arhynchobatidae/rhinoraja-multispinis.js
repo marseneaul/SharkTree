@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import rhinorajaMultispinisImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/rhinoraja-multispinis.png";
+import rhinorajaMultispinisImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/rhinoraja-multispinis.webp";
 
 export const rhinorajaMultispinis = {
     commonName: "Multispine Skate",

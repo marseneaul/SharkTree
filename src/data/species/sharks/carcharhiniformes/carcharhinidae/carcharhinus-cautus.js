@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
-import carcharhinusCautusImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/carcharhinus-cautus.png";
+import carcharhinusCautusImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/carcharhinus-cautus.webp";
 
 export const carcharhinusCautus = {
     commonName: "Nervous Shark",

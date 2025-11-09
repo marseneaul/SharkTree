@@ -1,4 +1,4 @@
-import alopiasVulpinusImg from "./../../../../images/sharks/lamniformes/alopias-vulpinus.png";
+import alopiasVulpinusImg from "./../../../../images/sharks/lamniformes/alopias-vulpinus.webp";
 import { BEHAVIOR, CAUDAL_FIN_SHAPE, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION } from "../../../../constants/enums";
 
 export const alopiasVulpinus = {

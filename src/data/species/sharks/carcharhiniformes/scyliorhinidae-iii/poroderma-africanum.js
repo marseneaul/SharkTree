@@ -1,6 +1,6 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import porodermaAfricanumImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-iii/poroderma-africanum.png";
-import photographyImg from "./../../../../../images/photography/poroderma-africanum.jpg";
+import porodermaAfricanumImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-iii/poroderma-africanum.webp";
+import photographyImg from "./../../../../../images/photography/poroderma-africanum.webp";
 
 export const porodermaAfricanum = {
     commonName: "Pyjama Shark",

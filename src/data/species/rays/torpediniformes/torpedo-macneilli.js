@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, ELECTRIC_ORGAN, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import torpedoMacneilliImg from "./../../../../images/rays/torpediniformes/torpedo-macneilli.png";
+import torpedoMacneilliImg from "./../../../../images/rays/torpediniformes/torpedo-macneilli.webp";
 
 export const torpedoMacneilli = {
     commonName: "Short-Tail Torpedo",

@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import bathyrajaViolaceaImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/bathyraja-violacea.png";
+import bathyrajaViolaceaImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/bathyraja-violacea.webp";
 
 export const bathyrajaViolacea = {
     commonName: "Okhotsk Skate",

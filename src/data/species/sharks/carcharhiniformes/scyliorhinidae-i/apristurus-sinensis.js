@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import apristurusSinensisImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-i/apristurus-sinensis.png";
+import apristurusSinensisImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-i/apristurus-sinensis.webp";
 
 export const apristurusSinensis = {
     commonName: "South China Catshark",

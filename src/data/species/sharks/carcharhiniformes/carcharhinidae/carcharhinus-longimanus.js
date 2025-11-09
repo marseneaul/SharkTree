@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
-import carcharhinusLongimanusImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/carcharhinus-longimanus.png";
+import carcharhinusLongimanusImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/carcharhinus-longimanus.webp";
 
 export const carcharhinusLongimanus = {
     commonName: "Oceanic Whitetip Shark",

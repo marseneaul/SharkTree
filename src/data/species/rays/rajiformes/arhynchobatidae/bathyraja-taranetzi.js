@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import bathyrajaTaranetziImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/rhinoraja-taranetzi.png";
+import bathyrajaTaranetziImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/rhinoraja-taranetzi.webp";
 
 export const bathyrajaTaranetzi = {
     commonName: "Mud Skate",

@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
-import urolophusFlavomosaicusImg from "./../../../../../images/rays/myliobatiformes/urolophus/urolophus-flavomosaicus.png";
+import urolophusFlavomosaicusImg from "./../../../../../images/rays/myliobatiformes/urolophus/urolophus-flavomosaicus.webp";
 
 export const urolophusFlavomosaicus = {
     commonName: "Patchwork Stingaree",

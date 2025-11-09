@@ -8,8 +8,8 @@ import { SharksAndKinEventsTrack } from "./tracks/sharks-and-kin-events-track";
 import { FossilSitesEventsTrack } from "./tracks/fossil-sites-events-track";
 import { PhylogeneticTreeTrack } from "./tracks/phylogenetic-tree-track";
 import { BreadcrumbComponent } from "./components/breadcrumb";
-import treeOfSharksImage from "./images/tree-of-sharks.png";
-import sharkFinImage from "./images/shark-fin.png";
+import treeOfSharksImage from "./images/tree-of-sharks.webp";
+import sharkFinImage from "./images/shark-fin.webp";
 
 customElements.define("time-track", TimeTrack);
 customElements.define("ruler-track", RulerTrack);

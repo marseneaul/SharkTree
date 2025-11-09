@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
-import himanturaGerrardiImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/himantura-gerrardi.png";
+import himanturaGerrardiImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/himantura-gerrardi.webp";
 
 export const himanturaGerrardi = {
     commonName: "Whitespotted Whipray",

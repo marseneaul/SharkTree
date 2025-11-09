@@ -1,6 +1,6 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import rajaClavataImg from "./../../../../../images/rays/rajiformes/rajidae/raja-clavata.png";
-import photographyImg from "./../../../../../images/photography/raja-clavata.jpg";
+import rajaClavataImg from "./../../../../../images/rays/rajiformes/rajidae/raja-clavata.webp";
+import photographyImg from "./../../../../../images/photography/raja-clavata.webp";
 
 export const rajaClavata = {
     commonName: "Thornback Ray",

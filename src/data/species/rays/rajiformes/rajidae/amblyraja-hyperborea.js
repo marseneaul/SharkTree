@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import amblyrajaHyperboreaImg from "./../../../../../images/rays/rajiformes/rajidae/amblyraja-hyperborea.png";
+import amblyrajaHyperboreaImg from "./../../../../../images/rays/rajiformes/rajidae/amblyraja-hyperborea.webp";
 
 export const amblyrajaHyperborea = {
     commonName: "Arctic Skate",

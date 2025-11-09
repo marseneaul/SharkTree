@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
-import neotrygonPictaUrl from "./../../../../../images/rays/myliobatiformes/dasyatidae/neotrygon-picta.png";
+import neotrygonPictaUrl from "./../../../../../images/rays/myliobatiformes/dasyatidae/neotrygon-picta.webp";
 
 export const neotrygonPicta = {
     commonName: "Pepper Maskray",

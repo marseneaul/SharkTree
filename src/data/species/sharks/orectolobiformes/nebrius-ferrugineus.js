@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, MOUTH_IN_FRONT_OF_EYES, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import nebriusFerrugineusImg from "./../../../../images/sharks/orectolobiformes/nebrius-ferrugineus.png";
+import nebriusFerrugineusImg from "./../../../../images/sharks/orectolobiformes/nebrius-ferrugineus.webp";
 
 export const nebriusFerrugineus = {
     commonName: "Tawny Nurse Shark",

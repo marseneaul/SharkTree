@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import pavorajaAlleniImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/pavoraja-alleni.png";
+import pavorajaAlleniImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/pavoraja-alleni.webp";
 
 export const pavorajaAlleni = {
     commonName: "Allen's Skate",

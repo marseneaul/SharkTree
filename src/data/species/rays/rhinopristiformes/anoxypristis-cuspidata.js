@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import anoxypristisCuspidataImg from "./../../../../images/rays/rhinopristiformes/anoxypristis-cuspidata.png";
+import anoxypristisCuspidataImg from "./../../../../images/rays/rhinopristiformes/anoxypristis-cuspidata.webp";
 
 export const anoxypristisCuspidata = {
     commonName: "Narrow Sawfish",

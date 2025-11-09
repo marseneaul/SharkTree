@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import notorajaAzureaImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/notoraja-azurea.png";
+import notorajaAzureaImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/notoraja-azurea.webp";
 
 export const notorajaAzurea = {
     commonName: "Blue Skate",

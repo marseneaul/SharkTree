@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, MOUTH_IN_FRONT_OF_EYES, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import parascylliumCollareImg from "./../../../../images/sharks/orectolobiformes/parascyllium-collare.png";
+import parascylliumCollareImg from "./../../../../images/sharks/orectolobiformes/parascyllium-collare.webp";
 
 export const parascylliumCollare = {
     commonName: "Collared Carpetshark",

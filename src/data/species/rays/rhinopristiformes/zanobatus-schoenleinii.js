@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import zanobatusSchoenleiniiImg from "./../../../../images/rays/rhinopristiformes/zanobatus-schoenleinii.png";
+import zanobatusSchoenleiniiImg from "./../../../../images/rays/rhinopristiformes/zanobatus-schoenleinii.webp";
 
 export const zanobatusSchoenleinii = {
     commonName: "Striped Panray",

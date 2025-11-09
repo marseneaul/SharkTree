@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import bathyrajaGriseocaudaImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/bathyraja-griseocauda.png";
+import bathyrajaGriseocaudaImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/bathyraja-griseocauda.webp";
 
 export const bathyrajaGriseocauda = {
     commonName: "Graytail Skate",

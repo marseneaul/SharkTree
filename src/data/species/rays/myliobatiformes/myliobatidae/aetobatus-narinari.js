@@ -1,5 +1,5 @@
 import { BEHAVIOR, CONSERVATION_STATUS, GROUP_BEHAVIOR, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
-import aetobatusNarinariImg from "./../../../../../images/rays/myliobatiformes/myliobatidae/aetobatus-narinari.png";
+import aetobatusNarinariImg from "./../../../../../images/rays/myliobatiformes/myliobatidae/aetobatus-narinari.webp";
 
 export const aetobatusNarinari = {
     commonName: "Spotted Eagle Ray",

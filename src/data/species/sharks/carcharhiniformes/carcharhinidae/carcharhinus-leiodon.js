@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
-import carcharhinusLeiodonImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/carcharhinus-leiodon.png";
+import carcharhinusLeiodonImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/carcharhinus-leiodon.webp";
 
 export const carcharhinusLeiodon = {
     commonName: "Smoothtooth Blacktip Shark",

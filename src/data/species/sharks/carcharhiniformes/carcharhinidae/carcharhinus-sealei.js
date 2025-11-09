@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
-import carcharhinusSealeiImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/carcharhinus-sealei.png";
+import carcharhinusSealeiImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/carcharhinus-sealei.webp";
 export const carcharhinusSealei = {
     commonName: "Blackspot Shark",
     binomialName: "Carcharhinus sealei",

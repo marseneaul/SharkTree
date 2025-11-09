@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import bathyrajaBergiImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/bathyraja-bergi.png";
+import bathyrajaBergiImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/bathyraja-bergi.webp";
 
 export const bathyrajaBergi = {
     commonName: "Bottom Skate",

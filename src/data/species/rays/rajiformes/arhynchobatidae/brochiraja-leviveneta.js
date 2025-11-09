@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import brochirajaLevivenetaImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/brochiraja-leviveneta.png";
+import brochirajaLevivenetaImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/brochiraja-leviveneta.webp";
 
 export const brochirajaLeviveneta = {
     commonName: "Blue Deepsea Skate",

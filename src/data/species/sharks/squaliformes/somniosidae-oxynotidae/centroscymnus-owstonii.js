@@ -1,5 +1,5 @@
 import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import centroscymnusOwstoniiImg from "./../../../../../images/sharks/squaliformes/somniosidae-oxynotidae/centroscymnus-owstonii.png";
+import centroscymnusOwstoniiImg from "./../../../../../images/sharks/squaliformes/somniosidae-oxynotidae/centroscymnus-owstonii.webp";
 
 export const centroscymnusOwstonii = {
     commonName: "Roughskin Dogfish",

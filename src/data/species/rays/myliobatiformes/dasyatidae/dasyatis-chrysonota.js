@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
-import dasyatisChrysonotaImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/dasyatis-chrysonota.png";
+import dasyatisChrysonotaImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/dasyatis-chrysonota.webp";
 
 export const dasyatisChrysonota = {
     commonName: "Blue Stingray",

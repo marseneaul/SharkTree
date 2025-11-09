@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import atlantorajaCyclophoraImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/atlantoraja-cyclophora.png";
+import atlantorajaCyclophoraImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/atlantoraja-cyclophora.webp";
 
 export const atlantorajaCyclophora = {
     commonName: "Eyespot Skate",

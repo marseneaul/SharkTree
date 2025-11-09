@@ -1,5 +1,5 @@
 import { ANAL_FIN, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import centroscylliumGranulatumImg from "./../../../../../images/sharks/squaliformes/etmopteridae/centroscyllium-granulatum.png";
+import centroscylliumGranulatumImg from "./../../../../../images/sharks/squaliformes/etmopteridae/centroscyllium-granulatum.webp";
 
 export const centroscylliumGranulatum = {
     commonName: "Granular Dogfish",

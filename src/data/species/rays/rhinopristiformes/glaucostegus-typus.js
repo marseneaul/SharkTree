@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import glaucostegusTypusImg from "./../../../../images/rays/rhinopristiformes/glaucostegus-typus.png";
+import glaucostegusTypusImg from "./../../../../images/rays/rhinopristiformes/glaucostegus-typus.webp";
 
 export const glaucostegusTypus = {
     commonName: "Common Shovelnose Ray",

@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import bathyrajaParmiferaImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/bathyraja-parmifera.png";
+import bathyrajaParmiferaImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/bathyraja-parmifera.webp";
 
 export const bathyrajaParmifera = {
     commonName: "Alaskan Skate",

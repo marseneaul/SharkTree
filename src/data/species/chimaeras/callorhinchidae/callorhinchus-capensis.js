@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, SNOUT_SHAPE } from "../../../../constants/enums";
-import callorhinchusCapensisImg from "./../../../../images/chimaeras/callorhinchidae/callorhinchus-capensis.png";
+import callorhinchusCapensisImg from "./../../../../images/chimaeras/callorhinchidae/callorhinchus-capensis.webp";
 
 export const callorhinchusCapensis = {
     commonName: "Cape Elephantfish",

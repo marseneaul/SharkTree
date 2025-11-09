@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import rajaMiraletusImg from "./../../../../../images/rays/rajiformes/rajidae/raja-miraletus.png";
+import rajaMiraletusImg from "./../../../../../images/rays/rajiformes/rajidae/raja-miraletus.webp";
 
 export const rajaMiraletus = {
     commonName: "Brown Ray",

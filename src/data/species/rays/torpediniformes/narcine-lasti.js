@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, ELECTRIC_ORGAN, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import narcineLastiImg from "./../../../../images/rays/torpediniformes/narcine-lasti.png";
+import narcineLastiImg from "./../../../../images/rays/torpediniformes/narcine-lasti.webp";
 
 export const narcineLasti = {
     commonName: "Western Numbfish",

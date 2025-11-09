@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import bathyrajaScaphiopsImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/bathyraja-scaphiops.png";
+import bathyrajaScaphiopsImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/bathyraja-scaphiops.webp";
 
 export const bathyrajaScaphiops = {
     commonName: "Cuphead Skate",

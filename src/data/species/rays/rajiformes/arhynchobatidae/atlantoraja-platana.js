@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import atlantorajaPlatanaImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/atlantoraja-platana.png";
+import atlantorajaPlatanaImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/atlantoraja-platana.webp";
 
 export const atlantorajaPlatana = {
     commonName: "La Plata Skate",

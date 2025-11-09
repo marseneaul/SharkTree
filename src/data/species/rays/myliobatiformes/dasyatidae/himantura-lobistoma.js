@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
-import himanturaLobistomaImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/himantura-lobistoma.png";
+import himanturaLobistomaImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/himantura-lobistoma.webp";
 
 export const himanturaLobistoma = {
     commonName: "Tubemouth Whipray",

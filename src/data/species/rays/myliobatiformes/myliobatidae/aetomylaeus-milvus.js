@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
-import aetomylaeusMilvusImg from "./../../../../../images/rays/myliobatiformes/myliobatidae/aetomylaeus-milvus.png";
+import aetomylaeusMilvusImg from "./../../../../../images/rays/myliobatiformes/myliobatidae/aetomylaeus-milvus.webp";
 
 export const aetomylaeusMilvus = {
     commonName: "Smooth Eagle Ray",

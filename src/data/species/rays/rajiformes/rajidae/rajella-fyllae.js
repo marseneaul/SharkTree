@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import rajellaFyllaeImg from "./../../../../../images/rays/rajiformes/rajidae/rajella-fyllae.png";
+import rajellaFyllaeImg from "./../../../../../images/rays/rajiformes/rajidae/rajella-fyllae.webp";
 
 export const rajellaFyllae = {
     commonName: "Round Ray",

@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import bathyrajaMaculataImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/bathyraja-maculata.png";
+import bathyrajaMaculataImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/bathyraja-maculata.webp";
 
 export const bathyrajaMaculata = {
     commonName: "White-Blotched Skate",

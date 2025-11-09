@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import figaroBoardmaniImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-i/figaro-boardmani.png";
+import figaroBoardmaniImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-i/figaro-boardmani.webp";
 
 export const figaroBoardmani = {
     commonName: "Australian Sawtail Catshark",

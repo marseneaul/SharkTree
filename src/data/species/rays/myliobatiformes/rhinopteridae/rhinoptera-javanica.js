@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
-import rhinopteraJavanicaImg from "./../../../../../images/rays/myliobatiformes/rhinopteridae/rhinoptera-javanica.png";
+import rhinopteraJavanicaImg from "./../../../../../images/rays/myliobatiformes/rhinopteridae/rhinoptera-javanica.webp";
 
 export const rhinopteraJavanica = {
     commonName: "Flapnose Ray",

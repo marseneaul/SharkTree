@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
-import urolophusExpansusImg from "./../../../../../images/rays/myliobatiformes/urolophus/urolophus-expansus.png";
+import urolophusExpansusImg from "./../../../../../images/rays/myliobatiformes/urolophus/urolophus-expansus.webp";
 
 export const urolophusExpansus = {
     commonName: "Wide Stingaree",

@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
-import dasyatisSayImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/dasyatis-say.png";
+import dasyatisSayImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/dasyatis-say.webp";
 
 export const dasyatisSay = {
     commonName: "Bluntnose Stingray",

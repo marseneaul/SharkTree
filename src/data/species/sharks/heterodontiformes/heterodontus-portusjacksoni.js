@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import heterodontusPortusjacksoniImg from "./../../../../images/sharks/heterodontiformes/heterodontus-portusjacksoni.png";
+import heterodontusPortusjacksoniImg from "./../../../../images/sharks/heterodontiformes/heterodontus-portusjacksoni.webp";
 
 export const heterodontusPortusjacksoni = {
     commonName: "Port Jackson Shark",

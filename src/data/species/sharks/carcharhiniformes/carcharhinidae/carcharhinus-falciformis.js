@@ -1,9 +1,9 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
-import carcharhinusFalciformisImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/carcharhinus-falciformis.png";
-import photographyImg from "./../../../../../images/photography/carcharhinus-falciformis.jpg";
-import photographyImg2 from "./../../../../../images/photography/carcharhinus-falciformis-2.jpg";
-import photographyImg3 from "./../../../../../images/photography/carcharhinus-falciformis-3.jpg";
-import photographyImg4 from "./../../../../../images/photography/carcharhinus-falciformis-4.jpg";
+import carcharhinusFalciformisImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/carcharhinus-falciformis.webp";
+import photographyImg from "./../../../../../images/photography/carcharhinus-falciformis.webp";
+import photographyImg2 from "./../../../../../images/photography/carcharhinus-falciformis-2.webp";
+import photographyImg3 from "./../../../../../images/photography/carcharhinus-falciformis-3.webp";
+import photographyImg4 from "./../../../../../images/photography/carcharhinus-falciformis-4.webp";
 
 export const carcharhinusFalciformis = {
     commonName: "Silky Shark",

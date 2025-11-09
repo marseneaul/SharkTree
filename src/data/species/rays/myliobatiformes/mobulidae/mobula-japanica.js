@@ -1,5 +1,5 @@
 import { BEHAVIOR, CONSERVATION_STATUS, FEEDING_BEHAVIOR, GROUP_BEHAVIOR, NUM_DORSAL_FINS, TAIL_SPINES, TEMPERATURE_REGULATION } from "../../../../../constants/enums";
-import mobulaJapanicaImg from "./../../../../../images/rays/myliobatiformes/mobulidae/mobula-japanica.png";
+import mobulaJapanicaImg from "./../../../../../images/rays/myliobatiformes/mobulidae/mobula-japanica.webp";
 
 export const mobulaJapanica = {
     commonName: "Spinetail Mobula",

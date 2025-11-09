@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
-import neotrygonNingalooensisImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/neotrygon-ningalooensis.png";
+import neotrygonNingalooensisImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/neotrygon-ningalooensis.webp";
 
 export const neotrygonNingalooensis = {
     commonName: "Ningaloo Maskray",

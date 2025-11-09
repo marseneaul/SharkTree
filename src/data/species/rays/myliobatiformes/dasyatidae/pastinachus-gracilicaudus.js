@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
-import pastinachusGracilicaudusImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/pastinachus-gracilicaudus.png";
+import pastinachusGracilicaudusImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/pastinachus-gracilicaudus.webp";
 
 export const pastinachusGracilicaudus = {
     commonName: "Narrowtail Stingray",

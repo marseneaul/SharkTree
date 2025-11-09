@@ -1,5 +1,5 @@
 import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import squalusEdmundsiImg from "./../../../../../images/sharks/squaliformes/squalidae/squalus-edmundsi.png";
+import squalusEdmundsiImg from "./../../../../../images/sharks/squaliformes/squalidae/squalus-edmundsi.webp";
 
 export const squalusEdmundsi = {
     commonName: "Edmund's Spurdog",

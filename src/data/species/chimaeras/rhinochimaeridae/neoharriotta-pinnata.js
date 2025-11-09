@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, SNOUT_SHAPE } from "../../../../constants/enums";
-import neoharriottaPinnataImg from "./../../../../images/chimaeras/rhinochimaeridae/neoharriotta-pinnata.png";
+import neoharriottaPinnataImg from "./../../../../images/chimaeras/rhinochimaeridae/neoharriotta-pinnata.webp";
 
 export const neoharriottaPinnata = {
     commonName: "Sicklefin Chimaera",

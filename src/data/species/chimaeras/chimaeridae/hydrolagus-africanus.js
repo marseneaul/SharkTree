@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, SNOUT_SHAPE } from "../../../../constants/enums";
-import hydrolagusAfricanusImg from "./../../../../images/chimaeras/chimaeridae/hydrolagus-africanus.png";
+import hydrolagusAfricanusImg from "./../../../../images/chimaeras/chimaeridae/hydrolagus-africanus.webp";
 
 export const hydrolagusAfricanus = {
     commonName: "African Chimaera",

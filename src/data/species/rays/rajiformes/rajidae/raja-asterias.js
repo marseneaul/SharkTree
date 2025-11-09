@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import rajaAsteriasImg from "./../../../../../images/rays/rajiformes/rajidae/raja-asterias.png";
+import rajaAsteriasImg from "./../../../../../images/rays/rajiformes/rajidae/raja-asterias.webp";
 
 export const rajaAsterias = {
     commonName: "Mediterranean Starry Ray",

@@ -1,6 +1,6 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import zapteryxExasperataImg from "./../../../../images/rays/rhinopristiformes/zapteryx-exasperata.png";
-import photographyImg from "./../../../../images/photography/zapteryx-exasperata.jpg";
+import zapteryxExasperataImg from "./../../../../images/rays/rhinopristiformes/zapteryx-exasperata.webp";
+import photographyImg from "./../../../../images/photography/zapteryx-exasperata.webp";
 
 export const zapteryxExasperata = {
     commonName: "Banded Guitarfish",

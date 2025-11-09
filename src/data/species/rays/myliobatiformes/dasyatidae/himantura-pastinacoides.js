@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
-import himanturaPastinacoidesImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/himantura-pastinacoides.png";
+import himanturaPastinacoidesImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/himantura-pastinacoides.webp";
 
 export const himanturaPastinacoides = {
     commonName: "Round Whipray",

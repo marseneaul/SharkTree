@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import atlantorajaCastelnauiImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/atlantoraja-castelnaui.png";
+import atlantorajaCastelnauiImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/atlantoraja-castelnaui.webp";
 
 export const atlantorajaCastelnaui = {
     commonName: "Spotback Skate",

@@ -1,5 +1,5 @@
 import { ANAL_FIN, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import somniosusMicrocephalusImg from "./../../../../../images/sharks/squaliformes/somniosidae-oxynotidae/somniosus-microcephalus.png";
+import somniosusMicrocephalusImg from "./../../../../../images/sharks/squaliformes/somniosidae-oxynotidae/somniosus-microcephalus.webp";
 
 export const somniosusMicrocephalus = {
     commonName: "Greenland Shark",

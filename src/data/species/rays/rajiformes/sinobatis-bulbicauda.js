@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import sinobatisBulbicaudaImg from "./../../../../images/rays/rajiformes/sinobatis-bulbicauda.png";
+import sinobatisBulbicaudaImg from "./../../../../images/rays/rajiformes/sinobatis-bulbicauda.webp";
 
 export const sinobatisBulbicauda = {
     commonName: "Western Australian Legskate",

@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import rajellaLeopardusImg from "./../../../../../images/rays/rajiformes/rajidae/rajella-leopardus.png";
+import rajellaLeopardusImg from "./../../../../../images/rays/rajiformes/rajidae/rajella-leopardus.webp";
 
 export const rajellaLeopardus = {
     commonName: "Leopard Skate",

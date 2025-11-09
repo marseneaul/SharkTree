@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
-import taeniuraGrabataImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/taeniura-grabata.png";
+import taeniuraGrabataImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/taeniura-grabata.webp";
 
 export const taeniuraGrabata = {
     commonName: "Round Fantail Stingray",

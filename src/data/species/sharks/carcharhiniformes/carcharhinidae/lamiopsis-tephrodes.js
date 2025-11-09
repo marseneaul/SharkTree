@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
-import lamiopsisTephrodesImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/lamiopsis-tephrodes.png";
+import lamiopsisTephrodesImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/lamiopsis-tephrodes.webp";
 
 export const lamiopsisTephrodes = {
     commonName: "Borneo Broadfin Shark",

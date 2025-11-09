@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
-import urobatisMaculatusImg from "./../../../../../images/rays/myliobatiformes/urotrygonidae/urobatis-maculatus.png";
+import urobatisMaculatusImg from "./../../../../../images/rays/myliobatiformes/urotrygonidae/urobatis-maculatus.webp";
 
 export const urobatisMaculatus = {
     commonName: "Spotted Round Ray",

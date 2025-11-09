@@ -1,7 +1,7 @@
 import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, PROXIMAL_DORSAL_FINS, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
-import carcharhinusPlumbeusImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/carcharhinus-plumbeus.png";
-import photographyImg from "./../../../../../images/photography/carcharhinus-plumbeus.jpg";
-import photographyImg2 from "./../../../../../images/photography/carcharhinus-plumbeus-2.jpg";
+import carcharhinusPlumbeusImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/carcharhinus-plumbeus.webp";
+import photographyImg from "./../../../../../images/photography/carcharhinus-plumbeus.webp";
+import photographyImg2 from "./../../../../../images/photography/carcharhinus-plumbeus-2.webp";
 
 export const carcharhinusPlumbeus = {
     commonName: "Sandbar Shark",

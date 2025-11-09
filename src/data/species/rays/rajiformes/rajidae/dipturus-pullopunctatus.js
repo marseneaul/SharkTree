@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import dipturusPullopunctatusImg from "./../../../../../images/rays/rajiformes/rajidae/dipturus-pullopunctatus.png";
+import dipturusPullopunctatusImg from "./../../../../../images/rays/rajiformes/rajidae/dipturus-pullopunctatus.webp";
 
 export const dipturusPullopunctatus = {
     commonName: "Slime Skate",

@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import scyliorhinusCapensisImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-iii/scyliorhinus-capensis.png";
+import scyliorhinusCapensisImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-iii/scyliorhinus-capensis.webp";
 
 export const scyliorhinusCapensis = {
     commonName: "Yellowspotted Catshark",

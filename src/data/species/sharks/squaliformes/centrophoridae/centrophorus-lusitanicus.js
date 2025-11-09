@@ -1,5 +1,5 @@
 import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import centrophorusLusitanicusImg from "./../../../../../images/sharks/squaliformes/centrophoridae/centrophorus-lusitanicus.png";
+import centrophorusLusitanicusImg from "./../../../../../images/sharks/squaliformes/centrophoridae/centrophorus-lusitanicus.webp";
 
 export const centrophorusLusitanicus = {
     commonName: "Lowfin Gulper Shark",

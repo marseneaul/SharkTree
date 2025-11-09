@@ -1,5 +1,5 @@
 import { CAUDAL_FIN_SHAPE, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION } from "../../../../constants/enums";
-import odontaspisFeroxImg from "./../../../../images/sharks/lamniformes/odontaspis-ferox.png";
+import odontaspisFeroxImg from "./../../../../images/sharks/lamniformes/odontaspis-ferox.webp";
 
 export const odontaspisFerox = {
     commonName: "Smalltooth Sand Tiger",

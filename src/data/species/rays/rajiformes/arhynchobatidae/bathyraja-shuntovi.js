@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import bathyrajaShuntoviImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/bathyraja-shuntovi.png";
+import bathyrajaShuntoviImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/bathyraja-shuntovi.webp";
 
 export const bathyrajaShuntovi = {
     commonName: "Longnose Deepsea Skate",

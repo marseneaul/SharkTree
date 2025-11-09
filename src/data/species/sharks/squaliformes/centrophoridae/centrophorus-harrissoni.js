@@ -1,5 +1,5 @@
 import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import centrophorusHarrissoniImg from "./../../../../../images/sharks/squaliformes/centrophoridae/centrophorus-harrissoni.png";
+import centrophorusHarrissoniImg from "./../../../../../images/sharks/squaliformes/centrophoridae/centrophorus-harrissoni.webp";
 
 export const centrophorusHarrissoni = {
     commonName: "Dumb Gulper Shark",

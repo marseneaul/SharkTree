@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import galeusMurinusImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-i/galeus-murinus.png";
+import galeusMurinusImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-i/galeus-murinus.webp";
 
 export const galeusMurinus = {
     commonName: "Mouse Catshark",

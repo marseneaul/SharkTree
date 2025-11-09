@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import hemipristisElongataImg from "./../../../../../images/sharks/carcharhiniformes/hemigaleidae/hemipristis-elongata.png";
+import hemipristisElongataImg from "./../../../../../images/sharks/carcharhiniformes/hemigaleidae/hemipristis-elongata.webp";
 
 export const hemipristisElongata = {
     commonName: "Snaggletooth Shark",

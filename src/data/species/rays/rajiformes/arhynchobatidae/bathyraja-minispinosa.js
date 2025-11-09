@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import bathyrajaMinispinosaImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/bathyraja-minispinosa.png";
+import bathyrajaMinispinosaImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/bathyraja-minispinosa.webp";
 
 export const bathyrajaMinispinosa = {
     commonName: "Smallthorn Skate",

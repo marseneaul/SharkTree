@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import brochirajaAlbilabiataImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/brochiraja-albilabiata.png";
+import brochirajaAlbilabiataImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/brochiraja-albilabiata.webp";
 
 export const brochirajaAlbilabiata = {
     commonName: "Whitelip Skate",

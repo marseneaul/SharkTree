@@ -1,5 +1,5 @@
 import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import deaniaProfundorumImg from "./../../../../../images/sharks/squaliformes/centrophoridae/deania-profundorum.png";
+import deaniaProfundorumImg from "./../../../../../images/sharks/squaliformes/centrophoridae/deania-profundorum.webp";
 
 export const deaniaProfundorum = {
     commonName: "Arrowhead Dogfish",

@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
-import rhizoprionodonTerraenovaeImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/rhizoprionodon-terraenovae.png";
+import rhizoprionodonTerraenovaeImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/rhizoprionodon-terraenovae.webp";
 
 export const rhizoprionodonTerraenovae = {
     commonName: "Atlantic Sharpnose Shark",

@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import dipturusLinteusImg from "./../../../../../images/rays/rajiformes/rajidae/dipturus-linteus.png";
+import dipturusLinteusImg from "./../../../../../images/rays/rajiformes/rajidae/dipturus-linteus.webp";
 
 export const dipturusLinteus = {
     commonName: "Sailray",

@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, FLATTENED_BODY, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import pristisZijsronImg from "./../../../../images/rays/rhinopristiformes/pristis-zijsron.png";
+import pristisZijsronImg from "./../../../../images/rays/rhinopristiformes/pristis-zijsron.webp";
 
 export const pristisZijsron = {
     commonName: "Longcomb Sawfish",

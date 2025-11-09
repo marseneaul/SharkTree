@@ -1,6 +1,6 @@
 import { CONSERVATION_STATUS, ELECTRIC_ORGAN, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import torpedoMarmorataImg from "./../../../../images/rays/torpediniformes/torpedo-marmorata.png";
-import photographyImg from "./../../../../images/photography/torpedo-marmorata.jpg";
+import torpedoMarmorataImg from "./../../../../images/rays/torpediniformes/torpedo-marmorata.webp";
+import photographyImg from "./../../../../images/photography/torpedo-marmorata.webp";
 
 export const torpedoMarmorata = {
     commonName: "Marbled Electric Ray",

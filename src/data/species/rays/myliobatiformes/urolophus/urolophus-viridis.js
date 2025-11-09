@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
-import urolophusViridisImg from "./../../../../../images/rays/myliobatiformes/urolophus/urolophus-viridis.png";
+import urolophusViridisImg from "./../../../../../images/rays/myliobatiformes/urolophus/urolophus-viridis.webp";
 
 export const urolophusViridis = {
     commonName: "Greenback Stingaree",

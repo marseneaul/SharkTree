@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import pavorajaNitidaImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/pavoraja-nitida.png";
+import pavorajaNitidaImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/pavoraja-nitida.webp";
 
 export const pavorajaNitida = {
     commonName: "Peacock Skate",

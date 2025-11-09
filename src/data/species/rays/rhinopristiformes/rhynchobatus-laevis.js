@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, FLATTENED_BODY, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import rhynchobatusLaevisImg from "./../../../../images/rays/rhinopristiformes/rhynchobatus-laevis.png";
+import rhynchobatusLaevisImg from "./../../../../images/rays/rhinopristiformes/rhynchobatus-laevis.webp";
 
 export const rhynchobatusLaevis = {
     commonName: "Smooth Wedgefish",

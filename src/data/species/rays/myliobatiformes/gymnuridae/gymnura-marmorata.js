@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
-import gymnuraMarmorataImg from "./../../../../../images/rays/myliobatiformes/gymnuridae/gymnura-marmorata.png";
+import gymnuraMarmorataImg from "./../../../../../images/rays/myliobatiformes/gymnuridae/gymnura-marmorata.webp";
 
 export const gymnuraMarmorata = {
     commonName: "California Butterfly Ray",

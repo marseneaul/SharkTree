@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, SNOUT_SHAPE } from "../../../../constants/enums";
-import harriottaRaleighanaImg from "./../../../../images/chimaeras/rhinochimaeridae/harriotta-raleighana.png";
+import harriottaRaleighanaImg from "./../../../../images/chimaeras/rhinochimaeridae/harriotta-raleighana.webp";
 
 export const harriottaRaleighana = {
     commonName: "Narrownose Chimaera",

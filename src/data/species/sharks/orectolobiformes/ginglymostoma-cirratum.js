@@ -1,6 +1,6 @@
 import { CONSERVATION_STATUS, MOUTH_IN_FRONT_OF_EYES, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import ginglymostomaCirratumImg from "./../../../../images/sharks/orectolobiformes/ginglymostoma-cirratum.png";
-import photographyImg from "./../../../../images/photography/ginglymostoma-cirratum.jpg";
+import ginglymostomaCirratumImg from "./../../../../images/sharks/orectolobiformes/ginglymostoma-cirratum.webp";
+import photographyImg from "./../../../../images/photography/ginglymostoma-cirratum.webp";
 
 export const ginglymostomaCirratum = {
     commonName: "Nurse Shark",

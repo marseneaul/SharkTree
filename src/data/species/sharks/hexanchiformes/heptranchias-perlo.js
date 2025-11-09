@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, NUM_GILLS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import heptranchiasPerloImg from "./../../../../images/sharks/hexanchiformes/heptranchias-perlo.png";
+import heptranchiasPerloImg from "./../../../../images/sharks/hexanchiformes/heptranchias-perlo.webp";
 
 export const heptranchiasPerlo = {
     commonName: "Sharpnose Sevengill Shark",

@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import parmaturusXaniurusImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-i/parmaturus-xaniurus.png";
+import parmaturusXaniurusImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-i/parmaturus-xaniurus.webp";
 
 export const parmaturusXaniurus = {
     commonName: "Filetail Catshark",

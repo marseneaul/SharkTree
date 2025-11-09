@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import halaelurusSellusImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-i/halaelurus-sellus.png";
+import halaelurusSellusImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-i/halaelurus-sellus.webp";
 
 export const halaelurusSellus = {
     commonName: "Rusty Catshark",

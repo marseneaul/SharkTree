@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import insentirajaSubtilispinosaImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/insentiraja-subtilispinosa.png";
+import insentirajaSubtilispinosaImg from "./../../../../../images/rays/rajiformes/arhynchobatidae/insentiraja-subtilispinosa.webp";
 
 export const insentirajaSubtilispinosa = {
     commonName: "Western Looseskin Skate",

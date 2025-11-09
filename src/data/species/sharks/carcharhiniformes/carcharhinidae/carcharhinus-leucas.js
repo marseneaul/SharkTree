@@ -1,8 +1,8 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, PROXIMAL_DORSAL_FINS, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
-import carcharhinusLeucasImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/carcharhinus-leucas.png";
-import photographyImg from "./../../../../../images/photography/carcharhinus-leucas.jpg";
-import photographyImg2 from "./../../../../../images/photography/carcharhinus-leucas-2.jpg";
-import photographyImg3 from "./../../../../../images/photography/carcharhinus-leucas-3.jpg";
+import carcharhinusLeucasImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/carcharhinus-leucas.webp";
+import photographyImg from "./../../../../../images/photography/carcharhinus-leucas.webp";
+import photographyImg2 from "./../../../../../images/photography/carcharhinus-leucas-2.webp";
+import photographyImg3 from "./../../../../../images/photography/carcharhinus-leucas-3.webp";
 
 export const carcharhinusLeucas = {
     commonName: "Bull Shark",

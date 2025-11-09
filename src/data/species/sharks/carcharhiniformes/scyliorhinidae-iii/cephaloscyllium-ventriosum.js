@@ -1,6 +1,6 @@
 import { BIOLUMINESCENT, CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import cephaloscylliumVentriosumImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-iii/cephaloscyllium-ventriosum.png";
-import photographyImg from "./../../../../../images/photography/cephaloscyllium-ventriosum.jpg";
+import cephaloscylliumVentriosumImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-iii/cephaloscyllium-ventriosum.webp";
+import photographyImg from "./../../../../../images/photography/cephaloscyllium-ventriosum.webp";
 
 export const cephaloscylliumVentriosum = {
     commonName: "Swellshark",

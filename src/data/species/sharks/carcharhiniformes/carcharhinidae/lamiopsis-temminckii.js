@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
-import lamiopsisTemminckiiImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/lamiopsis-temminckii.png";
+import lamiopsisTemminckiiImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/lamiopsis-temminckii.webp";
 
 export const lamiopsisTemminckii = {
     commonName: "Broadfin Shark",

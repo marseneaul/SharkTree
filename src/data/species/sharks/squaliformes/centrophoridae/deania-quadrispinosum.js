@@ -1,5 +1,5 @@
 import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import deaniaQuadrispinosumImg from "./../../../../../images/sharks/squaliformes/centrophoridae/deania-quadrispinosa.png";
+import deaniaQuadrispinosumImg from "./../../../../../images/sharks/squaliformes/centrophoridae/deania-quadrispinosa.webp";
 
 export const deaniaQuadrispinosum = {
     commonName: "Longsnout Dogfish",

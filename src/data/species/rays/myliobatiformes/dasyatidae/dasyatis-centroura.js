@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
-import dasyatisCentrouraImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/dasyatis-centroura.png";
+import dasyatisCentrouraImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/dasyatis-centroura.webp";
 
 export const dasyatisCentroura = {
     commonName: "Roughtail Stingray",

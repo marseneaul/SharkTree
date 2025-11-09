@@ -36,6 +36,7 @@
     "axios": "^0.26.1",
     "core-js": "^3.46.0",
     "js-sha256": "^0.11.0",
-    "regenerator-runtime": "^0.14.1"
+    "regenerator-runtime": "^0.14.1",
+    "sharp": "^0.34.5"
   }
 }

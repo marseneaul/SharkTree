@@ -1,5 +1,5 @@
 import { BEHAVIOR, CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
-import myliobatisFreminvilleiImg from "./../../../../../images/rays/myliobatiformes/myliobatidae/myliobatis-freminvillei.png";
+import myliobatisFreminvilleiImg from "./../../../../../images/rays/myliobatiformes/myliobatidae/myliobatis-freminvillei.webp";
 
 export const myliobatisFreminvillei = {
     commonName: "Bullnose Ray",

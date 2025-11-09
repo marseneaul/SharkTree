@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
-import himanturaPolylepisImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/himantura-polylepis.png";
+import himanturaPolylepisImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/himantura-polylepis.webp";
 
 export const himanturaPolylepis = {
     commonName: "Giant Freshwater Stingray",

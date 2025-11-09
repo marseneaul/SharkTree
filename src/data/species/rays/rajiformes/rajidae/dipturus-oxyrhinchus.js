@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import dipturusOxyrhinchusImg from "./../../../../../images/rays/rajiformes/rajidae/dipturus-oxyrinchus.png";
+import dipturusOxyrhinchusImg from "./../../../../../images/rays/rajiformes/rajidae/dipturus-oxyrinchus.webp";
 
 export const dipturusOxyrhinchus = {
     commonName: "Longnose Skate",

@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import aptychotremaVincentianaImg from "./../../../../images/rays/rhinopristiformes/aptychotrema-vincentiana.png";
+import aptychotremaVincentianaImg from "./../../../../images/rays/rhinopristiformes/aptychotrema-vincentiana.webp";
 
 export const aptychotremaVincentiana = {
     commonName: "Southern Shovelnose Ray",

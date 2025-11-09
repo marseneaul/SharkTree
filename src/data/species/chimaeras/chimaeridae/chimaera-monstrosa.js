@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, SNOUT_SHAPE } from "../../../../constants/enums";
-import chimaeraMonstrosaImg from "./../../../../images/chimaeras/chimaeridae/chimaera-monstrosa.png";
+import chimaeraMonstrosaImg from "./../../../../images/chimaeras/chimaeridae/chimaera-monstrosa.webp";
 export const chimaeraMonstrosa = {
     commonName: "Rabbit Fish",
     alternativeNames: ["Rat Fish"],

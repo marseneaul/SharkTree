@@ -1,5 +1,5 @@
 import { ANAL_FIN, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import echinorhinusBrucusImg from "./../../../../images/sharks/echinorhinidae/echinorhinus-brucus.png";
+import echinorhinusBrucusImg from "./../../../../images/sharks/echinorhinidae/echinorhinus-brucus.webp";
 
 export const echinorhinusBrucus = {
     commonName: "Bramble Shark",

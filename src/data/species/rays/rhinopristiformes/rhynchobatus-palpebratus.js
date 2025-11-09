@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, FLATTENED_BODY, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import rhynchobatusPalpebratusImg from "./../../../../images/rays/rhinopristiformes/rhynchobatus-palpebratus.png";
+import rhynchobatusPalpebratusImg from "./../../../../images/rays/rhinopristiformes/rhynchobatus-palpebratus.webp";
 
 export const rhynchobatusPalpebratus = {
     commonName: "Eyebrow Wedgefish",

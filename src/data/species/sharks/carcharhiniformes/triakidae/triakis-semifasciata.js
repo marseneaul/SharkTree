@@ -1,6 +1,6 @@
 import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import triakisSemifasciataImg from "./../../../../../images/sharks/carcharhiniformes/triakidae/triakis-semifasciata.png";
-import photographyImg from "./../../../../../images/photography/triakis-semifasciata.jpg";
+import triakisSemifasciataImg from "./../../../../../images/sharks/carcharhiniformes/triakidae/triakis-semifasciata.webp";
+import photographyImg from "./../../../../../images/photography/triakis-semifasciata.webp";
 
 export const triakisSemifasciata = {
     commonName: "Leopard Shark",

@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
-import urolophusLobatusImg from "./../../../../../images/rays/myliobatiformes/urolophus/urolophus-lobatus.png";
+import urolophusLobatusImg from "./../../../../../images/rays/myliobatiformes/urolophus/urolophus-lobatus.webp";
 
 export const urolophusLobatus = {
     commonName: "Lobed Stingaree",

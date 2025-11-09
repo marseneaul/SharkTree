@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
-import pteromylaeusBovinusImg from "./../../../../../images/rays/myliobatiformes/myliobatidae/pteromylaeus-bovinus.png";
+import pteromylaeusBovinusImg from "./../../../../../images/rays/myliobatiformes/myliobatidae/pteromylaeus-bovinus.webp";
 
 export const pteromylaeusBovinus = {
     commonName: "Bull Ray",

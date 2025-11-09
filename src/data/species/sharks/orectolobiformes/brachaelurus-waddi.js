@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, MOUTH_IN_FRONT_OF_EYES, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import brachaelurusWaddiImg from "./../../../../images/sharks/orectolobiformes/brachaelurus-waddi.png";
+import brachaelurusWaddiImg from "./../../../../images/sharks/orectolobiformes/brachaelurus-waddi.webp";
 
 export const brachaelurusWaddi = {
     commonName: "Blind Shark",

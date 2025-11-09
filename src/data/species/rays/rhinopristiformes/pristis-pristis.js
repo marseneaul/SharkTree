@@ -1,5 +1,5 @@
 import { BEHAVIOR, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import pristisPristisImg from "./../../../../images/rays/rhinopristiformes/pristis-pristis.png";
+import pristisPristisImg from "./../../../../images/rays/rhinopristiformes/pristis-pristis.webp";
 
 export const pristisPristis = {
     commonName: "Largetooth Sawfish",

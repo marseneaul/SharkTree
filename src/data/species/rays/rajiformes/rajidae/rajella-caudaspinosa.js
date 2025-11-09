@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import rajellaCaudaspinosaImg from "./../../../../../images/rays/rajiformes/rajidae/rajella-caudaspinosa.png";
+import rajellaCaudaspinosaImg from "./../../../../../images/rays/rajiformes/rajidae/rajella-caudaspinosa.webp";
 
 export const rajellaCaudaspinosa = {
     commonName: "Munchkin Skate",

@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, MOUTH_IN_FRONT_OF_EYES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import chiloscylliumPunctatumImg from "./../../../../../images/sharks/orectolobiformes/hemiscylliidae/chiloscyllium-punctatum.png";
+import chiloscylliumPunctatumImg from "./../../../../../images/sharks/orectolobiformes/hemiscylliidae/chiloscyllium-punctatum.webp";
 
 export const chiloscylliumPunctatum = {
     commonName: "Brownbanded Bamboo Shark",

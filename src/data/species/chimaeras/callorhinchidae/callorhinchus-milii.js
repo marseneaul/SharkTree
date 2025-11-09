@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, SNOUT_SHAPE } from "../../../../constants/enums";
-import callorhinchusMiliiImg from "./../../../../images/chimaeras/callorhinchidae/callorhinchus-milii.png";
+import callorhinchusMiliiImg from "./../../../../images/chimaeras/callorhinchidae/callorhinchus-milii.webp";
 
 export const callorhinchusMilii = {
     commonName: "Australian Ghostshark",

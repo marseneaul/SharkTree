@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, MOUTH_IN_FRONT_OF_EYES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import chiloscylliumGriseumImg from "./../../../../../images/sharks/orectolobiformes/hemiscylliidae/chiloscyllium-griseum.png";
+import chiloscylliumGriseumImg from "./../../../../../images/sharks/orectolobiformes/hemiscylliidae/chiloscyllium-griseum.webp";
 
 export const chiloscylliumGriseum = {
     commonName: "Grey Bamboo Shark",

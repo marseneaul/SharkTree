@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import zearajaChilensisImg from "./../../../../../images/rays/rajiformes/rajidae/zearaja-chilensis.png";
+import zearajaChilensisImg from "./../../../../../images/rays/rajiformes/rajidae/zearaja-chilensis.webp";
 
 export const zearajaChilensis = {
     commonName: "Yellownose Skate",

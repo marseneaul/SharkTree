@@ -38,7 +38,7 @@ module.exports = (env) => {
     path: path.resolve(__dirname, "dist"),
     filename: "[name].[contenthash].js",
     clean: true,
-    assetModuleFilename: "[name][ext]",
+    assetModuleFilename: "[name].[contenthash][ext]",
   },
   devtool: "source-map",
   module: {
@@ -63,7 +63,7 @@ module.exports = (env) => {
         },
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
         type: "asset/resource",
       },
     ],

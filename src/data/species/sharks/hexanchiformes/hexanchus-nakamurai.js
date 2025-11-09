@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, NUM_GILLS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import hexanchusNakamuraiImg from "./../../../../images/sharks/hexanchiformes/hexanchus-nakamurai.png";
+import hexanchusNakamuraiImg from "./../../../../images/sharks/hexanchiformes/hexanchus-nakamurai.webp";
 
 export const hexanchusNakamurai = {
     commonName: "Bigeye Sixgill Shark",

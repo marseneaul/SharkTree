@@ -1,6 +1,6 @@
 import { CONSERVATION_STATUS, GROUP_BEHAVIOR, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
-import carcharhinusBrevipinnaImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/carcharhinus-brevipinna.png";
-import photographyImg from "./../../../../../images/photography/carcharhinus-brevipinna.jpg";
+import carcharhinusBrevipinnaImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/carcharhinus-brevipinna.webp";
+import photographyImg from "./../../../../../images/photography/carcharhinus-brevipinna.webp";
 
 export const carcharhinusBrevipinna = {
     commonName: "Spinner Shark",

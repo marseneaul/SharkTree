@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
-import dasyatisSabinaImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/dasyatis-sabina.png";
+import dasyatisSabinaImg from "./../../../../../images/rays/myliobatiformes/dasyatidae/dasyatis-sabina.webp";
 
 export const dasyatisSabina = {
     commonName: "Atlantic Stingray",

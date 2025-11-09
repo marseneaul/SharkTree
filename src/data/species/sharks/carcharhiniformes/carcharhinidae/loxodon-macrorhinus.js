@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
-import loxodonMacrorhinusImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/loxodon-macrorhinus.png";
+import loxodonMacrorhinusImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/loxodon-macrorhinus.webp";
 
 export const loxodonMacrorhinus = {
     commonName: "Sliteye Shark",

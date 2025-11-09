@@ -1,5 +1,5 @@
 import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import cirrhigaleusAsperImg from "./../../../../../images/sharks/squaliformes/squalidae/cirrhigaleus-asper.png";
+import cirrhigaleusAsperImg from "./../../../../../images/sharks/squaliformes/squalidae/cirrhigaleus-asper.webp";
 
 export const cirrhigaleusAsper = {
     commonName: "Roughskin Spurdog",

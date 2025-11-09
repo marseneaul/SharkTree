@@ -1,5 +1,5 @@
 import { BEHAVIOR, CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
-import rhinopteraSteindachneriImg from "./../../../../../images/rays/myliobatiformes/rhinopteridae/rhinoptera-steindachneri.png";
+import rhinopteraSteindachneriImg from "./../../../../../images/rays/myliobatiformes/rhinopteridae/rhinoptera-steindachneri.webp";
 
 export const rhinopteraSteindachneri = {
     commonName: "Giant Cownose Ray",

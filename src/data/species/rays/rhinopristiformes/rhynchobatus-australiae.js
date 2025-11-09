@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, FLATTENED_BODY, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import rhynchobatusAustraliaeImg from "./../../../../images/rays/rhinopristiformes/rhynchobatus-australiae.png";
+import rhynchobatusAustraliaeImg from "./../../../../images/rays/rhinopristiformes/rhynchobatus-australiae.webp";
 
 export const rhynchobatusAustraliae = {
     commonName: "White-Spotted Guitarfish",

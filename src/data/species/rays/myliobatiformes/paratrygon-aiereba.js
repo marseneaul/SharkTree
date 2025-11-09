@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../constants/enums";
-import paratrygonAierebaImg from "./../../../../images/rays/myliobatiformes/paratrygon-aiereba.png";
+import paratrygonAierebaImg from "./../../../../images/rays/myliobatiformes/paratrygon-aiereba.webp";
 
 export const paratrygonAiereba = {
     commonName: "Discus Ray",

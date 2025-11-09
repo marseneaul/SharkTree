@@ -1,5 +1,5 @@
 import { BEHAVIOR, CONSERVATION_STATUS, FEEDING_BEHAVIOR, GROUP_BEHAVIOR, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, TEMPERATURE_REGULATION } from "../../../../../constants/enums";
-import mobulaBirostrisImg from "./../../../../../images/rays/myliobatiformes/mobulidae/mobula-birostris.png";
+import mobulaBirostrisImg from "./../../../../../images/rays/myliobatiformes/mobulidae/mobula-birostris.webp";
 
 export const mobulaBirostris = {
     commonName: "Giant Oceanic Manta Ray",

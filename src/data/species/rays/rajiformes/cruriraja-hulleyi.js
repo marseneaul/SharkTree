@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../constants/enums";
-import crurirajaHulleyiImg from "./../../../../images/rays/rajiformes/cruriraja-hulleyi.png";
+import crurirajaHulleyiImg from "./../../../../images/rays/rajiformes/cruriraja-hulleyi.webp";
 
 export const crurirajaHulleyi = {
     commonName: "Cuban Leg Skate",

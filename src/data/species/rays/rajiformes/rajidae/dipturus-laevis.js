@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import dipturusLaevisImg from "./../../../../../images/rays/rajiformes/rajidae/dipturus-laevis.png";
+import dipturusLaevisImg from "./../../../../../images/rays/rajiformes/rajidae/dipturus-laevis.webp";
 
 export const dipturusLaevis = {
     commonName: "Barndoor Skate",

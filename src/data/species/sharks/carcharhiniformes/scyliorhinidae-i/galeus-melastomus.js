@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import galeusMelastomusImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-i/galeus-melastomus.png";
+import galeusMelastomusImg from "./../../../../../images/sharks/carcharhiniformes/scyliorhinidae-i/galeus-melastomus.webp";
 
 export const galeusMelastomus = {
     commonName: "Blackmouth Catshark",

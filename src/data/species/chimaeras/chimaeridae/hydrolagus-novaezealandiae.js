@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, SNOUT_SHAPE } from "../../../../constants/enums";
-import hydrolagusNovaezealandiaeImg from "./../../../../images/chimaeras/chimaeridae/hydrolagus-novaezealandiae.png";
+import hydrolagusNovaezealandiaeImg from "./../../../../images/chimaeras/chimaeridae/hydrolagus-novaezealandiae.webp";
 
 export const hydrolagusNovaezealandiae = {
     commonName: "Dark Ghostshark",

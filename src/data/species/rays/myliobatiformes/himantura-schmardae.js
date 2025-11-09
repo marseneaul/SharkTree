@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../constants/enums";
-import himanturaSchmardaeImg from "./../../../../images/rays/myliobatiformes/himantura-schmardae.png";
+import himanturaSchmardaeImg from "./../../../../images/rays/myliobatiformes/himantura-schmardae.webp";
 
 export const himanturaSchmardae = {
     commonName: "Chupare Stingray",

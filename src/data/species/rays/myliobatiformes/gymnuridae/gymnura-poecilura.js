@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NUM_DORSAL_FINS, REPRODUCTIVE_STRATEGY, TAIL_SPINES, VENOMOUS_SPINE } from "../../../../../constants/enums";
-import gymnuraPoeciluraImg from "./../../../../../images/rays/myliobatiformes/gymnuridae/gymnura-poecilura.png";
+import gymnuraPoeciluraImg from "./../../../../../images/rays/myliobatiformes/gymnuridae/gymnura-poecilura.webp";
 
 export const gymnuraPoecilura = {
     commonName: "Longtail Butterfly Ray",

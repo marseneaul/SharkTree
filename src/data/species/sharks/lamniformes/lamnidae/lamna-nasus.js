@@ -1,5 +1,5 @@
 import { CAUDAL_FIN_SHAPE, CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY, TEMPERATURE_REGULATION } from "../../../../../constants/enums";
-import lamnaNasusImg from "./../../../../../images/sharks/lamniformes/lamnidae/lamna-nasus.png";
+import lamnaNasusImg from "./../../../../../images/sharks/lamniformes/lamnidae/lamna-nasus.webp";
 
 export const lamnaNasus = {
     commonName: "Porbeagle",

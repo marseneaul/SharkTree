@@ -1,5 +1,5 @@
 import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import squalusNasutusImg from "./../../../../../images/sharks/squaliformes/squalidae/squalus-nasutus.png";
+import squalusNasutusImg from "./../../../../../images/sharks/squaliformes/squalidae/squalus-nasutus.webp";
 
 export const squalusNasutus = {
     commonName: "Western Longnose Spurdog",

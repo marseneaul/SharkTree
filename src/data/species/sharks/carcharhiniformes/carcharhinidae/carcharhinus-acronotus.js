@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
-import carcharhinusAcronotusImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/carcharhinus-acronotus.png";
+import carcharhinusAcronotusImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/carcharhinus-acronotus.webp";
 
 export const carcharhinusAcronotus = {
     commonName: "Blacknose Shark",

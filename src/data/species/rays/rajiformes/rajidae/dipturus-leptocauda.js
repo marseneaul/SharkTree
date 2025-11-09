@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import dipturusLeptocaudaImg from "./../../../../../images/rays/rajiformes/rajidae/dipturus-leptocauda.png";
+import dipturusLeptocaudaImg from "./../../../../../images/rays/rajiformes/rajidae/dipturus-leptocauda.webp";
 
 export const dipturusLeptocauda = {
     commonName: "Thintail Skate",

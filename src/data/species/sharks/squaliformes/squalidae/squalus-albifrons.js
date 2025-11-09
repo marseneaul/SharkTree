@@ -1,5 +1,5 @@
 import { ANAL_FIN, CONSERVATION_STATUS, DORSAL_FIN_SPINES, REPRODUCTIVE_STRATEGY } from "../../../../../constants/enums";
-import squalusAlbifronsImg from "./../../../../../images/sharks/squaliformes/squalidae/squalus-albifrons.png";
+import squalusAlbifronsImg from "./../../../../../images/sharks/squaliformes/squalidae/squalus-albifrons.webp";
 
 export const squalusAlbifrons = {
     commonName: "Eastern Highfin Spurdog",

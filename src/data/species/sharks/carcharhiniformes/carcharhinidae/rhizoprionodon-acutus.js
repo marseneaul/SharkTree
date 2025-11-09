@@ -1,5 +1,5 @@
 import { CONSERVATION_STATUS, NICTITATING_MEMBRANE, REPRODUCTIVE_STRATEGY, SPIRACLES } from "../../../../../constants/enums";
-import rhizoprionodonAcutusImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/rhizoprionodon-acutus.png";
+import rhizoprionodonAcutusImg from "./../../../../../images/sharks/carcharhiniformes/carcharhinidae/rhizoprionodon-acutus.webp";
 
 export const rhizoprionodonAcutus = {
     commonName: "Milk Shark",
